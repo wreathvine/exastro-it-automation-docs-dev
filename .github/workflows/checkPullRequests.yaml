@@ -7,18 +7,19 @@ on:
     types:
       - opened
 jobs:
-  # dump:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: dump context
-  #       run: echo '${{ toJSON(github) }}'
+  dump:
+    runs-on: ubuntu-latest
+    steps:
+      - name: dump context
+        run: echo '${{ toJSON(github) }}'
   review_requested:
     runs-on: ubuntu-latest
     if: "!((github.repository == github.event.pull_request.head.repo.full_name) \
       || (github.repository == 'exastro-suite/exastro-it-automation-docs' \
         && github.event.pull_request.head.repo.full_name == 'exastro-suite/exastro-it-automation-docs-dev') \
       || (github.repository == 'exastro-suite/exastro-it-automation-docs-dev' \
-        && !startsWith(github.event.pull_request.head.repo.full_name, 'exastro-suite/')))"
+        && !startsWith(github.event.pull_request.head.repo.full_name, 'exastro-suite/') \
+        && github.base_ref == github.head_ref))"
     steps:
     - name: Check organization and repository
       run: |
