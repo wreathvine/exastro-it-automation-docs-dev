@@ -2984,19 +2984,19 @@ BackYard コンテンツ
 
 .. code-block:: bash 
 
-   # systemctl start ky_terraform_cli_execute-workflow.service
+   # systemctl start ky_terraform_execute-workflow.service
 
 | ②プロセス停止
 
 .. code-block:: bash 
 
-   # systemctl stop ky_terraform_cli_execute-workflow.service
+   # systemctl stop ky_terraform_execute-workflow.service
 
 | ③プロセス再起動
 
 .. code-block:: bash 
 
-   # systemctl restart ky_terraform_cli_execute-workflow.service
+   # systemctl restart ky_terraform_execute-workflow.service
 
 
 | 各対象ファイル名に置き換えて起動/停止/再起動を行ってください。
