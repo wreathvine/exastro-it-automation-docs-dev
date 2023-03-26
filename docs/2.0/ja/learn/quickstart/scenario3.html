@@ -338,7 +338,7 @@
 <section id="id8">
 <h3><span class="section-number">3.4.1. </span>ジョブフローの作成<a class="headerlink" href="#id8" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
-<div class="line">複数の Movement を一連の作業の実行方法として、Conductor という仕組みがあります。</div>
+<div class="line">複数の Movement を一連の作業として実行する方法に、Conductor という仕組みがあります。</div>
 <div class="line">Conductor を利用することで、複数の Movement をまとめて実行できるだけでなく、Movement の実行結果に応じて、後続処理を分岐させたり、ユーザ確認の為に一時停止するといった複雑なロジックを組み込む事が可能です。</div>
 </div>
 <div class="line-block">
@@ -347,10 +347,10 @@
 <div class="line-block">
 <div class="line">1. 右上のペイン <span class="menuselection">Conductor情報 ‣ 名称</span>  に、 <kbd class="kbd docutils literal notranslate">サーバー構築</kbd> と入力します。</div>
 <div class="line">2. 右下のペインに、 <a class="reference internal" href="scenario1.html"><span class="doc">ホスト名管理</span></a> と <a class="reference internal" href="scenario2.html"><span class="doc">パッケージ管理</span></a> で作成した <kbd class="kbd docutils literal notranslate">ホスト名設定</kbd> と <kbd class="kbd docutils literal notranslate">パッケージ管理</kbd> の2つの Movement があります。これらを画面中央にドラッグアンドドロップします。</div>
-<div class="line">3. 各 Mode 間を下記の様に接続します。</div>
+<div class="line">3. 各 Node 間を下記の様に接続します。</div>
 </div>
 <table class="docutils align-default" id="id16">
-<caption><span class="caption-number">表 3.5 </span><span class="caption-text">オブジェクト間の接続</span><a class="headerlink" href="#id16" title="このテーブルへのパーマリンク">¶</a></caption>
+<caption><span class="caption-number">表 3.5 </span><span class="caption-text">Node 間の接続</span><a class="headerlink" href="#id16" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 50%" />
 <col style="width: 50%" />
@@ -509,7 +509,7 @@ mariadb-server-10.3.35-1.module+el8.6.0+15949+4ba4ec26.x86_64
 </li>
 <li><p>作業実行</p>
 <div class="line-block">
-<div class="line"><span class="menuselection">Conductor ‣ Conductor編集/作業実行</span> から、<span class="menuselection"> 選択</span> を押下します。</div>
+<div class="line"><span class="menuselection">Conductor ‣ Conductor編集/作業実行</span> から、<span class="guilabel"> 選択</span> を押下します。</div>
 <div class="line"><kbd class="kbd docutils literal notranslate">サーバー構築</kbd> Conductor を選択し、<span class="guilabel">選択決定</span> を押下します。</div>
 <div class="line">次に、画面上部の <span class="guilabel"> 作業実行</span> で、オペレーションに <kbd class="kbd docutils literal notranslate">Webサーバーへの再構築</kbd> を選択し、<span class="guilabel">作業実行</span> を押下します。</div>
 </div>
@@ -517,6 +517,8 @@ mariadb-server-10.3.35-1.module+el8.6.0+15949+4ba4ec26.x86_64
 <div class="line"><span class="menuselection">Conductor作業確認</span> 画面が開き、実行が完了した後に、全ての Movement のステータスが「Done」になったことを確認します。</div>
 </div>
 </li>
+</ol>
+<ol class="arabic" start="4">
 <li><p>事後確認</p>
 <div class="line-block">
 <div class="line">再度サーバに SSH ログインし、Web サーバーに作り直しされていることを確認します。</div>
