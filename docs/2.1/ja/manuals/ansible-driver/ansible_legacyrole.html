@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     
-    <title>Ansible-driver &#8212; Documentation  ドキュメント</title>
+    <title>Ansible-LegacyRole &#8212; Documentation  ドキュメント</title>
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/option.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
@@ -33,9 +33,7 @@
     <script src="../../../../_static/swagger/swagger-ui-standalone-preset.js"></script>
     <link rel="shortcut icon" href="../../../../_static/favicon.ico"/>
     <link rel="index" title="索引" href="../../../../genindex.html" />
-    <link rel="search" title="検索" href="../../../../search.html" />
-    <link rel="next" title="メンテナンス" href="../maintenance/index.html" />
-    <link rel="prev" title="Ansible ドライバ" href="index.html" /> 
+    <link rel="search" title="検索" href="../../../../search.html" /> 
   </head>
 <body id="page" class="ja">
 
@@ -68,15 +66,12 @@
         <dd>
           <div>
             <select name="version" onchange="location.href=value;">
-                file_path: 2.0/ja/manuals/ansible-driver/general_operations
+                file_path: 2.0/ja/manuals/ansible-driver/ansible_legacyrole
+                file_path: 2.0/ja/manuals/ansible-driver/ansible_legacyrole
+                file_path: 2.1/ja/manuals/ansible-driver/ansible_legacyrole
                   <option value="#"
                   selected
-                  >current</option>
-                file_path: 2.0/ja/manuals/ansible-driver/general_operations
-                  <option value="#"
-                  selected
-                  >2.0 (current)</option>
-                file_path: 2.1/ja/manuals/ansible-driver/general_operations
+                  >2.1 (beta)</option>
             </select>
           </div>
         </dd>
@@ -89,12 +84,12 @@
         <dd>
           <div>
             <select name="lang" onchange="location.href=value;">
-                file_path: 2.0/ja/manuals/ansible-driver/general_operations
+                file_path: 2.1/ja/manuals/ansible-driver/ansible_legacyrole
                 hasdoc: True
                   <option value="#"
                   selected
                   >日本語</option>
-                file_path: 2.0/en/manuals/ansible-driver/general_operations
+                file_path: 2.1/en/manuals/ansible-driver/ansible_legacyrole
                 hasdoc: False
             </select>
           </div>
@@ -103,8 +98,6 @@
     </div>
     <div id="toolbarNavigation">
       <ul>
-        <li class="prev"><a href="index.html" title="前のトピックへ">Ansible ドライバ</a></li>
-        <li class="next"><a href="../maintenance/index.html" title="次のトピックへ">メンテナンス</a></li>
       </ul>
     </div>
   </div>
@@ -115,30 +108,8 @@
   <div id="menuButton"></div>
   
   <aside class="divInner">
-    <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="../../../index.html">Exastro IT Automation Documentation 2.0</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="../../../index.html#id1">日本語</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="../../configuration/index.html">構成・構築ガイド</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../installation/index.html">インストール</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../learn/index.html">Learn</a></li>
-<li class="toctree-l3 current"><a class="reference internal" href="../index.html">マニュアル</a><ul class="current">
-<li class="toctree-l4"><a class="reference internal" href="../platform_management/index.html">システム管理</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../organization_management/index.html">オーガナイゼーション管理</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../it_automation_base/index.html">基本操作</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../create_param/index.html">パラメータ管理</a></li>
-<li class="toctree-l4 current"><a class="reference internal" href="index.html">Ansible ドライバ</a><ul class="current">
-<li class="toctree-l5 current"><a class="current reference internal" href="#">Ansible-driver</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="../maintenance/index.html">メンテナンス</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="../../reference/index.html">リファレンス</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../contribute/index.html">貢献</a></li>
-</ul>
-</li>
-</ul>
-</li>
+    <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../2.0/index.html">Exastro IT Automation Documentation 2.0</a></li>
 </ul>
 
     <!-- <ul>
@@ -152,164 +123,164 @@
 <div id="tableOfContents">
   <div id="tocButton"></div>
   <ul>
-<li><a class="reference internal" href="#">Ansible-driver</a><ul>
+<li><a class="reference internal" href="#">Ansible-LegacyRole</a><ul>
 <li><a class="reference internal" href="#id1">はじめに</a></li>
-<li><a class="reference internal" href="#id2">Ansible driver概要</a><ul>
+<li><a class="reference internal" href="#ansible-driver">Ansible driver概要</a><ul>
 <li><a class="reference internal" href="#ansible-core">Ansible Coreについて</a></li>
 <li><a class="reference internal" href="#ansible-automation-controller">Ansible Automation Controllerについて</a></li>
-<li><a class="reference internal" href="#id3">Ansible driverについて</a></li>
+<li><a class="reference internal" href="#id2">Ansible driverについて</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#general-operations-variable-handling-in-ansible-driver">Ansible driverでの変数取り扱い</a><ul>
-<li><a class="reference internal" href="#general-operations-variable-handling">変数の種類</a></li>
-<li><a class="reference internal" href="#id6">通常変数</a><ul>
-<li><a class="reference internal" href="#id7">概要</a></li>
+<li><a class="reference internal" href="#ansible-legacyrole-variable-handling-in-ansible-driver">Ansible driverでの変数取り扱い</a><ul>
+<li><a class="reference internal" href="#ansible-legacyrole-variable-handling">変数の種類</a></li>
+<li><a class="reference internal" href="#id5">通常変数</a><ul>
+<li><a class="reference internal" href="#id6">概要</a></li>
 <li><a class="reference internal" href="#playbook">playbookにおける表記</a><ul>
-<li><a class="reference internal" href="#id8">書式</a></li>
-<li><a class="reference internal" href="#id9">正しい記述例</a></li>
+<li><a class="reference internal" href="#id7">書式</a></li>
+<li><a class="reference internal" href="#id8">正しい記述例</a></li>
 <li><a class="reference internal" href="#wrong-description-example">誤った記述例</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id11">複数具体値変数</a><ul>
-<li><a class="reference internal" href="#id12">概要</a></li>
-<li><a class="reference internal" href="#id13">playbookにおける表記</a><ul>
-<li><a class="reference internal" href="#id14">書式</a></li>
-<li><a class="reference internal" href="#id15">正しい記述例</a></li>
-<li><a class="reference internal" href="#id16">誤った記述例</a></li>
+<li><a class="reference internal" href="#id10">複数具体値変数</a><ul>
+<li><a class="reference internal" href="#id11">概要</a></li>
+<li><a class="reference internal" href="#id12">playbookにおける表記</a><ul>
+<li><a class="reference internal" href="#id13">書式</a></li>
+<li><a class="reference internal" href="#id14">正しい記述例</a></li>
+<li><a class="reference internal" href="#id15">誤った記述例</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id17">多段変数</a><ul>
-<li><a class="reference internal" href="#id18">概要</a></li>
-<li><a class="reference internal" href="#id19">playbookにおける表記</a><ul>
-<li><a class="reference internal" href="#id20">書式</a></li>
-<li><a class="reference internal" href="#id21">正しい記述例</a></li>
-<li><a class="reference internal" href="#id22">誤った記述例</a></li>
+<li><a class="reference internal" href="#id16">多段変数</a><ul>
+<li><a class="reference internal" href="#id17">概要</a></li>
+<li><a class="reference internal" href="#id18">playbookにおける表記</a><ul>
+<li><a class="reference internal" href="#id19">書式</a></li>
+<li><a class="reference internal" href="#id20">正しい記述例</a></li>
+<li><a class="reference internal" href="#id21">誤った記述例</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id23">グローバル変数</a><ul>
-<li><a class="reference internal" href="#id24">概要</a></li>
-<li><a class="reference internal" href="#id25">playbookにおける表記</a><ul>
-<li><a class="reference internal" href="#id26">書式</a></li>
-<li><a class="reference internal" href="#id27">正しい記述例</a></li>
-<li><a class="reference internal" href="#id28">誤った記述例</a></li>
+<li><a class="reference internal" href="#id22">グローバル変数</a><ul>
+<li><a class="reference internal" href="#id23">概要</a></li>
+<li><a class="reference internal" href="#id24">playbookにおける表記</a><ul>
+<li><a class="reference internal" href="#id25">書式</a></li>
+<li><a class="reference internal" href="#id26">正しい記述例</a></li>
+<li><a class="reference internal" href="#id27">誤った記述例</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id29">テンプレート埋込変数</a><ul>
-<li><a class="reference internal" href="#id30">概要</a></li>
-<li><a class="reference internal" href="#id31">playbookにおける表記</a><ul>
-<li><a class="reference internal" href="#id32">書式</a></li>
-<li><a class="reference internal" href="#id33">正しい記述例</a></li>
-<li><a class="reference internal" href="#id34">誤った記述例</a></li>
+<li><a class="reference internal" href="#id28">テンプレート埋込変数</a><ul>
+<li><a class="reference internal" href="#id29">概要</a></li>
+<li><a class="reference internal" href="#id30">playbookにおける表記</a><ul>
+<li><a class="reference internal" href="#id31">書式</a></li>
+<li><a class="reference internal" href="#id32">正しい記述例</a></li>
+<li><a class="reference internal" href="#id33">誤った記述例</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id35">ファイル埋込変数</a><ul>
-<li><a class="reference internal" href="#id36">概要</a></li>
-<li><a class="reference internal" href="#id37">playbookにおける表記</a><ul>
-<li><a class="reference internal" href="#id38">書式</a></li>
-<li><a class="reference internal" href="#id39">正しい記述例</a></li>
-<li><a class="reference internal" href="#id40">誤った記述例</a></li>
+<li><a class="reference internal" href="#id34">ファイル埋込変数</a><ul>
+<li><a class="reference internal" href="#id35">概要</a></li>
+<li><a class="reference internal" href="#id36">playbookにおける表記</a><ul>
+<li><a class="reference internal" href="#id37">書式</a></li>
+<li><a class="reference internal" href="#id38">正しい記述例</a></li>
+<li><a class="reference internal" href="#id39">誤った記述例</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li><a class="reference internal" href="#ita">ITA独自変数</a><ul>
-<li><a class="reference internal" href="#id41">概要</a></li>
-<li><a class="reference internal" href="#id42">機器一覧</a></li>
-<li><a class="reference internal" href="#id43">オペレーション</a></li>
-<li><a class="reference internal" href="#id44">データ連携</a></li>
+<li><a class="reference internal" href="#id40">概要</a></li>
+<li><a class="reference internal" href="#id41">機器一覧</a></li>
+<li><a class="reference internal" href="#id42">オペレーション</a></li>
+<li><a class="reference internal" href="#id43">データ連携</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id45">変数の抜出および具体値登録</a></li>
-<li><a class="reference internal" href="#id46">代入値登録による変数の扱い</a></li>
+<li><a class="reference internal" href="#id44">変数の抜出および具体値登録</a></li>
+<li><a class="reference internal" href="#id45">代入値登録による変数の扱い</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id47">Ansible driver コンソールメニュー構成</a><ul>
-<li><a class="reference internal" href="#id48">メニュー/画面一覧</a></li>
+<li><a class="reference internal" href="#id46">Ansible driver コンソールメニュー構成</a><ul>
+<li><a class="reference internal" href="#id47">メニュー/画面一覧</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id49">Ansible driver利用手順</a><ul>
-<li><a class="reference internal" href="#ansible-legacyrole">Ansible-LegacyRole作業フロー</a></li>
+<li><a class="reference internal" href="#id48">Ansible driver利用手順</a><ul>
+<li><a class="reference internal" href="#id49">Ansible-LegacyRoleの作業フロー</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#id50">Ansible driver機能・操作方法説明</a><ul>
 <li><a class="reference internal" href="#id51">基本コンソール</a><ul>
-<li><a class="reference internal" href="#general-operations-input-operation-list">オペレーション一覧</a></li>
+<li><a class="reference internal" href="#ansible-legacyrole-input-operation-list">オペレーション一覧</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#ansible">Ansible共通コンソール</a><ul>
-<li><a class="reference internal" href="#general-operations-device-list">機器一覧</a></li>
-<li><a class="reference internal" href="#general-operations-interface-information">インターフェース情報</a></li>
-<li><a class="reference internal" href="#general-operations-ansible-automation-controlller-hosts">Ansible Automation Controller ホスト一覧</a></li>
-<li><a class="reference internal" href="#general-operations-global-variable-list">グローバル変数管理</a></li>
-<li><a class="reference internal" href="#general-operations-file-list">ファイル管理</a></li>
-<li><a class="reference internal" href="#general-operations-template-list">テンプレート管理</a></li>
-<li><a class="reference internal" href="#general-operations-unmanaged-var-list">管理対象外変数リスト</a></li>
+<li><a class="reference internal" href="#ansible-legacyrole-device-list">機器一覧</a></li>
+<li><a class="reference internal" href="#ansible-legacyrole-interface-information">インターフェース情報</a></li>
+<li><a class="reference internal" href="#ansible-legacyrole-ansible-automation-controlller-hosts">Ansible Automation Controller ホスト一覧</a></li>
+<li><a class="reference internal" href="#ansible-legacyrole-global-variable-list">グローバル変数管理</a></li>
+<li><a class="reference internal" href="#ansible-legacyrole-file-list">ファイル管理</a></li>
+<li><a class="reference internal" href="#ansible-legacyrole-template-list">テンプレート管理</a></li>
+<li><a class="reference internal" href="#ansible-legacyrole-unmanaged-var-list">管理対象外変数リスト</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#id60">Ansible-LegacyRoleコンソール</a><ul>
 <li><a class="reference internal" href="#movement">Movement一覧</a></li>
-<li><a class="reference internal" href="#general-operations-role-package-list-ansible-legacy-role-only">ロールパッケージ管理</a></li>
-<li><a class="reference internal" href="#general-operations-movement-details">Movement-ロール紐付</a></li>
-<li><a class="reference internal" href="#general-operations-nested-variable-list-ansible-legacy-role-only">変数ネスト管理</a></li>
-<li><a class="reference internal" href="#general-operations-substitution-value-auto-registration-setting">代入値自動登録設定</a></li>
-<li><a class="reference internal" href="#general-operations-execution">作業実行</a></li>
-<li><a class="reference internal" href="#general-operations-check-operation-status">作業状態確認</a></li>
-<li><a class="reference internal" href="#general-operations-execution-list">作業管理</a></li>
-<li><a class="reference internal" href="#general-operations-target-host">作業対象ホスト</a></li>
-<li><a class="reference internal" href="#general-operations-substitution-value-list">代入値管理</a></li>
+<li><a class="reference internal" href="#ansible-legacyrole-role-package-list-ansible-legacy-role-only">ロールパッケージ管理</a></li>
+<li><a class="reference internal" href="#ansible-legacyrole-movement-details">Movement-ロール紐付</a></li>
+<li><a class="reference internal" href="#ansible-legacyrole-nested-variable-list-ansible-legacy-role-only">変数ネスト管理</a></li>
+<li><a class="reference internal" href="#ansible-legacyrole-substitution-value-auto-registration-setting">代入値自動登録設定</a></li>
+<li><a class="reference internal" href="#ansible-legacyrole-execution">作業実行</a></li>
+<li><a class="reference internal" href="#ansible-legacyrole-check-operation-status">作業状態確認</a></li>
+<li><a class="reference internal" href="#ansible-legacyrole-execution-list">作業管理</a></li>
+<li><a class="reference internal" href="#ansible-legacyrole-target-host">作業対象ホスト</a></li>
+<li><a class="reference internal" href="#ansible-legacyrole-substitution-value-list">代入値管理</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li><a class="reference internal" href="#id70">構築コード記述方法</a><ul>
-<li><a class="reference internal" href="#ansible-legacy-role">ロールパッケージ（Ansible-Legacy Role）の記述</a><ul>
-<li><a class="reference internal" href="#id72">マスターPlaybook</a><ul>
-<li><a class="reference internal" href="#id73">① へッダーセクション</a></li>
+<li><a class="reference internal" href="#ansible-legacyrole-write-role-package-ansible-legacy-role">ロールパッケージの記述</a><ul>
+<li><a class="reference internal" href="#id73">マスターPlaybook</a><ul>
+<li><a class="reference internal" href="#id74">① へッダーセクション</a></li>
 <li><a class="reference internal" href="#roles">② rolesセクション</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#ansible-role-directory-structure">Ansible Role Directory Structureにおける所定ディクレトリのサブディレクトリについて注意事項</a></li>
-<li><a class="reference internal" href="#id74">ロールパッケージ内のロール名をディレクトリ階層にした場合の留意点</a></li>
+<li><a class="reference internal" href="#id75">ロールパッケージ内のロール名をディレクトリ階層にした場合の留意点</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#itareadme-ansible-legacy-role">ITAreadme（Ansible-Legacy Role）の記述</a><ul>
+<li><a class="reference internal" href="#itareadme">ITAreadme の記述</a><ul>
 <li><a class="reference internal" href="#ita-readme">ITA readmeのファイル名の命名規則</a></li>
-<li><a class="reference internal" href="#id75">ITA readmeのフォーマット</a></li>
+<li><a class="reference internal" href="#id76">ITA readmeのフォーマット</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#ita-readme-ansible-legacy-role">「ita_readme」の活用例（Ansible-Legacy Role）</a></li>
+<li><a class="reference internal" href="#id77">「ita_readme」の活用例</a></li>
 <li><a class="reference internal" href="#backyard">BackYardコンテンツ</a><ul>
-<li><a class="reference internal" href="#id76">変数自動登録</a></li>
+<li><a class="reference internal" href="#id78">変数自動登録</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id77">付録</a><ul>
+<li><a class="reference internal" href="#id79">付録</a><ul>
 <li><a class="reference internal" href="#ansibleita">Ansible実行時に使用される投入データとITAメニューの紐づけ</a><ul>
-<li><a class="reference internal" href="#id78">Ansible-LegacyRole投入データ</a></li>
+<li><a class="reference internal" href="#id80">Ansible-LegacyRole投入データ</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id79">Ansible実行時に作成される結果データ</a><ul>
-<li><a class="reference internal" href="#legacy-role">Legacy-Role 結果データに保存されるファイル一覧</a></li>
+<li><a class="reference internal" href="#id81">Ansible実行時に作成される結果データ</a><ul>
+<li><a class="reference internal" href="#id82">Ansible-LegacyRole 結果データに保存されるファイル一覧</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#general-operations-option-parameter-list">オプションパラメータ一覧</a></li>
+<li><a class="reference internal" href="#ansible-legacyrole-option-parameter-list">オプションパラメータ一覧</a></li>
 <li><a class="reference internal" href="#ansible-automation-controllerita">Ansible Automation ControllerでITA独自変数を利用する場合の留意事項</a><ul>
-<li><a class="reference internal" href="#id81">ITA独自変数を利用して作成したファイルの取り扱い</a></li>
-<li><a class="reference internal" href="#id82">留意事項</a></li>
+<li><a class="reference internal" href="#id84">ITA独自変数を利用して作成したファイルの取り扱い</a></li>
+<li><a class="reference internal" href="#id85">留意事項</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#general-operations-data-resources-deleted-when-executing">実行時データ削除で削除されるデータリソース</a></li>
+<li><a class="reference internal" href="#ansible-legacyrole-data-resources-deleted-when-executing">実行時データ削除で削除されるデータリソース</a></li>
 </ul>
 </li>
 </ul>
@@ -325,11 +296,8 @@
  <div id="breadcrumbs">
   <ul>
     <li><a href="../../../../index.html">HOME</a></li>
-    <li><a href="../../../index.html">Exastro IT Automation Documentation 2.0</a></li>
-    <li><a href="../index.html">マニュアル</a></li>
-    <li><a href="index.html">Ansible ドライバ</a></li>
     
-    <li>Ansible-driver</li>
+    <li>Ansible-LegacyRole</li>
   </ul>
 </div>
 
@@ -337,16 +305,16 @@
 <article class="divInner">
 <div class="body" role="main">
 
-  <section id="ansible-driver">
-<h1>Ansible-driver<a class="headerlink" href="#ansible-driver" title="この見出しへのパーマリンク">¶</a></h1>
+  <section id="ansible-legacyrole">
+<h1>Ansible-LegacyRole<a class="headerlink" href="#ansible-legacyrole" title="この見出しへのパーマリンク">¶</a></h1>
 <section id="id1">
 <h2>はじめに<a class="headerlink" href="#id1" title="この見出しへのパーマリンク">¶</a></h2>
 <div class="line-block">
-<div class="line">本書では、ITAの機能および操作方法について説明します。</div>
+<div class="line">本書では、ITAシステムのAnsible-LegacyRoleの機能および操作方法について説明します。</div>
 </div>
 </section>
-<section id="id2">
-<h2>Ansible driver概要<a class="headerlink" href="#id2" title="この見出しへのパーマリンク">¶</a></h2>
+<section id="ansible-driver">
+<h2>Ansible driver概要<a class="headerlink" href="#ansible-driver" title="この見出しへのパーマリンク">¶</a></h2>
 <div class="line-block">
 <div class="line">本章ではAnsible、Ansible Automation ControllerおよびAnsible driverについて説明します。</div>
 </div>
@@ -366,55 +334,68 @@
 <div class="line">“プロジェクト”、”インベントリ”、”認証情報”の組合せで”ジョブテンプレート”を作成しAnsibleを実行できます。</div>
 <div class="line">複数の“ジョブテンプレート”を組み合せて”ワークフロージョブテンプレート”を作成することによって、より多彩な作業フローを表現することができます。</div>
 <div class="line">Ansible Automation Controllerの詳細情報については、Ansible Automation Controllerのマニュアルを参照してください。</div>
-<div class="line">ITAで対応可能なAnsible Automation Controllerのバージョンは、 <a class="reference internal" href="../../configuration/ansible/ansible_automation_platform.html"><span class="doc">Ansible Automation Platform</span></a> を参照してください。</div>
+<div class="line">ITAで対応可能なAnsible Automation Controllerのバージョンは、 <span class="xref std std-doc">../../configuration/ansible/ansible_automation_platform</span> を参照してください。</div>
 <div class="line">最新のバージョンに対応した記法は使えないことがありますので、ご注意ください。</div>
 </div>
 </section>
-<section id="id3">
-<h3>Ansible driverについて<a class="headerlink" href="#id3" title="この見出しへのパーマリンク">¶</a></h3>
+<section id="id2">
+<h3>Ansible driverについて<a class="headerlink" href="#id2" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
 <div class="line">Ansible driverは、ITAシステムのオプションとして機能し、ITAシステムで登録した構築対象のサーバ・ストレージ・ネットワーク各機器に対し、Ansible Core、Ansible Automation Controllerのどちらを経由するかを選択し、実際の運用設定を自動的に行います。</div>
 </div>
 <a class="reference internal image-reference" href="../../../../_images/overview.png"><img alt="Exastro概要" src="../../../../_images/overview.png" style="width: 6.68819in; height: 3.35972in;" /></a>
 <div class="line-block">
-<div class="line">Ansible driverには以下のモードを用意しています。</div>
+<div class="line">Ansible driverには用途に応じて以下3つのモードを用意しています。本書ではそのうちLegacy Role モードについて説明します。</div>
 </div>
-<ul>
+<ol class="arabic">
+<li><div class="line-block">
+<div class="line"><strong>Legacy モード</strong></div>
+<div class="line">Ansible標準の機能を用いて各種ホストへ設定を投入します。</div>
+<div class="line">構築コードを単体YAMLファイルとして登録し、作業パターンをその組み合わせで構成します。</div>
+<div class="line">OS,NWの環境設定などの作業用に使われることを想定します。</div>
+</div>
+</li>
 <li><div class="line-block">
 <div class="line"><strong>Legacy Role モード</strong></div>
-<div class="line">Ansible標準の機能を用いて各種ホストへ設定を投入します。</div>
+<div class="line">Legacyモードと同じく、Ansible標準の機能を用いて各種ホストへ設定を投入します。</div>
 <div class="line">構築コードをパッケージとして登録し、作業パターンをRoleの組み合わせで構成します。</div>
 <div class="line">製品部門などが提供するRoleパッケージを用いて、製品のインストール、環境構築などを行う際に使われることを想定します。</div>
 </div>
 </li>
-</ul>
+<li><div class="line-block">
+<div class="line"><strong>Pioneer モード</strong></div>
+<div class="line">Ansibleに独自モジュールを追加し、対話形式による設定投入を可能とします。</div>
+<div class="line">サーバ、ストレージ、ネットワークを問わず、Telnet, SSH でログイン可能なあらゆる機器に対応しています。対象機器と直接やり取りが必要となるため、相応のＩＴスキルが必要となります。</div>
+</div>
+</li>
+</ol>
 <div class="line-block">
-<div class="line">また、Ansible driverは、Playbook中の変数を画面から設定することができます。詳細は本書「 <a class="reference internal" href="#general-operations-variable-handling-in-ansible-driver"><span class="std std-ref">Ansible driverでの変数取り扱い</span></a> 」を参照してください。</div>
+<div class="line">また、Ansible driverは、Playbook中の変数を画面から設定することができます。詳細は本書「 <a class="reference internal" href="#ansible-legacyrole-variable-handling-in-ansible-driver"><span class="std std-ref">Ansible driverでの変数取り扱い</span></a> 」を参照してください。</div>
 </div>
 </section>
 </section>
-<section id="general-operations-variable-handling-in-ansible-driver">
-<span id="id4"></span><h2>Ansible driverでの変数取り扱い<a class="headerlink" href="#general-operations-variable-handling-in-ansible-driver" title="この見出しへのパーマリンク">¶</a></h2>
-<section id="general-operations-variable-handling">
-<span id="id5"></span><h3>変数の種類<a class="headerlink" href="#general-operations-variable-handling" title="この見出しへのパーマリンク">¶</a></h3>
+<section id="ansible-legacyrole-variable-handling-in-ansible-driver">
+<span id="id3"></span><h2>Ansible driverでの変数取り扱い<a class="headerlink" href="#ansible-legacyrole-variable-handling-in-ansible-driver" title="この見出しへのパーマリンク">¶</a></h2>
+<section id="ansible-legacyrole-variable-handling">
+<span id="id4"></span><h3>変数の種類<a class="headerlink" href="#ansible-legacyrole-variable-handling" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
 <div class="line">Ansible driverでは、Playbook中の変数の具体値をITAの設定画面から設定することができます。</div>
-<div class="line"><strong>※設定方法の詳細は、本書「</strong> <a class="reference internal" href="#general-operations-substitution-value-auto-registration-setting"><span class="std std-ref">代入値自動登録設定</span></a> <strong>」を参照してください。</strong></div>
+<div class="line"><strong>※設定方法の詳細は、本書「</strong> <a class="reference internal" href="#ansible-legacyrole-substitution-value-auto-registration-setting"><span class="std std-ref">代入値自動登録設定</span></a> <strong>」を参照してください。</strong></div>
 <div class="line">Playbook中の変数で、ITAの変数として扱える変数は以下の7種類があります。</div>
 </div>
 </section>
+<section id="id5">
+<h3>通常変数<a class="headerlink" href="#id5" title="この見出しへのパーマリンク">¶</a></h3>
 <section id="id6">
-<h3>通常変数<a class="headerlink" href="#id6" title="この見出しへのパーマリンク">¶</a></h3>
-<section id="id7">
-<h4>概要<a class="headerlink" href="#id7" title="この見出しへのパーマリンク">¶</a></h4>
+<h4>概要<a class="headerlink" href="#id6" title="この見出しへのパーマリンク">¶</a></h4>
 <div class="line-block">
 <div class="line">変数名に対して具体値を1つ定義できる変数です。</div>
 </div>
 </section>
 <section id="playbook">
 <h4>playbookにおける表記<a class="headerlink" href="#playbook" title="この見出しへのパーマリンク">¶</a></h4>
-<section id="id8">
-<h5>書式<a class="headerlink" href="#id8" title="この見出しへのパーマリンク">¶</a></h5>
+<section id="id7">
+<h5>書式<a class="headerlink" href="#id7" title="この見出しへのパーマリンク">¶</a></h5>
 <div class="line-block">
 <div class="line">変数を使用する際、playbook内の変数を以下とする。</div>
 <div class="line">※ユーザ定義範囲の記載ルールはAnsibleルールに準ずる</div>
@@ -424,8 +405,8 @@
 </pre></div>
 </div>
 </section>
-<section id="id9">
-<h5>正しい記述例<a class="headerlink" href="#id9" title="この見出しへのパーマリンク">¶</a></h5>
+<section id="id8">
+<h5>正しい記述例<a class="headerlink" href="#id8" title="この見出しへのパーマリンク">¶</a></h5>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">VAR_users</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span>
 </pre></div>
 </div>
@@ -435,7 +416,7 @@
 </div>
 </section>
 <section id="wrong-description-example">
-<span id="id10"></span><h5>誤った記述例<a class="headerlink" href="#wrong-description-example" title="この見出しへのパーマリンク">¶</a></h5>
+<span id="id9"></span><h5>誤った記述例<a class="headerlink" href="#wrong-description-example" title="この見出しへのパーマリンク">¶</a></h5>
 <ul>
 <li><div class="line-block">
 <div class="line">&quot;{{&quot;または&quot;}}&quot; と変数名の間に「半角スペース」がない</div>
@@ -487,18 +468,18 @@
 </section>
 </section>
 </section>
+<section id="id10">
+<h3>複数具体値変数<a class="headerlink" href="#id10" title="この見出しへのパーマリンク">¶</a></h3>
 <section id="id11">
-<h3>複数具体値変数<a class="headerlink" href="#id11" title="この見出しへのパーマリンク">¶</a></h3>
-<section id="id12">
-<h4>概要<a class="headerlink" href="#id12" title="この見出しへのパーマリンク">¶</a></h4>
+<h4>概要<a class="headerlink" href="#id11" title="この見出しへのパーマリンク">¶</a></h4>
 <div class="line-block">
 <div class="line">変数名に対して具体値を複数定義できる変数です。</div>
 </div>
 </section>
+<section id="id12">
+<h4>playbookにおける表記<a class="headerlink" href="#id12" title="この見出しへのパーマリンク">¶</a></h4>
 <section id="id13">
-<h4>playbookにおける表記<a class="headerlink" href="#id13" title="この見出しへのパーマリンク">¶</a></h4>
-<section id="id14">
-<h5>書式<a class="headerlink" href="#id14" title="この見出しへのパーマリンク">¶</a></h5>
+<h5>書式<a class="headerlink" href="#id13" title="この見出しへのパーマリンク">¶</a></h5>
 <div class="line-block">
 <div class="line">変数を使用する際、playbook内の変数を以下とする。</div>
 <div class="line">※ユーザ定義範囲の記載ルールはAnsibleルールに準ずる</div>
@@ -508,34 +489,34 @@
 </pre></div>
 </div>
 </section>
-<section id="id15">
-<h5>正しい記述例<a class="headerlink" href="#id15" title="この見出しへのパーマリンク">¶</a></h5>
+<section id="id14">
+<h5>正しい記述例<a class="headerlink" href="#id14" title="この見出しへのパーマリンク">¶</a></h5>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">VAR_users</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mysql</span>
 </pre></div>
 </div>
 </section>
-<section id="id16">
-<h5>誤った記述例<a class="headerlink" href="#id16" title="この見出しへのパーマリンク">¶</a></h5>
+<section id="id15">
+<h5>誤った記述例<a class="headerlink" href="#id15" title="この見出しへのパーマリンク">¶</a></h5>
 <div class="line-block">
-<div class="line">通常変数の <a class="reference internal" href="../../../../2.1/ja/manuals/ansible-driver/ansible_pioneer.html#wrong-description-example"><span class="std std-ref">誤った記述例</span></a> を参照してください。</div>
+<div class="line">通常変数の <a class="reference internal" href="ansible_pioneer.html#wrong-description-example"><span class="std std-ref">誤った記述例</span></a> を参照してください。</div>
 </div>
 </section>
 </section>
 </section>
+<section id="id16">
+<h3>多段変数<a class="headerlink" href="#id16" title="この見出しへのパーマリンク">¶</a></h3>
 <section id="id17">
-<h3>多段変数<a class="headerlink" href="#id17" title="この見出しへのパーマリンク">¶</a></h3>
-<section id="id18">
-<h4>概要<a class="headerlink" href="#id18" title="この見出しへのパーマリンク">¶</a></h4>
+<h4>概要<a class="headerlink" href="#id17" title="この見出しへのパーマリンク">¶</a></h4>
 <div class="line-block">
 <div class="line">階層化された変数です。</div>
 </div>
 </section>
+<section id="id18">
+<h4>playbookにおける表記<a class="headerlink" href="#id18" title="この見出しへのパーマリンク">¶</a></h4>
 <section id="id19">
-<h4>playbookにおける表記<a class="headerlink" href="#id19" title="この見出しへのパーマリンク">¶</a></h4>
-<section id="id20">
-<h5>書式<a class="headerlink" href="#id20" title="この見出しへのパーマリンク">¶</a></h5>
+<h5>書式<a class="headerlink" href="#id19" title="この見出しへのパーマリンク">¶</a></h5>
 <div class="line-block">
 <div class="line">変数を使用する際、playbook内の変数を以下とする。</div>
 <div class="line">※ユーザ定義範囲の記載ルールはAnsibleルールに準ずる</div>
@@ -545,8 +526,8 @@
 </pre></div>
 </div>
 </section>
-<section id="id21">
-<h5>正しい記述例<a class="headerlink" href="#id21" title="この見出しへのパーマリンク">¶</a></h5>
+<section id="id20">
+<h5>正しい記述例<a class="headerlink" href="#id20" title="この見出しへのパーマリンク">¶</a></h5>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">VAR_users</span><span class="p">:</span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">user-name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">alice</span>
 <span class="w">      </span><span class="nt">authorized</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">password</span>
@@ -555,32 +536,32 @@
 <div class="line-block">
 <div class="line">メンバー変数名は、下記の7文字を除くascii文字(0x20～0x7e)が使用出来ます。</div>
 <div class="line">&quot; . [ ] ' \ :</div>
-<div class="line">尚、コーテーションで囲まないと変数名の先頭に使用出来ない文字がいくつかあります。</div>
+<div class="line">尚、コーテーションで囲ないと変数名の先頭に使用出来ない文字がいくつかあります。</div>
 <div class="line">詳しくは、Ansibleドキュメント <a class="reference external" href="https://docs.ansible.com/ansible/latest/reference_appendices/YAMLSyntax.html">Yaml syntax</a> を参照してください。</div>
 </div>
 </section>
-<section id="id22">
-<h5>誤った記述例<a class="headerlink" href="#id22" title="この見出しへのパーマリンク">¶</a></h5>
+<section id="id21">
+<h5>誤った記述例<a class="headerlink" href="#id21" title="この見出しへのパーマリンク">¶</a></h5>
 <div class="line-block">
-<div class="line">通常変数の <a class="reference internal" href="../../../../2.1/ja/manuals/ansible-driver/ansible_pioneer.html#wrong-description-example"><span class="std std-ref">誤った記述例</span></a> を参照してください。</div>
+<div class="line">通常変数の <a class="reference internal" href="ansible_pioneer.html#wrong-description-example"><span class="std std-ref">誤った記述例</span></a> を参照してください。</div>
 </div>
 </section>
 </section>
 </section>
+<section id="id22">
+<h3>グローバル変数<a class="headerlink" href="#id22" title="この見出しへのパーマリンク">¶</a></h3>
 <section id="id23">
-<h3>グローバル変数<a class="headerlink" href="#id23" title="この見出しへのパーマリンク">¶</a></h3>
-<section id="id24">
-<h4>概要<a class="headerlink" href="#id24" title="この見出しへのパーマリンク">¶</a></h4>
+<h4>概要<a class="headerlink" href="#id23" title="この見出しへのパーマリンク">¶</a></h4>
 <div class="line-block">
 <div class="line"><span class="menuselection">グローバル変数</span> メニューから登録された変数です。</div>
 <div class="line">ITAWebUI上のグローバル変数管理メニューでグローバル変数を登録する際、</div>
 <div class="line">グローバル変数名の接頭文字をGBL_とし、GBL_を含め255Byte以内とする。</div>
 </div>
 </section>
+<section id="id24">
+<h4>playbookにおける表記<a class="headerlink" href="#id24" title="この見出しへのパーマリンク">¶</a></h4>
 <section id="id25">
-<h4>playbookにおける表記<a class="headerlink" href="#id25" title="この見出しへのパーマリンク">¶</a></h4>
-<section id="id26">
-<h5>書式<a class="headerlink" href="#id26" title="この見出しへのパーマリンク">¶</a></h5>
+<h5>書式<a class="headerlink" href="#id25" title="この見出しへのパーマリンク">¶</a></h5>
 <div class="line-block">
 <div class="line">変数を使用する際、playbook内の変数を以下とする。</div>
 <div class="line">※ユーザ定義範囲の記載ルールはAnsibleルールに準ずる</div>
@@ -590,15 +571,15 @@
 </pre></div>
 </div>
 </section>
-<section id="id27">
-<h5>正しい記述例<a class="headerlink" href="#id27" title="この見出しへのパーマリンク">¶</a></h5>
+<section id="id26">
+<h5>正しい記述例<a class="headerlink" href="#id26" title="この見出しへのパーマリンク">¶</a></h5>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ファイル内容確認</span>
 <span class="w">  </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cat /tmp/{{ GBL_SAMPLE }}</span>
 </pre></div>
 </div>
 </section>
-<section id="id28">
-<h5>誤った記述例<a class="headerlink" href="#id28" title="この見出しへのパーマリンク">¶</a></h5>
+<section id="id27">
+<h5>誤った記述例<a class="headerlink" href="#id27" title="この見出しへのパーマリンク">¶</a></h5>
 <ul>
 <li><div class="line-block">
 <div class="line">接頭文字(GBL_)が小文字になっている</div>
@@ -640,20 +621,20 @@
 </section>
 </section>
 </section>
+<section id="id28">
+<h3>テンプレート埋込変数<a class="headerlink" href="#id28" title="この見出しへのパーマリンク">¶</a></h3>
 <section id="id29">
-<h3>テンプレート埋込変数<a class="headerlink" href="#id29" title="この見出しへのパーマリンク">¶</a></h3>
-<section id="id30">
-<h4>概要<a class="headerlink" href="#id30" title="この見出しへのパーマリンク">¶</a></h4>
+<h4>概要<a class="headerlink" href="#id29" title="この見出しへのパーマリンク">¶</a></h4>
 <div class="line-block">
 <div class="line"><span class="menuselection">テンプレート管理</span> メニューから登録された変数です。</div>
 <div class="line">ITAWebUI上のテンプレート管理メニューでテンプレート素材を登録をする際、</div>
 <div class="line">テンプレート埋込変数名の接頭文字をTPF_とし、TPF_を含め255Byte以内とする。</div>
 </div>
 </section>
+<section id="id30">
+<h4>playbookにおける表記<a class="headerlink" href="#id30" title="この見出しへのパーマリンク">¶</a></h4>
 <section id="id31">
-<h4>playbookにおける表記<a class="headerlink" href="#id31" title="この見出しへのパーマリンク">¶</a></h4>
-<section id="id32">
-<h5>書式<a class="headerlink" href="#id32" title="この見出しへのパーマリンク">¶</a></h5>
+<h5>書式<a class="headerlink" href="#id31" title="この見出しへのパーマリンク">¶</a></h5>
 <div class="line-block">
 <div class="line">変数を使用する際、playbook内の変数を以下とする。</div>
 <div class="line">※ユーザ定義範囲の記載ルールはAnsibleルールに準ずる</div>
@@ -663,15 +644,15 @@
 </pre></div>
 </div>
 </section>
-<section id="id33">
-<h5>正しい記述例<a class="headerlink" href="#id33" title="この見出しへのパーマリンク">¶</a></h5>
+<section id="id32">
+<h5>正しい記述例<a class="headerlink" href="#id32" title="この見出しへのパーマリンク">¶</a></h5>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ファイル内容確認</span>
 <span class="w">  </span><span class="nt">template</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">src={{ TPF_SAMPLE }} dest=/tmp/SAMPLE.txt</span>
 </pre></div>
 </div>
 </section>
-<section id="id34">
-<h5>誤った記述例<a class="headerlink" href="#id34" title="この見出しへのパーマリンク">¶</a></h5>
+<section id="id33">
+<h5>誤った記述例<a class="headerlink" href="#id33" title="この見出しへのパーマリンク">¶</a></h5>
 <ul>
 <li><div class="line-block">
 <div class="line">&quot;{{&quot;または&quot;}}&quot; と変数名の間に「半角スペース」がない</div>
@@ -732,19 +713,19 @@
 </section>
 </section>
 </section>
+<section id="id34">
+<h3>ファイル埋込変数<a class="headerlink" href="#id34" title="この見出しへのパーマリンク">¶</a></h3>
 <section id="id35">
-<h3>ファイル埋込変数<a class="headerlink" href="#id35" title="この見出しへのパーマリンク">¶</a></h3>
-<section id="id36">
-<h4>概要<a class="headerlink" href="#id36" title="この見出しへのパーマリンク">¶</a></h4>
+<h4>概要<a class="headerlink" href="#id35" title="この見出しへのパーマリンク">¶</a></h4>
 <div class="line-block">
 <div class="line"><span class="menuselection">ファイル管理</span> メニューから登録された変数です。</div>
 <div class="line">ITAWebUI上のファイル管理メニューでファイル埋込変数を登録する際、ファイル埋込変数名の接頭文字をCPF_とし、CPF_を含め255Byte以内とする。</div>
 </div>
 </section>
+<section id="id36">
+<h4>playbookにおける表記<a class="headerlink" href="#id36" title="この見出しへのパーマリンク">¶</a></h4>
 <section id="id37">
-<h4>playbookにおける表記<a class="headerlink" href="#id37" title="この見出しへのパーマリンク">¶</a></h4>
-<section id="id38">
-<h5>書式<a class="headerlink" href="#id38" title="この見出しへのパーマリンク">¶</a></h5>
+<h5>書式<a class="headerlink" href="#id37" title="この見出しへのパーマリンク">¶</a></h5>
 <div class="line-block">
 <div class="line">変数を使用する際、playbook内の変数を以下とする。</div>
 <div class="line">※ユーザ定義範囲の記載ルールはAnsibleルールに準ずる</div>
@@ -754,15 +735,15 @@
 </pre></div>
 </div>
 </section>
-<section id="id39">
-<h5>正しい記述例<a class="headerlink" href="#id39" title="この見出しへのパーマリンク">¶</a></h5>
+<section id="id38">
+<h5>正しい記述例<a class="headerlink" href="#id38" title="この見出しへのパーマリンク">¶</a></h5>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ファイル内容確認</span>
 <span class="w">  </span><span class="nt">copy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">src={{ CPF_SAMPLE }} dest=/tmp/SAMPLE.txt</span>
 </pre></div>
 </div>
 </section>
-<section id="id40">
-<h5>誤った記述例<a class="headerlink" href="#id40" title="この見出しへのパーマリンク">¶</a></h5>
+<section id="id39">
+<h5>誤った記述例<a class="headerlink" href="#id39" title="この見出しへのパーマリンク">¶</a></h5>
 <ul>
 <li><div class="line-block">
 <div class="line">&quot;{{&quot;または&quot;}}&quot; と変数名の間に「半角スペース」がない</div>
@@ -824,15 +805,15 @@
 </section>
 </section>
 <section id="ita">
-<span id="ita-unique-variables"></span><h3>ITA独自変数<a class="headerlink" href="#ita" title="この見出しへのパーマリンク">¶</a></h3>
-<section id="id41">
-<h4>概要<a class="headerlink" href="#id41" title="この見出しへのパーマリンク">¶</a></h4>
+<h3>ITA独自変数<a class="headerlink" href="#ita" title="この見出しへのパーマリンク">¶</a></h3>
+<section id="id40">
+<h4>概要<a class="headerlink" href="#id40" title="この見出しへのパーマリンク">¶</a></h4>
 <div class="line-block">
 <div class="line">ITA 独自で定義された変数です。</div>
 </div>
 </section>
-<section id="id42">
-<h4>機器一覧<a class="headerlink" href="#id42" title="この見出しへのパーマリンク">¶</a></h4>
+<section id="id41">
+<h4>機器一覧<a class="headerlink" href="#id41" title="この見出しへのパーマリンク">¶</a></h4>
 <div class="line-block">
 <div class="line">基本コンソールの機器一覧の下記項目を変数として扱えます。</div>
 </div>
@@ -863,11 +844,11 @@
 </table>
 <div class="line-block">
 <div class="line"><strong>変数名の前後の「__」は半角アンダーバー2文字です。</strong></div>
-<div class="line">機器一覧については、<a class="reference internal" href="../it_automation_base/basic_console.html"><span class="doc">基本コンソール</span></a> を参照してください。</div>
+<div class="line">機器一覧については、<span class="xref std std-doc">../it_automation_base/basic_console</span> を参照してください。</div>
 </div>
 </section>
-<section id="id43">
-<h4>オペレーション<a class="headerlink" href="#id43" title="この見出しへのパーマリンク">¶</a></h4>
+<section id="id42">
+<h4>オペレーション<a class="headerlink" href="#id42" title="この見出しへのパーマリンク">¶</a></h4>
 <div class="line-block">
 <div class="line">作業実行時のオペレーションを変数として扱えます。</div>
 </div>
@@ -891,8 +872,8 @@
 <div class="line">設定値 : 実施予定日時「YYYY/MM/DD HH:MM」_オペレーションID:オペレーション名称</div>
 </div>
 </section>
-<section id="id44">
-<h4>データ連携<a class="headerlink" href="#id44" title="この見出しへのパーマリンク">¶</a></h4>
+<section id="id43">
+<h4>データ連携<a class="headerlink" href="#id43" title="この見出しへのパーマリンク">¶</a></h4>
 <div class="line-block">
 <div class="line">作業実行時のディレクトリパスを下記の変数として扱えます。</div>
 </div>
@@ -956,21 +937,20 @@
 </table>
 </section>
 </section>
-<section id="id45">
-<h3>変数の抜出および具体値登録<a class="headerlink" href="#id45" title="この見出しへのパーマリンク">¶</a></h3>
+<section id="id44">
+<h3>変数の抜出および具体値登録<a class="headerlink" href="#id44" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
-<div class="line">ITAにアップロードしたPlaybook等の資材から変数を抜出し、各メニューから具体値を登録できます。各メニューから登録した変数の具体値は、作業実行時にホスト変数ファイルに出力されます。</div>
+<div class="line">各モードとも、ITAにアップロードしたPlaybook等の資材から変数を抜出し、各メニューから具体値を登録できます。各メニューから登録した変数の具体値は、作業実行時にホスト変数ファイルに出力されます。</div>
 <div class="line">変数の抜出方法は以下のとおりです。</div>
 </div>
-<ol class="arabic">
-<li><div class="line-block">
+<div class="line-block">
 <div class="line"><strong>Ansible-Legacy Role</strong></div>
-<div class="line">「ロールパッケージ管理 (本書： <a class="reference internal" href="#general-operations-role-package-list-ansible-legacy-role-only"><span class="std std-ref">ロールパッケージ管理</span></a> )」でアップロードしたロールパッケージ内のdefaults変数定義ファイルより変数定義の抜出を行います。</div>
-<div class="line">詳しくは「ロールパッケージの記述(本書： <a class="reference internal" href="#general-operations-role-package-list-ansible-legacy-role-only"><span class="std std-ref">ロールパッケージ管理</span></a> )」を参照してください。</div>
+<div class="line">「ロールパッケージ管理 (本書： <a class="reference internal" href="#ansible-legacyrole-role-package-list-ansible-legacy-role-only"><span class="std std-ref">ロールパッケージ管理</span></a> )」でアップロードしたロールパッケージ内のdefaults変数定義ファイルより変数定義の抜出を行います。</div>
+<div class="line">詳しくは「ロールパッケージの記述(本書： <a class="reference internal" href="#ansible-legacyrole-role-package-list-ansible-legacy-role-only"><span class="std std-ref">ロールパッケージ管理</span></a> )」を参照してください。</div>
 <div class="line">また、アップロードしたロールパッケージ内のplaybookより、以下の書式の変数定義を抜出します。</div>
 </div>
-<table class="docutils align-left" id="id84">
-<caption><span class="caption-number">表 20 </span><span class="caption-text">変数の抜出および具体値登録（Ansible-Legacy Role）</span><a class="headerlink" href="#id84" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="docutils align-left" id="id87">
+<caption><span class="caption-text">変数の抜出および具体値登録</span><a class="headerlink" href="#id87" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 11%" />
 <col style="width: 22%" />
@@ -1002,7 +982,7 @@
 </td>
 <td rowspan="3"><p><strong>○</strong></p></td>
 <td rowspan="3"><p><strong>×</strong></p></td>
-<td><p>具体値の登録は「 <a class="reference internal" href="#general-operations-global-variable-list"><span class="std std-ref">グローバル変数管理</span></a> 」メニューより行います。</p></td>
+<td><p>具体値の登録は「 <a class="reference internal" href="#ansible-legacyrole-global-variable-list"><span class="std std-ref">グローバル変数管理</span></a> 」メニューより行います。</p></td>
 </tr>
 <tr class="row-even"><td><p>テンプレート埋込変数</p></td>
 <td><div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">TPF_xxx</span><span class="w"> </span><span class="p p-Indicator">}}</span>
@@ -1011,7 +991,7 @@
 </pre></div>
 </div>
 </td>
-<td><p>具体値の登録は「<a class="reference internal" href="#general-operations-template-list"><span class="std std-ref">テンプレート管理</span></a>」メニューより行います。</p></td>
+<td><p>具体値の登録は「<a class="reference internal" href="#ansible-legacyrole-template-list"><span class="std std-ref">テンプレート管理</span></a>」メニューより行います。</p></td>
 </tr>
 <tr class="row-odd"><td><p>ファイル埋込変数</p></td>
 <td><div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">{{</span><span class="w"> </span><span class="nv">CPF_xxx</span><span class="w"> </span><span class="p p-Indicator">}}</span>
@@ -1020,18 +1000,16 @@
 </pre></div>
 </div>
 </td>
-<td><p>具体値の登録は「<a class="reference internal" href="#general-operations-file-list"><span class="std std-ref">ファイル管理</span></a>」メニューより行います。</p></td>
+<td><p>具体値の登録は「<a class="reference internal" href="#ansible-legacyrole-file-list"><span class="std std-ref">ファイル管理</span></a>」メニューより行います。</p></td>
 </tr>
 </tbody>
 </table>
 <div class="line-block">
 <div class="line">※ 〇：変数定義抜出対象のplaybook　 ×：変数定義抜出対象外のplaybook</div>
 </div>
-</li>
-</ol>
 </section>
-<section id="id46">
-<h3>代入値登録による変数の扱い<a class="headerlink" href="#id46" title="この見出しへのパーマリンク">¶</a></h3>
+<section id="id45">
+<h3>代入値登録による変数の扱い<a class="headerlink" href="#id45" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
 <div class="line">Playbookで定義した変数の値は代入値登録機能により上書きすることができます。</div>
 <div class="line">Playbook中の変数と、代入値管理機能で登録した変数の値の関係を、以下の図に示します。</div>
@@ -1048,83 +1026,89 @@
 </li>
 <li><div class="line-block">
 <div class="line">Playbook中の変数に指定した値</div>
-<div class="line">詳細は 「 <a class="reference internal" href="#general-operations-substitution-value-list"><span class="std std-ref">代入値管理</span></a> 」を参照してください。</div>
+<div class="line">詳細は 「 <a class="reference internal" href="#ansible-legacyrole-substitution-value-list"><span class="std std-ref">代入値管理</span></a> 」を参照してください。</div>
 </div>
 </li>
 </ol>
 </section>
 </section>
-<section id="id47">
-<h2>Ansible driver コンソールメニュー構成<a class="headerlink" href="#id47" title="この見出しへのパーマリンク">¶</a></h2>
+<section id="id46">
+<h2>Ansible driver コンソールメニュー構成<a class="headerlink" href="#id46" title="この見出しへのパーマリンク">¶</a></h2>
 <div class="line-block">
-<div class="line">本章では、ITAコンソールのメニュー構成について説明します。</div>
+<div class="line">本章では、ITA コンソールのメニュー構成について説明します。</div>
 </div>
-<section id="id48">
-<h3>メニュー/画面一覧<a class="headerlink" href="#id48" title="この見出しへのパーマリンク">¶</a></h3>
+<section id="id47">
+<h3>メニュー/画面一覧<a class="headerlink" href="#id47" title="この見出しへのパーマリンク">¶</a></h3>
 <ol class="arabic">
 <li><div class="line-block">
-<div class="line"><strong>ITA 基本コンソールのメニュー</strong></div>
-<div class="line">Ansible driverで利用するITA基本コンソールのメニュー一覧を以下に記述します。</div>
+<div class="line"><strong>基本コンソールのメニュー</strong></div>
 </div>
-<table class="docutils align-left" id="id85">
-<caption><span class="caption-number">表 21 </span><span class="caption-text">基本コンソール メニュー/画面一覧</span><a class="headerlink" href="#id85" title="このテーブルへのパーマリンク">¶</a></caption>
+</li>
+</ol>
+<div class="line-block">
+<div class="line">Ansible driverで利用する 基本コンソールのメニュー一覧を以下に記述します。</div>
+</div>
+<table class="docutils align-left" id="id88">
+<caption><span class="caption-text">基本コンソール メニュー/画面一覧</span><a class="headerlink" href="#id88" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
-<col style="width: 6%" />
-<col style="width: 18%" />
-<col style="width: 24%" />
-<col style="width: 53%" />
+<col style="width: 7%" />
+<col style="width: 29%" />
+<col style="width: 64%" />
 </colgroup>
 <thead>
-<tr class="row-odd"><th class="head"><p><strong>No</strong></p></th>
-<th class="head"><p><strong>メニューグループ</strong></p></th>
-<th class="head"><p><strong>メニュー・画面</strong></p></th>
-<th class="head"><p><strong>説明</strong></p></th>
+<tr class="row-odd"><th class="head"><p>No</p></th>
+<th class="head"><p>メニュー画面</p></th>
+<th class="head"><p>説明</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>1</p></td>
-<td><p>基本コンソール</p></td>
 <td><p>オペレーション一覧</p></td>
 <td><p>オペレーション一覧をメンテナンス(閲覧/登録/更新/廃止)できます</p></td>
 </tr>
 </tbody>
 </table>
-</li>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="2">
 <li><div class="line-block">
 <div class="line"><strong>Ansible共通コンソールのメニュー</strong></div>
+</div>
+</li>
+</ol>
+<div class="line-block">
 <div class="line">Ansible共通コンソールのメニュー一覧を以下に記述します。</div>
 </div>
-<table class="docutils align-left" id="id86">
-<caption><span class="caption-number">表 22 </span><span class="caption-text">共通コンソール メニュー/画面一覧</span><a class="headerlink" href="#id86" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="docutils align-left" id="id89">
+<caption><span class="caption-text">Ansible共通コンソール メニュー/画面一覧</span><a class="headerlink" href="#id89" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
-<col style="width: 6%" />
-<col style="width: 18%" />
-<col style="width: 18%" />
-<col style="width: 59%" />
+<col style="width: 7%" />
+<col style="width: 21%" />
+<col style="width: 71%" />
 </colgroup>
 <thead>
-<tr class="row-odd"><th class="head"><p><strong>No</strong></p></th>
-<th class="head"><p><strong>メニューグループ</strong></p></th>
-<th class="head"><p><strong>メニュー・画面</strong></p></th>
-<th class="head"><p><strong>説明</strong></p></th>
+<tr class="row-odd"><th class="head"><p>No</p></th>
+<th class="head"><p>メニュー・画面</p></th>
+<th class="head"><p>説明</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>1</p></td>
-<td rowspan="8"><p>Ansible共通コンソール</p></td>
 <td><p>機器一覧</p></td>
 <td><p>作業対象ホストの情報をメンテナンス(閲覧/登録/更新/廃止)できます。</p></td>
 </tr>
 <tr class="row-odd"><td><p>2</p></td>
 <td><p>インターフェース情報</p></td>
-<td><p>Ansible Core、Ansible Automation Controllerサーバのどちらを実行エンジンとし構築作業をするか選択をします。</p>
-<p>ITAシステム・Ansibledriverサーバと実行エンジンのサーバが共有するディレクトリのパスおよび、実行エンジンのサーバへの接続インターフェース情報を管理します。</p>
+<td><div class="line-block">
+<div class="line">Ansible Core、Ansible Automation Controllerサーバのどちらを実行エンジンとし構築作業をするか選択をします。</div>
+<div class="line">ITAシステム・Ansible driverサーバと実行エンジンのサーバが共有するディレクトリのパスおよび、実行エンジンのサーバへの接続インターフェース情報を管理します。</div>
+</div>
 </td>
 </tr>
 <tr class="row-even"><td><p>3</p></td>
 <td><p>Ansible Automation Controllerホスト一覧</p></td>
-<td><p>Ansible Automation ControllerのRestAPI実行に必要な情報、および構築資材をAnsible Automation
-Controllerにファイル転送するために必要な情報を管理します。</p></td>
+<td><p>Ansible Automation ControllerのRestAPI実行に必要な情報、および構築資材をAnsible Automation Controllerにファイル転送するために必要な情報を管理します。</p></td>
 </tr>
 <tr class="row-odd"><td><p>4</p></td>
 <td><p>グローバル変数管理</p></td>
@@ -1139,15 +1123,17 @@ Controllerにファイル転送するために必要な情報を管理します�
 <td><p>Playbook内のtemplateモジュールでなどで使用するテンプレートファイルと埋め込み変数を管理します。</p></td>
 </tr>
 <tr class="row-even"><td><p>7</p></td>
-<td><p>共通変数利用リスト(※1)</p></td>
+<td><p>共通変数利用リスト (※1)</p></td>
 <td><p>テンプレート管理、ファイル管理、グローバル管理に登録されている変数をどの素材(ロール)で使用しているかを閲覧できます。</p></td>
 </tr>
 <tr class="row-odd"><td><p>8</p></td>
-<td><p>管理対象外変数リスト(※1)</p></td>
-<td><p>ロールパッケージ管理のデフォルト変数定義やテンプレート管理の変数定義で定義している変数で、代入値自動登録の変数一覧に表示したくない変数をメンテナンス(参照/更新/廃止/復活)できます。</p>
-<p>変数名は正規表記で記載できます。</p>
-<p>(例) ansible_* *:ワイルドカード</p>
-<p>ansible_[0-9a-zA-Z_]*</p>
+<td><p>管理対象外変数リスト (※1)</p></td>
+<td><div class="line-block">
+<div class="line">ロールパッケージ管理のデフォルト変数定義やテンプレート管理の変数定義で定義している変数で、代入値自動登録の変数一覧に表示したくない変数をメンテナンス(参照/更新/廃止/復活)できます。</div>
+<div class="line">変数名は正規表記で記載できます。</div>
+<div class="line">(例) ansible_* *:ワイルドカード</div>
+<div class="line">ansible_[0-9a-zA-Z_]*</div>
+</div>
 </td>
 </tr>
 </tbody>
@@ -1157,25 +1143,32 @@ Controllerにファイル転送するために必要な情報を管理します�
 <div class="line-block">
 <div class="line">※1 非表示メニューは、バックヤード機能でデータの登録・更新を行うメニューです。</div>
 <div class="line">Ansible Driver機能をインストールした状態では表示されないメニューに設定されています。</div>
-<div class="line">非表示メニューを表示するには、<span class="menuselection">管理コンソール‣ロール・メニュー紐付管理</span> で各メニューの復活処理を行います。詳細は <a class="reference internal" href="../it_automation_base/management_console.html"><span class="doc">管理コンソール</span></a> を参照してください。</div>
+<div class="line">非表示メニューを表示するには、<span class="menuselection">管理コンソール‣ロール・メニュー紐付管理</span> で各メニューの復活処理を行います。詳細は <span class="xref std std-doc">../it_automation_base/management_console</span> を参照してください。</div>
 </div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ol class="arabic" start="3">
+<li><div class="line-block">
+<div class="line"><strong>Ansible-LegacyRoleコンソールのメニュー</strong></div>
 </div>
 </li>
-<li><div class="line-block">
-<div class="line"><strong>Ansibleコンソールのメニュー</strong></div>
-<div class="line">各Ansibleコンソールに対応するメニュー一覧を以下に記述します。</div>
+</ol>
+<div class="line-block">
+<div class="line">Ansible-LegacyRoleに対応するメニュー一覧を以下に記述します。</div>
 </div>
-<table class="docutils align-left" id="id87">
-<caption><span class="caption-number">表 23 </span><span class="caption-text">Ansible-LegacyRoleコンソール メニュー/画面一覧</span><a class="headerlink" href="#id87" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="docutils align-left" id="id90">
+<caption><span class="caption-text">Ansible-LegacyRoleコンソール メニュー/画面一覧</span><a class="headerlink" href="#id90" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 15%" />
 <col style="width: 23%" />
 <col style="width: 62%" />
 </colgroup>
 <thead>
-<tr class="row-odd"><th class="head"><p><strong>No</strong></p></th>
-<th class="head"><p><strong>メニュー・画面</strong></p></th>
-<th class="head"><p><strong>説明</strong></p></th>
+<tr class="row-odd"><th class="head"><p>No</p></th>
+<th class="head"><p>メニュー・画面</p></th>
+<th class="head"><p>説明</p></th>
 </tr>
 </thead>
 <tbody>
@@ -1229,11 +1222,11 @@ Controllerにファイル転送するために必要な情報を管理します�
 </tr>
 <tr class="row-even"><td><p>13</p></td>
 <td><p>多段変数メンバー管理 (※1)</p></td>
-<td><p>ロールパッケージ管理にアップロードしたロールパッケージファイル「zip」内のデフォルト変数定義ファイルや ITAreadmeファイルで定義している多段変数の構造を閲覧できます。</p></td>
+<td><p>ロールパッケージ管理にアップロードしたロールパッケージファイル「zip」内のデフォルト変数定義ファイルや ITA readmeファイルで定義している多段変数の構造を閲覧できます。</p></td>
 </tr>
 <tr class="row-odd"><td><p>14</p></td>
 <td><p>多段変数配列組合せ管理 (※1)</p></td>
-<td><p>ロールパッケージ管理にアップロードしたロールパッケージファイル「zip」内のデフォルト変数定義ファイルや ITAreadmeファイルで定義している多段変数配列組合せを閲覧できます。</p></td>
+<td><p>ロールパッケージ管理にアップロードしたロールパッケージファイル「zip」内のデフォルト変数定義ファイルや ITA readmeファイルで定義している多段変数配列組合せを閲覧できます。</p></td>
 </tr>
 </tbody>
 </table>
@@ -1242,20 +1235,18 @@ Controllerにファイル転送するために必要な情報を管理します�
 <div class="line-block">
 <div class="line">※1 非表示メニューは、バックヤード機能でデータの登録・更新を行うメニューです。</div>
 <div class="line">Ansible Driver機能をインストールした状態では表示されないメニューに設定されています。</div>
-<div class="line">非表示メニューを表示するには、<span class="menuselection">管理コンソール‣ロール・メニュー紐付管理</span> で各メニューの復活処理を行います。詳細は <a class="reference internal" href="../it_automation_base/management_console.html"><span class="doc">管理コンソール</span></a> を参照してください。</div>
+<div class="line">非表示メニューを表示するには、<span class="menuselection">管理コンソール‣ロール・メニュー紐付管理</span> で各メニューの復活処理を行います。詳細は <span class="xref std std-doc">../it_automation_base/management_console</span> を参照してください。</div>
 </div>
 </div>
-</li>
-</ol>
 </section>
 </section>
-<section id="id49">
-<h2>Ansible driver利用手順<a class="headerlink" href="#id49" title="この見出しへのパーマリンク">¶</a></h2>
+<section id="id48">
+<h2>Ansible driver利用手順<a class="headerlink" href="#id48" title="この見出しへのパーマリンク">¶</a></h2>
 <div class="line-block">
 <div class="line">Ansibleコンソールの利用手順について説明します。</div>
 </div>
-<section id="ansible-legacyrole">
-<h3>Ansible-LegacyRole作業フロー<a class="headerlink" href="#ansible-legacyrole" title="この見出しへのパーマリンク">¶</a></h3>
+<section id="id49">
+<h3>Ansible-LegacyRoleの作業フロー<a class="headerlink" href="#id49" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
 <div class="line">以下は、Ansible-LegacyRoleで作業を実行するまでの流れです。</div>
 </div>
@@ -1265,103 +1256,103 @@ Controllerにファイル転送するために必要な情報を管理します�
 <li><div class="line-block">
 <div class="line"><strong>機器情報にAnsible利用情報を設定</strong></div>
 <div class="line">Ansible共通コンソールの機器一覧の画面から、各機器に対してAnsible利用情報を設定します。</div>
-<div class="line">詳細は <a class="reference internal" href="#general-operations-device-list"><span class="std std-ref">機器一覧</span></a> を参照してください。</div>
+<div class="line">詳細は <a class="reference internal" href="#ansible-legacyrole-device-list"><span class="std std-ref">機器一覧</span></a> を参照してください。</div>
 </div>
 </li>
 <li><div class="line-block">
 <div class="line"><strong>投入オペレーション名の登録</strong></div>
 <div class="line">ITA基本コンソールのオペレーション一覧の画面から、作業用の投入オペレーション名を登録します。</div>
-<div class="line">詳細は <a class="reference internal" href="#general-operations-input-operation-list"><span class="std std-ref">オペレーション一覧</span></a> を参照してください。</div>
+<div class="line">詳細は <a class="reference internal" href="#ansible-legacyrole-input-operation-list"><span class="std std-ref">オペレーション一覧</span></a> を参照してください。</div>
 </div>
 </li>
 <li><div class="line-block">
 <div class="line"><strong>インターフェース情報の登録</strong></div>
 <div class="line">Ansible共通コンソールのインターフェース情報の画面から、Ansible Core、Ansible Automation Controllerサーバのどちらを実行エンジンにするかを選択し、実行エンジンのサーバへの接続情報を登録します。</div>
-<div class="line">詳細は <a class="reference internal" href="#general-operations-interface-information"><span class="std std-ref">インターフェース情報</span></a> を参照してください。</div>
+<div class="line">詳細は <a class="reference internal" href="#ansible-legacyrole-interface-information"><span class="std std-ref">インターフェース情報</span></a> を参照してください。</div>
 </div>
 </li>
 <li><div class="line-block">
 <div class="line"><strong>作業パターン(Movement)の登録</strong></div>
 <div class="line">Ansible-LegacyRoleコンソールのMovement一覧の画面から、作業用のMovementを登録します。</div>
-<div class="line">詳細は <a class="reference internal" href="#general-operations-movement-list"><span class="std std-ref">Movement一覧</span></a> を参照してください。</div>
+<div class="line">詳細は <a class="reference internal" href="#ansible-legacyrole-movement-list"><span class="std std-ref">Movement一覧</span></a> を参照してください。</div>
 </div>
 </li>
 <li><div class="line-block">
 <div class="line"><strong>ロールパッケージの登録</strong></div>
 <div class="line">Ansible-LegacyRoleコンソールのロールパッケージ管理の画面から、作業で使用するロールパッケージを登録します。</div>
-<div class="line">詳細は <a class="reference internal" href="#general-operations-role-package-list-ansible-legacy-role-only"><span class="std std-ref">ロールパッケージ管理</span></a> を参照してください。</div>
+<div class="line">詳細は <a class="reference internal" href="#ansible-legacyrole-role-package-list-ansible-legacy-role-only"><span class="std std-ref">ロールパッケージ管理</span></a> を参照してください。</div>
 </div>
 </li>
 <li><div class="line-block">
 <div class="line"><strong>グローバル変数の登録（必要に応じて実施）</strong></div>
 <div class="line">Ansible共通コンソールのグローバル変数管理の画面から、Playbookで使用するグローバル変数を登録します。</div>
-<div class="line">詳細は <a class="reference internal" href="#general-operations-global-variable-list"><span class="std std-ref">グローバル変数管理</span></a> を参照してください。</div>
+<div class="line">詳細は <a class="reference internal" href="#ansible-legacyrole-global-variable-list"><span class="std std-ref">グローバル変数管理</span></a> を参照してください。</div>
 </div>
 </li>
 <li><div class="line-block">
 <div class="line"><strong>素材ファイルの登録（必要に応じて実施）</strong></div>
 <div class="line">Ansible共通コンソールのファイル管理の画面から、作業対象サーバに配置するファイルを登録します。</div>
-<div class="line">詳細は <a class="reference internal" href="#general-operations-file-list"><span class="std std-ref">ファイル管理</span></a> を参照してください。</div>
+<div class="line">詳細は <a class="reference internal" href="#ansible-legacyrole-file-list"><span class="std std-ref">ファイル管理</span></a> を参照してください。</div>
 </div>
 </li>
 <li><div class="line-block">
 <div class="line"><strong>テンプレートファイルの登録（必要に応じて実施）</strong></div>
 <div class="line">Ansible共通コンソールのテンプレート管理の画面から、ロールパッケージのtemplateモジュールなどで使用しているテンプレートファイル(src: で指定する素材)とテンプレート埋込変数を登録します。</div>
-<div class="line">詳細は <a class="reference internal" href="#general-operations-template-list"><span class="std std-ref">テンプレート管理</span></a> を参照してください。</div>
+<div class="line">詳細は <a class="reference internal" href="#ansible-legacyrole-template-list"><span class="std std-ref">テンプレート管理</span></a> を参照してください。</div>
 </div>
 </li>
 <li><div class="line-block">
 <div class="line"><strong>管理対象外変数の登録（必要に応じて実施）</strong></div>
 <div class="line">Ansible共通コンソールの管理対象外変数リストの画面から、ロールパッケージ管理のデフォルト変数定義やテンプレート管理の変数定義で定義している変数で、代入値自動登録の変数一覧に表示したくない変数を登録します。</div>
-<div class="line">詳細は <a class="reference internal" href="#general-operations-unmanaged-var-list"><span class="std std-ref">管理対象外変数リスト</span></a> を参照してください。</div>
+<div class="line">詳細は <a class="reference internal" href="#ansible-legacyrole-unmanaged-var-list"><span class="std std-ref">管理対象外変数リスト</span></a> を参照してください。</div>
 </div>
 </li>
 <li><div class="line-block">
 <div class="line"><strong>Movementにロールパッケージを指定</strong></div>
 <div class="line">Ansible-LegacyRoleコンソールのMovement-ロール紐付の画面から、登録したMovementにロールパッケージを指定します。</div>
-<div class="line">詳細は <a class="reference internal" href="#general-operations-movement-details"><span class="std std-ref">Movement-ロール紐付</span></a> を参照してください。</div>
+<div class="line">詳細は <a class="reference internal" href="#ansible-legacyrole-movement-details"><span class="std std-ref">Movement-ロール紐付</span></a> を参照してください。</div>
 </div>
 </li>
 <li><div class="line-block">
 <div class="line"><strong>多段変数の最大繰返数を指定（必要に応じて実施）</strong></div>
 <div class="line">Ansible-LegacyRoleコンソールの多段変数最大繰返管理の画面から、多段変数で配列定義されているメンバー変数の配列の最大繰返数を指定します。</div>
-<div class="line">詳細は <a class="reference internal" href="#general-operations-nested-variable-list-ansible-legacy-role-only"><span class="std std-ref">変数ネスト管理</span></a> を参照してください。</div>
+<div class="line">詳細は <a class="reference internal" href="#ansible-legacyrole-nested-variable-list-ansible-legacy-role-only"><span class="std std-ref">変数ネスト管理</span></a> を参照してください。</div>
 </div>
 </li>
 <li><div class="line-block">
 <div class="line"><strong>パラメータシートの作成</strong></div>
 <div class="line">メニュー作成コンソールのメニュー作成・定義の画面から、作業対象サーバの設定に使用するデータを登録するためのメニューを作成します。</div>
-<div class="line">詳細は <a class="reference internal" href="../create_param/menu_creation.html"><span class="doc">メニュー作成機能</span></a> を参照してください。</div>
+<div class="line">詳細は <span class="xref std std-doc">../create_param/menu_creation</span> を参照してください。</div>
 </div>
 </li>
 <li><div class="line-block">
 <div class="line"><strong>パラメータシートにデータを登録</strong></div>
 <div class="line">入力用コンソールの前項で作成したパラメータシート画面から、作業対象サーバの設定に使用するデータを登録します。</div>
-<div class="line">詳細は <a class="reference internal" href="../create_param/menu_creation.html"><span class="doc">メニュー作成機能</span></a> を参照してください。</div>
+<div class="line">詳細は <span class="xref std std-doc">../create_param/menu_creation</span> を参照してください。</div>
 </div>
 </li>
 <li><div class="line-block">
 <div class="line"><strong>代入値自動登録設定</strong></div>
 <div class="line">Ansible-LegacyRoleコンソールの代入値自動登録設定の画面から、パラメータシートに登録されているオペレーションとホスト毎の項目の設定値と、Movementの変数を紐付けます。</div>
-<div class="line">詳細は <a class="reference internal" href="#general-operations-substitution-value-auto-registration-setting"><span class="std std-ref">代入値自動登録設定</span></a> を参照してください。</div>
+<div class="line">詳細は <a class="reference internal" href="#ansible-legacyrole-substitution-value-auto-registration-setting"><span class="std std-ref">代入値自動登録設定</span></a> を参照してください。</div>
 </div>
 </li>
 <li><div class="line-block">
 <div class="line"><strong>作業実行</strong></div>
 <div class="line">Ansible-LegacyRoleコンソールの作業実行の画面から、Movementと投入オペレーションを選択して処理の実行を行います。</div>
-<div class="line">詳細は <a class="reference internal" href="#general-operations-execution"><span class="std std-ref">作業実行</span></a> を参照してください。</div>
+<div class="line">詳細は <a class="reference internal" href="#ansible-legacyrole-execution"><span class="std std-ref">作業実行</span></a> を参照してください。</div>
 </div>
 </li>
 <li><div class="line-block">
 <div class="line"><strong>作業状態確認</strong></div>
 <div class="line">Ansible-LegacyRoleコンソールの作業状態確認の画面から、実行した作業の状態がリアルタイムで表示されます。また、作業の緊急停止や、実行ログ、エラーログを監視することができます。</div>
-<div class="line">詳細は <a class="reference internal" href="#general-operations-check-operation-status"><span class="std std-ref">作業状態確認</span></a> を参照してください。</div>
+<div class="line">詳細は <a class="reference internal" href="#ansible-legacyrole-check-operation-status"><span class="std std-ref">作業状態確認</span></a> を参照してください。</div>
 </div>
 </li>
 <li><div class="line-block">
 <div class="line"><strong>作業履歴確認</strong></div>
 <div class="line">Ansible-LegacyRoleコンソールの作業管理の画面から、実行した作業の一覧が表示され履歴が確認できます。</div>
-<div class="line">詳細は <a class="reference internal" href="#general-operations-execution-list"><span class="std std-ref">作業管理</span></a> を参照してください。</div>
+<div class="line">詳細は <a class="reference internal" href="#ansible-legacyrole-execution-list"><span class="std std-ref">作業管理</span></a> を参照してください。</div>
 </div>
 </li>
 </ol>
@@ -1375,14 +1366,21 @@ Controllerにファイル転送するために必要な情報を管理します�
 <div class="line">本章では、Ansible driverで利用する各コンソールの機能について説明します。</div>
 <div class="line">本章に記載の登録画面項目一覧表の内容について説明します。</div>
 </div>
-<table class="docutils align-left" id="id88">
-<caption><span class="caption-number">表 24 </span><span class="caption-text">登録画面項目一覧凡例</span><a class="headerlink" href="#id88" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="docutils align-left" id="id91">
+<caption><span class="caption-text">登録画面項目一覧凡例</span><a class="headerlink" href="#id91" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
 <thead>
-<tr class="row-odd"><th class="head"><p><strong>項目…①</strong></p></th>
-<th class="head"><p><strong>説明…②</strong></p></th>
-<th class="head"><p><strong>入力必須…③</strong></p></th>
-<th class="head"><p><strong>入力方法…④</strong></p></th>
-<th class="head"><p><strong>制約事項…⑤</strong></p></th>
+<tr class="row-odd"><th class="head"><p>項目…①</p></th>
+<th class="head"><p>説明…②</p></th>
+<th class="head"><p>入力必須…③</p></th>
+<th class="head"><p>入力方法…④</p></th>
+<th class="head"><p>制約事項…⑤</p></th>
 </tr>
 </thead>
 <tbody>
@@ -1447,18 +1445,18 @@ Controllerにファイル転送するために必要な情報を管理します�
 <h3>基本コンソール<a class="headerlink" href="#id51" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
 <div class="line">本節では、ITA基本コンソールでの操作について記載します。</div>
-<div class="line">本作業は <a class="reference internal" href="../it_automation_base/basic_console.html"><span class="doc">基本コンソール</span></a> を参照して、ITA基本コンソール画面内で作業を実施してください。</div>
+<div class="line">本作業は <span class="xref std std-doc">../it_automation_base/basic_console</span> を参照して、ITA基本コンソール画面内で作業を実施してください。</div>
 </div>
-<section id="general-operations-input-operation-list">
-<span id="id52"></span><h4>オペレーション一覧<a class="headerlink" href="#general-operations-input-operation-list" title="この見出しへのパーマリンク">¶</a></h4>
+<section id="ansible-legacyrole-input-operation-list">
+<span id="id52"></span><h4>オペレーション一覧<a class="headerlink" href="#ansible-legacyrole-input-operation-list" title="この見出しへのパーマリンク">¶</a></h4>
 <div class="line-block">
 <div class="line"><span class="menuselection">基本コンソール‣オペレーション一覧</span> では、オーケストレータで実行する作業対象ホストに対するオペレーションを管理します。作業はITA基本コンソール内メニューより選択します。</div>
-<div class="line">登録方法の詳細は、関連マニュアルの <a class="reference internal" href="../it_automation_base/basic_console.html"><span class="doc">基本コンソール</span></a> を参照してください。</div>
+<div class="line">登録方法の詳細は、関連マニュアルの <span class="xref std std-doc">../it_automation_base/basic_console</span> を参照してください。</div>
 </div>
-<figure class="align-default" id="id89">
+<figure class="align-default" id="id92">
 <a class="reference internal image-reference" href="../../../../_images/register.png"><img alt="サブメニュー画面（オペレーション一覧）" src="../../../../_images/register.png" style="width: 800px;" /></a>
 <figcaption>
-<p><span class="caption-number">図 67 </span><span class="caption-text">サブメニュー画面（オペレーション一覧）</span><a class="headerlink" href="#id89" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-text">サブメニュー画面（オペレーション一覧）</span><a class="headerlink" href="#id92" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 </section>
@@ -1468,26 +1466,26 @@ Controllerにファイル転送するために必要な情報を管理します�
 <div class="line-block">
 <div class="line">本節では、Ansible共通コンソールでの操作について記載します。</div>
 </div>
-<section id="general-operations-device-list">
-<span id="id53"></span><h4>機器一覧<a class="headerlink" href="#general-operations-device-list" title="この見出しへのパーマリンク">¶</a></h4>
+<section id="ansible-legacyrole-device-list">
+<span id="id53"></span><h4>機器一覧<a class="headerlink" href="#ansible-legacyrole-device-list" title="この見出しへのパーマリンク">¶</a></h4>
 <ol class="arabic">
 <li><div class="line-block">
 <div class="line"><span class="menuselection">Ansible共通‣機器一覧</span> では、作業対象ホストの情報のメンテナンス(閲覧/登録/更新/廃止)を行います。</div>
 </div>
-<figure class="align-default" id="id90">
+<figure class="align-default" id="id93">
 <a class="reference internal image-reference" href="../../../../_images/device_list.png"><img alt="サブメニュー画面（機器一覧）" src="../../../../_images/device_list.png" style="width: 800px;" /></a>
 <figcaption>
-<p><span class="caption-number">図 68 </span><span class="caption-text">サブメニュー画面（機器一覧）</span><a class="headerlink" href="#id90" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-text">サブメニュー画面（機器一覧）</span><a class="headerlink" href="#id93" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 </li>
 <li><div class="line-block">
 <div class="line"><span class="guilabel">＋ 登録</span> ボタンより、機器情報の登録を行います。</div>
 </div>
-<figure class="align-default" id="id91">
+<figure class="align-default" id="id94">
 <a class="reference internal image-reference" href="../../../../_images/registration_device_list.gif"><img alt="登録画面（機器一覧）" src="../../../../_images/registration_device_list.gif" style="width: 800px;" /></a>
 <figcaption>
-<p><span class="caption-number">図 69 </span><span class="caption-text">登録画面（機器一覧）</span><a class="headerlink" href="#id91" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-text">登録画面（機器一覧）</span><a class="headerlink" href="#id94" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 </li>
@@ -1498,8 +1496,8 @@ Controllerにファイル転送するために必要な情報を管理します�
 <div class="line">Ansible driverを利用する場合には、Ansible利用情報を入力してください。</div>
 <div class="line">未入力で作業実行した場合、想定外エラーとなる場合があります。</div>
 </div>
-<table class="docutils align-left" id="id92">
-<caption><span class="caption-number">表 25 </span><span class="caption-text">登録画面項目一覧（機器一覧）</span><a class="headerlink" href="#id92" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="docutils align-left" id="id95">
+<caption><span class="caption-text">登録画面項目一覧（機器一覧）</span><a class="headerlink" href="#id95" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 9%" />
 <col style="width: 9%" />
@@ -1511,11 +1509,11 @@ Controllerにファイル転送するために必要な情報を管理します�
 <col style="width: 14%" />
 </colgroup>
 <thead>
-<tr class="row-odd"><th class="head" colspan="4"><p><strong>項目</strong></p></th>
-<th class="head"><p><strong>説明</strong></p></th>
-<th class="head"><p><strong>入力必須</strong></p></th>
-<th class="head"><p><strong>入力方法</strong></p></th>
-<th class="head"><p><strong>制約事項</strong></p></th>
+<tr class="row-odd"><th class="head" colspan="4"><p>項目</p></th>
+<th class="head"><p>説明</p></th>
+<th class="head"><p>入力必須</p></th>
+<th class="head"><p>入力方法</p></th>
+<th class="head"><p>制約事項</p></th>
 </tr>
 </thead>
 <tbody>
@@ -1654,7 +1652,7 @@ Controllerにファイル転送するために必要な情報を管理します�
 <p>具体値に変数を記述する場合</p>
 <p>'{{ VAR_passwd }}'</p>
 <p>':シングル・ダブルコーテーションで囲む「必須」</p>
-<p>変数の具体値は「 <a class="reference internal" href="#general-operations-substitution-value-auto-registration-setting"><span class="std std-ref">代入値自動登録設定</span></a> 」や「 <a class="reference internal" href="#general-operations-substitution-value-list"><span class="std std-ref">代入値管理</span></a> 」メニューから登録します。</p>
+<p>変数の具体値は「 <a class="reference internal" href="#ansible-legacyrole-substitution-value-auto-registration-setting"><span class="std std-ref">代入値自動登録設定</span></a> 」や「 <a class="reference internal" href="#ansible-legacyrole-substitution-value-list"><span class="std std-ref">代入値管理</span></a> 」メニューから登録します。</p>
 </td>
 <td><p>ー</p></td>
 <td><p>手動入力</p></td>
@@ -1731,26 +1729,26 @@ Controllerにファイル転送するために必要な情報を管理します�
 </li>
 </ol>
 </section>
-<section id="general-operations-interface-information">
-<span id="id54"></span><h4>インターフェース情報<a class="headerlink" href="#general-operations-interface-information" title="この見出しへのパーマリンク">¶</a></h4>
+<section id="ansible-legacyrole-interface-information">
+<span id="id54"></span><h4>インターフェース情報<a class="headerlink" href="#ansible-legacyrole-interface-information" title="この見出しへのパーマリンク">¶</a></h4>
 <ol class="arabic">
 <li><div class="line-block">
 <div class="line"><span class="menuselection">Ansible共通‣インターフェース情報</span> では、Ansible Core、AnsibleTower、Ansible Automation Controllerのいずれかを実行エンジンに選択し、ITAシステム・Ansible driverサーバと実行エンジンのサーバが共有するディレクトリのパスのおよび実行エンジンのサーバへの接続インターフェース情報のメンテナンス(閲覧/更新)を行います。</div>
 </div>
-<figure class="align-default" id="id93">
+<figure class="align-default" id="id96">
 <a class="reference internal image-reference" href="../../../../_images/interface_information.png"><img alt="サブメニュー画面（インタフェース情報）" src="../../../../_images/interface_information.png" style="width: 800px;" /></a>
 <figcaption>
-<p><span class="caption-number">図 70 </span><span class="caption-text">サブメニュー画面（インタフェース情報）</span><a class="headerlink" href="#id93" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-text">サブメニュー画面（インタフェース情報）</span><a class="headerlink" href="#id96" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 </li>
 <li><div class="line-block">
 <div class="line"><span class="guilabel">編集</span> ボタンより、インターフェース情報の登録を行います。</div>
 </div>
-<figure class="align-default" id="id94">
+<figure class="align-default" id="id97">
 <a class="reference internal image-reference" href="../../../../_images/registration_interface_information.gif"><img alt="登録画面（インタフェース情報）" src="../../../../_images/registration_interface_information.gif" style="width: 800px;" /></a>
 <figcaption>
-<p><span class="caption-number">図 71 </span><span class="caption-text">登録画面（インタフェース情報）</span><a class="headerlink" href="#id94" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-text">登録画面（インタフェース情報）</span><a class="headerlink" href="#id97" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 </li>
@@ -1758,8 +1756,8 @@ Controllerにファイル転送するために必要な情報を管理します�
 <div class="line">インタフェース情報画面の項目一覧は以下のとおりです。</div>
 <div class="line">インタフェース情報が未登録または、複数レコード登録されている状態で作業実行した場合、作業実行は想定外エラーとなります。</div>
 </div>
-<table class="docutils align-left" id="id95">
-<caption><span class="caption-number">表 26 </span><span class="caption-text">登録画面項目一覧（インタフェース情報）</span><a class="headerlink" href="#id95" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="docutils align-left" id="id98">
+<caption><span class="caption-text">登録画面項目一覧（インタフェース情報）</span><a class="headerlink" href="#id98" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 11%" />
 <col style="width: 11%" />
@@ -1770,11 +1768,11 @@ Controllerにファイル転送するために必要な情報を管理します�
 <col style="width: 14%" />
 </colgroup>
 <thead>
-<tr class="row-odd"><th class="head" colspan="3"><p><strong>項目</strong></p></th>
-<th class="head"><p><strong>説明</strong></p></th>
-<th class="head"><p><strong>入力必須</strong></p></th>
-<th class="head"><p><strong>入力方法</strong></p></th>
-<th class="head"><p><strong>制約事項</strong></p></th>
+<tr class="row-odd"><th class="head" colspan="3"><p>項目</p></th>
+<th class="head"><p>説明</p></th>
+<th class="head"><p>入力必須</p></th>
+<th class="head"><p>入力方法</p></th>
+<th class="head"><p>制約事項</p></th>
 </tr>
 </thead>
 <tbody>
@@ -1787,11 +1785,7 @@ Controllerにファイル転送するために必要な情報を管理します�
 <td><p>リスト選択</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td rowspan="6"><p>Ansible</p>
-<p>Automation</p>
-<p>Controller</p>
-<p>インターフェース</p>
-</td>
+<tr class="row-odd"><td rowspan="6"><p>Ansible Automation Controller インターフェース</p></td>
 <td colspan="2"><p>代表ホスト</p></td>
 <td><p>Ansible Automation Controllerホスト一覧に登録されているホストの一覧より、ITAと通信するAnsible Automation Controllerを選択します。</p></td>
 <td><p>ー</p></td>
@@ -1826,7 +1820,7 @@ Controllerにファイル転送するために必要な情報を管理します�
 </tr>
 <tr class="row-even"><td colspan="2"><p>実行時データ削除</p></td>
 <td><p>作業実行時にITAとAnsible Automation Controller 内に一時的に生成したデータリソースを作業終了後に削除するかを選択します。
-「削除する」を選択した場合に削除されるデータリソースは「 <a class="reference internal" href="#general-operations-data-resources-deleted-when-executing"><span class="std std-ref">実行時データ削除で削除されるデータリソース</span></a> 」を参照してください。</p></td>
+「削除する」を選択した場合に削除されるデータリソースは「 <a class="reference internal" href="#ansible-legacyrole-data-resources-deleted-when-executing"><span class="std std-ref">実行時データ削除で削除されるデータリソース</span></a> 」を参照してください。</p></td>
 <td><p>ー</p></td>
 <td><p>リスト選択</p></td>
 <td><p>実行エンジンがAnsible Core以外の場合に入力必須</p></td>
@@ -1864,7 +1858,7 @@ Controllerにファイル転送するために必要な情報を管理します�
 <td><p>Movement共通のオプションパラメータを入力します。</p>
 <p>実行エンジンがAnsible Coreの場合はansible-playbookコマンドのオプションパラメータ、実行エンジンがAnsible Core以外の場合はジョブテンプレートのパラメータを入力します。</p>
 <p>Movement固有のオプションパラメータはMovement一覧で入力します。</p>
-<p>オプションパラメータの詳細については、「 <a class="reference internal" href="#general-operations-option-parameter-list"><span class="std std-ref">オプションパラメータ一覧</span></a> 」を参照してください。</p>
+<p>オプションパラメータの詳細については、「 <a class="reference internal" href="#ansible-legacyrole-option-parameter-list"><span class="std std-ref">オプションパラメータ一覧</span></a> 」を参照してください。</p>
 </td>
 <td><p>ー</p></td>
 <td><p>手動入力</p></td>
@@ -1881,13 +1875,13 @@ Controllerにファイル転送するために必要な情報を管理します�
 <td><p>ー</p></td>
 </tr>
 <tr class="row-even"><td colspan="3"><p>状態監視周期(単位ミリ秒)</p></td>
-<td><p>「<a class="reference internal" href="#general-operations-check-operation-status"><span class="std std-ref">作業状態確認</span></a>」で表示されるログのリフレッシュ間隔を入力します。通常は3000ミリ秒程度が推奨値です。</p></td>
+<td><p>「<a class="reference internal" href="#ansible-legacyrole-check-operation-status"><span class="std std-ref">作業状態確認</span></a>」で表示されるログのリフレッシュ間隔を入力します。通常は3000ミリ秒程度が推奨値です。</p></td>
 <td><p>○</p></td>
 <td><p>手動入力</p></td>
 <td><p>最小値1000ミリ秒</p></td>
 </tr>
 <tr class="row-odd"><td colspan="3"><p>進行状態表示行数</p></td>
-<td><p>「<a class="reference internal" href="#general-operations-check-operation-status"><span class="std std-ref">作業状態確認</span></a>」での進行ログ・エラーログの最大表示行数を入力します。</p>
+<td><p>「<a class="reference internal" href="#ansible-legacyrole-check-operation-status"><span class="std std-ref">作業状態確認</span></a>」での進行ログ・エラーログの最大表示行数を入力します。</p>
 <p>ステータスが[未実行]、[準備中]、[実行中]、[実行中(遅延)]の場合、指定した行数でログを出力します。</p>
 <p>ステータスが[完了]、[完了(異常)]、[想定外エラー]、[緊急停止]、[未実行(予約)]、[予約取消]の場合、指定した行数ではなくすべてのログを出力します。</p>
 <p>環境毎にチューニングを要しますが、通常は1000行程度が推奨値です。</p>
@@ -1907,42 +1901,42 @@ Controllerにファイル転送するために必要な情報を管理します�
 </li>
 </ol>
 </section>
-<section id="general-operations-ansible-automation-controlller-hosts">
-<span id="id55"></span><h4>Ansible Automation Controller ホスト一覧<a class="headerlink" href="#general-operations-ansible-automation-controlller-hosts" title="この見出しへのパーマリンク">¶</a></h4>
+<section id="ansible-legacyrole-ansible-automation-controlller-hosts">
+<span id="id55"></span><h4>Ansible Automation Controller ホスト一覧<a class="headerlink" href="#ansible-legacyrole-ansible-automation-controlller-hosts" title="この見出しへのパーマリンク">¶</a></h4>
 <ol class="arabic">
 <li><div class="line-block">
 <div class="line"><span class="menuselection">Ansible共通‣Ansible Automation Controller ホスト一覧</span> では、Ansible Automation ControllerのRestAPI実行に必要な情報、および構築資材をAnsible Automation Controllerにファイル転送するために必要な情報のメンテナンス(閲覧/登録/更新/廃止)を行います。</div>
 <div class="line">クラスタ構成の場合は、構成している全てのサーバを登録してください。</div>
 <div class="line">ただし、Ansible Automation Controllerのhop nodeの登録は不要です。</div>
 </div>
-<figure class="align-default" id="id96">
+<figure class="align-default" id="id99">
 <a class="reference internal image-reference" href="../../../../_images/ansible_automation_controller_host_list.png"><img alt="サブメニュー画面（Ansible Automation Controller ホスト一覧）" src="../../../../_images/ansible_automation_controller_host_list.png" style="width: 800px;" /></a>
 <figcaption>
-<p><span class="caption-number">図 72 </span><span class="caption-text">サブメニュー画面（Ansible Automation Controller ホスト一覧）</span><a class="headerlink" href="#id96" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-text">サブメニュー画面（Ansible Automation Controller ホスト一覧）</span><a class="headerlink" href="#id99" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 </li>
 <li><div class="line-block">
 <div class="line"><span class="guilabel">＋ 登録</span> ボタンより、Ansible Automation Controllerのホスト情報の登録を行います。</div>
 </div>
-<figure class="align-default" id="id97">
+<figure class="align-default" id="id100">
 <a class="reference internal image-reference" href="../../../../_images/ansible_automation_controller_host_list.gif"><img alt="登録画面（Ansible Automation Controller ホスト一覧）" src="../../../../_images/ansible_automation_controller_host_list.gif" style="width: 800px;" /></a>
 <figcaption>
-<p><span class="caption-number">図 73 </span><span class="caption-text">登録画面（Ansible Automation Controller ホスト一覧）</span><a class="headerlink" href="#id97" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-text">登録画面（Ansible Automation Controller ホスト一覧）</span><a class="headerlink" href="#id100" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 </li>
 <li><div class="line-block">
 <div class="line">Ansible Automation Controller ホスト一覧画面の項目一覧は以下のとおりです。</div>
 </div>
-<table class="docutils align-left" id="id98">
-<caption><span class="caption-number">表 27 </span><span class="caption-text">登録画面項目一覧（Ansible Automation Controller ホスト一覧）</span><a class="headerlink" href="#id98" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="docutils align-left" id="id101">
+<caption><span class="caption-text">登録画面項目一覧（Ansible Automation Controller ホスト一覧）</span><a class="headerlink" href="#id101" title="このテーブルへのパーマリンク">¶</a></caption>
 <thead>
-<tr class="row-odd"><th class="head" colspan="2"><p><strong>項目</strong></p></th>
-<th class="head"><p><strong>説明</strong></p></th>
-<th class="head"><p><strong>入力必須</strong></p></th>
-<th class="head"><p><strong>入力方法</strong></p></th>
-<th class="head"><p><strong>制約事項</strong></p></th>
+<tr class="row-odd"><th class="head" colspan="2"><p>項目</p></th>
+<th class="head"><p>説明</p></th>
+<th class="head"><p>入力必須</p></th>
+<th class="head"><p>入力方法</p></th>
+<th class="head"><p>制約事項</p></th>
 </tr>
 </thead>
 <tbody>
@@ -2023,50 +2017,56 @@ Controllerにファイル転送するために必要な情報を管理します�
 </li>
 </ol>
 </section>
-<section id="general-operations-global-variable-list">
-<span id="id56"></span><h4>グローバル変数管理<a class="headerlink" href="#general-operations-global-variable-list" title="この見出しへのパーマリンク">¶</a></h4>
+<section id="ansible-legacyrole-global-variable-list">
+<span id="id56"></span><h4>グローバル変数管理<a class="headerlink" href="#ansible-legacyrole-global-variable-list" title="この見出しへのパーマリンク">¶</a></h4>
 <ol class="arabic">
 <li><div class="line-block">
 <div class="line"><span class="menuselection">Ansible共通‣グローバル変数管理</span> では、Playbookで利用するグローバル変数名のメンテナンス(閲覧/登録/更新/廃止)を行います。</div>
 </div>
-<figure class="align-default" id="id99">
+<figure class="align-default" id="id102">
 <a class="reference internal image-reference" href="../../../../_images/global_variable_list.png"><img alt="サブメニュー画面（グローバル変数管理）" src="../../../../_images/global_variable_list.png" style="width: 800px;" /></a>
 <figcaption>
-<p><span class="caption-number">図 74 </span><span class="caption-text">サブメニュー画面（グローバル変数管理）</span><a class="headerlink" href="#id99" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-text">サブメニュー画面（グローバル変数管理）</span><a class="headerlink" href="#id102" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 </li>
 <li><div class="line-block">
 <div class="line"><span class="guilabel">＋ 登録</span> ボタンより、グローバル変数管理情報の登録を行います。</div>
 </div>
-<figure class="align-default" id="id100">
+<figure class="align-default" id="id103">
 <a class="reference internal image-reference" href="../../../../_images/global_variable_list.gif"><img alt="登録画面（グローバル変数管理）" src="../../../../_images/global_variable_list.gif" style="width: 800px;" /></a>
 <figcaption>
-<p><span class="caption-number">図 75 </span><span class="caption-text">登録画面（グローバル変数管理）</span><a class="headerlink" href="#id100" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-text">登録画面（グローバル変数管理）</span><a class="headerlink" href="#id103" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 </li>
 <li><div class="line-block">
 <div class="line">グローバル変数管理画面の項目一覧は以下のとおりです。</div>
 </div>
-<table class="docutils align-left" id="id101">
-<caption><span class="caption-number">表 28 </span><span class="caption-text">登録画面項目一覧（グローバル変数管理）</span><a class="headerlink" href="#id101" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="docutils align-left" id="id104">
+<caption><span class="caption-text">登録画面項目一覧（グローバル変数管理）</span><a class="headerlink" href="#id104" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 62%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+</colgroup>
 <thead>
-<tr class="row-odd"><th class="head"><p><strong>項目</strong></p></th>
-<th class="head"><p><strong>説明</strong></p></th>
-<th class="head"><p><strong>入力必須</strong></p></th>
-<th class="head"><p><strong>入力方法</strong></p></th>
-<th class="head"><p><strong>制約事項</strong></p></th>
+<tr class="row-odd"><th class="head"><p>項目</p></th>
+<th class="head"><p>説明</p></th>
+<th class="head"><p>入力必須</p></th>
+<th class="head"><p>入力方法</p></th>
+<th class="head"><p>制約事項</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>グローバル変数名</p></td>
-<td><p>変数名を入力します。</p>
-<p>変数名は、「GBL_****」形式で入力します。</p>
-<p>****
-：半角英数字とアンダースコア（
-_
-）が利用可能です。(最小値:1バイト、最大値:255バイト)</p>
+<td><div class="line-block">
+<div class="line">変数名を入力します。</div>
+<div class="line">変数名は、「GBL_****」形式で入力します。</div>
+<div class="line">****：半角英数字とアンダースコア（ _ ）が利用可能です。(最小値:1バイト、最大値:255バイト)</div>
+</div>
 </td>
 <td><p>○</p></td>
 <td><p>手動入力</p></td>
@@ -2095,50 +2095,57 @@ _
 </li>
 </ol>
 </section>
-<section id="general-operations-file-list">
-<span id="id57"></span><h4>ファイル管理<a class="headerlink" href="#general-operations-file-list" title="この見出しへのパーマリンク">¶</a></h4>
+<section id="ansible-legacyrole-file-list">
+<span id="id57"></span><h4>ファイル管理<a class="headerlink" href="#ansible-legacyrole-file-list" title="この見出しへのパーマリンク">¶</a></h4>
 <ol class="arabic">
 <li><div class="line-block">
 <div class="line"><span class="menuselection">Ansible共通‣ファイル管理</span> では、Playbook内で定義している各モジュールで使用するファイルとファイル埋込変数のメンテナンス(閲覧/登録/更新/廃止)を行います。</div>
 <div class="line">ファイル管理でファイル素材を登録しておくことで、Playbook内で定義している各モジュールで使用するファイルをファイル埋込変数名で指定することができます。</div>
 </div>
-<figure class="align-default" id="id102">
+<figure class="align-default" id="id105">
 <a class="reference internal image-reference" href="../../../../_images/contents_list.png"><img alt="サブメニュー画面（ファイル管理）" src="../../../../_images/contents_list.png" style="width: 800px;" /></a>
 <figcaption>
-<p><span class="caption-number">図 76 </span><span class="caption-text">サブメニュー画面（ファイル管理）</span><a class="headerlink" href="#id102" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-text">サブメニュー画面（ファイル管理）</span><a class="headerlink" href="#id105" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 </li>
 <li><div class="line-block">
 <div class="line"><span class="guilabel">＋ 登録</span> ボタンより、ファイル管理情報の登録を行います。</div>
 </div>
-<figure class="align-default" id="id103">
+<figure class="align-default" id="id106">
 <a class="reference internal image-reference" href="../../../../_images/contents_list.gif"><img alt="登録画面（ファイル管理）" src="../../../../_images/contents_list.gif" style="width: 800px;" /></a>
 <figcaption>
-<p><span class="caption-number">図 77 </span><span class="caption-text">登録画面（ファイル管理）</span><a class="headerlink" href="#id103" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-text">登録画面（ファイル管理）</span><a class="headerlink" href="#id106" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 </li>
 <li><div class="line-block">
 <div class="line">登録画面の項目は以下のとおりです。</div>
 </div>
-<table class="docutils align-left" id="id104">
-<caption><span class="caption-number">表 29 </span><span class="caption-text">登録画面項目一覧（ファイル管理）</span><a class="headerlink" href="#id104" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="docutils align-left" id="id107">
+<caption><span class="caption-text">登録画面項目一覧（ファイル管理）</span><a class="headerlink" href="#id107" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 50%" />
+<col style="width: 5%" />
+<col style="width: 10%" />
+<col style="width: 20%" />
+</colgroup>
 <thead>
-<tr class="row-odd"><th class="head"><p><strong>項目</strong></p></th>
-<th class="head"><p><strong>説明</strong></p></th>
-<th class="head"><p><strong>入力必須</strong></p></th>
-<th class="head"><p><strong>入力方法</strong></p></th>
-<th class="head"><p><strong>制約事項</strong></p></th>
+<tr class="row-odd"><th class="head"><p>項目</p></th>
+<th class="head"><p>説明</p></th>
+<th class="head"><p>入力必須</p></th>
+<th class="head"><p>入力方法</p></th>
+<th class="head"><p>制約事項</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>ファイル埋込</p>
-<p>変数名</p>
-</td>
-<td><p>各モジュールのパラメータに埋め込む変数名を入力します。</p>
-<p>変数名は、「CPF_****」形式で入力します。</p>
-<p>****：半角英数字とアンダースコア（ _ ）が利用可能です。(最小値:1バイト、最大値:128バイト)</p>
+<tr class="row-even"><td><p>ファイル埋込変数名</p></td>
+<td><div class="line-block">
+<div class="line">各モジュールのパラメータに埋め込む変数名を入力します。</div>
+<div class="line">変数名は、「CPF_****」形式で入力します。</div>
+<div class="line">****：半角英数字とアンダースコア（ _ ）が利用可能です。(最小値:1バイト、最大値:128バイト)</div>
+</div>
 </td>
 <td><p>○</p></td>
 <td><p>手動入力</p></td>
@@ -2164,8 +2171,6 @@ _
 <p class="admonition-title">注釈</p>
 <div class="line-block">
 <div class="line"><strong>ファイル埋込変数の使用例</strong></div>
-</div>
-<div class="line-block">
 <div class="line">ファイル管理で登録したファイルをPlaybookに記述する場合、該当のパラメータにファイル埋込変数名を記述します。ファイル埋込変数名を使用しない場合、代入値自動登録設定で登録した変数や該当ファイルのパスを記述します。</div>
 <div class="line">※ファイル名にスペースなどが含まれている場合、適切にクォーテーションで囲まないと、作業実行時にエラーになる場合があります。</div>
 </div>
@@ -2180,11 +2185,15 @@ _
 <li><div class="line-block">
 <div class="line">ファイル管理メニューから下記のようにhostsファイルを登録します。</div>
 </div>
-<table class="docutils align-left" id="id105">
-<caption><span class="caption-number">表 30 </span><span class="caption-text">ファイル管理の登録内容</span><a class="headerlink" href="#id105" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="docutils align-left" id="id108">
+<caption><span class="caption-text">ファイル管理の登録内容</span><a class="headerlink" href="#id108" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 43%" />
+<col style="width: 57%" />
+</colgroup>
 <thead>
-<tr class="row-odd"><th class="head"><p><strong>ファイル埋込変数名</strong></p></th>
-<th class="head"><p><strong>ファイル素材</strong></p></th>
+<tr class="row-odd"><th class="head"><p>ファイル埋込変数名</p></th>
+<th class="head"><p>ファイル素材</p></th>
 </tr>
 </thead>
 <tbody>
@@ -2215,11 +2224,15 @@ _
 <li><div class="line-block">
 <div class="line">ファイル管理メニューから下記のようにtool.tgzファイルを登録します。</div>
 </div>
-<table class="docutils align-left" id="id106">
-<caption><span class="caption-number">表 31 </span><span class="caption-text">ファイル管理の登録内容</span><a class="headerlink" href="#id106" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="docutils align-left" id="id109">
+<caption><span class="caption-text">ファイル管理の登録内容</span><a class="headerlink" href="#id109" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 43%" />
+<col style="width: 57%" />
+</colgroup>
 <thead>
-<tr class="row-odd"><th class="head"><p><strong>ファイル埋込変数名</strong></p></th>
-<th class="head"><p><strong>ファイル素材</strong></p></th>
+<tr class="row-odd"><th class="head"><p>ファイル埋込変数名</p></th>
+<th class="head"><p>ファイル素材</p></th>
 </tr>
 </thead>
 <tbody>
@@ -2244,35 +2257,35 @@ _
 </ul>
 </div>
 </section>
-<section id="general-operations-template-list">
-<span id="id58"></span><h4>テンプレート管理<a class="headerlink" href="#general-operations-template-list" title="この見出しへのパーマリンク">¶</a></h4>
+<section id="ansible-legacyrole-template-list">
+<span id="id58"></span><h4>テンプレート管理<a class="headerlink" href="#ansible-legacyrole-template-list" title="この見出しへのパーマリンク">¶</a></h4>
 <ol class="arabic">
 <li><div class="line-block">
 <div class="line"><span class="menuselection">Ansible共通‣テンプレート管理</span> では、Playbookで定義しているtemplateモジュールやios_configモジュールなどのパラメータで使用するJinja2テンプレートファイルとテンプレート埋込変数のメンテナンス(閲覧/登録/更新/廃止)を行います。</div>
 <div class="line">テンプレート管理でテンプレート素材を登録しておくことで、Playbook内で定義しているtemplateモジュールなどで使用するtemplateファイルをテンプレート埋込変数で指定することができます。</div>
 </div>
-<figure class="align-default" id="id107">
+<figure class="align-default" id="id110">
 <a class="reference internal image-reference" href="../../../../_images/template_list.png"><img alt="サブメニュー画面（テンプレート管理）" src="../../../../_images/template_list.png" style="width: 800px;" /></a>
 <figcaption>
-<p><span class="caption-number">図 78 </span><span class="caption-text">サブメニュー画面（テンプレート管理）</span><a class="headerlink" href="#id107" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-text">サブメニュー画面（テンプレート管理）</span><a class="headerlink" href="#id110" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 </li>
 <li><div class="line-block">
 <div class="line"><span class="guilabel">＋ 登録</span> ボタンより、テンプレート管理情報の登録を行います。</div>
 </div>
-<figure class="align-default" id="id108">
+<figure class="align-default" id="id111">
 <a class="reference internal image-reference" href="../../../../_images/template_list.gif"><img alt="登録画面（テンプレート管理）" src="../../../../_images/template_list.gif" style="width: 800px;" /></a>
 <figcaption>
-<p><span class="caption-number">図 79 </span><span class="caption-text">登録画面（テンプレート管理）</span><a class="headerlink" href="#id108" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-text">登録画面（テンプレート管理）</span><a class="headerlink" href="#id111" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 </li>
 <li><div class="line-block">
 <div class="line">登録画面の項目は以下のとおりです。</div>
 </div>
-<table class="docutils align-left" id="id109">
-<caption><span class="caption-number">表 32 </span><span class="caption-text">登録画面項目一覧（テンプレート管理）</span><a class="headerlink" href="#id109" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="docutils align-left" id="id112">
+<caption><span class="caption-text">登録画面項目一覧（テンプレート管理）</span><a class="headerlink" href="#id112" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 15%" />
 <col style="width: 50%" />
@@ -2281,11 +2294,11 @@ _
 <col style="width: 20%" />
 </colgroup>
 <thead>
-<tr class="row-odd"><th class="head"><p><strong>項目</strong></p></th>
-<th class="head"><p><strong>説明</strong></p></th>
-<th class="head"><p><strong>入力必須</strong></p></th>
-<th class="head"><p><strong>入力方法</strong></p></th>
-<th class="head"><p><strong>制約事項</strong></p></th>
+<tr class="row-odd"><th class="head"><p>項目</p></th>
+<th class="head"><p>説明</p></th>
+<th class="head"><p>入力必須</p></th>
+<th class="head"><p>入力方法</p></th>
+<th class="head"><p>制約事項</p></th>
 </tr>
 </thead>
 <tbody>
@@ -2316,7 +2329,7 @@ _
 <div class="line">具体値は定義のみで使用することはありません。</div>
 <div class="line">Ansible-LegacyRoleのみで使用するテンプレートで、default変数定義ファイルなどに変数定義をしている場合、変数定義は省略できます。</div>
 <div class="line">同名の変数を複数のテンプレートで使用する場合、変数定義を合わせる必要があります。変数定義が一致していない場合は登録でエラーとなります。</div>
-<div class="line">変数定義はAnsibleの仕様に準拠していますが、ITA独自仕様があります。変数名の命名規則は「 <a class="reference internal" href="#general-operations-variable-handling"><span class="std std-ref">変数の種類</span></a> 」と同様です。</div>
+<div class="line">変数定義はAnsibleの仕様に準拠していますが、ITA独自仕様があります。変数名の命名規則は「 <a class="reference internal" href="#ansible-legacyrole-variable-handling"><span class="std std-ref">変数の種類</span></a> 」と同様です。</div>
 </div>
 </td>
 <td><p>ー</p></td>
@@ -2337,8 +2350,8 @@ _
 <p class="admonition-title">警告</p>
 <div class="line-block">
 <div class="line"><strong>テンプレートの変数定義を読み取るタイミング</strong></div>
-<div class="line">内部の処理でテンプレートの変数定義を読み取り、「 <a class="reference internal" href="#general-operations-substitution-value-auto-registration-setting"><span class="std std-ref">代入値自動登録設定</span></a> 」で具体値が登録可能になります。</div>
-<div class="line">読み取りのタイミングはリアルタイムではないので、「 <a class="reference internal" href="#general-operations-substitution-value-auto-registration-setting"><span class="std std-ref">代入値自動登録設定</span></a> 」で変数が扱えるまでに <strong>時間がかかる</strong> 場合があります。</div>
+<div class="line">内部の処理でテンプレートの変数定義を読み取り、「 <a class="reference internal" href="#ansible-legacyrole-substitution-value-auto-registration-setting"><span class="std std-ref">代入値自動登録設定</span></a> 」で具体値が登録可能になります。</div>
+<div class="line">読み取りのタイミングはリアルタイムではないので、「 <a class="reference internal" href="#ansible-legacyrole-substitution-value-auto-registration-setting"><span class="std std-ref">代入値自動登録設定</span></a> 」で変数が扱えるまでに <strong>時間がかかる</strong> 場合があります。</div>
 </div>
 </div>
 <div class="admonition tip">
@@ -2347,15 +2360,15 @@ _
 <div class="line"><strong>変数定義の留意事項</strong></div>
 <div class="line">変数定義の留意事項は以下のとおりです。</div>
 </div>
-<table class="docutils align-left" id="id110">
-<caption><span class="caption-number">表 33 </span><span class="caption-text">変数定義の留意事項</span><a class="headerlink" href="#id110" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="docutils align-left" id="id113">
+<caption><span class="caption-text">変数定義の留意事項</span><a class="headerlink" href="#id113" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 25%" />
 <col style="width: 75%" />
 </colgroup>
 <thead>
-<tr class="row-odd"><th class="head"><p><strong>種類</strong></p></th>
-<th class="head"><p><strong>留意事項</strong></p></th>
+<tr class="row-odd"><th class="head"><p>種類</p></th>
+<th class="head"><p>留意事項</p></th>
 </tr>
 </thead>
 <tbody>
@@ -2426,11 +2439,15 @@ _
 <li><div class="line-block">
 <div class="line">テンプレート管理メニューから下記のようにhostsファイルを登録します。</div>
 </div>
-<table class="docutils align-left" id="id111">
-<caption><span class="caption-number">表 34 </span><span class="caption-text">テンプレート管理の登録内容</span><a class="headerlink" href="#id111" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="docutils align-left" id="id114">
+<caption><span class="caption-text">テンプレート管理の登録内容</span><a class="headerlink" href="#id114" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 43%" />
+<col style="width: 57%" />
+</colgroup>
 <thead>
-<tr class="row-odd"><th class="head"><p><strong>テンプレート埋込変数名</strong></p></th>
-<th class="head"><p><strong>テンプレート素材</strong></p></th>
+<tr class="row-odd"><th class="head"><p>テンプレート埋込変数名</p></th>
+<th class="head"><p>テンプレート素材</p></th>
 </tr>
 </thead>
 <tbody>
@@ -2455,34 +2472,34 @@ _
 </ol>
 </div>
 </section>
-<section id="general-operations-unmanaged-var-list">
-<span id="id59"></span><h4>管理対象外変数リスト<a class="headerlink" href="#general-operations-unmanaged-var-list" title="この見出しへのパーマリンク">¶</a></h4>
+<section id="ansible-legacyrole-unmanaged-var-list">
+<span id="id59"></span><h4>管理対象外変数リスト<a class="headerlink" href="#ansible-legacyrole-unmanaged-var-list" title="この見出しへのパーマリンク">¶</a></h4>
 <ol class="arabic">
 <li><div class="line-block">
 <div class="line"><span class="menuselection">Ansible共通‣管理対象外変数リスト</span> では、ロールパッケージ管理のデフォルト変数定義やテンプレート管理の変数定義で定義している変数で、代入値自動登録の変数一覧に表示したくない変数のメンテナンス(参照/更新/廃止/復活)を行います。</div>
 </div>
-<figure class="align-default" id="id112">
+<figure class="align-default" id="id115">
 <a class="reference internal image-reference" href="../../../../_images/unmanaged_var_list.png"><img alt="サブメニュー画面（管理対象外変数リスト）" src="../../../../_images/unmanaged_var_list.png" style="width: 800px;" /></a>
 <figcaption>
-<p><span class="caption-number">図 80 </span><span class="caption-text">サブメニュー画面（管理対象外変数リスト）</span><a class="headerlink" href="#id112" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-text">サブメニュー画面（管理対象外変数リスト）</span><a class="headerlink" href="#id115" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 </li>
 <li><div class="line-block">
 <div class="line"><span class="guilabel">＋ 登録</span> ボタンより、オペレーション情報の登録を行います。</div>
 </div>
-<figure class="align-default" id="id113">
+<figure class="align-default" id="id116">
 <a class="reference internal image-reference" href="../../../../_images/unmanaged_var_list.gif"><img alt="登録画面（管理対象外変数リスト）" src="../../../../_images/unmanaged_var_list.gif" style="width: 800px;" /></a>
 <figcaption>
-<p><span class="caption-number">図 81 </span><span class="caption-text">登録画面（管理対象外変数リスト）</span><a class="headerlink" href="#id113" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-text">登録画面（管理対象外変数リスト）</span><a class="headerlink" href="#id116" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 </li>
 <li><div class="line-block">
 <div class="line">管理対象外変数リスト画面の項目一覧は以下のとおりです。</div>
 </div>
-<table class="docutils align-left" id="id114">
-<caption><span class="caption-number">表 35 </span><span class="caption-text">登録画面項目一覧（管理対象外変数リスト）</span><a class="headerlink" href="#id114" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="docutils align-left" id="id117">
+<caption><span class="caption-text">登録画面項目一覧（管理対象外変数リスト）</span><a class="headerlink" href="#id117" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 13%" />
 <col style="width: 50%" />
@@ -2491,11 +2508,11 @@ _
 <col style="width: 13%" />
 </colgroup>
 <thead>
-<tr class="row-odd"><th class="head"><p><strong>コマンド</strong></p></th>
-<th class="head"><p><strong>注意事項</strong></p></th>
-<th class="head"><p><strong>入力必須</strong></p></th>
-<th class="head"><p><strong>入力方法</strong></p></th>
-<th class="head"><p><strong>制約事項</strong></p></th>
+<tr class="row-odd"><th class="head"><p>項目</p></th>
+<th class="head"><p>注意事項</p></th>
+<th class="head"><p>入力必須</p></th>
+<th class="head"><p>入力方法</p></th>
+<th class="head"><p>制約事項</p></th>
 </tr>
 </thead>
 <tbody>
@@ -2523,49 +2540,49 @@ _
 <div class="line">Ansible-LegacyRoleコンソールの操作です。</div>
 </div>
 <section id="movement">
-<span id="general-operations-movement-list"></span><h4>Movement一覧<a class="headerlink" href="#movement" title="この見出しへのパーマリンク">¶</a></h4>
+<span id="ansible-legacyrole-movement-list"></span><h4>Movement一覧<a class="headerlink" href="#movement" title="この見出しへのパーマリンク">¶</a></h4>
 <ol class="arabic">
 <li><div class="line-block">
 <div class="line"><span class="menuselection">Ansible-LegacyRole‣Movement一覧</span> ではMovement名のメンテナンス(閲覧/登録/更新/廃止)を行います。</div>
 </div>
-<figure class="align-default" id="id115">
+<figure class="align-default" id="id118">
 <a class="reference internal image-reference" href="../../../../_images/movement_list.png"><img alt="サブメニュー画面（Movement一覧）" src="../../../../_images/movement_list.png" style="width: 800px;" /></a>
 <figcaption>
-<p><span class="caption-number">図 82 </span><span class="caption-text">サブメニュー画面（Movement一覧）</span><a class="headerlink" href="#id115" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-text">サブメニュー画面（Movement一覧）</span><a class="headerlink" href="#id118" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 </li>
 <li><div class="line-block">
 <div class="line"><span class="guilabel">＋ 登録</span> ボタンより、Movement情報の登録を行います。</div>
 </div>
-<figure class="align-default" id="id116">
+<figure class="align-default" id="id119">
 <a class="reference internal image-reference" href="../../../../_images/registration_movement_list.gif"><img alt="登録画面（Movement一覧）" src="../../../../_images/registration_movement_list.gif" style="width: 800px;" /></a>
 <figcaption>
-<p><span class="caption-number">図 83 </span><span class="caption-text">登録画面（Movement一覧）</span><a class="headerlink" href="#id116" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-text">登録画面（Movement一覧）</span><a class="headerlink" href="#id119" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 </li>
 <li><div class="line-block">
 <div class="line">登録画面の項目一覧は以下のとおりです。</div>
 </div>
-<table class="docutils align-left" id="id117">
-<caption><span class="caption-number">表 36 </span><span class="caption-text">登録画面項目一覧（Movement一覧）</span><a class="headerlink" href="#id117" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="docutils align-left" id="id120">
+<caption><span class="caption-text">登録画面項目一覧（Movement一覧）</span><a class="headerlink" href="#id120" title="このテーブルへのパーマリンク">¶</a></caption>
 <thead>
-<tr class="row-odd"><th class="head" colspan="4"><p><strong>項目</strong></p></th>
-<th class="head"><p><strong>説明</strong></p></th>
-<th class="head"><p><strong>入力必須</strong></p></th>
-<th class="head"><p><strong>入力方法</strong></p></th>
-<th class="head"><p><strong>制約事項</strong></p></th>
+<tr class="row-odd"><th class="head" colspan="3"><p>項目</p></th>
+<th class="head"><p>説明</p></th>
+<th class="head"><p>入力必須</p></th>
+<th class="head"><p>入力方法</p></th>
+<th class="head"><p>制約事項</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td colspan="4"><p>Movement名</p></td>
+<tr class="row-even"><td colspan="3"><p>Movement名</p></td>
 <td><p>Movementの名称を入力します。</p></td>
 <td><p>○</p></td>
 <td><p>手動入力</p></td>
 <td><p>最大長255バイト</p></td>
 </tr>
-<tr class="row-odd"><td colspan="4"><p>遅延タイマー</p></td>
+<tr class="row-odd"><td colspan="3"><p>遅延タイマー</p></td>
 <td><p>Movementが指定期間遅延した場合にステータスを遅延として警告表示したい場合に指定期間(1～)を入力します。(単位:分)</p>
 <p>未入力の場合は警告表示しません。</p>
 </td>
@@ -2573,7 +2590,7 @@ _
 <td><p>手動入力</p></td>
 <td><p>ー</p></td>
 </tr>
-<tr class="row-even"><td colspan="2" rowspan="6"><p>Ansible利用情報</p></td>
+<tr class="row-even"><td rowspan="6"><p>Ansible利用情報</p></td>
 <td colspan="2"><p>ホスト指定形式</p></td>
 <td><p>特別にIPアドレスで表現しないホストを指定したい場合に「ホスト名」を選択します。</p>
 <p>通常はIPが推奨です。</p>
@@ -2613,7 +2630,7 @@ _
 <td><p>Movement固有のオプションパラメータを入力します。</p>
 <p>実行エンジンがAnsible Coreの場合はansible-playbookコマンドのオプションパラメータ、実行エンジ
 ンがAnsible Core以外の場合はジョブテンプレートのパラメータを入力します。</p>
-<p>オプションパラメータの詳細については、「 <a class="reference internal" href="#general-operations-option-parameter-list"><span class="std std-ref">オプションパラメータ一覧</span></a> 」を参照してください。</p>
+<p>オプションパラメータの詳細については、「 <a class="reference internal" href="#ansible-legacyrole-option-parameter-list"><span class="std std-ref">オプションパラメータ一覧</span></a> 」を参照してください。</p>
 </td>
 <td><p>ー</p></td>
 <td><p>手動入力</p></td>
@@ -2638,7 +2655,7 @@ _
 <td><p>リスト選択</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td colspan="4"><p>備考</p></td>
+<tr class="row-even"><td colspan="3"><p>備考</p></td>
 <td><p>自由記述欄です。</p></td>
 <td><p>ー</p></td>
 <td><p>手動入力</p></td>
@@ -2649,63 +2666,72 @@ _
 <div class="admonition warning">
 <p class="admonition-title">警告</p>
 <div class="line-block">
-<div class="line">WinRM接続で「●」を選択した場合は接続するホストをすべてWindowsServerとみなします。</div>
+<div class="line">WinRM接続で「〇」を選択した場合は接続するホストをすべてWindowsServerとみなします。</div>
 </div>
 </div>
 </li>
 </ol>
 </section>
-<section id="general-operations-role-package-list-ansible-legacy-role-only">
-<span id="id61"></span><h4>ロールパッケージ管理<a class="headerlink" href="#general-operations-role-package-list-ansible-legacy-role-only" title="この見出しへのパーマリンク">¶</a></h4>
+<section id="ansible-legacyrole-role-package-list-ansible-legacy-role-only">
+<span id="id61"></span><h4>ロールパッケージ管理<a class="headerlink" href="#ansible-legacyrole-role-package-list-ansible-legacy-role-only" title="この見出しへのパーマリンク">¶</a></h4>
 <ol class="arabic">
 <li><div class="line-block">
 <div class="line">ユーザーが作成したロールパッケージファイルのメンテナンス(閲覧/登録/更新/廃止)を行います。</div>
-<div class="line">ロールパッケージファイルは、「roles」のある階層のディレクトリをzipにて圧縮したものを登録してください。ロールパッケージディレクトリ構成などは「 <a class="reference internal" href="#general-operations-write-role-package-ansible-legacy-role"><span class="std std-ref">ロールパッケージ（Ansible-Legacy Role）の記述</span></a> 」を参照してください。</div>
+<div class="line">ロールパッケージファイルは、「roles」のある階層のディレクトリをzipにて圧縮したものを登録してください。ロールパッケージディレクトリ構成などは「 <a class="reference internal" href="#ansible-legacyrole-write-role-package-ansible-legacy-role"><span class="std std-ref">ロールパッケージの記述</span></a> 」を参照してください。</div>
 </div>
-<figure class="align-default" id="id118">
+<figure class="align-default" id="id121">
 <a class="reference internal image-reference" href="../../../../_images/role_package_list.png"><img alt="サブメニュー画面（ロールパッケージ管理）" src="../../../../_images/role_package_list.png" style="width: 800px;" /></a>
 <figcaption>
-<p><span class="caption-number">図 84 </span><span class="caption-text">サブメニュー画面（ロールパッケージ管理）</span><a class="headerlink" href="#id118" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-text">サブメニュー画面（ロールパッケージ管理）</span><a class="headerlink" href="#id121" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 </li>
 <li><div class="line-block">
 <div class="line"><span class="guilabel">＋ 登録</span> ボタンより、ロールパッケージ情報の登録を行います。</div>
 </div>
-<figure class="align-default" id="id119">
+<figure class="align-default" id="id122">
 <a class="reference internal image-reference" href="../../../../_images/registration_role_package_list.gif"><img alt="登録画面（ロールパッケージ管理）" src="../../../../_images/registration_role_package_list.gif" style="width: 800px;" /></a>
 <figcaption>
-<p><span class="caption-number">図 85 </span><span class="caption-text">登録画面（ロールパッケージ管理）</span><a class="headerlink" href="#id119" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-text">登録画面（ロールパッケージ管理）</span><a class="headerlink" href="#id122" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 </li>
 <li><div class="line-block">
 <div class="line">登録画面の項目一覧は以下のとおりです。</div>
 </div>
-<table class="docutils align-left" id="id120">
-<caption><span class="caption-number">表 37 </span><span class="caption-text">登録画面項目一覧（ロールパッケージ管理）</span><a class="headerlink" href="#id120" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="docutils align-left" id="id123">
+<caption><span class="caption-text">登録画面項目一覧（ロールパッケージ管理）</span><a class="headerlink" href="#id123" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 50%" />
+<col style="width: 13%" />
+<col style="width: 13%" />
+<col style="width: 13%" />
+</colgroup>
 <thead>
-<tr class="row-odd"><th class="head"><p><strong>項目</strong></p></th>
-<th class="head"><p><strong>説明</strong></p></th>
-<th class="head"><p><strong>入力必須</strong></p></th>
-<th class="head"><p><strong>入力方法</strong></p></th>
-<th class="head"><p><strong>制約事項</strong></p></th>
+<tr class="row-odd"><th class="head"><p>項目</p></th>
+<th class="head"><p>説明</p></th>
+<th class="head"><p>入力必須</p></th>
+<th class="head"><p>入力方法</p></th>
+<th class="head"><p>制約事項</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>ロールパッケージ名</p></td>
 <td><p>ITAで管理するロールパッケージ名を入力します。</p></td>
-<td><p>○</p></td>
+<td><p>〇</p></td>
 <td><p>手動入力</p></td>
 <td><p>最大長255バイト</p></td>
 </tr>
 <tr class="row-odd"><td><p>ロールパッケージファイル</p></td>
-<td><p>作成したロールパッケージファイル(zip形式)をアップロードします。</p>
-<p>アップロードするロールパッケージファイルに含まれるPlaybookファイルは文字コードがUTF-8でBOMなしで作成してください。</p>
-<p>UTF-8でBOMなし以外のPlaybookファイルが含まれていると登録時にエラーとなります。</p>
-<p>詳しくは、「 <a class="reference internal" href="#general-operations-write-role-package-ansible-legacy-role"><span class="std std-ref">ロールパッケージ（Ansible-Legacy Role）の記述</span></a> 」を参照してください。</p>
+<td><div class="line-block">
+<div class="line">作成したロールパッケージファイル(zip 形式)をアップロードします。</div>
+<div class="line">アップロードするロールパッケージファイルに含まれるPlaybookファイルは文字コードが UTF-8でBOMなしで作成して下さい。</div>
+<div class="line">UTF-8でBOMなし以外のPlaybookファイルが含まれていると登録時にエラーとなります。</div>
+<div class="line">詳しくは、「 <a class="reference internal" href="#ansible-legacyrole-write-role-package-ansible-legacy-role"><span class="std std-ref">ロールパッケージの記述</span></a> 」を参照してください。</div>
+</div>
 </td>
-<td><p>○</p></td>
+<td><p>〇</p></td>
 <td><p>ファイル選択</p></td>
 <td><p>最大サイズ100Mバイト</p></td>
 </tr>
@@ -2723,73 +2749,84 @@ _
 <p class="admonition-title">警告</p>
 <div class="line-block">
 <div class="line"><strong>ロールパッケージ内に定義した変数を取り出すタイミング</strong></div>
-<div class="line">内部の処理でロールパッケージ内に定義している変数を取り出します。取り出した変数は、「 <a class="reference internal" href="#general-operations-substitution-value-auto-registration-setting"><span class="std std-ref">代入値自動登録設定</span></a> 」で具体値の登録が可能になります。</div>
-<div class="line">抜出するタイミングはリアルタイムではありませんので、「 <a class="reference internal" href="#general-operations-substitution-value-auto-registration-setting"><span class="std std-ref">代入値自動登録設定</span></a> 」で変数が扱えるまでに <strong>時間がかかる</strong> 場合があります。</div>
+<div class="line">内部の処理でロールパッケージ内に定義している変数を取り出します。取り出した変数は、「 <a class="reference internal" href="#ansible-legacyrole-substitution-value-auto-registration-setting"><span class="std std-ref">代入値自動登録設定</span></a> 」で具体値の登録が可能になります。</div>
+<div class="line">抜出するタイミングはリアルタイムではありませんので、「 <a class="reference internal" href="#ansible-legacyrole-substitution-value-auto-registration-setting"><span class="std std-ref">代入値自動登録設定</span></a> 」で変数が扱えるまでに <strong>時間がかかる</strong> 場合があります。</div>
 </div>
 </div>
 </section>
-<section id="general-operations-movement-details">
-<span id="id62"></span><h4>Movement-ロール紐付<a class="headerlink" href="#general-operations-movement-details" title="この見出しへのパーマリンク">¶</a></h4>
+<section id="ansible-legacyrole-movement-details">
+<span id="id62"></span><h4>Movement-ロール紐付<a class="headerlink" href="#ansible-legacyrole-movement-details" title="この見出しへのパーマリンク">¶</a></h4>
 <ol class="arabic">
 <li><div class="line-block">
 <div class="line">Movementで実行するロールパッケージのメンテナンス(閲覧/登録/更新/廃止)を行います。</div>
 </div>
-<figure class="align-default" id="id121">
+<figure class="align-default" id="id124">
 <a class="reference internal image-reference" href="../../../../_images/movement_role.png"><img alt="サブメニュー画面（Movement-ロール紐付）" src="../../../../_images/movement_role.png" style="width: 800px;" /></a>
 <figcaption>
-<p><span class="caption-number">図 86 </span><span class="caption-text">サブメニュー画面（Movement-ロール紐付）</span><a class="headerlink" href="#id121" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-text">サブメニュー画面（Movement-ロール紐付）</span><a class="headerlink" href="#id124" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 </li>
 <li><div class="line-block">
 <div class="line"><span class="guilabel">＋ 登録</span> ボタンより、Movement-ロール紐付の登録を行います。</div>
 </div>
-<figure class="align-default" id="id122">
+<figure class="align-default" id="id125">
 <a class="reference internal image-reference" href="../../../../_images/registration_movement_role.gif"><img alt="登録画面（Movement-ロール紐付）" src="../../../../_images/registration_movement_role.gif" style="width: 800px;" /></a>
 <figcaption>
-<p><span class="caption-number">図 87 </span><span class="caption-text">登録画面（Movement-ロール紐付）</span><a class="headerlink" href="#id122" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-text">登録画面（Movement-ロール紐付）</span><a class="headerlink" href="#id125" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 </li>
 <li><div class="line-block">
 <div class="line">登録画面の項目一覧は以下のとおりです。</div>
 </div>
-<table class="docutils align-left" id="id123">
-<caption><span class="caption-number">表 38 </span><span class="caption-text">登録画面項目一覧（Movement-ロール紐付）</span><a class="headerlink" href="#id123" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="docutils align-left" id="id126">
+<caption><span class="caption-text">登録画面項目一覧（Movement-ロール紐付）</span><a class="headerlink" href="#id126" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 50%" />
+<col style="width: 13%" />
+<col style="width: 13%" />
+<col style="width: 13%" />
+</colgroup>
 <thead>
-<tr class="row-odd"><th class="head"><p><strong>項目</strong></p></th>
-<th class="head"><p><strong>説明</strong></p></th>
-<th class="head"><p><strong>入力必須</strong></p></th>
-<th class="head"><p><strong>入力方法</strong></p></th>
-<th class="head"><p><strong>制約事項</strong></p></th>
+<tr class="row-odd"><th class="head"><p>項目</p></th>
+<th class="head"><p>説明</p></th>
+<th class="head"><p>入力必須</p></th>
+<th class="head"><p>入力方法</p></th>
+<th class="head"><p>制約事項</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>Movement</p></td>
-<td><p>Movement一覧で登録したMovementが表示されます。</p></td>
-<td><p>○</p></td>
+<td><p>Movement一覧で登録したMovementが表示されます</p></td>
+<td><p>〇</p></td>
 <td><p>リスト選択</p></td>
 <td><p>ー</p></td>
 </tr>
 <tr class="row-odd"><td><p>ロールパッケージ名</p></td>
-<td><p>ロールパッケージ管理で登録したロールパッケージが表示されます。実行するロールパッケージを選択します。</p>
-<p>同一Movementに複数のロールパッケージは登録出来ません。</p>
+<td><div class="line-block">
+<div class="line">ロールパッケージ管理で登録したロールパッケージが表示されます。実行するロールパッケージを選択します。</div>
+<div class="line">同一Movementに複数のロールパッケージは登録出来ません。</div>
+</div>
 </td>
-<td><p>○</p></td>
+<td><p>〇</p></td>
 <td><p>リスト選択</p></td>
 <td><p>ー</p></td>
 </tr>
 <tr class="row-even"><td><p>ロール名</p></td>
 <td><p>ロールパッケージ名で選択したロールパッケージに含まれているロール名が表示されます。実行するロールパッケージ内のロールを選択します。</p></td>
-<td><p>○</p></td>
+<td><p>〇</p></td>
 <td></td>
 <td><p>ー</p></td>
 </tr>
 <tr class="row-odd"><td><p>インクルード順序</p></td>
-<td><p>ロールの実行順序(1～:一意値)を入力します。</p>
-<p>入力されたインクルード順序(昇順)でロールが実行されます。</p>
+<td><div class="line-block">
+<div class="line">ロールの実行順序(1～:一意値)を入力します。</div>
+<div class="line">入力されたインクルード順序(昇順)でプレイブック素材が実行されます。</div>
+</div>
 </td>
-<td><p>○</p></td>
+<td><p>〇</p></td>
 <td><p>手動入力</p></td>
 <td><p>半角整数</p></td>
 </tr>
@@ -2804,46 +2841,53 @@ _
 </li>
 </ol>
 </section>
-<section id="general-operations-nested-variable-list-ansible-legacy-role-only">
-<span id="id63"></span><h4>変数ネスト管理<a class="headerlink" href="#general-operations-nested-variable-list-ansible-legacy-role-only" title="この見出しへのパーマリンク">¶</a></h4>
+<section id="ansible-legacyrole-nested-variable-list-ansible-legacy-role-only">
+<span id="id63"></span><h4>変数ネスト管理<a class="headerlink" href="#ansible-legacyrole-nested-variable-list-ansible-legacy-role-only" title="この見出しへのパーマリンク">¶</a></h4>
 <ol class="arabic">
 <li><div class="line-block">
-<div class="line"><span class="menuselection">Ansible-LegacyRole‣変数ネスト管理</span> では、「 <a class="reference internal" href="#general-operations-role-package-list-ansible-legacy-role-only"><span class="std std-ref">ロールパッケージ管理</span></a> 」で登録したロールパッケージで定義されている多段変数内で繰返配列定義されているメンバー変数の配列の最大繰返数のメンテナンス(閲覧/更新)を行います。</div>
+<div class="line"><span class="menuselection">Ansible-LegacyRole‣変数ネスト管理</span> では、「 <a class="reference internal" href="#ansible-legacyrole-role-package-list-ansible-legacy-role-only"><span class="std std-ref">ロールパッケージ管理</span></a> 」で登録したロールパッケージで定義されている多段変数内で繰返配列定義されているメンバー変数の配列の最大繰返数のメンテナンス(閲覧/更新)を行います。</div>
 </div>
-<figure class="align-default" id="id124">
+<figure class="align-default" id="id127">
 <a class="reference internal image-reference" href="../../../../_images/nested_variable_list.png"><img alt="サブメニュー画面（変数ネスト管理）" src="../../../../_images/nested_variable_list.png" style="width: 800px;" /></a>
 <figcaption>
-<p><span class="caption-number">図 88 </span><span class="caption-text">サブメニュー画面（変数ネスト管理）</span><a class="headerlink" href="#id124" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-text">サブメニュー画面（変数ネスト管理）</span><a class="headerlink" href="#id127" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 </li>
 <li><div class="line-block">
 <div class="line"><span class="guilabel">編集</span> ボタンより最大繰返数の更新を行います。</div>
 </div>
-<figure class="align-default" id="id125">
+<figure class="align-default" id="id128">
 <a class="reference internal image-reference" href="../../../../_images/registration_nested_variable_list.gif"><img alt="登録画面（変数ネスト管理）" src="../../../../_images/registration_nested_variable_list.gif" style="width: 800px;" /></a>
 <figcaption>
-<p><span class="caption-number">図 89 </span><span class="caption-text">登録画面（変数ネスト管理）</span><a class="headerlink" href="#id125" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-text">登録画面（変数ネスト管理）</span><a class="headerlink" href="#id128" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 </li>
 <li><div class="line-block">
 <div class="line">登録画面の項目一覧は以下のとおりです。</div>
 </div>
-<table class="docutils align-left" id="id126">
-<caption><span class="caption-number">表 39 </span><span class="caption-text">登録画面項目一覧（変数ネスト管理）</span><a class="headerlink" href="#id126" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="docutils align-left" id="id129">
+<caption><span class="caption-text">登録画面項目一覧（変数ネスト管理）</span><a class="headerlink" href="#id129" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 50%" />
+<col style="width: 13%" />
+<col style="width: 13%" />
+<col style="width: 13%" />
+</colgroup>
 <thead>
-<tr class="row-odd"><th class="head"><p><strong>項目</strong></p></th>
-<th class="head"><p><strong>説明</strong></p></th>
-<th class="head"><p><strong>入力必須</strong></p></th>
-<th class="head"><p><strong>入力方法</strong></p></th>
-<th class="head"><p><strong>制約事項</strong></p></th>
+<tr class="row-odd"><th class="head"><p>項目</p></th>
+<th class="head"><p>説明</p></th>
+<th class="head"><p>入力必須</p></th>
+<th class="head"><p>入力方法</p></th>
+<th class="head"><p>制約事項</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>最大繰返数</p></td>
 <td><p>配列の最大繰返数を1～99,999,999の範囲で入力します。</p></td>
-<td><p>○</p></td>
+<td><p>〇</p></td>
 <td><p>手動入力</p></td>
 <td><p>入力値1～99,999,999</p></td>
 </tr>
@@ -2862,44 +2906,44 @@ _
 <div class="line-block">
 <div class="line"><strong>初期登録および繰返数の更新タイミング</strong></div>
 <div class="line">内部の処理でロールパッケージ内に定義している多段変数繰返配列で定義されているメンバー変数の繰返数を初期登録します。初期登録後、変数ネスト管理で繰返数を更新することが出来ます。</div>
-<div class="line">なお、初期登録および繰返数の更新はリアルタイムではないので、「 <a class="reference internal" href="#general-operations-substitution-value-auto-registration-setting"><span class="std std-ref">代入値自動登録設定</span></a> 」で変数が扱えるまでに <strong>時間がかかる</strong> 場合があります。</div>
+<div class="line">なお、初期登録および繰返数の更新はリアルタイムではないので、「 <a class="reference internal" href="#ansible-legacyrole-substitution-value-auto-registration-setting"><span class="std std-ref">代入値自動登録設定</span></a> 」で変数が扱えるまでに <strong>時間がかかる</strong> 場合があります。</div>
 </div>
 </div>
 </section>
-<section id="general-operations-substitution-value-auto-registration-setting">
-<span id="id64"></span><h4>代入値自動登録設定<a class="headerlink" href="#general-operations-substitution-value-auto-registration-setting" title="この見出しへのパーマリンク">¶</a></h4>
+<section id="ansible-legacyrole-substitution-value-auto-registration-setting">
+<span id="id64"></span><h4>代入値自動登録設定<a class="headerlink" href="#ansible-legacyrole-substitution-value-auto-registration-setting" title="この見出しへのパーマリンク">¶</a></h4>
 <ol class="arabic">
 <li><div class="line-block">
 <div class="line">メニュー作成機能で作成したパラメータシートの項目の設定値とMovementの変数を紐付けます。登録した情報は内部の処理により代入値管理と作業対象ホストに反映されます。</div>
 </div>
-<figure class="align-default" id="id127">
+<figure class="align-default" id="id130">
 <a class="reference internal image-reference" href="../../../../_images/substitution_value_auto_registration_setting_role.png"><img alt="サブメニュー画面（代入値自動登録設定）" src="../../../../_images/substitution_value_auto_registration_setting_role.png" style="width: 800px;" /></a>
 <figcaption>
-<p><span class="caption-number">図 90 </span><span class="caption-text">サブメニュー画面（代入値自動登録設定）</span><a class="headerlink" href="#id127" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-text">サブメニュー画面（代入値自動登録設定）</span><a class="headerlink" href="#id130" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 </li>
 <li><div class="line-block">
 <div class="line"><span class="guilabel">＋ 登録</span> ボタンより代入値自動登録設定を行います。</div>
 </div>
-<figure class="align-default" id="id128">
+<figure class="align-default" id="id131">
 <a class="reference internal image-reference" href="../../../../_images/registration_substitution_value_auto_registration_setting_role.gif"><img alt="登録画面（代入値自動登録設定）" src="../../../../_images/registration_substitution_value_auto_registration_setting_role.gif" style="width: 800px;" /></a>
 <figcaption>
-<p><span class="caption-number">図 91 </span><span class="caption-text">登録画面（代入値自動登録設定）</span><a class="headerlink" href="#id128" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-text">登録画面（代入値自動登録設定）</span><a class="headerlink" href="#id131" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 </li>
 <li><div class="line-block">
 <div class="line">登録画面の項目一覧は以下のとおりです。</div>
 </div>
-<table class="docutils align-left" id="id129">
-<caption><span class="caption-number">表 40 </span><span class="caption-text">登録画面項目一覧（代入値自動登録設定）</span><a class="headerlink" href="#id129" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="docutils align-left" id="id132">
+<caption><span class="caption-text">登録画面項目一覧（代入値自動登録設定）</span><a class="headerlink" href="#id132" title="このテーブルへのパーマリンク">¶</a></caption>
 <thead>
-<tr class="row-odd"><th class="head" colspan="2"><p><strong>項目</strong></p></th>
-<th class="head"><p><strong>説明</strong></p></th>
-<th class="head"><p><strong>入力必須</strong></p></th>
-<th class="head"><p><strong>入力方法</strong></p></th>
-<th class="head"><p><strong>制約事項</strong></p></th>
+<tr class="row-odd"><th class="head" colspan="2"><p>項目</p></th>
+<th class="head"><p>説明</p></th>
+<th class="head"><p>入力必須</p></th>
+<th class="head"><p>入力方法</p></th>
+<th class="head"><p>制約事項</p></th>
 </tr>
 </thead>
 <tbody>
@@ -2914,7 +2958,7 @@ _
 </tr>
 <tr class="row-odd"><td><p>代入順序</p></td>
 <td><p>メニュー作成機能で作成したパラメータシートが縦型メニューの場合、パラメータシートで登録している代入順序を入力します。</p></td>
-<td><p><a class="reference internal" href="../../../../2.1/ja/manuals/ansible-driver/ansible_pioneer.html#parashi-substitution"><span class="std std-ref">※1</span></a></p></td>
+<td><p><a class="reference internal" href="#ansible-legacyrole-parashi-substitution"><span class="std std-ref">※1</span></a></p></td>
 <td><p>手動入力</p></td>
 <td><p>1～2147483647</p></td>
 </tr>
@@ -2948,7 +2992,7 @@ _
 <td><p>変数名で多段変数を選択した場合に多段変数のメンバー変数が表示されます。</p>
 <p>メンバー変数を選択します。</p>
 </td>
-<td><p><a class="reference internal" href="#member"><span class="std std-ref">※2</span></a></p></td>
+<td><p><a class="reference internal" href="#ansible-legacyrole-member"><span class="std std-ref">※2</span></a></p></td>
 <td><p>リスト選択</p></td>
 <td></td>
 </tr>
@@ -2956,7 +3000,7 @@ _
 <td><p>複数具体値が設定できる変数の場合のみ必須入力になります。</p>
 <p>具体値の代入順序（1～）を入力します。入力値に従い昇順で代入されます。具体値が複数ない場合でも代入順序（1～）を入力します。</p>
 </td>
-<td><p><a class="reference internal" href="../../../../2.1/ja/manuals/ansible-driver/ansible_pioneer.html#substitution"><span class="std std-ref">※3</span></a></p></td>
+<td><p><a class="reference internal" href="#ansible-legacyrole-substitution"><span class="std std-ref">※3</span></a></p></td>
 <td><p>手動入力</p></td>
 <td><p>1～2147483647</p></td>
 </tr>
@@ -2986,7 +3030,7 @@ _
 </div>
 </li>
 </ol>
-<div class="admonition note" id="parashi-substitution">
+<div class="admonition note" id="ansible-legacyrole-parashi-substitution">
 <p class="admonition-title">注釈</p>
 <div class="line-block">
 <div class="line"><strong>パラメータシート(縦メニュー)の場合</strong></div>
@@ -2997,7 +3041,7 @@ _
 <a class="reference internal image-reference" href="../../../../_images/parameter.png"><img alt="パラメータシート(縦メニュー)使用時の代入値自動登録設定登録方法" src="../../../../_images/parameter.png" style="width: 600px;" /></a>
 </figure>
 </div>
-<div class="admonition note" id="member">
+<div class="admonition note" id="ansible-legacyrole-member">
 <p class="admonition-title">注釈</p>
 <div class="line-block">
 <div class="line"><strong>メンバー変数の選択</strong></div>
@@ -3005,7 +3049,7 @@ _
 <div class="line-block">
 <div class="line">多段変数の場合にのみメンバー変数の選択が必要になります。メンバー変数に表示される変数は具体値を必要とする変数のみです。</div>
 <div class="line">メンバー変数名の表示は各階層の変数を「.」でスコープします。</div>
-<div class="line">繰返配列の場合は「[ ]」で繰返位置(0～)をスコープします。繰返し配列の数は「 <a class="reference internal" href="#general-operations-nested-variable-list-ansible-legacy-role-only"><span class="std std-ref">変数ネスト管理</span></a> 」で設定を行います。</div>
+<div class="line">繰返配列の場合は「[ ]」で繰返位置(0～)をスコープします。繰返し配列の数は「 <a class="reference internal" href="#ansible-legacyrole-nested-variable-list-ansible-legacy-role-only"><span class="std std-ref">変数ネスト管理</span></a> 」で設定を行います。</div>
 <div class="line"><br /></div>
 <div class="line">e.g.) 代入値自動登録設定で選択できるメンバー変数と変数ネスト管理で最大繰返数を更新後に選択できるメンバー変数の確認</div>
 </div>
@@ -3039,12 +3083,17 @@ _
 <li><div class="line-block">
 <div class="line">1. のように変数を定義してロールパッケージを登録した場合、 <span class="menuselection">Ansible-LegacyRole‣変数ネスト管理</span> には下記のように登録され、 <span class="menuselection">Ansible-LegacyRole‣代入値自動登録設定</span> ではデフォルトで下記のメンバー変数が選択できます。</div>
 </div>
-<table class="docutils align-left" id="id130">
-<caption><span class="caption-number">表 41 </span><span class="caption-text">変数ネスト管理の登録内容</span><a class="headerlink" href="#id130" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="docutils align-left" id="id133">
+<caption><span class="caption-text">変数ネスト管理の登録内容</span><a class="headerlink" href="#id133" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 40%" />
+<col style="width: 30%" />
+<col style="width: 30%" />
+</colgroup>
 <thead>
-<tr class="row-odd"><th class="head"><p><strong>変数名</strong></p></th>
-<th class="head"><p><strong>メンバー変数名</strong></p></th>
-<th class="head"><p><strong>最大繰返数</strong></p></th>
+<tr class="row-odd"><th class="head"><p>変数名</p></th>
+<th class="head"><p>メンバー変数名</p></th>
+<th class="head"><p>最大繰返数</p></th>
 </tr>
 </thead>
 <tbody>
@@ -3078,11 +3127,15 @@ _
 </tr>
 </tbody>
 </table>
-<table class="docutils align-left" id="id131">
-<caption><span class="caption-number">表 42 </span><span class="caption-text">代入値自動登録設定で選択可能なメンバー変数</span><a class="headerlink" href="#id131" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="docutils align-left" id="id134">
+<caption><span class="caption-text">代入値自動登録設定で選択可能なメンバー変数</span><a class="headerlink" href="#id134" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 44%" />
+<col style="width: 56%" />
+</colgroup>
 <thead>
-<tr class="row-odd"><th class="head"><p><strong>変数名</strong></p></th>
-<th class="head"><p><strong>メンバー変数名</strong></p></th>
+<tr class="row-odd"><th class="head"><p>変数名</p></th>
+<th class="head"><p>メンバー変数名</p></th>
 </tr>
 </thead>
 <tbody>
@@ -3116,12 +3169,17 @@ _
 <li><div class="line-block">
 <div class="line"><span class="menuselection">Ansible-LegacyRole‣変数ネスト管理</span> でメンバー変数「0.user.root.prod」の最大繰返数を初期値&quot;1&quot;から&quot;3&quot;に更新します。</div>
 </div>
-<table class="docutils align-left" id="id132">
-<caption><span class="caption-number">表 43 </span><span class="caption-text">変数ネスト管理の更新内容</span><a class="headerlink" href="#id132" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="docutils align-left" id="id135">
+<caption><span class="caption-text">変数ネスト管理の更新内容</span><a class="headerlink" href="#id135" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 40%" />
+<col style="width: 30%" />
+<col style="width: 30%" />
+</colgroup>
 <thead>
-<tr class="row-odd"><th class="head"><p><strong>変数名</strong></p></th>
-<th class="head"><p><strong>メンバー変数名</strong></p></th>
-<th class="head"><p><strong>最大繰返数</strong></p></th>
+<tr class="row-odd"><th class="head"><p>変数名</p></th>
+<th class="head"><p>メンバー変数名</p></th>
+<th class="head"><p>最大繰返数</p></th>
 </tr>
 </thead>
 <tbody>
@@ -3136,11 +3194,15 @@ _
 <div class="line">3. のようにメンバー変数を更新した場合、 <span class="menuselection">Ansible-LegacyRole‣代入値自動登録設定</span> で選択できるメンバー変数も下記のように更新されます。</div>
 <div class="line">（メンバー変数 [0].user.root[0].prod[1].prod_user と [0].user.root[0].prod[2].prod_user がプルダウンに追加されました。）</div>
 </div>
-<table class="docutils align-left" id="id133">
-<caption><span class="caption-number">表 44 </span><span class="caption-text">代入値自動登録設定で選択可能なメンバー変数</span><a class="headerlink" href="#id133" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="docutils align-left" id="id136">
+<caption><span class="caption-text">代入値自動登録設定で選択可能なメンバー変数</span><a class="headerlink" href="#id136" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 44%" />
+<col style="width: 56%" />
+</colgroup>
 <thead>
-<tr class="row-odd"><th class="head"><p><strong>変数名</strong></p></th>
-<th class="head"><p><strong>メンバー変数名</strong></p></th>
+<tr class="row-odd"><th class="head"><p>変数名</p></th>
+<th class="head"><p>メンバー変数名</p></th>
 </tr>
 </thead>
 <tbody>
@@ -3179,7 +3241,7 @@ _
 </li>
 </ol>
 </div>
-<div class="admonition note" id="substitution">
+<div class="admonition note" id="ansible-legacyrole-substitution">
 <p class="admonition-title">注釈</p>
 <div class="line-block">
 <div class="line"><strong>代入順序の入力</strong></div>
@@ -3211,17 +3273,17 @@ _
 <li><div class="line-block">
 <div class="line"><span class="menuselection">Ansible-LegacyRole‣代入値自動登録設定</span> で紐付対象メニューに登録されている項目の設定値とRole内の変数を紐付けします。</div>
 </div>
-<table class="docutils align-left" id="id134">
-<caption><span class="caption-number">表 45 </span><span class="caption-text">紐付対象メニュー(sample-menu)の登録内容</span><a class="headerlink" href="#id134" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="docutils align-left" id="id137">
+<caption><span class="caption-text">紐付対象メニュー(sample-menu)の登録内容</span><a class="headerlink" href="#id137" title="このテーブルへのパーマリンク">¶</a></caption>
 <thead>
-<tr class="row-odd"><th class="head" rowspan="2"><p><strong>ホスト名</strong></p></th>
-<th class="head" rowspan="2"><p><strong>オペレーション名</strong></p></th>
-<th class="head" colspan="4"><p><strong>パラメータ</strong></p></th>
+<tr class="row-odd"><th class="head" rowspan="2"><p>ホスト名</p></th>
+<th class="head" rowspan="2"><p>オペレーション名</p></th>
+<th class="head" colspan="4"><p>パラメータ</p></th>
 </tr>
-<tr class="row-even"><th class="head"><p><strong>項目1</strong></p></th>
-<th class="head"><p><strong>項目2</strong></p></th>
-<th class="head"><p><strong>項目3</strong></p></th>
-<th class="head"><p><strong>項目4</strong></p></th>
+<tr class="row-even"><th class="head"><p>項目1</p></th>
+<th class="head"><p>項目2</p></th>
+<th class="head"><p>項目3</p></th>
+<th class="head"><p>項目4</p></th>
 </tr>
 </thead>
 <tbody>
@@ -3234,13 +3296,19 @@ _
 </tr>
 </tbody>
 </table>
-<table class="docutils align-left" id="id135">
-<caption><span class="caption-number">表 46 </span><span class="caption-text">代入値自動登録設定の登録内容</span><a class="headerlink" href="#id135" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="docutils align-left" id="id138">
+<caption><span class="caption-text">代入値自動登録設定の登録内容</span><a class="headerlink" href="#id138" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 36%" />
+<col style="width: 18%" />
+<col style="width: 27%" />
+<col style="width: 18%" />
+</colgroup>
 <thead>
-<tr class="row-odd"><th class="head"><p><strong>メニュー名</strong></p></th>
-<th class="head"><p><strong>項目</strong></p></th>
-<th class="head"><p><strong>変数名</strong></p></th>
-<th class="head"><p><strong>代入順序</strong></p></th>
+<tr class="row-odd"><th class="head"><p>メニュー名</p></th>
+<th class="head"><p>項目</p></th>
+<th class="head"><p>変数名</p></th>
+<th class="head"><p>代入順序</p></th>
 </tr>
 </thead>
 <tbody>
@@ -3330,15 +3398,15 @@ _
 <li><div class="line-block">
 <div class="line"><span class="menuselection">Ansible-LegacyRole‣代入値自動登録設定</span> で紐付対象メニューに登録されている項目の設定値とRole内の変数を紐付けします。</div>
 </div>
-<table class="docutils align-left" id="id136">
-<caption><span class="caption-number">表 47 </span><span class="caption-text">紐付対象メニュー(sample-menu)の登録内容</span><a class="headerlink" href="#id136" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="docutils align-left" id="id139">
+<caption><span class="caption-text">紐付対象メニュー(sample-menu)の登録内容</span><a class="headerlink" href="#id139" title="このテーブルへのパーマリンク">¶</a></caption>
 <thead>
-<tr class="row-odd"><th class="head" rowspan="2"><p><strong>ホスト名</strong></p></th>
-<th class="head" rowspan="2"><p><strong>オペレーション名</strong></p></th>
-<th class="head" colspan="2"><p><strong>パラメータ</strong></p></th>
+<tr class="row-odd"><th class="head" rowspan="2"><p>ホスト名</p></th>
+<th class="head" rowspan="2"><p>オペレーション名</p></th>
+<th class="head" colspan="2"><p>パラメータ</p></th>
 </tr>
-<tr class="row-even"><th class="head"><p><strong>項目1</strong></p></th>
-<th class="head"><p><strong>項目2</strong></p></th>
+<tr class="row-even"><th class="head"><p>項目1</p></th>
+<th class="head"><p>項目2</p></th>
 </tr>
 </thead>
 <tbody>
@@ -3349,13 +3417,19 @@ _
 </tr>
 </tbody>
 </table>
-<table class="docutils align-left" id="id137">
-<caption><span class="caption-number">表 48 </span><span class="caption-text">代入値自動登録設定の登録内容</span><a class="headerlink" href="#id137" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="docutils align-left" id="id140">
+<caption><span class="caption-text">代入値自動登録設定の登録内容</span><a class="headerlink" href="#id140" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 24%" />
+<col style="width: 12%" />
+<col style="width: 24%" />
+<col style="width: 40%" />
+</colgroup>
 <thead>
-<tr class="row-odd"><th class="head"><p><strong>メニュー名</strong></p></th>
-<th class="head"><p><strong>項目</strong></p></th>
-<th class="head"><p><strong>変数名</strong></p></th>
-<th class="head"><p><strong>メンバー変数名</strong></p></th>
+<tr class="row-odd"><th class="head"><p>メニュー名</p></th>
+<th class="head"><p>項目</p></th>
+<th class="head"><p>変数名</p></th>
+<th class="head"><p>メンバー変数名</p></th>
 </tr>
 </thead>
 <tbody>
@@ -3387,7 +3461,7 @@ _
 </li>
 </ol>
 </div>
-<div class="admonition note" id="file-and-templete">
+<div class="admonition note" id="ansible-legacyrole-file-and-templete">
 <p class="admonition-title">注釈</p>
 <div class="line-block">
 <div class="line"><strong>ファイル埋込変数とテンプレート埋込変数をPlaybookの変数に紐付して使用する例</strong></div>
@@ -3399,11 +3473,15 @@ _
 <li><div class="line-block">
 <div class="line"><span class="menuselection">Ansible共通‣ファイル管理／テンプレート管理</span> で下記のように登録します。</div>
 </div>
-<table class="docutils align-left" id="id138">
-<caption><span class="caption-number">表 49 </span><span class="caption-text">ファイル管理の登録内容</span><a class="headerlink" href="#id138" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="docutils align-left" id="id141">
+<caption><span class="caption-text">ファイル管理の登録内容</span><a class="headerlink" href="#id141" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 56%" />
+<col style="width: 44%" />
+</colgroup>
 <thead>
-<tr class="row-odd"><th class="head"><p><strong>ファイル埋込変数名</strong></p></th>
-<th class="head"><p><strong>ファイル素材</strong></p></th>
+<tr class="row-odd"><th class="head"><p>ファイル埋込変数名</p></th>
+<th class="head"><p>ファイル素材</p></th>
 </tr>
 </thead>
 <tbody>
@@ -3412,11 +3490,15 @@ _
 </tr>
 </tbody>
 </table>
-<table class="docutils align-left" id="id139">
-<caption><span class="caption-number">表 50 </span><span class="caption-text">テンプレート管理の登録内容</span><a class="headerlink" href="#id139" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="docutils align-left" id="id142">
+<caption><span class="caption-text">テンプレート管理の登録内容</span><a class="headerlink" href="#id142" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 56%" />
+<col style="width: 44%" />
+</colgroup>
 <thead>
-<tr class="row-odd"><th class="head"><p><strong>テンプレート埋込変数名</strong></p></th>
-<th class="head"><p><strong>テンプレート素材</strong></p></th>
+<tr class="row-odd"><th class="head"><p>テンプレート埋込変数名</p></th>
+<th class="head"><p>テンプレート素材</p></th>
 </tr>
 </thead>
 <tbody>
@@ -3429,21 +3511,21 @@ _
 <li><div class="line-block">
 <div class="line"><span class="menuselection">メニュー作成‣メニュー定義・作成</span> で「Ansible共通:ファイル管理:ファイル埋込変数名」「Ansible共通:テンプレート管理:テンプレート埋込変数名」をパラメータシートの項目としてメニュー作成後、 <span class="menuselection">入力用‣サンプルパラメータシート(メニュー名)</span> で項目の設定値としてファイル埋込変数とテンプレート埋込変数を登録します。</div>
 </div>
-<figure class="align-default" id="id140">
+<figure class="align-default" id="id143">
 <a class="reference internal image-reference" href="../../../../_images/legacyrole_menucreate.png"><img alt="メニュー定義・作成画面" src="../../../../_images/legacyrole_menucreate.png" style="width: 800px;" /></a>
 <figcaption>
-<p><span class="caption-number">図 92 </span><span class="caption-text">メニュー定義・作成画面</span><a class="headerlink" href="#id140" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-text">メニュー定義・作成画面</span><a class="headerlink" href="#id143" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
-<table class="docutils align-left" id="id141">
-<caption><span class="caption-number">表 51 </span><span class="caption-text">サンプルパラメータシート(メニュー名)の登録内容</span><a class="headerlink" href="#id141" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="docutils align-left" id="id144">
+<caption><span class="caption-text">サンプルパラメータシート(メニュー名)の登録内容</span><a class="headerlink" href="#id144" title="このテーブルへのパーマリンク">¶</a></caption>
 <thead>
-<tr class="row-odd"><th class="head" rowspan="2"><p><strong>ホスト名</strong></p></th>
-<th class="head" rowspan="2"><p><strong>オペレーション名</strong></p></th>
-<th class="head" colspan="2"><p><strong>パラメータ</strong></p></th>
+<tr class="row-odd"><th class="head" rowspan="2"><p>ホスト名</p></th>
+<th class="head" rowspan="2"><p>オペレーション名</p></th>
+<th class="head" colspan="2"><p>パラメータ</p></th>
 </tr>
-<tr class="row-even"><th class="head"><p><strong>ファイル管理</strong></p></th>
-<th class="head"><p><strong>テンプレート管理</strong></p></th>
+<tr class="row-even"><th class="head"><p>ファイル管理</p></th>
+<th class="head"><p>テンプレート管理</p></th>
 </tr>
 </thead>
 <tbody>
@@ -3458,12 +3540,17 @@ _
 <li><div class="line-block">
 <div class="line"><span class="menuselection">Ansible-LegacyRole‣代入値自動登録設定</span> で2. のパラメータシートに登録した項目の設定値とPlaybookの変数を紐付して <span class="menuselection">Ansible-LegacyRole‣作業実行</span> で作業実行します。</div>
 </div>
-<table class="docutils align-left" id="id142">
-<caption><span class="caption-number">表 52 </span><span class="caption-text">代入値自動登録設定の登録内容</span><a class="headerlink" href="#id142" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="docutils align-left" id="id145">
+<caption><span class="caption-text">代入値自動登録設定の登録内容</span><a class="headerlink" href="#id145" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 45%" />
+<col style="width: 27%" />
+<col style="width: 27%" />
+</colgroup>
 <thead>
-<tr class="row-odd"><th class="head"><p><strong>メニュー名</strong></p></th>
-<th class="head"><p><strong>項目</strong></p></th>
-<th class="head"><p><strong>変数名</strong></p></th>
+<tr class="row-odd"><th class="head"><p>メニュー名</p></th>
+<th class="head"><p>項目</p></th>
+<th class="head"><p>変数名</p></th>
 </tr>
 </thead>
 <tbody>
@@ -3482,27 +3569,25 @@ _
 <div class="line"><span class="menuselection">Ansible-LegacyRole‣作業状態確認</span> の <span class="guilabel">代入値確認</span> ボタンで具体値に '{{ CPF_test }}' '{{ TPF_sample }}' が反映されていることが確認できます。</div>
 <div class="line">また、作業実行後、作業対象サーバに1. で登録したファイル素材とテンプレート素材が設置されます。</div>
 </div>
-<figure class="align-default" id="id143">
+<figure class="align-default" id="id146">
 <a class="reference internal image-reference" href="../../../../_images/general_operations_note.png"><img alt="作業状態確認の代入値確認画面" src="../../../../_images/general_operations_note.png" style="width: 800px;" /></a>
 <figcaption>
-<p><span class="caption-number">図 93 </span><span class="caption-text">作業状態確認の代入値確認画面</span><a class="headerlink" href="#id143" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-text">作業状態確認の代入値確認画面</span><a class="headerlink" href="#id146" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 </li>
 </ol>
 </div>
 </section>
-<section id="general-operations-execution">
-<span id="id65"></span><h4>作業実行<a class="headerlink" href="#general-operations-execution" title="この見出しへのパーマリンク">¶</a></h4>
+<section id="ansible-legacyrole-execution">
+<span id="id65"></span><h4>作業実行<a class="headerlink" href="#ansible-legacyrole-execution" title="この見出しへのパーマリンク">¶</a></h4>
 <div class="line-block">
-<div class="line">作業の実行を指示します。Movement一覧、オペレーション一覧からそれぞれラジオボタンで選択し、 <span class="guilabel">作業実行</span> ボタンを押すと、「 <a class="reference internal" href="#general-operations-check-operation-status"><span class="std std-ref">作業状態確認</span></a> 」に遷移し、実行されます。</div>
+<div class="line">作業の実行を指示します。Movement一覧、オペレーション一覧からそれぞれラジオボタンで選択し、 <span class="guilabel">作業実行</span> ボタンを押すと、「 <a class="reference internal" href="#ansible-legacyrole-check-operation-status"><span class="std std-ref">作業状態確認</span></a> 」に遷移し、実行されます。</div>
 </div>
-<figure class="align-default" id="id144">
+<figure class="align-default" id="id147">
 <a class="reference internal image-reference" href="../../../../_images/execution_screen.gif"><img alt="作業実行画面" src="../../../../_images/execution_screen.gif" style="width: 800px;" /></a>
 <figcaption>
-<p><span class="caption-number">図 94 </span><span class="caption-text">作業実行画面</span><a class="headerlink" href="#id144" title="この画像へのパーマリンク">¶</a></p>
-<div class="legend">
-</div>
+<p><span class="caption-text">作業実行画面</span><a class="headerlink" href="#id147" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 <ol class="arabic">
@@ -3520,15 +3605,15 @@ _
 </li>
 </ol>
 </section>
-<section id="general-operations-check-operation-status">
-<span id="id66"></span><h4>作業状態確認<a class="headerlink" href="#general-operations-check-operation-status" title="この見出しへのパーマリンク">¶</a></h4>
+<section id="ansible-legacyrole-check-operation-status">
+<span id="id66"></span><h4>作業状態確認<a class="headerlink" href="#ansible-legacyrole-check-operation-status" title="この見出しへのパーマリンク">¶</a></h4>
 <div class="line-block">
 <div class="line">作業の実行状態を監視します。</div>
 </div>
-<figure class="align-default" id="id145">
+<figure class="align-default" id="id148">
 <a class="reference internal image-reference" href="../../../../_images/check_operation_status.png"><img alt="サブメニュー画面（作業状態確認）" src="../../../../_images/check_operation_status.png" style="width: 800px;" /></a>
 <figcaption>
-<p><span class="caption-number">図 95 </span><span class="caption-text">サブメニュー画面（作業状態確認）</span><a class="headerlink" href="#id145" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-text">サブメニュー画面（作業状態確認）</span><a class="headerlink" href="#id148" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 <ol class="arabic">
@@ -3538,7 +3623,7 @@ _
 <div class="line">また、実行ログ、エラーログに実行状況の詳細が表示されます。</div>
 <div class="line">「実行種別」には、ドライランの場合は「ドライラン」、それ以外は「通常」が表示されます。</div>
 <div class="line">ステータスが想定外エラーで終了した場合、Webコンテンツの登録不備が原因であれば、エラーログにメッセージが表示されます。</div>
-<div class="line">また、「 <a class="reference internal" href="#general-operations-interface-information"><span class="std std-ref">インターフェース情報</span></a> 」の登録不備等で、Ansible RestAPIとの通信に失敗した場合にはエラーログにメッセージが表示されません。この場合は、アプリケーションログにエラー情報が記録されます。必要に応じてアプリケーションログを確認ください。</div>
+<div class="line">また、「 <a class="reference internal" href="#ansible-legacyrole-interface-information"><span class="std std-ref">インターフェース情報</span></a> 」の登録不備等で、Ansible RestAPIとの通信に失敗した場合にはエラーログにメッセージが表示されません。この場合は、アプリケーションログにエラー情報が記録されます。必要に応じてアプリケーションログを確認ください。</div>
 <div class="line">Conductorから実行した場合に、「呼出元Conductor」には、どのConductorから実行されたかを表示します。</div>
 <div class="line">Ansible-LegacyRoleドライバから直接実行した場合は空欄になります。</div>
 <div class="line">「実行ユーザ」には、作業実行メニューより「実行」ボタンまたは「ドライラン」ボタンを押下した際のログインユーザが表示されます。</div>
@@ -3546,12 +3631,12 @@ _
 </li>
 <li><div class="line-block">
 <div class="line"><strong>作業対象ホスト確認</strong></div>
-<div class="line"><span class="guilabel">作業対象ホスト確認</span> ボタンで「 <a class="reference internal" href="#general-operations-target-host"><span class="std std-ref">作業対象ホスト</span></a> 」が表示され、作業対象のオペレーションとMovementに絞り込んだホストが表示されます。</div>
+<div class="line"><span class="guilabel">作業対象ホスト確認</span> ボタンで「 <a class="reference internal" href="#ansible-legacyrole-target-host"><span class="std std-ref">作業対象ホスト</span></a> 」が表示され、作業対象のオペレーションとMovementに絞り込んだホストが表示されます。</div>
 </div>
 </li>
 <li><div class="line-block">
 <div class="line"><strong>代入値確認</strong></div>
-<div class="line"><span class="guilabel">代入値確認</span> ボタンで「 <a class="reference internal" href="#general-operations-substitution-value-list"><span class="std std-ref">代入値管理</span></a> 」が表示され、作業対象のオペレーションとMovementに絞り込んだ代入値が表示されます。</div>
+<div class="line"><span class="guilabel">代入値確認</span> ボタンで「 <a class="reference internal" href="#ansible-legacyrole-substitution-value-list"><span class="std std-ref">代入値管理</span></a> 」が表示され、作業対象のオペレーションとMovementに絞り込んだ代入値が表示されます。</div>
 </div>
 </li>
 <li><div class="line-block">
@@ -3572,8 +3657,12 @@ _
 <div class="line">exec.log以外: 分割された実行ログファイルです。ファイル命名規則は以下になります。</div>
 <div class="line">Ita_&lt;mode名&gt;_executions_jobtpl_&lt;作業番号&gt;_&lt;グループ番号&gt;_&lt;通番&gt;</div>
 </div>
-<table class="docutils align-left" id="id146">
-<caption><span class="caption-number">表 53 </span><span class="caption-text">分割された実行ログファイルの命名要素</span><a class="headerlink" href="#id146" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="docutils align-left" id="id149">
+<caption><span class="caption-text">分割された実行ログファイルの命名要素</span><a class="headerlink" href="#id149" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 29%" />
+<col style="width: 71%" />
+</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>要素</p></th>
 <th class="head"><p>内容</p></th>
@@ -3590,8 +3679,10 @@ _
 <td><p>構築対象機器の機器一覧のユーザー・パスワード・インスタンスグルーブなのどの項目値でグルーブ化した1からの通番です。</p></td>
 </tr>
 <tr class="row-odd"><td><p>通番</p></td>
-<td><p>ジョブスライス数の設定によりグループ内を分割した1からの通番です。</p>
-<p>0の場合はジョブスライス数による分割がなかったことのを表します。</p>
+<td><div class="line-block">
+<div class="line">ジョブスライス数の設定によりグループ内を分割した1からの通番です。</div>
+<div class="line">0の場合はジョブスライス数による分割がなかったことのを表します。</div>
+</div>
 </td>
 </tr>
 </tbody>
@@ -3600,13 +3691,13 @@ _
 <li><div class="line-block">
 <div class="line"><strong>ログ検索</strong></div>
 <div class="line">実行ログ、エラーログは、フィルタリングができます。各ログのフィルタのテキストボックスに検索したい文字列を入力し、「該当行のみ表示」のチェックボックスをチェックすることで該当する行だけが表示されます。</div>
-<div class="line">実行ログ、エラーログのリフレッシュ表示間隔と最大表示行数を、「 <a class="reference internal" href="#general-operations-interface-information"><span class="std std-ref">インターフェース情報</span></a> 」の「状態監視周期（単位ミリ秒）」と「進行状態表示行数」で設定できます。</div>
+<div class="line">実行ログ、エラーログのリフレッシュ表示間隔と最大表示行数を、「 <a class="reference internal" href="#ansible-legacyrole-interface-information"><span class="std std-ref">インターフェース情報</span></a> 」の「状態監視周期（単位ミリ秒）」と「進行状態表示行数」で設定できます。</div>
 </div>
 </li>
 <li><div class="line-block">
 <div class="line"><strong>投入データ</strong></div>
 <div class="line">実行したPlaybookなどをダウンロードすることができます。</div>
-<div class="line">投入データの構成は「 <a class="reference internal" href="#general-operations-the-linkage-between-the-input-data-used-during-ansible-execution-and-ita-menu"><span class="std std-ref">Ansible実行時に使用される投入データとITAメニューの紐づけ</span></a> 」を参照してください。</div>
+<div class="line">投入データの構成は「 <a class="reference internal" href="#ansible-legacyrole-the-linkage-between-the-input-data-used-during-ansible-execution-and-ita-menu"><span class="std std-ref">Ansible実行時に使用される投入データとITAメニューの紐づけ</span></a> 」を参照してください。</div>
 </div>
 </li>
 <li><div class="line-block">
@@ -3616,45 +3707,45 @@ _
 </li>
 </ol>
 </section>
-<section id="general-operations-execution-list">
-<span id="id67"></span><h4>作業管理<a class="headerlink" href="#general-operations-execution-list" title="この見出しへのパーマリンク">¶</a></h4>
+<section id="ansible-legacyrole-execution-list">
+<span id="id67"></span><h4>作業管理<a class="headerlink" href="#ansible-legacyrole-execution-list" title="この見出しへのパーマリンク">¶</a></h4>
 <div class="line-block">
 <div class="line">作業の履歴を閲覧できます。</div>
 <div class="line">条件を指定し <span class="guilabel">フィルタ</span> ボタンをクリックすると、作業一覧テーブルを表示します。</div>
-<div class="line"><span class="guilabel">詳細</span> ボタンで <a class="reference internal" href="#general-operations-check-operation-status"><span class="std std-ref">作業状態確認</span></a> に遷移し、実行状態の詳細を見ることができます。</div>
+<div class="line"><span class="guilabel">詳細</span> ボタンで <a class="reference internal" href="#ansible-legacyrole-check-operation-status"><span class="std std-ref">作業状態確認</span></a> に遷移し、実行状態の詳細を見ることができます。</div>
 </div>
-<figure class="align-default" id="id147">
+<figure class="align-default" id="id150">
 <a class="reference internal image-reference" href="../../../../_images/execution_list.png"><img alt="サブメニュー画面（作業管理）" src="../../../../_images/execution_list.png" style="width: 800px;" /></a>
 <figcaption>
-<p><span class="caption-number">図 96 </span><span class="caption-text">サブメニュー画面（作業管理）</span><a class="headerlink" href="#id147" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-text">サブメニュー画面（作業管理）</span><a class="headerlink" href="#id150" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 </section>
-<section id="general-operations-target-host">
-<span id="id68"></span><h4>作業対象ホスト<a class="headerlink" href="#general-operations-target-host" title="この見出しへのパーマリンク">¶</a></h4>
+<section id="ansible-legacyrole-target-host">
+<span id="id68"></span><h4>作業対象ホスト<a class="headerlink" href="#ansible-legacyrole-target-host" title="この見出しへのパーマリンク">¶</a></h4>
 <ol class="arabic">
 <li><div class="line-block">
 <div class="line"><span class="menuselection">Ansible-LegacyRole‣作業対象ホスト</span> では、オペレーションに紐付くMovementおよびホストを閲覧できます。</div>
 </div>
-<figure class="align-default" id="id148">
+<figure class="align-default" id="id151">
 <a class="reference internal image-reference" href="../../../../_images/target_host.png"><img alt="サブメニュー画面（作業対象ホスト）" src="../../../../_images/target_host.png" style="width: 800px;" /></a>
 <figcaption>
-<p><span class="caption-number">図 97 </span><span class="caption-text">サブメニュー画面（作業対象ホスト）</span><a class="headerlink" href="#id148" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-text">サブメニュー画面（作業対象ホスト）</span><a class="headerlink" href="#id151" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 </li>
 <li><div class="line-block">
 <div class="line">閲覧画面の項目一覧は以下のとおりです。</div>
 </div>
-<table class="docutils align-left" id="id149">
-<caption><span class="caption-number">表 54 </span><span class="caption-text">閲覧画面項目一覧（作業対象ホスト）</span><a class="headerlink" href="#id149" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="docutils align-left" id="id152">
+<caption><span class="caption-text">閲覧画面項目一覧（作業対象ホスト）</span><a class="headerlink" href="#id152" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 27%" />
 <col style="width: 73%" />
 </colgroup>
 <thead>
-<tr class="row-odd"><th class="head"><p><strong>項目</strong></p></th>
-<th class="head"><p><strong>説明</strong></p></th>
+<tr class="row-odd"><th class="head"><p>項目</p></th>
+<th class="head"><p>説明</p></th>
 </tr>
 </thead>
 <tbody>
@@ -3678,27 +3769,27 @@ _
 </li>
 </ol>
 </section>
-<section id="general-operations-substitution-value-list">
-<span id="id69"></span><h4>代入値管理<a class="headerlink" href="#general-operations-substitution-value-list" title="この見出しへのパーマリンク">¶</a></h4>
+<section id="ansible-legacyrole-substitution-value-list">
+<span id="id69"></span><h4>代入値管理<a class="headerlink" href="#ansible-legacyrole-substitution-value-list" title="この見出しへのパーマリンク">¶</a></h4>
 <ol class="arabic">
 <li><div class="line-block">
 <div class="line">オペレーションに紐付くMovementで利用されるRole内の変数に代入する具体値を閲覧できます。</div>
 </div>
-<figure class="align-default" id="id150">
+<figure class="align-default" id="id153">
 <a class="reference internal image-reference" href="../../../../_images/substitution_value_list.png"><img alt="サブメニュー画面（代入値管理）" src="../../../../_images/substitution_value_list.png" style="width: 800px;" /></a>
 <figcaption>
-<p><span class="caption-number">図 98 </span><span class="caption-text">サブメニュー画面（代入値管理）</span><a class="headerlink" href="#id150" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-text">サブメニュー画面（代入値管理）</span><a class="headerlink" href="#id153" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 </li>
 <li><div class="line-block">
 <div class="line">閲覧画面の項目一覧は以下のとおりです。</div>
 </div>
-<table class="docutils align-left" id="id151">
-<caption><span class="caption-number">表 55 </span><span class="caption-text">閲覧画面項目一覧（代入値管理）</span><a class="headerlink" href="#id151" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="docutils align-left" id="id154">
+<caption><span class="caption-text">閲覧画面項目一覧（代入値管理）</span><a class="headerlink" href="#id154" title="このテーブルへのパーマリンク">¶</a></caption>
 <thead>
-<tr class="row-odd"><th class="head" colspan="3"><p><strong>項目</strong></p></th>
-<th class="head"><p><strong>説明</strong></p></th>
+<tr class="row-odd"><th class="head" colspan="3"><p>項目</p></th>
+<th class="head"><p>説明</p></th>
 </tr>
 </thead>
 <tbody>
@@ -3750,11 +3841,11 @@ _
 </section>
 <section id="id70">
 <h2>構築コード記述方法<a class="headerlink" href="#id70" title="この見出しへのパーマリンク">¶</a></h2>
-<section id="ansible-legacy-role">
-<span id="general-operations-write-role-package-ansible-legacy-role"></span><h3>ロールパッケージ（Ansible-Legacy Role）の記述<a class="headerlink" href="#ansible-legacy-role" title="この見出しへのパーマリンク">¶</a></h3>
+<section id="ansible-legacyrole-write-role-package-ansible-legacy-role">
+<span id="id71"></span><h3>ロールパッケージの記述<a class="headerlink" href="#ansible-legacyrole-write-role-package-ansible-legacy-role" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
 <div class="line">基本書式については <a class="reference external" href="https://docs.ansible.com/ansible/2.9_ja/user_guide/playbooks_best_practices.html#directory-layout">Ansibleベストプラクティス</a> の公式マニュアルを参照してください。</div>
-<div class="line">「 <a class="reference internal" href="#general-operations-role-package-list-ansible-legacy-role-only"><span class="std std-ref">ロールパッケージ管理</span></a> 」でアップロードするロールパッケージファイルのZipに含めるべきディレクトリと、ITAでの扱いについて記述します。</div>
+<div class="line">「 <a class="reference internal" href="#ansible-legacyrole-role-package-list-ansible-legacy-role-only"><span class="std std-ref">ロールパッケージ管理</span></a> 」でアップロードするロールパッケージファイルのZipに含めるべきディレクトリと、ITAでの扱いについて記述します。</div>
 </div>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>(上位ディレクトリ)
 │
@@ -3847,7 +3938,7 @@ _
 <td><div class="line-block">
 <div class="line">ITA readmeはロール毎に定義します。無くてもエラーにはなりません。</div>
 <div class="line">ITA readmeは、文字コードがUTF-8のBOMなしで作成してください。</div>
-<div class="line">詳細については「 <a class="reference internal" href="#general-operations-write-ita-readme-ansible-legacy-role-only"><span class="std std-ref">ITAreadme（Ansible-Legacy Role）の記述</span></a> 」をご確認ください。</div>
+<div class="line">詳細については「 <a class="reference internal" href="#ansible-legacyrole-write-ita-readme-ansible-legacy-role-only"><span class="std std-ref">ITAreadme の記述</span></a> 」をご確認ください。</div>
 </div>
 </td>
 </tr>
@@ -3940,15 +4031,15 @@ _
 </tr>
 </tbody>
 </table>
-<section id="id72">
-<h4>マスターPlaybook<a class="headerlink" href="#id72" title="この見出しへのパーマリンク">¶</a></h4>
+<section id="id73">
+<h4>マスターPlaybook<a class="headerlink" href="#id73" title="この見出しへのパーマリンク">¶</a></h4>
 <div class="line-block">
 <div class="line">ITAで作成するマスターPlaybookはへッダーセクションとrolesセクションで構成されます。</div>
 </div>
-<section id="id73">
-<h5>① へッダーセクション<a class="headerlink" href="#id73" title="この見出しへのパーマリンク">¶</a></h5>
+<section id="id74">
+<h5>① へッダーセクション<a class="headerlink" href="#id74" title="この見出しへのパーマリンク">¶</a></h5>
 <div class="line-block">
-<div class="line">ヘッダーセクションは、デフォルト値が決まっていますが、「 <a class="reference internal" href="#general-operations-movement-list"><span class="std std-ref">Movement一覧</span></a> 」のヘッダーセクションで変更することが出来ます。</div>
+<div class="line">ヘッダーセクションは、デフォルト値が決まっていますが、「 <a class="reference internal" href="#ansible-legacyrole-movement-list"><span class="std std-ref">Movement一覧</span></a> 」のヘッダーセクションで変更することが出来ます。</div>
 </div>
 <div class="line-block">
 <div class="line">▼ヘッダーセクションのデフォルト値について</div>
@@ -3982,7 +4073,7 @@ _
 <section id="roles">
 <h5>② rolesセクション<a class="headerlink" href="#roles" title="この見出しへのパーマリンク">¶</a></h5>
 <div class="line-block">
-<div class="line">アップロードさたロールパッケージ内のロールを、「 <a class="reference internal" href="#general-operations-movement-details"><span class="std std-ref">Movement-ロール紐付</span></a> 」のインクルード順序に従いroleで実行します。</div>
+<div class="line">アップロードさたロールパッケージ内のロールを、「 <a class="reference internal" href="#ansible-legacyrole-movement-details"><span class="std std-ref">Movement-ロール紐付</span></a> 」のインクルード順序に従いroleで実行します。</div>
 </div>
 <figure class="align-center">
 <a class="reference internal image-reference" href="../../../../_images/role_session.png"><img alt="../../../../_images/role_session.png" src="../../../../_images/role_session.png" style="width: 8.85417in; height: 6.67187in;" /></a>
@@ -3995,8 +4086,8 @@ _
 <div class="line">Ansible Role Directory Structureにおける所定ディクレトリの下位に当該の所定ディクレトリ名と同名のサブディレクトリ（例えば、filesディレクトリの下位にそれと同名のfilesディレクトリなど）を作成されていると、作業実行時にエラーになります。</div>
 </div>
 </section>
-<section id="id74">
-<h4>ロールパッケージ内のロール名をディレクトリ階層にした場合の留意点<a class="headerlink" href="#id74" title="この見出しへのパーマリンク">¶</a></h4>
+<section id="id75">
+<h4>ロールパッケージ内のロール名をディレクトリ階層にした場合の留意点<a class="headerlink" href="#id75" title="この見出しへのパーマリンク">¶</a></h4>
 <div class="line-block">
 <div class="line">下記のようなディレクトリ階層のロールパッケージを例に説明します。</div>
 </div>
@@ -4040,8 +4131,8 @@ _
 </ol>
 </section>
 </section>
-<section id="itareadme-ansible-legacy-role">
-<span id="general-operations-write-ita-readme-ansible-legacy-role-only"></span><h3>ITAreadme（Ansible-Legacy Role）の記述<a class="headerlink" href="#itareadme-ansible-legacy-role" title="この見出しへのパーマリンク">¶</a></h3>
+<section id="itareadme">
+<span id="ansible-legacyrole-write-ita-readme-ansible-legacy-role-only"></span><h3>ITAreadme の記述<a class="headerlink" href="#itareadme" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
 <div class="line">Playbook中に直接変数を定義したくない場合など、defaults変数定義ファイルに変数が定義されていない際に、ITA readmeファイルに変数の定義を設定することで、代入値管理機能で変数の値を指定することができます。</div>
 </div>
@@ -4052,6 +4143,10 @@ _
 <div class="line">　e.g.)</div>
 </div>
 <table class="docutils align-left">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 67%" />
+</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>ロール名</p></th>
 <th class="head"><p>作成するファイル名</p></th>
@@ -4073,8 +4168,8 @@ _
 </div>
 </div>
 </section>
-<section id="id75">
-<h4>ITA readmeのフォーマット<a class="headerlink" href="#id75" title="この見出しへのパーマリンク">¶</a></h4>
+<section id="id76">
+<h4>ITA readmeのフォーマット<a class="headerlink" href="#id76" title="この見出しへのパーマリンク">¶</a></h4>
 <div class="line-block">
 <div class="line">フォーマットはYAML形式となります。</div>
 <div class="line">文字コードはUTF-8のBOMなしで作成してください。</div>
@@ -4096,12 +4191,17 @@ _
 <div class="line-block">
 <div class="line">ITA readmeとdefaults変数定義ファイルで変数定義が重なった場合など、以下のルールで処理されます。</div>
 </div>
-<table class="docutils align-left" id="id152">
-<caption><span class="caption-number">表 56 </span><span class="caption-text">変数採用ルール</span><a class="headerlink" href="#id152" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="docutils align-left" id="id155">
+<caption><span class="caption-text">変数採用ルール</span><a class="headerlink" href="#id155" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 27%" />
+<col style="width: 27%" />
+<col style="width: 45%" />
+</colgroup>
 <thead>
-<tr class="row-odd"><th class="head"><p><strong>defaults変数定義ファイル</strong></p></th>
-<th class="head"><p><strong>ITA readme</strong></p></th>
-<th class="head"><p><strong>変数定義の採用先</strong></p></th>
+<tr class="row-odd"><th class="head"><p>defaults変数定義ファイル</p></th>
+<th class="head"><p>ITA readme</p></th>
+<th class="head"><p>変数定義の採用先</p></th>
 </tr>
 </thead>
 <tbody>
@@ -4121,29 +4221,36 @@ _
 </table>
 <div class="line-block">
 <div class="line"><br /></div>
-<div class="line">また、「 <a class="reference internal" href="#general-operations-substitution-value-list"><span class="std std-ref">代入値管理</span></a> 」に表示するデフォルト値は以下のルールで処理されます。</div>
+<div class="line">また、「 <a class="reference internal" href="#ansible-legacyrole-substitution-value-list"><span class="std std-ref">代入値管理</span></a> 」に表示するデフォルト値は以下のルールで処理されます。</div>
 </div>
-<table class="docutils align-left" id="id153">
-<caption><span class="caption-number">表 57 </span><span class="caption-text">デフォルト値表示ルール</span><a class="headerlink" href="#id153" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="docutils align-left" id="id156">
+<caption><span class="caption-text">デフォルト値表示ルール</span><a class="headerlink" href="#id156" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 27%" />
+<col style="width: 27%" />
+<col style="width: 45%" />
+</colgroup>
 <thead>
-<tr class="row-odd"><th class="head"><p><strong>defaults変数定義ファイル</strong></p></th>
-<th class="head"><p><strong>ITA readme</strong></p></th>
-<th class="head"><p><strong>変数定義の採用先</strong></p></th>
+<tr class="row-odd"><th class="head"><p>defaults変数定義ファイル</p></th>
+<th class="head"><p>ITA readme</p></th>
+<th class="head"><p>変数定義の採用先</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>あり</p></td>
-<td><p>なし</p></td>
+<tr class="row-even"><td><p>定義あり</p></td>
+<td><p>定義なし</p></td>
 <td><p>デフォルト変数定義ファイルを採用。</p></td>
 </tr>
-<tr class="row-odd"><td><p>なし</p></td>
-<td><p>あり</p></td>
+<tr class="row-odd"><td><p>定義なし</p></td>
+<td><p>定義あり</p></td>
 <td><p>デフォルト値なしの扱いとなる。</p></td>
 </tr>
-<tr class="row-even"><td><p>あり</p></td>
-<td><p>あり</p></td>
-<td><p>デフォルト変数定義ファイルを採用。</p>
-<p>ただし、変数定義が一致している場合のみ。変数定義が一致していない場合はデフォルト値なしの扱いとなる。</p>
+<tr class="row-even"><td><p>定義あり</p></td>
+<td><p>定義あり</p></td>
+<td><div class="line-block">
+<div class="line">デフォルト変数定義ファイルを採用。</div>
+<div class="line">ただし、変数定義が一致している場合のみ。変数定義が一致していない場合はデフォルト値なしの扱いとなる。</div>
+</div>
 </td>
 </tr>
 </tbody>
@@ -4155,24 +4262,25 @@ _
 </div>
 </section>
 </section>
-<section id="ita-readme-ansible-legacy-role">
-<h3>「ita_readme」の活用例（Ansible-Legacy Role）<a class="headerlink" href="#ita-readme-ansible-legacy-role" title="この見出しへのパーマリンク">¶</a></h3>
+<section id="id77">
+<h3>「ita_readme」の活用例<a class="headerlink" href="#id77" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
 <div class="line">Ansible-Legacy Roleにおける「ita_readme」の活用例について、観点1～7を列挙します。</div>
 <div class="line"><br /></div>
 <div class="line">前提として、Ansible-Legacy Role（「roles」ディレクトリ）は外部から取得したものとします。</div>
 <div class="line">以下は、「ita_readme」を用いてアップロードから結果確認までを表した全体イメージ図です。</div>
 </div>
-<figure class="align-default" id="id154">
+<figure class="align-default" id="id157">
 <a class="reference internal image-reference" href="../../../../_images/ansible-legacyrole_usage_example1.png"><img alt="全体イメージ図" src="../../../../_images/ansible-legacyrole_usage_example1.png" style="width: 1000px;" /></a>
 <figcaption>
-<p><span class="caption-number">図 99 </span><span class="caption-text">全体イメージ図</span><a class="headerlink" href="#id154" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-text">全体イメージ図</span><a class="headerlink" href="#id157" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 <div class="line-block">
 <div class="line">以降、上記の図をベースに観点1～7について掘り下げていきます。</div>
 </div>
-<table class="docutils align-left">
+<table class="docutils align-left" id="id158">
+<caption><span class="caption-text">Ansible Automation Controllerシステム要件</span><a class="headerlink" href="#id158" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 30%" />
 <col style="width: 70%" />
@@ -4214,10 +4322,10 @@ _
 </div>
 </li>
 </ul>
-<figure class="align-default" id="id155">
+<figure class="align-default" id="id159">
 <a class="reference internal image-reference" href="../../../../_images/ansible-legacyrole_usage_example2.png"><img alt="観点１のイメージ図" src="../../../../_images/ansible-legacyrole_usage_example2.png" style="width: 1000px;" /></a>
 <figcaption>
-<p><span class="caption-number">図 100 </span><span class="caption-text">観点１のイメージ図</span><a class="headerlink" href="#id155" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-text">観点１のイメージ図</span><a class="headerlink" href="#id159" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 <ul>
@@ -4230,10 +4338,10 @@ _
 </div>
 </li>
 </ul>
-<figure class="align-default" id="id156">
+<figure class="align-default" id="id160">
 <a class="reference internal image-reference" href="../../../../_images/ansible-legacyrole_usage_example3.png"><img alt="観点２のイメージ図" src="../../../../_images/ansible-legacyrole_usage_example3.png" style="width: 1000px;" /></a>
 <figcaption>
-<p><span class="caption-number">図 101 </span><span class="caption-text">観点２のイメージ図</span><a class="headerlink" href="#id156" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-text">観点２のイメージ図</span><a class="headerlink" href="#id160" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 <ul>
@@ -4244,10 +4352,10 @@ _
 </div>
 </li>
 </ul>
-<figure class="align-default" id="id157">
+<figure class="align-default" id="id161">
 <a class="reference internal image-reference" href="../../../../_images/ansible-legacyrole_usage_example4.png"><img alt="観点３のイメージ図" src="../../../../_images/ansible-legacyrole_usage_example4.png" style="width: 1000px;" /></a>
 <figcaption>
-<p><span class="caption-number">図 102 </span><span class="caption-text">観点３のイメージ図</span><a class="headerlink" href="#id157" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-text">観点３のイメージ図</span><a class="headerlink" href="#id161" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 <ul>
@@ -4257,10 +4365,10 @@ _
 </div>
 </li>
 </ul>
-<figure class="align-default" id="id158">
+<figure class="align-default" id="id162">
 <a class="reference internal image-reference" href="../../../../_images/ansible-legacyrole_usage_example5.png"><img alt="観点４のイメージ図" src="../../../../_images/ansible-legacyrole_usage_example5.png" style="width: 1000px;" /></a>
 <figcaption>
-<p><span class="caption-number">図 103 </span><span class="caption-text">観点４のイメージ図</span><a class="headerlink" href="#id158" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-text">観点４のイメージ図</span><a class="headerlink" href="#id162" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 <ul>
@@ -4275,10 +4383,10 @@ _
 </div>
 </li>
 </ul>
-<figure class="align-default" id="id159">
+<figure class="align-default" id="id163">
 <a class="reference internal image-reference" href="../../../../_images/ansible-legacyrole_usage_example6.png"><img alt="観点５のイメージ図" src="../../../../_images/ansible-legacyrole_usage_example6.png" style="width: 1000px;" /></a>
 <figcaption>
-<p><span class="caption-number">図 104 </span><span class="caption-text">観点５のイメージ図</span><a class="headerlink" href="#id159" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-text">観点５のイメージ図</span><a class="headerlink" href="#id163" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 <ul>
@@ -4290,10 +4398,10 @@ _
 </div>
 </li>
 </ul>
-<figure class="align-default" id="id160">
+<figure class="align-default" id="id164">
 <a class="reference internal image-reference" href="../../../../_images/ansible-legacyrole_usage_example7.png"><img alt="観点６のイメージ図" src="../../../../_images/ansible-legacyrole_usage_example7.png" style="width: 1000px;" /></a>
 <figcaption>
-<p><span class="caption-number">図 105 </span><span class="caption-text">観点６のイメージ図</span><a class="headerlink" href="#id160" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-text">観点６のイメージ図</span><a class="headerlink" href="#id164" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 <ul>
@@ -4307,25 +4415,29 @@ _
 </div>
 </li>
 </ul>
-<figure class="align-default" id="id161">
+<figure class="align-default" id="id165">
 <a class="reference internal image-reference" href="../../../../_images/ansible-legacyrole_usage_example8.png"><img alt="観点７のイメージ図" src="../../../../_images/ansible-legacyrole_usage_example8.png" style="width: 1000px;" /></a>
 <figcaption>
-<p><span class="caption-number">図 106 </span><span class="caption-text">観点７のイメージ図</span><a class="headerlink" href="#id161" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-text">観点７のイメージ図</span><a class="headerlink" href="#id165" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="backyard">
 <h3>BackYardコンテンツ<a class="headerlink" href="#backyard" title="この見出しへのパーマリンク">¶</a></h3>
-<section id="id76">
-<h4>変数自動登録<a class="headerlink" href="#id76" title="この見出しへのパーマリンク">¶</a></h4>
+<section id="id78">
+<h4>変数自動登録<a class="headerlink" href="#id78" title="この見出しへのパーマリンク">¶</a></h4>
 <div class="line-block">
 <div class="line">変数解析対象の資材をアップロードした場合、アップロードされた資材から変数を取出します。</div>
 </div>
-<table class="docutils align-left" id="id162">
-<caption><span class="caption-number">表 58 </span><span class="caption-text">モード別アップロードした資材の変数の扱い</span><a class="headerlink" href="#id162" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="docutils align-left" id="id166">
+<caption><span class="caption-text">モード別アップロードした資材の変数の扱い</span><a class="headerlink" href="#id166" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 71%" />
+<col style="width: 29%" />
+</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>メニュー</p></th>
-<th class="head"><p>Legacy Role</p></th>
+<th class="head"><p>Ansible-LegacyRole</p></th>
 </tr>
 </thead>
 <tbody>
@@ -4537,21 +4649,27 @@ _
 </section>
 </section>
 </section>
-<section id="id77">
-<h2>付録<a class="headerlink" href="#id77" title="この見出しへのパーマリンク">¶</a></h2>
+<section id="id79">
+<h2>付録<a class="headerlink" href="#id79" title="この見出しへのパーマリンク">¶</a></h2>
 <section id="ansibleita">
-<span id="general-operations-the-linkage-between-the-input-data-used-during-ansible-execution-and-ita-menu"></span><h3>Ansible実行時に使用される投入データとITAメニューの紐づけ<a class="headerlink" href="#ansibleita" title="この見出しへのパーマリンク">¶</a></h3>
+<span id="ansible-legacyrole-the-linkage-between-the-input-data-used-during-ansible-execution-and-ita-menu"></span><h3>Ansible実行時に使用される投入データとITAメニューの紐づけ<a class="headerlink" href="#ansibleita" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
 <div class="line">各ITAメニューより情報を抜出してAnsible実行に必要な投入データを作ります。この際、機器一覧のパスワードや代入値管理でSensitive設定をONした変数の具体値がansible-vaultで暗号化されています。</div>
-<div class="line">投入データはZIP形式で「 <a class="reference internal" href="#general-operations-check-operation-status"><span class="std std-ref">作業状態確認</span></a> 」よりダウンロードが可能です。</div>
+<div class="line">投入データはZIP形式で「 <a class="reference internal" href="#ansible-legacyrole-check-operation-status"><span class="std std-ref">作業状態確認</span></a> 」よりダウンロードが可能です。</div>
 <div class="line">ダウンロードした投入データを所定のディレクトリに解凍することで、Ansibleを直接実行することも可能です。</div>
 <div class="line"><br /></div>
 <div class="line">各種データとITAメニューの関係性は以下の通りです。</div>
 </div>
-<section id="id78">
-<h4>Ansible-LegacyRole投入データ<a class="headerlink" href="#id78" title="この見出しへのパーマリンク">¶</a></h4>
-<table class="docutils align-left" id="id163">
-<caption><span class="caption-number">表 59 </span><span class="caption-text">Ansible-LegacyRole投入データ</span><a class="headerlink" href="#id163" title="このテーブルへのパーマリンク">¶</a></caption>
+<section id="id80">
+<h4>Ansible-LegacyRole投入データ<a class="headerlink" href="#id80" title="この見出しへのパーマリンク">¶</a></h4>
+<table class="docutils align-left" id="id167">
+<caption><span class="caption-text">Ansible-LegacyRole投入データ</span><a class="headerlink" href="#id167" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 22%" />
+<col style="width: 22%" />
+<col style="width: 33%" />
+<col style="width: 22%" />
+</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>メニューグループ</p></th>
 <th class="head"><p>メニュー</p></th>
@@ -4617,8 +4735,10 @@ _
 </tr>
 <tr class="row-odd"><td><p>Ansible共通</p></td>
 <td><p>機器一覧</p></td>
-<td><p>ログインパスワード</p>
-<p>※ansible-vault で暗号化</p>
+<td><div class="line-block">
+<div class="line">ログインパスワード</div>
+<div class="line">※ansible-vault で暗号化</div>
+</div>
 </td>
 <td><p>/host_vars</p></td>
 </tr>
@@ -4637,7 +4757,7 @@ _
 <td><p>サーバ証明書</p></td>
 <td><p>/winrm_ca_files</p></td>
 </tr>
-<tr class="row-odd"><td><p>Ansible 共通</p></td>
+<tr class="row-odd"><td><p>Ansible共通</p></td>
 <td><p>インターフェース情報</p></td>
 <td><p>オプションパラメータ</p></td>
 <td><p>/AnsibleExecOption.txt</p></td>
@@ -4654,8 +4774,10 @@ _
 </tr>
 <tr class="row-even"><td><p>Ansible共通</p></td>
 <td><p>機器一覧</p></td>
-<td><p>ログインパスワード</p>
-<p>※ansible-vault で暗号化</p>
+<td><div class="line-block">
+<div class="line">ログインパスワード</div>
+<div class="line">※ansible-vault で暗号化</div>
+</div>
 </td>
 <td><p>/hosts</p></td>
 </tr>
@@ -4681,8 +4803,10 @@ _
 </tr>
 <tr class="row-odd"><td><p>Ansible共通</p></td>
 <td><p>機器一覧</p></td>
-<td><p>接続オプション</p>
-<p>※ansible_ssh_extra_args の値</p>
+<td><div class="line-block">
+<div class="line">接続オプション</div>
+<div class="line">※ansible_ssh_extra_args の値</div>
+</div>
 </td>
 <td><p>/hosts</p></td>
 </tr>
@@ -4692,8 +4816,10 @@ _
 <td><p>/playbook.yml</p></td>
 </tr>
 <tr class="row-odd"><td><p>Ansible-LegacyRole</p></td>
-<td><p>Movement-Playbook紐付</p>
-<p>（Movement-対話種別紐付、Movement-ロール紐付）</p>
+<td><div class="line-block">
+<div class="line">Movement-Playbook紐付</div>
+<div class="line">（Movement-対話種別紐付、Movement-ロール紐付）</div>
+</div>
 </td>
 <td><p>インクルード順序</p></td>
 <td><p>/playbook.yml</p></td>
@@ -4702,21 +4828,27 @@ _
 </table>
 </section>
 </section>
-<section id="id79">
-<h3>Ansible実行時に作成される結果データ<a class="headerlink" href="#id79" title="この見出しへのパーマリンク">¶</a></h3>
+<section id="id81">
+<h3>Ansible実行時に作成される結果データ<a class="headerlink" href="#id81" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
 <div class="line">[投入データ]をansibleで実行した結果を[結果データ]としてZIP形式で保存します。</div>
-<div class="line">[結果データ]はZIP形式で「 <a class="reference internal" href="#general-operations-check-operation-status"><span class="std std-ref">作業状態確認</span></a> 」よりダウンロードが可能です。</div>
+<div class="line">[結果データ]はZIP形式で「 <a class="reference internal" href="#ansible-legacyrole-check-operation-status"><span class="std std-ref">作業状態確認</span></a> 」よりダウンロードが可能です。</div>
 </div>
-<section id="legacy-role">
-<h4>Legacy-Role 結果データに保存されるファイル一覧<a class="headerlink" href="#legacy-role" title="この見出しへのパーマリンク">¶</a></h4>
-<table class="docutils align-left" id="id164">
-<caption><span class="caption-number">表 60 </span><span class="caption-text">Legacy-Role結果データの保存されるファイル一覧</span><a class="headerlink" href="#id164" title="このテーブルへのパーマリンク">¶</a></caption>
+<section id="id82">
+<h4>Ansible-LegacyRole 結果データに保存されるファイル一覧<a class="headerlink" href="#id82" title="この見出しへのパーマリンク">¶</a></h4>
+<table class="docutils align-left" id="id168">
+<caption><span class="caption-text">Ansible-LegacyRole結果データに保存されるファイル一覧</span><a class="headerlink" href="#id168" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 45%" />
+<col style="width: 18%" />
+<col style="width: 18%" />
+</colgroup>
 <thead>
-<tr class="row-odd"><th class="head"><p><strong>ファイル名</strong></p></th>
-<th class="head"><p><strong>記録内容</strong></p></th>
-<th class="head"><p>AnsibleCoreの場合</p></th>
-<th class="head"><p>AnsibleAutomationControllerの場合</p></th>
+<tr class="row-odd"><th class="head"><p>ファイル名</p></th>
+<th class="head"><p>記録内容</p></th>
+<th class="head"><p>Ansible Coreの場合</p></th>
+<th class="head"><p>Ansible Automation Controllerの場合</p></th>
 </tr>
 </thead>
 <tbody>
@@ -4726,21 +4858,29 @@ _
 <td></td>
 </tr>
 <tr class="row-odd"><td><p>xxx.pid</p></td>
-<td><p>Ansible-playbbokコマンドのプロセスIDを記録するファイル。</p>
-<p>xxx:Ansible-playbbokコマンドのプロセスID</p>
+<td><div class="line-block">
+<div class="line">Ansible-playbbokコマンドのプロセスIDを記録するファイル</div>
+<div class="line">xxx:Ansible-playbbokコマンドのプロセスID</div>
+</div>
 </td>
 <td><p>〇</p></td>
 <td></td>
 </tr>
 <tr class="row-even"><td><p>error.log</p></td>
-<td><p>作業実行時にITAがなにかしらのエラーによりエラーメッセージを出力した場合、または、Ansible-playbbokコマンドがなにかとらのエラーによりエラーメッセージを出力した場合のエラー出力先ファイル。</p>
-<p>作業実行確認のエラーログに表示に表示される内容。</p>
+<td><div class="line-block">
+<div class="line">作業実行時にITAがなにかしらのエラーによりエラーメッセージを出力した場合、または、Ansible-playbbokコマンドがなにかとらのエラーによりエラーメッセージを出力した場合のエラー出力先ファイル</div>
+<div class="line">作業実行確認のエラーログに表示に表示される内容</div>
+</div>
 </td>
 <td><p>〇</p></td>
 <td><p>〇</p></td>
 </tr>
 <tr class="row-odd"><td><p>exec.log</p></td>
-<td><p>Ansible-playbbokが出力した実行ログを一部加工したログファイル。作業実行確認の実行ログに表示される内容。</p></td>
+<td><div class="line-block">
+<div class="line">Ansible-playbbokが出力した実行ログを一部加工したログファイル</div>
+<div class="line">作業実行確認の実行ログに表示される内容</div>
+</div>
+</td>
 <td><p>〇</p></td>
 <td><p>〇</p></td>
 </tr>
@@ -4749,10 +4889,11 @@ _
 <td><p>〇</p></td>
 <td><p>〇</p></td>
 </tr>
-<tr class="row-odd"><td><p>Ita_&lt;mode名&gt;_
-executions_jobtpl_&lt;作業番号&gt;_&lt;グループ番号&gt;</p></td>
-<td><p>分割された実行ログファイルです。</p>
-<p>ファイル名の命名規則は <a class="reference internal" href="#general-operations-check-operation-status"><span class="std std-ref">作業状態確認</span></a> の⑥実行ログ表示を参照してください。</p>
+<tr class="row-odd"><td><p>Ita_&lt;mode名&gt;_executions_jobtpl_&lt;作業番号&gt;_&lt;グループ番号&gt;</p></td>
+<td><div class="line-block">
+<div class="line">分割された実行ログファイル</div>
+<div class="line">ファイル名の命名規則は <a class="reference internal" href="#ansible-legacyrole-check-operation-status"><span class="std std-ref">作業状態確認</span></a> の実行ログ表示を参照してください。</div>
+</div>
 </td>
 <td></td>
 <td><p>〇</p></td>
@@ -4771,8 +4912,8 @@ executions_jobtpl_&lt;作業番号&gt;_&lt;グループ番号&gt;</p></td>
 </table>
 </section>
 </section>
-<section id="general-operations-option-parameter-list">
-<span id="id80"></span><h3>オプションパラメータ一覧<a class="headerlink" href="#general-operations-option-parameter-list" title="この見出しへのパーマリンク">¶</a></h3>
+<section id="ansible-legacyrole-option-parameter-list">
+<span id="id83"></span><h3>オプションパラメータ一覧<a class="headerlink" href="#ansible-legacyrole-option-parameter-list" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
 <div class="line">インターフェース情報とMovement一覧のオプションパラメータについて説明します。</div>
 <div class="line">ITAでは、以下の順番でansible-playbookのオプションパラメータを設定するので、単一の値しか許容していないパラメータを複数定義した場合、Movement一覧=&gt;オプションパラメータのパラメータが有効になります。</div>
@@ -4801,102 +4942,139 @@ executions_jobtpl_&lt;作業番号&gt;_&lt;グループ番号&gt;</p></td>
 <div class="line">　　以下の表は実行エンジンがAnsible Core以外の場合に、指定可能なオプションパラメータです。</div>
 <div class="line"><br /></div>
 </div>
-<table class="docutils align-left" id="id165">
-<caption><span class="caption-number">表 61 </span><span class="caption-text">実行エンジンがAnsible Core以外の場合に指定可能なオプションパラメータ一覧</span><a class="headerlink" href="#id165" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="docutils align-left" id="id169">
+<caption><span class="caption-text">実行エンジンがAnsible Core以外の場合に指定可能なオプションパラメータ一覧</span><a class="headerlink" href="#id169" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 25%" />
+<col style="width: 42%" />
+<col style="width: 17%" />
+</colgroup>
 <thead>
-<tr class="row-odd"><th class="head"><p><strong>オプションパラメータ</strong></p></th>
-<th class="head"><p><strong>指定方法</strong></p></th>
-<th class="head"><p><strong>AnsibleAutomationControllerの設定箇所</strong></p></th>
-<th class="head"><p><strong>備考</strong></p></th>
+<tr class="row-odd"><th class="head"><p>オプションパラメータ</p></th>
+<th class="head"><p>指定方法</p></th>
+<th class="head"><p>Ansible Automation Controllerの設定箇所</p></th>
+<th class="head"><p>備考</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>-v</p>
-<p>--verbose</p>
+<tr class="row-even"><td><div class="line-block">
+<div class="line">-v</div>
+<div class="line">--verbose</div>
+</div>
 </td>
-<td><p>-v</p>
-<p>-vv</p>
-<p>-vvv</p>
-<p>-vvvv</p>
-<p>-vvvvv</p>
-<p>--verbose</p>
+<td><div class="line-block">
+<div class="line">-v</div>
+<div class="line">-vv</div>
+<div class="line">-vvv</div>
+<div class="line">-vvvv</div>
+<div class="line">-vvvvv</div>
+<div class="line">--verbose</div>
+</div>
 </td>
-<td><p>テンプレート
-画面の[詳細
-]に指定した
-vの数を設定</p></td>
-<td><p>・vの合計値を適用</p>
-<p>・--verboseは、-vと同様</p>
-<p>例：--verbose -vvv
-の場合、-vvvvと同様</p>
-<p>・vを6以上指定した場合
-、vは5の指定となる</p>
+<td><p>テンプレート 画面の[詳細]に指定した vの数を設定</p></td>
+<td><div class="line-block">
+<div class="line">・vの合計値を適用</div>
+<div class="line">・--verboseは、-vと同様</div>
+<div class="line">例：--verbose -vvv の場合、-vvvvと同様</div>
+<div class="line">・vを6以上指定した場合 、vは5の指定となる</div>
+</div>
 </td>
 </tr>
-<tr class="row-odd"><td><p>-f</p>
-<p>--forks</p>
+<tr class="row-odd"><td><div class="line-block">
+<div class="line">-f</div>
+<div class="line">--forks</div>
+</div>
 </td>
-<td><p>-f FORKS</p>
-<p>--forks=FORKS</p>
+<td><div class="line-block">
+<div class="line">-f FORKS</div>
+<div class="line">--forks=FORKS</div>
+</div>
 </td>
 <td><p>テンプレートの[フォーク]に指定したFORKSが設定される</p></td>
-<td><p>・FORKSには数値を指定</p>
-<p>・複数定義した場合、最後に定義したパラメータが有効</p>
-<p>例：-f 1-forks=10の場合、--forks=10が有効となる</p>
-<p>・数値以外が指定された場合、エラーとなる</p>
+<td><div class="line-block">
+<div class="line">・FORKSには数値を指定</div>
+<div class="line">・複数定義した場合、最後に定義したパラメータが有効</div>
+<div class="line">例：-f 1-forks=10の場合、--forks=10が有効となる</div>
+<div class="line">・数値以外が指定された場合、エラーとなる</div>
+</div>
 </td>
 </tr>
-<tr class="row-even"><td><p>-l</p>
-<p>--limit</p>
+<tr class="row-even"><td><div class="line-block">
+<div class="line">-l</div>
+<div class="line">--limit</div>
+</div>
 </td>
-<td><p>-l SUBSET</p>
-<p>--limit=SUBSET</p>
+<td><div class="line-block">
+<div class="line">-l SUBSET</div>
+<div class="line">--limit=SUBSET</div>
+</div>
 </td>
 <td><p>テンプレートの[制限]に指定したSUBMITが設定される</p></td>
-<td><p>・SUBSET:機器一覧にあるホスト名</p>
-<p>・複数定義した場合、最後に定義したパラメータが有効</p>
+<td><div class="line-block">
+<div class="line">・SUBSET:機器一覧にあるホスト名</div>
+<div class="line">・複数定義した場合、最後に定義したパラメータが有効</div>
+</div>
 </td>
 </tr>
-<tr class="row-odd"><td><p>-e</p>
-<p>--extra-vars</p>
+<tr class="row-odd"><td><div class="line-block">
+<div class="line">-e</div>
+<div class="line">--extra-vars</div>
+</div>
 </td>
-<td><p>-e EXTRA_VARS</p>
-<p>--extra-vars=EXTRA_VARS</p>
+<td><div class="line-block">
+<div class="line">-e EXTRA_VARS</div>
+<div class="line">--extra-vars=EXTRA_VARS</div>
+</div>
 </td>
 <td><p>テンプレートの[追加変数]に変数名:具体値の形式で設定される</p></td>
-<td><p>・EXTRA_VARS:変数名、具体値をjson形式またはyaml形式</p>
-<p>例：json形式の場合
--extra-vars={&quot;VAR_1&quot;:&quot;directory&quot;,&quot;VAR_2&quot;:&quot;0755&quot;}</p>
-<p>yaml形式の場合
--extra-vars=VAR_1:directory\nVAR_2:0755</p>
-<p>・複数定義した場合、最後に定義したパラメータが有効</p>
+<td><div class="line-block">
+<div class="line">・EXTRA_VARS:変数名、具体値をjson形式またはyaml形式</div>
+<div class="line">例：json形式の場合 -extra-vars={&quot;VAR_1&quot;:&quot;directory&quot;,&quot;VAR_2&quot;:&quot;0755&quot;}</div>
+<div class="line">yaml形式の場合 -extra-vars=VAR_1:directorynVAR_2:0755</div>
+<div class="line">・複数定義した場合、最後に定義したパラメータが有効</div>
+</div>
 </td>
 </tr>
-<tr class="row-even"><td><p>-t</p>
-<p>--tags</p>
+<tr class="row-even"><td><div class="line-block">
+<div class="line">-t</div>
+<div class="line">--tags</div>
+</div>
 </td>
-<td><p>-t TAGS</p>
-<p>--tags=TAGS</p>
+<td><div class="line-block">
+<div class="line">-t TAGS</div>
+<div class="line">--tags=TAGS</div>
+</div>
 </td>
 <td><p>テンプレートの[ジョブタグ]に設定したTAGSが設定される</p></td>
-<td><p>・TAGS:タグ名</p>
-<p>・複数個のパラメータを許容</p>
+<td><div class="line-block">
+<div class="line">・TAGS:タグ名</div>
+<div class="line">・複数個のパラメータを許容</div>
+</div>
 </td>
 </tr>
-<tr class="row-odd"><td><p>-b</p>
-<p>--become</p>
+<tr class="row-odd"><td><div class="line-block">
+<div class="line">-b</div>
+<div class="line">--become</div>
+</div>
 </td>
-<td><p>-b</p>
-<p>--become</p>
+<td><div class="line-block">
+<div class="line">-b</div>
+<div class="line">--become</div>
+</div>
 </td>
 <td><p>テンプレートのオプション[権限昇格の有効化]がチェックされる</p></td>
 <td><p>・少なくとも1つ指定すればパラメータが有効</p></td>
 </tr>
-<tr class="row-even"><td><p>-D</p>
-<p>--diff</p>
+<tr class="row-even"><td><div class="line-block">
+<div class="line">-D</div>
+<div class="line">--diff</div>
+</div>
 </td>
-<td><p>-D</p>
-<p>--diff</p>
+<td><div class="line-block">
+<div class="line">-D</div>
+<div class="line">--diff</div>
+</div>
 </td>
 <td><p>テンプレートの[変更]の表示が有効化される</p></td>
 <td><p>・少なくとも1つ指定すればパラメータが有効</p></td>
@@ -4904,44 +5082,58 @@ vの数を設定</p></td>
 <tr class="row-odd"><td><p>--skip-tags</p></td>
 <td><p>--skip-tags=SKIP_TAGS</p></td>
 <td><p>テンプレートの[スキップタグ]に設定したSKIP_TAGSが設定される</p></td>
-<td><p>・SKIP_TAGS:スキップタグ名</p>
-<p>・複数個のパラメータを許容</p>
+<td><div class="line-block">
+<div class="line">・SKIP_TAGS:スキップタグ名</div>
+<div class="line">・複数個のパラメータを許容</div>
+</div>
 </td>
 </tr>
-<tr class="row-even"><td><p>--st
-art-at-task</p></td>
+<tr class="row-even"><td><p>--st art-at-task</p></td>
 <td><p>--start-at-task=START_AT_TASK</p></td>
 <td><p>※Ansible Automation ControllerのWebUI には--start-at-taskの表示はない。</p></td>
 <td><p>・複数定義した場合、最後に定義したパラメータが有効</p></td>
 </tr>
-<tr class="row-odd"><td><p>-ufc</p>
-<p>--use
-_fact_cache</p>
+<tr class="row-odd"><td><div class="line-block">
+<div class="line">-ufc</div>
+<div class="line">--use _fact_cache</div>
+</div>
 </td>
-<td><p>-ufc</p>
-<p>--use_fact_cache</p>
+<td><div class="line-block">
+<div class="line">-ufc</div>
+<div class="line">--use_fact_cache</div>
+</div>
 </td>
 <td><p>テンプレートのオプション[ファクトキャッシュの有効化]がチェックされる</p></td>
 <td><p>・少なくとも1つ指定すればパラメータが有効</p></td>
 </tr>
-<tr class="row-even"><td><p>-as</p>
-<p>--allow_simultaneous</p>
+<tr class="row-even"><td><div class="line-block">
+<div class="line">-as</div>
+<div class="line">--allow_simultaneous</div>
+</div>
 </td>
-<td><p>-as</p>
-<p>--allow_simultaneous</p>
+<td><div class="line-block">
+<div class="line">-as</div>
+<div class="line">--allow_simultaneous</div>
+</div>
 </td>
 <td><p>テンプレートのオプション[同時実行ジョブの有効化]がチェックされる</p></td>
 <td><p>・少なくとも1つ指定すればパラメータが有効</p></td>
 </tr>
-<tr class="row-odd"><td><p>-jsc</p>
-<p>--jobslice_count</p>
+<tr class="row-odd"><td><div class="line-block">
+<div class="line">-jsc</div>
+<div class="line">--jobslice_count</div>
+</div>
 </td>
-<td><p>-jscジョブスライス数</p>
-<p>--job_slice_count=ジョブスライス数</p>
+<td><div class="line-block">
+<div class="line">-jscジョブスライス数</div>
+<div class="line">--job_slice_count=ジョブスライス数</div>
+</div>
 </td>
 <td><p>テンプレートの[ジョブスライス数]に指定したジョブスライス数が設定される</p></td>
-<td><p>・ジョブスライス数には数値を指定</p>
-<p>・複数定義した場合、最後に定義したパラメータが有効</p>
+<td><div class="line-block">
+<div class="line">・ジョブスライス数には数値を指定</div>
+<div class="line">・複数定義した場合、最後に定義したパラメータが有効</div>
+</div>
 </td>
 </tr>
 </tbody>
@@ -4965,8 +5157,8 @@ _fact_cache</p>
 <div class="line">　・ __parameters_file_dir__</div>
 <div class="line"><br /></div>
 </div>
-<section id="id81">
-<h4>ITA独自変数を利用して作成したファイルの取り扱い<a class="headerlink" href="#id81" title="この見出しへのパーマリンク">¶</a></h4>
+<section id="id84">
+<h4>ITA独自変数を利用して作成したファイルの取り扱い<a class="headerlink" href="#id84" title="この見出しへのパーマリンク">¶</a></h4>
 <div class="line-block">
 <div class="line">ITA独自変数を利用して作成したファイルの出力先ディレクトリパスはAnsible Automation ControllerのITA作業用ディレクトリ配下「/var/lib/exastro」に設定されます。Movement実行前に結果データをAnsible Automation Controller（各実行ノード）のITA作業用ディレクトリ配下「/var/lib/exastro」にファイル転送します。Movement実行でここに作成されたファイルは、Movement実行後に各Ansible Automation Controller（各実行ノード）より結果データに上書きモードでファイル転送します。同一ファイル名でファイルを作成している場合、更新したファイルが結果データに正しく反映されない場合があります。</div>
 </div>
@@ -4992,8 +5184,8 @@ _fact_cache</p>
 </li>
 </ol>
 </section>
-<section id="id82">
-<h4>留意事項<a class="headerlink" href="#id82" title="この見出しへのパーマリンク">¶</a></h4>
+<section id="id85">
+<h4>留意事項<a class="headerlink" href="#id85" title="この見出しへのパーマリンク">¶</a></h4>
 <ol class="arabic">
 <li><div class="line-block">
 <div class="line">ファイル名はansible「__loginhostname__」を含めるなどして、Movementに紐づいているターゲットホスト毎に同一ファイル名に出力しないように工夫してください。</div>
@@ -5006,13 +5198,13 @@ _fact_cache</p>
 </ol>
 </section>
 </section>
-<section id="general-operations-data-resources-deleted-when-executing">
-<span id="id83"></span><h3>実行時データ削除で削除されるデータリソース<a class="headerlink" href="#general-operations-data-resources-deleted-when-executing" title="この見出しへのパーマリンク">¶</a></h3>
+<section id="ansible-legacyrole-data-resources-deleted-when-executing">
+<span id="id86"></span><h3>実行時データ削除で削除されるデータリソース<a class="headerlink" href="#ansible-legacyrole-data-resources-deleted-when-executing" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
 <div class="line">インターフェース情報の実行時データ削除で「削除する」を選択した場合に、削除されるデータリソースを以下に列挙します。</div>
 </div>
-<table class="docutils align-left" id="id166">
-<caption><span class="caption-number">表 62 </span><span class="caption-text">実行時データ削除で削除されるデータリソース一覧(Ansible Automation Controller側)</span><a class="headerlink" href="#id166" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="docutils align-left" id="id170">
+<caption><span class="caption-text">実行時データ削除で削除されるデータリソース一覧(Ansible Automation Controller側)</span><a class="headerlink" href="#id170" title="このテーブルへのパーマリンク">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="head" rowspan="2"><p>データリソース</p></th>
 <th class="head" rowspan="2"><p>リソースタイプ</p></th>
@@ -5084,8 +5276,8 @@ _fact_cache</p>
 </tr>
 </tbody>
 </table>
-<table class="docutils align-left" id="id167">
-<caption><span class="caption-number">表 63 </span><span class="caption-text">実行時データ削除で削除されるデータリソース一覧(ITA側)</span><a class="headerlink" href="#id167" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="docutils align-left" id="id171">
+<caption><span class="caption-text">実行時データ削除で削除されるデータリソース一覧(ITA側)</span><a class="headerlink" href="#id171" title="このテーブルへのパーマリンク">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="head" rowspan="2"><p>データリソース</p></th>
 <th class="head" rowspan="2"><p>リソースタイプ</p></th>
@@ -5115,8 +5307,6 @@ _fact_cache</p>
 
 <div id="articleNavigation">
   <ul>
-    <li class="prev"><a href="index.html" title="前のトピックへ"><span>前のトピックへ</span>Ansible ドライバ</a></li>
-    <li class="next"><a href="../maintenance/index.html" title="次のトピックへ"><span>次のトピックへ</span>メンテナンス</a></li>
   </ul>
 </div>
 
