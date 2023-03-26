@@ -106,16 +106,16 @@
 ジョブフローの作成
 ------------------
 
-| 複数の Movement を一連の作業の実行方法として、Conductor という仕組みがあります。
+| 複数の Movement を一連の作業として実行する方法に、Conductor という仕組みがあります。
 | Conductor を利用することで、複数の Movement をまとめて実行できるだけでなく、Movement の実行結果に応じて、後続処理を分岐させたり、ユーザ確認の為に一時停止するといった複雑なロジックを組み込む事が可能です。
 
 | :menuselection:`Conductor --> Conductor編集/作業実行` から、ジョブフローを定義します。
 
 | 1. 右上のペイン :menuselection:`Conductor情報 --> 名称`  に、 :kbd:`サーバー構築` と入力します。
 | 2. 右下のペインに、 :doc:`scenario1` と :doc:`scenario2` で作成した :kbd:`ホスト名設定` と :kbd:`パッケージ管理` の2つの Movement があります。これらを画面中央にドラッグアンドドロップします。
-| 3. 各 Mode 間を下記の様に接続します。
+| 3. 各 Node 間を下記の様に接続します。
  
-.. list-table:: オブジェクト間の接続
+.. list-table:: Node 間の接続
    :widths: 10 10
    :header-rows: 1
 
@@ -228,14 +228,14 @@
       package httpd is not installed
 
 2. 作業実行
-
-   | :menuselection:`Conductor --> Conductor編集/作業実行` から、:menuselection:` 選択` を押下します。
+ 
+   | :menuselection:`Conductor --> Conductor編集/作業実行` から、:guilabel:` 選択` を押下します。
    | :kbd:`サーバー構築` Conductor を選択し、:guilabel:`選択決定` を押下します。
    | 次に、画面上部の :guilabel:` 作業実行` で、オペレーションに :kbd:`Webサーバーへの再構築` を選択し、:guilabel:`作業実行` を押下します。
 
    | :menuselection:`Conductor作業確認` 画面が開き、実行が完了した後に、全ての Movement のステータスが「Done」になったことを確認します。
 
-3. 事後確認
+4. 事後確認
 
    | 再度サーバに SSH ログインし、Web サーバーに作り直しされていることを確認します。
 
