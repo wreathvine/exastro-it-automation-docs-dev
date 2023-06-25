@@ -617,11 +617,9 @@ a:hover img {
 }
 
 #container {
- overflow: hidden;
  position: relative;
  min-height: 100%;
  padding-bottom: 24px;
- /* background-color: #F2F2F2; */
 }
 
 #overlay,
