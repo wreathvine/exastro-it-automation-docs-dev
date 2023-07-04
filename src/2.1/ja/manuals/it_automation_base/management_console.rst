@@ -250,9 +250,9 @@ DashBoard
 オペレーション削除管理
 ----------------------
 
-詳細については、メンテナンスの「:doc:`オペレーション削除管理` 」を参照してください。
+詳細については、メンテナンスの「:doc:`../maintenance/operation_autoclean`」を参照してください。
 
 ファイル削除管理
 ----------------
 
-詳細については、メンテナンスの「:doc:`../maintenance/file_autoclean` 」を参照してください。
+詳細については、メンテナンスの「:doc:`../maintenance/file_autoclean`」を参照してください。
