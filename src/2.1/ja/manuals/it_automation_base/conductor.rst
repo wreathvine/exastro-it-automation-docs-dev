@@ -84,7 +84,7 @@ ITA Conductor利用手順
 - | Conductor実行時の各 Movementで共有するディレクトリパスが利用可能です。
   | Movement間で情報伝達する必要がある場合、共有するディレクトリパスを利用する事で情報の受け渡しが可能となります。
   | 共有対象については、「Ansible driver」を対象としています。
-  | 「Ansible driver」に関する詳細は、「:doc:`../ansible-driver/general_operations`」を参照して下さい。
+  | 「Ansible driver」に関する詳細は、「:doc:`../ansible-driver/index`」を参照して下さい。
 
   .. | 共有対象については、「Ansible driver」と「Terraformdriver」を対象としています。
   .. | 「Ansible driver」に関する詳細は、別紙、「利用手順マニュアルAnsible-driver」を参照して下さい。
