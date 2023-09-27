@@ -39,9 +39,10 @@
 ### ドキュメントの作成・更新
 
 1. VSCode の拡張機能の"Remote - SSH"を使って、開発サーバにログインする
-2. 「ファイル」-「ファイルでワークスペースを開く」から上記でクローンしたexastro-it-automation-docs内にある「exastro-it-automation-docs.code-workspace」を開く。
-3. 左下のRemote接続用の「><」アイコンをクリックし、「Reopen in Container」を開く。
-4. あとはexastro-it-automation-docs配下のファイルを編集する。
+2. 上記でクローンした.devcontainerフォルダに.envファイルを作成する（.env.sampleを参考)
+3. 「ファイル」-「ファイルでワークスペースを開く」から上記でクローンしたexastro-it-automation-docs内にある「exastro-it-automation-docs.code-workspace」を開く。
+4. 左下のRemote接続用の「><」アイコンをクリックし、「Reopen in Container」を開く。
+5. あとはexastro-it-automation-docs配下のファイルを編集する。
 
 ### 編集中のドキュメントの確認
 下記の拡張機能をインストールし、プレビュー画面で確認する。
