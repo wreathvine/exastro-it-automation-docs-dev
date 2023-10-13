@@ -1541,15 +1541,16 @@ ITAがプロキシ環境下にある場合、Terraformまでの疎通のため�
 </tr>
 <tr class="row-even"><td><p>最大繰返数</p></td>
 <td><div class="line-block">
-<div class="line">配列の最大繰返数を0～99の範囲で入力します。</div>
+<div class="line">配列の最大繰返数を1～1024の範囲で入力します。</div>
+<div class="line">最大繰返数の上限値は「管理コンソール - <a class="reference internal" href="../it_automation_base/management_console.html#system-setting"><span class="std std-ref">システム設定</span></a>」より識別ID「MAXIMUM_ITERATION_TERRAFORM-CLOUD-EP」の設定値にて、1～1024の範囲内で変更することが可能です。</div>
 <div class="line">初期値はtfファイルのdefaultに記載されている値から取得した繰返数が設定されます。</div>
 <div class="line">tfファイルにdefaultの記載がない場合、1が設定されます。</div>
 <div class="line">最終更新者が「Terraform Cloud/EP変数更新機能」でない場合はModule素材の更新により値が変更されることはありません。</div>
 </div>
 </td>
-<td><p>ー</p></td>
-<td><p>入力不可</p></td>
-<td><p>ー</p></td>
+<td><p>〇</p></td>
+<td><p>手動入力</p></td>
+<td><p>入力値1～1,024(「<a class="reference internal" href="../it_automation_base/management_console.html#system-setting"><span class="std std-ref">システム設定</span></a>」の設定値により変動)</p></td>
 </tr>
 <tr class="row-odd"><td><p>備考</p></td>
 <td><p>自由記述欄です。</p></td>
