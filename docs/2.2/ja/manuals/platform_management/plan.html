@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     
-    <title>2. リソースプラン &#8212; Documentation  ドキュメント</title>
+    <title>3. リソースプラン &#8212; Documentation  ドキュメント</title>
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/option.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
@@ -26,6 +26,7 @@
     <script src="../../../../_static/sphinx_highlight.js"></script>
     <script src="../../../../_static/clipboard.min.js"></script>
     <script src="../../../../_static/copybutton.js"></script>
+    <script src="../../../../_static/tabs.js"></script>
     <script src="../../../../_static/translations.js"></script>
     <script src="../../../../_static/jquery-3.6.3.min.js"></script>
     <script src="../../../../_static/exastro_documents.js"></script>
@@ -34,8 +35,8 @@
     <link rel="shortcut icon" href="../../../../_static/favicon.ico"/>
     <link rel="index" title="索引" href="../../../../genindex.html" />
     <link rel="search" title="検索" href="../../../../search.html" />
-    <link rel="next" title="3. Ansible Automation Platform 連携" href="aap.html" />
-    <link rel="prev" title="1. Organization (オーガナイゼーション)" href="organization.html" /> 
+    <link rel="next" title="4. Ansible Automation Platform 連携" href="aap.html" />
+    <link rel="prev" title="2. Organization (オーガナイゼーション)" href="organization.html" /> 
   </head>
 <body id="page" class="ja">
 
@@ -108,8 +109,8 @@
     </div>
     <div id="toolbarNavigation">
       <ul>
-        <li class="prev"><a href="organization.html" title="前のトピックへ"><span class="section-number">1. </span>Organization (オーガナイゼーション)</a></li>
-        <li class="next"><a href="aap.html" title="次のトピックへ"><span class="section-number">3. </span>Ansible Automation Platform 連携</a></li>
+        <li class="prev"><a href="organization.html" title="前のトピックへ"><span class="section-number">2. </span>Organization (オーガナイゼーション)</a></li>
+        <li class="next"><a href="aap.html" title="次のトピックへ"><span class="section-number">4. </span>Ansible Automation Platform 連携</a></li>
       </ul>
     </div>
   </div>
@@ -128,9 +129,10 @@
 <li class="toctree-l3"><a class="reference internal" href="../../learn/index.html">Learn</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="../index.html">マニュアル</a><ul class="current">
 <li class="toctree-l4 current"><a class="reference internal" href="index.html">システム管理</a><ul class="current">
-<li class="toctree-l5"><a class="reference internal" href="organization.html">1. Organization (オーガナイゼーション)</a></li>
-<li class="toctree-l5 current"><a class="current reference internal" href="#">2. リソースプラン</a></li>
-<li class="toctree-l5"><a class="reference internal" href="aap.html">3. Ansible Automation Platform 連携</a></li>
+<li class="toctree-l5"><a class="reference internal" href="general.html">1. ログイン方法</a></li>
+<li class="toctree-l5"><a class="reference internal" href="organization.html">2. Organization (オーガナイゼーション)</a></li>
+<li class="toctree-l5 current"><a class="current reference internal" href="#">3. リソースプラン</a></li>
+<li class="toctree-l5"><a class="reference internal" href="aap.html">4. Ansible Automation Platform 連携</a></li>
 </ul>
 </li>
 <li class="toctree-l4"><a class="reference internal" href="../organization_management/index.html">オーガナイゼーション管理</a></li>
@@ -166,24 +168,24 @@
 <div id="tableOfContents">
   <div id="tocButton"></div>
   <ul>
-<li><a class="reference internal" href="#">2. リソースプラン</a><ul>
-<li><a class="reference internal" href="#id2">2.1. はじめに</a></li>
-<li><a class="reference internal" href="#id3">2.2. リソースプランとは</a><ul>
-<li><a class="reference internal" href="#id4">2.2.1. リソースプラン設定手順</a></li>
-<li><a class="reference internal" href="#id5">2.2.2. 運用とシステムの動きについて</a></li>
+<li><a class="reference internal" href="#">3. リソースプラン</a><ul>
+<li><a class="reference internal" href="#id2">3.1. はじめに</a></li>
+<li><a class="reference internal" href="#id3">3.2. リソースプランとは</a><ul>
+<li><a class="reference internal" href="#id4">3.2.1. リソースプラン設定手順</a></li>
+<li><a class="reference internal" href="#id5">3.2.2. 運用とシステムの動きについて</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#id6">2.3. リソースプラン設定</a><ul>
-<li><a class="reference internal" href="#id7">2.3.1. 前提条件</a></li>
-<li><a class="reference internal" href="#id8">2.3.2. リソースプラン設定の流れ</a></li>
-<li><a class="reference internal" href="#id9">2.3.3. 事前準備</a></li>
-<li><a class="reference internal" href="#id10">2.3.4. リソースプラン設定項目の確認</a></li>
-<li><a class="reference internal" href="#id11">2.3.5. リソースプラン登録</a></li>
-<li><a class="reference internal" href="#id12">2.3.6. 設定済みリソースプランの確認</a></li>
-<li><a class="reference internal" href="#id13">2.3.7. オーガナイゼーションへのリソースプラン設定</a></li>
-<li><a class="reference internal" href="#id14">2.3.8. 設定済みオーガナイゼーションリソースプランの確認</a></li>
-<li><a class="reference internal" href="#id15">2.3.9. オーガナイゼーションへのリソースプラン解除</a></li>
-<li><a class="reference internal" href="#id16">2.3.10. オーガナイゼーション毎の使用状況確認</a></li>
+<li><a class="reference internal" href="#id6">3.3. リソースプラン設定</a><ul>
+<li><a class="reference internal" href="#id7">3.3.1. 前提条件</a></li>
+<li><a class="reference internal" href="#id8">3.3.2. 事前準備</a></li>
+<li><a class="reference internal" href="#id9">3.3.3. リソースプラン設定の流れ</a></li>
+<li><a class="reference internal" href="#plan-list">3.3.4. 現状のリソースプラン確認</a></li>
+<li><a class="reference internal" href="#plan-create">3.3.5. リソースプラン登録</a></li>
+<li><a class="reference internal" href="#plan-check">3.3.6. リソースプラン確認</a></li>
+<li><a class="reference internal" href="#plan-organization-apply">3.3.7. リソースプランの定義を適用</a></li>
+<li><a class="reference internal" href="#plan-organization-check">3.3.8. 設定済みオーガナイゼーションリソースプランの確認</a></li>
+<li><a class="reference internal" href="#plan-organization-release">3.3.9. 設定済みオーガナイゼーションリソースプランの解除</a></li>
+<li><a class="reference internal" href="#plan-organization-status">3.3.10. オーガナイゼーション毎の使用状況確認</a></li>
 </ul>
 </li>
 </ul>
@@ -203,7 +205,7 @@
     <li><a href="../index.html">マニュアル</a></li>
     <li><a href="index.html">システム管理</a></li>
     
-    <li><span class="section-number">2. </span>リソースプラン</li>
+    <li><span class="section-number">3. </span>リソースプラン</li>
   </ul>
 </div>
 
@@ -212,22 +214,22 @@
 <div class="body" role="main">
 
   <section id="id1">
-<h1><span class="section-number">2. </span>リソースプラン<a class="headerlink" href="#id1" title="この見出しへのパーマリンク">¶</a></h1>
+<h1><span class="section-number">3. </span>リソースプラン<a class="headerlink" href="#id1" title="この見出しへのパーマリンク">¶</a></h1>
 <section id="id2">
-<h2><span class="section-number">2.1. </span>はじめに<a class="headerlink" href="#id2" title="この見出しへのパーマリンク">¶</a></h2>
+<h2><span class="section-number">3.1. </span>はじめに<a class="headerlink" href="#id2" title="この見出しへのパーマリンク">¶</a></h2>
 <div class="line-block">
 <div class="line">本書では、Exastro Suite における リソースプラン設定 について説明します。</div>
 <div class="line">リソースプランの設定はシステム管理者のみ可能です（オーガナイゼーションユーザーからはアクセス出来ません）。</div>
 </div>
 </section>
 <section id="id3">
-<h2><span class="section-number">2.2. </span>リソースプランとは<a class="headerlink" href="#id3" title="この見出しへのパーマリンク">¶</a></h2>
+<h2><span class="section-number">3.2. </span>リソースプランとは<a class="headerlink" href="#id3" title="この見出しへのパーマリンク">¶</a></h2>
 <div class="line-block">
 <div class="line">オーガナイゼーションごとに使用可能なリソース量を管理するためのものです。</div>
 <div class="line">プランに複数のリソースの上限値を設定しておき、オーガナイゼーション毎にプランを割り当てることで使用リソースを制限することができます。</div>
 </div>
 <table class="docutils align-left" id="id17">
-<caption><span class="caption-number">表 2.40 </span><span class="caption-text">リソースプラン設定例</span><a class="headerlink" href="#id17" title="このテーブルへのパーマリンク">¶</a></caption>
+<caption><span class="caption-number">表 3.8 </span><span class="caption-text">リソースプラン設定例</span><a class="headerlink" href="#id17" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 20%" />
 <col style="width: 20%" />
@@ -259,14 +261,14 @@
 </tbody>
 </table>
 <section id="id4">
-<h3><span class="section-number">2.2.1. </span>リソースプラン設定手順<a class="headerlink" href="#id4" title="この見出しへのパーマリンク">¶</a></h3>
+<h3><span class="section-number">3.2.1. </span>リソースプラン設定手順<a class="headerlink" href="#id4" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
 <div class="line">リソースプランを登録のうえ、オーガナイゼーションへリソースプランの紐づけが必要になります。</div>
 <div class="line"><a class="reference internal" href="organization.html#organization-creation-v2-1"><span class="std std-ref">オーガナイゼーション作成</span></a> に記載のオーガナイゼーション作成パラメータ「plan.id」にてリソースプランを指定することで紐づけることが出来ます。</div>
 </div>
 </section>
 <section id="id5">
-<h3><span class="section-number">2.2.2. </span>運用とシステムの動きについて<a class="headerlink" href="#id5" title="この見出しへのパーマリンク">¶</a></h3>
+<h3><span class="section-number">3.2.2. </span>運用とシステムの動きについて<a class="headerlink" href="#id5" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
 <div class="line">例） １月まで「最大ワークスペース数＝５のリソースプラン」、２月から「最大ワークスペース数＝３のリソースプラン」に変更</div>
 </div>
@@ -306,9 +308,9 @@
 </section>
 </section>
 <section id="id6">
-<h2><span class="section-number">2.3. </span>リソースプラン設定<a class="headerlink" href="#id6" title="この見出しへのパーマリンク">¶</a></h2>
+<h2><span class="section-number">3.3. </span>リソースプラン設定<a class="headerlink" href="#id6" title="この見出しへのパーマリンク">¶</a></h2>
 <section id="id7">
-<h3><span class="section-number">2.3.1. </span>前提条件<a class="headerlink" href="#id7" title="この見出しへのパーマリンク">¶</a></h3>
+<h3><span class="section-number">3.3.1. </span>前提条件<a class="headerlink" href="#id7" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
 <div class="line">本作業には下記のコマンドが必要となるため、事前にインストールをしてください。</div>
 </div>
@@ -321,41 +323,29 @@
 </ul>
 </li>
 </ul>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>画面からリソースプランを作成する際は、前提条件は必要ありません</p>
+</div>
 </section>
 <section id="id8">
-<h3><span class="section-number">2.3.2. </span>リソースプラン設定の流れ<a class="headerlink" href="#id8" title="この見出しへのパーマリンク">¶</a></h3>
-<div class="line-block">
-<div class="line">リソースプランを登録する流れは以下の通りとなります。</div>
-</div>
-<ol class="arabic">
-<li><div class="line-block">
-<div class="line">現状のリソースプラン確認</div>
-</div>
-</li>
-<li><div class="line-block">
-<div class="line">リソースプランの定義を作成</div>
-</div>
-</li>
-<li><div class="line-block">
-<div class="line">リソースプランの定義を適用</div>
-</div>
-</li>
-</ol>
-</section>
-<section id="id9">
-<h3><span class="section-number">2.3.3. </span>事前準備<a class="headerlink" href="#id9" title="この見出しへのパーマリンク">¶</a></h3>
+<h3><span class="section-number">3.3.2. </span>事前準備<a class="headerlink" href="#id8" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
 <div class="line">GitHub リポジトリから取得した資材の中にある、シェルスクリプトを実行しオーガナイゼーションを作成します。</div>
 <div class="line">confファイルは、各種設定・取得シェルで使用します。</div>
 </div>
 <ol class="arabic">
-<li><p>オーガナイゼーション作成用シェルスクリプトを、リポジトリから <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">git</kbd> <kbd class="kbd docutils literal notranslate">clone</kbd></kbd> により取得します。</p>
+<li><div class="line-block">
+<div class="line">オーガナイゼーション作成用シェルスクリプトを、リポジトリから <kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">git</kbd> <kbd class="kbd docutils literal notranslate">clone</kbd></kbd> により取得します。</div>
+</div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exastro Platform の資材を入手</span>
 git<span class="w"> </span>clone<span class="w"> </span>https://github.com/exastro-suite/exastro-platform.git
 </pre></div>
 </div>
 </li>
-<li><p>取得した資材のtoolsフォルダに移動し、オーガナイゼーション作成用シェルスクリプト内のAPI実行先URLを、システム管理者用サイトアドレスに変更します。</p>
+<li><div class="line-block">
+<div class="line">取得した資材のtoolsフォルダに移動し、オーガナイゼーション作成用シェルスクリプト内のAPI実行先URLを、システム管理者用サイトアドレスに変更します。</div>
+</div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>vi<span class="w"> </span>api-auth.conf
 </pre></div>
 </div>
@@ -363,13 +353,13 @@ git<span class="w"> </span>clone<span class="w"> </span>https://github.com/exast
 <div class="line">変更箇所</div>
 </div>
 <ul>
-<li><p>api-auth.conf</p>
+<li><div class="line-block">
+<div class="line">api-auth.conf</div>
+</div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">CONF_BASE_URL</span><span class="o">={</span>システム管理者用サイトアドレス<span class="o">}</span>
 <span class="nv">CURL_OPT</span><span class="o">=</span>-svk
 </pre></div>
 </div>
-</li>
-</ul>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <div class="line-block">
@@ -378,26 +368,71 @@ git<span class="w"> </span>clone<span class="w"> </span>https://github.com/exast
 </div>
 </div>
 </li>
+</ul>
+</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>画面からリソースプランを作成する際は、事前準備は必要ありません</p>
+</div>
+</section>
+<section id="id9">
+<h3><span class="section-number">3.3.3. </span>リソースプラン設定の流れ<a class="headerlink" href="#id9" title="この見出しへのパーマリンク">¶</a></h3>
+<div class="line-block">
+<div class="line">リソースプランを登録する流れは以下の通りとなります。</div>
+</div>
+<ol class="arabic">
+<li><div class="line-block">
+<div class="line"><a class="reference internal" href="#plan-list"><span class="std std-ref">現状のリソースプラン確認</span></a></div>
+</div>
+</li>
+<li><div class="line-block">
+<div class="line"><a class="reference internal" href="#plan-create"><span class="std std-ref">リソースプラン登録</span></a></div>
+</div>
+</li>
+<li><div class="line-block">
+<div class="line"><a class="reference internal" href="#plan-check"><span class="std std-ref">リソースプラン確認</span></a></div>
+</div>
+</li>
+<li><div class="line-block">
+<div class="line"><a class="reference internal" href="#plan-organization-apply"><span class="std std-ref">リソースプランの定義を適用</span></a></div>
+</div>
+</li>
+<li><div class="line-block">
+<div class="line"><a class="reference internal" href="#plan-organization-check"><span class="std std-ref">設定済みオーガナイゼーションリソースプランの確認</span></a></div>
+</div>
+</li>
 </ol>
 </section>
-<section id="id10">
-<h3><span class="section-number">2.3.4. </span>リソースプラン設定項目の確認<a class="headerlink" href="#id10" title="この見出しへのパーマリンク">¶</a></h3>
+<section id="plan-list">
+<span id="id10"></span><h3><span class="section-number">3.3.4. </span>現状のリソースプラン確認<a class="headerlink" href="#plan-list" title="この見出しへのパーマリンク">¶</a></h3>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-6Kit5a6a44OV44Kh44Kk44Or44Go44K544Kv44Oq44OX44OI44Gr44KI44KL5a6f6KGM" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-0-6Kit5a6a44OV44Kh44Kk44Or44Go44K544Kv44Oq44OX44OI44Gr44KI44KL5a6f6KGM" name="6Kit5a6a44OV44Kh44Kk44Or44Go44K544Kv44Oq44OX44OI44Gr44KI44KL5a6f6KGM" role="tab" tabindex="0">設定ファイルとスクリプトによる実行</button><button aria-controls="panel-0-UmVzdCBBUEnjgavjgojjgovlrp/ooYw=" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-0-UmVzdCBBUEnjgavjgojjgovlrp/ooYw=" name="UmVzdCBBUEnjgavjgojjgovlrp/ooYw=" role="tab" tabindex="-1">Rest APIによる実行</button></div><div aria-labelledby="tab-0-6Kit5a6a44OV44Kh44Kk44Or44Go44K544Kv44Oq44OX44OI44Gr44KI44KL5a6f6KGM" class="sphinx-tabs-panel group-tab" id="panel-0-6Kit5a6a44OV44Kh44Kk44Or44Go44K544Kv44Oq44OX44OI44Gr44KI44KL5a6f6KGM" name="6Kit5a6a44OV44Kh44Kk44Or44Go44K544Kv44Oq44OX44OI44Gr44KI44KL5a6f6KGM" role="tabpanel" tabindex="0"><ul>
+<li><div class="line-block">
+<div class="line">リソースプラン設定項目の確認</div>
+</div>
 <div class="line-block">
 <div class="line">新たなリソースプランを作成するにあたって、指定可能なリソースの種類(ID)を確認します。</div>
 </div>
 <ul>
-<li><p>コマンド</p>
+<li><div class="line-block">
+<div class="line">コマンド</div>
+</div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./get-plan-item-list.sh
 </pre></div>
 </div>
 </li>
-<li><p>コマンド実行後に入力（入力例）</p>
+<li><div class="line-block">
+<div class="line">コマンド実行後に入力（入力例）</div>
+</div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>your<span class="w"> </span>username<span class="w"> </span>:<span class="w"> </span>システム管理者自身のユーザー名を入力します
 your<span class="w"> </span>password<span class="w"> </span>:<span class="w"> </span>システム管理者自身のパスワードを入力します
 </pre></div>
 </div>
 </li>
-<li><p>成功時の結果表示</p>
+<li><div class="line-block">
+<div class="line">成功時の結果表示</div>
+</div>
 <div class="line-block">
 <div class="line"><cite>&quot;result&quot;: &quot;000-00000&quot;</cite> が、成功したことを示しています。</div>
 </div>
@@ -410,34 +445,40 @@ your<span class="w"> </span>password<span class="w"> </span>:<span class="w"> </
 <span class="o">{</span><span class="w"> </span><span class="o">[</span><span class="m">451</span><span class="w"> </span>bytes<span class="w"> </span>data<span class="o">]</span>
 *<span class="w"> </span>Connection<span class="w"> </span><span class="c1">#0 to host platform-auth left intact</span>
 <span class="o">{</span>
-<span class="s2">&quot;data&quot;</span>:<span class="w"> </span><span class="o">[</span>
-<span class="w">    </span><span class="o">{</span>
-<span class="w">    </span><span class="s2">&quot;id&quot;</span>:<span class="w"> </span><span class="s2">&quot;platform.roles&quot;</span>,
-<span class="w">    </span><span class="s2">&quot;informations&quot;</span>:<span class="w"> </span><span class="o">{</span>
-<span class="w">        </span><span class="s2">&quot;description&quot;</span>:<span class="w"> </span><span class="s2">&quot;default limit&quot;</span>
-<span class="w">    </span><span class="o">}</span>
-<span class="w">    </span><span class="o">}</span>,
-<span class="w">    </span><span class="o">{</span>
-<span class="w">    </span><span class="s2">&quot;id&quot;</span>:<span class="w"> </span><span class="s2">&quot;platform.users&quot;</span>,
-<span class="w">    </span><span class="s2">&quot;informations&quot;</span>:<span class="w"> </span><span class="o">{</span>
-<span class="w">        </span><span class="s2">&quot;description&quot;</span>:<span class="w"> </span><span class="s2">&quot;default limit&quot;</span>
-<span class="w">    </span><span class="o">}</span>
-<span class="w">    </span><span class="o">}</span>,
-<span class="w">    </span><span class="o">{</span>
-<span class="w">    </span><span class="s2">&quot;id&quot;</span>:<span class="w"> </span><span class="s2">&quot;platform.workspaces&quot;</span>,
-<span class="w">    </span><span class="s2">&quot;informations&quot;</span>:<span class="w"> </span><span class="o">{</span>
-<span class="w">        </span><span class="s2">&quot;description&quot;</span>:<span class="w"> </span><span class="s2">&quot;default limit&quot;</span>
-<span class="w">    </span><span class="o">}</span>
-<span class="w">    </span><span class="o">}</span>
-<span class="o">]</span>,
-<span class="s2">&quot;message&quot;</span>:<span class="w"> </span><span class="s2">&quot;SUCCESS&quot;</span>,
-<span class="s2">&quot;result&quot;</span>:<span class="w"> </span><span class="s2">&quot;000-00000&quot;</span>,
-<span class="s2">&quot;ts&quot;</span>:<span class="w"> </span><span class="s2">&quot;2022-12-09T06:58:26.764Z&quot;</span>
+<span class="w">  </span><span class="s2">&quot;data&quot;</span>:<span class="w"> </span><span class="o">[</span>
+<span class="w">      </span><span class="o">{</span>
+<span class="w">        </span><span class="s2">&quot;id&quot;</span>:<span class="w"> </span><span class="s2">&quot;platform.roles&quot;</span>,
+<span class="w">        </span><span class="s2">&quot;informations&quot;</span>:<span class="w"> </span><span class="o">{</span>
+<span class="w">            </span><span class="s2">&quot;description&quot;</span>:<span class="w"> </span><span class="s2">&quot;default limit&quot;</span>
+<span class="w">        </span><span class="o">}</span>
+<span class="w">      </span><span class="o">}</span>,
+<span class="w">      </span><span class="o">{</span>
+<span class="w">        </span><span class="s2">&quot;id&quot;</span>:<span class="w"> </span><span class="s2">&quot;platform.users&quot;</span>,
+<span class="w">        </span><span class="s2">&quot;informations&quot;</span>:<span class="w"> </span><span class="o">{</span>
+<span class="w">            </span><span class="s2">&quot;description&quot;</span>:<span class="w"> </span><span class="s2">&quot;default limit&quot;</span>
+<span class="w">        </span><span class="o">}</span>
+<span class="w">      </span><span class="o">}</span>,
+<span class="w">      </span><span class="o">{</span>
+<span class="w">        </span><span class="s2">&quot;id&quot;</span>:<span class="w"> </span><span class="s2">&quot;platform.workspaces&quot;</span>,
+<span class="w">        </span><span class="s2">&quot;informations&quot;</span>:<span class="w"> </span><span class="o">{</span>
+<span class="w">            </span><span class="s2">&quot;description&quot;</span>:<span class="w"> </span><span class="s2">&quot;default limit&quot;</span>
+<span class="w">        </span><span class="o">}</span>
+<span class="w">      </span><span class="o">}</span>
+<span class="w">  </span><span class="o">]</span>,
+<span class="w">  </span><span class="s2">&quot;message&quot;</span>:<span class="w"> </span><span class="s2">&quot;SUCCESS&quot;</span>,
+<span class="w">  </span><span class="s2">&quot;result&quot;</span>:<span class="w"> </span><span class="s2">&quot;000-00000&quot;</span>,
+<span class="w">  </span><span class="s2">&quot;ts&quot;</span>:<span class="w"> </span><span class="s2">&quot;2022-12-09T06:58:26.764Z&quot;</span>
 <span class="o">}</span>
 </pre></div>
 </div>
 </li>
-<li><p>RestAPIを直接呼び出す場合は以下の内容で呼び出すことが出来ます。</p>
+</ul>
+</li>
+</ul>
+</div><div aria-labelledby="tab-0-UmVzdCBBUEnjgavjgojjgovlrp/ooYw=" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-0-UmVzdCBBUEnjgavjgojjgovlrp/ooYw=" name="UmVzdCBBUEnjgavjgojjgovlrp/ooYw=" role="tabpanel" tabindex="0"><ul>
+<li><div class="line-block">
+<div class="line">RestAPIを直接呼び出す場合は以下の内容で呼び出すことが出来ます。</div>
+</div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">BASE64_BASIC</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span><span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;システム管理者のユーザー名を設定してください:システム管理者のパスワードを設定してください&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="k">)</span>
 <span class="nv">BASE_URL</span><span class="o">=</span>システム管理者用サイトアドレスを設定してください
 
@@ -450,16 +491,28 @@ curl<span class="w"> </span>-k<span class="w"> </span>-X<span class="w"> </span>
 </div>
 </li>
 </ul>
+</div></div>
 </section>
-<section id="id11">
-<h3><span class="section-number">2.3.5. </span>リソースプラン登録<a class="headerlink" href="#id11" title="この見出しへのパーマリンク">¶</a></h3>
+<section id="plan-create">
+<span id="id11"></span><h3><span class="section-number">3.3.5. </span>リソースプラン登録<a class="headerlink" href="#plan-create" title="この見出しへのパーマリンク">¶</a></h3>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-1-6Kit5a6a44OV44Kh44Kk44Or44Go44K544Kv44Oq44OX44OI44Gr44KI44KL5a6f6KGM" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-1-6Kit5a6a44OV44Kh44Kk44Or44Go44K544Kv44Oq44OX44OI44Gr44KI44KL5a6f6KGM" name="6Kit5a6a44OV44Kh44Kk44Or44Go44K544Kv44Oq44OX44OI44Gr44KI44KL5a6f6KGM" role="tab" tabindex="0">設定ファイルとスクリプトによる実行</button><button aria-controls="panel-1-UmVzdCBBUEnjgavjgojjgovlrp/ooYw=" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-1-UmVzdCBBUEnjgavjgojjgovlrp/ooYw=" name="UmVzdCBBUEnjgavjgojjgovlrp/ooYw=" role="tab" tabindex="-1">Rest APIによる実行</button></div><div aria-labelledby="tab-1-6Kit5a6a44OV44Kh44Kk44Or44Go44K544Kv44Oq44OX44OI44Gr44KI44KL5a6f6KGM" class="sphinx-tabs-panel group-tab" id="panel-1-6Kit5a6a44OV44Kh44Kk44Or44Go44K544Kv44Oq44OX44OI44Gr44KI44KL5a6f6KGM" name="6Kit5a6a44OV44Kh44Kk44Or44Go44K544Kv44Oq44OX44OI44Gr44KI44KL5a6f6KGM" role="tabpanel" tabindex="0"><ul>
+<li><div class="line-block">
+<div class="line">リソースプラン登録</div>
+</div>
 <ul>
-<li><p>登録するリソースプランのjsonファイルを設定</p>
+<li><div class="line-block">
+<div class="line">登録するリソースプランのjsonファイルを設定</div>
+</div>
 <div class="line-block">
 <div class="line">取得した toolsフォルダ配下にある、 <cite>add-plan.sample.json</cite> を コピーして使用してください。</div>
 </div>
 </li>
-<li><p>登録するリソースプランの設定</p>
+</ul>
+</li>
+<li><div class="line-block">
+<div class="line">登録するリソースプランの設定</div>
+</div>
 <div class="line-block">
 <div class="line">add-plan.jsonにコピーした例</div>
 </div>
@@ -480,11 +533,18 @@ curl<span class="w"> </span>-k<span class="w"> </span>-X<span class="w"> </span>
 <span class="o">}</span>
 </pre></div>
 </div>
-<p>※limitsは、リソースプラン設定項目の確認で取得した内容をもとに作成します</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<div class="line-block">
+<div class="line">※limitsは、リソースプラン設定項目の確認で取得した内容をもとに作成します</div>
+</div>
+</div>
 </li>
-<li><p>項目説明</p>
+<li><div class="line-block">
+<div class="line">項目説明</div>
+</div>
 <table class="docutils align-left" id="id18">
-<caption><span class="caption-number">表 2.41 </span><span class="caption-text">リソースプラン設定項目</span><a class="headerlink" href="#id18" title="このテーブルへのパーマリンク">¶</a></caption>
+<caption><span class="caption-number">表 3.9 </span><span class="caption-text">リソースプラン設定項目</span><a class="headerlink" href="#id18" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 25%" />
 <col style="width: 25%" />
@@ -521,18 +581,24 @@ curl<span class="w"> </span>-k<span class="w"> </span>-X<span class="w"> </span>
 </tbody>
 </table>
 </li>
-<li><p>コマンド</p>
+<li><div class="line-block">
+<div class="line">コマンド</div>
+</div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./add-plan.sh<span class="w"> </span>add-plan.json
 </pre></div>
 </div>
 </li>
-<li><p>コマンド実行後に入力（入力例）</p>
+<li><div class="line-block">
+<div class="line">コマンド実行後に入力（入力例）</div>
+</div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>your<span class="w"> </span>username<span class="w"> </span>:<span class="w"> </span>システム管理者自身のユーザー名を入力します
 your<span class="w"> </span>password<span class="w"> </span>:<span class="w"> </span>システム管理者自身のパスワードを入力します
 </pre></div>
 </div>
 </li>
-<li><p>成功時の結果表示</p>
+<li><div class="line-block">
+<div class="line">成功時の結果表示</div>
+</div>
 <div class="line-block">
 <div class="line"><cite>&quot;result&quot;: &quot;000-00000&quot;</cite> が、成功したことを示しています。</div>
 </div>
@@ -553,7 +619,9 @@ your<span class="w"> </span>password<span class="w"> </span>:<span class="w"> </
 </pre></div>
 </div>
 </li>
-<li><p>失敗時の結果表示イメージ</p>
+<li><div class="line-block">
+<div class="line">失敗時の結果表示イメージ</div>
+</div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&lt;<span class="w"> </span>HTTP/1.1<span class="w"> </span><span class="m">400</span><span class="w"> </span>BAD<span class="w"> </span>REQUEST
 &lt;<span class="w"> </span>Date:<span class="w"> </span>Fri,<span class="w"> </span><span class="m">09</span><span class="w"> </span>Dec<span class="w"> </span><span class="m">2022</span><span class="w"> </span><span class="m">08</span>:16:09<span class="w"> </span>GMT
 &lt;<span class="w"> </span>Server:<span class="w"> </span>Apache/2.4.37<span class="w"> </span><span class="o">(</span>Red<span class="w"> </span>Hat<span class="w"> </span>Enterprise<span class="w"> </span>Linux<span class="o">)</span><span class="w"> </span>mod_wsgi/4.7.1<span class="w"> </span>Python/3.9
@@ -572,7 +640,11 @@ your<span class="w"> </span>password<span class="w"> </span>:<span class="w"> </
 </pre></div>
 </div>
 </li>
-<li><p>RestAPIを直接呼び出す場合は以下の内容で呼び出すことができます。</p>
+</ul>
+</div><div aria-labelledby="tab-1-UmVzdCBBUEnjgavjgojjgovlrp/ooYw=" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-1-UmVzdCBBUEnjgavjgojjgovlrp/ooYw=" name="UmVzdCBBUEnjgavjgojjgovlrp/ooYw=" role="tabpanel" tabindex="0"><ul>
+<li><div class="line-block">
+<div class="line">RestAPIを直接呼び出す場合は以下の内容で呼び出すことができます。</div>
+</div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">BASE64_BASIC</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span><span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;システム管理者のユーザー名を設定してください:システム管理者のパスワードを設定してください&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="k">)</span>
 <span class="nv">BASE_URL</span><span class="o">=</span>システム管理者用サイトアドレスを設定してください
 
@@ -599,22 +671,34 @@ curl<span class="w"> </span>-k<span class="w"> </span>-X<span class="w"> </span>
 </div>
 </li>
 </ul>
+</div></div>
 </section>
-<section id="id12">
-<h3><span class="section-number">2.3.6. </span>設定済みリソースプランの確認<a class="headerlink" href="#id12" title="この見出しへのパーマリンク">¶</a></h3>
+<section id="plan-check">
+<span id="id12"></span><h3><span class="section-number">3.3.6. </span>リソースプラン確認<a class="headerlink" href="#plan-check" title="この見出しへのパーマリンク">¶</a></h3>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-2-6Kit5a6a44OV44Kh44Kk44Or44Go44K544Kv44Oq44OX44OI44Gr44KI44KL5a6f6KGM" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-2-6Kit5a6a44OV44Kh44Kk44Or44Go44K544Kv44Oq44OX44OI44Gr44KI44KL5a6f6KGM" name="6Kit5a6a44OV44Kh44Kk44Or44Go44K544Kv44Oq44OX44OI44Gr44KI44KL5a6f6KGM" role="tab" tabindex="0">設定ファイルとスクリプトによる実行</button><button aria-controls="panel-2-UmVzdCBBUEnjgavjgojjgovlrp/ooYw=" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-2-UmVzdCBBUEnjgavjgojjgovlrp/ooYw=" name="UmVzdCBBUEnjgavjgojjgovlrp/ooYw=" role="tab" tabindex="-1">Rest APIによる実行</button></div><div aria-labelledby="tab-2-6Kit5a6a44OV44Kh44Kk44Or44Go44K544Kv44Oq44OX44OI44Gr44KI44KL5a6f6KGM" class="sphinx-tabs-panel group-tab" id="panel-2-6Kit5a6a44OV44Kh44Kk44Or44Go44K544Kv44Oq44OX44OI44Gr44KI44KL5a6f6KGM" name="6Kit5a6a44OV44Kh44Kk44Or44Go44K544Kv44Oq44OX44OI44Gr44KI44KL5a6f6KGM" role="tabpanel" tabindex="0"><ul>
+<li><div class="line-block">
+<div class="line">設定済みリソースプランの確認</div>
+</div>
 <ul>
-<li><p>コマンド</p>
+<li><div class="line-block">
+<div class="line">コマンド</div>
+</div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./get-plan-list.sh
 </pre></div>
 </div>
 </li>
-<li><p>コマンド実行後に入力（入力例）</p>
+<li><div class="line-block">
+<div class="line">コマンド実行後に入力（入力例）</div>
+</div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>your<span class="w"> </span>username<span class="w"> </span>:<span class="w"> </span>システム管理者自身のユーザー名を入力します
 your<span class="w"> </span>password<span class="w"> </span>:<span class="w"> </span>システム管理者自身のパスワードを入力します
 </pre></div>
 </div>
 </li>
-<li><p>成功時の結果表示</p>
+<li><div class="line-block">
+<div class="line">成功時の結果表示</div>
+</div>
 <div class="line-block">
 <div class="line"><cite>&quot;result&quot;: &quot;000-00000&quot;</cite> が、成功したことを示しています。</div>
 </div>
@@ -668,7 +752,13 @@ your<span class="w"> </span>password<span class="w"> </span>:<span class="w"> </
 </pre></div>
 </div>
 </li>
-<li><p>RestAPIを直接呼び出す場合は以下の内容で呼び出すことができます。</p>
+</ul>
+</li>
+</ul>
+</div><div aria-labelledby="tab-2-UmVzdCBBUEnjgavjgojjgovlrp/ooYw=" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-2-UmVzdCBBUEnjgavjgojjgovlrp/ooYw=" name="UmVzdCBBUEnjgavjgojjgovlrp/ooYw=" role="tabpanel" tabindex="0"><ul>
+<li><div class="line-block">
+<div class="line">RestAPIを直接呼び出す場合は以下の内容で呼び出すことができます。</div>
+</div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">BASE64_BASIC</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span><span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;システム管理者のユーザー名を設定してください:システム管理者のパスワードを設定してください&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="k">)</span>
 <span class="nv">BASE_URL</span><span class="o">=</span>システム管理者用サイトアドレスを設定してください
 
@@ -681,16 +771,26 @@ curl<span class="w"> </span>-k<span class="w"> </span>-X<span class="w"> </span>
 </div>
 </li>
 </ul>
+</div></div>
 </section>
-<section id="id13">
-<h3><span class="section-number">2.3.7. </span>オーガナイゼーションへのリソースプラン設定<a class="headerlink" href="#id13" title="この見出しへのパーマリンク">¶</a></h3>
+<section id="plan-organization-apply">
+<span id="id13"></span><h3><span class="section-number">3.3.7. </span>リソースプランの定義を適用<a class="headerlink" href="#plan-organization-apply" title="この見出しへのパーマリンク">¶</a></h3>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-3-6Kit5a6a44OV44Kh44Kk44Or44Go44K544Kv44Oq44OX44OI44Gr44KI44KL5a6f6KGM" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-3-6Kit5a6a44OV44Kh44Kk44Or44Go44K544Kv44Oq44OX44OI44Gr44KI44KL5a6f6KGM" name="6Kit5a6a44OV44Kh44Kk44Or44Go44K544Kv44Oq44OX44OI44Gr44KI44KL5a6f6KGM" role="tab" tabindex="0">設定ファイルとスクリプトによる実行</button><button aria-controls="panel-3-UmVzdCBBUEnjgavjgojjgovlrp/ooYw=" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-3-UmVzdCBBUEnjgavjgojjgovlrp/ooYw=" name="UmVzdCBBUEnjgavjgojjgovlrp/ooYw=" role="tab" tabindex="-1">Rest APIによる実行</button></div><div aria-labelledby="tab-3-6Kit5a6a44OV44Kh44Kk44Or44Go44K544Kv44Oq44OX44OI44Gr44KI44KL5a6f6KGM" class="sphinx-tabs-panel group-tab" id="panel-3-6Kit5a6a44OV44Kh44Kk44Or44Go44K544Kv44Oq44OX44OI44Gr44KI44KL5a6f6KGM" name="6Kit5a6a44OV44Kh44Kk44Or44Go44K544Kv44Oq44OX44OI44Gr44KI44KL5a6f6KGM" role="tabpanel" tabindex="0"><ul>
+<li><div class="line-block">
+<div class="line">オーガナイゼーションへのリソースプラン設定</div>
+</div>
 <ul>
-<li><p>登録するリソースプランのjsonファイルを設定します。</p>
+<li><div class="line-block">
+<div class="line">登録するリソースプランのjsonファイルを設定します。</div>
+</div>
 <div class="line-block">
 <div class="line">取得した toolsフォルダ配下にある、add-organization-plan.sample.json を コピーして使用してください。</div>
 </div>
 </li>
-<li><p>登録するPlanの設定</p>
+<li><div class="line-block">
+<div class="line">登録するPlanの設定</div>
+</div>
 <div class="line-block">
 <div class="line">例はオーガナイゼーションID:org1、リソースプランID:plan-standardを例として説明します。</div>
 <div class="line"><br /></div>
@@ -705,10 +805,12 @@ curl<span class="w"> </span>-k<span class="w"> </span>-X<span class="w"> </span>
 <span class="o">}</span>
 </pre></div>
 </div>
-</li>
-<li><p>項目説明</p>
+<ul>
+<li><div class="line-block">
+<div class="line">項目説明</div>
+</div>
 <table class="docutils align-left" id="id19">
-<caption><span class="caption-number">表 2.42 </span><span class="caption-text">オーガナイゼーションへのリソースプラン設定項目</span><a class="headerlink" href="#id19" title="このテーブルへのパーマリンク">¶</a></caption>
+<caption><span class="caption-number">表 3.10 </span><span class="caption-text">オーガナイゼーションへのリソースプラン設定項目</span><a class="headerlink" href="#id19" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 25%" />
 <col style="width: 25%" />
@@ -732,12 +834,16 @@ curl<span class="w"> </span>-k<span class="w"> </span>-X<span class="w"> </span>
 </tbody>
 </table>
 </li>
-<li><p>コマンド</p>
+<li><div class="line-block">
+<div class="line">コマンド</div>
+</div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./add-organization-plan.sh<span class="w"> </span>add-org1-plan.json
 </pre></div>
 </div>
 </li>
-<li><p>コマンド実行後に入力（入力例）</p>
+<li><div class="line-block">
+<div class="line">コマンド実行後に入力（入力例）</div>
+</div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>organization<span class="w"> </span>id<span class="w"> </span>:<span class="w"> </span>リソースプランを設定するorganization<span class="w"> </span>idを入力します
 
 your<span class="w"> </span>username<span class="w"> </span>:<span class="w"> </span>システム管理者自身のユーザー名を入力します
@@ -745,7 +851,9 @@ your<span class="w"> </span>password<span class="w"> </span>:<span class="w"> </
 </pre></div>
 </div>
 </li>
-<li><p>成功時の結果表示</p>
+<li><div class="line-block">
+<div class="line">成功時の結果表示</div>
+</div>
 <div class="line-block">
 <div class="line"><cite>&quot;result&quot;: &quot;000-00000&quot;</cite> が、成功したことを示しています。</div>
 </div>
@@ -766,7 +874,9 @@ your<span class="w"> </span>password<span class="w"> </span>:<span class="w"> </
 </pre></div>
 </div>
 </li>
-<li><p>失敗時の結果表示イメージ</p>
+<li><div class="line-block">
+<div class="line">失敗時の結果表示イメージ</div>
+</div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&lt;<span class="w"> </span>HTTP/1.1<span class="w"> </span><span class="m">404</span><span class="w"> </span>NOT<span class="w"> </span>FOUND
 <span class="w"> </span>&lt;<span class="w"> </span>Date:<span class="w"> </span>Mon,<span class="w"> </span><span class="m">12</span><span class="w"> </span>Dec<span class="w"> </span><span class="m">2022</span><span class="w"> </span><span class="m">01</span>:40:02<span class="w"> </span>GMT
 <span class="w"> </span>&lt;<span class="w"> </span>Server:<span class="w"> </span>Apache/2.4.37<span class="w"> </span><span class="o">(</span>Red<span class="w"> </span>Hat<span class="w"> </span>Enterprise<span class="w"> </span>Linux<span class="o">)</span><span class="w"> </span>mod_wsgi/4.7.1<span class="w"> </span>Python/3.9
@@ -784,7 +894,15 @@ your<span class="w"> </span>password<span class="w"> </span>:<span class="w"> </
 </pre></div>
 </div>
 </li>
-<li><p>RestAPIを直接呼び出す場合は以下の内容で呼び出すことができます。</p>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div><div aria-labelledby="tab-3-UmVzdCBBUEnjgavjgojjgovlrp/ooYw=" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-3-UmVzdCBBUEnjgavjgojjgovlrp/ooYw=" name="UmVzdCBBUEnjgavjgojjgovlrp/ooYw=" role="tabpanel" tabindex="0"><ul>
+<li><div class="line-block">
+<div class="line">RestAPIを直接呼び出す場合は以下の内容で呼び出すことができます。</div>
+</div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">BASE64_BASIC</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span><span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;システム管理者のユーザー名を設定してください:システム管理者のパスワードを設定してください&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="k">)</span>
 <span class="nv">BASE_URL</span><span class="o">=</span>システム管理者用サイトアドレスを設定してください
 <span class="nv">ORG_ID</span><span class="o">=</span>リソースプランを設定するorganization<span class="w"> </span>idを設定してください
@@ -804,16 +922,26 @@ curl<span class="w"> </span>-k<span class="w"> </span>-X<span class="w"> </span>
 </div>
 </li>
 </ul>
+</div></div>
 </section>
-<section id="id14">
-<h3><span class="section-number">2.3.8. </span>設定済みオーガナイゼーションリソースプランの確認<a class="headerlink" href="#id14" title="この見出しへのパーマリンク">¶</a></h3>
+<section id="plan-organization-check">
+<span id="id14"></span><h3><span class="section-number">3.3.8. </span>設定済みオーガナイゼーションリソースプランの確認<a class="headerlink" href="#plan-organization-check" title="この見出しへのパーマリンク">¶</a></h3>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-4-6Kit5a6a44OV44Kh44Kk44Or44Go44K544Kv44Oq44OX44OI44Gr44KI44KL5a6f6KGM" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-4-6Kit5a6a44OV44Kh44Kk44Or44Go44K544Kv44Oq44OX44OI44Gr44KI44KL5a6f6KGM" name="6Kit5a6a44OV44Kh44Kk44Or44Go44K544Kv44Oq44OX44OI44Gr44KI44KL5a6f6KGM" role="tab" tabindex="0">設定ファイルとスクリプトによる実行</button><button aria-controls="panel-4-UmVzdCBBUEnjgavjgojjgovlrp/ooYw=" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-4-UmVzdCBBUEnjgavjgojjgovlrp/ooYw=" name="UmVzdCBBUEnjgavjgojjgovlrp/ooYw=" role="tab" tabindex="-1">Rest APIによる実行</button></div><div aria-labelledby="tab-4-6Kit5a6a44OV44Kh44Kk44Or44Go44K544Kv44Oq44OX44OI44Gr44KI44KL5a6f6KGM" class="sphinx-tabs-panel group-tab" id="panel-4-6Kit5a6a44OV44Kh44Kk44Or44Go44K544Kv44Oq44OX44OI44Gr44KI44KL5a6f6KGM" name="6Kit5a6a44OV44Kh44Kk44Or44Go44K544Kv44Oq44OX44OI44Gr44KI44KL5a6f6KGM" role="tabpanel" tabindex="0"><ul>
+<li><div class="line-block">
+<div class="line">設定済みオーガナイゼーションリソースプランの確認</div>
+</div>
 <ul>
-<li><p>コマンド</p>
+<li><div class="line-block">
+<div class="line">コマンド</div>
+</div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./get-organization-plan-list.sh
 </pre></div>
 </div>
 </li>
-<li><p>コマンド実行後に入力（入力例）</p>
+<li><div class="line-block">
+<div class="line">コマンド実行後に入力（入力例）</div>
+</div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>organization<span class="w"> </span>id<span class="w"> </span>:<span class="w"> </span>取得するorganization<span class="w"> </span>idを入力します
 
 your<span class="w"> </span>username<span class="w"> </span>:<span class="w"> </span>システム管理者自身のユーザー名を入力します
@@ -821,7 +949,9 @@ your<span class="w"> </span>password<span class="w"> </span>:<span class="w"> </
 </pre></div>
 </div>
 </li>
-<li><p>成功時の結果表示</p>
+<li><div class="line-block">
+<div class="line">成功時の結果表示</div>
+</div>
 <div class="line-block">
 <div class="line"><cite>&quot;result&quot;: &quot;000-00000&quot;</cite> が、成功したことを示しています。</div>
 </div>
@@ -851,7 +981,13 @@ your<span class="w"> </span>password<span class="w"> </span>:<span class="w"> </
 </pre></div>
 </div>
 </li>
-<li><p>RestAPIを直接呼び出す場合は以下の内容で呼び出すことができます。</p>
+</ul>
+</li>
+</ul>
+</div><div aria-labelledby="tab-4-UmVzdCBBUEnjgavjgojjgovlrp/ooYw=" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-4-UmVzdCBBUEnjgavjgojjgovlrp/ooYw=" name="UmVzdCBBUEnjgavjgojjgovlrp/ooYw=" role="tabpanel" tabindex="0"><ul>
+<li><div class="line-block">
+<div class="line">RestAPIを直接呼び出す場合は以下の内容で呼び出すことができます。</div>
+</div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">BASE64_BASIC</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span><span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;システム管理者のユーザー名を設定してください:システム管理者のパスワードを設定してください&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="k">)</span>
 <span class="nv">BASE_URL</span><span class="o">=</span>システム管理者用サイトアドレスを設定してください
 <span class="nv">ORG_ID</span><span class="o">=</span>取得するorganization<span class="w"> </span>idを設定してください
@@ -865,16 +1001,26 @@ curl<span class="w"> </span>-k<span class="w"> </span>-X<span class="w"> </span>
 </div>
 </li>
 </ul>
+</div></div>
 </section>
-<section id="id15">
-<h3><span class="section-number">2.3.9. </span>オーガナイゼーションへのリソースプラン解除<a class="headerlink" href="#id15" title="この見出しへのパーマリンク">¶</a></h3>
+<section id="plan-organization-release">
+<span id="id15"></span><h3><span class="section-number">3.3.9. </span>設定済みオーガナイゼーションリソースプランの解除<a class="headerlink" href="#plan-organization-release" title="この見出しへのパーマリンク">¶</a></h3>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-5-6Kit5a6a44OV44Kh44Kk44Or44Go44K544Kv44Oq44OX44OI44Gr44KI44KL5a6f6KGM" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-5-6Kit5a6a44OV44Kh44Kk44Or44Go44K544Kv44Oq44OX44OI44Gr44KI44KL5a6f6KGM" name="6Kit5a6a44OV44Kh44Kk44Or44Go44K544Kv44Oq44OX44OI44Gr44KI44KL5a6f6KGM" role="tab" tabindex="0">設定ファイルとスクリプトによる実行</button><button aria-controls="panel-5-UmVzdCBBUEnjgavjgojjgovlrp/ooYw=" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-5-UmVzdCBBUEnjgavjgojjgovlrp/ooYw=" name="UmVzdCBBUEnjgavjgojjgovlrp/ooYw=" role="tab" tabindex="-1">Rest APIによる実行</button></div><div aria-labelledby="tab-5-6Kit5a6a44OV44Kh44Kk44Or44Go44K544Kv44Oq44OX44OI44Gr44KI44KL5a6f6KGM" class="sphinx-tabs-panel group-tab" id="panel-5-6Kit5a6a44OV44Kh44Kk44Or44Go44K544Kv44Oq44OX44OI44Gr44KI44KL5a6f6KGM" name="6Kit5a6a44OV44Kh44Kk44Or44Go44K544Kv44Oq44OX44OI44Gr44KI44KL5a6f6KGM" role="tabpanel" tabindex="0"><ul>
+<li><div class="line-block">
+<div class="line">オーガナイゼーションへのリソースプラン解除</div>
+</div>
 <ul>
-<li><p>コマンド</p>
+<li><div class="line-block">
+<div class="line">コマンド</div>
+</div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./delete-organization-plan.sh
 </pre></div>
 </div>
 </li>
-<li><p>コマンド実行後に入力（入力例）</p>
+<li><div class="line-block">
+<div class="line">コマンド実行後に入力（入力例）</div>
+</div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>organization<span class="w"> </span>id<span class="w"> </span>:<span class="w"> </span>リソースプランを解除するorganization<span class="w"> </span>idを入力します
 start<span class="w"> </span>datetime<span class="w"> </span><span class="o">(</span>yyyy-mm-dd<span class="w"> </span>hh:mm:ss<span class="o">)</span><span class="w"> </span>:<span class="w"> </span>リソースプランを解除するstart<span class="w"> </span>datetimeを入力します<span class="w"> </span><span class="o">(</span>yyyy-mm-dd<span class="w"> </span>hh:mm:ss形式<span class="o">)</span>
 
@@ -883,7 +1029,9 @@ your<span class="w"> </span>password<span class="w"> </span>:<span class="w"> </
 </pre></div>
 </div>
 </li>
-<li><p>成功時の結果表示</p>
+<li><div class="line-block">
+<div class="line">成功時の結果表示</div>
+</div>
 <div class="line-block">
 <div class="line"><cite>&quot;result&quot;: &quot;000-00000&quot;</cite> が、成功したことを示しています。</div>
 </div>
@@ -904,7 +1052,9 @@ your<span class="w"> </span>password<span class="w"> </span>:<span class="w"> </
 </pre></div>
 </div>
 </li>
-<li><p>失敗時の結果表示イメージ</p>
+<li><div class="line-block">
+<div class="line">失敗時の結果表示イメージ</div>
+</div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&lt;<span class="w"> </span>HTTP/1.1<span class="w"> </span><span class="m">404</span><span class="w"> </span>NOT<span class="w"> </span>FOUND
 &lt;<span class="w"> </span>Date:<span class="w"> </span>Mon,<span class="w"> </span><span class="m">12</span><span class="w"> </span>Dec<span class="w"> </span><span class="m">2022</span><span class="w"> </span><span class="m">01</span>:46:14<span class="w"> </span>GMT
 &lt;<span class="w"> </span>Server:<span class="w"> </span>Apache/2.4.37<span class="w"> </span><span class="o">(</span>Red<span class="w"> </span>Hat<span class="w"> </span>Enterprise<span class="w"> </span>Linux<span class="o">)</span><span class="w"> </span>mod_wsgi/4.7.1<span class="w"> </span>Python/3.9
@@ -923,7 +1073,13 @@ your<span class="w"> </span>password<span class="w"> </span>:<span class="w"> </
 </pre></div>
 </div>
 </li>
-<li><p>RestAPIを直接呼び出す場合は以下の内容で呼び出すことができます。</p>
+</ul>
+</li>
+</ul>
+</div><div aria-labelledby="tab-5-UmVzdCBBUEnjgavjgojjgovlrp/ooYw=" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-5-UmVzdCBBUEnjgavjgojjgovlrp/ooYw=" name="UmVzdCBBUEnjgavjgojjgovlrp/ooYw=" role="tabpanel" tabindex="0"><ul>
+<li><div class="line-block">
+<div class="line">RestAPIを直接呼び出す場合は以下の内容で呼び出すことができます。</div>
+</div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">BASE64_BASIC</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span><span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;システム管理者のユーザー名を設定してください:システム管理者のパスワードを設定してください&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="k">)</span>
 <span class="nv">BASE_URL</span><span class="o">=</span>システム管理者用サイトアドレスを設定してください
 <span class="nv">ORG_ID</span><span class="o">=</span>リソースプラン解除するorganization<span class="w"> </span>idを設定してください
@@ -937,16 +1093,26 @@ curl<span class="w"> </span>-k<span class="w"> </span>-X<span class="w"> </span>
 </div>
 </li>
 </ul>
+</div></div>
 </section>
-<section id="id16">
-<h3><span class="section-number">2.3.10. </span>オーガナイゼーション毎の使用状況確認<a class="headerlink" href="#id16" title="この見出しへのパーマリンク">¶</a></h3>
+<section id="plan-organization-status">
+<span id="id16"></span><h3><span class="section-number">3.3.10. </span>オーガナイゼーション毎の使用状況確認<a class="headerlink" href="#plan-organization-status" title="この見出しへのパーマリンク">¶</a></h3>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-6-6Kit5a6a44OV44Kh44Kk44Or44Go44K544Kv44Oq44OX44OI44Gr44KI44KL5a6f6KGM" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-6-6Kit5a6a44OV44Kh44Kk44Or44Go44K544Kv44Oq44OX44OI44Gr44KI44KL5a6f6KGM" name="6Kit5a6a44OV44Kh44Kk44Or44Go44K544Kv44Oq44OX44OI44Gr44KI44KL5a6f6KGM" role="tab" tabindex="0">設定ファイルとスクリプトによる実行</button><button aria-controls="panel-6-UmVzdCBBUEnjgavjgojjgovlrp/ooYw=" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-6-UmVzdCBBUEnjgavjgojjgovlrp/ooYw=" name="UmVzdCBBUEnjgavjgojjgovlrp/ooYw=" role="tab" tabindex="-1">Rest APIによる実行</button></div><div aria-labelledby="tab-6-6Kit5a6a44OV44Kh44Kk44Or44Go44K544Kv44Oq44OX44OI44Gr44KI44KL5a6f6KGM" class="sphinx-tabs-panel group-tab" id="panel-6-6Kit5a6a44OV44Kh44Kk44Or44Go44K544Kv44Oq44OX44OI44Gr44KI44KL5a6f6KGM" name="6Kit5a6a44OV44Kh44Kk44Or44Go44K544Kv44Oq44OX44OI44Gr44KI44KL5a6f6KGM" role="tabpanel" tabindex="0"><ul>
+<li><div class="line-block">
+<div class="line">オーガナイゼーション毎の使用状況確認</div>
+</div>
 <ul>
-<li><p>コマンド</p>
+<li><div class="line-block">
+<div class="line">コマンド</div>
+</div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./get-usage-list.sh
 </pre></div>
 </div>
 </li>
-<li><p>コマンド実行後に入力（入力例）</p>
+<li><div class="line-block">
+<div class="line">コマンド実行後に入力（入力例）</div>
+</div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>organization<span class="w"> </span>id<span class="w"> </span>:<span class="w"> </span>取得するorganization<span class="w"> </span>idを入力します（省略時は全オーガナイゼーション）
 
 your<span class="w"> </span>username<span class="w"> </span>:<span class="w"> </span>システム管理者自身のユーザー名を入力します
@@ -954,7 +1120,9 @@ your<span class="w"> </span>password<span class="w"> </span>:<span class="w"> </
 </pre></div>
 </div>
 </li>
-<li><p>成功時の結果表示</p>
+<li><div class="line-block">
+<div class="line">成功時の結果表示</div>
+</div>
 <div class="line-block">
 <div class="line"><cite>&quot;result&quot;: &quot;000-00000&quot;</cite> が、成功したことを示しています。</div>
 </div>
@@ -994,6 +1162,31 @@ your<span class="w"> </span>password<span class="w"> </span>:<span class="w"> </
 </div>
 </li>
 </ul>
+</li>
+</ul>
+</div><div aria-labelledby="tab-6-UmVzdCBBUEnjgavjgojjgovlrp/ooYw=" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-6-UmVzdCBBUEnjgavjgojjgovlrp/ooYw=" name="UmVzdCBBUEnjgavjgojjgovlrp/ooYw=" role="tabpanel" tabindex="0"><ul>
+<li><div class="line-block">
+<div class="line">RestAPIを直接呼び出す場合は以下の内容で呼び出すことができます。</div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">BASE64_BASIC</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span><span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;システム管理者のユーザー名を設定してください:システム管理者のパスワードを設定してください&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="k">)</span>
+<span class="nv">BASE_URL</span><span class="o">=</span>システム管理者用サイトアドレスを設定してください
+<span class="nv">ORG_ID</span><span class="o">=</span>取得するorganization<span class="w"> </span>idを設定してください
+
+curl<span class="w"> </span>-k<span class="w"> </span>-X<span class="w"> </span>GET<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: basic </span><span class="si">${</span><span class="nv">BASE64_BASIC</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">BASE_URL</span><span class="si">}</span><span class="s2">/api/platform/usages?organization_id=</span><span class="si">${</span><span class="nv">ORG_ID</span><span class="si">}</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<div class="line-block">
+<div class="line">すべてのオーガナイゼーションの使用状況を取得する場合は、&quot;?organization_id=${ORG_ID}&quot; の条件を指定せずに実行してください</div>
+</div>
+</div>
+</li>
+</ul>
+</div></div>
 </section>
 </section>
 </section>
@@ -1004,8 +1197,8 @@ your<span class="w"> </span>password<span class="w"> </span>:<span class="w"> </
 
 <div id="articleNavigation">
   <ul>
-    <li class="prev"><a href="organization.html" title="前のトピックへ"><span>前のトピックへ</span><span class="section-number">1. </span>Organization (オーガナイゼーション)</a></li>
-    <li class="next"><a href="aap.html" title="次のトピックへ"><span>次のトピックへ</span><span class="section-number">3. </span>Ansible Automation Platform 連携</a></li>
+    <li class="prev"><a href="organization.html" title="前のトピックへ"><span>前のトピックへ</span><span class="section-number">2. </span>Organization (オーガナイゼーション)</a></li>
+    <li class="next"><a href="aap.html" title="次のトピックへ"><span>次のトピックへ</span><span class="section-number">4. </span>Ansible Automation Platform 連携</a></li>
   </ul>
 </div>
 
