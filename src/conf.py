@@ -35,7 +35,8 @@ extensions = [
     'sphinxcontrib.blockdiag',
     'sphinx_copybutton',
     'sphinx_tabs.tabs',
-    'sphinx_toolbox.collapse'
+    'sphinx_toolbox.collapse',
+    'sphinx.ext.todo'
 ]
 
 # Fontpath for blockdiag (truetype font)
@@ -111,3 +112,6 @@ html_context = {
         '2.0 ': '2.0'
     }
 }
+
+[extensions]
+todo_include_todos = True
