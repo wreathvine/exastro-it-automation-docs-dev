@@ -4,7 +4,7 @@
 
 .. toctree::
    :maxdepth: 2
-   :numbered: 3
+   :numbered:
 
    general
    organization

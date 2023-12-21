@@ -16,8 +16,7 @@
 
    .. image:: /images/ja/manuals/platform/login/exastro-login.png
       :alt: ログイン
-      :width: 6.4939in
-      :height: 4.56706in
+      :width: 6.67391in
 
    .. list-table:: ログイン時の入力内容
       :widths: 10 10
@@ -29,18 +28,17 @@
       * - admin ※
         - password  ※
 
-.. tip::
-          |  ユーザー名、パスワードは、インストール時に指定したシステム管理者のユーザ名、パスワードを使用してください。
-          |  docker版でインストールした際のユーザ名、パスワードは、「 :ref:`install_docker_compose_v2.2` 」を参照
-          |  helm版でインストールした際のユーザ名は、パスワード、「 :ref:`install_helm_v2.2` 」を参照
-
-.. todo:: オーガナイゼーション管理画面（一覧）の画像に差し替え
+   .. tip::
+             |  ユーザー名、パスワードは、インストール時に指定したシステム管理者のユーザ名、パスワードを使用してください。
+             |  docker版でインストールした際のユーザ名、パスワードは、「 :ref:`install_docker_compose_v2.2` 」を参照
+             |  helm版でインストールした際のユーザ名は、パスワード、「 :ref:`install_helm_v2.2` 」を参照
 
 #. | ログイン後、下記のようにオーガナイゼーション管理画面が表示されます。
 
-   .. image:: /images/ja/diagram/login_workspace.png
-      :alt: ログイン
-      :width: 6.4939in
-      :height: 4.56706in
+   .. todo:: オーガナイゼーション管理画面（一覧）の画像に差し替え
 
-.. include:: /2.2/ja/manuals/it_automation_base/setting_profile.rst
+   .. image:: /images/ja/diagram/login_workspace.png
+      :alt: オーガナイゼーション管理画面（一覧）
+      :width: 6.67391in
+
+.. include:: ../it_automation_base/setting_profile.rst
