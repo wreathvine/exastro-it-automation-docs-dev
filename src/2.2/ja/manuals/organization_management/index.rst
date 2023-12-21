@@ -4,8 +4,9 @@
 
 .. toctree::
    :maxdepth: 2
-   :numbered: 5
+   :numbered:
 
+   general
    workspace
    user
    role

@@ -78,14 +78,9 @@
   - :kbd:`git`
   - :kbd:`jq`
 
-リソースプラン設定の流れ
-------------------------
+.. note::
 
-| リソースプランを登録する流れは以下の通りとなります。
-
-#. | 現状のリソースプラン確認
-#. | リソースプランの定義を作成
-#. | リソースプランの定義を適用
+   画面からリソースプランを作成する際は、前提条件は必要ありません
 
 事前準備
 --------
@@ -93,7 +88,7 @@
 | GitHub リポジトリから取得した資材の中にある、シェルスクリプトを実行しオーガナイゼーションを作成します。
 | confファイルは、各種設定・取得シェルで使用します。
 
-#. オーガナイゼーション作成用シェルスクリプトを、リポジトリから :kbd:`git clone` により取得します。
+#. | オーガナイゼーション作成用シェルスクリプトを、リポジトリから :kbd:`git clone` により取得します。
 
    .. code-block:: bash
 
@@ -101,7 +96,7 @@
       git clone https://github.com/exastro-suite/exastro-platform.git
 
 
-#. 取得した資材のtoolsフォルダに移動し、オーガナイゼーション作成用シェルスクリプト内のAPI実行先URLを、システム管理者用サイトアドレスに変更します。
+#. | 取得した資材のtoolsフォルダに移動し、オーガナイゼーション作成用シェルスクリプト内のAPI実行先URLを、システム管理者用サイトアドレスに変更します。
 
    .. code-block:: bash
 
@@ -109,632 +104,731 @@
 
    | 変更箇所
 
-   - api-auth.conf
+   - | api-auth.conf
 
      .. code-block:: bash
         
         CONF_BASE_URL={システム管理者用サイトアドレス}
         CURL_OPT=-svk
 
-   .. tip::
-       | 自己証明書を利用している場合、証明書エラーが発生します。
-       | 設定ファイル内の :kbd:`CURL_OPT=-sv` を :kbd:`CURL_OPT=-svk` に変更することで証明書エラーを回避できますが、認証機関から発行された正しい証明書をインストールすることを推奨します。
+     .. tip::
+         | 自己証明書を利用している場合、証明書エラーが発生します。
+         | 設定ファイル内の :kbd:`CURL_OPT=-sv` を :kbd:`CURL_OPT=-svk` に変更することで証明書エラーを回避できますが、認証機関から発行された正しい証明書をインストールすることを推奨します。
+
+.. note::
+
+   画面からリソースプランを作成する際は、事前準備は必要ありません
+
+リソースプラン設定の流れ
+------------------------
+
+| リソースプランを登録する流れは以下の通りとなります。
+
+#. | :ref:`plan_list`
+#. | :ref:`plan_create`
+#. | :ref:`plan_check`
+#. | :ref:`plan_organization_apply`
+#. | :ref:`plan_organization_check`
+
+.. _plan_list:
+
+現状のリソースプラン確認
+------------------------
+
+.. tabs::
+
+   .. group-tab:: 設定ファイルとスクリプトによる実行
+
+      - | リソースプラン設定項目の確認
+
+        | 新たなリソースプランを作成するにあたって、指定可能なリソースの種類(ID)を確認します。
+
+        - | コマンド
+          
+          .. code-block:: bash
+
+             ./get-plan-item-list.sh
 
 
-リソースプラン設定項目の確認
-----------------------------
+        - | コマンド実行後に入力（入力例）
 
-| 新たなリソースプランを作成するにあたって、指定可能なリソースの種類(ID)を確認します。
+          .. code-block:: bash
 
-- コマンド
-    
-  .. code-block:: bash
+             your username : システム管理者自身のユーザー名を入力します
+             your password : システム管理者自身のパスワードを入力します
 
-      ./get-plan-item-list.sh
+        - | 成功時の結果表示
+        
+          | `"result": "000-00000"` が、成功したことを示しています。
 
+          .. code-block:: bash
 
-- コマンド実行後に入力（入力例）
+            < HTTP/1.1 200 OK
+            < Date: Fri, 09 Dec 2022 06:58:26 GMT
+            < Server: Apache/2.4.37 (Red Hat Enterprise Linux) mod_wsgi/4.7.1 Python/3.9
+            < Content-Length: 451
+            < Content-Type: application/json
+            < 
+            { [451 bytes data]
+            * Connection #0 to host platform-auth left intact
+            {
+              "data": [
+                  {
+                    "id": "platform.roles",
+                    "informations": {
+                        "description": "default limit"
+                    }
+                  },
+                  {
+                    "id": "platform.users",
+                    "informations": {
+                        "description": "default limit"
+                    }
+                  },
+                  {
+                    "id": "platform.workspaces",
+                    "informations": {
+                        "description": "default limit"
+                    }
+                  }
+              ],
+              "message": "SUCCESS",
+              "result": "000-00000",
+              "ts": "2022-12-09T06:58:26.764Z"
+            }
 
-  .. code-block:: bash
+   .. group-tab:: Rest APIによる実行
 
-      your username : システム管理者自身のユーザー名を入力します
-      your password : システム管理者自身のパスワードを入力します
+      - | RestAPIを直接呼び出す場合は以下の内容で呼び出すことが出来ます。
 
-- 成功時の結果表示
-  
-  | `"result": "000-00000"` が、成功したことを示しています。
+        .. code-block:: bash
 
-  .. code-block:: bash
+           BASE64_BASIC=$(echo -n "システム管理者のユーザー名を設定してください:システム管理者のパスワードを設定してください" | base64)
+           BASE_URL=システム管理者用サイトアドレスを設定してください
 
-      < HTTP/1.1 200 OK
-      < Date: Fri, 09 Dec 2022 06:58:26 GMT
-      < Server: Apache/2.4.37 (Red Hat Enterprise Linux) mod_wsgi/4.7.1 Python/3.9
-      < Content-Length: 451
-      < Content-Type: application/json
-      < 
-      { [451 bytes data]
-      * Connection #0 to host platform-auth left intact
-      {
-      "data": [
-          {
-          "id": "platform.roles",
-          "informations": {
-              "description": "default limit"
-          }
-          },
-          {
-          "id": "platform.users",
-          "informations": {
-              "description": "default limit"
-          }
-          },
-          {
-          "id": "platform.workspaces",
-          "informations": {
-              "description": "default limit"
-          }
-          }
-      ],
-      "message": "SUCCESS",
-      "result": "000-00000",
-      "ts": "2022-12-09T06:58:26.764Z"
-      }
+           curl -k -X GET \
+               -H "Content-Type: application/json" \
+               -H "Authorization: basic ${BASE64_BASIC}" \
+               -d  @- \
+               "${BASE_URL}/api/platform/plan_items"
 
-- RestAPIを直接呼び出す場合は以下の内容で呼び出すことが出来ます。
-
-  .. code-block:: bash
-
-      BASE64_BASIC=$(echo -n "システム管理者のユーザー名を設定してください:システム管理者のパスワードを設定してください" | base64)
-      BASE_URL=システム管理者用サイトアドレスを設定してください
-
-      curl -k -X GET \
-          -H "Content-Type: application/json" \
-          -H "Authorization: basic ${BASE64_BASIC}" \
-          -d  @- \
-          "${BASE_URL}/api/platform/plan_items"
-
+.. _plan_create:
 
 リソースプラン登録
-------------------
+--------------------------
 
-- 登録するリソースプランのjsonファイルを設定
-    
-  | 取得した toolsフォルダ配下にある、 `add-plan.sample.json` を コピーして使用してください。
+.. tabs::
 
+   .. group-tab:: 設定ファイルとスクリプトによる実行
 
-- 登録するリソースプランの設定
-    
-  | add-plan.jsonにコピーした例
+      - | リソースプラン登録
 
-  .. code-block:: bash
-
-      vi add-plan.json
+        - | 登録するリソースプランのjsonファイルを設定
+              
+          | 取得した toolsフォルダ配下にある、 `add-plan.sample.json` を コピーして使用してください。
 
 
-  .. code-block:: bash
+      - | 登録するリソースプランの設定
+          
+        | add-plan.jsonにコピーした例
 
-      {
-          "id": "plan-standard",
-          "name": "スタンダードプラン",
-          "informations": {
+        .. code-block:: bash
+
+            vi add-plan.json
+
+
+        .. code-block:: bash
+
+            {
+                "id": "plan-standard",
+                "name": "スタンダードプラン",
+                "informations": {
+                    "description": ""
+                },
+                "limits": {
+                    "platform.workspaces": 100,
+                    "platform.users": 200,
+                    "platform.roles": 200
+                }
+            } 
+
+        .. tip::
+           | ※limitsは、リソースプラン設定項目の確認で取得した内容をもとに作成します
+
+      - | 項目説明
+
+        .. list-table:: リソースプラン設定項目
+           :widths: 20, 20, 40
+           :header-rows: 1
+           :align: left
+
+           * - 項目
+             - 項目の内容
+             - 形式
+           * - id 
+             - リソースプランID 
+             - | 英小文字、数字、ハイフン、アンダースコア(最大３６文字)
+               | ※先頭文字は英小文字であること
+               | ※予約語(後述)に合致しないこと
+           * - name 
+             - リソースプラン名
+             - 最大２５５文字
+           * - informations.description 
+             - 説明
+             - 最大２５５文字
+           * - limits.xxxxxx.xxxxx
+             - 取得したリソースプラン項目の内容を設定
+             - 数値
+       
+      - | コマンド
+         
+        .. code-block:: bash
+
+            ./add-plan.sh add-plan.json
+
+
+      - | コマンド実行後に入力（入力例）
+         
+        .. code-block:: bash
+
+            your username : システム管理者自身のユーザー名を入力します
+            your password : システム管理者自身のパスワードを入力します
+
+      - | 成功時の結果表示
+        
+        | `"result": "000-00000"` が、成功したことを示しています。
+         
+        .. code-block:: bash
+
+            < HTTP/1.1 200 OK
+            < Date: Fri, 09 Dec 2022 08:12:35 GMT
+            < Server: Apache/2.4.37 (Red Hat Enterprise Linux) mod_wsgi/4.7.1 Python/3.9
+            < Content-Length: 104
+            < Content-Type: application/json
+            < 
+            { [104 bytes data]
+            * Connection #0 to host platform-auth left intact
+            {
+            "data": null,
+            "message": "SUCCESS",
+            "result": "000-00000",
+            "ts": "2022-12-09T08:12:36.219Z"
+            }
+
+      - | 失敗時の結果表示イメージ
+        
+        .. code-block:: bash
+
+            < HTTP/1.1 400 BAD REQUEST
+            < Date: Fri, 09 Dec 2022 08:16:09 GMT
+            < Server: Apache/2.4.37 (Red Hat Enterprise Linux) mod_wsgi/4.7.1 Python/3.9
+            < Content-Length: 265
+            < Connection: close
+            < Content-Type: application/json
+            < 
+            { [265 bytes data]
+            * Closing connection 0
+            {
+              "data": null,
+              "message": "指定されたプランはすでに存在しているため作成できません。",
+              "result": "400-27001",
+              "ts": "2022-12-09T08:16:09.830Z"
+            }
+
+   .. group-tab:: Rest APIによる実行
+
+      - | RestAPIを直接呼び出す場合は以下の内容で呼び出すことができます。
+
+        .. code-block:: bash
+
+          BASE64_BASIC=$(echo -n "システム管理者のユーザー名を設定してください:システム管理者のパスワードを設定してください" | base64)
+          BASE_URL=システム管理者用サイトアドレスを設定してください
+
+          curl -k -X POST \
+              -H "Content-Type: application/json" \
+              -H "Authorization: basic ${BASE64_BASIC}" \
+              -d  @- \
+              "${BASE_URL}/api/platform/plans" \
+              << EOF
+          {
+            "id": "plan-standard",
+            "name": "スタンダードプラン",
+            "informations": {
               "description": ""
-          },
-          "limits": {
+            },
+            "limits": {
               "platform.workspaces": 100,
               "platform.users": 200,
               "platform.roles": 200
-          }
-      } 
+            }
+          }     
+          EOF
 
-  ※limitsは、リソースプラン設定項目の確認で取得した内容をもとに作成します
+.. _plan_check:
 
-- 項目説明
+リソースプラン確認
+--------------------------
 
-  .. list-table:: リソースプラン設定項目
-     :widths: 20, 20, 40
-     :header-rows: 1
-     :align: left
+.. tabs::
 
-     * - 項目
-       - 項目の内容
-       - 形式
-     * - id 
-       - リソースプランID 
-       - | 英小文字、数字、ハイフン、アンダースコア(最大３６文字)
-         | ※先頭文字は英小文字であること
-         | ※予約語(後述)に合致しないこと
-     * - name 
-       - リソースプラン名
-       - 最大２５５文字
-     * - informations.description 
-       - 説明
-       - 最大２５５文字
-     * - limits.xxxxxx.xxxxx
-       - 取得したリソースプラン項目の内容を設定
-       - 数値
- 
-- コマンド
-   
-  .. code-block:: bash
+   .. group-tab:: 設定ファイルとスクリプトによる実行
 
-      ./add-plan.sh add-plan.json
+      - | 設定済みリソースプランの確認 
+
+        - | コマンド
+           
+          .. code-block:: bash
+
+              ./get-plan-list.sh
 
 
-- コマンド実行後に入力（入力例）
-   
-  .. code-block:: bash
+        - | コマンド実行後に入力（入力例）
+           
+          .. code-block:: bash
 
-      your username : システム管理者自身のユーザー名を入力します
-      your password : システム管理者自身のパスワードを入力します
-
-- 成功時の結果表示
-  
-  | `"result": "000-00000"` が、成功したことを示しています。
-   
-  .. code-block:: bash
-
-      < HTTP/1.1 200 OK
-      < Date: Fri, 09 Dec 2022 08:12:35 GMT
-      < Server: Apache/2.4.37 (Red Hat Enterprise Linux) mod_wsgi/4.7.1 Python/3.9
-      < Content-Length: 104
-      < Content-Type: application/json
-      < 
-      { [104 bytes data]
-      * Connection #0 to host platform-auth left intact
-      {
-      "data": null,
-      "message": "SUCCESS",
-      "result": "000-00000",
-      "ts": "2022-12-09T08:12:36.219Z"
-      }
-
-- 失敗時の結果表示イメージ
-  
-  .. code-block:: bash
-
-      < HTTP/1.1 400 BAD REQUEST
-      < Date: Fri, 09 Dec 2022 08:16:09 GMT
-      < Server: Apache/2.4.37 (Red Hat Enterprise Linux) mod_wsgi/4.7.1 Python/3.9
-      < Content-Length: 265
-      < Connection: close
-      < Content-Type: application/json
-      < 
-      { [265 bytes data]
-      * Closing connection 0
-      {
-        "data": null,
-        "message": "指定されたプランはすでに存在しているため作成できません。",
-        "result": "400-27001",
-        "ts": "2022-12-09T08:16:09.830Z"
-      }
-
-- RestAPIを直接呼び出す場合は以下の内容で呼び出すことができます。
-
-  .. code-block:: bash
-
-    BASE64_BASIC=$(echo -n "システム管理者のユーザー名を設定してください:システム管理者のパスワードを設定してください" | base64)
-    BASE_URL=システム管理者用サイトアドレスを設定してください
-
-    curl -k -X POST \
-        -H "Content-Type: application/json" \
-        -H "Authorization: basic ${BASE64_BASIC}" \
-        -d  @- \
-        "${BASE_URL}/api/platform/plans" \
-        << EOF
-    {
-      "id": "plan-standard",
-      "name": "スタンダードプラン",
-      "informations": {
-        "description": ""
-      },
-      "limits": {
-        "platform.workspaces": 100,
-        "platform.users": 200,
-        "platform.roles": 200
-      }
-    }     
-    EOF
+             your username : システム管理者自身のユーザー名を入力します
+             your password : システム管理者自身のパスワードを入力します
 
 
-設定済みリソースプランの確認 
-----------------------------
+        - | 成功時の結果表示
+          
+          | `"result": "000-00000"` が、成功したことを示しています。
+           
+          .. code-block:: bash
 
-- コマンド
-   
-  .. code-block:: bash
+              < HTTP/1.1 200 OK
+              < Date: Thu, 12 Jan 2023 08:26:42 GMT
+              < Server: Apache/2.4.37 (Red Hat Enterprise Linux) mod_wsgi/4.7.1 Python/3.9
+              < Content-Length: 4274
+              < Content-Type: application/json
+              < 
+              { [4274 bytes data]
+              * Connection #0 to host platform-auth left intact
+              {
+                "data": [
+                  {
+                    "create_timestamp": "2022-12-07T06:04:31.000Z",
+                    "create_user": "system",
+                    "id": "_default",
+                    "informations": {
+                      "description": "default plan"
+                    },
+                    "last_update_timestamp": "2022-12-07T06:04:31.000Z",
+                    "last_update_user": "system",
+                    "limits": {
+                      "platform.workspaces": 100,
+                      "platform.roles": 1000,
+                      "platform.users": 10000
+                    },
+                    "name": "_default plan"
+                  },
+                  {
+                    "create_timestamp": "2022-12-09T08:12:36.000Z",
+                    "create_user": "bd09d674-298f-4b55-9777-0758bf6f294e",
+                    "id": "plan-standard",
+                    "informations": {
+                      "description": ""
+                    },
+                    "last_update_timestamp": "2022-12-09T08:12:36.000Z",
+                    "last_update_user": "bd09d674-298f-4b55-9777-0758bf6f294e",
+                    "limits": {
+                      "platform.roles": 200,
+                      "platform.users": 200,
+                      "platform.workspaces": 100
+                    },
+                    "name": "スタンダードプラン"
+                  }
+                ],
+                "message": "SUCCESS",
+                "result": "000-00000",
+                "ts": "2023-01-12T08:26:42.375Z"
+              }
 
-      ./get-plan-list.sh
+   .. group-tab:: Rest APIによる実行
 
+      - | RestAPIを直接呼び出す場合は以下の内容で呼び出すことができます。
 
-- コマンド実行後に入力（入力例）
-   
-  .. code-block:: bash
+        .. code-block:: bash
 
-     your username : システム管理者自身のユーザー名を入力します
-     your password : システム管理者自身のパスワードを入力します
+          BASE64_BASIC=$(echo -n "システム管理者のユーザー名を設定してください:システム管理者のパスワードを設定してください" | base64)
+          BASE_URL=システム管理者用サイトアドレスを設定してください
 
+          curl -k -X GET \
+              -H "Content-Type: application/json" \
+              -H "Authorization: basic ${BASE64_BASIC}" \
+              -d  @- \
+              "${BASE_URL}/api/platform/plans"
 
-- 成功時の結果表示
-  
-  | `"result": "000-00000"` が、成功したことを示しています。
-   
-  .. code-block:: bash
+.. _plan_organization_apply:
 
-      < HTTP/1.1 200 OK
-      < Date: Thu, 12 Jan 2023 08:26:42 GMT
-      < Server: Apache/2.4.37 (Red Hat Enterprise Linux) mod_wsgi/4.7.1 Python/3.9
-      < Content-Length: 4274
-      < Content-Type: application/json
-      < 
-      { [4274 bytes data]
-      * Connection #0 to host platform-auth left intact
-      {
-        "data": [
-          {
-            "create_timestamp": "2022-12-07T06:04:31.000Z",
-            "create_user": "system",
-            "id": "_default",
-            "informations": {
-              "description": "default plan"
-            },
-            "last_update_timestamp": "2022-12-07T06:04:31.000Z",
-            "last_update_user": "system",
-            "limits": {
-              "platform.workspaces": 100,
-              "platform.roles": 1000,
-              "platform.users": 10000
-            },
-            "name": "_default plan"
-          },
-          {
-            "create_timestamp": "2022-12-09T08:12:36.000Z",
-            "create_user": "bd09d674-298f-4b55-9777-0758bf6f294e",
-            "id": "plan-standard",
-            "informations": {
-              "description": ""
-            },
-            "last_update_timestamp": "2022-12-09T08:12:36.000Z",
-            "last_update_user": "bd09d674-298f-4b55-9777-0758bf6f294e",
-            "limits": {
-              "platform.roles": 200,
-              "platform.users": 200,
-              "platform.workspaces": 100
-            },
-            "name": "スタンダードプラン"
-          }
-        ],
-        "message": "SUCCESS",
-        "result": "000-00000",
-        "ts": "2023-01-12T08:26:42.375Z"
-      }
+リソースプランの定義を適用
+--------------------------
 
+.. tabs::
 
-- RestAPIを直接呼び出す場合は以下の内容で呼び出すことができます。
+   .. group-tab:: 設定ファイルとスクリプトによる実行
 
-  .. code-block:: bash
+      - | オーガナイゼーションへのリソースプラン設定
 
-    BASE64_BASIC=$(echo -n "システム管理者のユーザー名を設定してください:システム管理者のパスワードを設定してください" | base64)
-    BASE_URL=システム管理者用サイトアドレスを設定してください
+        - | 登録するリソースプランのjsonファイルを設定します。
 
-    curl -k -X GET \
-        -H "Content-Type: application/json" \
-        -H "Authorization: basic ${BASE64_BASIC}" \
-        -d  @- \
-        "${BASE_URL}/api/platform/plans"
+          | 取得した toolsフォルダ配下にある、add-organization-plan.sample.json を コピーして使用してください。
 
-
-オーガナイゼーションへのリソースプラン設定
-------------------------------------------
-
-- 登録するリソースプランのjsonファイルを設定します。
-
-  | 取得した toolsフォルダ配下にある、add-organization-plan.sample.json を コピーして使用してください。
-
-- 登録するPlanの設定
-  
-  | 例はオーガナイゼーションID:org1、リソースプランID:plan-standardを例として説明します。
-  | 
-  | （add-org1-plan.jsonにコピーした例）
+        - | 登録するPlanの設定
+            
+          | 例はオーガナイゼーションID:org1、リソースプランID:plan-standardを例として説明します。
+          | 
+          | （add-org1-plan.jsonにコピーした例）
 
 
-  .. code-block:: bash
+          .. code-block:: bash
 
-    vi add-org1-plan.json
-
-
-  .. code-block:: bash
-      
-      {
-        "id": "plan-standard",
-        "start_datetime": "2022-12-01 00:00:00"
-      }
-
-- 項目説明
-  
-  .. list-table:: オーガナイゼーションへのリソースプラン設定項目
-     :widths: 20, 20, 40
-     :header-rows: 1
-     :align: left
-
-     * - 項目
-       - 項目の内容
-       - 形式
-     * - id 
-       - リソースプランID 
-       - リソースプラン設定で設定したリソースプランID
-     * - start_datetime 
-       - リソースプラン開始日 
-       - 日時形式、時分秒必須
+            vi add-org1-plan.json
 
 
-- コマンド
-   
-  .. code-block:: bash
+          .. code-block:: bash
+              
+              {
+                "id": "plan-standard",
+                "start_datetime": "2022-12-01 00:00:00"
+              }
 
-      ./add-organization-plan.sh add-org1-plan.json
+          - | 項目説明
+            
+            .. list-table:: オーガナイゼーションへのリソースプラン設定項目
+               :widths: 20, 20, 40
+               :header-rows: 1
+               :align: left
 
-
-- コマンド実行後に入力（入力例）
-   
-  .. code-block:: bash
-
-     organization id : リソースプランを設定するorganization idを入力します
-     
-     your username : システム管理者自身のユーザー名を入力します
-     your password : システム管理者自身のパスワードを入力します
-
-- 成功時の結果表示
-  
-  | `"result": "000-00000"` が、成功したことを示しています。
-   
-  .. code-block:: bash
-
-      < HTTP/1.1 200 OK
-      < Date: Mon, 12 Dec 2022 01:22:42 GMT
-      < Server: Apache/2.4.37 (Red Hat Enterprise Linux) mod_wsgi/4.7.1 Python/3.9
-      < Content-Length: 104
-      < Content-Type: application/json
-      < 
-      { [104 bytes data]
-      * Connection #0 to host platform-auth left intact
-      {
-        "data": null,
-        "message": "SUCCESS",
-        "result": "000-00000",
-        "ts": "2022-12-12T01:22:42.886Z"
-      }
-
-- 失敗時の結果表示イメージ
-   
-  .. code-block:: bash
-
-     < HTTP/1.1 404 NOT FOUND
-      < Date: Mon, 12 Dec 2022 01:40:02 GMT
-      < Server: Apache/2.4.37 (Red Hat Enterprise Linux) mod_wsgi/4.7.1 Python/3.9
-      < Content-Length: 127
-      < Content-Type: application/json
-      < 
-      { [127 bytes data]
-      * Connection #0 to host platform-auth left intact
-      {
-        "data": null,
-        "message": "organization not found id:org2",
-        "result": "404-00001",
-        "ts": "2022-12-12T01:40:03.268Z"
-      }
+               * - 項目
+                 - 項目の内容
+                 - 形式
+               * - id 
+                 - リソースプランID 
+                 - リソースプラン設定で設定したリソースプランID
+               * - start_datetime 
+                 - リソースプラン開始日 
+                 - 日時形式、時分秒必須
 
 
-- RestAPIを直接呼び出す場合は以下の内容で呼び出すことができます。
-  
-  .. code-block:: bash
+          - | コマンド
+             
+            .. code-block:: bash
 
-      BASE64_BASIC=$(echo -n "システム管理者のユーザー名を設定してください:システム管理者のパスワードを設定してください" | base64)
-      BASE_URL=システム管理者用サイトアドレスを設定してください
-      ORG_ID=リソースプランを設定するorganization idを設定してください
+                ./add-organization-plan.sh add-org1-plan.json
 
-      curl -k -X POST \
-          -H "Content-Type: application/json" \
-          -H "Authorization: basic ${BASE64_BASIC}" \
-          -d  @- \
-          "${BASE_URL}/api/platform/${ORG_ID}/plans" \
-          << EOF
-      {
-          "id": "plan-standard",
-          "start_datetime": "2022-12-01 00:00:00"
-      }
-      EOF
+
+          - | コマンド実行後に入力（入力例）
+             
+            .. code-block:: bash
+
+               organization id : リソースプランを設定するorganization idを入力します
+               
+               your username : システム管理者自身のユーザー名を入力します
+               your password : システム管理者自身のパスワードを入力します
+
+          - | 成功時の結果表示
+            
+            | `"result": "000-00000"` が、成功したことを示しています。
+             
+            .. code-block:: bash
+
+                < HTTP/1.1 200 OK
+                < Date: Mon, 12 Dec 2022 01:22:42 GMT
+                < Server: Apache/2.4.37 (Red Hat Enterprise Linux) mod_wsgi/4.7.1 Python/3.9
+                < Content-Length: 104
+                < Content-Type: application/json
+                < 
+                { [104 bytes data]
+                * Connection #0 to host platform-auth left intact
+                {
+                  "data": null,
+                  "message": "SUCCESS",
+                  "result": "000-00000",
+                  "ts": "2022-12-12T01:22:42.886Z"
+                }
+
+          - | 失敗時の結果表示イメージ
+             
+            .. code-block:: bash
+
+               < HTTP/1.1 404 NOT FOUND
+                < Date: Mon, 12 Dec 2022 01:40:02 GMT
+                < Server: Apache/2.4.37 (Red Hat Enterprise Linux) mod_wsgi/4.7.1 Python/3.9
+                < Content-Length: 127
+                < Content-Type: application/json
+                < 
+                { [127 bytes data]
+                * Connection #0 to host platform-auth left intact
+                {
+                  "data": null,
+                  "message": "organization not found id:org2",
+                  "result": "404-00001",
+                  "ts": "2022-12-12T01:40:03.268Z"
+                }
+
+   .. group-tab:: Rest APIによる実行
+
+      - | RestAPIを直接呼び出す場合は以下の内容で呼び出すことができます。
+            
+        .. code-block:: bash
+
+            BASE64_BASIC=$(echo -n "システム管理者のユーザー名を設定してください:システム管理者のパスワードを設定してください" | base64)
+            BASE_URL=システム管理者用サイトアドレスを設定してください
+            ORG_ID=リソースプランを設定するorganization idを設定してください
+
+            curl -k -X POST \
+                -H "Content-Type: application/json" \
+                -H "Authorization: basic ${BASE64_BASIC}" \
+                -d  @- \
+                "${BASE_URL}/api/platform/${ORG_ID}/plans" \
+                << EOF
+            {
+                "id": "plan-standard",
+                "start_datetime": "2022-12-01 00:00:00"
+            }
+            EOF
+
+.. _plan_organization_check:
 
 設定済みオーガナイゼーションリソースプランの確認
-------------------------------------------------
+----------------------------------------------------
 
-- コマンド
- 
-  .. code-block:: bash
+.. tabs::
 
-     ./get-organization-plan-list.sh
+   .. group-tab:: 設定ファイルとスクリプトによる実行
 
-- コマンド実行後に入力（入力例）
- 
-  .. code-block:: bash
+      - | 設定済みオーガナイゼーションリソースプランの確認
 
-    organization id : 取得するorganization idを入力します
-    
-    your username : システム管理者自身のユーザー名を入力します
-    your password : システム管理者自身のパスワードを入力します
+        - | コマンド
+         
+          .. code-block:: bash
 
-- 成功時の結果表示
-  
-  | `"result": "000-00000"` が、成功したことを示しています。
-   
-  .. code-block:: bash
+             ./get-organization-plan-list.sh
 
-    < HTTP/1.1 200 OK
-    < Date: Mon, 30 Jan 2023 07:47:35 GMT
-    < Server: Apache/2.4.37 (Red Hat Enterprise Linux) mod_wsgi/4.7.1 Python/3.9
-    < Content-Length: 432
-    < Content-Type: application/json
-    < 
-    { [432 bytes data]
-    * Connection #0 to host platform-auth left intact
-    {
-      "data": [
-        {
-          "create_timestamp": "2023-01-30T07:44:29.000Z",
-          "create_user": "1c83218e-1f6c-42ba-8b9a-b028bc63a765",
-          "id": "plan-standard",
-          "last_update_timestamp": "2023-01-30T07:44:29.000Z",
-          "last_update_user": "1c83218e-1f6c-42ba-8b9a-b028bc63a765",
-          "start_datetime": "2022-12-01 00:00:00"
-        }
-      ],
-      "message": "SUCCESS",
-      "result": "000-00000",
-      "ts": "2023-01-30T07:47:35.542Z"
-    }
+        - | コマンド実行後に入力（入力例）
+         
+          .. code-block:: bash
 
-- RestAPIを直接呼び出す場合は以下の内容で呼び出すことができます。
-  
-  .. code-block:: bash
+            organization id : 取得するorganization idを入力します
+            
+            your username : システム管理者自身のユーザー名を入力します
+            your password : システム管理者自身のパスワードを入力します
 
-    BASE64_BASIC=$(echo -n "システム管理者のユーザー名を設定してください:システム管理者のパスワードを設定してください" | base64)
-    BASE_URL=システム管理者用サイトアドレスを設定してください
-    ORG_ID=取得するorganization idを設定してください
+        - | 成功時の結果表示
+          
+          | `"result": "000-00000"` が、成功したことを示しています。
+           
+          .. code-block:: bash
 
-    curl -k -X GET \
-        -H "Content-Type: application/json" \
-        -H "Authorization: basic ${BASE64_BASIC}" \
-        -d  @- \
-        "${BASE_URL}/api/platform/${ORG_ID}/plans"
+            < HTTP/1.1 200 OK
+            < Date: Mon, 30 Jan 2023 07:47:35 GMT
+            < Server: Apache/2.4.37 (Red Hat Enterprise Linux) mod_wsgi/4.7.1 Python/3.9
+            < Content-Length: 432
+            < Content-Type: application/json
+            < 
+            { [432 bytes data]
+            * Connection #0 to host platform-auth left intact
+            {
+              "data": [
+                {
+                  "create_timestamp": "2023-01-30T07:44:29.000Z",
+                  "create_user": "1c83218e-1f6c-42ba-8b9a-b028bc63a765",
+                  "id": "plan-standard",
+                  "last_update_timestamp": "2023-01-30T07:44:29.000Z",
+                  "last_update_user": "1c83218e-1f6c-42ba-8b9a-b028bc63a765",
+                  "start_datetime": "2022-12-01 00:00:00"
+                }
+              ],
+              "message": "SUCCESS",
+              "result": "000-00000",
+              "ts": "2023-01-30T07:47:35.542Z"
+            }
 
-オーガナイゼーションへのリソースプラン解除
-------------------------------------------
+   .. group-tab:: Rest APIによる実行
 
-- コマンド
- 
-  .. code-block:: bash
+      - | RestAPIを直接呼び出す場合は以下の内容で呼び出すことができます。
+            
+        .. code-block:: bash
 
-     ./delete-organization-plan.sh
+          BASE64_BASIC=$(echo -n "システム管理者のユーザー名を設定してください:システム管理者のパスワードを設定してください" | base64)
+          BASE_URL=システム管理者用サイトアドレスを設定してください
+          ORG_ID=取得するorganization idを設定してください
 
-- コマンド実行後に入力（入力例）
- 
-  .. code-block:: bash
-
-      organization id : リソースプランを解除するorganization idを入力します
-      start datetime (yyyy-mm-dd hh:mm:ss) : リソースプランを解除するstart datetimeを入力します (yyyy-mm-dd hh:mm:ss形式)
-
-      your username : システム管理者自身のユーザー名を入力します
-      your password : システム管理者自身のパスワードを入力します
-
-- 成功時の結果表示
-  
-  | `"result": "000-00000"` が、成功したことを示しています。
-   
-  .. code-block:: bash
-
-      < HTTP/1.1 200 OK
-      < Date: Mon, 12 Dec 2022 01:46:58 GMT
-      < Server: Apache/2.4.37 (Red Hat Enterprise Linux) mod_wsgi/4.7.1 Python/3.9
-      < Content-Length: 104
-      < Content-Type: application/json
-      < 
-      { [104 bytes data]
-      * Connection #0 to host platform-auth left intact
-      {
-        "data": null,
-        "message": "SUCCESS",
-        "result": "000-00000",
-        "ts": "2022-12-12T01:46:58.794Z"
-      }
-
-- 失敗時の結果表示イメージ
-  
-  .. code-block:: bash
-
-      < HTTP/1.1 404 NOT FOUND
-      < Date: Mon, 12 Dec 2022 01:46:14 GMT
-      < Server: Apache/2.4.37 (Red Hat Enterprise Linux) mod_wsgi/4.7.1 Python/3.9
-      < Content-Length: 205
-      < Content-Type: application/problem+json
-      * HTTP error before end of send, stop sending
-      < 
-      { [205 bytes data]
-      * Closing connection 0
-      {
-        "detail": "The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.",
-        "status": 404,
-        "title": "Not Found",
-        "type": "about:blank"
-      }
-
-- RestAPIを直接呼び出す場合は以下の内容で呼び出すことができます。
-  
-  .. code-block:: bash
-    
-    BASE64_BASIC=$(echo -n "システム管理者のユーザー名を設定してください:システム管理者のパスワードを設定してください" | base64)
-    BASE_URL=システム管理者用サイトアドレスを設定してください
-    ORG_ID=リソースプラン解除するorganization idを設定してください
-    START_DATETIME=リソースプラン解除する開始日時を設定してください(yyyy-mm-dd hh:mm:ss形式)
-
-    curl -k -X DELETE \
-        -H "Content-Type: application/json" \
-        -H "Authorization: basic ${BASE64_BASIC}" \
-        "${BASE_URL}/api/platform/${ORG_ID}/plans/`echo ${START_DATETIME} | sed 's/ /%20/g;s/:/%3A/g'`"
+          curl -k -X GET \
+              -H "Content-Type: application/json" \
+              -H "Authorization: basic ${BASE64_BASIC}" \
+              -d  @- \
+              "${BASE_URL}/api/platform/${ORG_ID}/plans"
 
 
+.. _plan_organization_release:
+
+設定済みオーガナイゼーションリソースプランの解除
+----------------------------------------------------
+
+.. tabs::
+
+   .. group-tab:: 設定ファイルとスクリプトによる実行
+
+      - | オーガナイゼーションへのリソースプラン解除
+
+        - | コマンド
+         
+          .. code-block:: bash
+
+             ./delete-organization-plan.sh
+
+        - | コマンド実行後に入力（入力例）
+         
+          .. code-block:: bash
+
+              organization id : リソースプランを解除するorganization idを入力します
+              start datetime (yyyy-mm-dd hh:mm:ss) : リソースプランを解除するstart datetimeを入力します (yyyy-mm-dd hh:mm:ss形式)
+
+              your username : システム管理者自身のユーザー名を入力します
+              your password : システム管理者自身のパスワードを入力します
+
+        - | 成功時の結果表示
+          
+          | `"result": "000-00000"` が、成功したことを示しています。
+           
+          .. code-block:: bash
+
+              < HTTP/1.1 200 OK
+              < Date: Mon, 12 Dec 2022 01:46:58 GMT
+              < Server: Apache/2.4.37 (Red Hat Enterprise Linux) mod_wsgi/4.7.1 Python/3.9
+              < Content-Length: 104
+              < Content-Type: application/json
+              < 
+              { [104 bytes data]
+              * Connection #0 to host platform-auth left intact
+              {
+                "data": null,
+                "message": "SUCCESS",
+                "result": "000-00000",
+                "ts": "2022-12-12T01:46:58.794Z"
+              }
+
+        - | 失敗時の結果表示イメージ
+          
+          .. code-block:: bash
+
+              < HTTP/1.1 404 NOT FOUND
+              < Date: Mon, 12 Dec 2022 01:46:14 GMT
+              < Server: Apache/2.4.37 (Red Hat Enterprise Linux) mod_wsgi/4.7.1 Python/3.9
+              < Content-Length: 205
+              < Content-Type: application/problem+json
+              * HTTP error before end of send, stop sending
+              < 
+              { [205 bytes data]
+              * Closing connection 0
+              {
+                "detail": "The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.",
+                "status": 404,
+                "title": "Not Found",
+                "type": "about:blank"
+              }
+
+
+   .. group-tab:: Rest APIによる実行
+
+      - | RestAPIを直接呼び出す場合は以下の内容で呼び出すことができます。
+
+        .. code-block:: bash
+          
+          BASE64_BASIC=$(echo -n "システム管理者のユーザー名を設定してください:システム管理者のパスワードを設定してください" | base64)
+          BASE_URL=システム管理者用サイトアドレスを設定してください
+          ORG_ID=リソースプラン解除するorganization idを設定してください
+          START_DATETIME=リソースプラン解除する開始日時を設定してください(yyyy-mm-dd hh:mm:ss形式)
+
+          curl -k -X DELETE \
+              -H "Content-Type: application/json" \
+              -H "Authorization: basic ${BASE64_BASIC}" \
+              "${BASE_URL}/api/platform/${ORG_ID}/plans/`echo ${START_DATETIME} | sed 's/ /%20/g;s/:/%3A/g'`"
+
+
+.. _plan_organization_status:
 
 オーガナイゼーション毎の使用状況確認
-------------------------------------
+----------------------------------------------------
 
-- コマンド
- 
-  .. code-block:: bash
+.. tabs::
 
-    ./get-usage-list.sh
+   .. group-tab:: 設定ファイルとスクリプトによる実行
 
-- コマンド実行後に入力（入力例）
- 
-  .. code-block:: bash
+      - | オーガナイゼーション毎の使用状況確認
 
-    organization id : 取得するorganization idを入力します（省略時は全オーガナイゼーション）
-    
-    your username : システム管理者自身のユーザー名を入力します
-    your password : システム管理者自身のパスワードを入力します
+        - | コマンド
+         
+          .. code-block:: bash
 
-- 成功時の結果表示
-  
-  | `"result": "000-00000"` が、成功したことを示しています。
-   
-  .. code-block:: bash
+            ./get-usage-list.sh
 
-    < HTTP/1.1 200 OK
-    < Date: Mon, 30 Jan 2023 08:18:57 GMT
-    < Server: Apache/2.4.37 (Red Hat Enterprise Linux) mod_wsgi/4.7.1 Python/3.9
-    < Content-Length: 432
-    < Content-Type: application/json
-    < 
-    { [432 bytes data]
-    * Connection #0 to host platform-auth left intact
-    {
-      "data": [
-        {
-          "organization_id": "org1",
-          "usages": [
+        - | コマンド実行後に入力（入力例）
+         
+          .. code-block:: bash
+
+            organization id : 取得するorganization idを入力します（省略時は全オーガナイゼーション）
+            
+            your username : システム管理者自身のユーザー名を入力します
+            your password : システム管理者自身のパスワードを入力します
+
+        - | 成功時の結果表示
+          
+          | `"result": "000-00000"` が、成功したことを示しています。
+           
+          .. code-block:: bash
+
+            < HTTP/1.1 200 OK
+            < Date: Mon, 30 Jan 2023 08:18:57 GMT
+            < Server: Apache/2.4.37 (Red Hat Enterprise Linux) mod_wsgi/4.7.1 Python/3.9
+            < Content-Length: 432
+            < Content-Type: application/json
+            < 
+            { [432 bytes data]
+            * Connection #0 to host platform-auth left intact
             {
-              "current_value": 0,
-              "id": "platform.workspaces"
-            },
-            {
-              "current_value": 1,
-              "id": "platform.users"
-            },
-            {
-              "current_value": 0,
-              "id": "platform.roles"
+              "data": [
+                {
+                  "organization_id": "org1",
+                  "usages": [
+                    {
+                      "current_value": 0,
+                      "id": "platform.workspaces"
+                    },
+                    {
+                      "current_value": 1,
+                      "id": "platform.users"
+                    },
+                    {
+                      "current_value": 0,
+                      "id": "platform.roles"
+                    }
+                  ]
+                }
+              ],
+              "message": "SUCCESS",
+              "result": "000-00000",
+              "ts": "2023-01-30T08:18:57.887Z"
             }
-          ]
-        }
-      ],
-      "message": "SUCCESS",
-      "result": "000-00000",
-      "ts": "2023-01-30T08:18:57.887Z"
-    }
+
+
+   .. group-tab:: Rest APIによる実行
+
+      - | RestAPIを直接呼び出す場合は以下の内容で呼び出すことができます。
+
+        .. code-block:: bash
+          
+          BASE64_BASIC=$(echo -n "システム管理者のユーザー名を設定してください:システム管理者のパスワードを設定してください" | base64)
+          BASE_URL=システム管理者用サイトアドレスを設定してください
+          ORG_ID=取得するorganization idを設定してください
+
+          curl -k -X GET \
+              -H "Content-Type: application/json" \
+              -H "Authorization: basic ${BASE64_BASIC}" \
+              "${BASE_URL}/api/platform/usages?organization_id=${ORG_ID}"
+
+        .. note::
+       
+           | すべてのオーガナイゼーションの使用状況を取得する場合は、"?organization_id=${ORG_ID}" の条件を指定せずに実行してください
