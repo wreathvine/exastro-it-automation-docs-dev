@@ -127,17 +127,26 @@
 #. | :ref:`plan_list`
 #. | :ref:`plan_create`
 #. | :ref:`plan_check`
-#. | :ref:`plan_organization_apply`
-#. | :ref:`plan_organization_check`
+
+※リソースプランの適用は、 :doc:`オーガナイゼーション作成 または 変更<./organization>` をご参照ください。
+
 
 .. _plan_list:
 
-現状のリソースプラン確認
-------------------------
+現状のリソースプラン項目確認
+----------------------------
 
 .. tabs::
 
+   .. group-tab:: 画面操作
+
+      | リソースプラン項目確認の画面操作はありません。
+      | リソースプラン作成時に、設定が必要な項目が表示されます。
+
+
    .. group-tab:: 設定ファイルとスクリプトによる実行
+
+      以下の手順で実行
 
       - | リソースプラン設定項目の確認
 
@@ -173,24 +182,38 @@
             * Connection #0 to host platform-auth left intact
             {
               "data": [
-                  {
-                    "id": "platform.roles",
-                    "informations": {
-                        "description": "default limit"
-                    }
-                  },
-                  {
-                    "id": "platform.users",
-                    "informations": {
-                        "description": "default limit"
-                    }
-                  },
-                  {
-                    "id": "platform.workspaces",
-                    "informations": {
-                        "description": "default limit"
-                    }
+                {
+                  "id": "ita.organization.ansible.execution_limit",
+                  "informations": {
+                    "default": 25,
+                    "description": "Maximum number of movement executions for organization default",
+                    "max": 1000
                   }
+                },
+                {
+                  "id": "platform.roles",
+                  "informations": {
+                    "default": 1000,
+                    "description": "Maximum number of roles for organization default",
+                    "max": 1000
+                  }
+                },
+                {
+                  "id": "platform.users",
+                  "informations": {
+                    "default": 10000,
+                    "description": "Maximum number of users for organization default",
+                    "max": 10000
+                  }
+                },
+                {
+                  "id": "platform.workspaces",
+                  "informations": {
+                    "default": 100,
+                    "description": "Maximum number of workspaces for organization default",
+                    "max": 1000
+                  }
+                }
               ],
               "message": "SUCCESS",
               "result": "000-00000",
@@ -198,6 +221,8 @@
             }
 
    .. group-tab:: Rest APIによる実行
+
+      以下の手順で実行
 
       - | RestAPIを直接呼び出す場合は以下の内容で呼び出すことが出来ます。
 
@@ -219,7 +244,58 @@
 
 .. tabs::
 
+   .. group-tab:: 画面操作
+
+      | メニューより :menuselection:`リソースプラン管理` を選択します。
+
+      .. figure:: /images/ja/manuals/platform/plan/plan_menu.png
+         :width: 200px
+         :align: left
+         :class: with-border-thin
+
+      | リソースプラン一覧が表示されますので、:guilabel:`作成` ボタンを押下して、新しいリソースプランを登録することができます。
+
+      .. figure:: /images/ja/manuals/platform/plan/plan_list_0.png
+         :width: 600px
+         :align: left
+         :class: with-border-thin
+
+      - | リソースプラン登録
+
+        - | 登録するリソースプランのjsonファイルを設定
+              
+          | 取得した toolsフォルダ配下にある、 `add-plan.sample.json` を コピーして使用してください。
+
+        .. figure:: /images/ja/manuals/platform/plan/plan_create.png
+           :width: 600px
+           :align: left
+           :class: with-border-thin
+
+        .. list-table:: 項目説明
+           :widths: 40 200
+           :header-rows: 1
+           :align: left
+        
+           * - 項目名
+             - 説明
+           * - リソースプランID
+             - | リソースプランに割り当てる一意のIDを指定します。
+               | ここで指定した ID を使って、オーガナイゼーションへのリソースプランを紐づけることができます。
+           * - リソースプラン名
+             - | リソースプランに割り当てる名前を指定します。
+           * - 説明
+             - | リソースプランの説明を記載します。
+           * - リソースプラン制限値設定
+             - | オーガナイゼーションにおける、リソースの制限を指定します。
+               | 各項目の最大値、既定値は以下の通り
+               | ita.organization.ansible.execution_limit:【最大:1000】【既定:25】 
+               | platform.roles:【最大:1000】【既定:1000】 
+               | platform.users:【最大:10000】【既定:10000】 
+               | platform.workspaces:【最大:1000】【既定:100】 
+
    .. group-tab:: 設定ファイルとスクリプトによる実行
+
+      以下の手順で実行
 
       - | リソースプラン登録
 
@@ -246,13 +322,15 @@
                     "description": ""
                 },
                 "limits": {
-                    "platform.workspaces": 100,
-                    "platform.users": 200,
-                    "platform.roles": 200
+                    "ita.organization.ansible.execution_limit": 25,
+                    "platform.workspaces": 500,
+                    "platform.users": 1000,
+                    "platform.roles": 500
                 }
             } 
 
         .. tip::
+
            | ※limitsは、リソースプラン設定項目の確認で取得した内容をもとに作成します
 
       - | 項目説明
@@ -337,6 +415,8 @@
 
    .. group-tab:: Rest APIによる実行
 
+      以下の手順で実行
+
       - | RestAPIを直接呼び出す場合は以下の内容で呼び出すことができます。
 
         .. code-block:: bash
@@ -357,12 +437,27 @@
               "description": ""
             },
             "limits": {
-              "platform.workspaces": 100,
-              "platform.users": 200,
-              "platform.roles": 200
+              "ita.organization.ansible.execution_limit": 25,
+              "platform.workspaces": 500,
+              "platform.users": 1000,
+              "platform.roles": 500
             }
           }     
           EOF
+
+.. note:: ita.organization.ansible.execution_limitについて
+ 
+   | ita.organization.ansible.execution_limitは、IT AutomationのAnsibleドライバのMovement同時実行数（オーガナイゼーション毎）の上限となります。
+   | オーガナイゼーションごとの上限は、設定した内容となりますが、Exastro システム全体での最大同時実行数は、システム設定値で設定されている値が上限となります。
+   | よってシステム全体の最大同時実行数を超える設定は、同時に実行されず、実行待ちとなります。
+
+.. todo:: システムの上限値の説明は、別途記載
+
+.. note:: 各項目の設定値について
+ 
+   | システムの上限は、上述の通りですが、リソースを大きくすることによってパフォーマンスに影響します。
+   | 基本的には、既定値の値が、最小構成で実行できる最大値となります。
+   | ※最小構成は、 :doc:`../../installation/index` の前提条件を確認してください。
 
 .. _plan_check:
 
@@ -371,7 +466,25 @@
 
 .. tabs::
 
+   .. group-tab:: 画面操作
+
+      | メニューより :menuselection:`リソースプラン管理` を選択します。
+
+      .. figure:: /images/ja/manuals/platform/plan/plan_menu.png
+         :width: 200px
+         :align: left
+         :class: with-border-thin
+
+      | リソースプラン一覧が表示され、登録されているリソースプランを確認することができます。
+
+      .. figure:: /images/ja/manuals/platform/plan/plan_list_1.png
+         :width: 600px
+         :align: left
+         :class: with-border-thin
+      
    .. group-tab:: 設定ファイルとスクリプトによる実行
+
+      以下の手順で実行
 
       - | 設定済みリソースプランの確認 
 
@@ -416,6 +529,7 @@
                     "last_update_timestamp": "2022-12-07T06:04:31.000Z",
                     "last_update_user": "system",
                     "limits": {
+                      "ita.organization.ansible.execution_limit": 25,
                       "platform.workspaces": 100,
                       "platform.roles": 1000,
                       "platform.users": 10000
@@ -432,9 +546,10 @@
                     "last_update_timestamp": "2022-12-09T08:12:36.000Z",
                     "last_update_user": "bd09d674-298f-4b55-9777-0758bf6f294e",
                     "limits": {
-                      "platform.roles": 200,
-                      "platform.users": 200,
-                      "platform.workspaces": 100
+                      "ita.organization.ansible.execution_limit": 25,
+                      "platform.workspaces": 500,
+                      "platform.users": 1000,
+                      "platform.roles": 500
                     },
                     "name": "スタンダードプラン"
                   }
@@ -445,6 +560,8 @@
               }
 
    .. group-tab:: Rest APIによる実行
+
+      以下の手順で実行
 
       - | RestAPIを直接呼び出す場合は以下の内容で呼び出すことができます。
 
@@ -459,303 +576,34 @@
               -d  @- \
               "${BASE_URL}/api/platform/plans"
 
-.. _plan_organization_apply:
+.. warning:: リソースプラン変更・削除
+ 
+   | 現在リソースプランの変更や削除は未対応となっております。
 
-リソースプランの定義を適用
---------------------------
-
-.. tabs::
-
-   .. group-tab:: 設定ファイルとスクリプトによる実行
-
-      - | オーガナイゼーションへのリソースプラン設定
-
-        - | 登録するリソースプランのjsonファイルを設定します。
-
-          | 取得した toolsフォルダ配下にある、add-organization-plan.sample.json を コピーして使用してください。
-
-        - | 登録するPlanの設定
-            
-          | 例はオーガナイゼーションID:org1、リソースプランID:plan-standardを例として説明します。
-          | 
-          | （add-org1-plan.jsonにコピーした例）
-
-
-          .. code-block:: bash
-
-            vi add-org1-plan.json
-
-
-          .. code-block:: bash
-              
-              {
-                "id": "plan-standard",
-                "start_datetime": "2022-12-01 00:00:00"
-              }
-
-          - | 項目説明
-            
-            .. list-table:: オーガナイゼーションへのリソースプラン設定項目
-               :widths: 20, 20, 40
-               :header-rows: 1
-               :align: left
-
-               * - 項目
-                 - 項目の内容
-                 - 形式
-               * - id 
-                 - リソースプランID 
-                 - リソースプラン設定で設定したリソースプランID
-               * - start_datetime 
-                 - リソースプラン開始日 
-                 - 日時形式、時分秒必須
-
-
-          - | コマンド
-             
-            .. code-block:: bash
-
-                ./add-organization-plan.sh add-org1-plan.json
-
-
-          - | コマンド実行後に入力（入力例）
-             
-            .. code-block:: bash
-
-               organization id : リソースプランを設定するorganization idを入力します
-               
-               your username : システム管理者自身のユーザー名を入力します
-               your password : システム管理者自身のパスワードを入力します
-
-          - | 成功時の結果表示
-            
-            | `"result": "000-00000"` が、成功したことを示しています。
-             
-            .. code-block:: bash
-
-                < HTTP/1.1 200 OK
-                < Date: Mon, 12 Dec 2022 01:22:42 GMT
-                < Server: Apache/2.4.37 (Red Hat Enterprise Linux) mod_wsgi/4.7.1 Python/3.9
-                < Content-Length: 104
-                < Content-Type: application/json
-                < 
-                { [104 bytes data]
-                * Connection #0 to host platform-auth left intact
-                {
-                  "data": null,
-                  "message": "SUCCESS",
-                  "result": "000-00000",
-                  "ts": "2022-12-12T01:22:42.886Z"
-                }
-
-          - | 失敗時の結果表示イメージ
-             
-            .. code-block:: bash
-
-               < HTTP/1.1 404 NOT FOUND
-                < Date: Mon, 12 Dec 2022 01:40:02 GMT
-                < Server: Apache/2.4.37 (Red Hat Enterprise Linux) mod_wsgi/4.7.1 Python/3.9
-                < Content-Length: 127
-                < Content-Type: application/json
-                < 
-                { [127 bytes data]
-                * Connection #0 to host platform-auth left intact
-                {
-                  "data": null,
-                  "message": "organization not found id:org2",
-                  "result": "404-00001",
-                  "ts": "2022-12-12T01:40:03.268Z"
-                }
-
-   .. group-tab:: Rest APIによる実行
-
-      - | RestAPIを直接呼び出す場合は以下の内容で呼び出すことができます。
-            
-        .. code-block:: bash
-
-            BASE64_BASIC=$(echo -n "システム管理者のユーザー名を設定してください:システム管理者のパスワードを設定してください" | base64)
-            BASE_URL=システム管理者用サイトアドレスを設定してください
-            ORG_ID=リソースプランを設定するorganization idを設定してください
-
-            curl -k -X POST \
-                -H "Content-Type: application/json" \
-                -H "Authorization: basic ${BASE64_BASIC}" \
-                -d  @- \
-                "${BASE_URL}/api/platform/${ORG_ID}/plans" \
-                << EOF
-            {
-                "id": "plan-standard",
-                "start_datetime": "2022-12-01 00:00:00"
-            }
-            EOF
-
-.. _plan_organization_check:
-
-設定済みオーガナイゼーションリソースプランの確認
-----------------------------------------------------
-
-.. tabs::
-
-   .. group-tab:: 設定ファイルとスクリプトによる実行
-
-      - | 設定済みオーガナイゼーションリソースプランの確認
-
-        - | コマンド
-         
-          .. code-block:: bash
-
-             ./get-organization-plan-list.sh
-
-        - | コマンド実行後に入力（入力例）
-         
-          .. code-block:: bash
-
-            organization id : 取得するorganization idを入力します
-            
-            your username : システム管理者自身のユーザー名を入力します
-            your password : システム管理者自身のパスワードを入力します
-
-        - | 成功時の結果表示
-          
-          | `"result": "000-00000"` が、成功したことを示しています。
-           
-          .. code-block:: bash
-
-            < HTTP/1.1 200 OK
-            < Date: Mon, 30 Jan 2023 07:47:35 GMT
-            < Server: Apache/2.4.37 (Red Hat Enterprise Linux) mod_wsgi/4.7.1 Python/3.9
-            < Content-Length: 432
-            < Content-Type: application/json
-            < 
-            { [432 bytes data]
-            * Connection #0 to host platform-auth left intact
-            {
-              "data": [
-                {
-                  "create_timestamp": "2023-01-30T07:44:29.000Z",
-                  "create_user": "1c83218e-1f6c-42ba-8b9a-b028bc63a765",
-                  "id": "plan-standard",
-                  "last_update_timestamp": "2023-01-30T07:44:29.000Z",
-                  "last_update_user": "1c83218e-1f6c-42ba-8b9a-b028bc63a765",
-                  "start_datetime": "2022-12-01 00:00:00"
-                }
-              ],
-              "message": "SUCCESS",
-              "result": "000-00000",
-              "ts": "2023-01-30T07:47:35.542Z"
-            }
-
-   .. group-tab:: Rest APIによる実行
-
-      - | RestAPIを直接呼び出す場合は以下の内容で呼び出すことができます。
-            
-        .. code-block:: bash
-
-          BASE64_BASIC=$(echo -n "システム管理者のユーザー名を設定してください:システム管理者のパスワードを設定してください" | base64)
-          BASE_URL=システム管理者用サイトアドレスを設定してください
-          ORG_ID=取得するorganization idを設定してください
-
-          curl -k -X GET \
-              -H "Content-Type: application/json" \
-              -H "Authorization: basic ${BASE64_BASIC}" \
-              -d  @- \
-              "${BASE_URL}/api/platform/${ORG_ID}/plans"
-
-
-.. _plan_organization_release:
-
-設定済みオーガナイゼーションリソースプランの解除
-----------------------------------------------------
-
-.. tabs::
-
-   .. group-tab:: 設定ファイルとスクリプトによる実行
-
-      - | オーガナイゼーションへのリソースプラン解除
-
-        - | コマンド
-         
-          .. code-block:: bash
-
-             ./delete-organization-plan.sh
-
-        - | コマンド実行後に入力（入力例）
-         
-          .. code-block:: bash
-
-              organization id : リソースプランを解除するorganization idを入力します
-              start datetime (yyyy-mm-dd hh:mm:ss) : リソースプランを解除するstart datetimeを入力します (yyyy-mm-dd hh:mm:ss形式)
-
-              your username : システム管理者自身のユーザー名を入力します
-              your password : システム管理者自身のパスワードを入力します
-
-        - | 成功時の結果表示
-          
-          | `"result": "000-00000"` が、成功したことを示しています。
-           
-          .. code-block:: bash
-
-              < HTTP/1.1 200 OK
-              < Date: Mon, 12 Dec 2022 01:46:58 GMT
-              < Server: Apache/2.4.37 (Red Hat Enterprise Linux) mod_wsgi/4.7.1 Python/3.9
-              < Content-Length: 104
-              < Content-Type: application/json
-              < 
-              { [104 bytes data]
-              * Connection #0 to host platform-auth left intact
-              {
-                "data": null,
-                "message": "SUCCESS",
-                "result": "000-00000",
-                "ts": "2022-12-12T01:46:58.794Z"
-              }
-
-        - | 失敗時の結果表示イメージ
-          
-          .. code-block:: bash
-
-              < HTTP/1.1 404 NOT FOUND
-              < Date: Mon, 12 Dec 2022 01:46:14 GMT
-              < Server: Apache/2.4.37 (Red Hat Enterprise Linux) mod_wsgi/4.7.1 Python/3.9
-              < Content-Length: 205
-              < Content-Type: application/problem+json
-              * HTTP error before end of send, stop sending
-              < 
-              { [205 bytes data]
-              * Closing connection 0
-              {
-                "detail": "The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.",
-                "status": 404,
-                "title": "Not Found",
-                "type": "about:blank"
-              }
-
-
-   .. group-tab:: Rest APIによる実行
-
-      - | RestAPIを直接呼び出す場合は以下の内容で呼び出すことができます。
-
-        .. code-block:: bash
-          
-          BASE64_BASIC=$(echo -n "システム管理者のユーザー名を設定してください:システム管理者のパスワードを設定してください" | base64)
-          BASE_URL=システム管理者用サイトアドレスを設定してください
-          ORG_ID=リソースプラン解除するorganization idを設定してください
-          START_DATETIME=リソースプラン解除する開始日時を設定してください(yyyy-mm-dd hh:mm:ss形式)
-
-          curl -k -X DELETE \
-              -H "Content-Type: application/json" \
-              -H "Authorization: basic ${BASE64_BASIC}" \
-              "${BASE_URL}/api/platform/${ORG_ID}/plans/`echo ${START_DATETIME} | sed 's/ /%20/g;s/:/%3A/g'`"
+.. note:: リソースプランの適用
+ 
+   | 作成したリソースプランの適用は、 :doc:`オーガナイゼーション作成 または 変更<./organization>` を参照してください。
 
 
 .. _plan_organization_status:
 
-オーガナイゼーション毎の使用状況確認
+使用状況確認
 ----------------------------------------------------
+
+| オーガナイゼーション毎のリソース使用状況を確認できます。
 
 .. tabs::
 
+   .. group-tab:: 画面操作
+
+      .. note::
+
+         | オーガナイゼーション毎の使用状況確認の画面操作はありません。
+         | 「設定ファイルとスクリプトによる実行」または「Rest APIによる実行」をご利用ください。
+
    .. group-tab:: 設定ファイルとスクリプトによる実行
+
+      以下の手順で実行
 
       - | オーガナイゼーション毎の使用状況確認
 
@@ -815,6 +663,8 @@
 
 
    .. group-tab:: Rest APIによる実行
+
+      以下の手順で実行
 
       - | RestAPIを直接呼び出す場合は以下の内容で呼び出すことができます。
 

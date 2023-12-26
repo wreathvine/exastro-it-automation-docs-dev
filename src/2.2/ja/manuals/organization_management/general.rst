@@ -14,27 +14,35 @@
 
 #. | ログイン時は、必ずログインID(ユーザ名、E-mailアドレス)とパスワードを準備の上、ログインしてください。
 
-   .. image:: /images/ja/manuals/platform/login/exastro-login.png
+   .. figure:: /images/ja/manuals/platform/login/exastro-login.png
       :alt: ログイン
-      :width: 6.67391in
+      :width: 600px
+      :align: left
+      :class: with-border-thin
 
    .. list-table:: ログイン時の入力内容
-      :widths: 10 10
+      :widths: 40 200
       :header-rows: 1
       :align: left
 
-      * - ユーザ名またはメールアドレス
-        - パスワード
-      * - adminまたはadmin@example.com ※
-        - password  ※
+      * - 項目名
+        - 説明
+      * - | ユーザ名またはメールアドレス
+        - | システム管理者が設定したユーザ名 または、E-mailアドレス
+          | example. adminまたはadmin@example.com ※
+      * - | パスワード
+        - | システム管理者が設定したパスワード
+          | example. password  ※
 
    .. tip::
-      |  ログインID(ユーザ名、E-mailアドレス)、パスワードは、システム管理者が :doc:`../platform_management/organization` のオーガナイゼーション作成で設定したログインID(ユーザ名、E-mailアドレス)、パスワードを使用してください。
+      |  ログインID(ユーザ名、E-mailアドレス)、パスワードは、システム管理者が :doc:`../platform_management/organization` のオーガナイゼーション作成で設定したオーガナイゼーション管理者のログインID(ユーザ名、E-mailアドレス)、パスワードを使用してください。
 
 #. | ログイン後、下記のようにワークスペース一覧画面が表示されます。
 
-   .. image:: /images/ja/diagram/login_workspace.png
+   .. figure:: /images/ja/diagram/login_workspace.png
       :alt: ログイン
-      :width: 6.67391in
+      :width: 600px
+      :align: left
+      :class: with-border-thin
 
 .. include:: ../it_automation_base/setting_profile.rst

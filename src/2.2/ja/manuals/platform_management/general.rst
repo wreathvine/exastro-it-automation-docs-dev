@@ -14,9 +14,11 @@
 
 #. | ログイン時は、必ずユーザ名とパスワードを準備の上、ログインしてください。
 
-   .. image:: /images/ja/manuals/platform/login/exastro-login.png
+   .. figure:: /images/ja/manuals/platform/login/exastro-login.png
       :alt: ログイン
-      :width: 6.67391in
+      :width: 600px
+      :align: left
+      :class: with-border-thin
 
    .. list-table:: ログイン時の入力内容
       :widths: 10 10
@@ -37,8 +39,10 @@
 
    .. todo:: オーガナイゼーション管理画面（一覧）の画像に差し替え
 
-   .. image:: /images/ja/diagram/login_workspace.png
+   .. figure:: /images/ja/diagram/login_workspace.png
       :alt: オーガナイゼーション管理画面（一覧）
-      :width: 6.67391in
+      :width: 600px
+      :align: left
+      :class: with-border-thin
 
 .. include:: ../it_automation_base/setting_profile.rst
