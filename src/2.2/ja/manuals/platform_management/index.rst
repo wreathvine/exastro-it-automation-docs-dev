@@ -10,3 +10,4 @@
    organization
    plan
    aap
+   keycloak_console
