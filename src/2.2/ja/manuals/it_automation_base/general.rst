@@ -6,14 +6,14 @@
 はじめに
 --------
 
-| 本書は、オーガナイゼーション作成直後の初回ログイン方法について記載したものです。
+| 本書は、Exastro IT Automationを使用する際のログイン方法について記載したものです。
 
 .. _first_login:
 
-初回ログイン
+ログイン
 ------------
 
-#. | 初回ログイン時は、必ず次のユーザ名とパスワードでログインしてください。
+#. | ログイン時は、必ずログインID(ユーザー名、E-mailアドレス)とパスワードを準備の上、ログインしてください。
 
    .. figure:: /images/ja/diagram/login1.png
       :alt: 初回ログイン
@@ -21,18 +21,22 @@
       :align: left
       :class: with-border-thin
 
-   .. list-table:: 初回ログイン時の入力内容
-      :widths: 10 10
+   .. list-table:: 項目説明
+      :widths: 40 200
       :header-rows: 1
       :align: left
 
-      * - ユーザ名またはメールアドレス
-        - パスワード
-      * - adminまたはadmin@example.com ※
-        - password  ※
+      * - 項目名
+        - 説明
+      * - | ユーザー名またはメールアドレス
+        - | 管理者から指定したユーザー名またはE-mailアドレス
+          | example. user または user@example.com ※
+      * - | パスワード
+        - | 管理者から指定したパスワード
+          | example. password ※
 
    .. tip::
-      |  ※初回ログイン時は、「 :ref:`organization_creation_v2.1` 」で指定した管理者のログインID(ユーザ名、E-mailアドレス)、初期パスワードを使用してください。
+      |  ※初回ログイン時は、管理者が指定したのログインID(ユーザー名、E-mailアドレス)、初期パスワードを使用してください。
 
 #. | パスワードの更新を行い、:guilabel:`送信` ボタンを押下します。
 
