@@ -796,6 +796,14 @@ Organization (オーガナイゼーション)
          .. note:: 
             | ※オーガナイゼーションIDを変更することは出来ません。
 
+      #. | 追加したいドライバにチェックを入れることで、インストールするドライバを追加することができます。
+         | しかし、インストール済みのドライバを削除することはできません。
+
+         .. figure:: /images/ja/manuals/platform/organization/org_edit_driver.png
+            :width: 600px
+            :align: left
+            :class: with-border-thin
+
       #. | :guilabel:`リソースプラン設定` ボタンを押下して、オーガナイゼーションにリソースプランを紐づけることができます。
          | 紐づけるリソースプランIDをプルダウンで選択し、開始日時を指定して、 :guilabel:`適用` ボタンを押下します。
 
@@ -842,7 +850,34 @@ Organization (オーガナイゼーション)
 
      | cURL を使って Rest API を利用する場合は、以下の様なコマンドを実行してください。
 
-     - | オーガナイゼーション名の編集
+     - | オーガナイゼーションの編集
+
+     | 利用可能なパラメータは下記のとおりです。
+     | 詳細は、:doc:`../../reference/api/system_manager/platform-api` を参照してください。
+
+     .. list-table:: オーガナイゼーションパラメータ
+        :widths: 25 30 20 35
+        :header-rows: 1
+        :align: left
+
+        * - 項目
+          - 説明
+          - 変更
+          - デフォルト値・選択可能な設定値
+        * - organization name
+          - | オーガナイゼーション名を指定。
+            | 最大255文字
+          - 可
+          - "org001-name"
+        * - enabled
+          - | オーガナイゼーションの有効・無効設定
+          - 不可
+          - "true"
+        * - optionsIta.driver
+          - | インストールドライバを指定。
+            | ただし、削除は不可能。
+          - | falseからtureに変更は可能。
+          - "true"
 
      .. code-block:: bash
 
@@ -944,7 +979,7 @@ Organization (オーガナイゼーション)
              :align: left
              :class: with-border-thin
 
-       #. | 削除確認で本当に削除する場合は、:file:`/削除するオーガナイゼーションID` を入力して、 :guilabel:`はい、削除します` ボタンを押下します。
+       #. | 削除確認で本当に削除する場合は、platform/削除するオーガナイゼーションID を入力して、 :guilabel:`はい、削除します` ボタンを押下します。
 
           .. figure:: /images/ja/manuals/platform/organization/オーガナイゼーション削除_実行確認.png
              :width: 600px
