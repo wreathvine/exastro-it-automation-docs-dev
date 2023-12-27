@@ -230,8 +230,8 @@
 <div class="line">オーガナイゼーションごとに使用可能なリソース量を管理するためのものです。</div>
 <div class="line">プランに複数のリソースの上限値を設定しておき、オーガナイゼーション毎にプランを割り当てることで使用リソースを制限することができます。</div>
 </div>
-<table class="docutils align-left" id="id15">
-<caption><span class="caption-number">表 3.8 </span><span class="caption-text">リソースプラン設定例</span><a class="headerlink" href="#id15" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="docutils align-left" id="id14">
+<caption><span class="caption-number">表 3.8 </span><span class="caption-text">リソースプラン設定例</span><a class="headerlink" href="#id14" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 20%" />
 <col style="width: 20%" />
@@ -265,8 +265,8 @@
 <section id="id4">
 <h3><span class="section-number">3.2.1. </span>リソースプラン設定手順<a class="headerlink" href="#id4" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
-<div class="line">リソースプランを登録のうえ、オーガナイゼーションへリソースプランの紐づけが必要になります。</div>
-<div class="line"><a class="reference internal" href="organization.html#organization-creation-v2-1"><span class="std std-ref">オーガナイゼーション作成手順</span></a> に記載のオーガナイゼーション作成パラメータ「plan.id」にてリソースプランを指定することで紐づけることが出来ます。</div>
+<div class="line">オーガナイゼーションへリソースプランを適用する場合は、あらかじめリソースプランを登録する必要があります。</div>
+<div class="line">登録したリソースプランを適用する方法は、 <a class="reference internal" href="organization.html#organization-creation-v2-1"><span class="std std-ref">オーガナイゼーション作成手順</span></a> を参照してください。</div>
 </div>
 </section>
 <section id="id5">
@@ -397,10 +397,13 @@ git<span class="w"> </span>clone<span class="w"> </span>https://github.com/exast
 </div>
 </li>
 </ol>
-<p>※リソースプランの適用は、 <a class="reference internal" href="organization.html"><span class="doc">オーガナイゼーション作成 または 変更</span></a> をご参照ください。</p>
+<p>※リソースプランの適用は、 <a class="reference internal" href="organization.html#organization-creation-v2-1"><span class="std std-ref">オーガナイゼーション作成 または 変更</span></a> をご参照ください。</p>
 </section>
 <section id="plan-list">
 <span id="id10"></span><h3><span class="section-number">3.3.4. </span>現状のリソースプラン項目確認<a class="headerlink" href="#plan-list" title="この見出しへのパーマリンク">¶</a></h3>
+<div class="line-block">
+<div class="line">リソースプラン項目の確認方法には、下記の3通りの方法があります。</div>
+</div>
 <div class="sphinx-tabs docutils container">
 <div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-55S76Z2i5pON5L2c" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-0-55S76Z2i5pON5L2c" name="55S76Z2i5pON5L2c" role="tab" tabindex="0">画面操作</button><button aria-controls="panel-0-6Kit5a6a44OV44Kh44Kk44Or44Go44K544Kv44Oq44OX44OI44Gr44KI44KL5a6f6KGM" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-0-6Kit5a6a44OV44Kh44Kk44Or44Go44K544Kv44Oq44OX44OI44Gr44KI44KL5a6f6KGM" name="6Kit5a6a44OV44Kh44Kk44Or44Go44K544Kv44Oq44OX44OI44Gr44KI44KL5a6f6KGM" role="tab" tabindex="-1">設定ファイルとスクリプトによる実行</button><button aria-controls="panel-0-UmVzdCBBUEnjgavjgojjgovlrp/ooYw=" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-0-UmVzdCBBUEnjgavjgojjgovlrp/ooYw=" name="UmVzdCBBUEnjgavjgojjgovlrp/ooYw=" role="tab" tabindex="-1">Rest APIによる実行</button></div><div aria-labelledby="tab-0-55S76Z2i5pON5L2c" class="sphinx-tabs-panel group-tab" id="panel-0-55S76Z2i5pON5L2c" name="55S76Z2i5pON5L2c" role="tabpanel" tabindex="0"><div class="line-block">
 <div class="line">リソースプラン項目確認の画面操作はありません。</div>
@@ -510,6 +513,9 @@ curl<span class="w"> </span>-k<span class="w"> </span>-X<span class="w"> </span>
 </section>
 <section id="plan-create">
 <span id="id11"></span><h3><span class="section-number">3.3.5. </span>リソースプラン登録<a class="headerlink" href="#plan-create" title="この見出しへのパーマリンク">¶</a></h3>
+<div class="line-block">
+<div class="line">リソースプランの登録方法には、下記の3通りの方法があります。</div>
+</div>
 <div class="sphinx-tabs docutils container">
 <div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-1-55S76Z2i5pON5L2c" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-1-55S76Z2i5pON5L2c" name="55S76Z2i5pON5L2c" role="tab" tabindex="0">画面操作</button><button aria-controls="panel-1-6Kit5a6a44OV44Kh44Kk44Or44Go44K544Kv44Oq44OX44OI44Gr44KI44KL5a6f6KGM" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-1-6Kit5a6a44OV44Kh44Kk44Or44Go44K544Kv44Oq44OX44OI44Gr44KI44KL5a6f6KGM" name="6Kit5a6a44OV44Kh44Kk44Or44Go44K544Kv44Oq44OX44OI44Gr44KI44KL5a6f6KGM" role="tab" tabindex="-1">設定ファイルとスクリプトによる実行</button><button aria-controls="panel-1-UmVzdCBBUEnjgavjgojjgovlrp/ooYw=" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-1-UmVzdCBBUEnjgavjgojjgovlrp/ooYw=" name="UmVzdCBBUEnjgavjgojjgovlrp/ooYw=" role="tab" tabindex="-1">Rest APIによる実行</button></div><div aria-labelledby="tab-1-55S76Z2i5pON5L2c" class="sphinx-tabs-panel group-tab" id="panel-1-55S76Z2i5pON5L2c" name="55S76Z2i5pON5L2c" role="tabpanel" tabindex="0"><div class="line-block">
 <div class="line">メニューより <span class="menuselection">リソースプラン管理</span> を選択します。</div>
@@ -539,8 +545,8 @@ curl<span class="w"> </span>-k<span class="w"> </span>-X<span class="w"> </span>
 <figure class="align-left">
 <a class="with-border-thin reference internal image-reference" href="../../../../_images/plan_create.png"><img alt="../../../../_images/plan_create.png" class="with-border-thin" src="../../../../_images/plan_create.png" style="width: 600px;" /></a>
 </figure>
-<table class="docutils align-left" id="id16">
-<caption><span class="caption-number">表 3.9 </span><span class="caption-text">項目説明</span><a class="headerlink" href="#id16" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="docutils align-left" id="id15">
+<caption><span class="caption-number">表 3.9 </span><span class="caption-text">項目説明</span><a class="headerlink" href="#id15" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 17%" />
 <col style="width: 83%" />
@@ -634,8 +640,8 @@ curl<span class="w"> </span>-k<span class="w"> </span>-X<span class="w"> </span>
 <li><div class="line-block">
 <div class="line">項目説明</div>
 </div>
-<table class="docutils align-left" id="id17">
-<caption><span class="caption-number">表 3.10 </span><span class="caption-text">リソースプラン設定項目</span><a class="headerlink" href="#id17" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="docutils align-left" id="id16">
+<caption><span class="caption-number">表 3.10 </span><span class="caption-text">リソースプラン設定項目</span><a class="headerlink" href="#id16" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 25%" />
 <col style="width: 25%" />
@@ -770,26 +776,16 @@ curl<span class="w"> </span>-k<span class="w"> </span>-X<span class="w"> </span>
 <p>ita.organization.ansible.execution_limitについて</p>
 <div class="line-block">
 <div class="line">ita.organization.ansible.execution_limitは、IT AutomationのAnsibleドライバのMovement同時実行数（オーガナイゼーション毎）の上限となります。</div>
-<div class="line">オーガナイゼーションごとの上限は、設定した内容となりますが、Exastro システム全体での最大同時実行数は、システム設定値で設定されている値が上限となります。</div>
-<div class="line">よってシステム全体の最大同時実行数を超える設定は、同時に実行されず、実行待ちとなります。</div>
-</div>
-</div>
-<div class="admonition-todo admonition" id="id12">
-<p class="admonition-title">課題</p>
-<p>システムの上限値の説明は、別途記載</p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">注釈</p>
-<p>各項目の設定値について</p>
-<div class="line-block">
-<div class="line">システムの上限は、上述の通りですが、リソースを大きくすることによってパフォーマンスに影響します。</div>
-<div class="line">基本的には、既定値の値が、最小構成で実行できる最大値となります。</div>
-<div class="line">※最小構成は、 <a class="reference internal" href="../../installation/index.html"><span class="doc">インストール</span></a> の前提条件を確認してください。</div>
+<div class="line">オーガナイゼーションごとの同時実行数上限は、設定した内容となりますが、Exastro システム全体での最大同時実行数があるため、システム設定値で設定されている値が同時実行数上限となります。</div>
+<div class="line">よって、システム全体の最大同時実行数を超えるMovement同時実行は、実行されず、実行待ちとなります。</div>
 </div>
 </div>
 </section>
 <section id="plan-check">
-<span id="id13"></span><h3><span class="section-number">3.3.6. </span>リソースプラン確認<a class="headerlink" href="#plan-check" title="この見出しへのパーマリンク">¶</a></h3>
+<span id="id12"></span><h3><span class="section-number">3.3.6. </span>リソースプラン確認<a class="headerlink" href="#plan-check" title="この見出しへのパーマリンク">¶</a></h3>
+<div class="line-block">
+<div class="line">リソースプランの確認方法には、下記の3通りの方法があります。</div>
+</div>
 <div class="sphinx-tabs docutils container">
 <div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-2-55S76Z2i5pON5L2c" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-2-55S76Z2i5pON5L2c" name="55S76Z2i5pON5L2c" role="tab" tabindex="0">画面操作</button><button aria-controls="panel-2-6Kit5a6a44OV44Kh44Kk44Or44Go44K544Kv44Oq44OX44OI44Gr44KI44KL5a6f6KGM" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-2-6Kit5a6a44OV44Kh44Kk44Or44Go44K544Kv44Oq44OX44OI44Gr44KI44KL5a6f6KGM" name="6Kit5a6a44OV44Kh44Kk44Or44Go44K544Kv44Oq44OX44OI44Gr44KI44KL5a6f6KGM" role="tab" tabindex="-1">設定ファイルとスクリプトによる実行</button><button aria-controls="panel-2-UmVzdCBBUEnjgavjgojjgovlrp/ooYw=" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-2-UmVzdCBBUEnjgavjgojjgovlrp/ooYw=" name="UmVzdCBBUEnjgavjgojjgovlrp/ooYw=" role="tab" tabindex="-1">Rest APIによる実行</button></div><div aria-labelledby="tab-2-55S76Z2i5pON5L2c" class="sphinx-tabs-panel group-tab" id="panel-2-55S76Z2i5pON5L2c" name="55S76Z2i5pON5L2c" role="tabpanel" tabindex="0"><div class="line-block">
 <div class="line">メニューより <span class="menuselection">リソースプラン管理</span> を選択します。</div>
@@ -903,35 +899,34 @@ curl<span class="w"> </span>-k<span class="w"> </span>-X<span class="w"> </span>
 </li>
 </ul>
 </div></div>
-<div class="admonition warning">
-<p class="admonition-title">警告</p>
-<p>リソースプラン変更・削除</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
 <div class="line-block">
 <div class="line">現在リソースプランの変更や削除は未対応となっております。</div>
 </div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
-<p>リソースプランの適用</p>
 <div class="line-block">
 <div class="line">作成したリソースプランの適用は、 <a class="reference internal" href="organization.html"><span class="doc">オーガナイゼーション作成 または 変更</span></a> を参照してください。</div>
 </div>
 </div>
 </section>
 <section id="plan-organization-status">
-<span id="id14"></span><h3><span class="section-number">3.3.7. </span>使用状況確認<a class="headerlink" href="#plan-organization-status" title="この見出しへのパーマリンク">¶</a></h3>
+<span id="id13"></span><h3><span class="section-number">3.3.7. </span>使用状況確認<a class="headerlink" href="#plan-organization-status" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
-<div class="line">オーガナイゼーション毎のリソース使用状況を確認できます。</div>
+<div class="line">オーガナイゼーション毎のリソース使用状況（ワークスペース数、ユーザー数、ロール数）を確認できます。</div>
+<div class="line">リソース使用状況の確認方法には、下記の2通りの方法があります。</div>
 </div>
-<div class="sphinx-tabs docutils container">
-<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-3-55S76Z2i5pON5L2c" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-3-55S76Z2i5pON5L2c" name="55S76Z2i5pON5L2c" role="tab" tabindex="0">画面操作</button><button aria-controls="panel-3-6Kit5a6a44OV44Kh44Kk44Or44Go44K544Kv44Oq44OX44OI44Gr44KI44KL5a6f6KGM" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-3-6Kit5a6a44OV44Kh44Kk44Or44Go44K544Kv44Oq44OX44OI44Gr44KI44KL5a6f6KGM" name="6Kit5a6a44OV44Kh44Kk44Or44Go44K544Kv44Oq44OX44OI44Gr44KI44KL5a6f6KGM" role="tab" tabindex="-1">設定ファイルとスクリプトによる実行</button><button aria-controls="panel-3-UmVzdCBBUEnjgavjgojjgovlrp/ooYw=" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-3-UmVzdCBBUEnjgavjgojjgovlrp/ooYw=" name="UmVzdCBBUEnjgavjgojjgovlrp/ooYw=" role="tab" tabindex="-1">Rest APIによる実行</button></div><div aria-labelledby="tab-3-55S76Z2i5pON5L2c" class="sphinx-tabs-panel group-tab" id="panel-3-55S76Z2i5pON5L2c" name="55S76Z2i5pON5L2c" role="tabpanel" tabindex="0"><div class="admonition note">
-<p class="admonition-title">注釈</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
 <div class="line-block">
 <div class="line">オーガナイゼーション毎の使用状況確認の画面操作はありません。</div>
 <div class="line">「設定ファイルとスクリプトによる実行」または「Rest APIによる実行」をご利用ください。</div>
 </div>
 </div>
-</div><div aria-labelledby="tab-3-6Kit5a6a44OV44Kh44Kk44Or44Go44K544Kv44Oq44OX44OI44Gr44KI44KL5a6f6KGM" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-3-6Kit5a6a44OV44Kh44Kk44Or44Go44K544Kv44Oq44OX44OI44Gr44KI44KL5a6f6KGM" name="6Kit5a6a44OV44Kh44Kk44Or44Go44K544Kv44Oq44OX44OI44Gr44KI44KL5a6f6KGM" role="tabpanel" tabindex="0"><p>以下の手順で実行</p>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-3-6Kit5a6a44OV44Kh44Kk44Or44Go44K544Kv44Oq44OX44OI44Gr44KI44KL5a6f6KGM" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-3-6Kit5a6a44OV44Kh44Kk44Or44Go44K544Kv44Oq44OX44OI44Gr44KI44KL5a6f6KGM" name="6Kit5a6a44OV44Kh44Kk44Or44Go44K544Kv44Oq44OX44OI44Gr44KI44KL5a6f6KGM" role="tab" tabindex="0">設定ファイルとスクリプトによる実行</button><button aria-controls="panel-3-UmVzdCBBUEnjgavjgojjgovlrp/ooYw=" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-3-UmVzdCBBUEnjgavjgojjgovlrp/ooYw=" name="UmVzdCBBUEnjgavjgojjgovlrp/ooYw=" role="tab" tabindex="-1">Rest APIによる実行</button></div><div aria-labelledby="tab-3-6Kit5a6a44OV44Kh44Kk44Or44Go44K544Kv44Oq44OX44OI44Gr44KI44KL5a6f6KGM" class="sphinx-tabs-panel group-tab" id="panel-3-6Kit5a6a44OV44Kh44Kk44Or44Go44K544Kv44Oq44OX44OI44Gr44KI44KL5a6f6KGM" name="6Kit5a6a44OV44Kh44Kk44Or44Go44K544Kv44Oq44OX44OI44Gr44KI44KL5a6f6KGM" role="tabpanel" tabindex="0"><p>以下の手順で実行</p>
 <ul>
 <li><div class="line-block">
 <div class="line">オーガナイゼーション毎の使用状況確認</div>

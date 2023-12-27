@@ -168,14 +168,12 @@
   <ul>
 <li><a class="reference internal" href="#">1. ログイン方法</a><ul>
 <li><a class="reference internal" href="#id2">1.1. はじめに</a></li>
-<li><a class="reference internal" href="#system-manager-login">1.2. ログイン</a><ul>
-<li><a class="reference internal" href="#id5">1.2.1. 個人設定</a><ul>
-<li><a class="reference internal" href="#id6">1.2.1.1. アカウント編集</a></li>
-<li><a class="reference internal" href="#id7">1.2.1.2. パスワード変更</a></li>
-<li><a class="reference internal" href="#id8">1.2.1.3. 二要素認証設定</a></li>
-<li><a class="reference internal" href="#id9">1.2.1.4. トークン発行</a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#system-manager-login">1.2. ログイン</a></li>
+<li><a class="reference internal" href="#id4">1.3. 個人設定</a><ul>
+<li><a class="reference internal" href="#id5">1.3.1. アカウント編集</a></li>
+<li><a class="reference internal" href="#id6">1.3.2. パスワード変更</a></li>
+<li><a class="reference internal" href="#id7">1.3.3. 二要素認証設定</a></li>
+<li><a class="reference internal" href="#id8">1.3.4. トークン発行</a></li>
 </ul>
 </li>
 </ul>
@@ -215,55 +213,69 @@
 <span id="id3"></span><h2><span class="section-number">1.2. </span>ログイン<a class="headerlink" href="#system-manager-login" title="この見出しへのパーマリンク">¶</a></h2>
 <ol class="arabic">
 <li><div class="line-block">
-<div class="line">ログイン時は、必ずユーザ名とパスワードを準備の上、ログインしてください。</div>
+<div class="line">ログイン時は、必ずユーザー名とパスワードを準備の上、ログインしてください。</div>
 </div>
 <figure class="align-left">
 <a class="with-border-thin reference internal image-reference" href="../../../../_images/exastro-login.png"><img alt="ログイン" class="with-border-thin" src="../../../../_images/exastro-login.png" style="width: 600px;" /></a>
 </figure>
-<table class="docutils align-left" id="id10">
-<caption><span class="caption-number">表 1.25 </span><span class="caption-text">ログイン時の入力内容</span><a class="headerlink" href="#id10" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="docutils align-left" id="id9">
+<caption><span class="caption-number">表 1.25 </span><span class="caption-text">項目説明</span><a class="headerlink" href="#id9" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col style="width: 17%" />
+<col style="width: 83%" />
 </colgroup>
 <thead>
-<tr class="row-odd"><th class="head"><p>ユーザ名</p></th>
-<th class="head"><p>パスワード</p></th>
+<tr class="row-odd"><th class="head"><p>項目名</p></th>
+<th class="head"><p>説明</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>admin ※</p></td>
-<td><p>password  ※</p></td>
+<tr class="row-even"><td><div class="line-block">
+<div class="line">ユーザー名(Username)</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">インストール時に指定したシステム管理者のユーザー名</div>
+<div class="line">example. admin ※</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><div class="line-block">
+<div class="line">パスワード(Password)</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">インストール時に指定したシステム管理者のパスワード</div>
+<div class="line">example. password ※</div>
+</div>
+</td>
 </tr>
 </tbody>
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <div class="line-block">
-<div class="line">ユーザー名、パスワードは、インストール時に指定したシステム管理者のユーザ名、パスワードを使用してください。</div>
-<div class="line">docker版でインストールした際のユーザ名、パスワードは、「 <a class="reference internal" href="../../installation/docker_compose.html#install-docker-compose-v2-2"><span class="std std-ref">インストール (自動)</span></a> 」を参照</div>
-<div class="line">helm版でインストールした際のユーザ名は、パスワード、「 <a class="reference internal" href="../../installation/helm_on_kubernetes.html#install-helm-v2-2"><span class="std std-ref">Exastro システム管理者の作成</span></a> 」を参照</div>
+<div class="line">ユーザー名、パスワードは、インストール時に指定したシステム管理者のユーザー名、パスワードを使用してください。</div>
+<div class="line">docker版でインストールした際のユーザー名、パスワードは、「 <a class="reference internal" href="../../installation/docker_compose.html#install-docker-compose-v2-2"><span class="std std-ref">インストール (自動)</span></a> 」を参照</div>
+<div class="line">helm版でインストールした際のユーザー名は、パスワード、「 <a class="reference internal" href="../../installation/helm_on_kubernetes.html#install-helm-v2-2"><span class="std std-ref">Exastro システム管理者の作成</span></a> 」を参照</div>
 </div>
 </div>
 </li>
 <li><div class="line-block">
 <div class="line">ログイン後、下記のようにオーガナイゼーション管理画面が表示されます。</div>
 </div>
-<div class="admonition-todo admonition" id="id4">
-<p class="admonition-title">課題</p>
-<p>オーガナイゼーション管理画面（一覧）の画像に差し替え</p>
-</div>
 <figure class="align-left">
-<a class="with-border-thin reference internal image-reference" href="../../../../_images/login_workspace.png"><img alt="オーガナイゼーション管理画面（一覧）" class="with-border-thin" src="../../../../_images/login_workspace.png" style="width: 600px;" /></a>
+<a class="with-border-thin reference internal image-reference" href="../../../../_images/login_platform_manager.png"><img alt="オーガナイゼーション管理画面（一覧）" class="with-border-thin" src="../../../../_images/login_platform_manager.png" style="width: 600px;" /></a>
 </figure>
 </li>
 </ol>
-<section id="id5">
-<h3><span class="section-number">1.2.1. </span>個人設定<a class="headerlink" href="#id5" title="この見出しへのパーマリンク">¶</a></h3>
+</section>
+<section id="id4">
+<h2><span class="section-number">1.3. </span>個人設定<a class="headerlink" href="#id4" title="この見出しへのパーマリンク">¶</a></h2>
 <p>個人設定では、自身のアカウント編集、パスワード変更、二要素認証設定、トークン発行が行えます。</p>
 <ol class="arabic">
 <li><div class="line-block">
-<div class="line">個人設定はログインユーザのアイコンを選択して表示されるメニューから設定できます。</div>
+<div class="line">個人設定はログインユーザーのアイコンを選択して表示されるメニューから <span class="menuselection">アカウント管理</span> を選択することにより設定できます。</div>
 </div>
 <figure class="align-left">
 <a class="with-border-thin reference internal image-reference" href="../../../../_images/setting_profile.png"><img alt="個人設定" class="with-border-thin" src="../../../../_images/setting_profile.png" style="width: 600px;" /></a>
@@ -271,13 +283,13 @@
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
 <div class="line-block">
-<div class="line">Exastro IT Automation利用中は、アカウント管理メニューは表示されません</div>
+<div class="line">Exastro IT Automation利用中は、メニュー - アカウント管理 は表示されません</div>
 </div>
 </div>
 </li>
 </ol>
-<section id="id6">
-<h4><span class="section-number">1.2.1.1. </span>アカウント編集<a class="headerlink" href="#id6" title="この見出しへのパーマリンク">¶</a></h4>
+<section id="id5">
+<h3><span class="section-number">1.3.1. </span>アカウント編集<a class="headerlink" href="#id5" title="この見出しへのパーマリンク">¶</a></h3>
 <ol class="arabic">
 <li><div class="line-block">
 <div class="line">アカウント編集より、Eメール、名、姓を変更することができます。</div>
@@ -288,14 +300,14 @@
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
 <div class="line-block">
-<div class="line">※ユーザ名は変更できません。</div>
+<div class="line">※ユーザー名は変更できません。</div>
 </div>
 </div>
 </li>
 </ol>
 </section>
-<section id="id7">
-<h4><span class="section-number">1.2.1.2. </span>パスワード変更<a class="headerlink" href="#id7" title="この見出しへのパーマリンク">¶</a></h4>
+<section id="id6">
+<h3><span class="section-number">1.3.2. </span>パスワード変更<a class="headerlink" href="#id6" title="この見出しへのパーマリンク">¶</a></h3>
 <ol class="arabic">
 <li><div class="line-block">
 <div class="line">パスワード変更より、自身のパスワードを変更することができます。</div>
@@ -306,8 +318,8 @@
 </li>
 </ol>
 </section>
-<section id="id8">
-<h4><span class="section-number">1.2.1.3. </span>二要素認証設定<a class="headerlink" href="#id8" title="この見出しへのパーマリンク">¶</a></h4>
+<section id="id7">
+<h3><span class="section-number">1.3.3. </span>二要素認証設定<a class="headerlink" href="#id7" title="この見出しへのパーマリンク">¶</a></h3>
 <ol class="arabic">
 <li><div class="line-block">
 <div class="line">二要素認証設定より、パスワード＋他の認証方式でのログインが行えるようになります。</div>
@@ -318,13 +330,13 @@
 </li>
 </ol>
 </section>
-<section id="id9">
-<h4><span class="section-number">1.2.1.4. </span>トークン発行<a class="headerlink" href="#id9" title="この見出しへのパーマリンク">¶</a></h4>
+<section id="id8">
+<h3><span class="section-number">1.3.4. </span>トークン発行<a class="headerlink" href="#id8" title="この見出しへのパーマリンク">¶</a></h3>
 <p>本システムにおいて、APIを呼び出す際に必要となるアクセストークンがありますが、アクセストークンの発行には、本説明で説明するリフレッシュトークンが必要となります。</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <div class="line-block">
-<div class="line">APIの認証については、「 <a class="reference internal" href="../../reference/index.html"><span class="doc">リファレンス</span></a> 」-「 <a class="reference internal" href="../../reference/api/index.html"><span class="doc">API</span></a> 」-「 <a class="reference internal" href="../../reference/api/operator/index.html"><span class="doc">ユーザー向け</span></a> - <a class="reference internal" href="../../reference/api/operator/certification.html"><span class="doc">認証</span></a> 」、「 <a class="reference internal" href="../../reference/api/system_manager/index.html"><span class="doc">システム管理者向け</span></a> - <a class="reference internal" href="../../reference/api/system_manager/certification.html"><span class="doc">認証</span></a> 」参照</div>
+<div class="line">APIの認証については、<a class="reference internal" href="../../reference/index.html"><span class="doc">リファレンス</span></a> - <a class="reference internal" href="../../reference/api/index.html"><span class="doc">API</span></a> - <a class="reference internal" href="../../reference/api/operator/index.html"><span class="doc">ユーザー向け</span></a> - <a class="reference internal" href="../../reference/api/operator/certification.html"><span class="doc">認証</span></a> 、 <a class="reference internal" href="../../reference/api/system_manager/index.html"><span class="doc">システム管理者向け</span></a> - <a class="reference internal" href="../../reference/api/system_manager/certification.html"><span class="doc">認証</span></a> 参照</div>
 </div>
 </div>
 <ol class="arabic">
@@ -366,7 +378,7 @@
 <a class="with-border-thin reference internal image-reference" href="../../../../_images/setting_profile_token_list_delete.png"><img alt="個人設定_トークン一覧(削除)" class="with-border-thin" src="../../../../_images/setting_profile_token_list_delete.png" style="width: 600px;" /></a>
 </figure>
 <div class="line-block">
-<div class="line">削除確認で本当に削除する場合は、&quot;yes&quot;を入力して、<span class="guilabel">はい、削除します</span> ボタンを押下します。</div>
+<div class="line">削除確認で本当に削除する場合は、<kbd class="kbd docutils literal notranslate">yes</kbd> を入力して、<span class="guilabel">はい、削除します</span> ボタンを押下します。</div>
 </div>
 <figure class="align-left">
 <a class="reference internal image-reference" href="../../../../_images/setting_profile_token_delete.png"><img alt="個人設定_トークン削除" src="../../../../_images/setting_profile_token_delete.png" style="width: 600px;" /></a>
@@ -379,7 +391,6 @@
 </div>
 </li>
 </ol>
-</section>
 </section>
 </section>
 </section>
