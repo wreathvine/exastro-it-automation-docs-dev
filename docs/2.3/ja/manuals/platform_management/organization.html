@@ -1226,6 +1226,14 @@ curl<span class="w"> </span>-k<span class="w"> </span>-X<span class="w"> </span>
 </div>
 </li>
 <li><div class="line-block">
+<div class="line">追加したいドライバにチェックを入れることで、インストールするドライバを追加することができます。</div>
+<div class="line">しかし、インストール済みのドライバを削除することはできません。</div>
+</div>
+<figure class="align-left">
+<a class="with-border-thin reference internal image-reference" href="../../../../_images/org_edit_driver.png"><img alt="../../../../_images/org_edit_driver.png" class="with-border-thin" src="../../../../_images/org_edit_driver.png" style="width: 600px;" /></a>
+</figure>
+</li>
+<li><div class="line-block">
 <div class="line"><span class="guilabel">リソースプラン設定</span> ボタンを押下して、オーガナイゼーションにリソースプランを紐づけることができます。</div>
 <div class="line">紐づけるリソースプランIDをプルダウンで選択し、開始日時を指定して、 <span class="guilabel">適用</span> ボタンを押下します。</div>
 </div>
@@ -1276,10 +1284,61 @@ curl<span class="w"> </span>-k<span class="w"> </span>-X<span class="w"> </span>
 </div>
 <ul>
 <li><div class="line-block">
-<div class="line">オーガナイゼーション名の編集</div>
+<div class="line">オーガナイゼーションの編集</div>
 </div>
 </li>
 </ul>
+<div class="line-block">
+<div class="line">利用可能なパラメータは下記のとおりです。</div>
+<div class="line">詳細は、<a class="reference internal" href="../../reference/api/system_manager/platform-api.html"><span class="doc">Exastro Platform API</span></a> を参照してください。</div>
+</div>
+<table class="docutils align-left" id="id33">
+<caption><span class="caption-number">表 2.46 </span><span class="caption-text">オーガナイゼーションパラメータ</span><a class="headerlink" href="#id33" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 23%" />
+<col style="width: 27%" />
+<col style="width: 18%" />
+<col style="width: 32%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>項目</p></th>
+<th class="head"><p>説明</p></th>
+<th class="head"><p>変更</p></th>
+<th class="head"><p>デフォルト値・選択可能な設定値</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>organization name</p></td>
+<td><div class="line-block">
+<div class="line">オーガナイゼーション名を指定。</div>
+<div class="line">最大255文字</div>
+</div>
+</td>
+<td><p>可</p></td>
+<td><p>&quot;org001-name&quot;</p></td>
+</tr>
+<tr class="row-odd"><td><p>enabled</p></td>
+<td><div class="line-block">
+<div class="line">オーガナイゼーションの有効・無効設定</div>
+</div>
+</td>
+<td><p>不可</p></td>
+<td><p>&quot;true&quot;</p></td>
+</tr>
+<tr class="row-even"><td><p>optionsIta.driver</p></td>
+<td><div class="line-block">
+<div class="line">インストールドライバを指定。</div>
+<div class="line">ただし、削除は不可能。</div>
+</div>
+</td>
+<td><div class="line-block">
+<div class="line">falseからtureに変更は可能。</div>
+</div>
+</td>
+<td><p>&quot;true&quot;</p></td>
+</tr>
+</tbody>
+</table>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">BASE64_BASIC</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span><span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;システム管理者のユーザー名を設定してください:システム管理者のパスワードを設定してください&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="k">)</span>
 <span class="nv">BASE_URL</span><span class="o">=</span>システム管理者用サイトアドレスを設定してください
 <span class="nv">ORG_ID</span><span class="o">=</span>取得するorganization<span class="w"> </span>idを設定してください
@@ -1387,7 +1446,7 @@ curl<span class="w"> </span>-k<span class="w"> </span>-X<span class="w"> </span>
 </figure>
 </li>
 <li><div class="line-block">
-<div class="line">削除確認で本当に削除する場合は、<code class="file docutils literal notranslate"><span class="pre">/削除するオーガナイゼーションID</span></code> を入力して、 <span class="guilabel">はい、削除します</span> ボタンを押下します。</div>
+<div class="line">削除確認で本当に削除する場合は、platform/削除するオーガナイゼーションID を入力して、 <span class="guilabel">はい、削除します</span> ボタンを押下します。</div>
 </div>
 <figure class="align-left">
 <a class="with-border-thin reference internal image-reference" href="../../../../_images/オーガナイゼーション削除_実行確認.png"><img alt="../../../../_images/%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8A%E3%82%A4%E3%82%BC%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E5%89%8A%E9%99%A4_%E5%AE%9F%E8%A1%8C%E7%A2%BA%E8%AA%8D.png" class="with-border-thin" src="../../../../_images/%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8A%E3%82%A4%E3%82%BC%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E5%89%8A%E9%99%A4_%E5%AE%9F%E8%A1%8C%E7%A2%BA%E8%AA%8D.png" style="width: 600px;" /></a>
