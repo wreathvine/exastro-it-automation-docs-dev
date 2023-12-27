@@ -1156,7 +1156,6 @@ GitLab 連携設定
     +     GITLAB_ROOT_TOKEN: "GitLabのRoot権限を持ったトークン"
 
 .. _create_system_manager:
-.. _install_helm_v2.2:
 
 Exastro システム管理者の作成
 ----------------------------
