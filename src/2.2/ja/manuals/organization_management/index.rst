@@ -10,4 +10,5 @@
    workspace
    user
    role
-   organization_settings
+   notification  
+   mailserver_settings 
