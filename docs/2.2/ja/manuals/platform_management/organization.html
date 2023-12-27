@@ -244,10 +244,10 @@
 <ul class="simple">
 <li><p>処理のながれ</p>
 <ol class="arabic simple">
-<li><p>Keycloak に、オーガナイゼーション用のレルムデータと管理者ユーザが登録されます。</p></li>
+<li><p>Keycloak に、オーガナイゼーション用のレルムデータと管理者ユーザーが登録されます。</p></li>
 <li><p>MariaDB や MySQL といったリレーショナルデータベースに、オーガナイゼーション用のデータが登録されます。</p></li>
 <li><p>Exastro IT Automation の永続ボリュームに、オーガナイゼーション用のディレクトリが作成されます。</p></li>
-<li><p>GitLab に、オーガナイゼーション用のユーザが登録されます。</p></li>
+<li><p>GitLab に、オーガナイゼーション用のユーザーが登録されます。</p></li>
 </ol>
 </li>
 </ul>
@@ -264,7 +264,7 @@
 <li><p>システム管理に必要な下記の情報があること</p>
 <ul>
 <li><p>管理コンソールの URL</p></li>
-<li><p>システム管理者のユーザID</p></li>
+<li><p>システム管理者のユーザーID</p></li>
 <li><p>システム管理者のパスワード</p></li>
 </ul>
 </li>
@@ -295,12 +295,17 @@
 <li><p>作成方法</p></li>
 </ul>
 <ol class="arabic">
-<li><p><span class="menuselection">メインメニュー ‣ オーガナイゼーション一覧</span> から、 <span class="guilabel">作成</span> ボタンを押下して、新規オーガナイゼーションを作成することができます。</p>
+<li><p>メニューより <span class="menuselection">オーガナイゼーション管理</span> を選択します。</p>
+<figure class="align-left">
+<a class="with-border-thin reference internal image-reference" href="../../../../_images/org_management.png"><img alt="../../../../_images/org_management.png" class="with-border-thin" src="../../../../_images/org_management.png" style="width: 200px;" /></a>
+</figure>
+</li>
+<li><p>オーガナイゼーション一覧が表示されますので、 <span class="guilabel">作成</span> ボタンを押下して、新しいオーガナイゼーションを作成することができます。</p>
 <figure class="align-left">
 <a class="with-border-thin reference internal image-reference" href="../../../../_images/オーガナイゼーション一覧_作成.png"><img alt="../../../../_images/%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8A%E3%82%A4%E3%82%BC%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E4%B8%80%E8%A6%A7_%E4%BD%9C%E6%88%90.png" class="with-border-thin" src="../../../../_images/%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8A%E3%82%A4%E3%82%BC%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E4%B8%80%E8%A6%A7_%E4%BD%9C%E6%88%90.png" style="width: 600px;" /></a>
 </figure>
 </li>
-<li><p>新規に作成するオーガナイゼーションの情報を入力し、 <span class="guilabel">登録</span> ボタンを押下します。</p>
+<li><p>新しく作成するオーガナイゼーションの情報を入力し、 <span class="guilabel">登録</span> ボタンを押下します。</p>
 <figure class="align-left">
 <a class="with-border-thin reference internal image-reference" href="../../../../_images/オーガナイゼーション作成_登録.png"><img alt="../../../../_images/%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8A%E3%82%A4%E3%82%BC%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E4%BD%9C%E6%88%90_%E7%99%BB%E9%8C%B2.png" class="with-border-thin" src="../../../../_images/%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8A%E3%82%A4%E3%82%BC%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E4%BD%9C%E6%88%90_%E7%99%BB%E9%8C%B2.png" style="width: 600px;" /></a>
 </figure>
@@ -333,12 +338,13 @@
 <td><div class="line-block">
 <div class="line">オーガナイゼーションに紐づけるリソースプランを指定します。</div>
 <div class="line">省略時はデフォルトのリソースプランが指定されます。</div>
+<div class="line">リソースプランについては、 <a class="reference internal" href="plan.html"><span class="doc">リソースプラン</span></a> を参照してください。</div>
 </div>
 </td>
 </tr>
 <tr class="row-odd"><td><p>ユーザー名</p></td>
 <td><div class="line-block">
-<div class="line">オーガナイゼーション管理者のユーザ名を指定します。</div>
+<div class="line">オーガナイゼーション管理者のユーザー名を指定します。</div>
 </div>
 </td>
 </tr>
@@ -392,7 +398,7 @@
 <li><p>特徴</p></li>
 </ul>
 <div class="line-block">
-<div class="line">対話型スクリプトによる作成方法と違い複数のオーガナイゼーション管理ユーザを登録できます。</div>
+<div class="line">対話型スクリプトによる作成方法と違い複数のオーガナイゼーション管理ユーザーを登録できます。</div>
 </div>
 <ul class="simple">
 <li><p>作成方法</p></li>
@@ -488,7 +494,7 @@ vi<span class="w"> </span>./exastro-platform/tools/api-auth.conf
 <td><p>(オーガナイゼーション管理者のリスト)</p></td>
 </tr>
 <tr class="row-odd"><td><p>organization_managers[*].username</p></td>
-<td><p>オーガナイゼーション管理者のユーザ名（ログインするときのID）を指定。</p></td>
+<td><p>オーガナイゼーション管理者のユーザー名（ログインするときのID）を指定。</p></td>
 <td><p>可</p></td>
 <td><p>&quot;admin&quot;</p></td>
 </tr>
@@ -535,7 +541,7 @@ vi<span class="w"> </span>./exastro-platform/tools/api-auth.conf
 <td><p>SSL 接続の有無を指定。</p></td>
 <td><p>可</p></td>
 <td><div class="line-block">
-<div class="line"><strong class="program">external</strong> (既定): プライベート IP アドレスに固定する限り、ユーザは SSL 無しで Keycloak と通信可能。</div>
+<div class="line"><strong class="program">external</strong> (既定): プライベート IP アドレスに固定する限り、ユーザーは SSL 無しで Keycloak と通信可能。</div>
 <div class="line"><strong class="program">none</strong>: SSL の設定なし。</div>
 <div class="line"><strong class="program">all</strong>: すべての IP アドレスに対し、SSL を要求。(内部の API が HTTP アクセスのため選択不可)</div>
 </div>
@@ -602,7 +608,7 @@ vi<span class="w"> </span>./exastro-platform/tools/create-organization.json
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <div class="line-block">
-<div class="line">optionsの値に <strong class="program">&quot;sslRequired&quot;: &quot;none&quot;</strong> を指定することで、オーガナイゼーションユーザが http でのアクセスが可能となります。</div>
+<div class="line">optionsの値に <strong class="program">&quot;sslRequired&quot;: &quot;none&quot;</strong> を指定することで、オーガナイゼーションユーザーが http でのアクセスが可能となります。</div>
 </div>
 </div>
 </li>
@@ -615,7 +621,7 @@ vi<span class="w"> </span>./exastro-platform/tools/create-organization.json
 <div class="code-block-caption"><span class="caption-number">リスト 2.98 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id19" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w"> </span>./exastro-platform/tools/create-organization.sh<span class="w"> </span>./exastro-platform/tools/create-organization.json
 
-<span class="w"> </span>your<span class="w"> </span>username<span class="w"> </span>:<span class="w"> </span>INPUT-YOUR-USERNAME<span class="w"> </span><span class="c1"># システム管理者のユーザ名を入力します</span>
+<span class="w"> </span>your<span class="w"> </span>username<span class="w"> </span>:<span class="w"> </span>INPUT-YOUR-USERNAME<span class="w"> </span><span class="c1"># システム管理者のユーザー名を入力します</span>
 <span class="w"> </span>your<span class="w"> </span>password<span class="w"> </span>:<span class="w"> </span>INPUT-USER-PASSWORD<span class="w"> </span><span class="c1"># システム管理者のパスワードを入力します</span>
 
 <span class="w"> </span>Create<span class="w"> </span>an<span class="w"> </span>organization,<span class="w"> </span>are<span class="w"> </span>you<span class="w"> </span>sure?<span class="w"> </span><span class="o">(</span>Y/other<span class="o">)</span><span class="w"> </span>:<span class="w"> </span>Y<span class="w"> </span><span class="c1"># Y を入力するとオーガナイゼーションの作成処理が開始します</span>
@@ -771,7 +777,7 @@ vi<span class="w"> </span>./exastro-platform/tools/api-auth.conf
 <td><p>&quot;org001-name&quot;</p></td>
 </tr>
 <tr class="row-even"><td><p>organization manager's username</p></td>
-<td><p>オーガナイゼーション管理者のユーザ名（ログインするときのID）を指定。</p></td>
+<td><p>オーガナイゼーション管理者のユーザー名（ログインするときのID）を指定。</p></td>
 <td><p>可</p></td>
 <td><p>&quot;admin&quot;</p></td>
 </tr>
@@ -817,14 +823,14 @@ vi<span class="w"> </span>./exastro-platform/tools/api-auth.conf
 
 organization id : org001                             # オーガナイゼーションIDを入力します
 organization name : org001-name                      # オーガナイゼーション名を入力します
-organization manager&#39;s username : admin              # オーガナイゼーション管理者のユーザ名（ログインするときのID）を入力します
+organization manager&#39;s username : admin              # オーガナイゼーション管理者のユーザー名（ログインするときのID）を入力します
 organization manager&#39;s email : admin@example.com     # オーガナイゼーション管理者のE-mailアドレスを入力します
 organization manager&#39;s first name : admin            # オーガナイゼーション管理者の名を入力します
 organization manager&#39;s last name : admin             # オーガナイゼーション管理者の姓を入力します
 organization manager&#39;s initial password : password   # オーガナイゼーション管理者の初期パスワードを入力します
 organization plan id (optional) :                    # リソースプランを指定(任意)します ※ 初期状態では未作成のため入力不要
 
-your username : INPUT-YOUR-USERNAME                  # システム管理者のユーザ名を入力します
+your username : INPUT-YOUR-USERNAME                  # システム管理者のユーザー名を入力します
 your password : INPUT-USER-PASSWORD                  # システム管理者のパスワードを入力します
 
 Create an organization, are you sure? (Y/other) : Y # &quot;Y&quot;を入力すると実行します
@@ -933,7 +939,7 @@ Create an organization, are you sure? (Y/other) : Y # &quot;Y&quot;を入力す�
 <td><p>&quot;org001-name&quot;</p></td>
 </tr>
 <tr class="row-even"><td><p>organization manager's username</p></td>
-<td><p>オーガナイゼーション管理者のユーザ名（ログインするときのID）を指定。</p></td>
+<td><p>オーガナイゼーション管理者のユーザー名（ログインするときのID）を指定。</p></td>
 <td><p>可</p></td>
 <td><p>&quot;admin&quot;</p></td>
 </tr>
@@ -961,7 +967,7 @@ Create an organization, are you sure? (Y/other) : Y # &quot;Y&quot;を入力す�
 <td><p>SSL 接続の有無を指定。</p></td>
 <td><p>可</p></td>
 <td><div class="line-block">
-<div class="line"><strong class="program">external</strong> (既定): プライベート IP アドレスに固定する限り、ユーザは SSL 無しで Keycloak と通信可能。</div>
+<div class="line"><strong class="program">external</strong> (既定): プライベート IP アドレスに固定する限り、ユーザーは SSL 無しで Keycloak と通信可能。</div>
 <div class="line"><strong class="program">none</strong>: SSL の設定なし。</div>
 <div class="line"><strong class="program">all</strong>: すべての IP アドレスに対し、SSL を要求。(内部の API が HTTP アクセスのため選択不可)</div>
 </div>
@@ -1043,15 +1049,20 @@ curl<span class="w"> </span>-X<span class="w"> </span><span class="s1">&#39;POST
 <div class="sphinx-tabs docutils container">
 <div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-1-55S76Z2i5pON5L2c" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-1-55S76Z2i5pON5L2c" name="55S76Z2i5pON5L2c" role="tab" tabindex="0">画面操作</button><button aria-controls="panel-1-UmVzdCBBUEkg44Gr44KI44KL5LiA6Kan6KGo56S6" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-1-UmVzdCBBUEkg44Gr44KI44KL5LiA6Kan6KGo56S6" name="UmVzdCBBUEkg44Gr44KI44KL5LiA6Kan6KGo56S6" role="tab" tabindex="-1">Rest API による一覧表示</button></div><div aria-labelledby="tab-1-55S76Z2i5pON5L2c" class="sphinx-tabs-panel group-tab" id="panel-1-55S76Z2i5pON5L2c" name="55S76Z2i5pON5L2c" role="tabpanel" tabindex="0"><p>以下の手順で実行</p>
 <ol class="arabic">
+<li><p>メニューより <span class="menuselection">オーガナイゼーション管理</span> を選択します。</p>
+<figure class="align-left">
+<a class="with-border-thin reference internal image-reference" href="../../../../_images/org_management.png"><img alt="../../../../_images/org_management.png" class="with-border-thin" src="../../../../_images/org_management.png" style="width: 200px;" /></a>
+</figure>
+</li>
 <li><div class="line-block">
-<div class="line"><span class="menuselection">メインメニュー ‣ オーガナイゼーション一覧</span> から、作成されたオーガナイゼーションの一覧を確認することができます。</div>
+<div class="line">オーガナイゼーション一覧が表示され、作成されているオーガナイゼーションを確認することができます。</div>
 </div>
 <figure class="align-left">
 <a class="with-border-thin reference internal image-reference" href="../../../../_images/オーガナイゼーション一覧_選択.png"><img alt="../../../../_images/%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8A%E3%82%A4%E3%82%BC%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E4%B8%80%E8%A6%A7_%E9%81%B8%E6%8A%9E.png" class="with-border-thin" src="../../../../_images/%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8A%E3%82%A4%E3%82%BC%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E4%B8%80%E8%A6%A7_%E9%81%B8%E6%8A%9E.png" style="width: 600px;" /></a>
 </figure>
 </li>
 <li><div class="line-block">
-<div class="line">任意のオーガナイゼーションを押下することにより、<span class="menuselection">メインメニュー ‣ オーガナイゼーション一覧 ‣ オーガナイゼーション詳細</span> 画面が表示され、オーガナイゼーションの詳細情報を確認できます。</div>
+<div class="line">任意のオーガナイゼーションを押下することにより、 オーガナイゼーション詳細が表示され、オーガナイゼーションの詳細情報を確認できます。</div>
 </div>
 <figure class="align-left">
 <a class="with-border-thin reference internal image-reference" href="../../../../_images/オーガナイゼーション詳細.png"><img alt="../../../../_images/%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8A%E3%82%A4%E3%82%BC%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E8%A9%B3%E7%B4%B0.png" class="with-border-thin" src="../../../../_images/%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8A%E3%82%A4%E3%82%BC%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E8%A9%B3%E7%B4%B0.png" style="width: 600px;" /></a>
@@ -1185,8 +1196,13 @@ curl<span class="w"> </span>-k<span class="w"> </span>-X<span class="w"> </span>
 <div class="line">オーガナイゼーション名の変更と、オーガナイゼーションに紐づけるリソースプランを設定することができます。</div>
 </div>
 <ol class="arabic">
+<li><p>メニューより <span class="menuselection">オーガナイゼーション管理</span> を選択します。</p>
+<figure class="align-left">
+<a class="with-border-thin reference internal image-reference" href="../../../../_images/org_management.png"><img alt="../../../../_images/org_management.png" class="with-border-thin" src="../../../../_images/org_management.png" style="width: 200px;" /></a>
+</figure>
+</li>
 <li><div class="line-block">
-<div class="line"><span class="menuselection">メインメニュー ‣ オーガナイゼーション一覧</span> から、 <span class="guilabel">編集</span> ボタンを押下して、オーガナイゼーションの情報を編集することができます。</div>
+<div class="line">オーガナイゼーション一覧が表示されますので、編集したいオーガナイゼーションの行にある <span class="guilabel">編集</span> ボタンを押下します。</div>
 </div>
 <figure class="align-left">
 <a class="with-border-thin reference internal image-reference" href="../../../../_images/オーガナイゼーション編集.png"><img alt="../../../../_images/%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8A%E3%82%A4%E3%82%BC%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E7%B7%A8%E9%9B%86.png" class="with-border-thin" src="../../../../_images/%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8A%E3%82%A4%E3%82%BC%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E7%B7%A8%E9%9B%86.png" style="width: 600px;" /></a>
@@ -1346,13 +1362,6 @@ curl<span class="w"> </span>-k<span class="w"> </span>-X<span class="w"> </span>
 </section>
 <section id="id9">
 <h3><span class="section-number">2.3.6. </span>オーガナイゼーション削除<a class="headerlink" href="#id9" title="この見出しへのパーマリンク">¶</a></h3>
-<div class="admonition attention">
-<p class="admonition-title">注意</p>
-<p>※注意</p>
-<div class="line-block">
-<div class="line">削除されたオーガナイゼーションは、復活することはできませんので、削除する際は十分にお気を付けください。</div>
-</div>
-</div>
 <div class="line-block">
 <div class="line">オーガナイゼーションの削除方法には、下記の2通りの方法があります。</div>
 </div>
@@ -1361,15 +1370,20 @@ curl<span class="w"> </span>-k<span class="w"> </span>-X<span class="w"> </span>
 <div class="line">以下の手順で実行</div>
 </div>
 <ol class="arabic">
+<li><p>メニューより <span class="menuselection">オーガナイゼーション管理</span> を選択します。</p>
+<figure class="align-left">
+<a class="with-border-thin reference internal image-reference" href="../../../../_images/org_management.png"><img alt="../../../../_images/org_management.png" class="with-border-thin" src="../../../../_images/org_management.png" style="width: 200px;" /></a>
+</figure>
+</li>
 <li><div class="line-block">
-<div class="line">削除したいオーガナイゼーションの <span class="guilabel">削除</span> ボタンを押下します。</div>
+<div class="line">オーガナイゼーション一覧が表示されますので、削除したいオーガナイゼーションの行にある <span class="guilabel">削除</span> ボタンを押下します。</div>
 </div>
 <figure class="align-left">
 <a class="with-border-thin reference internal image-reference" href="../../../../_images/オーガナイゼーション削除_一覧から選択.png"><img alt="../../../../_images/%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8A%E3%82%A4%E3%82%BC%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E5%89%8A%E9%99%A4_%E4%B8%80%E8%A6%A7%E3%81%8B%E3%82%89%E9%81%B8%E6%8A%9E.png" class="with-border-thin" src="../../../../_images/%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8A%E3%82%A4%E3%82%BC%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E5%89%8A%E9%99%A4_%E4%B8%80%E8%A6%A7%E3%81%8B%E3%82%89%E9%81%B8%E6%8A%9E.png" style="width: 600px;" /></a>
 </figure>
 </li>
 <li><div class="line-block">
-<div class="line">削除確認で本当に削除する場合は、&quot;platform/削除するオーガナイゼーションID&quot;を入力して、 <span class="guilabel">はい、削除します</span> ボタンを押下します。</div>
+<div class="line">削除確認で本当に削除する場合は、<code class="file docutils literal notranslate"><span class="pre">/削除するオーガナイゼーションID</span></code> を入力して、 <span class="guilabel">はい、削除します</span> ボタンを押下します。</div>
 </div>
 <figure class="align-left">
 <a class="with-border-thin reference internal image-reference" href="../../../../_images/オーガナイゼーション削除_実行確認.png"><img alt="../../../../_images/%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8A%E3%82%A4%E3%82%BC%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E5%89%8A%E9%99%A4_%E5%AE%9F%E8%A1%8C%E7%A2%BA%E8%AA%8D.png" class="with-border-thin" src="../../../../_images/%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8A%E3%82%A4%E3%82%BC%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E5%89%8A%E9%99%A4_%E5%AE%9F%E8%A1%8C%E7%A2%BA%E8%AA%8D.png" style="width: 600px;" /></a>
@@ -1389,6 +1403,12 @@ curl<span class="w"> </span>-k<span class="w"> </span>-X<span class="w"> </span>
 </pre></div>
 </div>
 </div></div>
+<div class="admonition warning">
+<p class="admonition-title">警告</p>
+<div class="line-block">
+<div class="line">削除されたオーガナイゼーションは、復活することはできませんので、削除する際は十分にお気を付けください。</div>
+</div>
+</div>
 </section>
 </section>
 <section id="id10">
