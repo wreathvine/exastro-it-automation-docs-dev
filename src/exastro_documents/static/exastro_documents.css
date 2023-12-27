@@ -421,7 +421,11 @@ section {
  display: block
 }
 
-img.with-border-thin {
+figure img.with-border-thin {
+ border: thin solid #666666;
+}
+
+image img.with-border-thin {
  border: thin solid #666666;
 }
 
@@ -1951,29 +1955,6 @@ span.highlighted {
 
 #article .admonition.danger p:not(.admonition-title),
 #article .admonition.danger .line-block .line {
- font-weight: bold;
- color: #a2000d;
-}
-
-
-/* attention */
-
-#article .admonition.attention {
- /* background-color: #faeaeb; */
- background-color: #fff;
- border-color: #cc0011;
-}
-
-#article .admonition.attention::before {
- color: #a2000d;
-}
-
-#article .admonition.attention .admonition-title {
- background-color: #cc0011;
-}
-
-#article .admonition.attention p:not(.admonition-title),
-#article .admonition.attention .line-block .line {
  font-weight: bold;
  color: #a2000d;
 }

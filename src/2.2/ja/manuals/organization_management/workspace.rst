@@ -28,13 +28,7 @@ Workspace (ワークスペース)
 
 #. | :doc:`../platform_management/organization` で作成したオーガナイゼーションにオーガナイゼーション管理者でログインします。
 
-#. | Exastro Platformのメニューより :menuselection:`ワークスペース管理` をクリックします。
-
-   .. image:: /images/ja/manuals/platform/platform_menu.png
-      :width: 200px
-      :align: left
-
-#. | :menuselection:`ワークスペース一覧` 画面が表示されるので、 :guilabel:`作成` をクリックします。
+#. | :menuselection:`メインメニュー --> ワークスペース一覧` で、 :guilabel:`作成` をクリックします。
 
    .. figure:: /images/ja/manuals/platform/workspace/ワークスペース一覧.png
       :width: 600px
@@ -43,13 +37,13 @@ Workspace (ワークスペース)
    .. warning::
       | オーガナイゼーション管理者以外でログインしている時は、 :guilabel:`作成` は表示されません。
 
-#. | :menuselection:`新規ワークスペース` 画面が表示されるので、ワークスペースの情報を入力し、 :guilabel:`登録` をクリックします。
+#. | 新規ワークスペース画面が表示されるので、ワークスペースの情報を入力し、 :guilabel:`登録` をクリックします。
 
    .. figure:: /images/ja/manuals/platform/workspace/新規ワークスペース作成画面.png
       :width: 600px
       :align: left
 
-   .. list-table:: 新規ワークスペース登録
+   .. list-table:: リストテーブルサンプル
       :widths: 40 200
       :header-rows: 1
       :align: left
@@ -70,63 +64,4 @@ Workspace (ワークスペース)
    .. note::
       | ワークスペースの作成者（オーガナイゼーション管理者）は、以降のロールの設定等を行わなくても、自動的にワークスペースにアクセスできる状態となります。
       | 初回ログイン方法は、:doc:`../it_automation_base/general`  を参照してください。
-
-ワークスペースの編集
---------------------
-
-#. | Exastro Platformにオーガナイゼーション管理者でログインします。
-
-#. | Exastro Platformのメニューより :menuselection:`ワークスペース管理` をクリックします。
-
-   .. image:: /images/ja/manuals/platform/platform_menu.png
-      :width: 200px
-      :align: left
-
-
-#. | :menuselection:`ワークスペース一覧` 画面が表示されるので、 :guilabel:`編集` をクリックします。
-
-   .. figure:: /images/ja/manuals/platform/workspace/ワークスペース一覧画面_edit.png
-      :width: 600px
-      :align: left
-
-   .. warning::
-      | オーガナイゼーション管理者以外でログインしている時は、 :guilabel:`編集` は表示されません。
-
-#. | :menuselection:`ワークスペース編集` 画面が表示されるので、ワークスペースの情報を編集し、 :guilabel:`登録` をクリックします。
-
-   .. figure:: /images/ja/manuals/platform/workspace/ワークスペース編集画面.png
-      :width: 600px
-      :align: left
-
-   .. tips::
-      | ワークスペースIDの変更は出来ません。
-
-ワークスペースの削除
---------------------
-
-#. | Exastro Platformにオーガナイゼーション管理者でログインします。
-
-#. | Exastro Platformのメニューより :menuselection:`ワークスペース管理` をクリックします。
-
-   .. image:: /images/ja/manuals/platform/platform_menu.png
-      :width: 200px
-      :align: left
-
-#. | :menuselection:`ワークスペース一覧` 画面が表示されるので、 :guilabel:`削除` をクリックします。
-
-   .. figure:: /images/ja/manuals/platform/workspace/ワークスペース一覧画面_delete.png
-      :width: 600px
-      :align: left
-
-   .. warning::
-      | オーガナイゼーション管理者以外でログインしている時は、 :guilabel:`削除` は表示されません。
-
-#. | 確認メッセージが表示されるので、オーガナイゼーションIDとワークスペースIDを入力し、 :guilabel:`はい、削除します` をクリックします。
-
-   .. figure:: /images/ja/manuals/platform/workspace/ワークスペース削除実行確認画面.png
-      :width: 600px
-      :align: left
-
-   .. tips::
-      | 一度削除したワークスペースを復元することは出来ません。
 
