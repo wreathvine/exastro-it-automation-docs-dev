@@ -4,11 +4,9 @@
 
 .. toctree::
    :maxdepth: 2
-   :numbered:
+   :numbered: 5
 
-   general
    workspace
    user
    role
-   notification  
-   mailserver_settings 
+   organization_settings
