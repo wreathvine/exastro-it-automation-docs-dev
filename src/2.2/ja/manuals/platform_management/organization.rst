@@ -31,10 +31,10 @@ Organization (オーガナイゼーション)
 
 - 処理のながれ
 
-  #. Keycloak に、オーガナイゼーション用のレルムデータと管理者ユーザが登録されます。
+  #. Keycloak に、オーガナイゼーション用のレルムデータと管理者ユーザーが登録されます。
   #. MariaDB や MySQL といったリレーショナルデータベースに、オーガナイゼーション用のデータが登録されます。
   #. Exastro IT Automation の永続ボリュームに、オーガナイゼーション用のディレクトリが作成されます。
-  #. GitLab に、オーガナイゼーション用のユーザが登録されます。
+  #. GitLab に、オーガナイゼーション用のユーザーが登録されます。
 
 前提条件
 --------
@@ -47,7 +47,7 @@ Organization (オーガナイゼーション)
   - システム管理に必要な下記の情報があること
 
     - 管理コンソールの URL
-    - システム管理者のユーザID
+    - システム管理者のユーザーID
     - システム管理者のパスワード
 
   - 作業クライアントに必要なアプリケーションがインストールされていること
@@ -73,14 +73,21 @@ Organization (オーガナイゼーション)
 
       - 作成方法
 
-      #. :menuselection:`メインメニュー --> オーガナイゼーション一覧` から、 :guilabel:`作成` ボタンを押下して、新規オーガナイゼーションを作成することができます。
+      #. メニューより :menuselection:`オーガナイゼーション管理` を選択します。
+
+         .. figure:: /images/ja/manuals/platform/organization/org_management.png
+            :width: 200px
+            :align: left
+            :class: with-border-thin
+      
+      #. オーガナイゼーション一覧が表示されますので、 :guilabel:`作成` ボタンを押下して、新しいオーガナイゼーションを作成することができます。
 
          .. figure:: /images/ja/manuals/platform/organization/オーガナイゼーション一覧_作成.png
             :width: 600px
             :align: left
             :class: with-border-thin
 
-      #. 新規に作成するオーガナイゼーションの情報を入力し、 :guilabel:`登録` ボタンを押下します。
+      #. 新しく作成するオーガナイゼーションの情報を入力し、 :guilabel:`登録` ボタンを押下します。
 
          .. figure:: /images/ja/manuals/platform/organization/オーガナイゼーション作成_登録.png
             :width: 600px
@@ -102,8 +109,9 @@ Organization (オーガナイゼーション)
             * - リソースプラン
               - | オーガナイゼーションに紐づけるリソースプランを指定します。
                 | 省略時はデフォルトのリソースプランが指定されます。
+                | リソースプランについては、 :doc:`./plan` を参照してください。
             * - ユーザー名
-              - | オーガナイゼーション管理者のユーザ名を指定します。
+              - | オーガナイゼーション管理者のユーザー名を指定します。
             * - パスワード
               - | オーガナイゼーション管理者の初期パスワードを指定します。
             * - email
@@ -126,7 +134,7 @@ Organization (オーガナイゼーション)
 
       - 特徴
 
-      | 対話型スクリプトによる作成方法と違い複数のオーガナイゼーション管理ユーザを登録できます。
+      | 対話型スクリプトによる作成方法と違い複数のオーガナイゼーション管理ユーザーを登録できます。
 
       - 作成方法
 
@@ -195,7 +203,7 @@ Organization (オーガナイゼーション)
               - 可
               - (オーガナイゼーション管理者のリスト)
             * - organization_managers[*].username
-              - オーガナイゼーション管理者のユーザ名（ログインするときのID）を指定。
+              - オーガナイゼーション管理者のユーザー名（ログインするときのID）を指定。
               - 可
               - "admin"
             * - organization_managers[*].email
@@ -230,7 +238,7 @@ Organization (オーガナイゼーション)
             * - options.sslRequired
               - SSL 接続の有無を指定。
               - 可
-              - | :program:`external` (既定): プライベート IP アドレスに固定する限り、ユーザは SSL 無しで Keycloak と通信可能。
+              - | :program:`external` (既定): プライベート IP アドレスに固定する限り、ユーザーは SSL 無しで Keycloak と通信可能。
                 | :program:`none`: SSL の設定なし。
                 | :program:`all`: すべての IP アドレスに対し、SSL を要求。(内部の API が HTTP アクセスのため選択不可)
             * - optionsIta.no_install_driver
@@ -297,7 +305,7 @@ Organization (オーガナイゼーション)
 
         
          .. tip::
-            | optionsの値に :program:`"sslRequired": "none"` を指定することで、オーガナイゼーションユーザが http でのアクセスが可能となります。
+            | optionsの値に :program:`"sslRequired": "none"` を指定することで、オーガナイゼーションユーザーが http でのアクセスが可能となります。
 
       #. オーガナイゼーション作成実行
 
@@ -309,7 +317,7 @@ Organization (オーガナイゼーション)
 
              ./exastro-platform/tools/create-organization.sh ./exastro-platform/tools/create-organization.json
 
-             your username : INPUT-YOUR-USERNAME # システム管理者のユーザ名を入力します
+             your username : INPUT-YOUR-USERNAME # システム管理者のユーザー名を入力します
              your password : INPUT-USER-PASSWORD # システム管理者のパスワードを入力します
 
              Create an organization, are you sure? (Y/other) : Y # Y を入力するとオーガナイゼーションの作成処理が開始します
@@ -430,7 +438,7 @@ Organization (オーガナイゼーション)
               - 可
               - "org001-name"
             * - organization manager's username
-              - オーガナイゼーション管理者のユーザ名（ログインするときのID）を指定。
+              - オーガナイゼーション管理者のユーザー名（ログインするときのID）を指定。
               - 可
               - "admin"
             * - organization manager's email
@@ -468,14 +476,14 @@ Organization (オーガナイゼーション)
         
             organization id : org001                             # オーガナイゼーションIDを入力します
             organization name : org001-name                      # オーガナイゼーション名を入力します
-            organization manager's username : admin              # オーガナイゼーション管理者のユーザ名（ログインするときのID）を入力します
+            organization manager's username : admin              # オーガナイゼーション管理者のユーザー名（ログインするときのID）を入力します
             organization manager's email : admin@example.com     # オーガナイゼーション管理者のE-mailアドレスを入力します
             organization manager's first name : admin            # オーガナイゼーション管理者の名を入力します
             organization manager's last name : admin             # オーガナイゼーション管理者の姓を入力します
             organization manager's initial password : password   # オーガナイゼーション管理者の初期パスワードを入力します
             organization plan id (optional) :                    # リソースプランを指定(任意)します ※ 初期状態では未作成のため入力不要
 
-            your username : INPUT-YOUR-USERNAME                  # システム管理者のユーザ名を入力します
+            your username : INPUT-YOUR-USERNAME                  # システム管理者のユーザー名を入力します
             your password : INPUT-USER-PASSWORD                  # システム管理者のパスワードを入力します
       
             Create an organization, are you sure? (Y/other) : Y # "Y"を入力すると実行します
@@ -560,7 +568,7 @@ Organization (オーガナイゼーション)
               - 可
               - "org001-name"
             * - organization manager's username
-              - オーガナイゼーション管理者のユーザ名（ログインするときのID）を指定。
+              - オーガナイゼーション管理者のユーザー名（ログインするときのID）を指定。
               - 可
               - "admin"
             * - organization manager's email
@@ -582,7 +590,7 @@ Organization (オーガナイゼーション)
             * - options.sslRequired
               - SSL 接続の有無を指定。
               - 可
-              - | :program:`external` (既定): プライベート IP アドレスに固定する限り、ユーザは SSL 無しで Keycloak と通信可能。
+              - | :program:`external` (既定): プライベート IP アドレスに固定する限り、ユーザーは SSL 無しで Keycloak と通信可能。
                 | :program:`none`: SSL の設定なし。
                 | :program:`all`: すべての IP アドレスに対し、SSL を要求。(内部の API が HTTP アクセスのため選択不可)
             * - optionsIta.no_install_driver
@@ -654,14 +662,21 @@ Organization (オーガナイゼーション)
 
       以下の手順で実行
 
-      #. | :menuselection:`メインメニュー --> オーガナイゼーション一覧` から、作成されたオーガナイゼーションの一覧を確認することができます。
+      #. メニューより :menuselection:`オーガナイゼーション管理` を選択します。
+
+         .. figure:: /images/ja/manuals/platform/organization/org_management.png
+            :width: 200px
+            :align: left
+            :class: with-border-thin
+
+      #. | オーガナイゼーション一覧が表示され、作成されているオーガナイゼーションを確認することができます。
 
          .. figure:: /images/ja/manuals/platform/organization/オーガナイゼーション一覧_選択.png
             :width: 600px
             :align: left
             :class: with-border-thin
 
-      #. | 任意のオーガナイゼーションを押下することにより、:menuselection:`メインメニュー --> オーガナイゼーション一覧 --> オーガナイゼーション詳細` 画面が表示され、オーガナイゼーションの詳細情報を確認できます。
+      #. | 任意のオーガナイゼーションを押下することにより、 オーガナイゼーション詳細が表示され、オーガナイゼーションの詳細情報を確認できます。
 
          .. figure:: /images/ja/manuals/platform/organization/オーガナイゼーション詳細.png
             :width: 600px
@@ -757,7 +772,14 @@ Organization (オーガナイゼーション)
 
       | オーガナイゼーション名の変更と、オーガナイゼーションに紐づけるリソースプランを設定することができます。
 
-      #. | :menuselection:`メインメニュー --> オーガナイゼーション一覧` から、 :guilabel:`編集` ボタンを押下して、オーガナイゼーションの情報を編集することができます。
+      #. メニューより :menuselection:`オーガナイゼーション管理` を選択します。
+
+         .. figure:: /images/ja/manuals/platform/organization/org_management.png
+            :width: 200px
+            :align: left
+            :class: with-border-thin
+
+      #. | オーガナイゼーション一覧が表示されますので、編集したいオーガナイゼーションの行にある :guilabel:`編集` ボタンを押下します。
      
          .. figure:: /images/ja/manuals/platform/organization/オーガナイゼーション編集.png
             :width: 600px
@@ -900,10 +922,6 @@ Organization (オーガナイゼーション)
 オーガナイゼーション削除
 ------------------------
 
-.. attention:: ※注意 
- 
-   | 削除されたオーガナイゼーションは、復活することはできませんので、削除する際は十分にお気を付けください。
-
 | オーガナイゼーションの削除方法には、下記の2通りの方法があります。
 
 .. tabs:: 
@@ -912,14 +930,21 @@ Organization (オーガナイゼーション)
 
        | 以下の手順で実行
 
-       #. | 削除したいオーガナイゼーションの :guilabel:`削除` ボタンを押下します。
+       #. メニューより :menuselection:`オーガナイゼーション管理` を選択します。
+
+          .. figure:: /images/ja/manuals/platform/organization/org_management.png
+             :width: 200px
+             :align: left
+             :class: with-border-thin
+
+       #. | オーガナイゼーション一覧が表示されますので、削除したいオーガナイゼーションの行にある :guilabel:`削除` ボタンを押下します。
 
           .. figure:: /images/ja/manuals/platform/organization/オーガナイゼーション削除_一覧から選択.png
              :width: 600px
              :align: left
              :class: with-border-thin
 
-       #. | 削除確認で本当に削除する場合は、"platform/削除するオーガナイゼーションID"を入力して、 :guilabel:`はい、削除します` ボタンを押下します。
+       #. | 削除確認で本当に削除する場合は、:file:`/削除するオーガナイゼーションID` を入力して、 :guilabel:`はい、削除します` ボタンを押下します。
 
           .. figure:: /images/ja/manuals/platform/organization/オーガナイゼーション削除_実行確認.png
              :width: 600px
@@ -940,9 +965,9 @@ Organization (オーガナイゼーション)
           -H "Authorization: basic ${BASE64_BASIC}" \
           "${BASE_URL}/api/platform/organizations/${ORGANIZATION_ID}"
 
-
-
-
+.. warning:: 
+ 
+   | 削除されたオーガナイゼーションは、復活することはできませんので、削除する際は十分にお気を付けください。
 
 オーガナイゼーションへのアクセス
 ================================
