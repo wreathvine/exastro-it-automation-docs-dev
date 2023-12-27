@@ -68,12 +68,15 @@
         <dd>
           <div>
             <select name="version" onchange="location.href=value;">
-                file_path: 2.2/ja/manuals/maintenance/log_level
-                  <option value="../../../../2.2/ja/manuals/maintenance/log_level.html"
+                file_path: 2.3/ja/manuals/maintenance/log_level
+                  <option value="../../../../2.3/ja/manuals/maintenance/log_level.html"
                   >current</option>
+                file_path: 2.3/ja/manuals/maintenance/log_level
+                  <option value="../../../../2.3/ja/manuals/maintenance/log_level.html"
+                  >2.3(current)</option>
                 file_path: 2.2/ja/manuals/maintenance/log_level
                   <option value="../../../../2.2/ja/manuals/maintenance/log_level.html"
-                  >2.2(current)</option>
+                  >2.2</option>
                 file_path: 2.1/ja/manuals/maintenance/log_level
                   <option value="#"
                   selected
@@ -118,6 +121,7 @@
   
   <aside class="divInner">
     <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../2.3/index.html">Exastro IT Automation Documentation 2.2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../2.2/index.html">Exastro IT Automation Documentation 2.2</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../../index.html">Exastro IT Automation Documentation 2.1</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="../../../index.html#id1">日本語</a><ul class="current">
@@ -228,7 +232,7 @@
 <section id="ita-log-level-list-v2-1">
 <span id="id4"></span><h3><span class="section-number">2.2.1. </span>ログレベルの設定値と出力について<a class="headerlink" href="#ita-log-level-list-v2-1" title="この見出しへのパーマリンク">¶</a></h3>
 <table class="docutils align-left" id="id15">
-<caption><span class="caption-number">表 2.226 </span><span class="caption-text">ログレベルの設定値と出力について</span><a class="headerlink" href="#id15" title="このテーブルへのパーマリンク">¶</a></caption>
+<caption><span class="caption-number">表 2.339 </span><span class="caption-text">ログレベルの設定値と出力について</span><a class="headerlink" href="#id15" title="このテーブルへのパーマリンク">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>サービスのログレベルの設定値</p></th>
 <th class="head"><p>ログに出力される対象</p></th>
@@ -263,7 +267,7 @@
 <div class="line">ログレベル変更可能なサービスの一覧は、以下です。</div>
 </div>
 <table class="docutils align-left" id="id16">
-<caption><span class="caption-number">表 2.227 </span><span class="caption-text">サービス一覧</span><a class="headerlink" href="#id16" title="このテーブルへのパーマリンク">¶</a></caption>
+<caption><span class="caption-number">表 2.340 </span><span class="caption-text">サービス一覧</span><a class="headerlink" href="#id16" title="このテーブルへのパーマリンク">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>サービス名</p></th>
 <th class="head"><p>機能概要</p></th>
@@ -340,7 +344,7 @@
 <h3><span class="section-number">2.2.3. </span>ログレベルの設定手順<a class="headerlink" href="#id6" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
 <div class="line">ログレベル設定変更用のAPIを実行し、設定を変更します。</div>
-<div class="line">手順については、「<a class="reference internal" href="../../../../2.2/ja/manuals/maintenance/log_level.html#update-log-level"><span class="std std-ref">ログレベル設定変更</span></a> 」を参照してください。</div>
+<div class="line">手順については、「<a class="reference internal" href="../../../../2.3/ja/manuals/maintenance/log_level.html#update-log-level"><span class="std std-ref">ログレベル設定変更</span></a> 」を参照してください。</div>
 </div>
 </section>
 </section>
@@ -506,7 +510,7 @@ curl<span class="w"> </span>-k<span class="w"> </span>-X<span class="w"> </span>
 <li><p>変更するログレベルのjsonファイルを設定</p>
 <div class="line-block">
 <div class="line">取得した toolsフォルダ配下にある、 <cite>update-ita-loglevel.sample.json</cite> を コピーして使用してください。</div>
-<div class="line"><a class="reference internal" href="../../../../2.2/ja/manuals/maintenance/log_level.html#ita-service-list-v2-1"><span class="std std-ref">ログレベル変更可能なサービス一覧</span></a>  または、<a class="reference internal" href="../../../../2.2/ja/manuals/maintenance/log_level.html#get-log-level"><span class="std std-ref">ログレベルの確認</span></a> で確認した対象から、変更するサービス名、ログレベルを指定してください。</div>
+<div class="line"><a class="reference internal" href="../../../../2.3/ja/manuals/maintenance/log_level.html#ita-service-list-v2-1"><span class="std std-ref">ログレベル変更可能なサービス一覧</span></a>  または、<a class="reference internal" href="../../../../2.3/ja/manuals/maintenance/log_level.html#get-log-level"><span class="std std-ref">ログレベルの確認</span></a> で確認した対象から、変更するサービス名、ログレベルを指定してください。</div>
 </div>
 </li>
 <li><p>登録するログレベルの設定</p>
@@ -529,7 +533,7 @@ curl<span class="w"> </span>-k<span class="w"> </span>-X<span class="w"> </span>
 <div class="line">変更後</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id17">
-<div class="code-block-caption"><span class="caption-number">リスト 2.199 </span><span class="caption-text">例:「ita-api-admin」、「ita-api-organization」を「DEBUG」へ変更</span><a class="headerlink" href="#id17" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.318 </span><span class="caption-text">例:「ita-api-admin」、「ita-api-organization」を「DEBUG」へ変更</span><a class="headerlink" href="#id17" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="o">{</span>
 <span class="w">    </span><span class="s2">&quot;ita-api-admin&quot;</span>:<span class="w"> </span><span class="s2">&quot;DEBUG&quot;</span>,
 <span class="w">    </span><span class="s2">&quot;ita-api-organization&quot;</span>:<span class="w"> </span><span class="s2">&quot;DEBUG&quot;</span>
@@ -540,7 +544,7 @@ curl<span class="w"> </span>-k<span class="w"> </span>-X<span class="w"> </span>
 </li>
 <li><p>項目説明</p>
 <table class="docutils align-left" id="id18">
-<caption><span class="caption-number">表 2.228 </span><span class="caption-text">ログレベル設定項目</span><a class="headerlink" href="#id18" title="このテーブルへのパーマリンク">¶</a></caption>
+<caption><span class="caption-number">表 2.341 </span><span class="caption-text">ログレベル設定項目</span><a class="headerlink" href="#id18" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 25%" />
 <col style="width: 25%" />
@@ -639,7 +643,7 @@ curl<span class="w"> </span>-k<span class="w"> </span>-X<span class="w"> </span>
 </li>
 </ul>
 <div class="line-block">
-<div class="line">設定変更後の確認は、「<a class="reference internal" href="../../../../2.2/ja/manuals/maintenance/log_level.html#get-log-level"><span class="std std-ref">ログレベルの確認</span></a> 」を参照してください。</div>
+<div class="line">設定変更後の確認は、「<a class="reference internal" href="../../../../2.3/ja/manuals/maintenance/log_level.html#get-log-level"><span class="std std-ref">ログレベルの確認</span></a> 」を参照してください。</div>
 </div>
 </section>
 </section>

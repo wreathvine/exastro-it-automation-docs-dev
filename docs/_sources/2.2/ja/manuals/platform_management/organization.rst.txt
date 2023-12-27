@@ -31,10 +31,10 @@ Organization (オーガナイゼーション)
 
 - 処理のながれ
 
-  #. Keycloak に、オーガナイゼーション用のレルムデータと管理者ユーザーが登録されます。
+  #. Keycloak に、オーガナイゼーション用のレルムデータと管理者ユーザが登録されます。
   #. MariaDB や MySQL といったリレーショナルデータベースに、オーガナイゼーション用のデータが登録されます。
   #. Exastro IT Automation の永続ボリュームに、オーガナイゼーション用のディレクトリが作成されます。
-  #. GitLab に、オーガナイゼーション用のユーザーが登録されます。
+  #. GitLab に、オーガナイゼーション用のユーザが登録されます。
 
 前提条件
 --------
@@ -47,7 +47,7 @@ Organization (オーガナイゼーション)
   - システム管理に必要な下記の情報があること
 
     - 管理コンソールの URL
-    - システム管理者のユーザーID
+    - システム管理者のユーザID
     - システム管理者のパスワード
 
   - 作業クライアントに必要なアプリケーションがインストールされていること
@@ -58,83 +58,18 @@ Organization (オーガナイゼーション)
 
 .. _organization_creation_v2.1:
 
-オーガナイゼーション作成手順
-----------------------------
+オーガナイゼーション作成
+------------------------
 
-| オーガナイゼーションの作成方法には、下記の4通りの方法があります。
+| オーガナイゼーションの作成方法には、下記の3通りの方法があります。
 
 .. tabs::
 
-   .. group-tab:: 画面操作
+   .. tab:: 設定ファイルとスクリプトによる作成
 
       - 特徴
 
-      | 画面からオーガナイゼーションの作成を行うことができます。
-
-      - 作成方法
-
-      #. メニューより :menuselection:`オーガナイゼーション管理` を選択します。
-
-         .. figure:: /images/ja/manuals/platform/organization/org_management.png
-            :width: 200px
-            :align: left
-            :class: with-border-thin
-      
-      #. オーガナイゼーション一覧が表示されますので、 :guilabel:`作成` ボタンを押下して、新しいオーガナイゼーションを作成することができます。
-
-         .. figure:: /images/ja/manuals/platform/organization/オーガナイゼーション一覧_作成.png
-            :width: 600px
-            :align: left
-            :class: with-border-thin
-
-      #. 新しく作成するオーガナイゼーションの情報を入力し、 :guilabel:`登録` ボタンを押下します。
-
-         .. figure:: /images/ja/manuals/platform/organization/オーガナイゼーション作成_登録.png
-            :width: 600px
-            :align: left
-            :class: with-border-thin
-       
-         .. list-table:: リストテーブルサンプル
-            :widths: 40 200
-            :header-rows: 1
-            :align: left
-
-            * - 項目名
-              - 説明
-            * - オーガナイゼーションID
-              - | オーガナイゼーションに割り当てる一意のIDを指定します。
-                | ここで指定した ID を使ってシステム間の連携を行います。
-            * - オーガナイゼーション名
-              - | オーガナイゼーションに割り当てる名前を指定します。
-            * - リソースプラン
-              - | オーガナイゼーションに紐づけるリソースプランを指定します。
-                | 省略時はデフォルトのリソースプランが指定されます。
-                | リソースプランについては、 :doc:`./plan` を参照してください。
-            * - ユーザー名
-              - | オーガナイゼーション管理者のユーザー名を指定します。
-            * - パスワード
-              - | オーガナイゼーション管理者の初期パスワードを指定します。
-            * - email
-              - | オーガナイゼーション管理者のE-mailアドレスを指定します。
-            * - 名
-              - | オーガナイゼーション管理者の名を指定します。
-            * - 姓
-              - | オーガナイゼーション管理者の姓を指定します。
-            * - 有効
-              - | オーガナイゼーション機能の有効無効を指定します。
-                | 作成の際には基本的に有効にしてください。
-            * - インストールドライバ
-              - | インストールするドライバを指定します。
-                | 一度インストールしたドライバを削除することは不可能です。
-
-         .. tip:: 
-            インストールドライバについては「～～」を参照
-
-   .. group-tab:: 設定ファイルとスクリプトによる作成
-
-      - 特徴
-
-      | 対話型スクリプトによる作成方法と違い複数のオーガナイゼーション管理ユーザーを登録できます。
+      | 対話型スクリプトによる作成方法と違い複数のオーガナイゼーション管理ユーザを登録できます。
 
       - 作成方法
 
@@ -203,7 +138,7 @@ Organization (オーガナイゼーション)
               - 可
               - (オーガナイゼーション管理者のリスト)
             * - organization_managers[*].username
-              - オーガナイゼーション管理者のユーザー名（ログインするときのID）を指定。
+              - オーガナイゼーション管理者のユーザ名（ログインするときのID）を指定。
               - 可
               - "admin"
             * - organization_managers[*].email
@@ -238,7 +173,7 @@ Organization (オーガナイゼーション)
             * - options.sslRequired
               - SSL 接続の有無を指定。
               - 可
-              - | :program:`external` (既定): プライベート IP アドレスに固定する限り、ユーザーは SSL 無しで Keycloak と通信可能。
+              - | :program:`external` (既定): プライベート IP アドレスに固定する限り、ユーザは SSL 無しで Keycloak と通信可能。
                 | :program:`none`: SSL の設定なし。
                 | :program:`all`: すべての IP アドレスに対し、SSL を要求。(内部の API が HTTP アクセスのため選択不可)
             * - optionsIta.no_install_driver
@@ -305,7 +240,7 @@ Organization (オーガナイゼーション)
 
         
          .. tip::
-            | optionsの値に :program:`"sslRequired": "none"` を指定することで、オーガナイゼーションユーザーが http でのアクセスが可能となります。
+            | optionsの値に :program:`"sslRequired": "none"` を指定することで、オーガナイゼーションユーザが http でのアクセスが可能となります。
 
       #. オーガナイゼーション作成実行
 
@@ -317,7 +252,7 @@ Organization (オーガナイゼーション)
 
              ./exastro-platform/tools/create-organization.sh ./exastro-platform/tools/create-organization.json
 
-             your username : INPUT-YOUR-USERNAME # システム管理者のユーザー名を入力します
+             your username : INPUT-YOUR-USERNAME # システム管理者のユーザ名を入力します
              your password : INPUT-USER-PASSWORD # システム管理者のパスワードを入力します
 
              Create an organization, are you sure? (Y/other) : Y # Y を入力するとオーガナイゼーションの作成処理が開始します
@@ -364,7 +299,7 @@ Organization (オーガナイゼーション)
               "ts": "2022-08-18T05:29:35.643Z"
             }
 
-   .. group-tab:: 対話型スクリプトによる作成
+   .. tab:: 対話型スクリプトによる作成
 
       - 特徴
 
@@ -438,7 +373,7 @@ Organization (オーガナイゼーション)
               - 可
               - "org001-name"
             * - organization manager's username
-              - オーガナイゼーション管理者のユーザー名（ログインするときのID）を指定。
+              - オーガナイゼーション管理者のユーザ名（ログインするときのID）を指定。
               - 可
               - "admin"
             * - organization manager's email
@@ -476,14 +411,14 @@ Organization (オーガナイゼーション)
         
             organization id : org001                             # オーガナイゼーションIDを入力します
             organization name : org001-name                      # オーガナイゼーション名を入力します
-            organization manager's username : admin              # オーガナイゼーション管理者のユーザー名（ログインするときのID）を入力します
+            organization manager's username : admin              # オーガナイゼーション管理者のユーザ名（ログインするときのID）を入力します
             organization manager's email : admin@example.com     # オーガナイゼーション管理者のE-mailアドレスを入力します
             organization manager's first name : admin            # オーガナイゼーション管理者の名を入力します
             organization manager's last name : admin             # オーガナイゼーション管理者の姓を入力します
             organization manager's initial password : password   # オーガナイゼーション管理者の初期パスワードを入力します
             organization plan id (optional) :                    # リソースプランを指定(任意)します ※ 初期状態では未作成のため入力不要
 
-            your username : INPUT-YOUR-USERNAME                  # システム管理者のユーザー名を入力します
+            your username : INPUT-YOUR-USERNAME                  # システム管理者のユーザ名を入力します
             your password : INPUT-USER-PASSWORD                  # システム管理者のパスワードを入力します
       
             Create an organization, are you sure? (Y/other) : Y # "Y"を入力すると実行します
@@ -531,7 +466,7 @@ Organization (オーガナイゼーション)
               "ts": "2022-08-18T05:29:35.643Z"
             }
 
-   .. group-tab:: Rest API による作成
+   .. tab:: Rest API による作成
 
       - 特徴
 
@@ -568,7 +503,7 @@ Organization (オーガナイゼーション)
               - 可
               - "org001-name"
             * - organization manager's username
-              - オーガナイゼーション管理者のユーザー名（ログインするときのID）を指定。
+              - オーガナイゼーション管理者のユーザ名（ログインするときのID）を指定。
               - 可
               - "admin"
             * - organization manager's email
@@ -590,7 +525,7 @@ Organization (オーガナイゼーション)
             * - options.sslRequired
               - SSL 接続の有無を指定。
               - 可
-              - | :program:`external` (既定): プライベート IP アドレスに固定する限り、ユーザーは SSL 無しで Keycloak と通信可能。
+              - | :program:`external` (既定): プライベート IP アドレスに固定する限り、ユーザは SSL 無しで Keycloak と通信可能。
                 | :program:`none`: SSL の設定なし。
                 | :program:`all`: すべての IP アドレスに対し、SSL を要求。(内部の API が HTTP アクセスのため選択不可)
             * - optionsIta.no_install_driver
@@ -649,325 +584,6 @@ Organization (オーガナイゼーション)
           "optionsIta": {}
         }'
 
-
-
-オーガナイゼーション一覧
-------------------------
-
-| オーガナイゼーション一覧の確認方法には、下記の2通りの方法があります。
-
-.. tabs:: 
-
-   .. group-tab:: 画面操作
-
-      以下の手順で実行
-
-      #. メニューより :menuselection:`オーガナイゼーション管理` を選択します。
-
-         .. figure:: /images/ja/manuals/platform/organization/org_management.png
-            :width: 200px
-            :align: left
-            :class: with-border-thin
-
-      #. | オーガナイゼーション一覧が表示され、作成されているオーガナイゼーションを確認することができます。
-
-         .. figure:: /images/ja/manuals/platform/organization/オーガナイゼーション一覧_選択.png
-            :width: 600px
-            :align: left
-            :class: with-border-thin
-
-      #. | 任意のオーガナイゼーションを押下することにより、 オーガナイゼーション詳細が表示され、オーガナイゼーションの詳細情報を確認できます。
-
-         .. figure:: /images/ja/manuals/platform/organization/オーガナイゼーション詳細.png
-            :width: 600px
-            :align: left
-            :class: with-border-thin
-
-   .. group-tab:: Rest API による一覧表示
-
-     | cURL を使って Rest API を利用する場合は、以下の様なコマンドを実行してください。
-     
-     .. code-block:: bash
-
-      BASE64_BASIC=$(echo -n "システム管理者のユーザー名を設定してください:システム管理者のパスワードを設定してください" | base64)
-      BASE_URL=システム管理者用サイトアドレスを設定してください
-
-      curl -k -X GET \
-        -H "Content-Type: application/json" \
-        -H "Authorization: basic ${BASE64_BASIC}" \
-        -d  @- \
-        "${BASE_URL}/api/platform/organizations"
-
-     | 返却される項目の説明は以下になります。
-
-     .. list-table:: 返却項目説明
-        :widths: 40, 200
-        :header-rows: 1
-        :align: left
-
-        * - 項目
-          - 項目の内容
-        * - data.id
-          - オーガナイゼーションID
-        * - data.name
-          - オーガナイゼーション名
-        * - data.organization_managers
-          - オーガナイゼーション管理者情報
-        * - data.active_plan.id
-          - 情報取得時点の該当プランID
-        * - data.plans
-          - オーガナイゼーション設定済みのプラン情報
-        * - data.enabled
-          - | オーガナイゼーション有効無効
-            | true:有効 false:無効
-        * - data.status
-          - | オーガナイゼーション作成状態
-            | 状態については後述
-
-     | オーガナイゼーション作成時、以下の順でステータスが変化していきます。
-
-     .. list-table:: オーガナイゼーション作成状態
-        :widths: 40, 200
-        :header-rows: 1
-        :align: left
-
-        * - status値
-          - 説明
-        * - Organization Create Start
-          - オーガナイゼーション登録開始(ステータス情報登録完了)
-        * - Realm Create Complete
-          - Platform オーガナイゼーションRealm登録完了
-        * - Client Create Complete
-          - Platform アプリケーション初期設定完了
-        * - Client Role Setting Complete
-          - Platform アプリケーションロール初期設定完了
-        * - Service Account Setting Complete
-          - Platform サービスアカウント設定完了
-        * - Organization User Create Complete
-          - Platform オーガナイゼーションユーザー登録完了
-        * - Organization User Role Setting Complete
-          - Platform オーガナイゼーションユーザーロール設定完了
-        * - Organization DB Create Complete
-          - Platform オーガナイゼーションDB作成完了
-        * - Organization DB Update Complete
-          - Platform オーガナイゼーション情報によるDB更新完了
-        * - IT Automation Organization Create Complete
-          - IT Automation オーガナイゼーション作成・初期化完了
-        * - Organization Plan Create Complete
-          - Platform オーガナイゼーションプラン設定完了
-        * - Realm Enabled Complete
-          - Platform オーガナイゼーション有効化完了
-        * - Organization Create Complete
-          - 正常にオーガナイゼーション作成完了
-
-
-オーガナイゼーション編集
-------------------------
-
-| オーガナイゼーションの編集方法には、下記の2通りの方法があります。
-
-.. tabs:: 
-
-   .. group-tab:: 画面操作
-
-      | オーガナイゼーション名の変更と、オーガナイゼーションに紐づけるリソースプランを設定することができます。
-
-      #. メニューより :menuselection:`オーガナイゼーション管理` を選択します。
-
-         .. figure:: /images/ja/manuals/platform/organization/org_management.png
-            :width: 200px
-            :align: left
-            :class: with-border-thin
-
-      #. | オーガナイゼーション一覧が表示されますので、編集したいオーガナイゼーションの行にある :guilabel:`編集` ボタンを押下します。
-     
-         .. figure:: /images/ja/manuals/platform/organization/オーガナイゼーション編集.png
-            :width: 600px
-            :align: left
-            :class: with-border-thin
-     
-      #. | オーガナイゼーション名を変更することができます。
-
-         .. figure:: /images/ja/manuals/platform/organization/オーガナイゼーション編集_編集場所.png
-            :width: 600px
-            :align: left
-            :class: with-border-thin
-          
-         .. note:: 
-            | ※オーガナイゼーションIDを変更することは出来ません。
-
-      #. | :guilabel:`リソースプラン設定` ボタンを押下して、オーガナイゼーションにリソースプランを紐づけることができます。
-         | 紐づけるリソースプランIDをプルダウンで選択し、開始日時を指定して、 :guilabel:`適用` ボタンを押下します。
-
-         .. figure:: /images/ja/manuals/platform/organization/オーガナイゼーション編集_リソースプラン設定.png
-            :width: 600px
-            :align: left
-            :class: with-border-thin
-
-      #. | オーガナイゼーションに紐づけるリソースプランが行に追加されます。
-         | 内容に間違いがなければ、 :guilabel:`登録` ボタンを押下します。
-
-         .. figure:: /images/ja/manuals/platform/organization/オーガナイゼーション編集_登録.png
-            :width: 600px
-            :align: left
-            :class: with-border-thin
-
-      #. | 紐づいているリソースプランが不要になった場合は、 :guilabel:`解除` ボタンを押下して、オーガナイゼーションとリソースプランの紐づけを解除することができます。
-
-         .. figure:: /images/ja/manuals/platform/organization/オーガナイゼーション編集_リソースプラン解除.png
-            :width: 600px
-            :align: left
-            :class: with-border-thin
-
-      #. | 解除確認画面で削除するリソースプランIDを入力して、 :guilabel:`はい、解除します` ボタンを押下します。
-
-         .. figure:: /images/ja/manuals/platform/organization/オーガナイゼーション編集_解除確認.png
-            :width: 600px
-            :align: left
-            :class: with-border-thin
-
-      #. | 紐づけが解除されるリソースプランの行がグレーアウトされます。
-         | 内容に間違いがなければ、 :guilabel:`登録` ボタンを押下します。
-
-         .. figure:: /images/ja/manuals/platform/organization/オーガナイゼーション編集_リソースプラン解除登録.png
-            :width: 600px
-            :align: left
-            :class: with-border-thin
-
-      .. note:: 
-         | 3.や5.の手順を繰り返し行い、:guilabel:`登録` ボタンを押下することで、
-         | 複数のリソースプランの紐づけや解除を、同時に行うことが可能です。
-
-   .. group-tab:: Rest API による編集
-
-     | cURL を使って Rest API を利用する場合は、以下の様なコマンドを実行してください。
-
-     - | オーガナイゼーション名の編集
-
-     .. code-block:: bash
-
-         BASE64_BASIC=$(echo -n "システム管理者のユーザー名を設定してください:システム管理者のパスワードを設定してください" | base64)
-         BASE_URL=システム管理者用サイトアドレスを設定してください
-         ORG_ID=取得するorganization idを設定してください
-
-
-         curl -k -X 'PUT' \
-           -H "Content-Type: application/json" \
-           -H "Authorization: basic ${BASE64_BASIC}" \
-           -d  @- \
-           "${BASE_URL}/api/platform/organizations/${ORG_ID}" \
-           << EOF
-         {
-           "name": "name of org1",
-           "enabled": true,
-           "optionsIta": {
-             "drivers": {
-               "terraform_cloud_ep": true,
-               "terraform_cli": true,
-               "ci_cd": true,
-               "oase": true
-             }
-           }
-         }
-
-     - | 設定済みオーガナイゼーションリソースプランの確認
-
-     .. code-block:: bash
-
-         BASE64_BASIC=$(echo -n "システム管理者のユーザー名を設定してください:システム管理者のパスワードを設定してください" | base64)
-         BASE_URL=システム管理者用サイトアドレスを設定してください
-         ORG_ID=取得するorganization idを設定してください
-
-         curl -k -X GET \
-             -H "Content-Type: application/json" \
-             -H "Authorization: basic ${BASE64_BASIC}" \
-             -d  @- \
-             "${BASE_URL}/api/platform/${ORG_ID}/plans"
-
-     - | オーガナイゼーションへのリソースプラン設定
-
-     .. code-block:: bash
-
-         BASE64_BASIC=$(echo -n "システム管理者のユーザー名を設定してください:システム管理者のパスワードを設定してください" | base64)
-         BASE_URL=システム管理者用サイトアドレスを設定してください
-         ORG_ID=リソースプランを設定するorganization idを設定してください
-
-         curl -k -X POST \
-             -H "Content-Type: application/json" \
-             -H "Authorization: basic ${BASE64_BASIC}" \
-             -d  @- \
-             "${BASE_URL}/api/platform/${ORG_ID}/plans" \
-             << EOF
-         {
-             "id": "plan-standard",
-             "start_datetime": "2022-12-01 00:00:00"
-         }
-         EOF
-
-     - | オーガナイゼーションへのリソースプラン解除
-
-     .. code-block:: bash
-          
-         BASE64_BASIC=$(echo -n "システム管理者のユーザー名を設定してください:システム管理者のパスワードを設定してください" | base64)
-         BASE_URL=システム管理者用サイトアドレスを設定してください
-         ORG_ID=リソースプラン解除するorganization idを設定してください
-         START_DATETIME=リソースプラン解除する開始日時を設定してください(yyyy-mm-dd hh:mm:ss形式)
-
-         curl -k -X DELETE \
-             -H "Content-Type: application/json" \
-             -H "Authorization: basic ${BASE64_BASIC}" \
-             "${BASE_URL}/api/platform/${ORG_ID}/plans/`echo ${START_DATETIME} | sed 's/ /%20/g;s/:/%3A/g'`"
-
-
-オーガナイゼーション削除
-------------------------
-
-| オーガナイゼーションの削除方法には、下記の2通りの方法があります。
-
-.. tabs:: 
- 
-   .. group-tab:: 画面操作
-
-       | 以下の手順で実行
-
-       #. メニューより :menuselection:`オーガナイゼーション管理` を選択します。
-
-          .. figure:: /images/ja/manuals/platform/organization/org_management.png
-             :width: 200px
-             :align: left
-             :class: with-border-thin
-
-       #. | オーガナイゼーション一覧が表示されますので、削除したいオーガナイゼーションの行にある :guilabel:`削除` ボタンを押下します。
-
-          .. figure:: /images/ja/manuals/platform/organization/オーガナイゼーション削除_一覧から選択.png
-             :width: 600px
-             :align: left
-             :class: with-border-thin
-
-       #. | 削除確認で本当に削除する場合は、:file:`/削除するオーガナイゼーションID` を入力して、 :guilabel:`はい、削除します` ボタンを押下します。
-
-          .. figure:: /images/ja/manuals/platform/organization/オーガナイゼーション削除_実行確認.png
-             :width: 600px
-             :align: left
-             :class: with-border-thin
-
-   .. group-tab:: Rest API による削除
-
-      | cURL を使って Rest API を利用する場合は、以下の様なコマンドを実行してください。
-
-      .. code-block:: bash
-
-        BASE64_BASIC=$(echo -n "システム管理者のユーザー名を設定してください:システム管理者のパスワードを設定してください" | base64)
-        BASE_URL=システム管理者用サイトアドレスを設定してください
-        ORGANIZATION_ID=削除するorganization idを設定してください
-
-        curl -k -X DELETE \
-          -H "Authorization: basic ${BASE64_BASIC}" \
-          "${BASE_URL}/api/platform/organizations/${ORGANIZATION_ID}"
-
-.. warning:: 
- 
-   | 削除されたオーガナイゼーションは、復活することはできませんので、削除する際は十分にお気を付けください。
 
 オーガナイゼーションへのアクセス
 ================================
