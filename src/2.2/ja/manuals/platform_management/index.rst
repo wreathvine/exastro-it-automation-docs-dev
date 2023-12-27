@@ -4,10 +4,8 @@
 
 .. toctree::
    :maxdepth: 2
-   :numbered:
+   :numbered: 3
 
-   general
    organization
    plan
    aap
-   keycloak_console
