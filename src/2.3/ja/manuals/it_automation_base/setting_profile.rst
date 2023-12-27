@@ -4,7 +4,7 @@
 
 個人設定では、自身のアカウント編集、パスワード変更、二要素認証設定、トークン発行が行えます。
 
-#. | 個人設定はログインユーザのアイコンを選択して表示されるメニューから設定できます。
+#. | 個人設定はログインユーザーのアイコンを選択して表示されるメニューから :menuselection:`アカウント管理` を選択することにより設定できます。
 
    .. figure:: /images/ja/manuals/platform/login/setting_profile.png
       :alt: 個人設定
@@ -13,7 +13,7 @@
       :class: with-border-thin
 
    .. note::
-      |  Exastro IT Automation利用中は、アカウント管理メニューは表示されません
+      |  Exastro IT Automation利用中は、メニュー - アカウント管理 は表示されません
 
 アカウント編集
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -27,7 +27,7 @@
       :class: with-border-thin
 
    .. note::
-      |  ※ユーザ名は変更できません。
+      |  ※ユーザー名は変更できません。
 
 パスワード変更
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -57,7 +57,7 @@
 本システムにおいて、APIを呼び出す際に必要となるアクセストークンがありますが、アクセストークンの発行には、本説明で説明するリフレッシュトークンが必要となります。
 
 .. tip::
-   | APIの認証については、「 :doc:`../../reference/index` 」-「 :doc:`../../reference/api/index` 」-「 :doc:`../../reference/api/operator/index` - :doc:`../../reference/api/operator/certification` 」、「 :doc:`../../reference/api/system_manager/index` - :doc:`../../reference/api/system_manager/certification` 」参照
+   | APIの認証については、:doc:`../../reference/index` - :doc:`../../reference/api/index` - :doc:`../../reference/api/operator/index` - :doc:`../../reference/api/operator/certification` 、 :doc:`../../reference/api/system_manager/index` - :doc:`../../reference/api/system_manager/certification` 参照
 
 #. | トークン発行より、API実行に必要なトークンの発行ならびに発行したトークンの一覧表示を行うことができます。
 
@@ -99,7 +99,7 @@
       :align: left
       :class: with-border-thin
 
-   | 削除確認で本当に削除する場合は、"yes"を入力して、:guilabel:`はい、削除します` ボタンを押下します。 
+   | 削除確認で本当に削除する場合は、:kbd:`yes` を入力して、:guilabel:`はい、削除します` ボタンを押下します。 
 
    .. figure:: /images/ja/manuals/platform/login/setting_profile_token_delete.png
       :alt: 個人設定_トークン削除
@@ -107,4 +107,5 @@
       :align: left
 
    .. warning::
+
       |  削除した際、すべてのトークンが無効となります。
