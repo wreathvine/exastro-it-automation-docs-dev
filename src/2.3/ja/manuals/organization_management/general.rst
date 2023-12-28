@@ -29,10 +29,10 @@
         - 説明
       * - | ユーザー名またはメールアドレス
         - | システム管理者が設定したユーザー名 または、E-mailアドレス
-          | example. adminまたはadmin@example.com ※
+          | e.g. adminまたはadmin@example.com ※
       * - | パスワード
         - | システム管理者が設定したパスワード
-          | example. password  ※
+          | e.g. password  ※
 
    .. tip::
       |  ログインID(ユーザー名、E-mailアドレス)、パスワードは、システム管理者が :doc:`../platform_management/organization` のオーガナイゼーション作成で設定したオーガナイゼーション管理者のログインID(ユーザー名、E-mailアドレス)、パスワードを使用してください。

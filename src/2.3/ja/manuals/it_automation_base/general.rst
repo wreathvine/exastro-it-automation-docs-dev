@@ -30,13 +30,13 @@
         - 説明
       * - | ユーザー名またはメールアドレス
         - | 管理者から指定したユーザー名またはE-mailアドレス
-          | example. user または user@example.com ※
+          | e.g. user または user@example.com ※
       * - | パスワード
         - | 管理者から指定したパスワード
-          | example. password ※
+          | e.g. password ※
           
    .. tip::
-      |  ※初回ログイン時は、「 :ref:`organization_creation_v2.1` 」で指定した管理者のログインID(ユーザー名、E-mailアドレス)、初期パスワードを使用してください。
+      |  ※初回ログイン時は、:ref:`organization_creation_v2.1` で指定した管理者のログインID(ユーザー名、E-mailアドレス)、初期パスワードを使用してください。
 
 #. | パスワードの更新を行い、:guilabel:`送信` ボタンを押下します。
 
