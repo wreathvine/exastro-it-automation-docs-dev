@@ -221,14 +221,14 @@
 <section id="id1">
 <h2><span class="section-number">2.1. </span>はじめに<a class="headerlink" href="#id1" title="この見出しへのパーマリンク">¶</a></h2>
 <div class="line-block">
-<div class="line">本書では、Exastro Suite における Organization (オーガナイゼーション) について説明します。</div>
+<div class="line">本書では、Exastro システム における Organization (オーガナイゼーション) について説明します。</div>
 </div>
 </section>
 <section id="id2">
 <h2><span class="section-number">2.2. </span>オーガナイゼーションとは<a class="headerlink" href="#id2" title="この見出しへのパーマリンク">¶</a></h2>
 <div class="line-block">
 <div class="line">Exastro IT Automation 2.0 から導入されたマルチテナント機能におけるテナントの単位のことで、論理的に組織の空間を区分する単位のことで、たとえ同一の Exastro システムであってもデータの共有がされることのない、完全にプライベートな空間です。</div>
-<div class="line">Exastro Suite の各アプリケーションの利用を開始するためには、オーガナイゼーションを作成する必要があります。</div>
+<div class="line">Exastro システム の各アプリケーションの利用を開始するためには、オーガナイゼーションを作成する必要があります。</div>
 </div>
 <figure class="align-default">
 <img alt="オーガナイゼーション全体図" src="../../../../_images/overview_of_the_organization.png" />
@@ -394,7 +394,7 @@
 </table>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>インストールドライバについては「～～」を参照</p>
+<p>インストールドライバについては、<a class="reference internal" href="../cicd_for_iac/cicd_for_iac.html"><span class="doc">CI/CD For IaC機能</span></a> を参照</p>
 </div>
 </li>
 </ol>
@@ -420,7 +420,7 @@ git<span class="w"> </span>clone<span class="w"> </span>https://github.com/exast
 </div>
 </div>
 </li>
-<li><p>設定ファイルの <kbd class="kbd docutils literal notranslate">CONF_BASE_URL</kbd> に Exastro Suite の管理用エンドポイント URL を設定します。</p>
+<li><p>設定ファイルの <kbd class="kbd docutils literal notranslate">CONF_BASE_URL</kbd> に Exastro システム の管理用エンドポイント URL を設定します。</p>
 <div class="literal-block-wrapper docutils container" id="id15">
 <div class="code-block-caption"><span class="caption-number">リスト 2.95 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id15" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exastro Platform への接続のための設定情報を登録</span>
@@ -477,7 +477,7 @@ vi<span class="w"> </span>./exastro-platform/tools/api-auth.conf
 </div>
 </td>
 <td><p>可</p></td>
-<td><p>&quot;org001&quot;</p></td>
+<td><p><kbd class="kbd docutils literal notranslate">org001</kbd></p></td>
 </tr>
 <tr class="row-odd"><td><p>name</p></td>
 <td><div class="line-block">
@@ -486,7 +486,7 @@ vi<span class="w"> </span>./exastro-platform/tools/api-auth.conf
 </div>
 </td>
 <td><p>可</p></td>
-<td><p>&quot;org001-name&quot;</p></td>
+<td><p><kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">org001</kbd>-<kbd class="kbd docutils literal notranslate">name</kbd></kbd></p></td>
 </tr>
 <tr class="row-even"><td><p>organization_managers</p></td>
 <td><div class="line-block">
@@ -500,32 +500,32 @@ vi<span class="w"> </span>./exastro-platform/tools/api-auth.conf
 <tr class="row-odd"><td><p>organization_managers[*].username</p></td>
 <td><p>オーガナイゼーション管理者のユーザー名（ログインするときのID）を指定。</p></td>
 <td><p>可</p></td>
-<td><p>&quot;admin&quot;</p></td>
+<td><p><kbd class="kbd docutils literal notranslate">admin</kbd></p></td>
 </tr>
 <tr class="row-even"><td><p>organization_managers[*].email</p></td>
 <td><p>オーガナイゼーション管理者のE-mailアドレスを指定。</p></td>
 <td><p>可</p></td>
-<td><p>&quot;<a class="reference external" href="mailto:admin&#37;&#52;&#48;example&#46;com">admin<span>&#64;</span>example<span>&#46;</span>com</a>&quot;</p></td>
+<td><p><kbd class="kbd docutils literal notranslate">admin&#64;example.com`</kbd></p></td>
 </tr>
 <tr class="row-odd"><td><p>organization_managers[*].firstName</p></td>
 <td><p>オーガナイゼーション管理者の名を指定。</p></td>
 <td><p>可</p></td>
-<td><p>&quot;admin&quot;</p></td>
+<td><p><kbd class="kbd docutils literal notranslate">admin`</kbd></p></td>
 </tr>
 <tr class="row-even"><td><p>organization_managers[*].lastName</p></td>
 <td><p>オーガナイゼーション管理者の姓を指定。</p></td>
 <td><p>可</p></td>
-<td><p>&quot;admin&quot;</p></td>
+<td><p><kbd class="kbd docutils literal notranslate">admin`</kbd></p></td>
 </tr>
 <tr class="row-odd"><td><p>organization_managers[*].credentials[0].type</p></td>
 <td><p>認証方式を指定。</p></td>
 <td><p>不可</p></td>
-<td><p>&quot;password&quot;</p></td>
+<td><p><kbd class="kbd docutils literal notranslate">password`</kbd></p></td>
 </tr>
 <tr class="row-even"><td><p>organization_managers[*].credentials[0].value</p></td>
 <td><p>オーガナイゼーション管理者の初期パスワードを指定。</p></td>
 <td><p>可</p></td>
-<td><p>&quot;password&quot;</p></td>
+<td><p><kbd class="kbd docutils literal notranslate">password`</kbd></p></td>
 </tr>
 <tr class="row-odd"><td><p>organization_managers[*].credentials[0].temporary</p></td>
 <td><p>初回ログイン時のパスワード変更の要否の有無を指定。</p></td>
@@ -712,7 +712,7 @@ git<span class="w"> </span>clone<span class="w"> </span>https://github.com/exast
 </div>
 </div>
 </li>
-<li><p>設定ファイルの <kbd class="kbd docutils literal notranslate">CONF_BASE_URL</kbd> に Exastro Suite の管理用エンドポイント URL を設定します。</p>
+<li><p>設定ファイルの <kbd class="kbd docutils literal notranslate">CONF_BASE_URL</kbd> に Exastro システム の管理用エンドポイント URL を設定します。</p>
 <div class="literal-block-wrapper docutils container" id="id23">
 <div class="code-block-caption"><span class="caption-number">リスト 2.102 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id23" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exastro Platform への接続のための設定情報を登録</span>
@@ -1216,12 +1216,12 @@ curl<span class="w"> </span>-k<span class="w"> </span>-X<span class="w"> </span>
 <div class="line">オーガナイゼーション名を変更することができます。</div>
 </div>
 <figure class="align-left">
-<a class="with-border-thin reference internal image-reference" href="../../../../_images/オーガナイゼーション編集_編集場所.png"><img alt="../../../../_images/%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8A%E3%82%A4%E3%82%BC%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E7%B7%A8%E9%9B%86_%E7%B7%A8%E9%9B%86%E5%A0%B4%E6%89%80.png" class="with-border-thin" src="../../../../_images/%E3%82%AA%E3%83%BC%E3%82%AC%E3%83%8A%E3%82%A4%E3%82%BC%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E7%B7%A8%E9%9B%86_%E7%B7%A8%E9%9B%86%E5%A0%B4%E6%89%80.png" style="width: 600px;" /></a>
+<a class="with-border-thin reference internal image-reference" href="../../../../_images/orgname_edit.png"><img alt="../../../../_images/orgname_edit.png" class="with-border-thin" src="../../../../_images/orgname_edit.png" style="width: 600px;" /></a>
 </figure>
-<div class="admonition note">
-<p class="admonition-title">注釈</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
 <div class="line-block">
-<div class="line">※オーガナイゼーションIDを変更することは出来ません。</div>
+<div class="line">オーガナイゼーションIDを変更することは出来ません。</div>
 </div>
 </div>
 </li>
@@ -1272,10 +1272,10 @@ curl<span class="w"> </span>-k<span class="w"> </span>-X<span class="w"> </span>
 </figure>
 </li>
 </ol>
-<div class="admonition note">
-<p class="admonition-title">注釈</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
 <div class="line-block">
-<div class="line">3.や5.の手順を繰り返し行い、<span class="guilabel">登録</span> ボタンを押下することで、</div>
+<div class="line">リソースプラン設定とリソースプラン解除の手順を繰り返し行い、<span class="guilabel">登録</span> ボタンを押下することで、</div>
 <div class="line">複数のリソースプランの紐づけや解除を、同時に行うことが可能です。</div>
 </div>
 </div>
@@ -1310,32 +1310,32 @@ curl<span class="w"> </span>-k<span class="w"> </span>-X<span class="w"> </span>
 <tbody>
 <tr class="row-even"><td><p>organization name</p></td>
 <td><div class="line-block">
-<div class="line">オーガナイゼーション名を指定。</div>
+<div class="line">オーガナイゼーション名を指定します。</div>
 <div class="line">最大255文字</div>
 </div>
 </td>
 <td><p>可</p></td>
-<td><p>&quot;org001-name&quot;</p></td>
+<td><p><kbd class="kbd compound docutils literal notranslate"><kbd class="kbd docutils literal notranslate">org001</kbd>-<kbd class="kbd docutils literal notranslate">name</kbd></kbd></p></td>
 </tr>
 <tr class="row-odd"><td><p>enabled</p></td>
 <td><div class="line-block">
-<div class="line">オーガナイゼーションの有効・無効設定</div>
+<div class="line">オーガナイゼーションが使用できる状態を有効・無効で選択します。</div>
 </div>
 </td>
 <td><p>不可</p></td>
-<td><p>&quot;true&quot;</p></td>
+<td><p><kbd class="kbd docutils literal notranslate">true</kbd></p></td>
 </tr>
 <tr class="row-even"><td><p>optionsIta.driver</p></td>
 <td><div class="line-block">
-<div class="line">インストールドライバを指定。</div>
-<div class="line">ただし、削除は不可能。</div>
+<div class="line">インストールドライバを指定します。</div>
+<div class="line">ただし、削除は不可能になります。</div>
 </div>
 </td>
 <td><div class="line-block">
-<div class="line">falseからtureに変更は可能。</div>
+<div class="line">falseからtureの変更可能になります。</div>
 </div>
 </td>
-<td><p>&quot;true&quot;</p></td>
+<td><p><kbd class="kbd docutils literal notranslate">true</kbd></p></td>
 </tr>
 </tbody>
 </table>
@@ -1466,8 +1466,8 @@ curl<span class="w"> </span>-k<span class="w"> </span>-X<span class="w"> </span>
 </pre></div>
 </div>
 </div></div>
-<div class="admonition warning">
-<p class="admonition-title">警告</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
 <div class="line-block">
 <div class="line">削除されたオーガナイゼーションは、復活することはできませんので、削除する際は十分にお気を付けください。</div>
 </div>
