@@ -5,7 +5,7 @@ Workspace (ワークスペース)
 はじめに
 ========
 
-| 本書では、Exastro Suite における Workspace (ワークスペース) について説明します。
+| 本書では、Exastro システム における Workspace (ワークスペース) について説明します。
 
 
 ワークスペースとは
@@ -26,9 +26,11 @@ Workspace (ワークスペース)
 ワークスペースの作成手順
 ------------------------
 
+| ワークスペースは、下記の手順で作成します。
+
 #. | :doc:`../platform_management/organization` で作成したオーガナイゼーションにオーガナイゼーション管理者でログインします。
 
-#. | Exastro Platformのメニューより :menuselection:`ワークスペース管理` をクリックします。
+#. | メニューより :menuselection:`ワークスペース管理` をクリックします。
 
    .. image:: /images/ja/manuals/platform/platform_menu.png
       :width: 200px
@@ -74,9 +76,11 @@ Workspace (ワークスペース)
 ワークスペースの編集
 --------------------
 
-#. | Exastro Platformにオーガナイゼーション管理者でログインします。
+| ワークスペースの編集は、下記の手順で行ないます。
 
-#. | Exastro Platformのメニューより :menuselection:`ワークスペース管理` をクリックします。
+#. | Exastro システムにオーガナイゼーション管理者でログインします。
+
+#. | メニューより :menuselection:`ワークスペース管理` をクリックします。
 
    .. image:: /images/ja/manuals/platform/platform_menu.png
       :width: 200px
@@ -90,7 +94,7 @@ Workspace (ワークスペース)
       :align: left
 
    .. warning::
-      | オーガナイゼーション管理者以外でログインしている時は、 :guilabel:`編集` は表示されません。
+      | ワークスペース管理者でログインしている時は、 :guilabel:`編集` は表示されません。
 
 #. | :menuselection:`ワークスペース編集` 画面が表示されるので、ワークスペースの情報を編集し、 :guilabel:`登録` をクリックします。
 
@@ -98,15 +102,32 @@ Workspace (ワークスペース)
       :width: 600px
       :align: left
 
-   .. tips::
-      | ワークスペースIDの変更は出来ません。
+   .. list-table:: ワークスペース編集
+      :widths: 40 200
+      :header-rows: 1
+      :align: left
+   
+      * - 項目名
+        - 説明
+      * - ワークスペースID
+        - | ワークスペースIDの変更は出来ません。
+      * - ワークスペース名
+        - | ワークスペースに割り当てる名前を指定します。
+      * - 環境一覧
+        - | 本番環境、検証環境、開発環境といった作成する環境の一覧を入力します。
+          | この環境はオペレーションに割り当てることが可能です。
+      * - 説明
+        - | ワークスペースの説明を記載します。
+
 
 ワークスペースの削除
 --------------------
 
-#. | Exastro Platformにオーガナイゼーション管理者でログインします。
+| ワークスペースの削除は、下記の手順で行ないます。
 
-#. | Exastro Platformのメニューより :menuselection:`ワークスペース管理` をクリックします。
+#. | Exastro システムにオーガナイゼーション管理者でログインします。
+
+#. | メニューより :menuselection:`ワークスペース管理` をクリックします。
 
    .. image:: /images/ja/manuals/platform/platform_menu.png
       :width: 200px
@@ -119,14 +140,14 @@ Workspace (ワークスペース)
       :align: left
 
    .. warning::
-      | オーガナイゼーション管理者以外でログインしている時は、 :guilabel:`削除` は表示されません。
+      | ワークスペース管理者でログインしている時は、 :guilabel:`編集` は表示されません。
 
-#. | 確認メッセージが表示されるので、オーガナイゼーションIDとワークスペースIDを入力し、 :guilabel:`はい、削除します` をクリックします。
+#. | 確認メッセージが表示されるので、:kbd:`オーガナイゼーションID/ワークスペースID` を入力し、 :guilabel:`はい、削除します` をクリックします。
 
    .. figure:: /images/ja/manuals/platform/workspace/ワークスペース削除実行確認画面.png
       :width: 600px
       :align: left
 
-   .. tips::
+   .. tip::
       | 一度削除したワークスペースを復元することは出来ません。
 
