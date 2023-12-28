@@ -12,3 +12,4 @@
    role
    notification  
    mailserver_settings 
+   organization_settings 

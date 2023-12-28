@@ -5,29 +5,29 @@
 はじめに
 ========
 
-| 本書では、Exastro Suite における 通知管理 について説明します。
+| 本書では、Exastro システム における 通知管理 について説明します。
 
 
-通知管理とは
-============
+通知先設定の登録
+================
 
 | 通知管理では、IT AutomationやOASEで利用するイベントごとの通知を受け取るための設定を行うことが出来ます。
 
-通知先設定の手順
-================
+通知先設定の登録手順
+--------------------
 
-| 通知先の設定は、下記の方法で行ないます。
+| 通知先設定は、下記の手順で行ないます。
 
-手順
-----
+#. | Exastro システムにオーガナイゼーション管理者でログインします。
 
-#. | Exastro Platformにオーガナイゼーション管理者でログインします。
-
-#. | Exastro Platformのメニューより :menuselection:`通知管理` をクリックします。
+#. | メニューより :menuselection:`通知管理` をクリックします。
 
    .. image:: /images/ja/manuals/platform/platform_menu.png
       :width: 200px
       :align: left
+
+   .. note:: | OASE機能について
+      | OASE機能の詳細につきましては :doc:`../platform_management/organization` をご参照ください。
 
 #. | :menuselection:`通知先ワークスペース一覧` 画面が表示されるので、通知先設定を行いたいワークスペースを選択、または :guilabel:`通知先設定` をクリックします。
 
@@ -60,24 +60,24 @@
       * - 通知先ID
         - | 通知先に割り当てる一意のIDを指定します。
           | ここで指定した ID を使ってシステム間の連携を行います。
+          | 初期値として自動的にIDが付与されます。
       * - 通知先名
         - | 通知先に割り当てる名前を指定します。
       * - 通知方法
         - | 通知方法を指定します。
       * - 通知先
         - | 指定した通知方法によって設定が異なります。
-        - | 通知先をe-mail形式もしくはURL形式で記載します。
-
-   .. note:: | OASE機能について
-      | OASE機能の詳細につきましては :doc:`` をご参照ください。
+          | 通知先をe-mail形式もしくはURL形式で記載します。
 
 
 通知先設定の詳細確認
 --------------------
 
-#. | Exastro Platformにオーガナイゼーション管理者でログインします。
+| 通知先設定の詳細確認は、下記の手順で行ないます。
 
-#. | Exastro Platformのメニューより :menuselection:`通知管理` をクリックします。
+#. | Exastro システムにオーガナイゼーション管理者でログインします。
+
+#. | メニューより :menuselection:`通知管理` をクリックします。
 
    .. image:: /images/ja/manuals/platform/platform_menu.png
       :width: 200px
@@ -89,8 +89,7 @@
       :width: 600px
       :align: left
       
-   .. note:: | アクセス権限のあるワークスペースのみ表示されます。
-      :align: left
+   .. tip:: | アクセス権限のあるワークスペースのみ表示されます。
 
 #. | :menuselection:`通知先設定一覧` 画面が表示されるので、詳細確認を行いたい通知先設定をクリックします。
 
@@ -105,18 +104,20 @@
       :width: 600px
       :align: left
 
-   .. tips:: | 通知テスト
-      | 登録されている通知先設定の内容で、メッセージの通知テストを行う場合は、【通知テスト】ボタンを押下して、メッセージ通知を確認できます。
-      | 【通知テスト】ボタン押下後、確認画面が表示され、応答後、メッセージが指定された通知先に送信されます。
+   .. tip:: 
+      | 通知テストについて
+      | 登録されている通知先設定の内容で、メッセージの通知テストを行う場合は、:guilabel:`通知テスト` ボタンを押下して、メッセージ通知を確認できます。
+      | :guilabel:`通知テスト` ボタン押下後、確認画面が表示され、応答後、メッセージが指定された通知先に送信されます。
       | 送信されるタイトル・本文は"notification test"となります。
-      :align: left
 
 
 通知先設定編集
 --------------
 
-#. | Exastro Platformにオーガナイゼーション管理者でログインします。
-#. | Exastro Platformのメニューより :menuselection:`通知管理` をクリックします。
+| 通知先設定の編集は、下記の手順で行ないます。
+
+#. | Exastro システムにオーガナイゼーション管理者でログインします。
+#. | メニューより :menuselection:`通知管理` をクリックします。
 
    .. image:: /images/ja/manuals/platform/platform_menu.png
       :width: 200px
@@ -129,7 +130,6 @@
       :align: left
 
    .. note:: | アクセス権限のあるワークスペースのみ表示されます。
-      :align: left
 
 #. | :menuselection:`通知先設定一覧` 画面が表示されるので、 :guilabel:`編集` をクリックします。
 
@@ -137,19 +137,34 @@
       :width: 600px
       :align: left
 
-
 #. | :menuselection:`通知先設定編集` 画面が表示されるので、通知先の情報を編集し、 :guilabel:`登録` をクリックします。
 
    .. image:: /images/ja/manuals/platform/notification/通知先設定編集画面.png
       :width: 600px
       :align: left
 
+   .. list-table:: 通知先設定編集
+      :widths: 40 200
+      :header-rows: 1
+      :align: left
+   
+      * - 項目名
+        - 説明
+      * - 通知先ID
+        - | 通知先IDは変更出来ません。
+      * - 通知先名
+        - | 通知先に割り当てる名前を指定します。
+      * - 通知方法
+        - | 通知方法を指定します。
+      * - 通知先
+        - | 指定した通知方法によって設定が異なります。
+          | 通知先をe-mail形式もしくはURL形式で記載します。
 
 通知先設定削除
 --------------
 
-#. | Exastro Platformにオーガナイゼーション管理者でログインします。
-#. | Exastro Platformのメニューより :menuselection:`通知管理` をクリックします。
+#. | Exastro システムにオーガナイゼーション管理者でログインします。
+#. | メニューより :menuselection:`通知管理` をクリックします。
 
    .. image:: /images/ja/manuals/platform/platform_menu.png
       :width: 200px
@@ -162,7 +177,6 @@
       :align: left
 
    .. note:: | アクセス権限のあるワークスペースのみ表示されます。
-      :align: left
 
 #. | :menuselection:`通知先設定一覧` 画面が表示されるので、 :guilabel:`削除` をクリックします。
 
@@ -170,11 +184,11 @@
       :width: 600px
       :align: left
 
-#. | 確認メッセージが表示されるので、ワークスペースIDと通知先IDを入力し、 :guilabel:`はい、削除します` をクリックします。
+#. | 確認メッセージが表示されるので、:kbd:`ワークスペースID/通知先ID` を入力し、 :guilabel:`はい、削除します` をクリックします。
 
    .. image:: /images/ja/manuals/platform/notification/通知先設定削除実行確認画面.png
       :width: 600px
       :align: left
 
-   .. tips::
+   .. tip::
       | 一度削除した通知先設定を復元することは出来ません。

@@ -5,14 +5,14 @@
 はじめに
 ========
 
-| 本書では、Exastro Suite におけるロールについて説明します。
+| 本書では、Exastro システム におけるロールについて説明します。
 
 
 ロールとは
 ==========
 
 | ロールとは、ユーザやワークスペース内のデータといった Exastro システムにおけるリソースに対する操作(作成、更新、削除)権限の集合のことです。
-| Exastro Suiteのロールの種類としては以下のものがあります。
+| Exastro システムのロールの種類としては以下のものがあります。
 
 - | オーガナイゼーションロール
   | オーガナイゼーションの管理を行うロールで以下の３つがあります
@@ -31,8 +31,8 @@
        | （_organization-user-role-manager)
      - ユーザーおよびロールの管理が可能です。
    * - | ユーザー管理者
-       | (_organization-user-manager)
-     - ユーザーの管理が可能です
+       | （_organization-user-manager)
+     - ユーザーの管理が可能です。
   
 
 - | ワークスペースロール
@@ -67,10 +67,10 @@
 ロール追加・ワークスペース紐づけ
 --------------------------------
 
-#. | Exastro Platformにオーガナイゼーション管理者 または _${ws-id}-adminロールに紐づくユーザでログインします。
+#. | Exastro システムにオーガナイゼーション管理者 または _${ws-id}-adminロールに紐づくユーザでログインします。
 
 
-#. | Exastro Platformのメニューより :menuselection:`ロール管理` をクリックします。
+#. | メニューより :menuselection:`ロール管理` をクリックします。
 
    .. image:: /images/ja/manuals/platform/platform_menu.png
       :width: 200px
@@ -90,6 +90,22 @@
       :width: 600px
       :align: left
 
+   .. list-table:: 新規ロール登録
+      :widths: 40 200
+      :header-rows: 1
+      :align: left
+   
+      * - 項目名
+        - 説明
+      * - ロール名
+        - | ロールに割り当てる名前を入力します。
+      * - ロール種別
+        - | workspace固定です。
+      * - 説明
+        - | ロールの説明を入力します。
+      * - 使用ワークスペース
+        - | 使用するワークスペースを指定します。
+
 | :menuselection:`使用ワークスペース` にワークスペースの一覧が表示されるので、当該ロールに紐づけるワークスペースを選択します。
     
 .. figure:: /images/ja/manuals/platform/role/platform_role_workspace_used.png
@@ -103,14 +119,14 @@
 ユーザ・ロール紐づけ
 --------------------
 
-#. | Exastro Platformにオーガナイゼーション管理者 または _${ワークスペースID}-adminロールに紐づくユーザでログインします。
-#. | Exastro Platformのメニューより :menuselection:`ロール管理` をクリックします。
+#. | Exastro システムにオーガナイゼーション管理者 または _${ワークスペースID}-adminロールに紐づくユーザでログインします。
+#. | メニューより :menuselection:`ロール管理` をクリックします。
 
    .. image:: /images/ja/manuals/platform/platform_menu.png
       :width: 200px
       :align: left
 
-   .. note:: | オーガナイゼーション管理者、_${ws-id}-adminロールに紐づくユーザ以外でログインしている時は、メニューに :menuselection:`ロール管理` は表示されません。
+   .. note:: | オーガナイゼーション管理者（ロール管理・ロール付与権限を有するユーザー）またはワークスペース管理者のユーザーでログインしている時のみ、メニューに :menuselection:`ロール管理` が表示されます。
 
 #. | :menuselection:`ロール一覧` 画面が表示されるので、ユーザとロールの紐づけを変更したいロールを選択し :guilabel:`ユーザ` ボタンをクリックします。
 
@@ -127,14 +143,16 @@
 ロールの編集
 ------------
 
-#. | Exastro Platformにオーガナイゼーション管理者でログインします。
-#. | Exastro Platformのメニューより :menuselection:`ロール管理` をクリックします。
+| ロールの編集は、下記の手順で行ないます。
+
+#. | システムにオーガナイゼーション管理者でログインします。
+#. | メニューより :menuselection:`ロール管理` をクリックします。
 
    .. image:: /images/ja/manuals/platform/platform_menu.png
       :width: 200px
       :align: left
 
-   .. note:: | オーガナイゼーション管理者、_${ws-id}-adminロールに紐づくユーザ以外でログインしている時は、メニューに :menuselection:`ロール管理` は表示されません。
+   .. note:: | オーガナイゼーション管理者（ロール管理・ロール付与権限を有するユーザー）またはワークスペース管理者のユーザーでログインしている時のみ、メニューに :menuselection:`ロール管理` が表示されます。
 
 #. | :menuselection:`ロール一覧` 画面が表示されるので、:guilabel:`編集` ボタンをクリックします。
 
@@ -148,18 +166,36 @@
       :width: 600px
       :align: left
 
+   .. list-table:: ロール編集
+      :widths: 40 200
+      :header-rows: 1
+      :align: left
+   
+      * - 項目名
+        - 説明
+      * - ロール名
+        - | ロール名の変更は出来ません。
+      * - ロール種別
+        - | workspace固定です。
+      * - 説明
+        - | ロールの説明を入力します。
+      * - 使用ワークスペース
+        - | 使用するワークスペースを指定します。
+
 ロールの削除
 ------------
 
-#. | Exastro Platformにオーガナイゼーション管理者でログインします。
+| ロールの削除は、下記の手順で行ないます。
 
-#. | Exastro Platformのメニューより :menuselection:`ロール管理` をクリックします。
+#. | Exastro システムにオーガナイゼーション管理者でログインします。
+
+#. | メニューより :menuselection:`ロール管理` をクリックします。
 
    .. image:: /images/ja/manuals/platform/platform_menu.png
       :width: 200px
       :align: left
 
-   .. note:: | オーガナイゼーション管理者、_${ws-id}-adminロールに紐づくユーザ以外でログインしている時は、メニューに :menuselection:`ロール管理` は表示されません。
+   .. note:: | オーガナイゼーション管理者（ロール管理・ロール付与権限を有するユーザー）またはワークスペース管理者のユーザーでログインしている時のみ、メニューに :menuselection:`ロール管理` が表示されます。
 
 #. | :menuselection:`ロール一覧` 画面が表示されるので、:guilabel:`削除` ボタンをクリックします。
 
@@ -167,11 +203,11 @@
       :width: 600px
       :align: left
 
-#. | 確認メッセージが表示されるので、オーガナイゼーションIDとロールIDを入力し、 :guilabel:`はい、削除します` をクリックします。
+#. | 確認メッセージが表示されるので、:kbd:`オーガナイゼーションID/ロールID` を入力し、 :guilabel:`はい、削除します` をクリックします。
 
    .. figure:: /images/ja/manuals/platform/role/platform_role_delete.png
       :width: 600px
       :align: left
 
-   .. tips::
+   .. tip::
       | 一度削除したロールを復元することは出来ません。
