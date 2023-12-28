@@ -18,8 +18,8 @@ Organization (オーガナイゼーション)
 .. figure:: /images/ja/diagram/overview_of_the_organization.png
     :alt: オーガナイゼーション全体図
 
-オーガナイゼーションの作成
-==========================
+オーガナイゼーションの作成方法
+==============================
 
 | オーガナイゼーションの作成方法について説明します。
 
@@ -58,8 +58,8 @@ Organization (オーガナイゼーション)
 
 .. _organization_creation_v2.1:
 
-オーガナイゼーション作成手順
-----------------------------
+オーガナイゼーション作成
+------------------------
 
 | オーガナイゼーションの作成方法には、下記の4通りの方法があります。
 
@@ -531,7 +531,7 @@ Organization (オーガナイゼーション)
               "ts": "2022-08-18T05:29:35.643Z"
             }
 
-   .. group-tab:: Rest API による作成
+   .. group-tab:: Rest API による実行
 
       - 特徴
 
@@ -683,7 +683,7 @@ Organization (オーガナイゼーション)
             :align: left
             :class: with-border-thin
 
-   .. group-tab:: Rest API による一覧表示
+   .. group-tab:: Rest API による実行
 
      | cURL を使って Rest API を利用する場合は、以下の様なコマンドを実行してください。
      
@@ -827,7 +827,7 @@ Organization (オーガナイゼーション)
             :align: left
             :class: with-border-thin
 
-      #. | 解除確認画面で削除するリソースプランIDを入力して、 :guilabel:`はい、解除します` ボタンを押下します。
+      #. | 解除確認画面で紐づけを解除する :kbd:`リソースプランID` を入力して、 :guilabel:`はい、解除します` ボタンを押下します。
 
          .. figure:: /images/ja/manuals/platform/organization/オーガナイゼーション編集_解除確認.png
             :width: 600px
@@ -846,7 +846,7 @@ Organization (オーガナイゼーション)
          | リソースプラン設定とリソースプラン解除の手順を繰り返し行い、:guilabel:`登録` ボタンを押下することで、
          | 複数のリソースプランの紐づけや解除を、同時に行うことが可能です。
 
-   .. group-tab:: Rest API による編集
+   .. group-tab:: Rest API による実行
 
      | cURL を使って Rest API を利用する場合は、以下の様なコマンドを実行してください。
 
@@ -979,14 +979,14 @@ Organization (オーガナイゼーション)
              :align: left
              :class: with-border-thin
 
-       #. | 削除確認で本当に削除する場合は、platform/削除するオーガナイゼーションID を入力して、 :guilabel:`はい、削除します` ボタンを押下します。
+       #. | 削除確認で本当に削除する場合は、 :kbd:`platform/削除するオーガナイゼーションID` を入力して、 :guilabel:`はい、削除します` ボタンを押下します。
 
           .. figure:: /images/ja/manuals/platform/organization/オーガナイゼーション削除_実行確認.png
              :width: 600px
              :align: left
              :class: with-border-thin
 
-   .. group-tab:: Rest API による削除
+   .. group-tab:: Rest API による実行
 
       | cURL を使って Rest API を利用する場合は、以下の様なコマンドを実行してください。
 
