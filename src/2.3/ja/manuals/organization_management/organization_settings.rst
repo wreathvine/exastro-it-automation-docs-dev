@@ -10,6 +10,16 @@
 | 本書はオーガナイゼーション管理者が、カスタマイズ可能なシステムの設定について記載しています。
 | ※記載のAPIを実行するにはオーガナイゼーション管理者の権限が必要です。
 
+
+前提条件
+========
+
+| 本作業には下記のコマンドが必要となるため、事前にインストールをしてください。
+
+- 作業クライアントに必要なアプリケーション
+
+  - :kbd:`curl`
+
 設定項目のカテゴリについて
 ==========================
 
@@ -97,28 +107,28 @@
 
 - 項目について
 
-.. list-table:: トークンの項目説明
-    :widths: 20, 40
-    :header-rows: 1
-    :align: left
+  .. list-table:: トークンの項目説明
+      :widths: 20, 40
+      :header-rows: 1
+      :align: left
 
-    * - 項目
-      - 内容
-    * - refresh_token_max_lifespan_enabled
-      -  | refresh_tokenの有効期限の有無(必須)
-         | true: 有効期限あり
-         | false: 有効期限なし
-         | デフォルト: true
-    * - refresh_token_max_lifespan_days
-      -  | refresh_tokenの有効日数
-         | ※refresh_token_max_lifespan_enabled=trueの場合のみ必須
-         | デフォルト: 365 (1年)
-         | 最小値: 1
-         | 最大値: 1,095(3年)
-    * - access_token_lifespan_minutes
-      -  | access_tokenの有効分数(必須)
-         | デフォルト: 1,440 (1日)
-         | 最小値: 1
-         | 最大値: 10,080 (7日)
+      * - 項目
+        - 内容
+      * - refresh_token_max_lifespan_enabled
+        -  | refresh_tokenの有効期限の有無(必須)
+           | true: 有効期限あり
+           | false: 有効期限なし
+           | デフォルト: true
+      * - refresh_token_max_lifespan_days
+        -  | refresh_tokenの有効日数
+           | ※refresh_token_max_lifespan_enabled=trueの場合のみ必須
+           | デフォルト: 365 (1年)
+           | 最小値: 1
+           | 最大値: 1,095(3年)
+      * - access_token_lifespan_minutes
+        -  | access_tokenの有効分数(必須)
+           | デフォルト: 1,440 (1日)
+           | 最小値: 1
+           | 最大値: 10,080 (7日)
 
 
