@@ -209,23 +209,23 @@ Organization (オーガナイゼーション)
             * - organization_managers[*].email
               - オーガナイゼーション管理者のE-mailアドレスを指定。
               - 可
-              - :kbd:`admin@example.com``
+              - :kbd:`admin@example.com`
             * - organization_managers[*].firstName
               - オーガナイゼーション管理者の名を指定。
               - 可
-              - :kbd:`admin``
+              - :kbd:`admin`
             * - organization_managers[*].lastName
               - オーガナイゼーション管理者の姓を指定。
               - 可
-              - :kbd:`admin``
+              - :kbd:`admin`
             * - organization_managers[*].credentials[0].type
               - 認証方式を指定。
               - 不可
-              - :kbd:`password``
+              - :kbd:`password`
             * - organization_managers[*].credentials[0].value
               - オーガナイゼーション管理者の初期パスワードを指定。
               - 可
-              - :kbd:`password``
+              - :kbd:`password`
             * - organization_managers[*].credentials[0].temporary
               - 初回ログイン時のパスワード変更の要否の有無を指定。
               - 可
@@ -431,32 +431,32 @@ Organization (オーガナイゼーション)
                 | ※先頭文字は英小文字であること。
                 | ※予約語(後述)に合致しないこと。
               - 可
-              - "org001"
+              - :kbd:`org001`
             * - organization name
               - | オーガナイゼーション名を指定。
                 | 最大255文字
               - 可
-              - "org001-name"
+              - :kbd:`org001-name`
             * - organization manager's username
               - オーガナイゼーション管理者のユーザー名（ログインするときのID）を指定。
               - 可
-              - "admin"
+              - :kbd:`admin`
             * - organization manager's email
               - オーガナイゼーション管理者のE-mailアドレスを指定。
               - 可
-              - "admin@example.com"
+              - :kbd:`admin@example.com`
             * - organization manager's firstName
               - オーガナイゼーション管理者の名を指定。
               - 可
-              - "admin"
+              - :kbd:`admin`
             * - organization manager's lastName
               - オーガナイゼーション管理者の姓を指定。
               - 可
-              - "admin"
+              - :kbd:`admin`
             * - organization manager's initial password
               - オーガナイゼーション管理者の初期パスワードを指定。
               - 可
-              - "password"
+              - :kbd:`password`
             * - organization plan id (optional)
               - リソースプランを指定。
               - 可
@@ -561,32 +561,32 @@ Organization (オーガナイゼーション)
                 | ※先頭文字は英小文字であること。
                 | ※予約語(後述)に合致しないこと。
               - 可
-              - "org001"
+              - :kbd:`org001`
             * - organization name
               - | オーガナイゼーション名を指定。
                 | 最大255文字
               - 可
-              - "org001-name"
+              - :kbd:`org001-name`
             * - organization manager's username
               - オーガナイゼーション管理者のユーザー名（ログインするときのID）を指定。
               - 可
-              - "admin"
+              - :kbd:`admin`
             * - organization manager's email
               - オーガナイゼーション管理者のE-mailアドレスを指定。
               - 可
-              - "admin@example.com"
+              - :kbd:`admin@example.com`
             * - organization manager's firstName
               - オーガナイゼーション管理者の名を指定。
               - 可
-              - "admin"
+              - :kbd:`admin`
             * - organization manager's lastName
               - オーガナイゼーション管理者の姓を指定。
               - 可
-              - "admin"
+              - :kbd:`admin`
             * - organization manager's initial password
               - オーガナイゼーション管理者の初期パスワードを指定。
               - 可
-              - "password"
+              - :kbd:`password`
             * - options.sslRequired
               - SSL 接続の有無を指定。
               - 可
@@ -1000,7 +1000,7 @@ Organization (オーガナイゼーション)
           -H "Authorization: basic ${BASE64_BASIC}" \
           "${BASE_URL}/api/platform/organizations/${ORGANIZATION_ID}"
 
-.. tip:: 
+.. warning:: 
  
    | 削除されたオーガナイゼーションは、復活することはできませんので、削除する際は十分にお気を付けください。
 
