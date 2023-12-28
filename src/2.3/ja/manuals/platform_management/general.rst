@@ -29,15 +29,15 @@
         - 説明
       * - | ユーザー名(Username)
         - | インストール時に指定したシステム管理者のユーザー名
-          | example. admin ※
+          | e.g. admin ※
       * - | パスワード(Password)
         - | インストール時に指定したシステム管理者のパスワード
-          | example. password ※
+          | e.g. password ※
 
    .. tip::
              |  ユーザー名、パスワードは、インストール時に指定したシステム管理者のユーザー名、パスワードを使用してください。
-             |  docker版でインストールした際のユーザー名、パスワードは、「 :ref:`install_docker_compose_v2.2` 」を参照
-             |  helm版でインストールした際のユーザー名は、パスワード、「 :ref:`install_helm_v2.2` 」を参照
+             |  docker版でインストールした際のユーザー名、パスワードは、:ref:`install_docker_compose_v2.2` を参照
+             |  helm版でインストールした際のユーザー名、パスワードは、:ref:`install_helm_v2.2` を参照
 
 #. | ログイン後、下記のようにオーガナイゼーション管理画面が表示されます。
 
