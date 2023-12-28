@@ -5,14 +5,14 @@ Organization (オーガナイゼーション)
 はじめに
 ========
 
-| 本書では、Exastro Suite における Organization (オーガナイゼーション) について説明します。
+| 本書では、Exastro システム における Organization (オーガナイゼーション) について説明します。
 
 
 オーガナイゼーションとは
 ========================
 
 | Exastro IT Automation 2.0 から導入されたマルチテナント機能におけるテナントの単位のことで、論理的に組織の空間を区分する単位のことで、たとえ同一の Exastro システムであってもデータの共有がされることのない、完全にプライベートな空間です。
-| Exastro Suite の各アプリケーションの利用を開始するためには、オーガナイゼーションを作成する必要があります。
+| Exastro システム の各アプリケーションの利用を開始するためには、オーガナイゼーションを作成する必要があります。
 
 
 .. figure:: /images/ja/diagram/overview_of_the_organization.png
@@ -128,7 +128,7 @@ Organization (オーガナイゼーション)
                 | 一度インストールしたドライバを削除することは不可能です。
 
          .. tip:: 
-            インストールドライバについては「～～」を参照
+            インストールドライバについては、:doc:`../cicd_for_iac/cicd_for_iac` を参照
 
    .. group-tab:: 設定ファイルとスクリプトによる作成
 
@@ -148,7 +148,7 @@ Organization (オーガナイゼーション)
             # Exastro Platform の資材を入手
             git clone https://github.com/exastro-suite/exastro-platform.git
 
-      #. 設定ファイルの :kbd:`CONF_BASE_URL` に Exastro Suite の管理用エンドポイント URL を設定します。
+      #. 設定ファイルの :kbd:`CONF_BASE_URL` に Exastro システム の管理用エンドポイント URL を設定します。
 
          .. code-block:: bash
             :caption: コマンド
@@ -191,12 +191,12 @@ Organization (オーガナイゼーション)
                 | ※先頭文字は英小文字であること。
                 | ※予約語(後述)に合致しないこと。
               - 可
-              - "org001"
+              - :kbd:`org001`
             * - name
               - | オーガナイゼーション名を指定。
                 | 最大255文字
               - 可
-              - "org001-name"
+              - :kbd:`org001-name`
             * - organization_managers
               - | オーガナイゼーション管理者の情報を指定。
                 | ※複数名登録するときは繰り返し指定可能
@@ -205,27 +205,27 @@ Organization (オーガナイゼーション)
             * - organization_managers[*].username
               - オーガナイゼーション管理者のユーザー名（ログインするときのID）を指定。
               - 可
-              - "admin"
+              - :kbd:`admin`
             * - organization_managers[*].email
               - オーガナイゼーション管理者のE-mailアドレスを指定。
               - 可
-              - "admin@example.com"
+              - :kbd:`admin@example.com``
             * - organization_managers[*].firstName
               - オーガナイゼーション管理者の名を指定。
               - 可
-              - "admin"
+              - :kbd:`admin``
             * - organization_managers[*].lastName
               - オーガナイゼーション管理者の姓を指定。
               - 可
-              - "admin"
+              - :kbd:`admin``
             * - organization_managers[*].credentials[0].type
               - 認証方式を指定。
               - 不可
-              - "password"
+              - :kbd:`password``
             * - organization_managers[*].credentials[0].value
               - オーガナイゼーション管理者の初期パスワードを指定。
               - 可
-              - "password"
+              - :kbd:`password``
             * - organization_managers[*].credentials[0].temporary
               - 初回ログイン時のパスワード変更の要否の有無を指定。
               - 可
@@ -388,7 +388,7 @@ Organization (オーガナイゼーション)
             # Exastro Platform の資材を入手
             git clone https://github.com/exastro-suite/exastro-platform.git
 
-      #. 設定ファイルの :kbd:`CONF_BASE_URL` に Exastro Suite の管理用エンドポイント URL を設定します。
+      #. 設定ファイルの :kbd:`CONF_BASE_URL` に Exastro システム の管理用エンドポイント URL を設定します。
 
          .. code-block:: bash
             :caption: コマンド
@@ -788,13 +788,13 @@ Organization (オーガナイゼーション)
      
       #. | オーガナイゼーション名を変更することができます。
 
-         .. figure:: /images/ja/manuals/platform/organization/オーガナイゼーション編集_編集場所.png
+         .. figure:: /images/ja/manuals/platform/organization/orgname_edit.png
             :width: 600px
             :align: left
             :class: with-border-thin
           
-         .. note:: 
-            | ※オーガナイゼーションIDを変更することは出来ません。
+         .. tip:: 
+            | オーガナイゼーションIDを変更することは出来ません。
 
       #. | 追加したいドライバにチェックを入れることで、インストールするドライバを追加することができます。
          | しかし、インストール済みのドライバを削除することはできません。
@@ -842,8 +842,8 @@ Organization (オーガナイゼーション)
             :align: left
             :class: with-border-thin
 
-      .. note:: 
-         | 3.や5.の手順を繰り返し行い、:guilabel:`登録` ボタンを押下することで、
+      .. tip:: 
+         | リソースプラン設定とリソースプラン解除の手順を繰り返し行い、:guilabel:`登録` ボタンを押下することで、
          | 複数のリソースプランの紐づけや解除を、同時に行うことが可能です。
 
    .. group-tab:: Rest API による編集
@@ -865,19 +865,19 @@ Organization (オーガナイゼーション)
           - 変更
           - デフォルト値・選択可能な設定値
         * - organization name
-          - | オーガナイゼーション名を指定。
+          - | オーガナイゼーション名を指定します。
             | 最大255文字
           - 可
-          - "org001-name"
+          - :kbd:`org001-name`
         * - enabled
-          - | オーガナイゼーションの有効・無効設定
+          - | オーガナイゼーションが使用できる状態を有効・無効で選択します。
           - 不可
-          - "true"
+          - :kbd:`true`
         * - optionsIta.driver
-          - | インストールドライバを指定。
-            | ただし、削除は不可能。
-          - | falseからtureに変更は可能。
-          - "true"
+          - | インストールドライバを指定します。
+            | ただし、削除は不可能になります。
+          - | falseからtureの変更可能になります。
+          - :kbd:`true`
 
      .. code-block:: bash
 
@@ -1000,7 +1000,7 @@ Organization (オーガナイゼーション)
           -H "Authorization: basic ${BASE64_BASIC}" \
           "${BASE_URL}/api/platform/organizations/${ORGANIZATION_ID}"
 
-.. warning:: 
+.. tip:: 
  
    | 削除されたオーガナイゼーションは、復活することはできませんので、削除する際は十分にお気を付けください。
 
