@@ -54,7 +54,7 @@ help:
 html: Makefile
 # 	@$(SPHINXBUILD) -b html "$(SOURCEDIR)" "$(DOCSDIR)" $(SPHINXOPTS) $(O)
 # 	touch $(DOCSDIR)/.nojekyll
-	version=$(VERSION) ; \
+	version=`git branch --contains | cut -d " " -f 2` ; \
 	sed -e "s/#__version__#/$$version/" $(SOURCEDIR)/index.html > $(DOCSDIR)/index.html
 
 html-%: $(addprefix html-, $(NAMES))
@@ -66,11 +66,11 @@ html-%:
 	fi \
 	done
 	touch $(DOCSDIR)/.nojekyll
-	version=$(VERSION) ; \
+	version=`git branch --contains | cut -d " " -f 2` ; \
 	sed -e "s/#__version__#/$$version/" $(SOURCEDIR)/index.html > $(DOCSDIR)/index.html
 
 html-all:
-	@for version in $(VERSIONS) ; do \
+	@for version in `ls -1 $(SOURCEDIR)/ja` ; do \
 	for lang in $(LANGUAGES) ; do \
 	if [ -d "$(SOURCEDIR)/$$lang/$$version" ] ; then \
 	$(SPHINXBUILD) -b html "$(SOURCEDIR)/$$lang/$$version" "$(DOCSDIR)/$$lang/$$version" $(SPHINXOPTS) $(O) ; \
@@ -78,7 +78,7 @@ html-all:
 	done ; \
 	done
 	touch $(DOCSDIR)/.nojekyll
-	version=$(VERSION) ; \
+	version=`git branch --contains | cut -d " " -f 2` ; \
 	sed -e "s/#__version__#/$$version/" $(SOURCEDIR)/index.html > $(DOCSDIR)/index.html
 
 clean:
