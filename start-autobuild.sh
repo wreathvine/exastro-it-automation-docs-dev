@@ -9,7 +9,7 @@ echo ${sp_port}"port process kill."
 lsof -i :$sp_port | grep -c $sp_port && kill -9 `lsof -i :$sp_port|grep $sp_port|awk '{print $2}'`
 
 version=`git branch --contains | cut -d " " -f 2`
-sed -i "s/#__version__#/$version/" /workspace/exastro-it-automation-docs.code-workspace
+sed "s/#__version__#/$version/" template.code-workspace > /workspace/exastro-it-automation-docs.code-workspace
 
 # make html-all
 
