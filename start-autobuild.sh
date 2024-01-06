@@ -1,7 +1,7 @@
 #!/bin/sh
 
 if [ -z "$sphinx_port" ]; then
-  sp_port=8000
+  sp_port=9000
 else
   sp_port=$sphinx_port
 fi
