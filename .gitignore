@@ -6,3 +6,4 @@ docs
 _build
 /my-repo
 /my-repo.pub
+*.code-workspace
