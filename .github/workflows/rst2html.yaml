@@ -48,7 +48,8 @@ jobs:
     - name: Build
       run: |
           cd workspace
-          rm -rf docs
+          rm -rf docs/ja
+          rm -rf docs/en
           make html-all
 
     - name: Commit
