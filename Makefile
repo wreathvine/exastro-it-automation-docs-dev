@@ -78,7 +78,7 @@ html-all:
 	done ; \
 	done
 	touch $(DOCSDIR)/.nojekyll
-	version=`git branch --contains | cut -d " " -f 2` ; \
+	version=`ls -1r "$(SOURCEDIR)/ja/" | head -n 1` ; \
 	sed -e "s/#__version__#/$$version/" $(SOURCEDIR)/index.html > $(DOCSDIR)/index.html
 
 clean:
