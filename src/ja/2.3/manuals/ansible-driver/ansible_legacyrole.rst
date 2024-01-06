@@ -124,7 +124,7 @@ Ansible-LegacyRoleの作業フロー
 
    #. | **Ansible Automation Controllerホスト情報を登録（必要に応じて実施）**
       | :menuselection:`Ansible共通 --> Ansible Automation Controllerホスト一覧` から、Ansible Automation Controllerのホスト情報を登録します。
-      | 詳細は「 :ref:`ansible_common_ansible_automation_controlller_hosts` 」を参照してください。
+      | 詳細は「 :ref:`ansible_common_ansible_automation_controller_hosts` 」を参照してください。
 
    #. | **インターフェース情報の登録**
       | :menuselection:`Ansible共通 --> インターフェース情報` から、Ansible Core、Ansible Automation Controllerのどちらを実行エンジンにするかを選択し、実行エンジンのサーバへの接続情報を登録します。

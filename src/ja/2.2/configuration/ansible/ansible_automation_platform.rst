@@ -545,10 +545,10 @@ Organization 追加時の作業
 ITA に認証トークンと組織を登録
 ------------------------------
 
-| :ref:`general_operations_interface_information` を参照し、:menuselection:`Ansible共通 --> インターフェース情報` に :ref:`platform_output_token` で作成した認証トークンと :ref:`platform_make_organization` で作成した組織の登録を行ってください。
+| :ref:`ansible_common_interface_information` を参照し、:menuselection:`Ansible共通 --> インターフェース情報` に :ref:`platform_output_token` で作成した認証トークンと :ref:`platform_make_organization` で作成した組織の登録を行ってください。
 |
 
-.. warning:: | 組織名を登録する際は、認証トークンを登録してから1分程度経過後(※)、「 :ref:`general_operations_interface_information` 」を再表示し、「 :ref:`platform_make_organization` 」で作成した組織名を選択してください。
+.. warning:: | 組織名を登録する際は、認証トークンを登録してから1分程度経過後(※)、「 :ref:`ansible_common_interface_information` 」を再表示し、「 :ref:`platform_make_organization` 」で作成した組織名を選択してください。
 
   ※ バックヤードで各認証トークンに対応したユーザーに紐づいている組織を収集し、プルダウンに表示しているため。
 

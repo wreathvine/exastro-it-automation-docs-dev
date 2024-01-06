@@ -364,7 +364,7 @@ Movement と Ansible Role の紐付け
 | 本シナリオでは、:kbd:`server01` というホスト名をパラメータ値として設定しました。
 | しかし、:menuselection:`機器一覧` でもホスト名を管理しており、ホスト名の管理が多重管理状態となっています。
 
-| Exastro IT Automation では、機器の情報を :ref:`ita_unique_variables` で取得することができ、ログイン先のホスト名は  :kbd:`__inventory_hostname__` という、変数を使うことで取得できるため、パラメータの一元管理が可能となります。
+| Exastro IT Automation では、機器の情報を :ref:`ansible_common_ita_original_variable` で取得することができ、ログイン先のホスト名は  :kbd:`__inventory_hostname__` という、変数を使うことで取得できるため、パラメータの一元管理が可能となります。
 
 パラメータ設定
 --------------

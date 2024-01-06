@@ -270,7 +270,7 @@ Ansible Automation Platform へのファイル転送ユーザーの準備
 .. warning:: 
  | awx ユーザー以外のユーザーを用意し使用し、SCM 管理パス(/var/lib/awx/projects)のパーミッションの変更を行う運用は Red Hat のサポート対象外となりますのでご注意ください。
 
-| 準備した Linux ユーザーは、ITA システムに登録する必要があります。 :ref:`general_operations_ansible_automation_controlller_hosts` を参照し、登録を行ってください。
+| 準備した Linux ユーザーは、ITA システムに登録する必要があります。 :ref:`ansible_common_ansible_automation_controller_hosts` を参照し、登録を行ってください。
 
 
 Ansible Automation Platformと連携するGitへのユーザーの準備
@@ -545,10 +545,10 @@ Organization 追加時の作業
 ITA に認証トークンと組織を登録
 ------------------------------
 
-| :ref:`general_operations_interface_information` を参照し、:menuselection:`Ansible共通 --> インターフェース情報` に :ref:`platform_output_token` で作成した認証トークンと :ref:`platform_make_organization` で作成した組織の登録を行ってください。
+| :ref:`ansible_common_interface_information` を参照し、:menuselection:`Ansible共通 --> インターフェース情報` に :ref:`platform_output_token` で作成した認証トークンと :ref:`platform_make_organization` で作成した組織の登録を行ってください。
 |
 
-.. warning:: | 組織名を登録する際は、認証トークンを登録してから1分程度経過後(※)、「 :ref:`general_operations_interface_information` 」を再表示し、「 :ref:`platform_make_organization` 」で作成した組織名を選択してください。
+.. warning:: | 組織名を登録する際は、認証トークンを登録してから1分程度経過後(※)、「 :ref:`ansible_common_interface_information` 」を再表示し、「 :ref:`platform_make_organization` 」で作成した組織名を選択してください。
 
   ※ バックヤードで各認証トークンに対応したユーザーに紐づいている組織を収集し、プルダウンに表示しているため。
 

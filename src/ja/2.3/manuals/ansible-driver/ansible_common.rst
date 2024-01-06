@@ -1135,7 +1135,7 @@ Ansible共通メニュー構成
    .. tip:: | ※1「 :ref:`ansible_common_aac_sync` 」で取得したデータから選択します。
 
 
-.. _ansible_common_ansible_automation_controlller_hosts:
+.. _ansible_common_ansible_automation_controller_hosts:
 
 Ansible Automation Controller ホスト一覧
 ----------------------------------------
