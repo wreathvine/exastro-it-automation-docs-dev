@@ -1,6 +1,6 @@
-===============================
-Exastro IT Automation Admin API
-===============================
+==============================
+Exastro ITA OASE Receiver API
+==============================
 
 .. raw:: html
 
@@ -13,7 +13,7 @@ Exastro IT Automation Admin API
      $('#article').attr('id', 'swaggerBody');
 
      $api_urls = [
-       {url: "https://raw.githubusercontent.com/exastro-suite/exastro-it-automation/2.3/ita_root/ita_api_admin/swagger/swagger.yaml", name: "2.3"}
+       {url: "https://raw.githubusercontent.com/exastro-suite/exastro-it-automation/2.3/ita_root/ita_api_oase_receiver/swagger/swagger.yaml", name: "2.3"}
      ]
 
      // Begin Swagger UI call region
