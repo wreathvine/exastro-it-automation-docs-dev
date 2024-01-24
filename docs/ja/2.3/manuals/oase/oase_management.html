@@ -123,7 +123,12 @@
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">OASE</a><ul class="current">
 <li class="toctree-l3 current"><a class="current reference internal" href="#">1. OASE管理</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#id1">1.1. はじめに</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id2">1.2. 概要</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">1.2. OASE管理機能メニュー操作説明</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#id3">1.2.1. OASE管理 メニュー</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id4">1.2.2. エージェント</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id5">1.2.3. 通知テンプレート（共通）</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="oase.html">2. OASE</a></li>
@@ -150,7 +155,12 @@
   <ul>
 <li><a class="reference internal" href="#">1. OASE管理</a><ul>
 <li><a class="reference internal" href="#id1">1.1. はじめに</a></li>
-<li><a class="reference internal" href="#id2">1.2. 概要</a></li>
+<li><a class="reference internal" href="#id2">1.2. OASE管理機能メニュー操作説明</a><ul>
+<li><a class="reference internal" href="#id3">1.2.1. OASE管理 メニュー</a></li>
+<li><a class="reference internal" href="#id4">1.2.2. エージェント</a></li>
+<li><a class="reference internal" href="#id5">1.2.3. 通知テンプレート（共通）</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -184,10 +194,304 @@
 </div>
 </section>
 <section id="id2">
-<h2><span class="section-number">1.2. </span>概要<a class="headerlink" href="#id2" title="この見出しへのパーマリンク">¶</a></h2>
+<h2><span class="section-number">1.2. </span>OASE管理機能メニュー操作説明<a class="headerlink" href="#id2" title="この見出しへのパーマリンク">¶</a></h2>
 <div class="line-block">
-<div class="line">本章では、</div>
+<div class="line">本章では、OASE管理機能のメニュー操作説明について説明します。</div>
 </div>
+<section id="id3">
+<h3><span class="section-number">1.2.1. </span>OASE管理 メニュー<a class="headerlink" href="#id3" title="この見出しへのパーマリンク">¶</a></h3>
+<div class="line-block">
+<div class="line">本節では、OASE管理をインストールした状態で表示されるメニューの操作について記載します。</div>
+</div>
+</section>
+<section id="id4">
+<h3><span class="section-number">1.2.2. </span>エージェント<a class="headerlink" href="#id4" title="この見出しへのパーマリンク">¶</a></h3>
+<ol class="arabic">
+<li><div class="line-block">
+<div class="line">「エージェント」メニューでは、（エージェントに設定する）イベント収集対象の、接続方式・認証方式・TTL等をメンテナンス（閲覧/登録/更新/廃止）できます。</div>
+</div>
+</li>
+</ol>
+<figure class="align-default" id="id6">
+<a class="reference internal image-reference" href="../../_images/agent_menu.png"><img alt="サブメニュー画面（エージェント）" src="../../_images/agent_menu.png" style="width: 800px;" /></a>
+<figcaption>
+<p><span class="caption-number">図 1.117 </span><span class="caption-text">サブメニュー画面（エージェント）</span><a class="headerlink" href="#id6" title="この画像へのパーマリンク">¶</a></p>
+</figcaption>
+</figure>
+<ol class="arabic" start="2">
+<li><div class="line-block">
+<div class="line">エージェント画面の入力項目は以下の通りです。</div>
+</div>
+<table class="docutils align-left" id="id7">
+<caption><span class="caption-number">表 1.100 </span><span class="caption-text">エージェント画面 入力項目一覧</span><a class="headerlink" href="#id7" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 8.0%" />
+<col style="width: 12.0%" />
+<col style="width: 48.0%" />
+<col style="width: 8.0%" />
+<col style="width: 8.0%" />
+<col style="width: 16.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head" colspan="2"><p>項目</p></th>
+<th class="head"><p>説明</p></th>
+<th class="head"><p>入力必須</p></th>
+<th class="head"><p>入力方法</p></th>
+<th class="head"><p>制約事項</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td colspan="2"><p>イベント収集設定名</p></td>
+<td><p>イベント収集設定名を入力します。</p></td>
+<td><p>〇</p></td>
+<td><p>自動入力</p></td>
+<td><p>最大長255バイト</p></td>
+</tr>
+<tr class="row-odd"><td colspan="2"><p>接続方式</p></td>
+<td><p>エージェントへの接続方法を選択します。</p>
+<p>・IMAP パスワード認証</p>
+</td>
+<td><p>〇</p></td>
+<td><p>リスト選択</p></td>
+<td><p>※</p></td>
+</tr>
+<tr class="row-even"><td colspan="2"><p>リクエストメソッド</p></td>
+<td><p>リクエストメソッドを選択します。</p>
+<p>・IMAP: Plaintext</p>
+</td>
+<td><p>ー</p></td>
+<td><p>リスト選択</p></td>
+<td><p>※</p></td>
+</tr>
+<tr class="row-odd"><td colspan="2"><p>URL</p></td>
+<td><p>URLを入力します。</p></td>
+<td><p>〇</p></td>
+<td><p>手動入力</p></td>
+<td><p>最大長1024バイト</p></td>
+</tr>
+<tr class="row-even"><td colspan="2"><p>ポート</p></td>
+<td><p>ポートを入力します。</p></td>
+<td><p>ー</p></td>
+<td><p>手動入力</p></td>
+<td><p>0～65535</p></td>
+</tr>
+<tr class="row-odd"><td rowspan="4"><p>認証情報</p></td>
+<td><p>プロキシ</p></td>
+<td><p>プロキシURIを入力します。</p></td>
+<td><p>ー</p></td>
+<td><p>手動入力</p></td>
+<td><p>最大長255バイト</p></td>
+</tr>
+<tr class="row-even"><td><p>ユーザー名</p></td>
+<td><p>ログインするユーザー名を入力します。</p></td>
+<td><p>ー</p></td>
+<td></td>
+<td><p>最大長255バイト</p></td>
+</tr>
+<tr class="row-odd"><td><p>パスワード</p></td>
+<td><p>ログインするパスワードを入力します。</p></td>
+<td><p>ー</p></td>
+<td><p>手動入力</p></td>
+<td><p>最大長4000バイト</p></td>
+</tr>
+<tr class="row-even"><td><p>メールボックス名</p></td>
+<td><p>メールボックス名を入力します。</p>
+<p>デフォルトでINBOXを参照します。</p>
+</td>
+<td><p>ー</p></td>
+<td><p>手動入力</p></td>
+<td><p>最大長255バイト</p></td>
+</tr>
+<tr class="row-odd"><td colspan="2"><p>TTL</p></td>
+<td><p>TTL（Time To Live）とは、エージェンが取得したイベントが、ルールの評価対象として扱われる期間（秒）のことです。</p></td>
+<td><p>ー</p></td>
+<td><p>手動入力</p></td>
+<td><p>1～2147483647</p></td>
+</tr>
+<tr class="row-even"><td colspan="2"><p>備考</p></td>
+<td><p>自由記述欄です。</p></td>
+<td><p>ー</p></td>
+<td><p>手動入力</p></td>
+<td><p>最大長4000バイト</p></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+<div class="line-block">
+<div class="line">※接続方式・認証情報・リクエストメソッドについて、必要な組み合わせは下記となります。</div>
+</div>
+<table class="docutils align-left">
+<colgroup>
+<col style="width: 33.3%" />
+<col style="width: 33.3%" />
+<col style="width: 33.3%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>接続方式</p></th>
+<th class="head"><p>リクエストメソッド</p></th>
+<th class="head"><p>認証情報</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>IMAP パスワード認証</p></td>
+<td><p>・IMAP: Plaintext</p></td>
+<td><div class="line-block">
+<div class="line">・ユーザー名</div>
+<div class="line">・パスワード</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id5">
+<h3><span class="section-number">1.2.3. </span>通知テンプレート（共通）<a class="headerlink" href="#id5" title="この見出しへのパーマリンク">¶</a></h3>
+<ol class="arabic">
+<li><div class="line-block">
+<div class="line">OASEの通知で使用するテンプレートをメンテナンス（閲覧/更新）できます。</div>
+</div>
+</li>
+</ol>
+<figure class="align-default" id="id8">
+<a class="reference internal image-reference" href="../../_images/notification_template_menu.png"><img alt="サブメニュー画面（通知テンプレート（共通））" src="../../_images/notification_template_menu.png" style="width: 800px;" /></a>
+<figcaption>
+<p><span class="caption-number">図 1.118 </span><span class="caption-text">サブメニュー画面（通知テンプレート（共通））</span><a class="headerlink" href="#id8" title="この画像へのパーマリンク">¶</a></p>
+</figcaption>
+</figure>
+<ol class="arabic" start="2">
+<li><div class="line-block">
+<div class="line">通知テンプレート（共通）画面の入力項目は以下の通りです。</div>
+</div>
+</li>
+</ol>
+<table class="docutils align-left">
+<colgroup>
+<col style="width: 9.1%" />
+<col style="width: 54.5%" />
+<col style="width: 9.1%" />
+<col style="width: 9.1%" />
+<col style="width: 18.2%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>項目</p></th>
+<th class="head"><p>説明</p></th>
+<th class="head"><p>入力必須</p></th>
+<th class="head"><p>入力方法</p></th>
+<th class="head"><p>制約事項</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>テンプレート</p></td>
+<td><p>通知で使用するテンプレートを編集できます。</p></td>
+<td><p>〇</p></td>
+<td><p>手動入力</p></td>
+<td><p>最大長255バイト</p></td>
+</tr>
+<tr class="row-odd"><td><p>備考</p></td>
+<td><p>自由記述欄です。</p></td>
+<td><p>ー</p></td>
+<td><p>手動入力</p></td>
+<td><p>最大長4000バイト</p></td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line">テンプレートの初期設定値は下記の通りです。</div>
+</div>
+<div class="line-block">
+<div class="line">新規.j2</div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> [TITLE]
+新規イベントが発生しました。
+
+[BODY]
+詳細
+　イベント収集設定：{{ labels._exastro_event_collection_settings_id }}
+　イベント取得日時：{{ labels._exastro_fetched_time }}
+　イベント有効日時：{{ labels._exastro_end_time }}
+　イベント種別　　：{{ labels._exastro_type }}
+
+　再評価
+　　評価ルール名　　：{{ labels._exastro_rule_name }}
+　　利用イベント　　：{{ exastro_events }}
+
+　ラベル：
+　  {% for key, value in labels.items() %}
+　　・{{ key }}：{{ value }}
+　　{% endfor %}
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line">既知（判定済）.j2</div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[TITLE]
+既知（判定済）イベントが発生しました。
+
+[BODY]
+詳細
+　イベント収集設定：{{ labels._exastro_event_collection_settings_id }}
+　イベント取得日時：{{ labels._exastro_fetched_time }}
+　イベント有効日時：{{ labels._exastro_end_time }}
+　イベント種別　　：{{ labels._exastro_type }}
+
+　再評価
+　　評価ルール名　　：{{ labels._exastro_rule_name }}
+　　利用イベント　　：{{ exastro_events }}
+
+　ラベル：
+　  {% for key, value in labels.items() %}
+　　・{{ key }}：{{ value }}
+　　{% endfor %}
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line">既知（時間切れ）.j2</div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[TITLE]
+既知（時間切れ）イベントが発生しました。
+
+[BODY]
+詳細
+　イベント収集設定：{{ labels._exastro_event_collection_settings_id }}
+　イベント取得日時：{{ labels._exastro_fetched_time }}
+　イベント有効日時：{{ labels._exastro_end_time }}
+　イベント種別　　：{{ labels._exastro_type }}
+
+　再評価
+　　評価ルール名　　：{{ labels._exastro_rule_name }}
+　　利用イベント　　：{{ exastro_events }}
+
+　ラベル：
+　  {% for key, value in labels.items() %}
+　　・{{ key }}：{{ value }}
+　　{% endfor %}
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line">未知.j2</div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[TITLE]
+未知イベントが発生しました。
+
+[BODY]
+詳細
+　イベント収集設定：{{ labels._exastro_event_collection_settings_id }}
+　イベント取得日時：{{ labels._exastro_fetched_time }}
+　イベント有効日時：{{ labels._exastro_end_time }}
+　イベント種別　　：{{ labels._exastro_type }}
+
+　再評価
+　　評価ルール名　　：{{ labels._exastro_rule_name }}
+　　利用イベント　　：{{ exastro_events }}
+
+　ラベル：
+　  {% for key, value in labels.items() %}
+　　・{{ key }}：{{ value }}
+　　{% endfor %}
+</pre></div>
+</div>
+</section>
 </section>
 </section>
 

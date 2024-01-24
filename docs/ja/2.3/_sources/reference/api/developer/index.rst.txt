@@ -11,3 +11,4 @@
    platform-api
    ita-api-admin
    ita-api-organization
+   ita-api-oase-reciever
