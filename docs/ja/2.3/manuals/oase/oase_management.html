@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     
-    <title>1. OASE管理 &#8212; Documentation  ドキュメント</title>
+    <title>2. OASE管理 &#8212; Documentation  ドキュメント</title>
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/option.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
@@ -34,8 +34,8 @@
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="検索" href="../../search.html" />
-    <link rel="next" title="2. OASE" href="oase.html" />
-    <link rel="prev" title="OASE" href="index.html" /> 
+    <link rel="next" title="3. OASE" href="oase.html" />
+    <link rel="prev" title="1. OASE共通" href="oase_common.html" /> 
   </head>
 <body id="page" class="ja">
 
@@ -94,8 +94,8 @@
     </div>
     <div id="toolbarNavigation">
       <ul>
-        <li class="prev"><a href="index.html" title="前のトピックへ">OASE</a></li>
-        <li class="next"><a href="oase.html" title="次のトピックへ"><span class="section-number">2. </span>OASE</a></li>
+        <li class="prev"><a href="oase_common.html" title="前のトピックへ"><span class="section-number">1. </span>OASE共通</a></li>
+        <li class="next"><a href="oase.html" title="次のトピックへ"><span class="section-number">3. </span>OASE</a></li>
       </ul>
     </div>
   </div>
@@ -121,17 +121,24 @@
 <li class="toctree-l2"><a class="reference internal" href="../export_import/index.html">エクスポート・インポート</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../cicd_for_iac/index.html">CI/CD for IaC</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">OASE</a><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="#">1. OASE管理</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id1">1.1. はじめに</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id2">1.2. OASE管理機能メニュー操作説明</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#id3">1.2.1. OASE管理 メニュー</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id4">1.2.2. エージェント</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id5">1.2.3. 通知テンプレート（共通）</a></li>
+<li class="toctree-l3"><a class="reference internal" href="oase_common.html">1. OASE共通</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">2. OASE管理</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1">2.1. はじめに</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">2.2. OASE管理メニュー構成</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">2.3. OASE管理エージェント概要</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">2.4. OASE管理通知テンプレート（共通）概要</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5">2.5. OASE管理エージェント利用手順</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6">2.6. OASE管理通知テンプレート（共通）利用手順</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id7">2.7. OASE管理機能メニュー操作説明</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="#id8">2.7.1. OASE管理 メニュー</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id9">2.7.2. エージェント</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id10">2.7.3. 通知テンプレート（共通）</a></li>
 </ul>
 </li>
+<li class="toctree-l4"><a class="reference internal" href="#id14">2.8. 付録</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="oase.html">2. OASE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="oase.html">3. OASE</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../api/index.html">API</a></li>
@@ -153,14 +160,20 @@
 <div id="tableOfContents">
   <div id="tocButton"></div>
   <ul>
-<li><a class="reference internal" href="#">1. OASE管理</a><ul>
-<li><a class="reference internal" href="#id1">1.1. はじめに</a></li>
-<li><a class="reference internal" href="#id2">1.2. OASE管理機能メニュー操作説明</a><ul>
-<li><a class="reference internal" href="#id3">1.2.1. OASE管理 メニュー</a></li>
-<li><a class="reference internal" href="#id4">1.2.2. エージェント</a></li>
-<li><a class="reference internal" href="#id5">1.2.3. 通知テンプレート（共通）</a></li>
+<li><a class="reference internal" href="#">2. OASE管理</a><ul>
+<li><a class="reference internal" href="#id1">2.1. はじめに</a></li>
+<li><a class="reference internal" href="#id2">2.2. OASE管理メニュー構成</a></li>
+<li><a class="reference internal" href="#id3">2.3. OASE管理エージェント概要</a></li>
+<li><a class="reference internal" href="#id4">2.4. OASE管理通知テンプレート（共通）概要</a></li>
+<li><a class="reference internal" href="#id5">2.5. OASE管理エージェント利用手順</a></li>
+<li><a class="reference internal" href="#id6">2.6. OASE管理通知テンプレート（共通）利用手順</a></li>
+<li><a class="reference internal" href="#id7">2.7. OASE管理機能メニュー操作説明</a><ul>
+<li><a class="reference internal" href="#id8">2.7.1. OASE管理 メニュー</a></li>
+<li><a class="reference internal" href="#id9">2.7.2. エージェント</a></li>
+<li><a class="reference internal" href="#id10">2.7.3. 通知テンプレート（共通）</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#id14">2.8. 付録</a></li>
 </ul>
 </li>
 </ul>
@@ -177,7 +190,7 @@
     <li><a href="../index.html">マニュアル</a></li>
     <li><a href="index.html">OASE</a></li>
     
-    <li><span class="section-number">1. </span>OASE管理</li>
+    <li><span class="section-number">2. </span>OASE管理</li>
   </ul>
 </div>
 
@@ -186,44 +199,59 @@
 <div class="body" role="main">
 
   <section id="oase">
-<h1><span class="section-number">1. </span>OASE管理<a class="headerlink" href="#oase" title="この見出しへのパーマリンク">¶</a></h1>
+<h1><span class="section-number">2. </span>OASE管理<a class="headerlink" href="#oase" title="この見出しへのパーマリンク">¶</a></h1>
 <section id="id1">
-<h2><span class="section-number">1.1. </span>はじめに<a class="headerlink" href="#id1" title="この見出しへのパーマリンク">¶</a></h2>
+<h2><span class="section-number">2.1. </span>はじめに<a class="headerlink" href="#id1" title="この見出しへのパーマリンク">¶</a></h2>
 <div class="line-block">
 <div class="line">本書では、</div>
 </div>
 </section>
 <section id="id2">
-<h2><span class="section-number">1.2. </span>OASE管理機能メニュー操作説明<a class="headerlink" href="#id2" title="この見出しへのパーマリンク">¶</a></h2>
+<h2><span class="section-number">2.2. </span>OASE管理メニュー構成<a class="headerlink" href="#id2" title="この見出しへのパーマリンク">¶</a></h2>
+</section>
+<section id="id3">
+<h2><span class="section-number">2.3. </span>OASE管理エージェント概要<a class="headerlink" href="#id3" title="この見出しへのパーマリンク">¶</a></h2>
+</section>
+<section id="id4">
+<h2><span class="section-number">2.4. </span>OASE管理通知テンプレート（共通）概要<a class="headerlink" href="#id4" title="この見出しへのパーマリンク">¶</a></h2>
+</section>
+<section id="id5">
+<h2><span class="section-number">2.5. </span>OASE管理エージェント利用手順<a class="headerlink" href="#id5" title="この見出しへのパーマリンク">¶</a></h2>
+</section>
+<section id="id6">
+<h2><span class="section-number">2.6. </span>OASE管理通知テンプレート（共通）利用手順<a class="headerlink" href="#id6" title="この見出しへのパーマリンク">¶</a></h2>
+</section>
+<section id="id7">
+<h2><span class="section-number">2.7. </span>OASE管理機能メニュー操作説明<a class="headerlink" href="#id7" title="この見出しへのパーマリンク">¶</a></h2>
 <div class="line-block">
 <div class="line">本章では、OASE管理機能のメニュー操作説明について説明します。</div>
 </div>
-<section id="id3">
-<h3><span class="section-number">1.2.1. </span>OASE管理 メニュー<a class="headerlink" href="#id3" title="この見出しへのパーマリンク">¶</a></h3>
+<section id="id8">
+<h3><span class="section-number">2.7.1. </span>OASE管理 メニュー<a class="headerlink" href="#id8" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
 <div class="line">本節では、OASE管理をインストールした状態で表示されるメニューの操作について記載します。</div>
 </div>
 </section>
-<section id="id4">
-<h3><span class="section-number">1.2.2. </span>エージェント<a class="headerlink" href="#id4" title="この見出しへのパーマリンク">¶</a></h3>
+<section id="id9">
+<h3><span class="section-number">2.7.2. </span>エージェント<a class="headerlink" href="#id9" title="この見出しへのパーマリンク">¶</a></h3>
 <ol class="arabic">
 <li><div class="line-block">
-<div class="line">「エージェント」メニューでは、（エージェントに設定する）イベント収集対象の、接続方式・認証方式・TTL等をメンテナンス（閲覧/登録/更新/廃止）できます。</div>
+<div class="line"><span class="menuselection">OASE管理 ‣ エージェント</span> では、（エージェントに設定する）イベント収集対象の、接続方式・認証方式・TTL等をメンテナンス（閲覧/登録/更新/廃止）できます。</div>
 </div>
 </li>
 </ol>
-<figure class="align-default" id="id6">
+<figure class="align-default" id="id15">
 <a class="reference internal image-reference" href="../../_images/agent_menu.png"><img alt="サブメニュー画面（エージェント）" src="../../_images/agent_menu.png" style="width: 800px;" /></a>
 <figcaption>
-<p><span class="caption-number">図 1.117 </span><span class="caption-text">サブメニュー画面（エージェント）</span><a class="headerlink" href="#id6" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-number">図 2.67 </span><span class="caption-text">サブメニュー画面（エージェント）</span><a class="headerlink" href="#id15" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
-<ol class="arabic" start="2">
+<ol class="arabic">
 <li><div class="line-block">
 <div class="line">エージェント画面の入力項目は以下の通りです。</div>
 </div>
-<table class="docutils align-left" id="id7">
-<caption><span class="caption-number">表 1.100 </span><span class="caption-text">エージェント画面 入力項目一覧</span><a class="headerlink" href="#id7" title="このテーブルへのパーマリンク">¶</a></caption>
+<table class="docutils align-left" id="id16">
+<caption><span class="caption-number">表 2.97 </span><span class="caption-text">エージェント画面 入力項目一覧</span><a class="headerlink" href="#id16" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 8.0%" />
 <col style="width: 12.0%" />
@@ -345,21 +373,21 @@
 </tbody>
 </table>
 </section>
-<section id="id5">
-<h3><span class="section-number">1.2.3. </span>通知テンプレート（共通）<a class="headerlink" href="#id5" title="この見出しへのパーマリンク">¶</a></h3>
+<section id="id10">
+<h3><span class="section-number">2.7.3. </span>通知テンプレート（共通）<a class="headerlink" href="#id10" title="この見出しへのパーマリンク">¶</a></h3>
 <ol class="arabic">
 <li><div class="line-block">
-<div class="line">OASEの通知で使用するテンプレートをメンテナンス（閲覧/更新）できます。</div>
+<div class="line"><span class="menuselection">OASE管理 ‣ 通知テンプレート（共通）</span> では、OASEの通知で使用するテンプレートをメンテナンス（閲覧/更新）できます。</div>
 </div>
 </li>
 </ol>
-<figure class="align-default" id="id8">
+<figure class="align-default" id="id17">
 <a class="reference internal image-reference" href="../../_images/notification_template_menu.png"><img alt="サブメニュー画面（通知テンプレート（共通））" src="../../_images/notification_template_menu.png" style="width: 800px;" /></a>
 <figcaption>
-<p><span class="caption-number">図 1.118 </span><span class="caption-text">サブメニュー画面（通知テンプレート（共通））</span><a class="headerlink" href="#id8" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-number">図 2.68 </span><span class="caption-text">サブメニュー画面（通知テンプレート（共通））</span><a class="headerlink" href="#id17" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
-<ol class="arabic" start="2">
+<ol class="arabic">
 <li><div class="line-block">
 <div class="line">通知テンプレート（共通）画面の入力項目は以下の通りです。</div>
 </div>
@@ -399,99 +427,102 @@
 <div class="line-block">
 <div class="line">テンプレートの初期設定値は下記の通りです。</div>
 </div>
-<div class="line-block">
-<div class="line">新規.j2</div>
-</div>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> [TITLE]
-新規イベントが発生しました。
-
-[BODY]
-詳細
-　イベント収集設定：{{ labels._exastro_event_collection_settings_id }}
-　イベント取得日時：{{ labels._exastro_fetched_time }}
-　イベント有効日時：{{ labels._exastro_end_time }}
-　イベント種別　　：{{ labels._exastro_type }}
-
-　再評価
-　　評価ルール名　　：{{ labels._exastro_rule_name }}
-　　利用イベント　　：{{ exastro_events }}
-
-　ラベル：
-　  {% for key, value in labels.items() %}
-　　・{{ key }}：{{ value }}
-　　{% endfor %}
+<div class="literal-block-wrapper docutils container" id="j2">
+<div class="code-block-caption"><span class="caption-number">リスト 2.108 </span><span class="caption-text">新規.j2</span><a class="headerlink" href="#j2" title="このコードへのパーマリンク">¶</a></div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span> [TITLE]
+<span class="linenos"> 2</span>新規イベントが発生しました。
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span>[BODY]
+<span class="linenos"> 5</span>詳細
+<span class="linenos"> 6</span>　イベント収集設定：{{ labels._exastro_event_collection_settings_id }}
+<span class="linenos"> 7</span>　イベント取得日時：{{ labels._exastro_fetched_time }}
+<span class="linenos"> 8</span>　イベント有効日時：{{ labels._exastro_end_time }}
+<span class="linenos"> 9</span>　イベント種別　　：{{ labels._exastro_type }}
+<span class="linenos">10</span>
+<span class="linenos">11</span>　再評価
+<span class="linenos">12</span>　　評価ルール名　　：{{ labels._exastro_rule_name }}
+<span class="linenos">13</span>　　利用イベント　　：{{ exastro_events }}
+<span class="linenos">14</span>
+<span class="linenos">15</span>　ラベル：
+<span class="linenos">16</span>　  {% for key, value in labels.items() %}
+<span class="linenos">17</span>　　・{{ key }}：{{ value }}
+<span class="linenos">18</span>　　{% endfor %}
 </pre></div>
 </div>
-<div class="line-block">
-<div class="line">既知（判定済）.j2</div>
 </div>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[TITLE]
-既知（判定済）イベントが発生しました。
-
-[BODY]
-詳細
-　イベント収集設定：{{ labels._exastro_event_collection_settings_id }}
-　イベント取得日時：{{ labels._exastro_fetched_time }}
-　イベント有効日時：{{ labels._exastro_end_time }}
-　イベント種別　　：{{ labels._exastro_type }}
-
-　再評価
-　　評価ルール名　　：{{ labels._exastro_rule_name }}
-　　利用イベント　　：{{ exastro_events }}
-
-　ラベル：
-　  {% for key, value in labels.items() %}
-　　・{{ key }}：{{ value }}
-　　{% endfor %}
+<div class="literal-block-wrapper docutils container" id="id11">
+<div class="code-block-caption"><span class="caption-number">リスト 2.109 </span><span class="caption-text">既知（判定済）.j2</span><a class="headerlink" href="#id11" title="このコードへのパーマリンク">¶</a></div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span>[TITLE]
+<span class="linenos"> 2</span>既知（判定済）イベントが発生しました。
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span>[BODY]
+<span class="linenos"> 5</span>詳細
+<span class="linenos"> 6</span>　イベント収集設定：{{ labels._exastro_event_collection_settings_id }}
+<span class="linenos"> 7</span>　イベント取得日時：{{ labels._exastro_fetched_time }}
+<span class="linenos"> 8</span>　イベント有効日時：{{ labels._exastro_end_time }}
+<span class="linenos"> 9</span>　イベント種別　　：{{ labels._exastro_type }}
+<span class="linenos">10</span>
+<span class="linenos">11</span>　再評価
+<span class="linenos">12</span>　　評価ルール名　　：{{ labels._exastro_rule_name }}
+<span class="linenos">13</span>　　利用イベント　　：{{ exastro_events }}
+<span class="linenos">14</span>
+<span class="linenos">15</span>　ラベル：
+<span class="linenos">16</span>　  {% for key, value in labels.items() %}
+<span class="linenos">17</span>　　・{{ key }}：{{ value }}
+<span class="linenos">18</span>　　{% endfor %}
 </pre></div>
 </div>
-<div class="line-block">
-<div class="line">既知（時間切れ）.j2</div>
 </div>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[TITLE]
-既知（時間切れ）イベントが発生しました。
-
-[BODY]
-詳細
-　イベント収集設定：{{ labels._exastro_event_collection_settings_id }}
-　イベント取得日時：{{ labels._exastro_fetched_time }}
-　イベント有効日時：{{ labels._exastro_end_time }}
-　イベント種別　　：{{ labels._exastro_type }}
-
-　再評価
-　　評価ルール名　　：{{ labels._exastro_rule_name }}
-　　利用イベント　　：{{ exastro_events }}
-
-　ラベル：
-　  {% for key, value in labels.items() %}
-　　・{{ key }}：{{ value }}
-　　{% endfor %}
+<div class="literal-block-wrapper docutils container" id="id12">
+<div class="code-block-caption"><span class="caption-number">リスト 2.110 </span><span class="caption-text">既知（時間切れ）.j2</span><a class="headerlink" href="#id12" title="このコードへのパーマリンク">¶</a></div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span>[TITLE]
+<span class="linenos"> 2</span>既知（時間切れ）イベントが発生しました。
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span>[BODY]
+<span class="linenos"> 5</span>詳細
+<span class="linenos"> 6</span>　イベント収集設定：{{ labels._exastro_event_collection_settings_id }}
+<span class="linenos"> 7</span>　イベント取得日時：{{ labels._exastro_fetched_time }}
+<span class="linenos"> 8</span>　イベント有効日時：{{ labels._exastro_end_time }}
+<span class="linenos"> 9</span>　イベント種別　　：{{ labels._exastro_type }}
+<span class="linenos">10</span>
+<span class="linenos">11</span>　再評価
+<span class="linenos">12</span>　　評価ルール名　　：{{ labels._exastro_rule_name }}
+<span class="linenos">13</span>　　利用イベント　　：{{ exastro_events }}
+<span class="linenos">14</span>
+<span class="linenos">15</span>　ラベル：
+<span class="linenos">16</span>　  {% for key, value in labels.items() %}
+<span class="linenos">17</span>　　・{{ key }}：{{ value }}
+<span class="linenos">18</span>　　{% endfor %}
 </pre></div>
 </div>
-<div class="line-block">
-<div class="line">未知.j2</div>
 </div>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[TITLE]
-未知イベントが発生しました。
-
-[BODY]
-詳細
-　イベント収集設定：{{ labels._exastro_event_collection_settings_id }}
-　イベント取得日時：{{ labels._exastro_fetched_time }}
-　イベント有効日時：{{ labels._exastro_end_time }}
-　イベント種別　　：{{ labels._exastro_type }}
-
-　再評価
-　　評価ルール名　　：{{ labels._exastro_rule_name }}
-　　利用イベント　　：{{ exastro_events }}
-
-　ラベル：
-　  {% for key, value in labels.items() %}
-　　・{{ key }}：{{ value }}
-　　{% endfor %}
+<div class="literal-block-wrapper docutils container" id="id13">
+<div class="code-block-caption"><span class="caption-number">リスト 2.111 </span><span class="caption-text">未知.j2</span><a class="headerlink" href="#id13" title="このコードへのパーマリンク">¶</a></div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span>[TITLE]
+<span class="linenos"> 2</span>未知イベントが発生しました。
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span>[BODY]
+<span class="linenos"> 5</span>詳細
+<span class="linenos"> 6</span>　イベント収集設定：{{ labels._exastro_event_collection_settings_id }}
+<span class="linenos"> 7</span>　イベント取得日時：{{ labels._exastro_fetched_time }}
+<span class="linenos"> 8</span>　イベント有効日時：{{ labels._exastro_end_time }}
+<span class="linenos"> 9</span>　イベント種別　　：{{ labels._exastro_type }}
+<span class="linenos">10</span>
+<span class="linenos">11</span>　再評価
+<span class="linenos">12</span>　　評価ルール名　　：{{ labels._exastro_rule_name }}
+<span class="linenos">13</span>　　利用イベント　　：{{ exastro_events }}
+<span class="linenos">14</span>
+<span class="linenos">15</span>　ラベル：
+<span class="linenos">16</span>　  {% for key, value in labels.items() %}
+<span class="linenos">17</span>　　・{{ key }}：{{ value }}
+<span class="linenos">18</span>　　{% endfor %}
 </pre></div>
+</div>
 </div>
 </section>
+</section>
+<section id="id14">
+<h2><span class="section-number">2.8. </span>付録<a class="headerlink" href="#id14" title="この見出しへのパーマリンク">¶</a></h2>
 </section>
 </section>
 
@@ -501,8 +532,8 @@
 
 <div id="articleNavigation">
   <ul>
-    <li class="prev"><a href="index.html" title="前のトピックへ"><span>前のトピックへ</span>OASE</a></li>
-    <li class="next"><a href="oase.html" title="次のトピックへ"><span>次のトピックへ</span><span class="section-number">2. </span>OASE</a></li>
+    <li class="prev"><a href="oase_common.html" title="前のトピックへ"><span>前のトピックへ</span><span class="section-number">1. </span>OASE共通</a></li>
+    <li class="next"><a href="oase.html" title="次のトピックへ"><span>次のトピックへ</span><span class="section-number">3. </span>OASE</a></li>
   </ul>
 </div>
 
