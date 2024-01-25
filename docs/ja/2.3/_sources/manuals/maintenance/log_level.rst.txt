@@ -93,6 +93,10 @@
      - Terraform-Cloud/EP作業実行
    * - ita-by-terraform-cloud-ep-vars-listup
      - Terraform-Cloud/EP変数刈取
+   * - ita-api-oase-receiver
+     - OASE利用者用API
+   * - ita-by-oase-conclusion
+     - OASE評価機能
 
 
 ログレベルの設定手順
@@ -220,7 +224,9 @@
           "ita-by-terraform-cli-execute": "INFO",
           "ita-by-terraform-cli-vars-listup": "INFO",
           "ita-by-terraform-cloud-ep-execute": "INFO",
-          "ita-by-terraform-cloud-ep-vars-listup": "INFO"
+          "ita-by-terraform-cloud-ep-vars-listup": "INFO",
+          "ita-api-oase-receiver": "INFO",
+          "ita-by-oase-conclusion": "INFO"
         },
         "message": "SUCCESS",
         "result": "000-00000",
