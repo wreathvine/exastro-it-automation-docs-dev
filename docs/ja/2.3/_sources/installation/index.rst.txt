@@ -8,3 +8,4 @@
 
    docker_compose
    helm_on_kubernetes
+   oase_agent
