@@ -129,9 +129,9 @@
 <li class="toctree-l4"><a class="reference internal" href="#id2">3.2. OASE メニュー構成</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id3">3.3. OASE 利用手順</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id4">3.4. OASE メニュー操作説明</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#id5">3.4.1. OASE メニュー</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#label-creation">3.4.1. OASE メニュー</a></li>
 <li class="toctree-l5"><a class="reference internal" href="#id6">3.4.2. ラベル作成</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id7">3.4.3. ラベル付与</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#labeling">3.4.3. ラベル付与</a></li>
 <li class="toctree-l5"><a class="reference internal" href="#id8">3.4.4. フィルター</a></li>
 <li class="toctree-l5"><a class="reference internal" href="#id9">3.4.5. アクション</a></li>
 <li class="toctree-l5"><a class="reference internal" href="#id10">3.4.6. ルール</a></li>
@@ -166,9 +166,9 @@
 <li><a class="reference internal" href="#id2">3.2. OASE メニュー構成</a></li>
 <li><a class="reference internal" href="#id3">3.3. OASE 利用手順</a></li>
 <li><a class="reference internal" href="#id4">3.4. OASE メニュー操作説明</a><ul>
-<li><a class="reference internal" href="#id5">3.4.1. OASE メニュー</a></li>
+<li><a class="reference internal" href="#label-creation">3.4.1. OASE メニュー</a></li>
 <li><a class="reference internal" href="#id6">3.4.2. ラベル作成</a></li>
-<li><a class="reference internal" href="#id7">3.4.3. ラベル付与</a></li>
+<li><a class="reference internal" href="#labeling">3.4.3. ラベル付与</a></li>
 <li><a class="reference internal" href="#id8">3.4.4. フィルター</a></li>
 <li><a class="reference internal" href="#id9">3.4.5. アクション</a></li>
 <li><a class="reference internal" href="#id10">3.4.6. ルール</a></li>
@@ -218,8 +218,8 @@
 <div class="line-block">
 <div class="line">本章では、OASE機能のメニュー操作説明について説明します。</div>
 </div>
-<section id="id5">
-<h3><span class="section-number">3.4.1. </span>OASE メニュー<a class="headerlink" href="#id5" title="この見出しへのパーマリンク">¶</a></h3>
+<section id="label-creation">
+<span id="id5"></span><h3><span class="section-number">3.4.1. </span>OASE メニュー<a class="headerlink" href="#label-creation" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
 <div class="line">本節では、OASEをインストールした状態で表示されるメニューの操作について記載します。</div>
 </div>
@@ -286,8 +286,8 @@
 </tbody>
 </table>
 </section>
-<section id="id7">
-<h3><span class="section-number">3.4.3. </span>ラベル付与<a class="headerlink" href="#id7" title="この見出しへのパーマリンク">¶</a></h3>
+<section id="labeling">
+<span id="id7"></span><h3><span class="section-number">3.4.3. </span>ラベル付与<a class="headerlink" href="#labeling" title="この見出しへのパーマリンク">¶</a></h3>
 <ol class="arabic">
 <li><div class="line-block">
 <div class="line"><span class="menuselection">OASE ‣ ラベル付与</span>  では、ラベルを付与するために、イベント収集対象とラベル付与条件と該当ラベルを紐付（閲覧/登録/更新/廃止）できます。</div>
@@ -409,18 +409,18 @@
 </li>
 </ol>
 <div class="line-block">
-<div class="line">※ラベル付与におけるユースケースについて、必須項目は以下の通りです。</div>
+<div class="line">※ラベル付与における各ユースケースについて、必須項目は以下の通りです。</div>
 </div>
 <table class="docutils align-left" id="id15">
 <caption><span class="caption-number">表 3.76 </span><span class="caption-text">ラベル付与におけるユースケースについて</span><a class="headerlink" href="#id15" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 47.1%" />
 <col style="width: 5.9%" />
-<col style="width: 5.9%" />
+<col style="width: 11.8%" />
 <col style="width: 11.8%" />
 <col style="width: 5.9%" />
 <col style="width: 5.9%" />
-<col style="width: 17.6%" />
+<col style="width: 11.8%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head" rowspan="2"><p>ユースケース</p></th>
@@ -436,7 +436,7 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-odd"><td><p>検索条件に全てマッチした際に、ラベルを付与したい</p></td>
+<tr class="row-odd"><td><p>検索条件にマッチした際に、ラベルを付与したい</p></td>
 <td><p>〇</p></td>
 <td><p>〇</p></td>
 <td><p>〇</p></td>
@@ -444,7 +444,7 @@
 <td><p>〇</p></td>
 <td><p>〇</p></td>
 </tr>
-<tr class="row-even"><td><p>検索条件に全てマッチした際に、「比較する値」をそのままラベルの値として使用したい</p></td>
+<tr class="row-even"><td><p>検索条件にマッチした際に、「比較する値」をそのままラベルの値として使用したい</p></td>
 <td><p>〇</p></td>
 <td><p>〇</p></td>
 <td><p>〇</p></td>
@@ -452,15 +452,7 @@
 <td><p>〇</p></td>
 <td><p>ー</p></td>
 </tr>
-<tr class="row-odd"><td><p>全てのイベントに必ずラベルを付与したい</p></td>
-<td><p>ー</p></td>
-<td><p>ー</p></td>
-<td><p>ー</p></td>
-<td><p>ー</p></td>
-<td><p>〇</p></td>
-<td><p>〇</p></td>
-</tr>
-<tr class="row-even"><td><p>検索条件のキーがマッチした際に、必ずラベルを付与したい</p></td>
+<tr class="row-odd"><td><p>検索条件のキーがマッチした際に、ラベルを付与したい</p></td>
 <td><p>〇</p></td>
 <td><p>ー</p></td>
 <td><p>ー</p></td>
@@ -468,25 +460,114 @@
 <td><p>〇</p></td>
 <td><p>〇</p></td>
 </tr>
-<tr class="row-odd"><td><p>検索条件の値（Falseの値（空文字、[]、{}、0、</p>
-<p>False））がマッチした際に、ラベルを付与したい</p>
+<tr class="row-even"><td><p>検索条件の値がFalseの値（空文字、[]、{}、0、</p>
+<p>False）でマッチした際に、ラベルを付与したい</p>
 </td>
 <td><p>〇</p></td>
 <td><p>ー</p></td>
-<td><p>==,≠ のみ</p></td>
+<td><p>==（一致）,</p>
+<p>≠（不一致）のみ</p>
+</td>
 <td><p>ー</p></td>
 <td><p>〇</p></td>
 <td><p>== → 〇,ー</p>
 <p>≠ → 〇 のみ</p>
 </td>
 </tr>
-<tr class="row-even"><td><p>検索条件に正規表現を使用したい</p></td>
+<tr class="row-odd"><td><p>検索条件に正規表現を使用したい</p></td>
 <td><p>〇</p></td>
 <td><p>その他 のみ</p></td>
 <td><p>RegExp のみ</p></td>
 <td><p>ー</p></td>
 <td><p>〇</p></td>
 <td><p>〇</p></td>
+</tr>
+<tr class="row-even"><td><p>全てのイベントにラベルを付与したい</p></td>
+<td><p>ー</p></td>
+<td><p>ー</p></td>
+<td><p>ー</p></td>
+<td><p>ー</p></td>
+<td><p>〇</p></td>
+<td><p>〇</p></td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line">※値の各データ型の説明は以下の通りです。</div>
+</div>
+<table class="docutils align-left" id="id16">
+<caption><span class="caption-number">表 3.77 </span><span class="caption-text">ラベル付与における値のデータ型について</span><a class="headerlink" href="#id16" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 16.7%" />
+<col style="width: 33.3%" />
+<col style="width: 50.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>値のデータ型</p></th>
+<th class="head"><p>比較方法</p></th>
+<th class="head"><p>比較する値</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>文字列</p></td>
+<td><p>RegExp以外可能</p></td>
+<td><div class="line-block">
+<div class="line">ー</div>
+<div class="line">例　sample</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>整数</p></td>
+<td><p>RegExp以外可能</p></td>
+<td><div class="line-block">
+<div class="line">ー</div>
+<div class="line">例　10</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>小数</p></td>
+<td><p>RegExp以外可能</p></td>
+<td><div class="line-block">
+<div class="line">ー</div>
+<div class="line">例　1.1</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>真偽値</p></td>
+<td><p>==（一致）, ≠不一致）のみ</p></td>
+<td><p>true, falseのみ（大文字が含まれていても可能）</p></td>
+</tr>
+<tr class="row-even"><td><p>オブジェクト</p></td>
+<td><p>==（一致）, ≠不一致）のみ</p></td>
+<td><div class="line-block">
+<div class="line">{}で囲みます。</div>
+<div class="line">例　{Key: Value}</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>配列</p></td>
+<td><p>==（一致）, ≠不一致）のみ</p></td>
+<td><div class="line-block">
+<div class="line">[]で囲みます。</div>
+<div class="line">例　[aa, bb, cc]</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>空判定</p></td>
+<td><p>==（一致）, ≠不一致）のみ</p></td>
+<td><div class="line-block">
+<div class="line">空文字、[]、{}、0、Falseのみ</div>
+<div class="line">例　&quot;&quot;</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>その他</p></td>
+<td><p>RegExpのみ</p></td>
+<td><div class="line-block">
+<div class="line">ー</div>
+<div class="line">aa</div>
+</div>
+</td>
 </tr>
 </tbody>
 </table>
@@ -499,10 +580,10 @@
 </div>
 </li>
 </ol>
-<figure class="align-default" id="id16">
+<figure class="align-default" id="id17">
 <a class="reference internal image-reference" href="../../_images/filter_create_menu.png"><img alt="サブメニュー画面（フィルター）" src="../../_images/filter_create_menu.png" style="width: 800px;" /></a>
 <figcaption>
-<p><span class="caption-number">図 3.75 </span><span class="caption-text">サブメニュー画面（フィルター）</span><a class="headerlink" href="#id16" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-number">図 3.75 </span><span class="caption-text">サブメニュー画面（フィルター）</span><a class="headerlink" href="#id17" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 <ol class="arabic" start="2">
@@ -573,10 +654,10 @@
 </div>
 </li>
 </ol>
-<figure class="align-default" id="id17">
+<figure class="align-default" id="id18">
 <a class="reference internal image-reference" href="../../_images/action_create_menu.png"><img alt="サブメニュー画面（アクション）" src="../../_images/action_create_menu.png" style="width: 800px;" /></a>
 <figcaption>
-<p><span class="caption-number">図 3.76 </span><span class="caption-text">サブメニュー画面（アクション）</span><a class="headerlink" href="#id17" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-number">図 3.76 </span><span class="caption-text">サブメニュー画面（アクション）</span><a class="headerlink" href="#id18" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 <ol class="arabic" start="2">
@@ -637,10 +718,10 @@
 </div>
 </li>
 </ol>
-<figure class="align-default" id="id18">
+<figure class="align-default" id="id19">
 <a class="reference internal image-reference" href="../../_images/rule_create_menu.png"><img alt="サブメニュー画面（ルール）" src="../../_images/rule_create_menu.png" style="width: 800px;" /></a>
 <figcaption>
-<p><span class="caption-number">図 3.77 </span><span class="caption-text">サブメニュー画面（ルール）</span><a class="headerlink" href="#id18" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-number">図 3.77 </span><span class="caption-text">サブメニュー画面（ルール）</span><a class="headerlink" href="#id19" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 <ol class="arabic" start="2">
@@ -799,10 +880,10 @@
 </div>
 </li>
 </ol>
-<figure class="align-default" id="id19">
+<figure class="align-default" id="id20">
 <a class="reference internal image-reference" href="../../_images/evaluation_results_menu.png"><img alt="サブメニュー画面（評価結果）" src="../../_images/evaluation_results_menu.png" style="width: 800px;" /></a>
 <figcaption>
-<p><span class="caption-number">図 3.78 </span><span class="caption-text">サブメニュー画面（評価結果）</span><a class="headerlink" href="#id19" title="この画像へのパーマリンク">¶</a></p>
+<p><span class="caption-number">図 3.78 </span><span class="caption-text">サブメニュー画面（評価結果）</span><a class="headerlink" href="#id20" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
 </figure>
 <ol class="arabic" start="2">

@@ -124,8 +124,8 @@
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">OASE</a><ul class="current">
 <li class="toctree-l3 current"><a class="current reference internal" href="#">1. OASE共通</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#id1">1.1. はじめに</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id2">1.2. 用語の定義</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id3">1.3. 機能の概要</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">1.2. 機能の概要</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#oase-definition-of-terms">1.3. 用語の定義</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="oase_management.html">2. OASE管理</a></li>
@@ -153,8 +153,8 @@
   <ul>
 <li><a class="reference internal" href="#">1. OASE共通</a><ul>
 <li><a class="reference internal" href="#id1">1.1. はじめに</a></li>
-<li><a class="reference internal" href="#id2">1.2. 用語の定義</a></li>
-<li><a class="reference internal" href="#id3">1.3. 機能の概要</a></li>
+<li><a class="reference internal" href="#id2">1.2. 機能の概要</a></li>
+<li><a class="reference internal" href="#oase-definition-of-terms">1.3. 用語の定義</a></li>
 </ul>
 </li>
 </ul>
@@ -188,13 +188,100 @@
 </div>
 </section>
 <section id="id2">
-<h2><span class="section-number">1.2. </span>用語の定義<a class="headerlink" href="#id2" title="この見出しへのパーマリンク">¶</a></h2>
+<h2><span class="section-number">1.2. </span>機能の概要<a class="headerlink" href="#id2" title="この見出しへのパーマリンク">¶</a></h2>
+</section>
+<section id="oase-definition-of-terms">
+<span id="id3"></span><h2><span class="section-number">1.3. </span>用語の定義<a class="headerlink" href="#oase-definition-of-terms" title="この見出しへのパーマリンク">¶</a></h2>
 <div class="line-block">
 <div class="line">本書では以下として記載します。</div>
 </div>
-</section>
-<section id="id3">
-<h2><span class="section-number">1.3. </span>機能の概要<a class="headerlink" href="#id3" title="この見出しへのパーマリンク">¶</a></h2>
+<table class="docutils align-left" id="id4">
+<caption><span class="caption-number">表 1.100 </span><span class="caption-text">用語説明</span><a class="headerlink" href="#id4" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 16.7%" />
+<col style="width: 83.3%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>用語名</p></th>
+<th class="head"><p>内容</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>イベント</p></td>
+<td><p>設定された対象（監視ソフト）から取得してきた状態変化の発生情報のことです。※</p></td>
+</tr>
+<tr class="row-odd"><td><p>TTL（Time To Live）</p></td>
+<td><div class="line-block">
+<div class="line">エージェントが取得したイベントが、ルールの評価対象として扱われる期間（秒）のことで、次の2つの目的で利用されます。</div>
+<div class="line">▼最もユーザーの意図に近い判断を選択</div>
+<div class="line">あるイベントが発生し、そのイベントが複数のルールの条件として定義されている場合、Exastro OASEは優先度の高いルールが適用されるように動作しようとします。</div>
+<div class="line">一方で、完全な条件が揃うまでOASEはイベントの発生を待ち、最終的な判断はイベントの発生日時からTTLで指定した期間を経過したタイミングまでに行われます。</div>
+<div class="line">▼古すぎるイベントによる意図しないアクション実行の防止</div>
+<div class="line">発生からTTLの2倍以上の期間が経過したイベントは、ユーザーが意図しないイベントである可能性があるため、即座に「時間切れ」ステータスになり、ルールの評価対象から除外します。</div>
+<div class="line">最小値は1（秒）、最大値は2137483647（秒）です。</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>ラベル</p></td>
+<td><p>イベントからデータを抽出し、ラベル作成・ラベル付与メニュー内でのデータを基にOASE内部で利用しやすい形にキーバリューとして付与されたデータのことです。</p></td>
+</tr>
+<tr class="row-odd"><td><p>フィルター</p></td>
+<td><p>ラベリングされたデータを絞り込むことです。ルール判定機能へデータを渡すために使用します。</p></td>
+</tr>
+<tr class="row-even"><td><p>アクション</p></td>
+<td><p>OASEのルール内で定義される条件に一致した場合に実行される対象です。</p></td>
+</tr>
+<tr class="row-odd"><td><p>ルール</p></td>
+<td><p>事前に登録されているルールにのっとりフィルタ結果を判定することです。</p></td>
+</tr>
+<tr class="row-even"><td><p>評価</p></td>
+<td><p>ルール機能によって判定されたデータのことです。</p></td>
+</tr>
+<tr class="row-odd"><td><p>結論イベント</p></td>
+<td><p>ルールで検知された際に、発生するイベントのことです。</p></td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line">※イベント種別については、以下の通りです。</div>
+</div>
+<table class="docutils align-left" id="id5">
+<caption><span class="caption-number">表 1.101 </span><span class="caption-text">イベント種別</span><a class="headerlink" href="#id5" title="このテーブルへのパーマリンク">¶</a></caption>
+<colgroup>
+<col style="width: 16.7%" />
+<col style="width: 83.3%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>種類</p></th>
+<th class="head"><p>内容</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>新規</p></td>
+<td><div class="line-block">
+<div class="line">収集して未だ評価機能に検知されていない状態のことです。</div>
+<div class="line">判定時間が過ぎると、判定済み、未知、時間切れイベントのいずれかに変化します。</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>既知</p></td>
+<td><p>評価機能に検知されて、評価される可能性のある状態のことです。</p></td>
+</tr>
+<tr class="row-even"><td><p>既知（判定済み）</p></td>
+<td><p>ルールで検知された状態のことです。</p></td>
+</tr>
+<tr class="row-odd"><td><p>既知（時間切れ）</p></td>
+<td><p>イベントの有効期限（TTL）×2を超えた状態のことです。</p></td>
+</tr>
+<tr class="row-even"><td><p>未知</p></td>
+<td><div class="line-block">
+<div class="line">フィルターにも抽出されない、真に把握されていない状態のことです。</div>
+<div class="line">そして、未知の事象として、通知する必要があるイベントです。</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
 </section>
 </section>
 
