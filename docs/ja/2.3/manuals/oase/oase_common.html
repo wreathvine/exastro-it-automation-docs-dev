@@ -184,11 +184,49 @@
 <section id="id1">
 <h2><span class="section-number">1.1. </span>はじめに<a class="headerlink" href="#id1" title="この見出しへのパーマリンク">¶</a></h2>
 <div class="line-block">
-<div class="line">本書では、</div>
+<div class="line">本書では、OASE（Operation Autonomy Support Engine）の概要について説明します。</div>
 </div>
 </section>
 <section id="id2">
 <h2><span class="section-number">1.2. </span>機能の概要<a class="headerlink" href="#id2" title="この見出しへのパーマリンク">¶</a></h2>
+<div class="line-block">
+<div class="line">OASEとは、外部から取得したイベント情報を分析し、そのイベントへの対処の自動化を支援する機能です。</div>
+</div>
+<figure class="align-default">
+<a class="reference internal image-reference" href="../../_images/oase_overview_v2-3.png"><img alt="OASE機能概要" src="../../_images/oase_overview_v2-3.png" style="width: 800px;" /></a>
+</figure>
+<div class="line-block">
+<div class="line">OASEの機能フローは以下の通りです。</div>
+<div class="line">用語の解説は次項に記載してあります。</div>
+</div>
+<ol class="arabic">
+<li><div class="line-block">
+<div class="line"><strong>イベント収集</strong></div>
+<div class="line">外部サービスより、イベントを収集します。</div>
+<div class="line">イベントはExastro OASE Agentによって収集され、APIを通してITA本体に送信されます。</div>
+<div class="line">Exastro OASE Agentの詳細は <a class="reference internal" href="oase_management.html#agent-about"><span class="std std-ref">OASE管理 エージェント概要</span></a> を参照してください。</div>
+</div>
+</li>
+<li><div class="line-block">
+<div class="line"><strong>ラベル付与</strong></div>
+<div class="line">ITAに送信されたイベントに対して、設定されたラベルを付与します。</div>
+<div class="line">ラベル付与に関する設定の詳細は <a class="reference internal" href="oase.html#label-creation"><span class="std std-ref">ラベル作成</span></a> および <a class="reference internal" href="oase.html#labeling"><span class="std std-ref">ラベル付与</span></a> を参照してください。</div>
+</div>
+</li>
+<li><div class="line-block">
+<div class="line"><strong>ルール判定</strong></div>
+<div class="line">付与されたラベルを用いて、設定されたルールにマッチするかどうかの判定を行います。</div>
+<div class="line">ルール判定に関する設定の詳細は <a class="reference internal" href="oase.html#filter"><span class="std std-ref">フィルター</span></a> および <a class="reference internal" href="oase.html#rule"><span class="std std-ref">ルール</span></a> を参照してください。</div>
+</div>
+</li>
+<li><div class="line-block">
+<div class="line"><strong>アクション実行・通知</strong></div>
+<div class="line">ルールにマッチした際に、自動的に実行されるアクションとしてオペレーションとConductorを設定することができます。</div>
+<div class="line">また、アクションが実行される前後の通知もルールメニューにて設定することができます。</div>
+<div class="line">アクション設定の詳細は <a class="reference internal" href="oase.html#action"><span class="std std-ref">アクション</span></a> を参照してください。</div>
+</div>
+</li>
+</ol>
 </section>
 <section id="oase-definition-of-terms">
 <span id="id3"></span><h2><span class="section-number">1.3. </span>用語の定義<a class="headerlink" href="#oase-definition-of-terms" title="この見出しへのパーマリンク">¶</a></h2>
