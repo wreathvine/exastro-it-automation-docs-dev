@@ -42,7 +42,7 @@ OASE管理 エージェント概要
 | エージェントは、Exastro IT Automation（以下、ITA）とは独立しており、ITA OASEと外部サービスの仲介役として機能します。
 | エージェントは、対象とする外部サービスのイベント収集設定をITAから取得し、その設定を用いて外部サービスからイベントを取得します。このプロセスを経て、取得したイベントをITAに送信します。
 
-.. figure:: /images/ja/oase/agent_overview_v2-3.png
+.. figure:: /images/ja/oase/oase_management/agent_overview_v2-3.png
    :width: 800px
    :alt: OASEエージェント概要
 
@@ -58,7 +58,7 @@ OASE管理 エージェント利用手順
 | エージェントを利用するための作業を含めた、OASEの作業フローは以下のとおりです。
 | エージェント利用のための作業の詳細は次項に記載しています。
 
-.. figure:: /images/ja/oase/oase_process_v2-3.png
+.. figure:: /images/ja/oase/oase_management/oase_process_v2-3.png
    :width: 700px
    :alt: OASE作業フロー
 
@@ -70,7 +70,7 @@ OASE管理 エージェント利用手順
 
    #. | **ラベル設定**
       | OASEのラベル作成/ラベル付与メニュー画面から、ラベル設定を登録します。
-      | 詳細は :ref:`label_creation` を参照してください。
+      | 詳細は :ref:`label_creation` および :ref:`labeling` を参照してください。
 
    #. | **エージェントのインストール・起動**
       | エージェントを起動し、イベント収集を開始します。
