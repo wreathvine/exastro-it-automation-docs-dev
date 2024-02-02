@@ -392,75 +392,92 @@
       {
         "data": {
           "execute_count": 3,  # システム全体でのステータス「準備中」「実行中」「実行中(遅延)」対象のカウント（ita-by-conductor-synchronizeを含まない）
-          "Organization_01": {  # システム上のオーガナイゼーション
-            "execute_count": 2,  # オーガナイゼーション単位でのステータス「準備中」「実行中」「実行中(遅延)」対象のカウント（ita-by-conductor-synchronizeを含まない）
-            "Workspace_01": {  # オーガナイゼーション上のワークスペース
-              "execute_count": 2,  # ワークスペース単位でのステータス「準備中」「実行中」「実行中(遅延)」対象のカウント（ita-by-conductor-synchronizeを含まない）
-              "ita-by-ansible-execute": [  # 各バックヤード機能でステータスが「準備中」「実行中」「実行中(遅延)」の対象がある場合、対象のID, 最終更新日時, ステータスID, ステータス名称が格納されます
+          "organizations": [
+            {
+              "id": "Organization_01",# システム上のオーガナイゼーション
+              "execute_count": 2,  # オーガナイゼーション単位でのステータス「準備中」「実行中」「実行中(遅延)」対象のカウント（ita-by-conductor-synchronizeを含まない）
+              "workspaces": [
                 {
-                  "id": "965dfd15-b741-4dd8-9136-00e505b14c44",
-                  "last_update_timestamp": "2023-10-10T16:58:18.748121Z",
-                  "status_id": "3",
-                  "status_name": "実行中"
-                },
-                {
-                  "id": "f3d52038-cb76-470f-ab7e-1898df107a87",
-                  "last_update_timestamp": "2023-10-10T16:58:39.247824Z",
-                  "status_id": "3",
-                  "status_name": "実行中"
+                  "id": "Workspace_01",  # オーガナイゼーション上のワークスペース
+                  "execute_count": 2,  # ワークスペース単位でのステータス「準備中」「実行中」「実行中(遅延)」対象のカウント（ita-by-conductor-synchronizeを含まない）
+                  "backyards": {  # 各バックヤード機能でステータスが「準備中」「実行中」「実行中(遅延)」の対象がある場合、対象のID, 最終更新日時, ステータスID, ステータス名称が格納されます
+                    "ita-by-ansible-execute": [
+                      {
+                        "id": "965dfd15-b741-4dd8-9136-00e505b14c44",
+                        "last_update_timestamp": "2023-10-10T16:58:18.748121Z",
+                        "status_id": "3",
+                        "status_name": "実行中"
+                      },
+                      {
+                        "id": "f3d52038-cb76-470f-ab7e-1898df107a87",
+                        "last_update_timestamp": "2023-10-10T16:58:39.247824Z",
+                        "status_id": "3",
+                        "status_name": "実行中"
+                      }
+                    ],
+                    "ita-by-conductor-synchronize": [
+                      {
+                        "id": "6b9743ab-73fd-49e9-b20b-910f00546827",
+                        "last_update_timestamp": "2023-10-10T16:55:04.053156Z",
+                        "status_id": "3",
+                        "status_name": "実行中"
+                      },
+                      {
+                        "id": "9b8ab1d7-b2f7-4e78-8529-e79b63ce495b",
+                        "last_update_timestamp": "2023-10-10T16:50:02.175727Z",
+                        "status_id": "3",
+                        "status_name": "実行中"
+                      }
+                    ],
+                    "ita-by-excel-export-import": [],
+                    "ita-by-menu-create": [],
+                    "ita-by-menu-export-import": [],
+                    "ita-by-terraform-cli-execute": [],
+                    "ita-by-terraform-cloud-ep-execute": []
+                  }
                 }
-              ],
-              "ita-by-conductor-synchronize": [
-                {
-                  "id": "6b9743ab-73fd-49e9-b20b-910f00546827",
-                  "last_update_timestamp": "2023-10-10T16:55:04.053156Z",
-                  "status_id": "3",
-                  "status_name": "実行中"
-                },
-                {
-                  "id": "9b8ab1d7-b2f7-4e78-8529-e79b63ce495b",
-                  "last_update_timestamp": "2023-10-10T16:50:02.175727Z",
-                  "status_id": "3",
-                  "status_name": "実行中"
-                }
-              ],
-              "ita-by-excel-export-import": [],
-              "ita-by-menu-create": [],
-              "ita-by-menu-export-import": [],
-              "ita-by-terraform-cli-execute": [],
-              "ita-by-terraform-cloud-ep-execute": []
-            }
-          },
-          "Organization_02": {  # システム上のオーガナイゼーション
-            "execute_count": 1,  # オーガナイゼーション単位でのステータス「準備中」「実行中」「実行中(遅延)」対象のカウント（ita-by-conductor-synchronizeを含まない）
-            "Workspace_01": {  # オーガナイゼーション上のワークスペース
-              "execute_count": 0,  # ワークスペース単位でのステータス「準備中」「実行中」「実行中(遅延)」対象のカウント（ita-by-conductor-synchronizeを含まない）
-              "ita-by-ansible-execute": [],
-              "ita-by-conductor-synchronize": [],
-              "ita-by-excel-export-import": [],
-              "ita-by-menu-create": [],
-              "ita-by-menu-export-import": [],
-              "ita-by-terraform-cli-execute": [],
-              "ita-by-terraform-cloud-ep-execute": []
+              ]
             },
-            "Workspace_02": {  # オーガナイゼーション上のワークスペース
-              "execute_count": 1,  # ワークスペース単位でのステータス「準備中」「実行中」「実行中(遅延)」対象のカウント（ita-by-conductor-synchronizeを含まない）
-              "ita-by-ansible-execute": [],
-              "ita-by-conductor-synchronize": [],
-              "ita-by-excel-export-import": [],
-              "ita-by-menu-create": [],
-              "ita-by-menu-export-import": [],
-              "ita-by-terraform-cli-execute": [],
-              "ita-by-terraform-cloud-ep-execute": [  # 各バックヤード機能でステータスが「準備中」「実行中」「実行中(遅延)」の対象がある場合、対象のID, 最終更新日時, ステータスID, ステータス名称が格納されます
+            {
+              "id": "Organization_02",  # システム上のオーガナイゼーション
+              "execute_count": 1,  # オーガナイゼーション単位でのステータス「準備中」「実行中」「実行中(遅延)」対象のカウント（ita-by-conductor-synchronizeを含まない）
+              "workspaces": [
                 {
-                  "id": "da1ac029-5e2d-45d7-8516-3c54edbad45d",
-                  "last_update_timestamp": "2023-10-10T17:13:58.744328Z",
-                  "status_id": "3",
-                  "status_name": "実行中"
+                  "id": "Workspace_01",  # オーガナイゼーション上のワークスペース
+                  "execute_count": 0,  # ワークスペース単位でのステータス「準備中」「実行中」「実行中(遅延)」対象のカウント（ita-by-conductor-synchronizeを含まない）
+                  "backyards": {
+                    "ita-by-ansible-execute": [],
+                    "ita-by-conductor-synchronize": [],
+                    "ita-by-excel-export-import": [],
+                    "ita-by-menu-create": [],
+                    "ita-by-menu-export-import": [],
+                    "ita-by-terraform-cli-execute": [],
+                    "ita-by-terraform-cloud-ep-execute": []
+                  }
+                },
+                {
+                  "id": "Workspace_02",  # オーガナイゼーション上のワークスペース
+                  "execute_count": 1,  # ワークスペース単位でのステータス「準備中」「実行中」「実行中(遅延)」対象のカウント（ita-by-conductor-synchronizeを含まない）
+                  "backyards": {  # 各バックヤード機能でステータスが「準備中」「実行中」「実行中(遅延)」の対象がある場合、対象のID, 最終更新日時, ステータスID, ステータス名称が格納されます
+                    "ita-by-ansible-execute": [],
+                    "ita-by-conductor-synchronize": [],
+                    "ita-by-excel-export-import": [],
+                    "ita-by-menu-create": [],
+                    "ita-by-menu-export-import": [],
+                    "ita-by-terraform-cli-execute": [],
+                    "ita-by-terraform-cloud-ep-execute": [
+                      {
+                        "id": "da1ac029-5e2d-45d7-8516-3c54edbad45d",
+                        "last_update_timestamp": "2023-10-10T17:13:58.744328Z",
+                        "status_id": "3",
+                        "status_name": "実行中"
+                      }
+                    ]
+                  }
                 }
               ]
             }
-          }
+          ]
         },
         "message": "SUCCESS",
         "result": "000-00000",
@@ -482,61 +499,77 @@
       {
         "data": {
           "execute_count": 0,  # システム全体でのステータス「準備中」「実行中」「実行中(遅延)」対象のカウント（ita-by-conductor-synchronizeを含まない）
-          "Organization_01": {
-            "execute_count": 0,  # オーガナイゼーション単位でのステータス「準備中」「実行中」「実行中(遅延)」対象のカウント（ita-by-conductor-synchronizeを含まない）
-            "Workspace_01": {
-              "execute_count": 0,  # ワークスペース単位でのステータス「準備中」「実行中」「実行中(遅延)」対象のカウント（ita-by-conductor-synchronizeを含まない）
-              "ita-by-ansible-execute": [],
-              "ita-by-conductor-synchronize": [
+          "organizations": [
+            {
+              "id": "Organization_01",  # システム上のオーガナイゼーション
+              "execute_count": 0,  # オーガナイゼーション単位でのステータス「準備中」「実行中」「実行中(遅延)」対象のカウント（ita-by-conductor-synchronizeを含まない）
+              "workspaces": [
                 {
-                  "id": "6b9743ab-73fd-49e9-b20b-910f00546827",
-                  "last_update_timestamp": "2023-10-10T16:55:04.053156Z",
-                  "status_id": "3",
-                  "status_name": "実行中"
+                  "id": "Workspace_01",  # オーガナイゼーション上のワークスペース
+                  "execute_count": 0,  # ワークスペース単位でのステータス「準備中」「実行中」「実行中(遅延)」対象のカウント（ita-by-conductor-synchronizeを含まない）
+                  "backyards": {  # 各バックヤード機能でステータスが「準備中」「実行中」「実行中(遅延)」の対象がある場合、対象のID, 最終更新日時, ステータスID, ステータス名称が格納されます
+                    "ita-by-ansible-execute": [],
+                    "ita-by-conductor-synchronize": [
+                      {
+                        "id": "6b9743ab-73fd-49e9-b20b-910f00546827",
+                        "last_update_timestamp": "2023-10-10T16:55:04.053156Z",
+                        "status_id": "3",
+                        "status_name": "実行中"
+                      },
+                      {
+                        "id": "9b8ab1d7-b2f7-4e78-8529-e79b63ce495b",
+                        "last_update_timestamp": "2023-10-10T16:50:02.175727Z",
+                        "status_id": "3",
+                        "status_name": "実行中"
+                      }
+                    ],
+                    "ita-by-excel-export-import": [],
+                    "ita-by-menu-create": [],
+                    "ita-by-menu-export-import": [],
+                    "ita-by-terraform-cli-execute": [],
+                    "ita-by-terraform-cloud-ep-execute": []
+                  }
+                }
+              ]
+            },
+            {
+              "id": "Organization_02",  # システム上のオーガナイゼーション
+              "execute_count": 0,  # オーガナイゼーション単位でのステータス「準備中」「実行中」「実行中(遅延)」対象のカウント（ita-by-conductor-synchronizeを含まない）
+              "workspaces": [
+                {
+                  "id": "Workspace_01",  # オーガナイゼーション上のワークスペース
+                  "execute_count": 0,  # ワークスペース単位でのステータス「準備中」「実行中」「実行中(遅延)」対象のカウント（ita-by-conductor-synchronizeを含まない）
+                  "backyards": {
+                    "ita-by-ansible-execute": [],
+                    "ita-by-conductor-synchronize": [],
+                    "ita-by-excel-export-import": [],
+                    "ita-by-menu-create": [],
+                    "ita-by-menu-export-import": [],
+                    "ita-by-terraform-cli-execute": [],
+                    "ita-by-terraform-cloud-ep-execute": []
+                  }
                 },
                 {
-                  "id": "9b8ab1d7-b2f7-4e78-8529-e79b63ce495b",
-                  "last_update_timestamp": "2023-10-10T16:50:02.175727Z",
-                  "status_id": "3",
-                  "status_name": "実行中"
+                  "id": "Workspace_02",  # オーガナイゼーション上のワークスペース
+                  "execute_count": 0,  # ワークスペース単位でのステータス「準備中」「実行中」「実行中(遅延)」対象のカウント（ita-by-conductor-synchronizeを含まない）
+                  "backyards": {  # 各バックヤード機能でステータスが「準備中」「実行中」「実行中(遅延)」の対象がある場合、対象のID, 最終更新日時, ステータスID, ステータス名称が格納されます
+                    "ita-by-ansible-execute": [],
+                    "ita-by-conductor-synchronize": [],
+                    "ita-by-excel-export-import": [],
+                    "ita-by-menu-create": [],
+                    "ita-by-menu-export-import": [],
+                    "ita-by-terraform-cli-execute": [],
+                    "ita-by-terraform-cloud-ep-execute": []
+                  }
                 }
-              ],
-              "ita-by-excel-export-import": [],
-              "ita-by-menu-create": [],
-              "ita-by-menu-export-import": [],
-              "ita-by-terraform-cli-execute": [],
-              "ita-by-terraform-cloud-ep-execute": []
+              ]
             }
-          },
-          "Organization_02": {
-            "execute_count": 0,  # オーガナイゼーション単位でのステータス「準備中」「実行中」「実行中(遅延)」対象のカウント（ita-by-conductor-synchronizeを含まない）
-            "Workspace_01": {
-              "execute_count": 0,  # ワークスペース単位でのステータス「準備中」「実行中」「実行中(遅延)」対象のカウント（ita-by-conductor-synchronizeを含まない）
-              "ita-by-ansible-execute": [],
-              "ita-by-conductor-synchronize": [],
-              "ita-by-excel-export-import": [],
-              "ita-by-menu-create": [],
-              "ita-by-menu-export-import": [],
-              "ita-by-terraform-cli-execute": [],
-              "ita-by-terraform-cloud-ep-execute": []
-            },
-            "Workspace_02": {
-              "execute_count": 0,  # ワークスペース単位でのステータス「準備中」「実行中」「実行中(遅延)」対象のカウント（ita-by-conductor-synchronizeを含まない）
-              "ita-by-ansible-execute": [],
-              "ita-by-conductor-synchronize": [],
-              "ita-by-excel-export-import": [],
-              "ita-by-menu-create": [],
-              "ita-by-menu-export-import": [],
-              "ita-by-terraform-cli-execute": [],
-              "ita-by-terraform-cloud-ep-execute": []
-            }
-          }
+          ]
         },
         "message": "SUCCESS",
         "result": "000-00000",
         "ts": "2023-10-10T07:59:05.079Z"
       }
-
 
 
 - RestAPIを直接呼び出す場合は以下の内容で呼び出すことが出来ます。
