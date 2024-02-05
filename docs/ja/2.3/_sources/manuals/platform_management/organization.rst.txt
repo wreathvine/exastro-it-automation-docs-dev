@@ -56,7 +56,7 @@ Organization (オーガナイゼーション)
     - :kbd:`git`
     - :kbd:`jq`
 
-.. _organization_creation_v2.1:
+.. _organization_creation:
 
 オーガナイゼーション作成
 ------------------------
