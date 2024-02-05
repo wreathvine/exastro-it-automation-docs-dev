@@ -196,7 +196,7 @@ Docker Compose
    | HTTPSを利用する場合には、 LoadBalancer または、リバースプロキシを利用する必要があります。
    | LoadBalancer または、リバースプロキシを利用する場合は、別途準備をする必要があります。
 
-.. _install_docker_compose_v2.2:
+.. _install_docker_compose:
 
 インストール (自動)
 ===================
