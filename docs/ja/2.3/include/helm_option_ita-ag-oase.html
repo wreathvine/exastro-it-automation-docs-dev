@@ -66,12 +66,12 @@
         <dd>
           <div>
             <select name="version" onchange="location.href=value;">
-              <option value="../../../ja/2.4/include/helm_option_mongo.html">current</option>
-              <option value="../../../ja/2.4/include/helm_option_mongo.html">2.4(current)</option>
-              <option value="../../../ja/2.3/include/helm_option_mongo.html" selected>2.3</option>
-              <option value="../../../ja/2.2/include/helm_option_mongo.html">2.2</option>
-              <option value="../../../ja/2.1/include/helm_option_mongo.html">2.1</option>
-              <option value="../../../ja/2.0/include/helm_option_mongo.html">2.0</option>
+              <option value="../../../ja/2.4/include/helm_option_ita-ag-oase.html">current</option>
+              <option value="../../../ja/2.4/include/helm_option_ita-ag-oase.html">2.4(current)</option>
+              <option value="../../../ja/2.3/include/helm_option_ita-ag-oase.html" selected>2.3</option>
+              <option value="../../../ja/2.2/include/helm_option_ita-ag-oase.html">2.2</option>
+              <option value="../../../ja/2.1/include/helm_option_ita-ag-oase.html">2.1</option>
+              <option value="../../../ja/2.0/include/helm_option_ita-ag-oase.html">2.0</option>
             </select>
           </div>
         </dd>
@@ -84,8 +84,8 @@
         <dd>
           <div>
             <select name="lang" onchange="location.href=value;">
-              <option value="../../../ja/2.3/include/helm_option_mongo.html" selected>日本語</option>
-              <option value="../../../en/2.3/include/helm_option_mongo.html">English</option>
+              <option value="../../../ja/2.3/include/helm_option_ita-ag-oase.html" selected>日本語</option>
+              <option value="../../../en/2.3/include/helm_option_ita-ag-oase.html">English</option>
             </select>
           </div>
         </dd>
@@ -143,8 +143,8 @@
 <article class="divInner">
 <div class="body" role="main">
 
-  <table class="filter-table docutils align-left" id="id1">
-<caption><span class="caption-text">MongoDB コンテナのオプションパラメータ</span><a class="headerlink" href="#id1" title="このテーブルへのパーマリンク">¶</a></caption>
+  <table class="filter-table docutils align-left" id="id3">
+<caption><span class="caption-text">ita-ag-oase における Values 一覧</span><a class="headerlink" href="#id3" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 31.2%" />
 <col style="width: 31.2%" />
@@ -159,21 +159,17 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>exastro-platform.mongo.enabled</p></td>
-<td><p>MongoDB コンテナのデプロイの有無</p></td>
-<td><p>可</p></td>
-<td><div class="line-block">
-<div class="line"><strong class="program">true</strong> (デフォルト): MongoDB コンテナをデプロイします。</div>
-<div class="line"><strong class="program">false</strong> : MongoDB コンテナをデプロイしません。</div>
-</div>
-</td>
-</tr>
-<tr class="row-odd"><td><p>exastro-platform.mongo.image.repository</p></td>
+<tr class="row-even"><td><p>ita-ag-oase.agents.image.repository</p></td>
 <td><p>コンテナイメージのリポジトリ名</p></td>
 <td><p>不可</p></td>
-<td><p>&quot;mongo&quot;</p></td>
+<td><p>&quot;&quot;</p></td>
 </tr>
-<tr class="row-even"><td><p>exastro-platform.mongo.image.pullPolicy</p></td>
+<tr class="row-odd"><td><p>ita-ag-oase.agents.image.tag</p></td>
+<td><p>コンテナイメージのタグ</p></td>
+<td><p>不可</p></td>
+<td><p>&quot;&quot;</p></td>
+</tr>
+<tr class="row-even"><td><p>ita-ag-oase.agents.image.pullPolicy</p></td>
 <td><p>イメージプルポリシー</p></td>
 <td><p>可</p></td>
 <td><div class="line-block">
@@ -183,40 +179,142 @@
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td><p>exastro-platform.mongo.image.tag</p></td>
-<td><p>コンテナイメージのタグ</p></td>
-<td><p>不可</p></td>
-<td><p>&quot;6.0&quot;</p></td>
+<tr class="row-odd"><td><p>ita-ag-oase.agents.extraEnv.TZ</p></td>
+<td><p>OASE エージェント システムで使用する規定の言語</p></td>
+<td><p>可</p></td>
+<td><p>Asia/Tokyo</p></td>
 </tr>
-<tr class="row-even"><td><p>exastro-platform.mongo.persistence.enabled</p></td>
-<td><p>Exastro 共用データベースのデータ永続化の有効フラグ</p></td>
+<tr class="row-even"><td><p>ita-ag-oase.agents.extraEnv.DEFAULT_LANGUAGE</p></td>
+<td><p>OASE エージェント システムで使用する言語</p></td>
+<td><p>可</p></td>
+<td><p>ja</p></td>
+</tr>
+<tr class="row-odd"><td><p>ita-ag-oase.agents.extraEnv.LANGUAGE</p></td>
+<td><p>OASE エージェント のバージョン</p></td>
+<td><p>可</p></td>
+<td><p>en</p></td>
+</tr>
+<tr class="row-even"><td><p>ita-ag-oase.agents.extraEnv.ITERATION</p></td>
+<td><p>OASE エージェント が設定を初期化するまでの、処理の繰り返し数（下限値: 10）</p></td>
+<td><p>可</p></td>
+<td><p>500</p></td>
+</tr>
+<tr class="row-odd"><td><p>ita-ag-oase.agents.extraEnv.EXECUTE_INTERVAL</p></td>
+<td><p>ita-ag-oaseがイベント取得対象に対してイベント取得の間隔（秒）（下限値: 3）</p></td>
+<td><p>可</p></td>
+<td><p>10</p></td>
+</tr>
+<tr class="row-even"><td><p>ita-ag-oase.agents.extraEnv.LOG_LEVEL</p></td>
+<td><p>OASE エージェント のログレベル</p></td>
+<td><p>可</p></td>
+<td><p>INFO</p></td>
+</tr>
+<tr class="row-odd"><td><p>ita-ag-oase.eagents.xtraEnv.AGENT_NAME</p></td>
+<td><p>起動する OASEエージェントの名前</p></td>
+<td><p>可</p></td>
+<td><p>oase-agent</p></td>
+</tr>
+<tr class="row-even"><td><p>ita-ag-oase.agents.extraEnv.EXASTRO_URL</p></td>
+<td><p>Exastro IT Automation の Service URL</p></td>
+<td><p>可</p></td>
+<td><p><a class="reference external" href="http://platform-auth:8000">http://platform-auth:8000</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>ita-ag-oase.agents.extraEnv.EXASTRO_ORGANIZATION_ID</p></td>
+<td><p>Exastro IT Automation で作成した OrganizationID</p></td>
+<td><p>必須</p></td>
+<td><p>org001</p></td>
+</tr>
+<tr class="row-even"><td><p>ita-ag-oase.agents.extraEnv.EXASTRO_WORKSPACE_ID</p></td>
+<td><p>Exastro IT Automation で作成した WorkspaceID</p></td>
+<td><p>必須</p></td>
+<td><p>ws01</p></td>
+</tr>
+<tr class="row-odd"><td><p>ita-ag-oase.agents.extraEnv.EVENT_COLLECTION_SETTINGS_NAMES</p></td>
+<td><div class="line-block">
+<div class="line">Exastro IT Automation のOASE管理 エージェント で作成した イベント収集設定名</div>
+<div class="line">カンマ区切りで複数指定可能</div>
+</div>
+</td>
+<td><p>必須</p></td>
+<td><p>id0001</p></td>
+</tr>
+<tr class="row-even"><td><p>ita-ag-oase.agents.secret.EXASTRO_USERNAME</p></td>
+<td><p>Exastro IT Automation で作成した ユーザー名</p></td>
+<td><p>可</p></td>
+<td><p>admin</p></td>
+</tr>
+<tr class="row-odd"><td><p>ita-ag-oase.agents.secret.EXASTRO_PASSWORD</p></td>
+<td><p>Exastro IT Automation で作成した パスワード</p></td>
+<td><p>可</p></td>
+<td><p>sample-password</p></td>
+</tr>
+<tr class="row-even"><td><p>ita-ag-oase.agents.resources.requests.memory</p></td>
+<td><p>メモリ要求</p></td>
+<td><p>可</p></td>
+<td><p>&quot;64Mi&quot;</p></td>
+</tr>
+<tr class="row-odd"><td><p>ita-ag-oase.agents.resources.requests.cpu</p></td>
+<td><p>CPU要求</p></td>
+<td><p>可</p></td>
+<td><p>&quot;250m&quot;</p></td>
+</tr>
+<tr class="row-even"><td><p>ita-ag-oase.agents.resources.limits.memory</p></td>
+<td><p>メモリ上限</p></td>
+<td><p>可</p></td>
+<td><p>&quot;64Mi&quot;</p></td>
+</tr>
+<tr class="row-odd"><td><p>ita-ag-oase.agents.resources.limits.cpu</p></td>
+<td><p>CPU上限</p></td>
+<td><p>可</p></td>
+<td><p>&quot;250m&quot;</p></td>
+</tr>
+<tr class="row-even"><td><p>ita-ag-oase.nameOverride</p></td>
+<td><div class="line-block">
+<div class="line">Exastro OASE Agent の定義名</div>
+<div class="line">※同一pod内に複数エージェントを構築する際は必須）</div>
+</div>
+</td>
+<td><p>可</p></td>
+<td><p>&quot;&quot;</p></td>
+</tr>
+<tr class="row-odd"><td><p>ita-ag-oase.persistence.enabled</p></td>
+<td><p>OASE エージェントコンテナのデプロイの有無</p></td>
 <td><p>可</p></td>
 <td><div class="line-block">
-<div class="line"><strong class="program">true</strong> (デフォルト): データを永続化する</div>
-<div class="line"><strong class="program">false</strong>: データを永続化しない</div>
+<div class="line"><strong class="program">true</strong> (デフォルト): OASE エージェントコンテナをデプロイします。</div>
+<div class="line"><strong class="program">false</strong> : OASE エージェントコンテナをデプロイしません。</div>
 </div>
 </td>
 </tr>
-<tr class="row-odd"><td><p>exastro-platform.mongo.persistence.reinstall</p></td>
+<tr class="row-even"><td><p>ita-ag-oase.persistence.reinstall</p></td>
 <td><p>再インストール時にデータ領域の初期化の要否</p></td>
 <td><p>不可</p></td>
 <td><div class="line-block">
 <div class="line"><strong class="program">true</strong> : データを初期化(削除)する</div>
-<div class="line"><strong class="program">false</strong> (デフォルト): データを初期化(削除)しない</div>
+<div class="line">:program:<a href="#id1"><span class="problematic" id="id2">`</span></a>false`(デフォルト): データを初期化(削除)しない</div>
 </div>
 </td>
 </tr>
-<tr class="row-even"><td><p>exastro-platform.mongo.persistence.accessMode</p></td>
+<tr class="row-odd"><td><p>ita-ag-oase.persistence.accessMode</p></td>
 <td><p>永続ボリュームのアクセスモードの指定。</p></td>
 <td><p>不可</p></td>
-<td><p>&quot;ReadWriteOnce&quot;</p></td>
+<td><p>&quot;ReadWriteMany&quot;</p></td>
 </tr>
-<tr class="row-odd"><td><p>exastro-platform.mongo.persistence.size</p></td>
+<tr class="row-even"><td><p>ita-ag-oase.persistence.size</p></td>
 <td><p>永続ボリュームのディスク容量</p></td>
 <td><p>可 (データ永続化時)</p></td>
-<td><p>&quot;20Gi&quot;</p></td>
+<td><p>&quot;10Gi&quot;</p></td>
 </tr>
-<tr class="row-even"><td><p>exastro-platform.mongo.persistence.storageClass</p></td>
+<tr class="row-odd"><td><p>ita-ag-oase.persistence.volumeType</p></td>
+<td><p>永続ボリュームのボリュームタイプ</p></td>
+<td><p>可 (現在無効)</p></td>
+<td><div class="line-block">
+<div class="line"><strong class="program">hostPath</strong> (デフォルト): Kubernetes クラスタのノード上にデータを保存(非推奨)</div>
+<div class="line"><strong class="program">AKS</strong>: AKS のストレージクラスを利用</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>ita-ag-oase.persistence.storageClass</p></td>
 <td><p>永続ボリュームにストレージクラスを利用する場合のクラスを指定</p></td>
 <td><p>可 (データ永続化時)</p></td>
 <td><div class="line-block">
@@ -224,31 +322,6 @@
 <div class="line"><strong class="program">ストレージクラス名</strong>: クラウドプロバイダなどから提供されるストレージクラス名を指定。</div>
 </div>
 </td>
-</tr>
-<tr class="row-odd"><td><p>exastro-platform.mongo.persistence.matchLabels.name</p></td>
-<td><p>利用する永続ボリューム名を指定</p></td>
-<td><p>不可</p></td>
-<td><p>&quot;コメントアウト&quot;</p></td>
-</tr>
-<tr class="row-even"><td><p>exastro-platform.mongo.resources.requests.memory</p></td>
-<td><p>メモリ要求</p></td>
-<td><p>可</p></td>
-<td><p>&quot;256Mi&quot;</p></td>
-</tr>
-<tr class="row-odd"><td><p>exastro-platform.mongo.resources.requests.cpu</p></td>
-<td><p>CPU要求</p></td>
-<td><p>可</p></td>
-<td><p>&quot;1m&quot;</p></td>
-</tr>
-<tr class="row-even"><td><p>exastro-platform.mongo.resources.limits.memory</p></td>
-<td><p>メモリ上限</p></td>
-<td><p>可</p></td>
-<td><p>&quot;2Gi&quot;</p></td>
-</tr>
-<tr class="row-odd"><td><p>exastro-platform.mongo.resources.limits.cpu</p></td>
-<td><p>CPU上限</p></td>
-<td><p>可</p></td>
-<td><p>&quot;4&quot;</p></td>
 </tr>
 </tbody>
 </table>
