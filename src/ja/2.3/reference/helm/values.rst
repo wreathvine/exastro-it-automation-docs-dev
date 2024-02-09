@@ -215,19 +215,32 @@ ita-migration
 .. include:: ../../include/helm_option_ita-migration.rst
 
 Exastro OASE
-=====================
+============
 
 共通設定 (MongoDB)
------------------
+------------------
 
 .. include:: ../../include/helm_option_mongoDefinition.rst
 
 ita-by-oase-conclusion
---------------
+----------------------
 
 .. include:: ../../include/helm_option_ita-by-oase-conclusion.rst
 
 ita-api-oase-receiver
---------------
+---------------------
 
 .. include:: ../../include/helm_option_ita-api-oase-receiver.rst
+
+
+Exastro OASE Agent
+==================
+共通設定 (OASE Agent)
+------------------
+
+.. include:: ../../include/helm_option_agentGlobalDefinition.rst
+
+ita-ag-oase
+----------------------
+
+.. include:: ../../include/helm_option_ita-ag-oase.rst
