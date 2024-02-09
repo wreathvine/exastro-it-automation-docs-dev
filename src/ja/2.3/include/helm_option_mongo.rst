@@ -31,13 +31,13 @@
    * - exastro-platform.mongo.persistence.enabled
      - Exastro 共用データベースのデータ永続化の有効フラグ
      - 可
-     - | :program:`"true"` (デフォルト): データを永続化する
-       | :program:`"false"`: データを永続化しない
+     - | :program:`true` (デフォルト): データを永続化する
+       | :program:`false`: データを永続化しない
    * - exastro-platform.mongo.persistence.reinstall
      - 再インストール時にデータ領域の初期化の要否
      - 不可
-     - | :program:`"true"` : データを初期化(削除)する
-       | :program:`"false"`(デフォルト): データを初期化(削除)しない
+     - | :program:`true` : データを初期化(削除)する
+       | :program:`false` (デフォルト): データを初期化(削除)しない
    * - exastro-platform.mongo.persistence.accessMode
      - 永続ボリュームのアクセスモードの指定。
      - 不可
@@ -49,7 +49,7 @@
    * - exastro-platform.mongo.persistence.storageClass
      - 永続ボリュームにストレージクラスを利用する場合のクラスを指定
      - 可 (データ永続化時)
-     - | :program:`"-"` (デフォルト): ストレージクラスを指定しない。
+     - | :program:`-` (デフォルト): ストレージクラスを指定しない。
        | :program:`ストレージクラス名`: クラウドプロバイダなどから提供されるストレージクラス名を指定。
    * - exastro-platform.mongo.persistence.matchLabels.name
      - 利用する永続ボリューム名を指定
