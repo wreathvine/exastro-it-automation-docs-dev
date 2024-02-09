@@ -65,7 +65,7 @@ OASE 利用手順
 OASE作業フロー
 -----------------------
 
-| OASE の各メニューにおける標準的な作業フローは以下のとおりです。
+| OASE の各メニューにおける標準的な作業フローは以下の通りです。
 | 各作業の詳細は次項に記載しています。
 
 .. figure:: /images/ja/oase/oase/oase_rule_process_v2-3.png
@@ -143,14 +143,14 @@ OASE メニュー
      - | 収集して未だ評価機能に検知されていない状態のことです。
        | 判定時間が過ぎると、既知、未知、時間切れイベントのいずれかに変化します。
    * - 既知イベント
-     - ルールで検知された状態のことです。
+     - ルールにマッチし、利用された状態のことです。
    * - 未知イベント
      - | フィルターにも抽出されない、評価機能に検知されなかった状態のことです。
        | そして、未知の事象として、通知する必要があるイベントです。
    * - 時間切れイベント
      - イベントの有効期限（TTL）×2を超えた状態のことです。
    * - 結論イベント
-     - ルールで検知された際に、発生するイベントのことです。
+     - ルールにマッチした際に、発生するイベントのことです。
    * - 実行アクション
      - 実行したアクションの情報を表示します。
 
@@ -858,11 +858,12 @@ OASE メニュー
                "lastchange": 1696403830.0,
                "subject": "test mail",
                "body": "sample\r\n"
-               "_exastro_event_collection_settings_id": "d0c9a70c-a1c0-4c7b-9e96-82e602ebc55e",
-               "_exastro_fetched_time": 1696406510,
-               "_exastro_end_time": 1696406810,
-               "_exastro_type": "event"
-           }],
+               "_exastro_event_collection_settings_id": "d0c9a70c-a1c0-4c7b-9e96-82e602ebc55e",
+               "_exastro_fetched_time": 1696406510,
+               "_exastro_end_time": 1696406810,
+               "_exastro_type": "event"
+               "_exastro_event_collection_settings_name": "agent01"
+           }]
    }
 
 .. _loop_care_notes:
