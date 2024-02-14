@@ -702,35 +702,35 @@ $(window).on('load', function () {
 </div>
 <div class="literal-block-wrapper docutils container" id="id18">
 <div class="code-block-caption"><span class="caption-number">リスト 4.3 </span><span class="caption-text">exastro-agent.yaml</span><a class="headerlink" href="#id18" title="このコードへのパーマリンク">¶</a></div>
-<div class="highlight-diff notranslate"><div class="highlight"><pre><span></span><span class="linenos">39</span>ita-ag-oase:
-<span class="linenos">40</span><span class="w"> </span> agents:
-<span class="linenos">41</span><span class="w"> </span>   - image:
-<span class="linenos">42</span><span class="w"> </span>       repository: &quot;&quot;
-<span class="linenos">43</span><span class="w"> </span>       # Overrides the image tag whose default is the chart appVersion.
-<span class="linenos">44</span><span class="w"> </span>       tag: &quot;alpha.4ccca4.20240124-110529&quot;
-<span class="linenos">45</span><span class="w"> </span>       pullPolicy: IfNotPresent
-<span class="linenos">46</span><span class="w"> </span>     extraEnv:
-<span class="linenos">47</span><span class="w"> </span>       TZ: Asia/Tokyo
-<span class="linenos">48</span><span class="w"> </span>       DEFAULT_LANGUAGE: ja
-<span class="linenos">49</span><span class="w"> </span>       LANGUAGE: &quot;en&quot;
-<span class="linenos">50</span><span class="w"> </span>       ITERATION: &quot;500&quot;
-<span class="linenos">51</span><span class="w"> </span>       EXECUTE_INTERVAL: &quot;10&quot;
-<span class="linenos">52</span><span class="w"> </span>       LOG_LEVEL: INFO
-<span class="linenos">53</span><span class="w"> </span>       AGENT_NAME: &quot;oase-agent&quot;
-<span class="linenos">54</span><span class="gd">-       EXASTRO_URL: &quot;http://platform-auth:8000&quot;</span>
-<span class="linenos">55</span><span class="gi">+       EXASTRO_URL: &quot;http://your-exastro-url&quot;                                   # Exastro IT Automation の Service URL</span>
-<span class="linenos">56</span><span class="gd">-       EXASTRO_ORGANIZATION_ID: &quot;org001&quot;</span>
-<span class="linenos">57</span><span class="gi">+       EXASTRO_ORGANIZATION_ID: &quot;your-organization-id&quot;                          # Exastro IT Automation で作成した OrganizationID</span>
-<span class="linenos">58</span><span class="gd">-       EXASTRO_WORKSPACE_ID: &quot;ws01&quot;</span>
-<span class="linenos">59</span><span class="gi">+       EXASTRO_WORKSPACE_ID: &quot;your-workspace-id&quot;                                # Exastro IT Automation で作成した WorkspaceID</span>
-<span class="linenos">60</span><span class="w"> </span>       # ROLES: &quot;_ws_admin&quot;
-<span class="linenos">61</span><span class="gd">-       EVENT_COLLECTION_SETTINGS_NAMES: &quot;id0001&quot;</span>
-<span class="linenos">62</span><span class="gi">+       EVENT_COLLECTION_SETTINGS_NAMES: &quot;your-event-collection-settigs-names&quot;   # OASE管理 エージェント で作成した イベント収集設定名</span>
-<span class="linenos">63</span><span class="w"> </span>     secret:
-<span class="linenos">64</span><span class="gd">-       EXASTRO_USERNAME: &quot;admin&quot;</span>
-<span class="linenos">65</span><span class="gd">-       EXASTRO_PASSWORD: &quot;sample-password&quot;</span>
-<span class="linenos">66</span><span class="gi">+       EXASTRO_USERNAME: &quot;your-ita-user-name&quot;                                   # Exastro IT Automation で作成した ユーザー名</span>
-<span class="linenos">67</span><span class="gi">+       EXASTRO_PASSWORD: &quot;your-ita-user-password&quot;                               # Exastro IT Automation で作成した パスワード</span>
+<div class="highlight-diff notranslate"><div class="highlight"><pre><span></span><span class="linenos">13</span>ita-ag-oase:
+<span class="linenos">14</span><span class="w"> </span> agents:
+<span class="linenos">15</span><span class="w"> </span>   - image:
+<span class="linenos">16</span><span class="w"> </span>       repository: &quot;&quot;
+<span class="linenos">17</span><span class="w"> </span>       # Overrides the image tag whose default is the chart appVersion.
+<span class="linenos">18</span><span class="w"> </span>       tag: &quot;alpha.4ccca4.20240124-110529&quot;
+<span class="linenos">19</span><span class="w"> </span>       pullPolicy: IfNotPresent
+<span class="linenos">20</span><span class="w"> </span>     extraEnv:
+<span class="linenos">21</span><span class="w"> </span>       TZ: Asia/Tokyo
+<span class="linenos">22</span><span class="w"> </span>       DEFAULT_LANGUAGE: ja
+<span class="linenos">23</span><span class="w"> </span>       LANGUAGE: &quot;en&quot;
+<span class="linenos">24</span><span class="w"> </span>       ITERATION: &quot;500&quot;
+<span class="linenos">25</span><span class="w"> </span>       EXECUTE_INTERVAL: &quot;10&quot;
+<span class="linenos">26</span><span class="w"> </span>       LOG_LEVEL: INFO
+<span class="linenos">27</span><span class="w"> </span>       AGENT_NAME: &quot;oase-agent&quot;
+<span class="linenos">28</span><span class="gd">-       EXASTRO_URL: &quot;http://platform-auth:8000&quot;</span>
+<span class="linenos">29</span><span class="gi">+       EXASTRO_URL: &quot;http://your-exastro-url&quot;                                   # Exastro IT Automation の Service URL</span>
+<span class="linenos">30</span><span class="gd">-       EXASTRO_ORGANIZATION_ID: &quot;org001&quot;</span>
+<span class="linenos">31</span><span class="gi">+       EXASTRO_ORGANIZATION_ID: &quot;your-organization-id&quot;                          # Exastro IT Automation で作成した OrganizationID</span>
+<span class="linenos">32</span><span class="gd">-       EXASTRO_WORKSPACE_ID: &quot;ws01&quot;</span>
+<span class="linenos">33</span><span class="gi">+       EXASTRO_WORKSPACE_ID: &quot;your-workspace-id&quot;                                # Exastro IT Automation で作成した WorkspaceID</span>
+<span class="linenos">34</span><span class="w"> </span>       # ROLES: &quot;_ws_admin&quot;
+<span class="linenos">35</span><span class="gd">-       EVENT_COLLECTION_SETTINGS_NAMES: &quot;id0001&quot;</span>
+<span class="linenos">36</span><span class="gi">+       EVENT_COLLECTION_SETTINGS_NAMES: &quot;your-event-collection-settigs-names&quot;   # OASE管理 エージェント で作成した イベント収集設定名</span>
+<span class="linenos">37</span><span class="w"> </span>     secret:
+<span class="linenos">38</span><span class="gd">-       EXASTRO_USERNAME: &quot;admin&quot;</span>
+<span class="linenos">39</span><span class="gd">-       EXASTRO_PASSWORD: &quot;sample-password&quot;</span>
+<span class="linenos">40</span><span class="gi">+       EXASTRO_USERNAME: &quot;your-ita-user-name&quot;                                   # Exastro IT Automation で作成した ユーザー名</span>
+<span class="linenos">41</span><span class="gi">+       EXASTRO_PASSWORD: &quot;your-ita-user-password&quot;                               # Exastro IT Automation で作成した パスワード</span>
 </pre></div>
 </div>
 </div>
@@ -1142,16 +1142,27 @@ kubectl<span class="w"> </span>get<span class="w"> </span>po<span class="w"> </s
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id34">
-<div class="code-block-caption"><span class="caption-number">リスト 4.19 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id34" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 4.19 </span><span class="caption-text">出力結果</span><a class="headerlink" href="#id34" title="このコードへのパーマリンク">¶</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>NAME:<span class="w"> </span>exastro-agent-1
+LAST<span class="w"> </span>DEPLOYED:<span class="w"> </span>Wed<span class="w"> </span>Feb<span class="w"> </span><span class="m">14</span><span class="w"> </span><span class="m">14</span>:36:27<span class="w"> </span><span class="m">2024</span>
+NAMESPACE:<span class="w"> </span>exastro
+STATUS:<span class="w"> </span>deployed
+REVISION:<span class="w"> </span><span class="m">1</span>
+TEST<span class="w"> </span>SUITE:<span class="w"> </span>None
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id35">
+<div class="code-block-caption"><span class="caption-number">リスト 4.20 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id35" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>helm<span class="w"> </span>install<span class="w"> </span>exastro-agent-2<span class="w"> </span>exastro/exastro-agent<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--namespace<span class="w"> </span>exastro<span class="w"> </span>--create-namespace<span class="w"> </span><span class="se">\</span>
 <span class="w">  </span>--values<span class="w"> </span>exastro-agent-2.yaml
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id35">
-<div class="code-block-caption"><span class="caption-number">リスト 4.20 </span><span class="caption-text">出力結果</span><a class="headerlink" href="#id35" title="このコードへのパーマリンク">¶</a></div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>NAME:<span class="w"> </span>exastro-agent
+<div class="literal-block-wrapper docutils container" id="id36">
+<div class="code-block-caption"><span class="caption-number">リスト 4.21 </span><span class="caption-text">出力結果</span><a class="headerlink" href="#id36" title="このコードへのパーマリンク">¶</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>NAME:<span class="w"> </span>exastro-agent-2
 LAST<span class="w"> </span>DEPLOYED:<span class="w"> </span>Wed<span class="w"> </span>Feb<span class="w"> </span><span class="m">14</span><span class="w"> </span><span class="m">14</span>:36:27<span class="w"> </span><span class="m">2024</span>
 NAMESPACE:<span class="w"> </span>exastro
 STATUS:<span class="w"> </span>deployed
@@ -1162,8 +1173,8 @@ TEST<span class="w"> </span>SUITE:<span class="w"> </span>None
 </div>
 </li>
 <li><p>インストール状況確認</p>
-<div class="literal-block-wrapper docutils container" id="id36">
-<div class="code-block-caption"><span class="caption-number">リスト 4.21 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id36" title="このコードへのパーマリンク">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id37">
+<div class="code-block-caption"><span class="caption-number">リスト 4.22 </span><span class="caption-text">コマンド</span><a class="headerlink" href="#id37" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Pod の一覧を取得</span>
 kubectl<span class="w"> </span>get<span class="w"> </span>po<span class="w"> </span>-n<span class="w"> </span>exastro
 
@@ -1172,8 +1183,8 @@ kubectl<span class="w"> </span>get<span class="w"> </span>po<span class="w"> </s
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id37">
-<div class="code-block-caption"><span class="caption-number">リスト 4.22 </span><span class="caption-text">出力結果</span><a class="headerlink" href="#id37" title="このコードへのパーマリンク">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id38">
+<div class="code-block-caption"><span class="caption-number">リスト 4.23 </span><span class="caption-text">出力結果</span><a class="headerlink" href="#id38" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w"> </span>NAME<span class="w">                             </span>READY<span class="w">   </span>STATUS<span class="w">    </span>RESTARTS<span class="w">   </span>AGE
 <span class="w"> </span>ita-ag-oase-1-66cb7669c6-m2q8c<span class="w">   </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">   </span><span class="m">0</span><span class="w">          </span>16m
 <span class="w"> </span>ita-ag-oase-2-787fb97f75-9s7xj<span class="w">   </span><span class="m">1</span>/1<span class="w">     </span>Running<span class="w">   </span><span class="m">0</span><span class="w">          </span>13m
