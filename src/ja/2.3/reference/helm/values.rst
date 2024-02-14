@@ -235,12 +235,13 @@ ita-api-oase-receiver
 
 Exastro OASE Agent
 ==================
+
 共通設定 (OASE Agent)
-------------------
+---------------------
 
 .. include:: ../../include/helm_option_agentGlobalDefinition.rst
 
 ita-ag-oase
-----------------------
+-----------
 
 .. include:: ../../include/helm_option_ita-ag-oase.rst

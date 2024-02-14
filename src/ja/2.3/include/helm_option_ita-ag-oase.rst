@@ -94,7 +94,7 @@
      - "250m"
    * - ita-ag-oase.nameOverride
      - | Exastro OASE Agent の定義名
-       | ※同一pod内に複数エージェントを構築する際は必須）
+       | ※同一クラスタ内に複数エージェントを構築する際は必須
      - 可
      - ""
    * - ita-ag-oase.persistence.enabled
@@ -106,7 +106,7 @@
      - 再インストール時にデータ領域の初期化の要否
      - 不可
      - | :program:`true` : データを初期化(削除)する
-       | :program:`false`(デフォルト): データを初期化(削除)しない
+       | :program:`false` (デフォルト): データを初期化(削除)しない
    * - ita-ag-oase.persistence.accessMode
      - 永続ボリュームのアクセスモードの指定。
      - 不可
@@ -125,4 +125,7 @@
      - 可 (データ永続化時)
      - | :program:`-` (デフォルト): ストレージクラスを指定しない。
        | :program:`ストレージクラス名`: クラウドプロバイダなどから提供されるストレージクラス名を指定。
-
+   * - exastro-platform.mariadb.persistence.matchLabels.name
+     - 利用する永続ボリューム名を指定
+     - 可(データ永続化時)
+     - ""
