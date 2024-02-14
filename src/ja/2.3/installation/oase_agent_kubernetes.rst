@@ -294,7 +294,7 @@ OASE Agentのパラメータ設定例
           .. code-block:: diff
            :caption: exastro-agent.yaml
            :linenos:
-           :lineno-start: 39
+           :lineno-start: 13
 
            ita-ag-oase:
              agents:
@@ -733,6 +733,16 @@ OASE Agentのパラメータ設定例
               --values exastro-agent-1.yaml
 
          .. code-block:: bash
+            :caption: 出力結果
+
+            NAME: exastro-agent-1
+            LAST DEPLOYED: Wed Feb 14 14:36:27 2024
+            NAMESPACE: exastro
+            STATUS: deployed
+            REVISION: 1
+            TEST SUITE: None
+
+         .. code-block:: bash
             :caption: コマンド
 
             helm install exastro-agent-2 exastro/exastro-agent \
@@ -742,7 +752,7 @@ OASE Agentのパラメータ設定例
          .. code-block:: bash
             :caption: 出力結果
 
-            NAME: exastro-agent
+            NAME: exastro-agent-2
             LAST DEPLOYED: Wed Feb 14 14:36:27 2024
             NAMESPACE: exastro
             STATUS: deployed
