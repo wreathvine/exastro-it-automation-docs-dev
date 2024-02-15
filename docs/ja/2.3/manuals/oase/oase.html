@@ -148,7 +148,7 @@
 </li>
 <li class="toctree-l4"><a class="reference internal" href="#id22">3.5. 付録</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="#labeling-sample">3.5.1. ラベル付与での設定例</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#id24">3.5.2. エージェントで整形したサンプル</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#id24">3.5.2. エージェントから送信されてくるイベントデータの形式</a></li>
 <li class="toctree-l5"><a class="reference internal" href="#loop-care-notes">3.5.3. イベント履歴や評価結果に大量のレコードが表示されている場合の確認事項</a></li>
 </ul>
 </li>
@@ -209,7 +209,7 @@
 </li>
 <li><a class="reference internal" href="#id22">3.5. 付録</a><ul>
 <li><a class="reference internal" href="#labeling-sample">3.5.1. ラベル付与での設定例</a></li>
-<li><a class="reference internal" href="#id24">3.5.2. エージェントで整形したサンプル</a></li>
+<li><a class="reference internal" href="#id24">3.5.2. エージェントから送信されてくるイベントデータの形式</a></li>
 <li><a class="reference internal" href="#loop-care-notes">3.5.3. イベント履歴や評価結果に大量のレコードが表示されている場合の確認事項</a></li>
 </ul>
 </li>
@@ -420,28 +420,33 @@
 <tr class="row-even"><td><p>新規イベント</p></td>
 <td><div class="line-block">
 <div class="line">収集して未だ評価機能に検知されていない状態のことです。</div>
-<div class="line">判定時間が過ぎると、既知、未知、時間切れイベントのいずれかに変化します。</div>
+<div class="line">判定時間が過ぎると、既知（判定済み）、未知、時間切れのいずれかに変化します。</div>
 </div>
 </td>
 </tr>
 <tr class="row-odd"><td><p>既知イベント</p></td>
-<td><p>ルールにマッチし、利用された状態のことです。</p></td>
+<td><p>評価機能に検知された状態もしくは対象のことです。</p></td>
 </tr>
 <tr class="row-even"><td><p>未知イベント</p></td>
 <td><div class="line-block">
-<div class="line">フィルターにも抽出されない、評価機能に検知されなかった状態のことです。</div>
-<div class="line">そして、未知の事象として、通知する必要があるイベントです。</div>
+<div class="line">フィルターに抽出されなかった（評価機能に検知されなかった）状態もしくは対象のことです。</div>
+<div class="line">未知の事象であることから、今後の評価対象として検討する必要が考えられます。</div>
 </div>
 </td>
 </tr>
 <tr class="row-odd"><td><p>時間切れイベント</p></td>
-<td><p>イベントの有効期限（TTL）×2を超えた状態のことです。</p></td>
+<td><div class="line-block">
+<div class="line">下記のいずれかの理由により、ルールの評価対象から外した対象のことです。</div>
+<div class="line">・TTLの2倍以上の期間が経過して、評価対象とするには古すぎる</div>
+<div class="line">・TTLを経過した直後の評価タイミング（ルールにマッチさせる最終タイミング）までに、マッチさせることが出来なかった</div>
+</div>
+</td>
 </tr>
 <tr class="row-even"><td><p>結論イベント</p></td>
 <td><p>ルールにマッチした際に、発生するイベントのことです。</p></td>
 </tr>
 <tr class="row-odd"><td><p>実行アクション</p></td>
-<td><p>実行したアクションの情報を表示します。</p></td>
+<td><p>ルールにマッチしたことにより実行したアクションの情報を表示します。</p></td>
 </tr>
 </tbody>
 </table>
@@ -634,7 +639,11 @@
 </thead>
 <tbody>
 <tr class="row-even"><td><p>ラベルキー</p></td>
-<td><p>ラベルキーを半角英数字と利用可能な記号(_-)で入力できます。</p></td>
+<td><div class="line-block">
+<div class="line">ラベルキーを半角英数字と利用可能な記号(_-)で入力できます。</div>
+<div class="line">先頭に記号を使うことはできません。</div>
+</div>
+</td>
 <td><p>〇</p></td>
 <td><p>手動入力</p></td>
 <td><p>最大長255バイト</p></td>
@@ -1465,12 +1474,12 @@
 </figure>
 </section>
 <section id="id24">
-<h3><span class="section-number">3.5.2. </span>エージェントで整形したサンプル<a class="headerlink" href="#id24" title="この見出しへのパーマリンク">¶</a></h3>
+<h3><span class="section-number">3.5.2. </span>エージェントから送信されてくるイベントデータの形式<a class="headerlink" href="#id24" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
-<div class="line">エージェントで整形したサンプルは以下の通りです。</div>
+<div class="line">エージェントから送信されてくるイベントデータの形式は以下の通りです。</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id25">
-<div class="code-block-caption"><span class="caption-number">リスト 3.17 </span><span class="caption-text">サンプル</span><a class="headerlink" href="#id25" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 3.17 </span><span class="caption-text">メールサーバからの受信データサンプル</span><a class="headerlink" href="#id25" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span>{
 <span class="linenos"> 2</span>        &quot;event&quot;: [{
 <span class="linenos"> 3</span>            &quot;message_id&quot;: &quot;&lt;20231004071711.06338770D0A0@ita-oase-mailserver.localdomain&gt;&quot;,
@@ -1498,9 +1507,10 @@
 <section id="loop-care-notes">
 <span id="id26"></span><h3><span class="section-number">3.5.3. </span>イベント履歴や評価結果に大量のレコードが表示されている場合の確認事項<a class="headerlink" href="#loop-care-notes" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
-<div class="line">ルールで設定した結論イベントが再びルールにマッチする設定になっていた場合、</div>
-<div class="line">無限ループ状態になり結果としてイベント履歴や評価結果に大量のレコードが登録されてしまいます。</div>
-<div class="line">一度フィルターやルールの設定を見直してみて下さい。</div>
+<div class="line">あるルールで設定した結論イベントが、先述のルールに到達するフィルターにマッチする設定になっていた場合</div>
+<div class="line">再びルールにマッチして結論イベントを生み出すという挙動を繰り返すため</div>
+<div class="line">無限ループ状態になり、イベント履歴や評価結果に大量のレコードが登録され続ける状態となります。</div>
+<div class="line">必要に応じて、フィルターやルールの無効化などを行い、設定を見直してみて下さい。</div>
 </div>
 </section>
 </section>

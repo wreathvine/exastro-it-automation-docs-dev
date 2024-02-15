@@ -202,26 +202,27 @@
 <ol class="arabic">
 <li><div class="line-block">
 <div class="line"><strong>イベント収集</strong></div>
-<div class="line">外部サービスより、イベントを収集します。</div>
+<div class="line">外部サービスからイベントを収集します。</div>
 <div class="line">イベントはExastro OASE Agentによって収集され、APIを通してITA本体に送信されます。</div>
 <div class="line">Exastro OASE Agentの詳細は <a class="reference internal" href="oase_management.html#agent-about"><span class="std std-ref">エージェント概要</span></a> を参照してください。</div>
 </div>
 </li>
 <li><div class="line-block">
 <div class="line"><strong>ラベル付与</strong></div>
-<div class="line">ITAに送信されたイベントに対して、設定されたラベルを付与します。</div>
+<div class="line">ITAで受信したイベントに対して、設定されたラベルを付けます。</div>
+<div class="line">様々なアプリケーションからのイベントの情報を、システム内で均質化して扱うことが目的です。</div>
 <div class="line">ラベル付与に関する設定の詳細は <a class="reference internal" href="oase.html#label-creation"><span class="std std-ref">ラベル作成</span></a> および <a class="reference internal" href="oase.html#labeling"><span class="std std-ref">ラベル付与</span></a> を参照してください。</div>
 </div>
 </li>
 <li><div class="line-block">
 <div class="line"><strong>評価</strong></div>
-<div class="line">付与されたラベルを用いて、設定されたルールにマッチするかどうかの判定を行います。</div>
+<div class="line">付与されたラベルを用いて、イベントを抽出（フィルター）し、設定されたルールにマッチするかどうかの判定を行います。</div>
 <div class="line">ルール判定に関する設定の詳細は <a class="reference internal" href="oase.html#filter"><span class="std std-ref">フィルター</span></a> および <a class="reference internal" href="oase.html#rule"><span class="std std-ref">ルール</span></a> を参照してください。</div>
 </div>
 </li>
 <li><div class="line-block">
 <div class="line"><strong>アクション実行・通知</strong></div>
-<div class="line">ルールにマッチした際に、自動的に実行されるアクションとしてオペレーションとConductorを設定することができます。</div>
+<div class="line">ルールにマッチした際に、設定したアクション（ConductorとOperationの設定）を実行することができます。</div>
 <div class="line">また、アクションが実行される前後の通知もルールメニューにて設定することができます。</div>
 <div class="line">アクション設定の詳細は <a class="reference internal" href="oase.html#action"><span class="std std-ref">アクション</span></a> を参照してください。</div>
 </div>
@@ -261,19 +262,19 @@
 </td>
 </tr>
 <tr class="row-even"><td><p>ラベル</p></td>
-<td><p>イベントからデータを抽出し、ラベル作成・ラベル付与メニュー内でのデータを基にOASE内部で利用しやすい形にキーバリューとして付与されたデータのことです。</p></td>
+<td><p>ラベル作成・ラベル付与の設定を基に、OASE内部で利用しやすい形（key&amp;value形式）で、イベント付与された情報のことです。</p></td>
 </tr>
 <tr class="row-odd"><td><p>フィルター</p></td>
-<td><p>ラベルの条件から一意のイベントを絞り込むことです。ルール判定機能へデータを渡すために使用します。</p></td>
+<td><p>ラベルの条件から一意のイベントを絞り込み、抽出すること、もしくはその対象です。ルール判定機能へイベントを渡すために使用します。</p></td>
 </tr>
-<tr class="row-even"><td><p>アクション</p></td>
-<td><p>OASEのルール内で定義される条件に一致した場合に実行される対象です。</p></td>
-</tr>
-<tr class="row-odd"><td><p>ルール</p></td>
+<tr class="row-even"><td><p>ルール</p></td>
 <td><p>任意のアクションを実行したり、結論イベントを生成したりするための条件で、フィルターを組み合わせることによって作成します。</p></td>
 </tr>
+<tr class="row-odd"><td><p>アクション</p></td>
+<td><p>定義されたルールにマッチした場合に実行される対象です。</p></td>
+</tr>
 <tr class="row-even"><td><p>評価</p></td>
-<td><p>ルールに従って、設定されたアクションや結論イベントの生成を行うことを指します。</p></td>
+<td><p>任意に設定したルールに従って、マッチした場合はアクションや結論イベントの生成を行うなど、発生したイベントへ対処を行うことを指します。</p></td>
 </tr>
 <tr class="row-odd"><td><p>結論イベント</p></td>
 <td><p>ルールにマッチした際に、発生するイベントのことです。</p></td>
@@ -298,23 +299,25 @@
 <tr class="row-even"><td><p>新規</p></td>
 <td><div class="line-block">
 <div class="line">収集して未だ評価機能に検知されていない状態のことです。</div>
-<div class="line">判定時間が過ぎると、判定済み、未知、時間切れイベントのいずれかに変化します。</div>
+<div class="line">判定時間が過ぎると、既知（判定済み）、未知、時間切れのいずれかに変化します。</div>
 </div>
 </td>
 </tr>
 <tr class="row-odd"><td><p>既知</p></td>
-<td><p>評価機能に検知されて、評価される可能性のある状態のことです。</p></td>
+<td><p>評価機能に検知された状態もしくは対象のことです。</p></td>
 </tr>
 <tr class="row-even"><td><p>既知（判定済み）</p></td>
-<td><p>ルールにマッチした状態のことです。</p></td>
+<td><p>ルールにマッチした状態もしくは対象のことです。</p></td>
 </tr>
-<tr class="row-odd"><td><p>既知（時間切れ）</p></td>
-<td><p>イベントの有効期限（TTL）×2を超えた状態のことです。</p></td>
+<tr class="row-odd"><td><p>時間切れ</p></td>
+<td><p>下記のいずれかの理由により、ルールの評価対象から外した対象のことです。
+| ・TTLの2倍以上の期間が経過して、評価対象とするには古すぎる
+| ・TTLを経過した直後の評価タイミング（ルールにマッチさせる最終タイミング）までに、マッチさせることが出来なかった</p></td>
 </tr>
 <tr class="row-even"><td><p>未知</p></td>
 <td><div class="line-block">
-<div class="line">フィルターにも抽出されない、評価機能に検知されなかった状態のことです。</div>
-<div class="line">そして、未知の事象として、通知する必要があるイベントです。</div>
+<div class="line">フィルターに抽出されなかった（評価機能に検知されなかった）状態もしくは対象のことです。</div>
+<div class="line">未知の事象であることから、今後の評価対象として検討する必要が考えられます。</div>
 </div>
 </td>
 </tr>
