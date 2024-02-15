@@ -1388,9 +1388,6 @@ GitLab 連携設定
 
       .. warning::
          | トークンはGITLAB_ROOT_TOKENで指定された平文で作成されます。
-         | ・api
-         | ・write_repository
-         | ・sudo
 
       | 下記は、GitLab 連携の設定例を記載しています。
 
