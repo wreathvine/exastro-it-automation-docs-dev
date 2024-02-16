@@ -885,10 +885,10 @@ Helm リポジトリの登録
           platform-auth:
             extraEnv:
               # Please set the URL to access
-         -    EXTERNAL_URL: ""
-         -    EXTERNAL_URL_MNG: ""
-         +    EXTERNAL_URL: "http://10.10.10.10:30080"
-         +    EXTERNAL_URL_MNG: "http://10.10.10.10:30081"
+        -     EXTERNAL_URL: ""
+        -     EXTERNAL_URL_MNG: ""
+        +     EXTERNAL_URL: "http://10.10.10.10:30080"
+        +     EXTERNAL_URL_MNG: "http://10.10.10.10:30081"
             ingress:
         -    enabled: true
         +    enabled: false
@@ -1356,17 +1356,17 @@ GitLab 連携設定
               name: gitlab
               enabled: true
               config:
-          -     GITLAB_PROTOCOL: "http"
-          -     GITLAB_HOST: "gitlab"
-          -     GITLAB_PORT: "80"
-          +     GITLAB_PROTOCOL: "接続プロトコル http or https"
-          +     GITLAB_HOST: "接続先"
-          +     GITLAB_PORT: "接続ポート"
+        -       GITLAB_PROTOCOL: "http"
+        -       GITLAB_HOST: "gitlab"
+        -       GITLAB_PORT: "80"
+        +       GITLAB_PROTOCOL: "接続プロトコル http or https"
+        +       GITLAB_HOST: "接続先"
+        +       GITLAB_PORT: "接続ポート"
               secret:
-          -     GITLAB_ROOT_PASSWORD: ""
-          +     GITLAB_ROOT_PASSWORD: "GitLabのRoot権限のパスワード"
-          -     GITLAB_ROOT_TOKEN: ""
-          +     GITLAB_ROOT_TOKEN: "GitLabのRoot権限を持ったトークン"
+        -       GITLAB_ROOT_PASSWORD: ""
+        -       GITLAB_ROOT_TOKEN: ""
+        +       GITLAB_ROOT_PASSWORD: "GitLabのRoot権限のパスワード"
+        +       GITLAB_ROOT_TOKEN: "GitLabのRoot権限を持ったトークン"
 
    .. tab:: GitLabコンテナ
 
@@ -1400,18 +1400,18 @@ GitLab 連携設定
                 name: gitlab
                 enabled: true
                 config:
-                GITLAB_PROTOCOL: "http"
-            -     GITLAB_HOST: "gitlab"
-            -     GITLAB_PORT: "80"
-            +     GITLAB_HOST: "your.database.endpoint" # GitLab用データベースのエンドポイント（外部から接続可能なIP or URL）
-            +     GITLAB_PORT: "30082" # GitLab用データベースの接続ポート
+                  GITLAB_PROTOCOL: "http"
+          -       GITLAB_HOST: "gitlab"
+          -       GITLAB_PORT: "80"
+          +       GITLAB_HOST: "your.database.endpoint" # GitLab用データベースのエンドポイント（外部から接続可能なIP or URL）
+          +       GITLAB_PORT: "30082" # GitLab用データベースの接続ポート
                 secret:
-            -     GITLAB_ROOT_PASSWORD: ""
-            +     GITLAB_ROOT_PASSWORD: "GitLabのRoot権限のパスワード"
-            -     GITLAB_ROOT_TOKEN: ""
-            +     GITLAB_ROOT_TOKEN: "GitLabに作成したいトークン"
+          -       GITLAB_ROOT_PASSWORD: ""
+          -       GITLAB_ROOT_TOKEN: ""
+          +       GITLAB_ROOT_PASSWORD: "GitLabのRoot権限のパスワード"
+          +       GITLAB_ROOT_TOKEN: "GitLabに作成したいトークン"
 
-      2.  GitLabコンテナの有効化
+      1.  GitLabコンテナの有効化
 
           | GitLabコンテナを起動するように設定します。
           | 下記は、NodePort を使用する際の例を記載しています。
@@ -1424,8 +1424,8 @@ GitLab 連携設定
             :lineno-start: 270
 
               gitlab:
-              - enabled: false
-              + enabled: true
+            -   enabled: false
+            +   enabled: true
                 extraEnv:
                   GITLAB_OMNIBUS_CONFIG: |
                     postgresql['shared_buffers'] = "2048MB"
@@ -1434,16 +1434,16 @@ GitLab 連携設定
                     postgresql['effective_cache_size'] = "128MB"
                     postgresql['checkpoint_segments'] = 16
                     postgresql['checkpoint_timeout'] = "10min"
-              -     external_url 'http://gitlab:40080'
-              +     external_url 'http://your.database.endpoint:30082'
+            -       external_url 'http://gitlab:40080'
+            +       external_url 'http://your.database.endpoint:30082'
                 ～ 略 ～
                 service:
-              -   type: ClusterIP
-              +   type: NodePort
+            -     type: ClusterIP
+            +     type: NodePort
                   name: gitlab
                   port: 40080
-              -   # nodePort: 30082
-              +     nodePort: 30082
+            -     # nodePort: 30082
+            +     nodePort: 30082
 
    .. _create_system_manager:
    .. _install_helm_v2.2:
