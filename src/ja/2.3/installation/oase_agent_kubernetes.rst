@@ -29,7 +29,7 @@ OASE Agent (Kubernetes)
 ====
 
 | OASEを利用するための絶対条件である、Exastro OASE Agentの高い可用性やサービスレベルを必要とされる際の、Exastro IT Automation の導入方法となります。
-| 評価や一時的な利用など、簡単に利用を開始したい場合には、:doc:`Docker Compose 版 OASE Agent<oase_agent>` の利用を推奨します。
+| 評価や一時的な利用など、簡単に利用を開始したい場合には、:doc:`Docker Compose 版 OASE Agent<oase_agent_docker_compose>` の利用を推奨します。
 | Exastro OASE Agentの設定や運用については、:ref:`エージェント概要<agent_about>` をご参照ください。
 
 前提条件
