@@ -74,7 +74,8 @@ OASE管理
 
    #. | **エージェントのインストール・起動**
       | エージェントを起動し、イベント収集を開始します。
-      | 詳細は :ref:`インストールガイド<oase_agent_install>` を参照してください。
+      | 詳細は :ref:`インストールガイド（Docker Compose）<oase_agent_docker compose install>` を参照してください。
+      | 詳細は :ref:`インストールガイド（Kubernetes）<oase_agent_kubernetes_install>` を参照してください。
 
 
 通知テンプレート（共通）概要

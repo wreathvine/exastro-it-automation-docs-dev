@@ -14,11 +14,11 @@
    });
    </script>
 
-.. _oase_agent_install:
+.. _oase_agent_docker compose install:
 
-==========
-OASE Agent
-==========
+===========================
+OASE Agent (Docker Compose)
+===========================
 
 目的
 ====
