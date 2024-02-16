@@ -1328,10 +1328,10 @@ $(window).on('load', function () {
 <div class="highlight-diff notranslate"><div class="highlight"><pre><span></span><span class="linenos">232</span><span class="w"> </span> platform-auth:
 <span class="linenos">233</span><span class="w"> </span>   extraEnv:
 <span class="linenos">234</span><span class="w"> </span>     # Please set the URL to access
-<span class="linenos">235</span><span class="w"> </span>-    EXTERNAL_URL: &quot;&quot;
-<span class="linenos">236</span><span class="w"> </span>-    EXTERNAL_URL_MNG: &quot;&quot;
-<span class="linenos">237</span><span class="w"> </span>+    EXTERNAL_URL: &quot;http://10.10.10.10:30080&quot;
-<span class="linenos">238</span><span class="w"> </span>+    EXTERNAL_URL_MNG: &quot;http://10.10.10.10:30081&quot;
+<span class="linenos">235</span><span class="gd">-     EXTERNAL_URL: &quot;&quot;</span>
+<span class="linenos">236</span><span class="gd">-     EXTERNAL_URL_MNG: &quot;&quot;</span>
+<span class="linenos">237</span><span class="gi">+     EXTERNAL_URL: &quot;http://10.10.10.10:30080&quot;</span>
+<span class="linenos">238</span><span class="gi">+     EXTERNAL_URL_MNG: &quot;http://10.10.10.10:30081&quot;</span>
 <span class="linenos">239</span><span class="w"> </span>   ingress:
 <span class="linenos">240</span><span class="gd">-    enabled: true</span>
 <span class="linenos">241</span><span class="gi">+    enabled: false</span>
@@ -2870,17 +2870,17 @@ $(window).on('load', function () {
 <span class="linenos">31</span><span class="w"> </span>     name: gitlab
 <span class="linenos">32</span><span class="w"> </span>     enabled: true
 <span class="linenos">33</span><span class="w"> </span>     config:
-<span class="linenos">34</span><span class="w"> </span> -     GITLAB_PROTOCOL: &quot;http&quot;
-<span class="linenos">35</span><span class="w"> </span> -     GITLAB_HOST: &quot;gitlab&quot;
-<span class="linenos">36</span><span class="w"> </span> -     GITLAB_PORT: &quot;80&quot;
-<span class="linenos">37</span><span class="w"> </span> +     GITLAB_PROTOCOL: &quot;接続プロトコル http or https&quot;
-<span class="linenos">38</span><span class="w"> </span> +     GITLAB_HOST: &quot;接続先&quot;
-<span class="linenos">39</span><span class="w"> </span> +     GITLAB_PORT: &quot;接続ポート&quot;
+<span class="linenos">34</span><span class="gd">-       GITLAB_PROTOCOL: &quot;http&quot;</span>
+<span class="linenos">35</span><span class="gd">-       GITLAB_HOST: &quot;gitlab&quot;</span>
+<span class="linenos">36</span><span class="gd">-       GITLAB_PORT: &quot;80&quot;</span>
+<span class="linenos">37</span><span class="gi">+       GITLAB_PROTOCOL: &quot;接続プロトコル http or https&quot;</span>
+<span class="linenos">38</span><span class="gi">+       GITLAB_HOST: &quot;接続先&quot;</span>
+<span class="linenos">39</span><span class="gi">+       GITLAB_PORT: &quot;接続ポート&quot;</span>
 <span class="linenos">40</span><span class="w"> </span>     secret:
-<span class="linenos">41</span><span class="w"> </span> -     GITLAB_ROOT_PASSWORD: &quot;&quot;
-<span class="linenos">42</span><span class="w"> </span> +     GITLAB_ROOT_PASSWORD: &quot;GitLabのRoot権限のパスワード&quot;
-<span class="linenos">43</span><span class="w"> </span> -     GITLAB_ROOT_TOKEN: &quot;&quot;
-<span class="linenos">44</span><span class="w"> </span> +     GITLAB_ROOT_TOKEN: &quot;GitLabのRoot権限を持ったトークン&quot;
+<span class="linenos">41</span><span class="gd">-       GITLAB_ROOT_PASSWORD: &quot;&quot;</span>
+<span class="linenos">42</span><span class="gd">-       GITLAB_ROOT_TOKEN: &quot;&quot;</span>
+<span class="linenos">43</span><span class="gi">+       GITLAB_ROOT_PASSWORD: &quot;GitLabのRoot権限のパスワード&quot;</span>
+<span class="linenos">44</span><span class="gi">+       GITLAB_ROOT_TOKEN: &quot;GitLabのRoot権限を持ったトークン&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -2973,20 +2973,20 @@ $(window).on('load', function () {
 <span class="linenos">31</span><span class="w"> </span>     name: gitlab
 <span class="linenos">32</span><span class="w"> </span>     enabled: true
 <span class="linenos">33</span><span class="w"> </span>     config:
-<span class="linenos">34</span><span class="w"> </span>     GITLAB_PROTOCOL: &quot;http&quot;
-<span class="linenos">35</span><span class="w"> </span> -     GITLAB_HOST: &quot;gitlab&quot;
-<span class="linenos">36</span><span class="w"> </span> -     GITLAB_PORT: &quot;80&quot;
-<span class="linenos">37</span><span class="w"> </span> +     GITLAB_HOST: &quot;your.database.endpoint&quot; # GitLab用データベースのエンドポイント（外部から接続可能なIP or URL）
-<span class="linenos">38</span><span class="w"> </span> +     GITLAB_PORT: &quot;30082&quot; # GitLab用データベースの接続ポート
+<span class="linenos">34</span><span class="w"> </span>       GITLAB_PROTOCOL: &quot;http&quot;
+<span class="linenos">35</span><span class="gd">-       GITLAB_HOST: &quot;gitlab&quot;</span>
+<span class="linenos">36</span><span class="gd">-       GITLAB_PORT: &quot;80&quot;</span>
+<span class="linenos">37</span><span class="gi">+       GITLAB_HOST: &quot;your.database.endpoint&quot; # GitLab用データベースのエンドポイント（外部から接続可能なIP or URL）</span>
+<span class="linenos">38</span><span class="gi">+       GITLAB_PORT: &quot;30082&quot; # GitLab用データベースの接続ポート</span>
 <span class="linenos">39</span><span class="w"> </span>     secret:
-<span class="linenos">40</span><span class="w"> </span> -     GITLAB_ROOT_PASSWORD: &quot;&quot;
-<span class="linenos">41</span><span class="w"> </span> +     GITLAB_ROOT_PASSWORD: &quot;GitLabのRoot権限のパスワード&quot;
-<span class="linenos">42</span><span class="w"> </span> -     GITLAB_ROOT_TOKEN: &quot;&quot;
-<span class="linenos">43</span><span class="w"> </span> +     GITLAB_ROOT_TOKEN: &quot;GitLabに作成したいトークン&quot;
+<span class="linenos">40</span><span class="gd">-       GITLAB_ROOT_PASSWORD: &quot;&quot;</span>
+<span class="linenos">41</span><span class="gd">-       GITLAB_ROOT_TOKEN: &quot;&quot;</span>
+<span class="linenos">42</span><span class="gi">+       GITLAB_ROOT_PASSWORD: &quot;GitLabのRoot権限のパスワード&quot;</span>
+<span class="linenos">43</span><span class="gi">+       GITLAB_ROOT_TOKEN: &quot;GitLabに作成したいトークン&quot;</span>
 </pre></div>
 </div>
 </div>
-<ol class="arabic" start="2">
+<ol class="arabic">
 <li><p>GitLabコンテナの有効化</p>
 <div class="line-block">
 <div class="line">GitLabコンテナを起動するように設定します。</div>
@@ -3186,8 +3186,8 @@ $(window).on('load', function () {
 <div class="literal-block-wrapper docutils container" id="id74">
 <div class="code-block-caption"><span class="caption-number">リスト 2.21 </span><span class="caption-text">exastro.yaml</span><a class="headerlink" href="#id74" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-diff notranslate"><div class="highlight"><pre><span></span><span class="linenos">270</span><span class="w"> </span> gitlab:
-<span class="linenos">271</span><span class="w"> </span> - enabled: false
-<span class="linenos">272</span><span class="w"> </span> + enabled: true
+<span class="linenos">271</span><span class="gd">-   enabled: false</span>
+<span class="linenos">272</span><span class="gi">+   enabled: true</span>
 <span class="linenos">273</span><span class="w"> </span>   extraEnv:
 <span class="linenos">274</span><span class="w"> </span>     GITLAB_OMNIBUS_CONFIG: |
 <span class="linenos">275</span><span class="w"> </span>       postgresql[&#39;shared_buffers&#39;] = &quot;2048MB&quot;
@@ -3196,16 +3196,16 @@ $(window).on('load', function () {
 <span class="linenos">278</span><span class="w"> </span>       postgresql[&#39;effective_cache_size&#39;] = &quot;128MB&quot;
 <span class="linenos">279</span><span class="w"> </span>       postgresql[&#39;checkpoint_segments&#39;] = 16
 <span class="linenos">280</span><span class="w"> </span>       postgresql[&#39;checkpoint_timeout&#39;] = &quot;10min&quot;
-<span class="linenos">281</span><span class="w"> </span> -     external_url &#39;http://gitlab:40080&#39;
-<span class="linenos">282</span><span class="w"> </span> +     external_url &#39;http://your.database.endpoint:30082&#39;
+<span class="linenos">281</span><span class="gd">-       external_url &#39;http://gitlab:40080&#39;</span>
+<span class="linenos">282</span><span class="gi">+       external_url &#39;http://your.database.endpoint:30082&#39;</span>
 <span class="linenos">283</span><span class="w"> </span>   ～ 略 ～
 <span class="linenos">284</span><span class="w"> </span>   service:
-<span class="linenos">285</span><span class="w"> </span> -   type: ClusterIP
-<span class="linenos">286</span><span class="w"> </span> +   type: NodePort
+<span class="linenos">285</span><span class="gd">-     type: ClusterIP</span>
+<span class="linenos">286</span><span class="gi">+     type: NodePort</span>
 <span class="linenos">287</span><span class="w"> </span>     name: gitlab
 <span class="linenos">288</span><span class="w"> </span>     port: 40080
-<span class="linenos">289</span><span class="w"> </span> -   # nodePort: 30082
-<span class="linenos">290</span><span class="w"> </span> +     nodePort: 30082
+<span class="linenos">289</span><span class="gd">-     # nodePort: 30082</span>
+<span class="linenos">290</span><span class="gi">+     nodePort: 30082</span>
 </pre></div>
 </div>
 </div>
