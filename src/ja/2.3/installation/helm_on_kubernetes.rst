@@ -1403,13 +1403,13 @@ GitLab 連携設定
                   GITLAB_PROTOCOL: "http"
           -       GITLAB_HOST: "gitlab"
           -       GITLAB_PORT: "80"
-          +       GITLAB_HOST: "your.database.endpoint" # GitLab用データベースのエンドポイント（外部から接続可能なIP or URL）
-          +       GITLAB_PORT: "30082" # GitLab用データベースの接続ポート
+          +       GITLAB_HOST: "your.database.endpoint" # 起動する Gitalb コンテナの公開時のURL。AAPから接続できる必要がある。
+          +       GITLAB_PORT: "30082" # 起動する Gitalb コンテナの公開時のポート番号
                 secret:
           -       GITLAB_ROOT_PASSWORD: ""
           -       GITLAB_ROOT_TOKEN: ""
           +       GITLAB_ROOT_PASSWORD: "GitLabのRoot権限のパスワード"
-          +       GITLAB_ROOT_TOKEN: "GitLabに作成したいトークン"
+          +       GITLAB_ROOT_TOKEN: "GitLabのRoot権限を持ったトークン"
 
       1.  GitLabコンテナの有効化
 
@@ -1576,6 +1576,9 @@ Exastro システム管理者の作成
         metadata:
           name: pv-database
         spec:
+          claimRef:
+            name: pvc-mariadb
+            namespace: exastro
           capacity:
             storage: 20Gi
           accessModes:
@@ -1595,6 +1598,9 @@ Exastro システム管理者の作成
         metadata:
           name: pv-ita-common
         spec:
+          claimRef:
+            name: pvc-ita-global
+            namespace: exastro
           capacity:
             storage: 10Gi
           accessModes:
@@ -1636,6 +1642,9 @@ Exastro システム管理者の作成
         metadata:
           name: pv-gitlab
         spec:
+          claimRef:
+            name: pvc-gitlab
+            namespace: exastro
           capacity:
             storage: 20Gi
           accessModes:
