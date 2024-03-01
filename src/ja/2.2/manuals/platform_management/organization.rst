@@ -56,7 +56,7 @@ Organization (オーガナイゼーション)
     - :kbd:`git`
     - :kbd:`jq`
 
-.. _organization_creation_v2.1:
+.. _organization_creation:
 
 オーガナイゼーション作成
 ------------------------
@@ -91,7 +91,7 @@ Organization (オーガナイゼーション)
             # Exastro Platform への接続のための設定情報を登録
             vi ./exastro-platform/tools/api-auth.conf
 
-         | 例えば、:ref:`service_setting_v2.1` で、Ingress を使ったサービス公開の設定をした場合は下記のようになります。
+         | 例えば、:ref:`service_setting` で、Ingress を使ったサービス公開の設定をした場合は下記のようになります。
 
          .. code-block:: diff
             :caption: create-organization.conf
@@ -173,8 +173,8 @@ Organization (オーガナイゼーション)
             * - options.sslRequired
               - SSL 接続の有無を指定。
               - 可
-              - | :program:`external` (既定): プライベート IP アドレスに固定する限り、ユーザは SSL 無しで Keycloak と通信可能。
-                | :program:`none`: SSL の設定なし。
+              - | :program:`external`: プライベート IP アドレスに固定する限り、ユーザは SSL 無しで Keycloak と通信可能。
+                | :program:`none` (既定): SSL の設定なし。 ver.2.2より規定が`none`となりました。
                 | :program:`all`: すべての IP アドレスに対し、SSL を要求。(内部の API が HTTP アクセスのため選択不可)
             * - optionsIta.no_install_driver
               - インストールをしないドライバを指定。
@@ -331,7 +331,7 @@ Organization (オーガナイゼーション)
             # Exastro Platform への接続のための設定情報を登録
             vi ./exastro-platform/tools/api-auth.conf
 
-         | 例えば、:ref:`service_setting_v2.1` で、Ingress を使ったサービス公開の設定をした場合は下記のようになります。
+         | 例えば、:ref:`service_setting` で、Ingress を使ったサービス公開の設定をした場合は下記のようになります。
 
          .. code-block:: diff
             :caption: create-organization.conf
