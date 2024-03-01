@@ -9,5 +9,6 @@
    general
    organization
    plan
+   settings_running_state
    aap
    keycloak_console
