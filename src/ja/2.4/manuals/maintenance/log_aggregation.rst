@@ -1,0 +1,1 @@
+.. include:: ../../../share/manuals/maintenance/log_aggregation.rst
