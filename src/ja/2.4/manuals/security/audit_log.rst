@@ -10,18 +10,26 @@
 
 .. _security_audit_log:
 
+監査ログの出力先
+----------------
+
+| 監査ログは、platform-auth コンテナ内の"/var/log/exastro"ディレクトリに、ファイル名"exastro-audio.log"(デフォルト)で出力されます。
+| 
+| Kubernetes環境においては、永続ボリュームを指定することにより、永続ボリューム側のディレクトリに出力されます。
+| ※永続ボリュームについては、インストール編 :doc:`../../installation/helm_on_kubernetes` を参照してください。
+
 監査ログの設定項目
 ------------------
 
-設定可能項目は、Exastro Platform 認証機能のオプションパラメータの :kbd:`AUDIT_LOG` 項目となります。 
+| 設定可能項目は、Exastro Platform 認証機能のオプションパラメータの :kbd:`AUDIT_LOG` 項目となります。 
 
 .. include:: ../../include/helm_option_platform-auth.rst
 
 監査ログの内容
 --------------
 
-監査ログは、:kbd:`Json形式` で出力されています。
-１つのイベント(API呼び出し)が、改行を区切りとした１明細 となっており、以下の内容で構成されております。
+| 監査ログは、:kbd:`Json形式` で出力されています。
+| １つのイベント(API呼び出し)が、改行を区切りとした１明細 となっており、以下の内容で構成されております。
 
 .. list-table:: 監査ログ内容
    :widths: 15 20 30 20
