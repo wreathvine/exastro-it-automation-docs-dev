@@ -36,25 +36,50 @@ Helm chart (Kubernetes)
 
   | 動作確認が取れているクライアントアプリケーションのバージョンは下記のとおりです。
   
-  .. csv-table:: クライアント要件
-   :header: アプリケーション, バージョン
-   :widths: 30, 30
-  
-   Helm, v3.9.x
-   kubectl, 1.23
+  .. list-table:: クライアント要件
+   :widths: 20, 20
+   :header-rows: 1
+
+   * - アプリケーション
+     - バージョン
+   * - Helm
+     - v3.9.x
+   * - kubectl
+     - 1.23
 
 - デプロイ環境
 
   | 動作確認が取れているコンテナ環境の最小要求リソースとバージョンは下記のとおりです。
 
-  .. csv-table:: デプロイ環境
-   :header: リソース種別, 要求リソース
+  .. list-table:: ハードウェア要件(最小構成)
    :widths: 20, 20
-  
-   CPU,2 Cores (3.0 GHz)
-   Memory, 4GB
-   Storage (Container image size),10GB
-   Kubernetes, 1.23 以上
+   :header-rows: 1
+
+   * - リソース種別
+     - 要求リソース
+   * - CPU
+     - 2 Cores (3.0 GHz, x86_64)
+   * - Memory
+     - 4GB
+   * - Storage (Container image size)
+     - 10GB
+   * - Kubernetes (Container image size)
+     - 1.23 以上
+
+  .. list-table:: ハードウェア要件(推奨構成)
+   :widths: 20, 20
+   :header-rows: 1
+
+   * - リソース種別
+     - 要求リソース
+   * - CPU
+     - 4 Cores (3.0 GHz, x86_64)
+   * - Memory
+     - 16GB
+   * - Storage (Container image size)
+     - 120GB
+   * - Kubernetes (Container image size)
+     - 1.23 以上
 
   .. warning::
     | 要求リソースは Exastro IT Automation のコア機能に対する値です。同一クラスタ上に Keycloak や MariaDB などの外部ツールをデプロイする場合は、その分のリソースが別途必要となります。
@@ -130,7 +155,7 @@ Helm リポジトリの登録
 
 | 以降の手順では、この :file:`exastro.yaml` に対してインストールに必要なパラメータを設定してきいます。
 
-.. _service_setting_v2.1:
+.. _service_setting:
 
 サービス公開の設定
 ------------------
@@ -170,7 +195,7 @@ Helm リポジトリの登録
       - 設定例
 
       | サービス公開用のドメイン情報を Ingress に登録することでDNSを使ったサービス公開を行います。
-      | Azure におけるドメイン名の確認方法については :ref:`aks-dns_v2.1` を確認してください。
+      | Azure におけるドメイン名の確認方法については :ref:`aks-dns` を確認してください。
       | クラウドプロバイダ毎に必要な :kbd:`annotations` を指定してください。
       | 下記は、AKS の Ingress Controller を使用する際の例を記載しています。
 
@@ -420,7 +445,7 @@ GitLab 連携設定
    :language: yaml
 
 .. _create_system_manager:
-.. _install_helm_v2.2:
+.. _install_helm:
 
 システム管理者の作成
 --------------------
@@ -583,7 +608,13 @@ GitLab 連携設定
     # pv-ita-common.yaml
     kubectl apply -f pv-ita-common.yaml
 
-    # pv-pf-auditlog.yaml ※監査ログを永続ボリュームに出力する場合
+    # pv-mongo.yaml ※OASEを利用しない場合設定不要
+    kubectl apply -f pv-mongo.yaml
+
+    # pv-gitlab.yaml ※外部GitLabを利用する場合設定不要
+    kubectl apply -f pv-gitlab.yaml
+
+    # pv-pf-auditlog.yaml ※監査ログを永続ボリュームに出力しない場合は設定不要
     kubectl apply -f pv-pf-auditlog.yaml
 
 .. code-block:: bash
@@ -596,7 +627,10 @@ GitLab 連携設定
     NAME            CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS      CLAIM   STORAGECLASS   REASON   AGE
     pv-auditlog     10Gi       RWX            Retain           Available                                   26s
     pv-database     20Gi       RWO            Retain           Available                                   19s
+    pv-gitlab       20Gi       RWX            Retain           Available                                   5s
     pv-ita-common   10Gi       RWX            Retain           Available                                   9s
+    pv-mongo        20Gi       RWO            Retain           Available                                   5s
+
 
 インストール
 ------------
@@ -678,7 +712,7 @@ GitLab 連携設定
       4. 接続確認
 
          | 出力結果に従って、:menuselection:`Administrator Console` の URL にアクセスします。
-         | 下記は、実行例のため :ref:`service_setting_v2.1` で設定したホスト名に読み替えてください。
+         | 下記は、実行例のため :ref:`service_setting` で設定したホスト名に読み替えてください。
 
          .. code-block:: bash
             :caption: 出力結果(例)
@@ -1290,7 +1324,7 @@ Helm リポジトリの更新
 
 
 監査ログファイルデータの削除
-^^^^^^^^~~~~~~~~^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 | Persitent Volume を Kubernetes 上に hostPath で作成した場合の方法を記載します。
 | マネージドストレージを含む外部ストレージを利用している場合は、環境にあったデータ削除方法を実施してください。

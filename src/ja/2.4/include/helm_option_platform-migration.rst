@@ -12,7 +12,7 @@
    * - exastro-platform.platform-migration.image.repository
      - コンテナイメージのリポジトリ名
      - 不可
-     - "exastro/exastro-platform-migration"
+     - "docker.io/exastro/exastro-platform-migration"
    * - exastro-platform.platform-migration.image.tag
      - コンテナイメージのタグ
      - 不可
