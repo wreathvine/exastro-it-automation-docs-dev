@@ -537,6 +537,14 @@ GitLab 連携設定
          :caption: pv-ita-common.yaml (ファイル用ボリューム)
          :linenos:
 
+      .. literalinclude:: literal_includes/pv-mongo.yaml
+         :caption: pv-mongo.yaml (OASE用ボリューム) ※OASEを利用しない場合設定不要
+         :linenos:
+
+      .. literalinclude:: literal_includes/pv-gitlab.yaml
+         :caption: pv-gitlab.yaml (GitLab用ボリューム) ※外部GitLabを利用する場合設定不要
+         :linenos:
+
       | ※ 監査ログを永続ボリュームに出力する際は、以下の設定が必要となります
 
       .. code-block:: diff

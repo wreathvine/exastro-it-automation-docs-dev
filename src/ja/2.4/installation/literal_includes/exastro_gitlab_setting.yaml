@@ -70,8 +70,8 @@ global:
   gitlabDefinition:
     config:
       GITLAB_PROTOCOL: "接続プロトコル http or https"
-      GITLAB_HOST: "接続先" # "gitlab" if use container.
-      GITLAB_PORT: "接続ポート"
+      GITLAB_HOST: "your.gitlab.endpoint" # 起動する Gitalb コンテナの公開時のURL。AAPから接続できる必要がある。
+      GITLAB_PORT: "30082"                # 起動する Gitalb コンテナの公開時のポート番号
     secret:
       GITLAB_ROOT_PASSWORD: "GitLabのRoot権限をユーザーパスワード"
       GITLAB_ROOT_TOKEN: "GitLabのRoot権限を持ったトークン"
