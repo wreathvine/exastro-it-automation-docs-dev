@@ -34,7 +34,7 @@
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="検索" href="../../search.html" />
-    <link rel="next" title="3. メンテナンスモード" href="maintenance_mode.html" />
+    <link rel="next" title="3. ログの集約" href="log_aggregation.html" />
     <link rel="prev" title="1. ログ一覧" href="log_list.html" /> 
   </head>
 <body id="page" class="ja">
@@ -96,7 +96,7 @@
     <div id="toolbarNavigation">
       <ul>
         <li class="prev"><a href="log_list.html" title="前のトピックへ"><span class="section-number">1. </span>ログ一覧</a></li>
-        <li class="next"><a href="maintenance_mode.html" title="次のトピックへ"><span class="section-number">3. </span>メンテナンスモード</a></li>
+        <li class="next"><a href="log_aggregation.html" title="次のトピックへ"><span class="section-number">3. </span>ログの集約</a></li>
       </ul>
     </div>
   </div>
@@ -128,8 +128,8 @@
 <li class="toctree-l3 current"><a class="current reference internal" href="#">2. ログレベル</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#id2">2.1. はじめに</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#id3">2.2. ログレベルとは</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="#ita-log-level-list-v2-1">2.2.1. ログレベルの設定値と出力について</a></li>
-<li class="toctree-l5"><a class="reference internal" href="#ita-service-list-v2-1">2.2.2. ログレベル変更可能なサービス一覧</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#ita-log-level-list">2.2.1. ログレベルの設定値と出力について</a></li>
+<li class="toctree-l5"><a class="reference internal" href="#ita-service-list">2.2.2. ログレベル変更可能なサービス一覧</a></li>
 <li class="toctree-l5"><a class="reference internal" href="#id6">2.2.3. ログレベルの設定手順</a></li>
 </ul>
 </li>
@@ -147,12 +147,14 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="maintenance_mode.html">3. メンテナンスモード</a></li>
-<li class="toctree-l3"><a class="reference internal" href="backup_and_restore.html">4. データバックアップ・リストア</a></li>
-<li class="toctree-l3"><a class="reference internal" href="file_autoclean.html">5. ファイル削除機能</a></li>
-<li class="toctree-l3"><a class="reference internal" href="operation_autoclean.html">6. オペレーション削除管理</a></li>
+<li class="toctree-l3"><a class="reference internal" href="log_aggregation.html">3. ログの集約</a></li>
+<li class="toctree-l3"><a class="reference internal" href="maintenance_mode.html">4. メンテナンスモード</a></li>
+<li class="toctree-l3"><a class="reference internal" href="backup_and_restore.html">5. データバックアップ・リストア</a></li>
+<li class="toctree-l3"><a class="reference internal" href="file_autoclean.html">6. ファイル削除機能</a></li>
+<li class="toctree-l3"><a class="reference internal" href="operation_autoclean.html">7. オペレーション削除管理</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../security/index.html">セキュリティ</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../reference/index.html">リファレンス</a></li>
@@ -173,8 +175,8 @@
 <li><a class="reference internal" href="#">2. ログレベル</a><ul>
 <li><a class="reference internal" href="#id2">2.1. はじめに</a></li>
 <li><a class="reference internal" href="#id3">2.2. ログレベルとは</a><ul>
-<li><a class="reference internal" href="#ita-log-level-list-v2-1">2.2.1. ログレベルの設定値と出力について</a></li>
-<li><a class="reference internal" href="#ita-service-list-v2-1">2.2.2. ログレベル変更可能なサービス一覧</a></li>
+<li><a class="reference internal" href="#ita-log-level-list">2.2.1. ログレベルの設定値と出力について</a></li>
+<li><a class="reference internal" href="#ita-service-list">2.2.2. ログレベル変更可能なサービス一覧</a></li>
 <li><a class="reference internal" href="#id6">2.2.3. ログレベルの設定手順</a></li>
 </ul>
 </li>
@@ -230,10 +232,10 @@
 <div class="line">指定したサービスに対して、ログレベルを変更することができます。</div>
 <div class="line">サービスのログレベルは、全オーガナイゼーション、ワークスペースで共通です。</div>
 </div>
-<section id="ita-log-level-list-v2-1">
-<span id="id4"></span><h3><span class="section-number">2.2.1. </span>ログレベルの設定値と出力について<a class="headerlink" href="#ita-log-level-list-v2-1" title="この見出しへのパーマリンク">¶</a></h3>
+<section id="ita-log-level-list">
+<span id="id4"></span><h3><span class="section-number">2.2.1. </span>ログレベルの設定値と出力について<a class="headerlink" href="#ita-log-level-list" title="この見出しへのパーマリンク">¶</a></h3>
 <table class="docutils align-left" id="id15">
-<caption><span class="caption-number">表 2.100 </span><span class="caption-text">ログレベルの設定値と出力について</span><a class="headerlink" href="#id15" title="このテーブルへのパーマリンク">¶</a></caption>
+<caption><span class="caption-number">表 2.102 </span><span class="caption-text">ログレベルの設定値と出力について</span><a class="headerlink" href="#id15" title="このテーブルへのパーマリンク">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>サービスのログレベルの設定値</p></th>
 <th class="head"><p>ログに出力される対象</p></th>
@@ -262,13 +264,13 @@
 <p>インストール直後は、INFOで設定されています。</p>
 </div>
 </section>
-<section id="ita-service-list-v2-1">
-<span id="id5"></span><h3><span class="section-number">2.2.2. </span>ログレベル変更可能なサービス一覧<a class="headerlink" href="#ita-service-list-v2-1" title="この見出しへのパーマリンク">¶</a></h3>
+<section id="ita-service-list">
+<span id="id5"></span><h3><span class="section-number">2.2.2. </span>ログレベル変更可能なサービス一覧<a class="headerlink" href="#ita-service-list" title="この見出しへのパーマリンク">¶</a></h3>
 <div class="line-block">
 <div class="line">ログレベル変更可能なサービスの一覧は、以下です。</div>
 </div>
 <table class="docutils align-left" id="id16">
-<caption><span class="caption-number">表 2.101 </span><span class="caption-text">サービス一覧</span><a class="headerlink" href="#id16" title="このテーブルへのパーマリンク">¶</a></caption>
+<caption><span class="caption-number">表 2.103 </span><span class="caption-text">サービス一覧</span><a class="headerlink" href="#id16" title="このテーブルへのパーマリンク">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>サービス名</p></th>
 <th class="head"><p>機能概要</p></th>
@@ -519,7 +521,7 @@ curl<span class="w"> </span>-k<span class="w"> </span>-X<span class="w"> </span>
 <li><p>変更するログレベルのjsonファイルを設定</p>
 <div class="line-block">
 <div class="line">取得した toolsフォルダ配下にある、 <cite>update-ita-loglevel.sample.json</cite> を コピーして使用してください。</div>
-<div class="line"><a class="reference internal" href="#ita-service-list-v2-1"><span class="std std-ref">ログレベル変更可能なサービス一覧</span></a>  または、<a class="reference internal" href="#get-log-level"><span class="std std-ref">ログレベルの確認</span></a> で確認した対象から、変更するサービス名、ログレベルを指定してください。</div>
+<div class="line"><a class="reference internal" href="#ita-service-list"><span class="std std-ref">ログレベル変更可能なサービス一覧</span></a>  または、<a class="reference internal" href="#get-log-level"><span class="std std-ref">ログレベルの確認</span></a> で確認した対象から、変更するサービス名、ログレベルを指定してください。</div>
 </div>
 </li>
 <li><p>登録するログレベルの設定</p>
@@ -542,7 +544,7 @@ curl<span class="w"> </span>-k<span class="w"> </span>-X<span class="w"> </span>
 <div class="line">変更後</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id17">
-<div class="code-block-caption"><span class="caption-number">リスト 2.133 </span><span class="caption-text">例:「ita-api-admin」、「ita-api-organization」を「DEBUG」へ変更</span><a class="headerlink" href="#id17" title="このコードへのパーマリンク">¶</a></div>
+<div class="code-block-caption"><span class="caption-number">リスト 2.142 </span><span class="caption-text">例:「ita-api-admin」、「ita-api-organization」を「DEBUG」へ変更</span><a class="headerlink" href="#id17" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="o">{</span>
 <span class="w">    </span><span class="s2">&quot;ita-api-admin&quot;</span>:<span class="w"> </span><span class="s2">&quot;DEBUG&quot;</span>,
 <span class="w">    </span><span class="s2">&quot;ita-api-organization&quot;</span>:<span class="w"> </span><span class="s2">&quot;DEBUG&quot;</span>
@@ -553,7 +555,7 @@ curl<span class="w"> </span>-k<span class="w"> </span>-X<span class="w"> </span>
 </li>
 <li><p>項目説明</p>
 <table class="docutils align-left" id="id18">
-<caption><span class="caption-number">表 2.102 </span><span class="caption-text">ログレベル設定項目</span><a class="headerlink" href="#id18" title="このテーブルへのパーマリンク">¶</a></caption>
+<caption><span class="caption-number">表 2.104 </span><span class="caption-text">ログレベル設定項目</span><a class="headerlink" href="#id18" title="このテーブルへのパーマリンク">¶</a></caption>
 <colgroup>
 <col style="width: 25.0%" />
 <col style="width: 25.0%" />
@@ -665,7 +667,7 @@ curl<span class="w"> </span>-k<span class="w"> </span>-X<span class="w"> </span>
 <div id="articleNavigation">
   <ul>
     <li class="prev"><a href="log_list.html" title="前のトピックへ"><span>前のトピックへ</span><span class="section-number">1. </span>ログ一覧</a></li>
-    <li class="next"><a href="maintenance_mode.html" title="次のトピックへ"><span>次のトピックへ</span><span class="section-number">3. </span>メンテナンスモード</a></li>
+    <li class="next"><a href="log_aggregation.html" title="次のトピックへ"><span>次のトピックへ</span><span class="section-number">3. </span>ログの集約</a></li>
   </ul>
 </div>
 

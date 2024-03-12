@@ -56,7 +56,7 @@ Organization (オーガナイゼーション)
     - :kbd:`git`
     - :kbd:`jq`
 
-.. _organization_creation_v2.1:
+.. _organization_creation:
 
 オーガナイゼーション作成
 ------------------------
@@ -593,14 +593,17 @@ Organization (オーガナイゼーション)
               - | :program:`external` (既定): プライベート IP アドレスに固定する限り、ユーザーは SSL 無しで Keycloak と通信可能。
                 | :program:`none`: SSL の設定なし。
                 | :program:`all`: すべての IP アドレスに対し、SSL を要求。(内部の API が HTTP アクセスのため選択不可)
-            * - optionsIta.no_install_driver
-              - インストールをしないドライバを指定。
+            * - optionsIta.drivers
+              - | 対象のドライバについて、インストールする場合はtrue、インストールしない場合はfalseを指定。
+                | ドライバのkeyを記載しない場合はデフォルトでtrueが設定されます。
+                | Exastro OASEをインストールするためにはMongoDBが必要です。MongoDBがない（環境変数「MONGO_HOST」の記載が空である）場合は有効にできません。
               - 可
-              - | 以下の値をList形式で指定すると、指定したドライバがワークスペース作成時にインストールされない。省略可。
-                | :program:`terraform_cloud_ep`: Terraform Cloud/EPドライバ
-                | :program:`terraform_cli`: Terraform CLIドライバ
-                | :program:`ci_cd`: CI/CD for IaCドライバ
-                | 例：:program:`"optionsIta": {"no_install_driver": ["terraform_cloud_ep", "terraform_cli", "ci_cd"]}`
+              - | 各ドライバに対応した以下のkeyに対してtrue/falseを指定し、ワークスペース作成時にインストールされるかどうかを設定。省略可。
+                | :program:`ci_cd`: CI/CD for IaC
+                | :program:`oase`: Exastro OASE
+                | :program:`terraform_cloud_ep`: Terraform Cloud/EP driver
+                | :program:`terraform_cli`: Terraform CLI driver
+                | 例：:program:`"optionsIta": {"drivers": {"ci_cd": true, "oase": true, "terraform_cli": false, "terraform_cloud_ep": true}}`
 
 
       | cURL を使って Rest API を利用する場合は、以下の様なコマンドを実行してください。
@@ -711,6 +714,9 @@ Organization (オーガナイゼーション)
           - オーガナイゼーションID
         * - data.name
           - オーガナイゼーション名
+        * - data.optionsIta.drivers
+          - | 各ドライバの有効無効
+            | true:有効 false:無効
         * - data.organization_managers
           - オーガナイゼーション管理者情報
         * - data.active_plan.id
@@ -797,7 +803,7 @@ Organization (オーガナイゼーション)
             | オーガナイゼーションIDを変更することは出来ません。
 
       #. | 追加したいドライバにチェックを入れることで、インストールするドライバを追加することができます。
-         | しかし、インストール済みのドライバを削除することはできません。
+         | インストール済みのドライバを削除することはできません。
 
          .. figure:: /images/ja/manuals/platform/organization/org_edit_driver.png
             :width: 600px
