@@ -30,7 +30,35 @@
 		"searKing.preview-vscode",
 		"hediet.vscode-drawio",
 		"nopeslide.vscode-drawio-plugin-mermaid",
+  "l13rary.l13-diff",
 	],
+	"customizations": {
+		"vscode": {
+   "settings": {
+    "terminal.integrated.profiles.linux": {
+     "bash": {
+      "path": "/bin/bash"
+     }
+    },
+    "terminal.integrated.defaultProfile.linux": "bash",
+   },
+   "extensions": [
+    "MS-CEINTL.vscode-language-pack-ja",
+    "ms-python.python",
+    "donjayamanne.githistory",
+    "eamodio.gitlens",
+    "mhutchie.git-graph",
+    "lextudio.restructuredtext",
+    "lextudio.restructuredtext-pack",
+    "trond-snekvik.simple-rst",
+    "ms-vscode.live-server",
+    "searKing.preview-vscode",
+    "hediet.vscode-drawio",
+    "nopeslide.vscode-drawio-plugin-mermaid",
+    "l13rary.l13-diff",
+   ],
+  },
+ },
 	"onCreateCommand": "/workspace/init.sh",
 	"postAttachCommand": "/workspace/start-autobuild.sh",
 	"workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",

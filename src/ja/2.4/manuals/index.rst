@@ -32,6 +32,7 @@
    oase/index
    api/index
    maintenance/index
+   security/index
 
 .. raw:: html
 
