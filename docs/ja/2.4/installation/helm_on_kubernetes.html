@@ -389,16 +389,31 @@ $(window).on('load', function () {
 </div>
 </li>
 <li><p>通信要件</p>
-<ul class="simple">
-<li><p>クライアントからデプロイ先のコンテナ環境にアクセスできる必要があります。</p></li>
-<li><p>Platform 管理者用と一般ユーザー用の2つ通信ポートが使用となります。</p></li>
-<li><p>コンテナ環境からコンテナイメージの取得のために、Docker Hub に接続できる必要があります。</p></li>
+<ul>
+<li><div class="line-block">
+<div class="line">クライアントからデプロイ先のコンテナ環境にアクセスできる必要があります。</div>
+</div>
+</li>
+<li><div class="line-block">
+<div class="line">Platform 管理者用と一般ユーザー用の2つ通信ポートが使用となります。</div>
+</div>
+</li>
+<li><div class="line-block">
+<div class="line">コンテナ環境からコンテナイメージの取得のために、Docker Hub に接続できる必要があります。</div>
+</div>
+</li>
 </ul>
 </li>
 <li><p>外部コンポーネント</p>
-<ul class="simple">
-<li><p>MariaDB、もしくは、MySQL サーバ</p></li>
-<li><p>GitLab リポジトリ、および、アカウントの払い出しが可能なこと</p></li>
+<ul>
+<li><div class="line-block">
+<div class="line">MariaDB、もしくは、MySQL サーバ</div>
+</div>
+</li>
+<li><div class="line-block">
+<div class="line">GitLab リポジトリ、および、アカウントの払い出しが可能なこと</div>
+</div>
+</li>
 </ul>
 <div class="admonition warning">
 <p class="admonition-title">警告</p>
@@ -1271,16 +1286,17 @@ $(window).on('load', function () {
 <div class="line">各サービス公開方法の設定例を下記に記載します。</div>
 </div>
 <div class="sphinx-tabs docutils container">
-<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-SW5ncmVzcw==" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-0-SW5ncmVzcw==" name="SW5ncmVzcw==" role="tab" tabindex="0">Ingress</button><button aria-controls="panel-0-TG9hZEJhbGFuY2Vy" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-0-TG9hZEJhbGFuY2Vy" name="TG9hZEJhbGFuY2Vy" role="tab" tabindex="-1">LoadBalancer</button><button aria-controls="panel-0-Tm9kZVBvcnQ=" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-0-Tm9kZVBvcnQ=" name="Tm9kZVBvcnQ=" role="tab" tabindex="-1">NodePort</button></div><div aria-labelledby="tab-0-SW5ncmVzcw==" class="sphinx-tabs-panel group-tab" id="panel-0-SW5ncmVzcw==" name="SW5ncmVzcw==" role="tabpanel" tabindex="0"><ul class="simple" id="ingress-setting">
-<li><p>特徴</p></li>
-</ul>
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-SW5ncmVzcw==" aria-selected="true" class="sphinx-tabs-tab group-tab" id="tab-0-SW5ncmVzcw==" name="SW5ncmVzcw==" role="tab" tabindex="0">Ingress</button><button aria-controls="panel-0-TG9hZEJhbGFuY2Vy" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-0-TG9hZEJhbGFuY2Vy" name="TG9hZEJhbGFuY2Vy" role="tab" tabindex="-1">LoadBalancer</button><button aria-controls="panel-0-Tm9kZVBvcnQ=" aria-selected="false" class="sphinx-tabs-tab group-tab" id="tab-0-Tm9kZVBvcnQ=" name="Tm9kZVBvcnQ=" role="tab" tabindex="-1">NodePort</button></div><div aria-labelledby="tab-0-SW5ncmVzcw==" class="sphinx-tabs-panel group-tab" id="panel-0-SW5ncmVzcw==" name="SW5ncmVzcw==" role="tabpanel" tabindex="0"><div class="line-block" id="ingress-setting">
+<div class="line"><br /></div>
+</div>
+<ul>
+<li><p>特徴</p>
 <div class="line-block">
 <div class="line">パブリッククラウドなどで Ingress Controller が利用可能な場合、Ingress を使ったサービス公開ができます。</div>
 <div class="line">クラスタ内にロードバランサーを構築して、ユーザー自身が運用したい場合などにメリットがあります。</div>
 </div>
-<ul class="simple">
-<li><p>設定例</p></li>
-</ul>
+</li>
+<li><p>設定例</p>
 <div class="line-block">
 <div class="line">サービス公開用のドメイン情報を Ingress に登録することでDNSを使ったサービス公開を行います。</div>
 <div class="line">Azure におけるドメイン名の確認方法については <a class="reference internal" href="../configuration/kubernetes/aks.html#aks-dns"><span class="std std-ref">ドメイン名の確認</span></a> を確認してください。</div>
@@ -1324,16 +1340,19 @@ $(window).on('load', function () {
 </pre></div>
 </div>
 </div>
-</div><div aria-labelledby="tab-0-TG9hZEJhbGFuY2Vy" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-0-TG9hZEJhbGFuY2Vy" name="TG9hZEJhbGFuY2Vy" role="tabpanel" tabindex="0"><ul class="simple">
-<li><p>特徴</p></li>
+</li>
 </ul>
+</div><div aria-labelledby="tab-0-TG9hZEJhbGFuY2Vy" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-0-TG9hZEJhbGFuY2Vy" name="TG9hZEJhbGFuY2Vy" role="tabpanel" tabindex="0"><div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ul>
+<li><p>特徴</p>
 <div class="line-block">
 <div class="line">パブリッククラウドなどで LoadBalancer が利用可能な場合、LoadBalancer を使ったサービス公開ができます。</div>
 <div class="line">Ingress とは異なり、クラスタ外部(多くは、パブリッククラウドのサービス上)にロードバランサーがデプロイされるため、ユーザー自身が運用する必要がないことにメリットがあります。</div>
 </div>
-<ul class="simple">
-<li><p>設定例</p></li>
-</ul>
+</li>
+<li><p>設定例</p>
 <div class="line-block">
 <div class="line"><kbd class="kbd docutils literal notranslate">service.type</kbd> に <kbd class="kbd docutils literal notranslate">LoadBalancer</kbd> を設定することで、LoadBalancer を使ったサービス公開ができます。</div>
 <div class="line">下記は、LoadBalancer を使用する際の例を記載しています。</div>
@@ -1368,16 +1387,19 @@ $(window).on('load', function () {
 </pre></div>
 </div>
 </div>
-</div><div aria-labelledby="tab-0-Tm9kZVBvcnQ=" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-0-Tm9kZVBvcnQ=" name="Tm9kZVBvcnQ=" role="tabpanel" tabindex="0"><ul class="simple">
-<li><p>特徴</p></li>
+</li>
 </ul>
+</div><div aria-labelledby="tab-0-Tm9kZVBvcnQ=" class="sphinx-tabs-panel group-tab" hidden="true" id="panel-0-Tm9kZVBvcnQ=" name="Tm9kZVBvcnQ=" role="tabpanel" tabindex="0"><div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ul>
+<li><p>特徴</p>
 <div class="line-block">
 <div class="line">ユーザー自身の環境でロードバランサーを準備する、もしくは、検証などの環境では NodePort を使ったサービス公開ができます。</div>
 <div class="line">Ingress や LoadBalancer とは異なり、ネイティブな Kubernetes で利用可能です。</div>
 </div>
-<ul class="simple">
-<li><p>設定例</p></li>
-</ul>
+</li>
+<li><p>設定例</p>
 <div class="line-block">
 <div class="line"><kbd class="kbd docutils literal notranslate">service.type</kbd> に <kbd class="kbd docutils literal notranslate">NodePort</kbd> を設定することで、NodePort を使ったサービス公開ができます。</div>
 <div class="line">下記は、NodePort を使用する際の例を記載しています。</div>
@@ -1420,6 +1442,8 @@ $(window).on('load', function () {
 </pre></div>
 </div>
 </div>
+</li>
+</ul>
 </div></div>
 </section>
 </section>
@@ -1434,13 +1458,17 @@ $(window).on('load', function () {
 <li><p>データベースコンテナ</p></li>
 </ul>
 <div class="sphinx-tabs docutils container">
-<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-1-1-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-1-1-0" name="1-0" role="tab" tabindex="0">外部データベース</button><button aria-controls="panel-1-1-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-1-1-1" name="1-1" role="tab" tabindex="-1">データベースコンテナ</button></div><div aria-labelledby="tab-1-1-0" class="sphinx-tabs-panel" id="panel-1-1-0" name="1-0" role="tabpanel" tabindex="0"><ul class="simple">
-<li><p>特徴</p></li>
-</ul>
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-1-1-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-1-1-0" name="1-0" role="tab" tabindex="0">外部データベース</button><button aria-controls="panel-1-1-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-1-1-1" name="1-1" role="tab" tabindex="-1">データベースコンテナ</button></div><div aria-labelledby="tab-1-1-0" class="sphinx-tabs-panel" id="panel-1-1-0" name="1-0" role="tabpanel" tabindex="0"><div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ul>
+<li><p>特徴</p>
 <div class="line-block">
 <div class="line">マネージドデータベースや別途用意した Kubernetes クラスタ外のデータベースを利用します。</div>
 <div class="line">Kubernetes クラスタ外にあるため、環境を分離して管理することが可能です。</div>
 </div>
+</li>
+</ul>
 <div class="admonition warning">
 <p class="admonition-title">警告</p>
 <div class="line-block">
@@ -1448,9 +1476,8 @@ $(window).on('load', function () {
 <div class="line">※統一しないと環境間でのメニューエクスポート・インポートが正常に動作しなくなる可能性があります。</div>
 </div>
 </div>
-<ul class="simple">
-<li><p>設定例</p></li>
-</ul>
+<ul>
+<li><p>設定例</p>
 <div class="line-block">
 <div class="line">外部データベースを操作するために必要な接続情報を設定します。</div>
 </div>
@@ -1466,6 +1493,8 @@ $(window).on('load', function () {
 <div class="line">認証情報などはすべて平文で問題ありません。(Base64エンコードは不要)</div>
 </div>
 </div>
+</li>
+</ul>
 <ol class="arabic">
 <li><p>Exastro IT Automation 用データベースの設定</p>
 <div class="line-block">
@@ -1792,16 +1821,17 @@ $(window).on('load', function () {
 </div>
 </li>
 </ol>
-</div><div aria-labelledby="tab-1-1-1" class="sphinx-tabs-panel" hidden="true" id="panel-1-1-1" name="1-1" role="tabpanel" tabindex="0"><ul class="simple">
-<li><p>特徴</p></li>
-</ul>
+</div><div aria-labelledby="tab-1-1-1" class="sphinx-tabs-panel" hidden="true" id="panel-1-1-1" name="1-1" role="tabpanel" tabindex="0"><div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ul>
+<li><p>特徴</p>
 <div class="line-block">
 <div class="line">Kubernetes クラスタ内にデプロイしたデータベースコンテナを利用します。</div>
 <div class="line">Exastro と同じ Kubernetes クラスタにコンテナとして管理できます。</div>
 </div>
-<ul class="simple">
-<li><p>設定例</p></li>
-</ul>
+</li>
+<li><p>設定例</p>
 <div class="line-block">
 <div class="line">データベースコンテナの root パスワードを作成し、他のコンテナからもアクセスできるように作成した root アカウントのパスワードを設定します。</div>
 <div class="line">また、データベースのデータを永続化するために利用するストレージを指定します。</div>
@@ -1818,6 +1848,8 @@ $(window).on('load', function () {
 <div class="line">認証情報などはすべて平文で問題ありません。(Base64エンコードは不要)</div>
 </div>
 </div>
+</li>
+</ul>
 <ol class="arabic" id="configuration-database-container">
 <li><p>データベースコンテナの設定</p>
 <div class="line-block">
@@ -2746,15 +2778,16 @@ $(window).on('load', function () {
 <li><p>Kubernetes ノードのディレクトリ</p></li>
 </ul>
 <div class="sphinx-tabs docutils container">
-<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-3-3-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-3-3-0" name="3-0" role="tab" tabindex="0">マネージドディスク</button><button aria-controls="panel-3-3-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-3-3-1" name="3-1" role="tab" tabindex="-1">Kubernetes ノードのディレクトリ</button></div><div aria-labelledby="tab-3-3-0" class="sphinx-tabs-panel" id="panel-3-3-0" name="3-0" role="tabpanel" tabindex="0"><ul class="simple">
-<li><p>特徴</p></li>
-</ul>
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-3-3-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-3-3-0" name="3-0" role="tab" tabindex="0">マネージドディスク</button><button aria-controls="panel-3-3-1" aria-selected="false" class="sphinx-tabs-tab" id="tab-3-3-1" name="3-1" role="tab" tabindex="-1">Kubernetes ノードのディレクトリ</button></div><div aria-labelledby="tab-3-3-0" class="sphinx-tabs-panel" id="panel-3-3-0" name="3-0" role="tabpanel" tabindex="0"><div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ul>
+<li><p>特徴</p>
 <div class="line-block">
 <div class="line">パブリッククラウドで提供されるストレージサービスを利用することでストレージの構築や維持管理が不要となります。</div>
 </div>
-<ul class="simple">
-<li><p>設定例</p></li>
-</ul>
+</li>
+<li><p>設定例</p>
 <div class="line-block">
 <div class="line">Azure のストレージを利用する場合、下記のように StorageClass を定義することで利用が可能です。</div>
 <div class="line">詳細は、 <a class="reference external" href="https://learn.microsoft.com/ja-jp/azure/aks/concepts-storage#storage-classes">Azure Kubernetes Service (AKS) でのアプリケーションのストレージ オプション</a> を参照してください。</div>
@@ -2823,12 +2856,18 @@ $(window).on('load', function () {
 </pre></div>
 </div>
 </div>
-</div><div aria-labelledby="tab-3-3-1" class="sphinx-tabs-panel" hidden="true" id="panel-3-3-1" name="3-1" role="tabpanel" tabindex="0"><ul class="simple">
-<li><p>特徴</p></li>
+</li>
 </ul>
+</div><div aria-labelledby="tab-3-3-1" class="sphinx-tabs-panel" hidden="true" id="panel-3-3-1" name="3-1" role="tabpanel" tabindex="0"><div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ul>
+<li><p>特徴</p>
 <div class="line-block">
 <div class="line">Kubernetes のノード上のストレージ領域を利用するため、別途ストレージを調達する必要はありませんが、この方法は非推奨のため検証や開発時のみの利用</div>
 </div>
+</li>
+</ul>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <div class="line-block">
@@ -2843,9 +2882,8 @@ $(window).on('load', function () {
 <div class="line">また、Azure で構築した AKS クラスタは、クラスタを停止すると AKS クラスターの Node が解放されるため、保存していた情報は消えてしまいます。そのため、Node が停止しないように注意が必要となります。</div>
 </div>
 </div>
-<ul class="simple">
-<li><p>利用例</p></li>
-</ul>
+<ul>
+<li><p>利用例</p>
 <div class="line-block">
 <div class="line">hostPath を使用した例を記載します。</div>
 </div>
@@ -2977,6 +3015,8 @@ $(window).on('load', function () {
 </pre></div>
 </div>
 </div>
+</li>
+</ul>
 </div></div>
 </section>
 </section>
