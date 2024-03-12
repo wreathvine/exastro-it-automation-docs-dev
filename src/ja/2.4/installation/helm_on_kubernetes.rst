@@ -88,14 +88,14 @@ Helm chart (Kubernetes)
 
 - 通信要件
 
-  - クライアントからデプロイ先のコンテナ環境にアクセスできる必要があります。
-  - Platform 管理者用と一般ユーザー用の2つ通信ポートが使用となります。
-  - コンテナ環境からコンテナイメージの取得のために、Docker Hub に接続できる必要があります。
+  - | クライアントからデプロイ先のコンテナ環境にアクセスできる必要があります。
+  - | Platform 管理者用と一般ユーザー用の2つ通信ポートが使用となります。
+  - | コンテナ環境からコンテナイメージの取得のために、Docker Hub に接続できる必要があります。
 
 - 外部コンポーネント
 
-  - MariaDB、もしくは、MySQL サーバ
-  - GitLab リポジトリ、および、アカウントの払い出しが可能なこと
+  - | MariaDB、もしくは、MySQL サーバ
+  - | GitLab リポジトリ、および、アカウントの払い出しが可能なこと
 
   .. warning::
     | GitLab 環境を同一クラスタに構築する場合は、GitLab のシステム要件に対応する最小要件を追加で容易する必要があります。
@@ -187,56 +187,62 @@ Helm リポジトリの登録
 
       .. _ingress_setting:
 
+      | 
+
       - 特徴
 
-      | パブリッククラウドなどで Ingress Controller が利用可能な場合、Ingress を使ったサービス公開ができます。
-      | クラスタ内にロードバランサーを構築して、ユーザー自身が運用したい場合などにメリットがあります。
+        | パブリッククラウドなどで Ingress Controller が利用可能な場合、Ingress を使ったサービス公開ができます。
+        | クラスタ内にロードバランサーを構築して、ユーザー自身が運用したい場合などにメリットがあります。
 
       - 設定例
 
-      | サービス公開用のドメイン情報を Ingress に登録することでDNSを使ったサービス公開を行います。
-      | Azure におけるドメイン名の確認方法については :ref:`aks-dns` を確認してください。
-      | クラウドプロバイダ毎に必要な :kbd:`annotations` を指定してください。
-      | 下記は、AKS の Ingress Controller を使用する際の例を記載しています。
+        | サービス公開用のドメイン情報を Ingress に登録することでDNSを使ったサービス公開を行います。
+        | Azure におけるドメイン名の確認方法については :ref:`aks-dns` を確認してください。
+        | クラウドプロバイダ毎に必要な :kbd:`annotations` を指定してください。
+        | 下記は、AKS の Ingress Controller を使用する際の例を記載しています。
 
-      .. literalinclude:: literal_includes/exastro_ingress_setting.yaml
-         :diff: literal_includes/exastro.yaml
-         :caption: exastro.yaml
-         :language: yaml
+        .. literalinclude:: literal_includes/exastro_ingress_setting.yaml
+           :diff: literal_includes/exastro.yaml
+           :caption: exastro.yaml
+           :language: yaml
 
    .. group-tab:: LoadBalancer
 
+      | 
+
       - 特徴
 
-      | パブリッククラウドなどで LoadBalancer が利用可能な場合、LoadBalancer を使ったサービス公開ができます。
-      | Ingress とは異なり、クラスタ外部(多くは、パブリッククラウドのサービス上)にロードバランサーがデプロイされるため、ユーザー自身が運用する必要がないことにメリットがあります。
+        | パブリッククラウドなどで LoadBalancer が利用可能な場合、LoadBalancer を使ったサービス公開ができます。
+        | Ingress とは異なり、クラスタ外部(多くは、パブリッククラウドのサービス上)にロードバランサーがデプロイされるため、ユーザー自身が運用する必要がないことにメリットがあります。
 
       - 設定例
 
-      | :kbd:`service.type` に :kbd:`LoadBalancer` を設定することで、LoadBalancer を使ったサービス公開ができます。
-      | 下記は、LoadBalancer を使用する際の例を記載しています。
-      
-      .. literalinclude:: literal_includes/exastro_loadbalancer_setting.yaml
-         :diff: literal_includes/exastro.yaml
-         :caption: exastro.yaml
-         :language: yaml
+        | :kbd:`service.type` に :kbd:`LoadBalancer` を設定することで、LoadBalancer を使ったサービス公開ができます。
+        | 下記は、LoadBalancer を使用する際の例を記載しています。
+        
+        .. literalinclude:: literal_includes/exastro_loadbalancer_setting.yaml
+           :diff: literal_includes/exastro.yaml
+           :caption: exastro.yaml
+           :language: yaml
 
    .. group-tab:: NodePort
 
+      | 
+
       - 特徴
 
-      | ユーザー自身の環境でロードバランサーを準備する、もしくは、検証などの環境では NodePort を使ったサービス公開ができます。
-      | Ingress や LoadBalancer とは異なり、ネイティブな Kubernetes で利用可能です。
+        | ユーザー自身の環境でロードバランサーを準備する、もしくは、検証などの環境では NodePort を使ったサービス公開ができます。
+        | Ingress や LoadBalancer とは異なり、ネイティブな Kubernetes で利用可能です。
 
       - 設定例
 
-      | :kbd:`service.type` に :kbd:`NodePort` を設定することで、NodePort を使ったサービス公開ができます。
-      | 下記は、NodePort を使用する際の例を記載しています。
+        | :kbd:`service.type` に :kbd:`NodePort` を設定することで、NodePort を使ったサービス公開ができます。
+        | 下記は、NodePort を使用する際の例を記載しています。
 
-      .. literalinclude:: literal_includes/exastro_nodeport_setting.yaml
-         :diff: literal_includes/exastro.yaml
-         :caption: exastro.yaml
-         :language: yaml
+        .. literalinclude:: literal_includes/exastro_nodeport_setting.yaml
+           :diff: literal_includes/exastro.yaml
+           :caption: exastro.yaml
+           :language: yaml
 
 .. _DATABASE_SETUP:
 
@@ -253,24 +259,27 @@ Helm リポジトリの登録
 
    .. tab:: 外部データベース
 
+      | 
+
       - 特徴
 
-      | マネージドデータベースや別途用意した Kubernetes クラスタ外のデータベースを利用します。
-      | Kubernetes クラスタ外にあるため、環境を分離して管理することが可能です。
+        | マネージドデータベースや別途用意した Kubernetes クラスタ外のデータベースを利用します。
+        | Kubernetes クラスタ外にあるため、環境を分離して管理することが可能です。
 
       .. warning::
+
         | 複数のITAを構築する場合はlower_case_table_namesの設定を統一してください。
         | ※統一しないと環境間でのメニューエクスポート・インポートが正常に動作しなくなる可能性があります。
 
       - 設定例
 
-      | 外部データベースを操作するために必要な接続情報を設定します。
+        | 外部データベースを操作するために必要な接続情報を設定します。
 
-      .. warning::
-        | :command:`DB_ADMIN_USER` で指定するDBの管理ユーザーには、データベースとユーザーを作成する権限が必要です。
-      
-      .. warning::
-        | 認証情報などはすべて平文で問題ありません。(Base64エンコードは不要)
+        .. warning::
+          | :command:`DB_ADMIN_USER` で指定するDBの管理ユーザーには、データベースとユーザーを作成する権限が必要です。
+        
+        .. warning::
+          | 認証情報などはすべて平文で問題ありません。(Base64エンコードは不要)
       
       1.  Exastro IT Automation 用データベースの設定
 
@@ -307,21 +316,23 @@ Helm リポジトリの登録
 
    .. tab:: データベースコンテナ
 
+      | 
+
       - 特徴
 
-      | Kubernetes クラスタ内にデプロイしたデータベースコンテナを利用します。
-      | Exastro と同じ Kubernetes クラスタにコンテナとして管理できます。
+        | Kubernetes クラスタ内にデプロイしたデータベースコンテナを利用します。
+        | Exastro と同じ Kubernetes クラスタにコンテナとして管理できます。
 
       - 設定例
 
-      | データベースコンテナの root パスワードを作成し、他のコンテナからもアクセスできるように作成した root アカウントのパスワードを設定します。
-      | また、データベースのデータを永続化するために利用するストレージを指定します。
+        | データベースコンテナの root パスワードを作成し、他のコンテナからもアクセスできるように作成した root アカウントのパスワードを設定します。
+        | また、データベースのデータを永続化するために利用するストレージを指定します。
 
-      .. warning::
-        | :command:`DB_ADMIN_USER` で指定するDBの管理ユーザーには、データベースとユーザーを作成する権限が必要です。
-      
-      .. warning::
-        | 認証情報などはすべて平文で問題ありません。(Base64エンコードは不要)
+        .. warning::
+          | :command:`DB_ADMIN_USER` で指定するDBの管理ユーザーには、データベースとユーザーを作成する権限が必要です。
+        
+        .. warning::
+          | 認証情報などはすべて平文で問題ありません。(Base64エンコードは不要)
 
       .. _configuration_database_container:
 
@@ -479,68 +490,72 @@ GitLab 連携設定
 
    .. tab:: マネージドディスク
 
+      | 
+
       - 特徴
        
-      | パブリッククラウドで提供されるストレージサービスを利用することでストレージの構築や維持管理が不要となります。
+        | パブリッククラウドで提供されるストレージサービスを利用することでストレージの構築や維持管理が不要となります。
 
       - 設定例
 
-      | Azure のストレージを利用する場合、下記のように StorageClass を定義することで利用が可能です。
-      | 詳細は、 `Azure Kubernetes Service (AKS) でのアプリケーションのストレージ オプション <https://learn.microsoft.com/ja-jp/azure/aks/concepts-storage#storage-classes>`_ を参照してください。
+        | Azure のストレージを利用する場合、下記のように StorageClass を定義することで利用が可能です。
+        | 詳細は、 `Azure Kubernetes Service (AKS) でのアプリケーションのストレージ オプション <https://learn.microsoft.com/ja-jp/azure/aks/concepts-storage#storage-classes>`_ を参照してください。
 
-      .. literalinclude:: literal_includes/storage-class-exastro-suite.yaml
-         :caption: storage-class-exastro-suite.yaml
-         :linenos:
+        .. literalinclude:: literal_includes/storage-class-exastro-suite.yaml
+           :caption: storage-class-exastro-suite.yaml
+           :linenos:
 
-      .. code-block:: diff
-         :caption: exastro.yaml
+        .. code-block:: diff
+           :caption: exastro.yaml
 
-           itaGlobalDefinition:
-             persistence:
-               enabled: true
-               accessMode: ReadWriteMany
-               size: 10Gi
-               volumeType: hostPath # e.g.) hostPath or AKS
-         -      storageClass: "-" # e.g.) azurefile or - (None)
-         +      storageClass: "azurefile" # e.g.) azurefile or - (None)
+             itaGlobalDefinition:
+               persistence:
+                 enabled: true
+                 accessMode: ReadWriteMany
+                 size: 10Gi
+                 volumeType: hostPath # e.g.) hostPath or AKS
+           -      storageClass: "-" # e.g.) azurefile or - (None)
+           +      storageClass: "azurefile" # e.g.) azurefile or - (None)
 
-      | ※ 下記は、:ref:`DATABASE_SETUP` で設定済みです。
+        | ※ 下記は、:ref:`DATABASE_SETUP` で設定済みです。
 
-      .. code-block:: diff
-         :caption: exastro.yaml
+        .. code-block:: diff
+           :caption: exastro.yaml
 
-           databaseDefinition:
-             persistence:
-               enabled: true
-               reinstall: false
-               accessMode: ReadWriteOnce
-               size: 20Gi
-               volumeType: hostPath # e.g.) hostPath or AKS
-         -      storageClass: "-" # e.g.) azurefile or - (None)
-         +      storageClass: "exastro-suite-azurefile-csi-nfs" # e.g.) azurefile or - (None)
+             databaseDefinition:
+               persistence:
+                 enabled: true
+                 reinstall: false
+                 accessMode: ReadWriteOnce
+                 size: 20Gi
+                 volumeType: hostPath # e.g.) hostPath or AKS
+           -      storageClass: "-" # e.g.) azurefile or - (None)
+           +      storageClass: "exastro-suite-azurefile-csi-nfs" # e.g.) azurefile or - (None)
 
-      | ※ 監査ログを永続ボリュームに出力する際は、以下の設定が必要となります
+        | ※ 監査ログを永続ボリュームに出力する際は、以下の設定が必要となります
 
-      .. code-block:: diff
-         :caption: exastro.yaml
+        .. code-block:: diff
+           :caption: exastro.yaml
 
-           pfAuditLogDefinition:
-             name: pf-auditlog
-             persistence:
-         -      enabled: false
-         +      enabled: true
-               reinstall: false
-               accessMode: ReadWriteMany
-               size: 10Gi
-               volumeType: hostPath # e.g.) hostPath or AKS
-         -      storageClass: "-" # e.g.) azurefile or - (None)
-         +      storageClass: "exastro-suite-azurefile-csi-nfs" # e.g.) azurefile or - (None)
+             pfAuditLogDefinition:
+               name: pf-auditlog
+               persistence:
+           -      enabled: false
+           +      enabled: true
+                 reinstall: false
+                 accessMode: ReadWriteMany
+                 size: 10Gi
+                 volumeType: hostPath # e.g.) hostPath or AKS
+           -      storageClass: "-" # e.g.) azurefile or - (None)
+           +      storageClass: "exastro-suite-azurefile-csi-nfs" # e.g.) azurefile or - (None)
 
    .. tab:: Kubernetes ノードのディレクトリ
 
+      | 
+
       - 特徴
 
-      | Kubernetes のノード上のストレージ領域を利用するため、別途ストレージを調達する必要はありませんが、この方法は非推奨のため検証や開発時のみの利用
+        | Kubernetes のノード上のストレージ領域を利用するため、別途ストレージを調達する必要はありませんが、この方法は非推奨のため検証や開発時のみの利用
 
       .. tip::
           | hostpathで指定するディレクトリは、アクセス権を設定する必要があります
@@ -552,43 +567,43 @@ GitLab 連携設定
 
       - 利用例
 
-      | hostPath を使用した例を記載します。
+        | hostPath を使用した例を記載します。
 
-      .. literalinclude:: literal_includes/pv-database.yaml
-         :caption: pv-database.yaml (データベース用ボリューム)
-         :linenos:
+        .. literalinclude:: literal_includes/pv-database.yaml
+           :caption: pv-database.yaml (データベース用ボリューム)
+           :linenos:
 
-      .. literalinclude:: literal_includes/pv-ita-common.yaml
-         :caption: pv-ita-common.yaml (ファイル用ボリューム)
-         :linenos:
+        .. literalinclude:: literal_includes/pv-ita-common.yaml
+           :caption: pv-ita-common.yaml (ファイル用ボリューム)
+           :linenos:
 
-      .. literalinclude:: literal_includes/pv-mongo.yaml
-         :caption: pv-mongo.yaml (OASE用ボリューム) ※OASEを利用しない場合設定不要
-         :linenos:
+        .. literalinclude:: literal_includes/pv-mongo.yaml
+           :caption: pv-mongo.yaml (OASE用ボリューム) ※OASEを利用しない場合設定不要
+           :linenos:
 
-      .. literalinclude:: literal_includes/pv-gitlab.yaml
-         :caption: pv-gitlab.yaml (GitLab用ボリューム) ※外部GitLabを利用する場合設定不要
-         :linenos:
+        .. literalinclude:: literal_includes/pv-gitlab.yaml
+           :caption: pv-gitlab.yaml (GitLab用ボリューム) ※外部GitLabを利用する場合設定不要
+           :linenos:
 
-      | ※ 監査ログを永続ボリュームに出力する際は、以下の設定が必要となります
+        | ※ 監査ログを永続ボリュームに出力する際は、以下の設定が必要となります
 
-      .. code-block:: diff
-         :caption: exastro.yaml
+        .. code-block:: diff
+           :caption: exastro.yaml
 
-           pfAuditLogDefinition:
-             name: pf-auditlog
-             persistence:
-         -      enabled: false
-         +      enabled: true
-               reinstall: false
-               accessMode: ReadWriteMany
-               size: 10Gi
-               volumeType: hostPath # e.g.) hostPath or AKS
-               storageClass: "-" # e.g.) azurefile or - (None)
+             pfAuditLogDefinition:
+               name: pf-auditlog
+               persistence:
+           -      enabled: false
+           +      enabled: true
+                 reinstall: false
+                 accessMode: ReadWriteMany
+                 size: 10Gi
+                 volumeType: hostPath # e.g.) hostPath or AKS
+                 storageClass: "-" # e.g.) azurefile or - (None)
 
-      .. literalinclude:: literal_includes/pv-pf-auditlog.yaml
-         :caption: pv-pf-auditlog (監査ログファイル用ボリューム)
-         :linenos:
+        .. literalinclude:: literal_includes/pv-pf-auditlog.yaml
+           :caption: pv-pf-auditlog (監査ログファイル用ボリューム)
+           :linenos:
 
 .. _インストール-1:
 
