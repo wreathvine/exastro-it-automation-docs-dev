@@ -593,3 +593,4 @@ exastro-platform:
               - mongo
           topologyKey: kubernetes.io/hostname
 
+
