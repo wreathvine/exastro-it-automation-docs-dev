@@ -49,6 +49,11 @@ Exastro Platform Web 機能
 
 .. include:: ../../include/helm_option_platform-web.rst
 
+Exastro Platform JOB 機能
+-------------------------
+
+.. include:: ../../include/helm_option_platform-job.rst
+
 Exastro Platform セットアップ機能
 ---------------------------------
 
