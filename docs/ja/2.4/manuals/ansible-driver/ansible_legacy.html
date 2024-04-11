@@ -767,9 +767,12 @@
 <li><div class="line-block">
 <div class="line">ユーザが作成したPlaybookのメンテナンス（閲覧/登録/更新/廃止）を行います。</div>
 <div class="line">Playbookの記述など関しては、「 <a class="reference internal" href="#ansible-legacy-write-playbook-ansible-legacy"><span class="std std-ref">Playbook（Ansible-Legacy）の記述</span></a> 」を参照してください。</div>
+<div class="line">利便性の向上を目的としたサンプルPlaybookが初期状態でPlaybook素材集に登録されています。</div>
+<div class="line">サンプルPlaybookのPlaybook素材名は、先頭に「~[Exastro standard]」が付与されています。</div>
+<div class="line">サンプルPlaybookをMovementと紐付けることにより、利用することが出来ます。</div>
 </div>
 <figure class="align-default" id="id26">
-<a class="reference internal image-reference" href="../../_images/playbook_list.png"><img alt="サブメニュー画面（Playbook素材集）" src="../../_images/playbook_list.png" style="width: 800px;" /></a>
+<a class="reference internal image-reference" href="../../_images/playbook_list_v2-4.png"><img alt="サブメニュー画面（Playbook素材集）" src="../../_images/playbook_list_v2-4.png" style="width: 800px;" /></a>
 <figcaption>
 <p><span class="caption-number">図 2.16 </span><span class="caption-text">サブメニュー画面（Playbook素材集）</span><a class="headerlink" href="#id26" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
@@ -779,7 +782,7 @@
 <div class="line"><span class="guilabel">登録</span> ボタンより、Playbookの登録を行います。</div>
 </div>
 <figure class="align-default" id="id27">
-<a class="reference internal image-reference" href="../../_images/registration_playbook_list.gif"><img alt="登録画面（Playbook素材集）" src="../../_images/registration_playbook_list.gif" style="width: 800px;" /></a>
+<a class="reference internal image-reference" href="../../_images/registration_playbook_list_v2-4.gif"><img alt="登録画面（Playbook素材集）" src="../../_images/registration_playbook_list_v2-4.gif" style="width: 800px;" /></a>
 <figcaption>
 <p><span class="caption-number">図 2.17 </span><span class="caption-text">登録画面（Playbook素材集）</span><a class="headerlink" href="#id27" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
@@ -790,15 +793,8 @@
 </div>
 <table class="docutils align-left" id="id28">
 <caption><span class="caption-number">表 2.54 </span><span class="caption-text">登録画面項目一覧（Playbook素材集）</span><a class="headerlink" href="#id28" title="このテーブルへのパーマリンク">¶</a></caption>
-<colgroup>
-<col style="width: 20.0%" />
-<col style="width: 50.0%" />
-<col style="width: 10.0%" />
-<col style="width: 10.0%" />
-<col style="width: 10.0%" />
-</colgroup>
 <thead>
-<tr class="row-odd"><th class="head"><p>項目</p></th>
+<tr class="row-odd"><th class="head" colspan="2"><p>項目</p></th>
 <th class="head"><p>説明</p></th>
 <th class="head"><p>入力必須</p></th>
 <th class="head"><p>入力方法</p></th>
@@ -806,32 +802,69 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>項番</p></td>
-<td><div class="line-block">
-<div class="line">登録時に自動採番した36桁の文字列が表示されます。</div>
-</div>
-</td>
-<td><p>ー</p></td>
+<tr class="row-even"><td colspan="2"><p>項番</p></td>
+<td><p>登録時に自動採番した36桁の文字列が表示されます。</p></td>
+<td><p>－</p></td>
 <td><p>自動入力</p></td>
-<td><p>ー</p></td>
+<td><p>－</p></td>
 </tr>
-<tr class="row-odd"><td><p>プレイブック素材名</p></td>
+<tr class="row-odd"><td colspan="2"><p>プレイブック素材名</p></td>
 <td><p>ITAで管理するプレイブック素材名を入力します。</p></td>
-<td><p>〇</p></td>
+<td><p>○</p></td>
 <td><p>手動入力</p></td>
 <td><p>最大長255バイト</p></td>
 </tr>
-<tr class="row-even"><td><p>プレイブック素材</p></td>
-<td><div class="line-block">
-<div class="line">作成したPlaybookファイルをアップロードします。</div>
-<div class="line">アップロードするPlaybookファイルは、文字コードがUTF-8のBOMなしで作成してください。</div>
-</div>
-</td>
-<td><p>〇</p></td>
+<tr class="row-even"><td colspan="2"><p>プレイブック素材</p></td>
+<td><p>作成したPlaybookファイルをアップロードします。
+アップロードするPlaybookファイルは、文字コードがUTF-8のBOMなしで作成してください。</p></td>
+<td><p>○</p></td>
 <td><p>ファイル選択</p></td>
 <td><p>最大サイズ100Mバイト</p></td>
 </tr>
-<tr class="row-odd"><td><p>備考</p></td>
+<tr class="row-odd"><td rowspan="3"><p>ターゲット</p></td>
+<td><p>Linux</p></td>
+<td><p>Linuxで使用可能なPlaybookの場合、「＊」を選択します。</p>
+<p>未選択でも、作業実行に影響はありません。</p>
+</td>
+<td><p>－</p></td>
+<td><p>リスト選択</p></td>
+<td><p>説明欄記載のとおり。</p></td>
+</tr>
+<tr class="row-even"><td><p>Windows</p></td>
+<td><p>Windowsで使用可能なPlaybookの場合、「＊」を選択します。</p>
+<p>未選択でも、作業実行に影響はありません。</p>
+</td>
+<td><p>－</p></td>
+<td><p>リスト選択</p></td>
+<td><p>説明欄記載のとおり。</p></td>
+</tr>
+<tr class="row-odd"><td><p>その他</p></td>
+<td><p>Linux、Windows以外の用途で使用可能なPlaybookの場合、Playbookの用途を入力します。</p></td>
+<td><p>－</p></td>
+<td><p>手動入力</p></td>
+<td><p>最大長4000バイト</p></td>
+</tr>
+<tr class="row-even"><td colspan="2"><p>Python要否</p></td>
+<td><p>ターゲットの機器にPythonが必要の場合、「＊」を選択します。</p>
+<p>未選択でも、作業実行に影響はありません。</p>
+</td>
+<td><p>－</p></td>
+<td><p>リスト選択</p></td>
+<td><p>説明欄記載のとおり。</p></td>
+</tr>
+<tr class="row-odd"><td colspan="2"><p>説明</p></td>
+<td><p>Playbookについての説明を入力します。</p></td>
+<td><p>ー</p></td>
+<td><p>手動入力</p></td>
+<td><p>最大長4000バイト</p></td>
+</tr>
+<tr class="row-even"><td colspan="2"><p>説明(en)</p></td>
+<td><p>Playbookについての説明を英語で入力します。</p></td>
+<td><p>ー</p></td>
+<td><p>手動入力</p></td>
+<td><p>最大長4000バイト</p></td>
+</tr>
+<tr class="row-odd"><td colspan="2"><p>備考</p></td>
 <td><p>自由記述欄です。</p></td>
 <td><p>ー</p></td>
 <td><p>手動入力</p></td>

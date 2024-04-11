@@ -844,7 +844,7 @@
 <div class="line">Ansible-Pioneerでは、「OS種別」ごとの差異を対話ファイルごとに定義し、同一目的の対話ファイルを「対話種別」として纏めて機器差分を吸収（抽象化）します。</div>
 </div>
 <figure class="align-default" id="id52">
-<a class="reference internal image-reference" href="../../_images/dialog_type_list.png"><img alt="サブメニュー画面（対話種別）" src="../../_images/dialog_type_list.png" style="width: 800px;" /></a>
+<a class="reference internal image-reference" href="../../_images/dialog_type_list_v2-4.png"><img alt="サブメニュー画面（対話種別）" src="../../_images/dialog_type_list_v2-4.png" style="width: 800px;" /></a>
 <figcaption>
 <p><span class="caption-number">図 3.36 </span><span class="caption-text">サブメニュー画面（対話種別）</span><a class="headerlink" href="#id52" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
@@ -854,7 +854,7 @@
 <div class="line"><span class="guilabel">登録</span> ボタンより、対話種別の登録を行います。</div>
 </div>
 <figure class="align-default" id="id53">
-<a class="reference internal image-reference" href="../../_images/registration_dialog_type_list.gif"><img alt="登録画面（対話種別）" src="../../_images/registration_dialog_type_list.gif" style="width: 800px;" /></a>
+<a class="reference internal image-reference" href="../../_images/registration_dialog_type_list_v2-4.gif"><img alt="登録画面（対話種別）" src="../../_images/registration_dialog_type_list_v2-4.gif" style="width: 800px;" /></a>
 <figcaption>
 <p><span class="caption-number">図 3.37 </span><span class="caption-text">登録画面（対話種別）</span><a class="headerlink" href="#id53" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
@@ -914,7 +914,7 @@
 <div class="line">１つの対話種別で複数のOSに対応させたい場合は、同じ対話種別で、OS種別それぞれについて対話ファイルを登録してください。</div>
 </div>
 <figure class="align-default" id="id55">
-<a class="reference internal image-reference" href="../../_images/dialog_list.png"><img alt="サブメニュー画面（対話ファイル素材集）" src="../../_images/dialog_list.png" style="width: 6.4939in; height: 2.90025in;" /></a>
+<a class="reference internal image-reference" href="../../_images/dialog_list.png"><img alt="サブメニュー画面（対話ファイル素材集）" src="../../_images/dialog_list.png" style="width: 800px;" /></a>
 <figcaption>
 <p><span class="caption-number">図 3.38 </span><span class="caption-text">サブメニュー画面（対話ファイル素材集）</span><a class="headerlink" href="#id55" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
@@ -924,7 +924,7 @@
 <div class="line"><span class="guilabel">登録</span> ボタンより、対話ファイル素材の登録を行います。</div>
 </div>
 <figure class="align-default" id="id56">
-<a class="reference internal image-reference" href="../../_images/registration_dialog_list.gif"><img alt="登録画面（対話ファイル素材集）" src="../../_images/registration_dialog_list.gif" style="width: 5.19507in; height: 0.90966in;" /></a>
+<a class="reference internal image-reference" href="../../_images/registration_dialog_list.gif"><img alt="登録画面（対話ファイル素材集）" src="../../_images/registration_dialog_list.gif" style="width: 800px;" /></a>
 <figcaption>
 <p><span class="caption-number">図 3.39 </span><span class="caption-text">登録画面（対話ファイル素材集）</span><a class="headerlink" href="#id56" title="この画像へのパーマリンク">¶</a></p>
 </figcaption>
@@ -935,15 +935,8 @@
 </div>
 <table class="docutils align-left" id="id57">
 <caption><span class="caption-number">表 3.42 </span><span class="caption-text">登録画面項目一覧（対話ファイル素材集）</span><a class="headerlink" href="#id57" title="このテーブルへのパーマリンク">¶</a></caption>
-<colgroup>
-<col style="width: 15.0%" />
-<col style="width: 50.0%" />
-<col style="width: 5.0%" />
-<col style="width: 10.0%" />
-<col style="width: 20.0%" />
-</colgroup>
 <thead>
-<tr class="row-odd"><th class="head"><p>対話種別</p></th>
+<tr class="row-odd"><th class="head" colspan="2"><p>項目</p></th>
 <th class="head"><p>説明</p></th>
 <th class="head"><p>入力必須</p></th>
 <th class="head"><p>入力方法</p></th>
@@ -951,44 +944,81 @@
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>項番</p></td>
+<tr class="row-even"><td colspan="2"><p>項番</p></td>
 <td><p>登録時に自動採番した36桁の文字列が表示されます。</p></td>
-<td><p>ー</p></td>
+<td><p>－</p></td>
 <td><p>自動入力</p></td>
-<td><p>ー</p></td>
+<td><p>－</p></td>
 </tr>
-<tr class="row-odd"><td><p>対話種別名</p></td>
-<td><div class="line-block">
-<div class="line"><span class="menuselection">Ansible-Pioneer ‣ 対話種別</span> で登録した <span class="menuselection">対話種別</span> が表示されます。</div>
-<div class="line">登録する対話ファイルの対話種別を選択します。</div>
-</div>
+<tr class="row-odd"><td colspan="2"><p>対話種別名</p></td>
+<td><p><span class="menuselection">Ansible-Pioneer ‣ 対話種別</span> で登録した <span class="menuselection">対話種別</span> が表示されます。</p>
+<p>登録する対話ファイルの対話種別を選択します。</p>
 </td>
-<td><p>〇</p></td>
+<td><p>○</p></td>
 <td><p>リスト選択</p></td>
 <td><p>説明欄記載のとおり。</p></td>
 </tr>
-<tr class="row-even"><td><p>OS種別</p></td>
-<td><div class="line-block">
-<div class="line"><span class="menuselection">Ansible-Pioneer ‣ OS種別</span> で登録した <span class="menuselection">OS種別</span> が表示されます。</div>
-<div class="line">登録する対話ファイルのOS種別を選択します。</div>
-</div>
+<tr class="row-even"><td colspan="2"><p>OS種別</p></td>
+<td><p><span class="menuselection">Ansible-Pioneer ‣ OS種別</span> で登録した <span class="menuselection">OS種別</span> が表示されます。</p>
+<p>登録する対話ファイルのOS種別を選択します。</p>
 </td>
-<td><p>〇</p></td>
+<td><p>○</p></td>
 <td><p>リスト選択</p></td>
 <td><p>説明欄記載のとおり。</p></td>
 </tr>
-<tr class="row-odd"><td><p>対話ファイル素材</p></td>
-<td><div class="line-block">
-<div class="line"><span class="menuselection">対話種別</span> と <span class="menuselection">OS種別</span> に対応する対話ファイルをアップロードします。</div>
-<div class="line">アップロードする対話ファイルは、文字コードがUTF-8のBOMなしで作成してください。</div>
-<div class="line">対話ファイルはYAML書式に準じた記述をしてください。</div>
-</div>
+<tr class="row-odd"><td colspan="2"><p>対話ファイル素材</p></td>
+<td><p><span class="menuselection">対話種別</span> と <span class="menuselection">OS種別</span> に対応する対話ファイルをアップロードします。</p>
+<p>アップロードする対話ファイルは、文字コードがUTF-8のBOMなしで作成してください。</p>
+<p>対話ファイルはYAML書式に準じた記述をしてください。</p>
 </td>
-<td><p>〇</p></td>
-<td><p>ファイル登録</p></td>
+<td><p>○</p></td>
+<td><p>ファイル選択</p></td>
 <td><p>最大サイズ100Mバイト</p></td>
 </tr>
-<tr class="row-even"><td><p>備考</p></td>
+<tr class="row-even"><td rowspan="3"><p>ターゲット</p></td>
+<td><p>Linux</p></td>
+<td><p>Linuxで使用可能なPlaybookの場合、「＊」を選択します。</p>
+<p>未選択でも、作業実行に影響はありません。</p>
+</td>
+<td><p>－</p></td>
+<td><p>リスト選択</p></td>
+<td><p>説明欄記載のとおり。</p></td>
+</tr>
+<tr class="row-odd"><td><p>Windows</p></td>
+<td><p>Windowsで使用可能なPlaybookの場合、「＊」を選択します。</p>
+<p>未選択でも、作業実行に影響はありません。</p>
+</td>
+<td><p>－</p></td>
+<td><p>リスト選択</p></td>
+<td><p>説明欄記載のとおり。</p></td>
+</tr>
+<tr class="row-even"><td><p>その他</p></td>
+<td><p>Linux、Windows以外の用途で使用可能なPlaybookの場合、Playbookの用途を入力します。</p></td>
+<td><p>－</p></td>
+<td><p>手動入力</p></td>
+<td><p>最大長4000バイト</p></td>
+</tr>
+<tr class="row-odd"><td colspan="2"><p>Python要否</p></td>
+<td><p>ターゲットの機器にPythonが必要の場合、「＊」を選択します。</p>
+<p>未選択でも、作業実行に影響はありません。</p>
+</td>
+<td><p>－</p></td>
+<td><p>リスト選択</p></td>
+<td><p>説明欄記載のとおり。</p></td>
+</tr>
+<tr class="row-even"><td colspan="2"><p>説明</p></td>
+<td><p>Playbookについての説明を入力します。</p></td>
+<td><p>ー</p></td>
+<td><p>手動入力</p></td>
+<td><p>最大長4000バイト</p></td>
+</tr>
+<tr class="row-odd"><td colspan="2"><p>説明(en)</p></td>
+<td><p>Playbookについての説明を英語で入力します。</p></td>
+<td><p>ー</p></td>
+<td><p>手動入力</p></td>
+<td><p>最大長4000バイト</p></td>
+</tr>
+<tr class="row-even"><td colspan="2"><p>備考</p></td>
 <td><p>自由記述欄です。</p></td>
 <td><p>ー</p></td>
 <td><p>手動入力</p></td>
