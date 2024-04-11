@@ -123,7 +123,7 @@ exastro-it-automation:
       tag: ""
       pullPolicy: IfNotPresent
     extraEnv:
-      EXECUTE_INTERVAL: "10"
+      EXECUTE_INTERVAL: "3"
       ANSIBLE_AGENT_IMAGE: "docker.io/exastro/exastro-it-automation-by-ansible-agent"
       ANSIBLE_AGENT_IMAGE_TAG: ""
       PLATFORM_API_HOST: "platform-api"
@@ -212,7 +212,7 @@ exastro-it-automation:
   ita-by-conductor-synchronize:
     replicaCount: 1
     extraEnv:
-      EXECUTE_INTERVAL: "10"
+      EXECUTE_INTERVAL: "3"
       PLATFORM_API_HOST: "platform-api"
       PLATFORM_API_PORT: "8000"
     image:
@@ -300,7 +300,7 @@ exastro-it-automation:
   ita-by-terraform-cli-execute:
     replicaCount: 1
     extraEnv:
-      EXECUTE_INTERVAL: "10"
+      EXECUTE_INTERVAL: "3"
       PLATFORM_API_HOST: "platform-api"
       PLATFORM_API_PORT: "8000"
     image:
@@ -322,7 +322,7 @@ exastro-it-automation:
   ita-by-terraform-cloud-ep-execute:
     replicaCount: 1
     extraEnv:
-      EXECUTE_INTERVAL: "10"
+      EXECUTE_INTERVAL: "3"
       PLATFORM_API_HOST: "platform-api"
       PLATFORM_API_PORT: "8000"
     image:
