@@ -842,7 +842,7 @@
 <td><p>〇</p></td>
 <td><p>〇</p></td>
 </tr>
-<tr class="row-even"><td><p>検索条件にマッチした際に、「比較する値」をそのままラベルの値として使用したい</p></td>
+<tr class="row-even"><td><p>検索条件にマッチした際に、マッチした値をそのままラベルの値として使用したい</p></td>
 <td><p>〇</p></td>
 <td><p>〇</p></td>
 <td><p>〇</p></td>
@@ -856,20 +856,32 @@
 <td><p>ー</p></td>
 <td><p>ー</p></td>
 <td><p>〇</p></td>
-<td><p>〇</p></td>
+<td><p>〇,ー</p></td>
 </tr>
-<tr class="row-even"><td><p>検索条件の値がFalseの値（空文字、[]、{}、0、</p></td>
+<tr class="row-even"><td><p>検索条件の値がFalseの値（空文字、[]、{}、0、False）でマッチした際に、ラベルを付与したい</p></td>
 <td><p>〇</p></td>
 <td><p>ー</p></td>
 <td><p>==（一致）,</p>
+<p>≠（不一致）のみ</p>
+</td>
+<td><p>ー</p></td>
+<td><p>〇</p></td>
+<td><p>== → 〇,ー</p>
+<p>≠ → 〇 のみ</p>
+</td>
+</tr>
+<tr class="row-odd"><td><p>検索条件に正規表現を使用したい</p></td>
+<td><p>〇</p></td>
+<td><p>その他 のみ</p></td>
+<td><p>RegExp,</p>
 <p>RegExp(DOTALL),</p>
 <p>RegExp(MULTILINE)のみ</p>
 </td>
 <td><p>ー</p></td>
 <td><p>〇</p></td>
-<td><p>== → 〇,ー</p></td>
+<td><p>〇,ー</p></td>
 </tr>
-<tr class="row-odd"><td><p>全てのイベントにラベルを付与したい</p></td>
+<tr class="row-even"><td><p>全てのイベントにラベルを付与したい</p></td>
 <td><p>ー</p></td>
 <td><p>ー</p></td>
 <td><p>ー</p></td>
