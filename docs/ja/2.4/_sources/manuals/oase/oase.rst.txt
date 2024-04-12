@@ -112,7 +112,7 @@ OASE メニュー
 
    サブメニュー画面（イベントフロー）
 
-.. figure:: /images/ja/oase/oase/event_flow_screen.png
+.. figure:: /images/ja/oase/oase/event_flow_screen_v2-4.png
    :width: 800px
    :alt: 使用イメージ画面（イベントフロー）
 
@@ -126,7 +126,7 @@ OASE メニュー
 
 | :guilabel:`表示パターン選択` を押下することで、表示するイベントを選択することができます。（複数選択可能）
 
-.. figure:: /images/ja/oase/oase/event_flow_display_pattern.png
+.. figure:: /images/ja/oase/oase/event_flow_display_pattern_v2-4.png
    :width: 200px
    :alt: 表示パターン選択（イベントフロー）
 
@@ -155,6 +155,8 @@ OASE メニュー
      - ルールにマッチした際に、発生するイベントのことです。
    * - 実行アクション
      - ルールにマッチしたことにより実行したアクションの情報を表示します。
+   * - ルール
+     - ルールID、ルール名を表示します。
 
 日時・範囲指定について
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -181,7 +183,7 @@ OASE メニュー
 
 | フィルター・アクション・ルールについて、各メニューでも、イベントフロー内でもメンテナンス（閲覧/登録/更新/廃止）できます。ドラッグ&ドロップも使用できます。
 
-.. figure:: /images/ja/oase/oase/event_flow_drag_drop.gif
+.. figure:: /images/ja/oase/oase/event_flow_drag_drop_v2-4.gif
    :width: 800px
    :alt: ドラッグ&ドロップで入力（イベントフロー）
 
@@ -190,7 +192,7 @@ OASE メニュー
 フィルター
 **********
 
-.. figure:: /images/ja/oase/oase/event_flow_filter.png
+.. figure:: /images/ja/oase/oase/event_flow_filter_v2-4.png
    :width: 800px
    :alt: フィルター入力画面（イベントフロー）
 
@@ -201,7 +203,7 @@ OASE メニュー
 アクション
 **********
 
-.. figure:: /images/ja/oase/oase/event_flow_action.png
+.. figure:: /images/ja/oase/oase/event_flow_action_v2-4.png
    :width: 800px
    :alt: アクション入力画面（イベントフロー）
 
@@ -212,7 +214,7 @@ OASE メニュー
 ルール
 *******
 
-.. figure:: /images/ja/oase/oase/event_flow_rule.png
+.. figure:: /images/ja/oase/oase/event_flow_rule_v2-4.png
    :width: 800px
    :alt: ルール入力画面（イベントフロー）
 
