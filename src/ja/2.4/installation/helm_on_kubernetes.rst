@@ -259,28 +259,25 @@ Helm リポジトリの登録
 
    .. tab:: 外部データベース
 
-      | 
-
       - 特徴
 
-        | マネージドデータベースや別途用意した Kubernetes クラスタ外のデータベースを利用します。
-        | Kubernetes クラスタ外にあるため、環境を分離して管理することが可能です。
+      | マネージドデータベースや別途用意した Kubernetes クラスタ外のデータベースを利用します。
+      | Kubernetes クラスタ外にあるため、環境を分離して管理することが可能です。
 
       .. warning::
-
         | 複数のITAを構築する場合はlower_case_table_namesの設定を統一してください。
         | ※統一しないと環境間でのメニューエクスポート・インポートが正常に動作しなくなる可能性があります。
 
       - 設定例
 
-        | 外部データベースを操作するために必要な接続情報を設定します。
+      | 外部データベースを操作するために必要な接続情報を設定します。
 
-        .. warning::
-          | :command:`DB_ADMIN_USER` で指定するDBの管理ユーザーには、データベースとユーザーを作成する権限が必要です。
-        
-        .. warning::
-          | 認証情報などはすべて平文で問題ありません。(Base64エンコードは不要)
-      
+      .. warning::
+        | :command:`DB_ADMIN_USER` と :command:`MONGO_ADMIN_USER` で指定するDBの管理ユーザには、データベースとユーザを作成する権限が必要です。
+
+      .. warning::
+        | 認証情報などはすべて平文で問題ありません。(Base64エンコードは不要)
+
       1.  Exastro IT Automation 用データベースの設定
 
           | データベースの接続情報を設定します。
@@ -303,7 +300,23 @@ Helm リポジトリの登録
              :caption: exastro.yaml
              :language: yaml
 
-      3.  データベースコンテナの無効化
+      3.  OASE用データベースの設定
+
+          | OASE用データベースの接続情報を設定します。(OASEを利用しない場合設定不要)
+
+          .. warning::
+               | GitLab 連携を利用しない場合は、下記のように設定してください。
+               | GITLAB_HOST: ""
+               | ほかの値はデフォルトのまま変更および削除不要
+
+          .. include:: ../include/helm_option_mongoDefinition.rst
+
+          .. literalinclude:: literal_includes/exastro_mongo_database.yaml
+             :diff: literal_includes/exastro.yaml
+             :caption: exastro.yaml
+             :language: yaml
+
+      4.  データベースコンテナの無効化
 
           | データベースコンテナが起動しないように設定します。
 
@@ -316,23 +329,21 @@ Helm リポジトリの登録
 
    .. tab:: データベースコンテナ
 
-      | 
-
       - 特徴
 
-        | Kubernetes クラスタ内にデプロイしたデータベースコンテナを利用します。
-        | Exastro と同じ Kubernetes クラスタにコンテナとして管理できます。
+      | Kubernetes クラスタ内にデプロイしたデータベースコンテナを利用します。
+      | Exastro と同じ Kubernetes クラスタにコンテナとして管理できます。
 
       - 設定例
 
-        | データベースコンテナの root パスワードを作成し、他のコンテナからもアクセスできるように作成した root アカウントのパスワードを設定します。
-        | また、データベースのデータを永続化するために利用するストレージを指定します。
+      | データベースコンテナの root パスワードを作成し、他のコンテナからもアクセスできるように作成した root アカウントのパスワードを設定します。
+      | また、データベースのデータを永続化するために利用するストレージを指定します。
 
-        .. warning::
-          | :command:`DB_ADMIN_USER` で指定するDBの管理ユーザーには、データベースとユーザーを作成する権限が必要です。
-        
-        .. warning::
-          | 認証情報などはすべて平文で問題ありません。(Base64エンコードは不要)
+      .. warning::
+        | :command:`DB_ADMIN_USER` と :command:`MONGO_ADMIN_USER` で指定するDBの管理ユーザには、データベースとユーザを作成する権限が必要です。
+
+      .. warning::
+        | 認証情報などはすべて平文で問題ありません。(Base64エンコードは不要)
 
       .. _configuration_database_container:
 
@@ -380,6 +391,24 @@ Helm リポジトリの登録
              :diff: literal_includes/exastro.yaml
              :caption: exastro.yaml
              :language: yaml
+
+      4.  OASE用データベースの設定
+
+          | OASE用データベースの接続情報を設定します。(OASEを利用しない場合設定不要)
+
+          .. warning::
+               | GitLab 連携を利用しない場合は、下記のように設定してください。
+               | GITLAB_HOST: ""
+               | ほかの値はデフォルトのまま変更および削除不要
+
+          .. include:: ../include/helm_option_mongoDefinition.rst
+
+          .. literalinclude:: literal_includes/exastro_database_mongo_setting.yaml
+             :diff: literal_includes/exastro.yaml
+             :caption: exastro.yaml
+             :language: yaml
+             
+
 
 .. _installation_kubernetes_Keycloak 設定:
 
@@ -439,6 +468,10 @@ GitLab 連携設定
 ---------------
 
 | GitLab 連携のための接続情報を登録します。
+
+.. warning::
+     | GitLab 連携を利用しない場合は、下記のように設定してください。
+     | GITLAB_HOST: ""
 
 .. include:: ../include/helm_option_gitlabDefinition.rst
 
