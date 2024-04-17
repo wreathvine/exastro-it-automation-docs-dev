@@ -305,9 +305,10 @@ Helm リポジトリの登録
           | OASE用データベースの接続情報を設定します。(OASEを利用しない場合設定不要)
 
           .. warning::
-               | GitLab 連携を利用しない場合は、下記のように設定してください。
-               | GITLAB_HOST: ""
-               | ほかの値はデフォルトのまま変更および削除不要
+             | MongoDBのユーザやデータベースを「自動払い出し( :ref:`organization_creation` )」で利用する場合は、:command:`MONGO_HOST` の指定が必要です。
+             | :command:`MONGO_ADMIN_USER` がユーザやデータベースの作成・削除が可能（rootロールまたは同等の権限）である必要があります。
+             | 上記の権限がない場合は「Python接続文字列( :ref:`organization_creation` )」の指定が必要です。
+             | また、自動払い出しを利用しない場合は :command:`MONGO_HOST` の指定は不要です。
 
           .. include:: ../include/helm_option_mongoDefinition.rst
 
@@ -323,6 +324,17 @@ Helm リポジトリの登録
           .. include:: ../include/helm_option_databaseDefinition.rst
 
           .. literalinclude:: literal_includes/exastro_database_disabled.yaml
+             :diff: literal_includes/exastro.yaml
+             :caption: exastro.yaml
+             :language: yaml
+
+      5.  MongoDBコンテナの無効化
+
+          | MongoDBコンテナが起動しないように設定します。(OASEを利用しない場合も設定必要)
+
+          .. include:: ../include/helm_option_mongo.rst
+
+          .. literalinclude:: literal_includes/exastro_mongodb_disabled.yaml
              :diff: literal_includes/exastro.yaml
              :caption: exastro.yaml
              :language: yaml
@@ -394,12 +406,13 @@ Helm リポジトリの登録
 
       4.  OASE用データベースの設定
 
-          | OASE用データベースの接続情報を設定します。(OASEを利用しない場合設定不要)
+          | OASE用データベースの接続情報を設定します。
 
           .. warning::
-               | GitLab 連携を利用しない場合は、下記のように設定してください。
-               | GITLAB_HOST: ""
-               | ほかの値はデフォルトのまま変更および削除不要
+             | MongoDBのユーザやデータベースを「自動払い出し( :ref:`organization_creation` )」で利用する場合は、:command:`MONGO_HOST` の指定が必要です。
+             | :command:`MONGO_ADMIN_USER` がユーザやデータベースの作成・削除が可能（rootロールまたは同等の権限）である必要があります。
+             | 上記の権限がない場合は「Python接続文字列( :ref:`organization_creation` )」の指定が必要です。
+             | また、自動払い出しを利用しない場合は :command:`MONGO_HOST` の指定は不要です。
 
           .. include:: ../include/helm_option_mongoDefinition.rst
 
@@ -408,7 +421,23 @@ Helm リポジトリの登録
              :caption: exastro.yaml
              :language: yaml
              
+      5.  MongoDBコンテナの設定
 
+          | データベースのデータを永続化するために利用するストレージを指定します
+
+          .. warning::
+             | MongoDBコンテナを利用しない場合、:command:`exastro-platform.mongo.enabled` をfalseに指定して下さい。
+
+          .. include:: ../include/helm_option_mongo.rst
+
+          .. tabs::
+
+            .. tab:: hostPath 利用
+
+               .. literalinclude:: literal_includes/exastro_mongodb_hostpath.yaml
+                  :diff: literal_includes/exastro.yaml
+                  :caption: exastro.yaml
+                  :language: yaml
 
 .. _installation_kubernetes_Keycloak 設定:
 
