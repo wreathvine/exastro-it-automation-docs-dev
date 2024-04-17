@@ -259,28 +259,25 @@ Helm リポジトリの登録
 
    .. tab:: 外部データベース
 
-      | 
-
       - 特徴
 
-        | マネージドデータベースや別途用意した Kubernetes クラスタ外のデータベースを利用します。
-        | Kubernetes クラスタ外にあるため、環境を分離して管理することが可能です。
+      | マネージドデータベースや別途用意した Kubernetes クラスタ外のデータベースを利用します。
+      | Kubernetes クラスタ外にあるため、環境を分離して管理することが可能です。
 
       .. warning::
-
         | 複数のITAを構築する場合はlower_case_table_namesの設定を統一してください。
         | ※統一しないと環境間でのメニューエクスポート・インポートが正常に動作しなくなる可能性があります。
 
       - 設定例
 
-        | 外部データベースを操作するために必要な接続情報を設定します。
+      | 外部データベースを操作するために必要な接続情報を設定します。
 
-        .. warning::
-          | :command:`DB_ADMIN_USER` で指定するDBの管理ユーザーには、データベースとユーザーを作成する権限が必要です。
-        
-        .. warning::
-          | 認証情報などはすべて平文で問題ありません。(Base64エンコードは不要)
-      
+      .. warning::
+        | :command:`DB_ADMIN_USER` と :command:`MONGO_ADMIN_USER` で指定するDBの管理ユーザには、データベースとユーザを作成する権限が必要です。
+
+      .. warning::
+        | 認証情報などはすべて平文で問題ありません。(Base64エンコードは不要)
+
       1.  Exastro IT Automation 用データベースの設定
 
           | データベースの接続情報を設定します。
@@ -303,7 +300,24 @@ Helm リポジトリの登録
              :caption: exastro.yaml
              :language: yaml
 
-      3.  データベースコンテナの無効化
+      3.  OASE用データベースの設定
+
+          | OASE用データベースの接続情報を設定します。(OASEを利用しない場合設定不要)
+
+          .. warning::
+             | MongoDBのユーザやデータベースを「自動払い出し( :ref:`organization_creation` )」で利用する場合は、:command:`MONGO_HOST` の指定が必要です。
+             | :command:`MONGO_ADMIN_USER` がユーザやデータベースの作成・削除が可能（rootロールまたは同等の権限）である必要があります。
+             | 上記の権限がない場合は「Python接続文字列( :ref:`organization_creation` )」の指定が必要です。
+             | また、自動払い出しを利用しない場合は :command:`MONGO_HOST` の指定は不要です。
+
+          .. include:: ../include/helm_option_mongoDefinition.rst
+
+          .. literalinclude:: literal_includes/exastro_mongo_database.yaml
+             :diff: literal_includes/exastro.yaml
+             :caption: exastro.yaml
+             :language: yaml
+
+      4.  データベースコンテナの無効化
 
           | データベースコンテナが起動しないように設定します。
 
@@ -314,25 +328,34 @@ Helm リポジトリの登録
              :caption: exastro.yaml
              :language: yaml
 
-   .. tab:: データベースコンテナ
+      5.  MongoDBコンテナの無効化
 
-      | 
+          | MongoDBコンテナが起動しないように設定します。(OASEを利用しない場合も設定必要)
+
+          .. include:: ../include/helm_option_mongo.rst
+
+          .. literalinclude:: literal_includes/exastro_mongodb_disabled.yaml
+             :diff: literal_includes/exastro.yaml
+             :caption: exastro.yaml
+             :language: yaml
+
+   .. tab:: データベースコンテナ
 
       - 特徴
 
-        | Kubernetes クラスタ内にデプロイしたデータベースコンテナを利用します。
-        | Exastro と同じ Kubernetes クラスタにコンテナとして管理できます。
+      | Kubernetes クラスタ内にデプロイしたデータベースコンテナを利用します。
+      | Exastro と同じ Kubernetes クラスタにコンテナとして管理できます。
 
       - 設定例
 
-        | データベースコンテナの root パスワードを作成し、他のコンテナからもアクセスできるように作成した root アカウントのパスワードを設定します。
-        | また、データベースのデータを永続化するために利用するストレージを指定します。
+      | データベースコンテナの root パスワードを作成し、他のコンテナからもアクセスできるように作成した root アカウントのパスワードを設定します。
+      | また、データベースのデータを永続化するために利用するストレージを指定します。
 
-        .. warning::
-          | :command:`DB_ADMIN_USER` で指定するDBの管理ユーザーには、データベースとユーザーを作成する権限が必要です。
-        
-        .. warning::
-          | 認証情報などはすべて平文で問題ありません。(Base64エンコードは不要)
+      .. warning::
+        | :command:`DB_ADMIN_USER` と :command:`MONGO_ADMIN_USER` で指定するDBの管理ユーザには、データベースとユーザを作成する権限が必要です。
+
+      .. warning::
+        | 認証情報などはすべて平文で問題ありません。(Base64エンコードは不要)
 
       .. _configuration_database_container:
 
@@ -380,6 +403,41 @@ Helm リポジトリの登録
              :diff: literal_includes/exastro.yaml
              :caption: exastro.yaml
              :language: yaml
+
+      4.  OASE用データベースの設定
+
+          | OASE用データベースの接続情報を設定します。
+
+          .. warning::
+             | MongoDBのユーザやデータベースを「自動払い出し( :ref:`organization_creation` )」で利用する場合は、:command:`MONGO_HOST` の指定が必要です。
+             | :command:`MONGO_ADMIN_USER` がユーザやデータベースの作成・削除が可能（rootロールまたは同等の権限）である必要があります。
+             | 上記の権限がない場合は「Python接続文字列( :ref:`organization_creation` )」の指定が必要です。
+             | また、自動払い出しを利用しない場合は :command:`MONGO_HOST` の指定は不要です。
+
+          .. include:: ../include/helm_option_mongoDefinition.rst
+
+          .. literalinclude:: literal_includes/exastro_database_mongo_setting.yaml
+             :diff: literal_includes/exastro.yaml
+             :caption: exastro.yaml
+             :language: yaml
+             
+      5.  MongoDBコンテナの設定
+
+          | データベースのデータを永続化するために利用するストレージを指定します
+
+          .. warning::
+             | MongoDBコンテナを利用しない場合、:command:`exastro-platform.mongo.enabled` をfalseに指定して下さい。
+
+          .. include:: ../include/helm_option_mongo.rst
+
+          .. tabs::
+
+            .. tab:: hostPath 利用
+
+               .. literalinclude:: literal_includes/exastro_mongodb_hostpath.yaml
+                  :diff: literal_includes/exastro.yaml
+                  :caption: exastro.yaml
+                  :language: yaml
 
 .. _installation_kubernetes_Keycloak 設定:
 
@@ -439,6 +497,10 @@ GitLab 連携設定
 ---------------
 
 | GitLab 連携のための接続情報を登録します。
+
+.. warning::
+     | GitLab 連携を利用しない場合は、下記のように設定してください。
+     | GITLAB_HOST: ""
 
 .. include:: ../include/helm_option_gitlabDefinition.rst
 
