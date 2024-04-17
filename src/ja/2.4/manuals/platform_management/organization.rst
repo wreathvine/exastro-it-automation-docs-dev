@@ -149,7 +149,8 @@ Organization (オーガナイゼーション)
             |                                  |                        |                        | ・ 自動払い出し : インストール時に設定したMongoDBを利用する場合はチェックを入れます。\          |
             |                                  |                        |                        | 利用しない場合はチェックを外し、Python接続文字列を入力します。                                  |
             |                                  |                        |                        |                                                                                                 |
-            |                                  |                        |                        | ・ Python接続文字列 : 利用するMongoDBのPython接続文字列を入力します。                           |
+            |                                  |                        |                        | ・ Python接続文字列 : 利用するMongoDBのPython接続文字列を入力します。\                          |
+            |                                  |                        |                        | MondoDBのアカウントがrootロールまたは同等の権限がない場合こちらを入力します。                   |
             |                                  |                        |                        |                                                                                                 |
             |                                  |                        |                        | 例: mongodb://username:password@hostname:27017/                                                 |
             |                                  |                        |                        |                                                                                                 |
