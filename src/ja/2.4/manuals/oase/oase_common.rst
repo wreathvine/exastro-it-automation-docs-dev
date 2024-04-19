@@ -13,7 +13,7 @@ OASE共通
 | OASEとは、外部から取得したイベント情報を分析し、そのイベントへの対処の自動化を支援する機能です。
 
 
-.. figure:: /images/ja/oase/oase_common/oase_overview_v2-3.png
+.. figure:: /images/ja/oase/oase_common/oase_overview_v2-4.png
    :width: 800px
    :alt: OASE機能概要
 
