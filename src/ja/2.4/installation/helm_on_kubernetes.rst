@@ -708,6 +708,7 @@ GitLab 連携設定
     pv-ita-common   10Gi       RWX            Retain           Available                                   9s
     pv-mongo        20Gi       RWO            Retain           Available                                   5s
 
+.. _ita_install:
 
 インストール
 ------------
@@ -1169,6 +1170,9 @@ Helm リポジトリの更新
 設定値の更新
 ^^^^^^^^^^^^
 
+.. warning:: 
+  | ユーザ名やパスワードはバージョンアップ前のものと合わせる必要があります。
+
 | デフォルト設定値の比較結果から、項目の追加などにより設定値の追加が必要な場合は更新をしてください。
 | 設定値の更新が不要であればこの手順はスキップしてください。
 | 例えば下記の差分確認結果から、:kbd:`exastro-platform.platform-auth.extraEnv` が追加されていますので、必要に応じて、:file:`exastro.yaml` に項目と設定値を追加します。
@@ -1194,8 +1198,29 @@ Helm リポジトリの更新
            - host: exastro-suite.example.local
              paths:
 
+.. _change_encrypt_key:
+
+暗号化キーの指定
+^^^^^^^^^^^^^^^^
+
+| バックアップした暗号化キーを指定します。
+
+.. literalinclude:: literal_includes/update_exastro.yaml
+   :diff: literal_includes/exastro.yaml
+   :caption: exastro.yaml
+   :language: yaml
+
+.. _ita_upgrade:
+
 アップグレード
 --------------
+
+.. warning:: 
+  | バージョン2.2.1以前から2.3.0以降へのアップグレードを行う場合は一度 :ref:`ita_uninstall` の :ref:`delete_pv` まで行い、再度 :ref:`ita_install` してください。
+
+.. danger::
+  | :ref:`delete_data` は行わないでください。
+  | 永続データの削除を行うとアップグレード前のデータがすべて消えてしまいます。
 
 サービス停止
 ^^^^^^^^^^^^
@@ -1312,6 +1337,8 @@ Helm リポジトリの更新
    platform-migration-1-8-0-rjwr                             0/1     Completed   0          7h40m
    platform-web-6644884657-dmwp6                             1/1     Running     0          7h40m
 
+.. _ita_uninstall:
+
 アンインストール
 ================
 
@@ -1341,12 +1368,16 @@ Helm リポジトリの更新
 
   release "exastro" uninstalled
 
+.. _delete_pv:
 
-データベースのデータの削除
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+永続ボリュームを削除
+^^^^^^^^^^^^^^^^^^^^
 
-| Persitent Volume を Kubernetes 上に hostPath で作成した場合の方法を記載します。
+| Persitent Volume（PV） を Kubernetes 上に hostPath で作成した場合の方法を記載します。
 | マネージドデータベースを含む外部データベースを利用している場合は、環境にあったデータ削除方法を実施してください。
+
+データベース用
+**************
 
 .. code-block:: bash
   :caption: コマンド
@@ -1358,24 +1389,9 @@ Helm リポジトリの更新
 
   persistentvolume "pv-database" deleted
 
-| Kubernetes のコントロールノードにログインし、データを削除します。
-| 下記コマンドは、Persistent Volume 作成時の hostPath に :file:`/var/data/exastro-suite/exastro-platform/database` を指定した場合の例です。
 
-.. code-block:: bash
-   :caption: コマンド
-
-   # 永続データがあるコントロールノードにログイン
-   ssh user@contol.node.example
-
-   # 永続データの削除
-   sudo rm -rf /var/data/exastro-suite/exastro-platform/database
-
-
-ファイルデータの削除
-^^^^^^^^^^^^^^^^^^^^
-
-| Persitent Volume を Kubernetes 上に hostPath で作成した場合の方法を記載します。
-| マネージドストレージを含む外部ストレージを利用している場合は、環境にあったデータ削除方法を実施してください。
+ファイル用
+**********
 
 .. code-block:: bash
   :caption: コマンド
@@ -1387,24 +1403,44 @@ Helm リポジトリの更新
 
   persistentvolume "pv-ita-common" deleted
 
-| Kubernetes のコントロールノードにログインし、データを削除します。
-| 下記コマンドは、Persistent Volume 作成時の hostPath に :file:`/var/data/exastro-suite/exastro-it-automation/ita-common` を指定した場合の例です。
+OASE用
+******
 
 .. code-block:: bash
-   :caption: コマンド
+  :caption: コマンド
 
-   # 永続データがあるコントロールノードにログイン
-   ssh user@contol.node.example
+  kubectl delete pv pv-mongo
 
-   # 永続データの削除
-   sudo rm -rf /var/data/exastro-suite/exastro-it-automation/ita-common
+.. code-block:: bash
+  :caption: 実行結果
 
+  persistentvolume "pv-mongo" deleted
+  
+.. code-block:: bash
+  :caption: コマンド
 
-監査ログファイルデータの削除
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  kubectl delete pvc volume-mongo-storage-mongo-0 --namespace exastro
 
-| Persitent Volume を Kubernetes 上に hostPath で作成した場合の方法を記載します。
-| マネージドストレージを含む外部ストレージを利用している場合は、環境にあったデータ削除方法を実施してください。
+.. code-block:: bash
+  :caption: 実行結果
+
+  persistentvolumeclaim "volume-mongo-storage-mongo-0" deleted
+
+GitLab用
+********
+
+.. code-block:: bash
+  :caption: コマンド
+
+  kubectl delete pv pv-gitlab
+
+.. code-block:: bash
+  :caption: 実行結果
+
+  persistentvolume "pv-gitlab" deleted
+
+監査ログファイル用
+******************
 
 .. code-block:: bash
   :caption: コマンド
@@ -1416,7 +1452,73 @@ Helm リポジトリの更新
 
   persistentvolume "pv-auditlog" deleted
 
+.. _delete_data:
+
+永続データを削除
+^^^^^^^^^^^^^^^^
+
 | Kubernetes のコントロールノードにログインし、データを削除します。
+
+データベース用
+**************
+
+| 下記コマンドは、Persistent Volume 作成時の hostPath に :file:`/var/data/exastro-suite/exastro-platform/database` を指定した場合の例です。
+
+.. code-block:: bash
+   :caption: コマンド
+
+   # 永続データがあるコントロールノードにログイン
+   ssh user@contol.node.example
+
+   # 永続データの削除
+   sudo rm -rf /var/data/exastro-suite/exastro-platform/database
+
+ファイル用
+**********
+
+| 下記コマンドは、Persistent Volume 作成時の hostPath に :file:`/var/data/exastro-suite/exastro-it-automation/ita-common` を指定した場合の例です。
+
+.. code-block:: bash
+   :caption: コマンド
+
+   # 永続データがあるコントロールノードにログイン
+   ssh user@contol.node.example
+
+   # 永続データの削除
+   sudo rm -rf /var/data/exastro-suite/exastro-it-automation/ita-common
+
+OASE用
+******
+
+| 下記コマンドは、Persistent Volume 作成時の hostPath に :file:`/var/data/exastro-suite/exastro-platform/mongo` を指定した場合の例です。
+
+.. code-block:: bash
+   :caption: コマンド
+
+   # 永続データがあるコントロールノードにログイン
+   ssh user@contol.node.example
+
+   # 永続データの削除
+   sudo rm -rf /var/data/exastro-suite/exastro-platform/mongo
+
+GitLab用
+********
+
+| 下記コマンドは、Persistent Volume 作成時の hostPath に :file:`/var/data/exastro-suite/exastro-platform/gitlab` を指定した場合の例です。
+
+.. code-block:: bash
+   :caption: コマンド
+
+   # 永続データがあるコントロールノードにログイン
+   ssh user@contol.node.example
+
+   # 永続データの削除
+   sudo rm -rf /var/data/exastro-suite/exastro-platform/gitlab
+
+
+監査ログファイル用
+******************
+
 | 下記コマンドは、Persistent Volume 作成時の hostPath に :file:`/var/log/exastro` を指定した場合の例です。
 
 .. code-block:: bash
