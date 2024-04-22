@@ -722,23 +722,24 @@
 <div class="literal-block-wrapper docutils container" id="j2">
 <div class="code-block-caption"><span class="caption-number">リスト 2.116 </span><span class="caption-text">新規.j2</span><a class="headerlink" href="#j2" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span> [TITLE]
-<span class="linenos"> 2</span>新規イベントが発生しました。
+<span class="linenos"> 2</span> 新規イベントが発生しました。
 <span class="linenos"> 3</span>
-<span class="linenos"> 4</span>[BODY]
-<span class="linenos"> 5</span>詳細
-<span class="linenos"> 6</span>　イベント収集設定：{{ labels._exastro_event_collection_settings_id }}
-<span class="linenos"> 7</span>　イベント取得日時：{{ labels._exastro_fetched_time }}
-<span class="linenos"> 8</span>　イベント有効日時：{{ labels._exastro_end_time }}
-<span class="linenos"> 9</span>　イベント種別　　：{{ labels._exastro_type }}
-<span class="linenos">10</span>
-<span class="linenos">11</span>　再評価
-<span class="linenos">12</span>　　評価ルール名　　：{{ labels._exastro_rule_name }}
-<span class="linenos">13</span>　　利用イベント　　：{{ exastro_events }}
-<span class="linenos">14</span>
-<span class="linenos">15</span>　ラベル：
-<span class="linenos">16</span>　  {% for key, value in labels.items() %}
-<span class="linenos">17</span>　　・{{ key }}：{{ value }}
-<span class="linenos">18</span>　　{% endfor %}
+<span class="linenos"> 4</span> [BODY]
+<span class="linenos"> 5</span> 詳細
+<span class="linenos"> 6</span> 　イベントID　　　：{{ _id }}
+<span class="linenos"> 7</span> 　イベント収集設定：{{ labels._exastro_event_collection_settings_id }}
+<span class="linenos"> 8</span> 　イベント取得日時：{{ labels._exastro_fetched_time }}
+<span class="linenos"> 9</span> 　イベント有効日時：{{ labels._exastro_end_time }}
+<span class="linenos">10</span> 　イベント種別　　：{{ labels._exastro_type }}
+<span class="linenos">11</span>
+<span class="linenos">12</span> 　再評価
+<span class="linenos">13</span> 　　評価ルール名　　：{{ labels._exastro_rule_name }}
+<span class="linenos">14</span> 　　利用イベント　　：{{ exastro_events }}
+<span class="linenos">15</span>
+<span class="linenos">16</span> 　ラベル：
+<span class="linenos">17</span> 　  {% for key, value in labels.items() %}
+<span class="linenos">18</span> 　　・{{ key }}：{{ value }}
+<span class="linenos">19</span> 　　{% endfor %}
 </pre></div>
 </div>
 </div>
@@ -749,19 +750,20 @@
 <span class="linenos"> 3</span>
 <span class="linenos"> 4</span>[BODY]
 <span class="linenos"> 5</span>詳細
-<span class="linenos"> 6</span>　イベント収集設定：{{ labels._exastro_event_collection_settings_id }}
-<span class="linenos"> 7</span>　イベント取得日時：{{ labels._exastro_fetched_time }}
-<span class="linenos"> 8</span>　イベント有効日時：{{ labels._exastro_end_time }}
-<span class="linenos"> 9</span>　イベント種別　　：{{ labels._exastro_type }}
-<span class="linenos">10</span>
-<span class="linenos">11</span>　再評価
-<span class="linenos">12</span>　　評価ルール名　　：{{ labels._exastro_rule_name }}
-<span class="linenos">13</span>　　利用イベント　　：{{ exastro_events }}
-<span class="linenos">14</span>
-<span class="linenos">15</span>　ラベル：
-<span class="linenos">16</span>　  {% for key, value in labels.items() %}
-<span class="linenos">17</span>　　・{{ key }}：{{ value }}
-<span class="linenos">18</span>　　{% endfor %}
+<span class="linenos"> 6</span>　イベントID　　　：{{ _id }}
+<span class="linenos"> 7</span>　イベント収集設定：{{ labels._exastro_event_collection_settings_id }}
+<span class="linenos"> 8</span>　イベント取得日時：{{ labels._exastro_fetched_time }}
+<span class="linenos"> 9</span>　イベント有効日時：{{ labels._exastro_end_time }}
+<span class="linenos">10</span>　イベント種別　　：{{ labels._exastro_type }}
+<span class="linenos">11</span>
+<span class="linenos">12</span>　再評価
+<span class="linenos">13</span>　　評価ルール名　　：{{ labels._exastro_rule_name }}
+<span class="linenos">14</span>　　利用イベント　　：{{ exastro_events }}
+<span class="linenos">15</span>
+<span class="linenos">16</span>　ラベル：
+<span class="linenos">17</span>　  {% for key, value in labels.items() %}
+<span class="linenos">18</span>　　・{{ key }}：{{ value }}
+<span class="linenos">19</span>　　{% endfor %}
 </pre></div>
 </div>
 </div>
@@ -772,19 +774,20 @@
 <span class="linenos"> 3</span>
 <span class="linenos"> 4</span>[BODY]
 <span class="linenos"> 5</span>詳細
-<span class="linenos"> 6</span>　イベント収集設定：{{ labels._exastro_event_collection_settings_id }}
-<span class="linenos"> 7</span>　イベント取得日時：{{ labels._exastro_fetched_time }}
-<span class="linenos"> 8</span>　イベント有効日時：{{ labels._exastro_end_time }}
-<span class="linenos"> 9</span>　イベント種別　　：{{ labels._exastro_type }}
-<span class="linenos">10</span>
-<span class="linenos">11</span>　再評価
-<span class="linenos">12</span>　　評価ルール名　　：{{ labels._exastro_rule_name }}
-<span class="linenos">13</span>　　利用イベント　　：{{ exastro_events }}
-<span class="linenos">14</span>
-<span class="linenos">15</span>　ラベル：
-<span class="linenos">16</span>　  {% for key, value in labels.items() %}
-<span class="linenos">17</span>　　・{{ key }}：{{ value }}
-<span class="linenos">18</span>　　{% endfor %}
+<span class="linenos"> 6</span>　イベントID　　　：{{ _id }}
+<span class="linenos"> 7</span>　イベント収集設定：{{ labels._exastro_event_collection_settings_id }}
+<span class="linenos"> 8</span>　イベント取得日時：{{ labels._exastro_fetched_time }}
+<span class="linenos"> 9</span>　イベント有効日時：{{ labels._exastro_end_time }}
+<span class="linenos">10</span>　イベント種別　　：{{ labels._exastro_type }}
+<span class="linenos">11</span>
+<span class="linenos">12</span>　再評価
+<span class="linenos">13</span>　　評価ルール名　　：{{ labels._exastro_rule_name }}
+<span class="linenos">14</span>　　利用イベント　　：{{ exastro_events }}
+<span class="linenos">15</span>
+<span class="linenos">16</span>　ラベル：
+<span class="linenos">17</span>　  {% for key, value in labels.items() %}
+<span class="linenos">18</span>　　・{{ key }}：{{ value }}
+<span class="linenos">19</span>　　{% endfor %}
 </pre></div>
 </div>
 </div>
@@ -795,19 +798,20 @@
 <span class="linenos"> 3</span>
 <span class="linenos"> 4</span>[BODY]
 <span class="linenos"> 5</span>詳細
-<span class="linenos"> 6</span>　イベント収集設定：{{ labels._exastro_event_collection_settings_id }}
-<span class="linenos"> 7</span>　イベント取得日時：{{ labels._exastro_fetched_time }}
-<span class="linenos"> 8</span>　イベント有効日時：{{ labels._exastro_end_time }}
-<span class="linenos"> 9</span>　イベント種別　　：{{ labels._exastro_type }}
-<span class="linenos">10</span>
-<span class="linenos">11</span>　再評価
-<span class="linenos">12</span>　　評価ルール名　　：{{ labels._exastro_rule_name }}
-<span class="linenos">13</span>　　利用イベント　　：{{ exastro_events }}
-<span class="linenos">14</span>
-<span class="linenos">15</span>　ラベル：
-<span class="linenos">16</span>　  {% for key, value in labels.items() %}
-<span class="linenos">17</span>　　・{{ key }}：{{ value }}
-<span class="linenos">18</span>　　{% endfor %}
+<span class="linenos"> 6</span>　イベントID　　　：{{ _id }}
+<span class="linenos"> 7</span>　イベント収集設定：{{ labels._exastro_event_collection_settings_id }}
+<span class="linenos"> 8</span>　イベント取得日時：{{ labels._exastro_fetched_time }}
+<span class="linenos"> 9</span>　イベント有効日時：{{ labels._exastro_end_time }}
+<span class="linenos">10</span>　イベント種別　　：{{ labels._exastro_type }}
+<span class="linenos">11</span>
+<span class="linenos">12</span>　再評価
+<span class="linenos">13</span>　　評価ルール名　　：{{ labels._exastro_rule_name }}
+<span class="linenos">14</span>　　利用イベント　　：{{ exastro_events }}
+<span class="linenos">15</span>
+<span class="linenos">16</span>　ラベル：
+<span class="linenos">17</span>　  {% for key, value in labels.items() %}
+<span class="linenos">18</span>　　・{{ key }}：{{ value }}
+<span class="linenos">19</span>　　{% endfor %}
 </pre></div>
 </div>
 </div>
