@@ -581,7 +581,7 @@ JMESPath
 | JSONから、指定した :dfn:`JMESPath` に該当する値を抽出します。
 | 書式は、JSONキーを、"."ドットで結合したパスで指定します。
 | また、JSONキーの値が配列の場合、"[]"をJSONキーの後ろに付けます。
-| 　例） :program:`parent` の値が配列で、配列の子要素のキーが :program:`children` の場合、
+| 　例） :program:`parent` の値が配列で、配列の子要素のキー :program:`children` の値を抽出する場合、
 
 .. code-block::
 
@@ -589,7 +589,7 @@ JMESPath
 
 | 　と指定します。
 
-| JEMSPATHの指定方法について、
+| JMESPathの指定方法について、
 | Azure RESET-API `Get Metric for data <https://learn.microsoft.com/ja-jp/rest/api/monitor/metrics/list?view=rest-monitor-2023-10-01&tabs=HTTP>`_ のSample Responseの一部を利用して説明します。
 
 .. code-block:: json
@@ -653,25 +653,37 @@ JMESPath
    }
 
 .. note::
-  | :dfn:`JMESPath` の詳細については、JEMSPATH  Tutorial https://JMESPath.org/tutorial.html を参照してください。
+  | :dfn:`JMESPath` の詳細については、JMESPath  Tutorial https://JMESPath.org/tutorial.html を参照してください。
   | また、上記JSONを、 :dfn:`JMESPath` を試すことのできる、JMESPath Try it Out! https://JMESPath.org/ で試してください。
 
-1. | 値を取得するJEMSPATH
+1. | 配列の値を取得するJMESPath
  
-| 上記JSONで、53行目の :program:`namespace` の値を取得する :dfn:`JMESPath` を、
+| 上記JSONで、5行目の :program:`value` の値（配列）を取得する :dfn:`JMESPath` を、
 
 .. code-block::
 
-   namespace
+   value
 
 | と指定すると、下記の結果が取得できます。
+| （コード中の :program:`"//" : "･･･Sample Responseの14行～49行まで省略･･･"`  はコメントです。実際の結果には含まれません。）
 
 .. code-block:: json
 
-   "microsoft.storage/storageaccounts/blobservices"
+   [
+     {
+       "id": "/subscriptions/1f3･･･c38/･･･/metrics/BlobCount",
+       "type": "Microsoft.Insights/metrics",
+       "name": {
+         "value": "BlobCount",
+         "localizedValue": "Blob Count"
+       },
+       "displayDescription": "The number of blob objects stored in the storage account.",
+       "//" : "･･･Sample Responseの14行～49行まで省略･･･",
+       "errorCode": "Success"
+     }
+   ]
 
-
-2. | オブジェクトを取得するJEMSPATH
+2. | オブジェクトを取得するJMESPath
  
 | 上記JSONで、9行目の :program:`value` (配列) の :program:`name` の値を取得する :dfn:`JMESPath` を、
 
@@ -690,7 +702,7 @@ JMESPath
     }
   ]
 
-3. | 深い階層で、複数の値を取得するJEMSPATH
+3. | 深い階層で、複数の値を取得するJMESPath
 
 | :program:`value` (配列)の :program:`timeseries` (配列)の :program:`metadatavalues` (配列)の :program:`name` を取得する :dfn:`JMESPath` を、
 
@@ -726,9 +738,9 @@ JMESPath
 | :dfn:`レスポンスリストフラグ` は、 :dfn:`レスポンスキー` で抽出したイベントが、配列で格納されているかを指定します。
 
 | ・:program:`True`  ： :dfn:`レスポンスキー` で抽出したイベントが、配列で格納されている場合
-| 　　　　　　上記 :dfn:`JEMSPATH` の 3. 深い階層で、複数の値を取得 の様な場合
+| 　　　　　　上記の 1. 配列の値を取得するJMESPat や、3. 深い階層で、複数の値を取得するJMESPath の様な場合
 | ・:program:`False` ： :dfn:`レスポンスキー` で抽出したイベントが、配列以外（値や、子要素を持つオブジェクト）で格納されている場合
-| 　　　　　　上記 :dfn:`JEMSPATH` の 1. 値を取得 や、2. オブジェクトを取得 の様な場合
+| 　　　　　　上記の 2. オブジェクトを取得するJMESPath の様な場合
 
 
 イベントIDキー
@@ -849,6 +861,8 @@ Zabbix
    --header 'content-type: application/json-rpc' \
    --data "{\"jsonrpc\": \"2.0\",\"method\": \"problem.get\",\"id\": 1,\"params\": {},\"auth\": \"<Zabbix APIトークン>"}"
 
+| （コマンド・パラメータ中の <Zabbix APIトークン> の詳細は、後述します。）
+
 | 上記cURLコマンドで、下記の様なレスポンスが返却されます。
 
 .. _oase_agent_zabbix_responss:
@@ -930,9 +944,10 @@ Zabbix
      - eventid
 
 .. note::
-  | :menuselection:`パラメータ` で設定している、<APIトークン>は、下記のコマンドで取得できます。
-  | 但し、下記のコマンドを実行すると、コマンドで既に存在するユーザーで作成済みの<APIトークン>が使用できなる場合があります。
-  | 対応として、新しいユーザーを作成し、新しいユーザーで<APIトークン>を作成することをお勧めします。
+  | :menuselection:`パラメータ` で設定している、<Zabbix APIトークン>は、Zabbixユーザーの認証情報で、
+  | 下記のコマンドで、ユーザー情報を指定して取得できます。
+  | 但し、下記のコマンドを実行すると、既に存在するユーザーで作成済みの<Zabbix APIトークン>が使用できなる場合があります。
+  | 対応として、新しいユーザーを作成し、新しいユーザーで<Zabbix APIトークン>を作成することをお勧めします。
 
   | 新しいユーザーの作成は、
 
@@ -998,6 +1013,8 @@ Grafan
    --header 'authorization: Bearer <認証トークン>' \
    --header 'Content-Type: application/json' 
 
+| （コマンド・パラメータ中の <認証トークン> の詳細は、後述します。）
+
 | 上記cURLコマンドで、下記の様なレスポンスが返却されます。
 
 .. code-block:: json
@@ -1059,7 +1076,8 @@ Grafan
      - activeAt
 
 .. note::
-  | <認証トークン>は、下記の手順で取得できます。
+  | <認証トークン>は、Grafanaの認証情報です。
+  | 下記の手順で取得できます。
 
   1. | ブラウザで、:dfn:`Grafan` にサインインします。
      | 　初期設定では、
@@ -1075,7 +1093,7 @@ Grafan
   5. | :guilabel:`Add service account token` をクリックして、認証トークンを作成します。
 
   6. | Expirationで、
-     | 　"No expiation"(期限なし）)または、
+     | 　"No expiation"（期限なし　※推奨）または、
      | 　"Set expiation"（期限あり）を選択します。
 
   7. | :guilabel:`Generate token` をクリックします。

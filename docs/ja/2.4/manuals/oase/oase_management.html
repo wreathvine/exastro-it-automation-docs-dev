@@ -1035,7 +1035,7 @@
 <div class="line">JSONから、指定した <em class="dfn">JMESPath</em> に該当する値を抽出します。</div>
 <div class="line">書式は、JSONキーを、&quot;.&quot;ドットで結合したパスで指定します。</div>
 <div class="line">また、JSONキーの値が配列の場合、&quot;[]&quot;をJSONキーの後ろに付けます。</div>
-<div class="line">　例） <strong class="program">parent</strong> の値が配列で、配列の子要素のキーが <strong class="program">children</strong> の場合、</div>
+<div class="line">　例） <strong class="program">parent</strong> の値が配列で、配列の子要素のキー <strong class="program">children</strong> の値を抽出する場合、</div>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">parent</span><span class="p">[]</span><span class="o">.</span><span class="n">children</span>
 </pre></div>
@@ -1044,7 +1044,7 @@
 <div class="line">　と指定します。</div>
 </div>
 <div class="line-block">
-<div class="line">JEMSPATHの指定方法について、</div>
+<div class="line">JMESPathの指定方法について、</div>
 <div class="line">Azure RESET-API <a class="reference external" href="https://learn.microsoft.com/ja-jp/rest/api/monitor/metrics/list?view=rest-monitor-2023-10-01&amp;tabs=HTTP">Get Metric for data</a> のSample Responseの一部を利用して説明します。</div>
 </div>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="p">{</span>
@@ -1107,31 +1107,44 @@
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
 <div class="line-block">
-<div class="line"><em class="dfn">JMESPath</em> の詳細については、JEMSPATH  Tutorial <a class="reference external" href="https://JMESPath.org/tutorial.html">https://JMESPath.org/tutorial.html</a> を参照してください。</div>
+<div class="line"><em class="dfn">JMESPath</em> の詳細については、JMESPath  Tutorial <a class="reference external" href="https://JMESPath.org/tutorial.html">https://JMESPath.org/tutorial.html</a> を参照してください。</div>
 <div class="line">また、上記JSONを、 <em class="dfn">JMESPath</em> を試すことのできる、JMESPath Try it Out! <a class="reference external" href="https://JMESPath.org/">https://JMESPath.org/</a> で試してください。</div>
 </div>
 </div>
 <ol class="arabic">
 <li><div class="line-block">
-<div class="line">値を取得するJEMSPATH</div>
+<div class="line">配列の値を取得するJMESPath</div>
 </div>
 </li>
 </ol>
 <div class="line-block">
-<div class="line">上記JSONで、53行目の <strong class="program">namespace</strong> の値を取得する <em class="dfn">JMESPath</em> を、</div>
+<div class="line">上記JSONで、5行目の <strong class="program">value</strong> の値（配列）を取得する <em class="dfn">JMESPath</em> を、</div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">namespace</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">value</span>
 </pre></div>
 </div>
 <div class="line-block">
 <div class="line">と指定すると、下記の結果が取得できます。</div>
+<div class="line">（コード中の <strong class="program">&quot;//&quot; : &quot;･･･Sample Responseの14行～49行まで省略･･･&quot;</strong>  はコメントです。実際の結果には含まれません。）</div>
 </div>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;microsoft.storage/storageaccounts/blobservices&quot;</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/subscriptions/1f3･･･c38/･･･/metrics/BlobCount&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Microsoft.Insights/metrics&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;BlobCount&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;localizedValue&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Blob Count&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;displayDescription&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;The number of blob objects stored in the storage account.&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;//&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;･･･Sample Responseの14行～49行まで省略･･･&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;errorCode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Success&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">]</span>
 </pre></div>
 </div>
 <ol class="arabic" start="2">
 <li><div class="line-block">
-<div class="line">オブジェクトを取得するJEMSPATH</div>
+<div class="line">オブジェクトを取得するJMESPath</div>
 </div>
 </li>
 </ol>
@@ -1154,7 +1167,7 @@
 </div>
 <ol class="arabic" start="3">
 <li><div class="line-block">
-<div class="line">深い階層で、複数の値を取得するJEMSPATH</div>
+<div class="line">深い階層で、複数の値を取得するJMESPath</div>
 </div>
 </li>
 </ol>
@@ -1195,9 +1208,9 @@
 </div>
 <div class="line-block">
 <div class="line">・<strong class="program">True</strong>  ： <em class="dfn">レスポンスキー</em> で抽出したイベントが、配列で格納されている場合</div>
-<div class="line">　　　　　　上記 <em class="dfn">JEMSPATH</em> の 3. 深い階層で、複数の値を取得 の様な場合</div>
+<div class="line">　　　　　　上記の 1. 配列の値を取得するJMESPat や、3. 深い階層で、複数の値を取得するJMESPath の様な場合</div>
 <div class="line">・<strong class="program">False</strong> ： <em class="dfn">レスポンスキー</em> で抽出したイベントが、配列以外（値や、子要素を持つオブジェクト）で格納されている場合</div>
-<div class="line">　　　　　　上記 <em class="dfn">JEMSPATH</em> の 1. 値を取得 や、2. オブジェクトを取得 の様な場合</div>
+<div class="line">　　　　　　上記の 2. オブジェクトを取得するJMESPath の様な場合</div>
 </div>
 </section>
 <section id="id23">
@@ -1362,6 +1375,9 @@
 </pre></div>
 </div>
 <div class="line-block">
+<div class="line">（コマンド・パラメータ中の &lt;Zabbix APIトークン&gt; の詳細は、後述します。）</div>
+</div>
+<div class="line-block">
 <div class="line">上記cURLコマンドで、下記の様なレスポンスが返却されます。</div>
 </div>
 <div class="highlight-json notranslate" id="oase-agent-zabbix-responss"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="p">{</span>
@@ -1468,9 +1484,10 @@
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
 <div class="line-block">
-<div class="line"><span class="menuselection">パラメータ</span> で設定している、&lt;APIトークン&gt;は、下記のコマンドで取得できます。</div>
-<div class="line">但し、下記のコマンドを実行すると、コマンドで既に存在するユーザーで作成済みの&lt;APIトークン&gt;が使用できなる場合があります。</div>
-<div class="line">対応として、新しいユーザーを作成し、新しいユーザーで&lt;APIトークン&gt;を作成することをお勧めします。</div>
+<div class="line"><span class="menuselection">パラメータ</span> で設定している、&lt;Zabbix APIトークン&gt;は、Zabbixユーザーの認証情報で、</div>
+<div class="line">下記のコマンドで、ユーザー情報を指定して取得できます。</div>
+<div class="line">但し、下記のコマンドを実行すると、既に存在するユーザーで作成済みの&lt;Zabbix APIトークン&gt;が使用できなる場合があります。</div>
+<div class="line">対応として、新しいユーザーを作成し、新しいユーザーで&lt;Zabbix APIトークン&gt;を作成することをお勧めします。</div>
 </div>
 <div class="line-block">
 <div class="line">新しいユーザーの作成は、</div>
@@ -1571,6 +1588,9 @@
 </pre></div>
 </div>
 <div class="line-block">
+<div class="line">（コマンド・パラメータ中の &lt;認証トークン&gt; の詳細は、後述します。）</div>
+</div>
+<div class="line-block">
 <div class="line">上記cURLコマンドで、下記の様なレスポンスが返却されます。</div>
 </div>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="p">{</span>
@@ -1659,7 +1679,8 @@
 <div class="admonition note">
 <p class="admonition-title">注釈</p>
 <div class="line-block">
-<div class="line">&lt;認証トークン&gt;は、下記の手順で取得できます。</div>
+<div class="line">&lt;認証トークン&gt;は、Grafanaの認証情報です。</div>
+<div class="line">下記の手順で取得できます。</div>
 </div>
 <ol class="arabic">
 <li><div class="line-block">
@@ -1687,7 +1708,7 @@
 </li>
 <li><div class="line-block">
 <div class="line">Expirationで、</div>
-<div class="line">　&quot;No expiation&quot;(期限なし）)または、</div>
+<div class="line">　&quot;No expiation&quot;（期限なし　※推奨）または、</div>
 <div class="line">　&quot;Set expiation&quot;（期限あり）を選択します。</div>
 </div>
 </li>
