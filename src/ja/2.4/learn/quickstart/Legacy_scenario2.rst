@@ -75,7 +75,7 @@
 
 | :menuselection:`パラメータシート作成 --> パラメータシート定義・作成` から、データシートを登録します。
 
-.. figure:: ../../../../images/learn/quickstart/Legacy_scenario2/データシート作成.gif
+.. figure:: ../../../../images/learn/quickstart/Legacy_scenario2/データシート作成.png
    :width: 1200px
    :alt: データシートの作成
 
@@ -281,6 +281,10 @@ Ansible Playbook 登録
 
 | `ここをクリックして package.yml をダウンロードしてください。`_
 | :menuselection:`Ansible-Legacy --> Playbook素材集` から、ダウンロードした `hostname.yml <https://github.com/exastro-playbook-collection/OS-RHEL8/releases/download/v23.03/OS-RHEL8.zip>`_ を登録します。
+
+.. figure:: ../../../../images/learn/quickstart/Legacy_scenario2/Ansible-Playbook登録.png
+   :width: 1200px
+   :alt: ansible-playbook登録
 
 Movement と Ansible Playbook の紐付け
 ---------------------------------
