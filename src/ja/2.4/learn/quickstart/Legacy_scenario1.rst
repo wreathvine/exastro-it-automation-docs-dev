@@ -38,7 +38,7 @@
    :alt: オペレーション登録
 
 .. list-table:: オペレーション登録内容
-   :widths: 15 15
+   :widths: 15 10
    :header-rows: 1
 
    * - オペレーション名
