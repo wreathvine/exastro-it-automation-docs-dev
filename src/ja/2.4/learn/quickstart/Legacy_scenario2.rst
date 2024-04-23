@@ -315,12 +315,12 @@ Movement と Ansible Playbook の紐付け
 | :menuselection:`Ansible-Legacy --> 代入値自動登録設定` から、導入パッケージパラメータシートのパッケージ名と状態の項目に入るパラメータと Ansible Playbook の :kbd:`pkg_name` と :kbd:`action` 内の変数の紐付けを行います。
 
 .. figure:: ../../../../images/learn/quickstart/Legacy_scenario2/代入値自動登録設定.png
-   :width: 1200px
-   :alt: 代入値自動登録設定
+  :width: 1200px
+  :alt: 代入値自動登録設定
 
 .. list-table:: 代入値自動登録設定の設定値
-   :widths: 40 10 10 20 20
-   :header-rows: 2
+  :widths: 40 10 10 20 20
+  :header-rows: 2
 
   * - パラメータシート(From)
     -
