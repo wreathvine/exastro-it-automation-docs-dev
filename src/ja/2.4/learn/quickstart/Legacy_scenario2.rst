@@ -327,7 +327,6 @@ Movement と Ansible Playbook の紐付け
     - 登録方式
     - Movement名
     - IaC変数(To)
-    -
   * - メニューグループ:メニュー:項目
     - 代入順序
     -
