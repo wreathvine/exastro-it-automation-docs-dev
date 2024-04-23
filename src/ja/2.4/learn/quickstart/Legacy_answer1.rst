@@ -475,9 +475,9 @@
 Movement 登録
 -------------
 
-| :menuselection:`Ansible-Legacy --> Movement一覧` から、ホスト名設定のための Movement を登録します。
+| :menuselection:`Ansible-Legacy --> Movement一覧` から、ユーザー管理のための Movement を登録します。
 
-.. figure:: ../../../../images/learn/quickstart/Legacy_answer1/Movement登録.png
+.. figure:: ../../../../images/learn/quickstart/Legacy_answer1/ユーザーMovement登録.png
    :width: 1200px
    :alt: Movement登録
    
