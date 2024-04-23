@@ -4,6 +4,6 @@ Learn
 
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 4
 
    quickstart/index.rst
