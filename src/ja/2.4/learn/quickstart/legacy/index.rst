@@ -1,5 +1,5 @@
 ================
-Ansible-Legacyクイックスタート
+Ansible-Legacy
 ================
 
 
