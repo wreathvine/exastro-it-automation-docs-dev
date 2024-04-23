@@ -210,7 +210,7 @@
 
 | パラメータシート作成情報で :menuselection:`バンドル利用` を「利用する」にチェックを入れることで、1つの設定項目に対して複数のパラメータを設定することが可能になります。
 
-.. figure:: ../../../../images/learn/quickstart/scenario2/パラメータシート項目設定.png
+.. figure:: ../../../../images/learn/quickstart/Legacy_scenario2/パラメータシート項目設定.png
    :width: 1200px
    :alt: パラメータシート作成情報設定
 
@@ -261,7 +261,7 @@ Movement 登録
 
 | :menuselection:`Ansible-Legacy --> Movement一覧` から、ホスト名設定のための Movement を登録します。
 
-.. figure:: ../../../../images/learn/quickstart/Legacy_scenario2/Movement登録.png
+.. figure:: ../../../../images/learn/quickstart/Legacy_scenario2/Movement一覧登録.png
    :width: 1200px
    :alt: Movement登録
 
@@ -319,8 +319,8 @@ Movement と Ansible Playbook の紐付け
    :alt: 代入値自動登録設定
 
 .. list-table:: 代入値自動登録設定の設定値
-  :widths: 40 10 10 20 20 30
-  :header-rows: 2
+   :widths: 40 10 10 20 20 30
+   :header-rows: 2
 
   * - パラメータシート(From)
     -
@@ -437,7 +437,7 @@ Movement と Ansible Playbook の紐付け
 | これだけの項目の設定に設定値を入力するのは Web 画面の操作では、かなり苦労することでしょう。
 | このような大量のデータを一度に登録するような場合には、全件ダウンロード・ファイル一括登録を使って、ファイルからデータを投入する方法が適切です。
 
-.. figure:: ../../../../images/learn/quickstart/scenario2/代入値自動登録設定_一括登録.png
+.. figure:: ../../../../images/learn/quickstart/Legacy_scenario2/代入値自動登録設定_一括登録.png
    :width: 1200px
    :alt: 代入値自動登録設定(一括登録)
 
