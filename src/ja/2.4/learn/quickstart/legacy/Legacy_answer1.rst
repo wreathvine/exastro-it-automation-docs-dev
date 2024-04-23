@@ -499,6 +499,10 @@ Ansible Playbook 登録
 | :menuselection:`Ansible-Legacy --> Playbook素材集` から、ダウンロードした `group.yml <https://github.com/exastro-playbook-collection/OS-RHEL8/releases/download/v23.03/OS-RHEL8.zip>`_ 
 | `user.yml <https://github.com/exastro-playbook-collection/OS-RHEL8/releases/download/v23.03/OS-RHEL8.zip>`_ を登録します。
 
+.. figure:: ../../../../../images/learn/quickstart/Legacy_answer1/Ansible-Playbook登録.png
+   :width: 1200px
+   :alt: Ansible-Playbook登録
+
 Movement と Ansible Playbook の紐付け
 ---------------------------------
 
@@ -506,7 +510,7 @@ Movement と Ansible Playbook の紐付け
 | 本シナリオでは、 `グループ管理用の Ansible Playbook <https://github.com/exastro-playbook-collection/OS-RHEL8/tree/master/RH_group/OS_build>`_ および `ユーザー管理用の Ansible Playbook <https://github.com/exastro-playbook-collection/OS-RHEL8/tree/master/RH_user/OS_build>`_ を利用します。
 | ユーザーを作成する際には、先にグループを指定する必要があるため下記の順序でインクルードする必要があります。
 
-.. figure:: ../../../../../images/learn/quickstart/Legacy_answer1/MovementとPlaybookの紐付け.png
+.. figure:: ../../../../../images/learn/quickstart/Legacy_answer1/MovementとPlaybook紐付け.png
    :width: 1200px
    :alt: MovementとAnsible Playbook の紐づけ
 
