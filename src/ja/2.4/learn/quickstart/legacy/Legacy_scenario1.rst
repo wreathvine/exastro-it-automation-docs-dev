@@ -33,7 +33,7 @@
 
 | :menuselection:`基本コンソール --> オペレーション一覧` から、作業実施日時や作業名を登録します。
 
-.. figure:: ../../../../images/learn/quickstart/Legacy_scenario1/オペレーション登録.png
+.. figure:: ../../../../../images/learn/quickstart/Legacy_scenario1/オペレーション登録.png
    :width: 1200px
    :alt: オペレーション登録
 
