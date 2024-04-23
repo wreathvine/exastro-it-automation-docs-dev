@@ -13,7 +13,7 @@
      RS_MC=`kubectl get deploy ita-by-menu-create -o jsonpath='{@.spec.replicas}{"\n"}' --namespace exastro`
      RS_PA=`kubectl get deploy platform-auth -o jsonpath='{@.spec.replicas}{"\n"}' --namespace exastro`
 
-   | 以下はITA2.1.0以降からITA2.1.1以降にバージョンアップする際に実行してください。
+   | 以下はITA2.1.0以降の場合に実行してください。
 
    .. code-block:: bash
 
@@ -30,7 +30,7 @@
      RS_TCEE=`kubectl get deploy ita-by-terraform-cloud-ep-execute -o jsonpath='{@.spec.replicas}{"\n"}' --namespace exastro`
      RS_TCEV=`kubectl get deploy ita-by-terraform-cloud-ep-vars-listup -o jsonpath='{@.spec.replicas}{"\n"}' --namespace exastro`
  
-   | 以下はITA2.3.0以降からITA2.4.0以降にバージョンアップする際に実行してください。
+   | 以下はITA2.3.0以降の場合に実行してください。
 
    .. code-block:: bash 
 
@@ -58,7 +58,7 @@
      kubectl scale deployment ita-by-conductor-synchronize --namespace exastro --replicas=0
      kubectl scale deployment ita-by-menu-create --namespace exastro --replicas=0
 
-   | 以下はITA2.1.0以降からITA2.1.1以降にバージョンアップする際に実行してください。
+   | 以下はITA2.1.0以降の場合に実行してください。
 
    .. code-block:: bash
 
@@ -75,7 +75,7 @@
      kubectl scale deployment ita-by-terraform-cloud-ep-execute --namespace exastro --replicas=0
      kubectl scale deployment ita-by-terraform-cloud-ep-vars-listup --namespace exastro --replicas=0
 
-   | 以下はITA2.3.0以降からITA2.4.0以降にバージョンアップする際に実行してください。
+   | 以下はITA2.3.0以降の場合に実行してください。
 
    .. code-block:: bash 
 
@@ -108,7 +108,7 @@
      ita-by-conductor-synchronize             0/0     0            0           3h41m
      platform-auth                            0/0     0            0           3h41m
 
-   | 以下はITA2.1.0以降からITA2.1.1以降にバージョンアップする際に確認してください。
+   | 以下はITA2.1.0以降の場合に確認してください。
 
    .. code-block:: bash
 
@@ -126,7 +126,7 @@
      ita-by-terraform-cloud-ep-execute        0/0     0            0           3h41m
      ita-by-terraform-cloud-ep-vars-listup    0/0     0            0           3h41m
 
-   | 以下はITA2.3.0以降からITA2.4.0以降にバージョンアップする際に実行してください。
+   | 以下はITA2.3.0以降の場合に確認してください。
 
    .. code-block:: bash
 
