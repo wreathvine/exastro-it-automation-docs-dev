@@ -1189,7 +1189,7 @@ Movement と Ansible Playbook の紐付け
 | 6. :kbd:`サーバー構築` Conductor を選択し、:guilabel:`選択決定` を押下します。
 | 7. オペレーションに :kbd:`Webサーバーへユーザー追加作業` を選択し、:guilabel:`作業実行` を押下します。
 
-.. figure:: ../../../../images/learn/quickstart/Legacy_answer1/コンダクター実行失敗例.gif
+.. figure:: ../../../../../images/learn/quickstart/Legacy_answer1/コンダクター実行失敗例.gif
    :width: 1200px
    :alt: 実行失敗
 
@@ -1223,7 +1223,7 @@ Movement と Ansible Playbook の紐付け
 | 6. :kbd:`サーバー構築` Conductor を選択し、:guilabel:`選択決定` を押下します。
 | 7. オペレーションに :kbd:`Webサーバーへユーザー追加作業` を選択し、:guilabel:`作業実行` を押下します。
 
-.. figure:: ../../../../images/learn/quickstart/Legacy_answer1/コンダクター実行成功例.gif
+.. figure:: ../../../../../images/learn/quickstart/Legacy_answer1/コンダクター実行成功例.gif
    :width: 1200px
    :alt: 実行成功
 
