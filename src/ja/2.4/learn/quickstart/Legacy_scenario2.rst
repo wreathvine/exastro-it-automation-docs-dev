@@ -319,7 +319,7 @@ Movement と Ansible Playbook の紐付け
    :alt: 代入値自動登録設定
 
 .. list-table:: 代入値自動登録設定の設定値
-   :widths: 40 10 10 20 20 30
+   :widths: 40 10 10 20 20
    :header-rows: 2
 
   * - パラメータシート(From)
@@ -437,7 +437,7 @@ Movement と Ansible Playbook の紐付け
 | これだけの項目の設定に設定値を入力するのは Web 画面の操作では、かなり苦労することでしょう。
 | このような大量のデータを一度に登録するような場合には、全件ダウンロード・ファイル一括登録を使って、ファイルからデータを投入する方法が適切です。
 
-.. figure:: ../../../../images/learn/quickstart/Legacy_scenario2/代入値自動登録設定_一括登録.png
+.. figure:: ../../../../images/learn/quickstart/Legacy_scenario2/代入値自動登録設定_一括登録Excel.png
    :width: 1200px
    :alt: 代入値自動登録設定(一括登録)
 
