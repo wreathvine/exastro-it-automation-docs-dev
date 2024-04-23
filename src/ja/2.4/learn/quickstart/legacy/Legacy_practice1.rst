@@ -43,4 +43,4 @@
 解答
 ====
 
-| :doc:`answer1`
+| :doc:`Legacy_answer1`
