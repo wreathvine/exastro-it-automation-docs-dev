@@ -397,7 +397,7 @@ Movement と Ansible Playbook の紐付け
 
 | :menuselection:`Ansible共通 --> 機器一覧` から、作業対象である server01 のホスト名を db01 に更新します。
 
-.. figure:: ../../../../images/learn/quickstart/Legacy_scenario1/機器一覧変更.png
+.. figure:: ../../../../images/learn/quickstart/Legacy_scenario1/機器一覧ホスト名変更.png
    :width: 1200px
    :alt: パラメータ登録
 
