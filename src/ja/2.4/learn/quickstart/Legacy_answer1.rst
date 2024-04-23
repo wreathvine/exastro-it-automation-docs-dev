@@ -342,7 +342,7 @@
      - 
      - 
 
-.. figure:: ../../../../images/learn/quickstart/answer1/ユーザーパラメータシート作成_2.png
+.. figure:: ../../../../images/learn/quickstart/Legacy_answer1/ユーザーパラメータシート作成_2.png
    :width: 1200px
    :alt: ユーザーのパラメータシート作成_2
 
