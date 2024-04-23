@@ -56,7 +56,7 @@
 
 | :menuselection:`基本コンソール --> オペレーション一覧` から、作業実施日時や作業名を登録します。
 
-.. figure:: ../../../../images/learn/quickstart/Legacy_answer1/オペレーション登録.png
+.. figure:: ../../../../../images/learn/quickstart/Legacy_answer1/オペレーション登録.png
    :width: 1200px
    :alt: Conductor作業実行
 
@@ -107,7 +107,7 @@
 .. tip:: 
    | パラメータシート作成情報で :menuselection:`バンドル利用` を「利用する」にチェックを入れることで、1つの設定項目に対して複数のパラメータを設定することが可能になります。
 
-.. figure:: ../../../../images/learn/quickstart/Legacy_answer1/グループパラメータシート作成.png
+.. figure:: ../../../../../images/learn/quickstart/Legacy_answer1/グループパラメータシート作成.png
    :width: 1200px
    :alt: グループのパラメータシート
 
@@ -242,7 +242,7 @@
 .. tip:: 
    | :menuselection:`入力方式` を :kbd:`プルダウン選択` に設定することで、:ref:`groups_parameter_sheet` で登録したデータシートを参照できるようになります。
 
-.. figure:: ../../../../images/learn/quickstart/Legacy_answer1/ユーザーパラメータシート作成_1.png
+.. figure:: ../../../../../images/learn/quickstart/Legacy_answer1/ユーザーパラメータシート作成_1.png
    :width: 1200px
    :alt: ユーザーのパラメータシートの作成1
 
@@ -342,7 +342,7 @@
      - 
      - 
 
-.. figure:: ../../../../images/learn/quickstart/Legacy_answer1/ユーザーパラメータシート作成_2.png
+.. figure:: ../../../../../images/learn/quickstart/Legacy_answer1/ユーザーパラメータシート作成_2.png
    :width: 1200px
    :alt: ユーザーのパラメータシート作成_2
 
@@ -477,7 +477,7 @@ Movement 登録
 
 | :menuselection:`Ansible-Legacy --> Movement一覧` から、ユーザー管理のための Movement を登録します。
 
-.. figure:: ../../../../images/learn/quickstart/Legacy_answer1/ユーザーMovement登録.png
+.. figure:: ../../../../../images/learn/quickstart/Legacy_answer1/ユーザーMovement登録.png
    :width: 1200px
    :alt: Movement登録
    
@@ -506,7 +506,7 @@ Movement と Ansible Playbook の紐付け
 | 本シナリオでは、 `グループ管理用の Ansible Playbook <https://github.com/exastro-playbook-collection/OS-RHEL8/tree/master/RH_group/OS_build>`_ および `ユーザー管理用の Ansible Playbook <https://github.com/exastro-playbook-collection/OS-RHEL8/tree/master/RH_user/OS_build>`_ を利用します。
 | ユーザーを作成する際には、先にグループを指定する必要があるため下記の順序でインクルードする必要があります。
 
-.. figure:: ../../../../images/learn/quickstart/Legacy_answer1/MovementとPlaybookの紐付け.png
+.. figure:: ../../../../../images/learn/quickstart/Legacy_answer1/MovementとPlaybookの紐付け.png
    :width: 1200px
    :alt: MovementとAnsible Playbook の紐づけ
 
@@ -530,7 +530,7 @@ Movement と Ansible Playbook の紐付け
 | :menuselection:`Ansible-Legacy --> 代入値自動登録設定` から、パラメータシートの項目と Ansible Playbook の変数の紐付けを行います。
 | 大量のデータを一度に登録するような場合には、全件ダウンロード・ファイル一括登録を使って、ファイルからデータを投入する方法が適切です。
 
-.. figure:: ../../../../images/learn/quickstart/Legacy_answer1/グループの代入値自動登録設定_一括登録.png
+.. figure:: ../../../../../images/learn/quickstart/Legacy_answer1/グループの代入値自動登録設定_一括登録.png
    :width: 1200px
    :alt: グループの代入値自動登録設定
 
@@ -611,23 +611,23 @@ Movement と Ansible Playbook の紐付け
     - :kbd:`ユーザー管理:group_action`
     - :kbd:`5`
 
-.. figure:: ../../../../images/learn/quickstart/Legacy_answer1/ユーザーの代入値自動登録設定_一括登録1.png
+.. figure:: ../../../../../images/learn/quickstart/Legacy_answer1/ユーザーの代入値自動登録設定_一括登録1.png
    :width: 1200px
    :alt: ユーザーの代入値自動登録設定
 
-.. figure:: ../../../../images/learn/quickstart/Legacy_answer1/ユーザーの代入値自動登録設定_一括登録2.png
+.. figure:: ../../../../../images/learn/quickstart/Legacy_answer1/ユーザーの代入値自動登録設定_一括登録2.png
    :width: 1200px
    :alt: ユーザーの代入値自動登録設定
 
-.. figure:: ../../../../images/learn/quickstart/Legacy_answer1/ユーザーの代入値自動登録設定_一括登録3.png
+.. figure:: ../../../../../images/learn/quickstart/Legacy_answer1/ユーザーの代入値自動登録設定_一括登録3.png
    :width: 1200px
    :alt: ユーザーの代入値自動登録設定
 
-.. figure:: ../../../../images/learn/quickstart/Legacy_answer1/ユーザーの代入値自動登録設定_一括登録4.png
+.. figure:: ../../../../../images/learn/quickstart/Legacy_answer1/ユーザーの代入値自動登録設定_一括登録4.png
    :width: 1200px
    :alt: ユーザーの代入値自動登録設定
 
-.. figure:: ../../../../images/learn/quickstart/Legacy_answer1/ユーザーの代入値自動登録設定_一括登録5.png
+.. figure:: ../../../../../images/learn/quickstart/Legacy_answer1/ユーザーの代入値自動登録設定_一括登録5.png
    :width: 1200px
    :alt: ユーザーの代入値自動登録設定
 
@@ -935,7 +935,7 @@ Movement と Ansible Playbook の紐付け
 
 | :menuselection:`入力用 --> グループ` から、グループに対するパラメータを登録します。
 
-.. figure:: ../../../../images/learn/quickstart/Legacy_answer1/グループのパラメータ登録.png
+.. figure:: ../../../../../images/learn/quickstart/Legacy_answer1/グループのパラメータ登録.png
    :width: 1200px
    :alt: グループのパラメータ登録
 
@@ -970,11 +970,11 @@ Movement と Ansible Playbook の紐付け
 
 | :menuselection:`入力用 --> ユーザー` から、ユーザーに対するパラメータを登録します。
 
-.. figure:: ../../../../images/learn/quickstart/Legacy_answer1/ユーザーのパラメータ登録_1.png
+.. figure:: ../../../../../images/learn/quickstart/Legacy_answer1/ユーザーのパラメータ登録_1.png
    :width: 1200px
    :alt: ユーザのパラメータ登録
 
-.. figure:: ../../../../images/learn/quickstart/Legacy_answer1/ユーザーのパラメータ登録_2.png
+.. figure:: ../../../../../images/learn/quickstart/Legacy_answer1/ユーザーのパラメータ登録_2.png
    :width: 1200px
    :alt: ユーザのパラメータ登録
 
@@ -1095,7 +1095,7 @@ Movement と Ansible Playbook の紐付け
 
    | :menuselection:`作業状態確認` 画面が開き、実行が完了した後に、ステータスが「完了」になったことを確認します。
 
-.. figure:: ../../../../images/learn/quickstart/Legacy_answer1/作業実行.png
+.. figure:: ../../../../../images/learn/quickstart/Legacy_answer1/作業実行.png
    :width: 1200px
    :alt: 作業実行
 
