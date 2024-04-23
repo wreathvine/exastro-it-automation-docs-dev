@@ -125,7 +125,7 @@ Helm リポジトリの登録
    :caption: コマンド
 
    # Exastro システムの Helm リポジトリを登録
-   helm repo add exastro https://exastro-suite.github.io/exastro-helm/ -n exastro
+   helm repo add exastro https://exastro-suite.github.io/exastro-helm/ --namespace exastro
    # リポジトリ情報の更新
    helm repo update
 
@@ -756,10 +756,10 @@ GitLab 連携設定
             2. Get the ENCRYPT_KEY by running these commands:
 
               # Exastro IT Automation ENCRYPT_KEY
-              kubectl get secret ita-secret-ita-global -n exastro -o jsonpath='{.data.ENCRYPT_KEY}' | base64 -d
+              kubectl get secret ita-secret-ita-global --namespace exastro -o jsonpath='{.data.ENCRYPT_KEY}' | base64 -d
 
               # Exastro Platform ENCRYPT_KEY
-              kubectl get secret platform-secret-pf-global -n exastro -o jsonpath='{.data.ENCRYPT_KEY}' | base64 -d
+              kubectl get secret platform-secret-pf-global --namespace exastro -o jsonpath='{.data.ENCRYPT_KEY}' | base64 -d
 
               !!! Please save the output ENCRYPT_KEY carefully. !!!
 
@@ -847,10 +847,10 @@ GitLab 連携設定
             2. Get the ENCRYPT_KEY by running these commands:
 
               # Exastro IT Automation ENCRYPT_KEY
-              kubectl get secret ita-secret-ita-global -n exastro -o jsonpath='{.data.ENCRYPT_KEY}' | base64 -d
+              kubectl get secret ita-secret-ita-global --namespace exastro -o jsonpath='{.data.ENCRYPT_KEY}' | base64 -d
 
               # Exastro Platform ENCRYPT_KEY
-              kubectl get secret platform-secret-pf-global -n exastro -o jsonpath='{.data.ENCRYPT_KEY}' | base64 -d
+              kubectl get secret platform-secret-pf-global --namespace exastro -o jsonpath='{.data.ENCRYPT_KEY}' | base64 -d
 
               !!! Please save the output ENCRYPT_KEY carefully. !!!
 
@@ -962,10 +962,10 @@ GitLab 連携設定
             2. Get the ENCRYPT_KEY by running these commands:
 
               # Exastro IT Automation ENCRYPT_KEY
-              kubectl get secret ita-secret-ita-global -n exastro -o jsonpath='{.data.ENCRYPT_KEY}' | base64 -d
+              kubectl get secret ita-secret-ita-global --namespace exastro -o jsonpath='{.data.ENCRYPT_KEY}' | base64 -d
 
               # Exastro Platform ENCRYPT_KEY
-              kubectl get secret platform-secret-pf-global -n exastro -o jsonpath='{.data.ENCRYPT_KEY}' | base64 -d
+              kubectl get secret platform-secret-pf-global --namespace exastro -o jsonpath='{.data.ENCRYPT_KEY}' | base64 -d
 
               !!! Please save the output ENCRYPT_KEY carefully. !!!
 
@@ -1203,7 +1203,7 @@ Helm リポジトリの更新
 暗号化キーの指定
 ^^^^^^^^^^^^^^^^
 
-| バックアップした暗号化キーを指定します。
+| :ref:`backup_encrypt_key` でバックアップした暗号化キーを指定します。
 
 .. literalinclude:: literal_includes/update_exastro.yaml
    :diff: literal_includes/exastro.yaml
@@ -1260,10 +1260,10 @@ Helm リポジトリの更新
   2. Get the ENCRYPT_KEY by running these commands:
 
     # Exastro IT Automation ENCRYPT_KEY
-    kubectl get secret ita-secret-ita-global -n exastro -o jsonpath='{.data.ENCRYPT_KEY}' | base64 -d
+    kubectl get secret ita-secret-ita-global --namespace exastro -o jsonpath='{.data.ENCRYPT_KEY}' | base64 -d
 
     # Exastro Platform ENCRYPT_KEY
-    kubectl get secret platform-secret-pf-global -n exastro -o jsonpath='{.data.ENCRYPT_KEY}' | base64 -d
+    kubectl get secret platform-secret-pf-global --namespace exastro -o jsonpath='{.data.ENCRYPT_KEY}' | base64 -d
 
     !!! Please save the output ENCRYPT_KEY carefully. !!!
 
@@ -1296,7 +1296,7 @@ Helm リポジトリの更新
    :caption: コマンド
 
    # Pod の一覧を取得
-   kubectl get po -n exastro
+   kubectl get po --namespace exastro
 
 | 正常に起動している場合は、ita-migration-xxxとplatform-migration-xxxが “Completed” 、その他すべてが “Running” となります。
 | ※正常に起動するまで数分かかる場合があります。
