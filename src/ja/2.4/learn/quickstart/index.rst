@@ -10,10 +10,8 @@
    :maxdepth: 2
    :numbered: 3
 
-   legacy
-   legacy-role
-   oase
-   terraform
+   legacy/index.rst
+   legacy-role/index.rst
 
 .. .. raw:: html
 
