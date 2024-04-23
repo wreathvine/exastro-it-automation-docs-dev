@@ -50,11 +50,11 @@
    :maxdepth: 2
    :numbered: 3
 
-   scenario1
-   scenario2
-   scenario3
-   practice1
-   answer1
+   Legacy_scenario1
+   Legacy_scenario2
+   Legacy_scenario3
+   Legacy_practice1
+   Legacy_answer1
 
 .. .. raw:: html
 
