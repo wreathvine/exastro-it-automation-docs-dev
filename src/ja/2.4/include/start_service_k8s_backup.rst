@@ -13,7 +13,7 @@
      kubectl scale deployment ita-by-menu-create --namespace exastro --replicas=${RS_MC}
      kubectl scale deployment platform-auth --namespace exastro --replicas=${RS_PA}
 
-   | 以下はITA2.1.0以降からITA2.1.1以降にバージョンアップする際に実行してください。
+   | 以下はITA2.1.1以降の場合に実行してください。
 
    .. code-block:: bash
 
@@ -30,7 +30,7 @@
      kubectl scale deployment ita-by-terraform-cloud-ep-execute --namespace exastro --replicas=${RS_TCEE}
      kubectl scale deployment ita-by-terraform-cloud-ep-vars-listup --namespace exastro --replicas=${RS_TCEV}
 
-   | 以下はITA2.3.0以降からITA2.4.0以降にバージョンアップする際に実行してください。
+   | 以下はITA2.3.0以降の場合に実行してください。
 
    .. code-block:: bash
 
@@ -49,30 +49,41 @@
      :caption: 実行結果
 
      NAME                                     READY   UP-TO-DATE   AVAILABLE   AGE
+     mariadb                                  1/1     1            1           7h46m
+     ita-web-server                           1/1     1            1           7h46m
+     platform-web                             1/1     1            1           7h46m
      ita-api-admin                            1/1     1            1           7h46m
-     ita-api-oase-receiver                    1/1     1            1           7h46m
      ita-api-organization                     1/1     1            1           7h46m
+     platform-api                             1/1     1            1           7h46m
+     keycloak                                 1/1     1            1           7h46m
+     ita-by-menu-create                       1/1     1            1           7h46m
      ita-by-ansible-execute                   1/1     1            1           7h46m
      ita-by-ansible-legacy-role-vars-listup   1/1     1            1           7h46m
+     ita-by-ansible-towermaster-sync          1/1     1            1           7h46m
+     ita-by-conductor-synchronize             1/1     1            1           7h46m
+     platform-auth                            1/1     1            1           7h46m
+
+   | 以下はITA2.1.0以降の場合に確認してください。
+
+   .. code-block:: bash
+
      ita-by-ansible-legacy-vars-listup        1/1     1            1           7h46m
      ita-by-ansible-pioneer-vars-listup       1/1     1            1           7h46m
-     ita-by-ansible-towermaster-sync          1/1     1            1           7h46m
      ita-by-cicd-for-iac                      1/1     1            1           7h46m
      ita-by-collector                         1/1     1            1           7h46m
      ita-by-conductor-regularly               1/1     1            1           7h46m
-     ita-by-conductor-synchronize             1/1     1            1           7h46m
      ita-by-excel-export-import               1/1     1            1           7h46m
      ita-by-hostgroup-split                   1/1     1            1           7h46m
-     ita-by-menu-create                       1/1     1            1           7h46m
      ita-by-menu-export-import                1/1     1            1           7h46m
-     ita-by-oase-conclusion                   1/1     1            1           7h46m
      ita-by-terraform-cli-execute             1/1     1            1           7h46m
      ita-by-terraform-cli-vars-listup         1/1     1            1           7h46m
      ita-by-terraform-cloud-ep-execute        1/1     1            1           7h46m
      ita-by-terraform-cloud-ep-vars-listup    1/1     1            1           7h46m
-     ita-web-server                           1/1     1            1           7h46m
-     mariadb                                  1/1     1            1           7h46m
-     platform-api                             1/1     1            1           7h46m
-     platform-auth                            1/1     1            1           7h46m
-     platform-job                             1/1     1            1           7h46m
-     platform-web                             1/1     1            1           7h46m
+
+   | 以下はITA2.3.0以降の場合に確認してください。
+
+   .. code-block:: bash
+    
+     ita-api-oase-receiver                    1/1     1            1           7h46m
+     ita-by-oase-conclusion                   1/1     1            1           7h46m
+
