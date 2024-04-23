@@ -66,12 +66,12 @@
         <dd>
           <div>
             <select name="version" onchange="location.href=value;">
-              <option value="../../../ja/2.4/include/backup_encrypt_key_k8s.html" selected>current</option>
-              <option value="../../../ja/2.4/include/backup_encrypt_key_k8s.html" selected>2.4(current)</option>
-              <option value="../../../ja/2.3/include/backup_encrypt_key_k8s.html">2.3</option>
-              <option value="../../../ja/2.2/include/backup_encrypt_key_k8s.html">2.2</option>
-              <option value="../../../ja/2.1/include/backup_encrypt_key_k8s.html">2.1</option>
-              <option value="../../../ja/2.0/include/backup_encrypt_key_k8s.html">2.0</option>
+              <option value="../../../ja/2.4/include/stop_service_k8s_agent.html" selected>current</option>
+              <option value="../../../ja/2.4/include/stop_service_k8s_agent.html" selected>2.4(current)</option>
+              <option value="../../../ja/2.3/include/stop_service_k8s_agent.html">2.3</option>
+              <option value="../../../ja/2.2/include/stop_service_k8s_agent.html">2.2</option>
+              <option value="../../../ja/2.1/include/stop_service_k8s_agent.html">2.1</option>
+              <option value="../../../ja/2.0/include/stop_service_k8s_agent.html">2.0</option>
             </select>
           </div>
         </dd>
@@ -84,8 +84,8 @@
         <dd>
           <div>
             <select name="lang" onchange="location.href=value;">
-              <option value="../../../ja/2.4/include/backup_encrypt_key_k8s.html" selected>日本語</option>
-              <option value="../../../en/2.4/include/backup_encrypt_key_k8s.html">English</option>
+              <option value="../../../ja/2.4/include/stop_service_k8s_agent.html" selected>日本語</option>
+              <option value="../../../en/2.4/include/stop_service_k8s_agent.html">English</option>
             </select>
           </div>
         </dd>
@@ -143,42 +143,48 @@
 <article class="divInner">
 <div class="body" role="main">
 
-  <div class="line-block">
-<div class="line">Exastro システムのパスワードや認証情報といった機密情報はすべて暗号化されています。</div>
-<div class="line">必ず、下記で取得した暗号化キーをバックアップして、適切に保管してください。</div>
-</div>
-<div class="admonition danger">
-<p class="admonition-title">危険</p>
+  <ol class="arabic">
+<li><p>Pod 起動数の確認</p>
 <div class="line-block">
-<div class="line">暗号化キーを紛失した場合、バックアップデータからシステムを復旧した際にデータの復号ができなくなります。</div>
-</div>
+<div class="line">作業前の Pod 起動数の確認をし、状態を記録します。</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id1">
 <div class="code-block-caption"><span class="caption-text">コマンド</span><a class="headerlink" href="#id1" title="このコードへのパーマリンク">¶</a></div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exastro IT Automation ENCRYPT_KEY</span>
-kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>ita-secret-ita-global<span class="w"> </span>--namespace<span class="w"> </span>exastro<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">&#39;{.data.ENCRYPT_KEY}&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span>-d
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">RS_AG</span><span class="o">=</span><span class="sb">`</span>kubectl<span class="w"> </span>get<span class="w"> </span>deploy<span class="w"> </span>ita-ag-oase<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">&#39;{@.spec.replicas}{&quot;\n&quot;}&#39;</span><span class="w"> </span>--namespace<span class="w"> </span>exastro<span class="sb">`</span>
 </pre></div>
 </div>
+</div>
+</li>
+<li><p>バックヤード処理の停止</p>
+<div class="line-block">
+<div class="line">Pod 起動数を 0 に変更し、データベースの更新を停止します。</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id2">
-<div class="code-block-caption"><span class="caption-text">出力結果</span><a class="headerlink" href="#id2" title="このコードへのパーマリンク">¶</a></div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">JnIoXzJtPic2MXFqRl1yI1chMj8hWzQrNypmVn41Pk8</span><span class="o">=</span>
+<div class="code-block-caption"><span class="caption-text">コマンド</span><a class="headerlink" href="#id2" title="このコードへのパーマリンク">¶</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kubectl<span class="w"> </span>scale<span class="w"> </span>deployment<span class="w"> </span>ita-ag-oase<span class="w"> </span>--namespace<span class="w"> </span>exastro<span class="w"> </span>--replicas<span class="o">=</span><span class="m">0</span>
 </pre></div>
 </div>
+</div>
+</li>
+<li><p>Pod 起動数の確認</p>
+<div class="line-block">
+<div class="line">上記で停止した対象の Pod 数が 0 になっていることを確認</div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id3">
 <div class="code-block-caption"><span class="caption-text">コマンド</span><a class="headerlink" href="#id3" title="このコードへのパーマリンク">¶</a></div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exastro Platform ENCRYPT_KEY</span>
-kubectl<span class="w"> </span>get<span class="w"> </span>secret<span class="w"> </span>platform-secret-pf-global<span class="w"> </span>--namespace<span class="w"> </span>exastro<span class="w"> </span>-o<span class="w"> </span><span class="nv">jsonpath</span><span class="o">=</span><span class="s1">&#39;{.data.ENCRYPT_KEY}&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>base64<span class="w"> </span>-d
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kubectl<span class="w"> </span>get<span class="w"> </span>deployment<span class="w"> </span>--namespace<span class="w"> </span>exastro
 </pre></div>
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id4">
-<div class="code-block-caption"><span class="caption-text">出力結果</span><a class="headerlink" href="#id4" title="このコードへのパーマリンク">¶</a></div>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">bHFZe2VEVVM2PmFeQDMqNG4oZT4lTlglLjJJekxBTHE</span><span class="o">=</span>
+<div class="code-block-caption"><span class="caption-text">実行結果</span><a class="headerlink" href="#id4" title="このコードへのパーマリンク">¶</a></div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>NAME<span class="w">                                     </span>READY<span class="w">   </span>UP-TO-DATE<span class="w">   </span>AVAILABLE<span class="w">   </span>AGE
+ita-ag-oase<span class="w">                              </span><span class="m">0</span>/1<span class="w">     </span><span class="m">1</span><span class="w">            </span><span class="m">1</span><span class="w">           </span>29m
 </pre></div>
 </div>
 </div>
+</li>
+</ol>
 
 
 </div>

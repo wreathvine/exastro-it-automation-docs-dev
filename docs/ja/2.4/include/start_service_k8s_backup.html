@@ -66,12 +66,12 @@
         <dd>
           <div>
             <select name="version" onchange="location.href=value;">
-              <option value="../../../ja/2.4/include/start_service_k8s.html" selected>current</option>
-              <option value="../../../ja/2.4/include/start_service_k8s.html" selected>2.4(current)</option>
-              <option value="../../../ja/2.3/include/start_service_k8s.html">2.3</option>
-              <option value="../../../ja/2.2/include/start_service_k8s.html">2.2</option>
-              <option value="../../../ja/2.1/include/start_service_k8s.html">2.1</option>
-              <option value="../../../ja/2.0/include/start_service_k8s.html">2.0</option>
+              <option value="../../../ja/2.4/include/start_service_k8s_backup.html" selected>current</option>
+              <option value="../../../ja/2.4/include/start_service_k8s_backup.html" selected>2.4(current)</option>
+              <option value="../../../ja/2.3/include/start_service_k8s_backup.html">2.3</option>
+              <option value="../../../ja/2.2/include/start_service_k8s_backup.html">2.2</option>
+              <option value="../../../ja/2.1/include/start_service_k8s_backup.html">2.1</option>
+              <option value="../../../ja/2.0/include/start_service_k8s_backup.html">2.0</option>
             </select>
           </div>
         </dd>
@@ -84,8 +84,8 @@
         <dd>
           <div>
             <select name="lang" onchange="location.href=value;">
-              <option value="../../../ja/2.4/include/start_service_k8s.html" selected>日本語</option>
-              <option value="../../../en/2.4/include/start_service_k8s.html">English</option>
+              <option value="../../../ja/2.4/include/start_service_k8s_backup.html" selected>日本語</option>
+              <option value="../../../en/2.4/include/start_service_k8s_backup.html">English</option>
             </select>
           </div>
         </dd>
@@ -160,7 +160,7 @@ kubectl<span class="w"> </span>scale<span class="w"> </span>deployment<span clas
 </div>
 </div>
 <div class="line-block">
-<div class="line">以下はITA2.1.0以降からITA2.1.1以降にバージョンアップする際に実行してください。</div>
+<div class="line">以下はITA2.1.1以降の場合に実行してください。</div>
 </div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kubectl<span class="w"> </span>scale<span class="w"> </span>deployment<span class="w"> </span>ita-by-ansible-legacy-vars-listup<span class="w"> </span>--namespace<span class="w"> </span>exastro<span class="w"> </span>--replicas<span class="o">=</span><span class="si">${</span><span class="nv">RS_ALV</span><span class="si">}</span>
 kubectl<span class="w"> </span>scale<span class="w"> </span>deployment<span class="w"> </span>ita-by-ansible-pioneer-vars-listup<span class="w"> </span>--namespace<span class="w"> </span>exastro<span class="w"> </span>--replicas<span class="o">=</span><span class="si">${</span><span class="nv">RS_APV</span><span class="si">}</span>
@@ -177,7 +177,7 @@ kubectl<span class="w"> </span>scale<span class="w"> </span>deployment<span clas
 </pre></div>
 </div>
 <div class="line-block">
-<div class="line">以下はITA2.3.0以降からITA2.4.0以降にバージョンアップする際に実行してください。</div>
+<div class="line">以下はITA2.3.0以降の場合に実行してください。</div>
 </div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>kubectl<span class="w"> </span>scale<span class="w"> </span>deployment<span class="w"> </span>ita-by-oase-conclusion<span class="w"> </span>--namespace<span class="w"> </span>exastro<span class="w"> </span>--replicas<span class="o">=</span><span class="si">${</span><span class="nv">RS_OC</span><span class="si">}</span>
 </pre></div>
@@ -196,35 +196,45 @@ kubectl<span class="w"> </span>scale<span class="w"> </span>deployment<span clas
 <div class="literal-block-wrapper docutils container" id="id3">
 <div class="code-block-caption"><span class="caption-text">実行結果</span><a class="headerlink" href="#id3" title="このコードへのパーマリンク">¶</a></div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>NAME<span class="w">                                     </span>READY<span class="w">   </span>UP-TO-DATE<span class="w">   </span>AVAILABLE<span class="w">   </span>AGE
+mariadb<span class="w">                                  </span><span class="m">1</span>/1<span class="w">     </span><span class="m">1</span><span class="w">            </span><span class="m">1</span><span class="w">           </span>7h46m
+ita-web-server<span class="w">                           </span><span class="m">1</span>/1<span class="w">     </span><span class="m">1</span><span class="w">            </span><span class="m">1</span><span class="w">           </span>7h46m
+platform-web<span class="w">                             </span><span class="m">1</span>/1<span class="w">     </span><span class="m">1</span><span class="w">            </span><span class="m">1</span><span class="w">           </span>7h46m
 ita-api-admin<span class="w">                            </span><span class="m">1</span>/1<span class="w">     </span><span class="m">1</span><span class="w">            </span><span class="m">1</span><span class="w">           </span>7h46m
-ita-api-oase-receiver<span class="w">                    </span><span class="m">1</span>/1<span class="w">     </span><span class="m">1</span><span class="w">            </span><span class="m">1</span><span class="w">           </span>7h46m
 ita-api-organization<span class="w">                     </span><span class="m">1</span>/1<span class="w">     </span><span class="m">1</span><span class="w">            </span><span class="m">1</span><span class="w">           </span>7h46m
+platform-api<span class="w">                             </span><span class="m">1</span>/1<span class="w">     </span><span class="m">1</span><span class="w">            </span><span class="m">1</span><span class="w">           </span>7h46m
+keycloak<span class="w">                                 </span><span class="m">1</span>/1<span class="w">     </span><span class="m">1</span><span class="w">            </span><span class="m">1</span><span class="w">           </span>7h46m
+ita-by-menu-create<span class="w">                       </span><span class="m">1</span>/1<span class="w">     </span><span class="m">1</span><span class="w">            </span><span class="m">1</span><span class="w">           </span>7h46m
 ita-by-ansible-execute<span class="w">                   </span><span class="m">1</span>/1<span class="w">     </span><span class="m">1</span><span class="w">            </span><span class="m">1</span><span class="w">           </span>7h46m
 ita-by-ansible-legacy-role-vars-listup<span class="w">   </span><span class="m">1</span>/1<span class="w">     </span><span class="m">1</span><span class="w">            </span><span class="m">1</span><span class="w">           </span>7h46m
-ita-by-ansible-legacy-vars-listup<span class="w">        </span><span class="m">1</span>/1<span class="w">     </span><span class="m">1</span><span class="w">            </span><span class="m">1</span><span class="w">           </span>7h46m
-ita-by-ansible-pioneer-vars-listup<span class="w">       </span><span class="m">1</span>/1<span class="w">     </span><span class="m">1</span><span class="w">            </span><span class="m">1</span><span class="w">           </span>7h46m
 ita-by-ansible-towermaster-sync<span class="w">          </span><span class="m">1</span>/1<span class="w">     </span><span class="m">1</span><span class="w">            </span><span class="m">1</span><span class="w">           </span>7h46m
+ita-by-conductor-synchronize<span class="w">             </span><span class="m">1</span>/1<span class="w">     </span><span class="m">1</span><span class="w">            </span><span class="m">1</span><span class="w">           </span>7h46m
+platform-auth<span class="w">                            </span><span class="m">1</span>/1<span class="w">     </span><span class="m">1</span><span class="w">            </span><span class="m">1</span><span class="w">           </span>7h46m
+</pre></div>
+</div>
+</div>
+<div class="line-block">
+<div class="line">以下はITA2.1.0以降の場合に確認してください。</div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ita-by-ansible-legacy-vars-listup<span class="w">        </span><span class="m">1</span>/1<span class="w">     </span><span class="m">1</span><span class="w">            </span><span class="m">1</span><span class="w">           </span>7h46m
+ita-by-ansible-pioneer-vars-listup<span class="w">       </span><span class="m">1</span>/1<span class="w">     </span><span class="m">1</span><span class="w">            </span><span class="m">1</span><span class="w">           </span>7h46m
 ita-by-cicd-for-iac<span class="w">                      </span><span class="m">1</span>/1<span class="w">     </span><span class="m">1</span><span class="w">            </span><span class="m">1</span><span class="w">           </span>7h46m
 ita-by-collector<span class="w">                         </span><span class="m">1</span>/1<span class="w">     </span><span class="m">1</span><span class="w">            </span><span class="m">1</span><span class="w">           </span>7h46m
 ita-by-conductor-regularly<span class="w">               </span><span class="m">1</span>/1<span class="w">     </span><span class="m">1</span><span class="w">            </span><span class="m">1</span><span class="w">           </span>7h46m
-ita-by-conductor-synchronize<span class="w">             </span><span class="m">1</span>/1<span class="w">     </span><span class="m">1</span><span class="w">            </span><span class="m">1</span><span class="w">           </span>7h46m
 ita-by-excel-export-import<span class="w">               </span><span class="m">1</span>/1<span class="w">     </span><span class="m">1</span><span class="w">            </span><span class="m">1</span><span class="w">           </span>7h46m
 ita-by-hostgroup-split<span class="w">                   </span><span class="m">1</span>/1<span class="w">     </span><span class="m">1</span><span class="w">            </span><span class="m">1</span><span class="w">           </span>7h46m
-ita-by-menu-create<span class="w">                       </span><span class="m">1</span>/1<span class="w">     </span><span class="m">1</span><span class="w">            </span><span class="m">1</span><span class="w">           </span>7h46m
 ita-by-menu-export-import<span class="w">                </span><span class="m">1</span>/1<span class="w">     </span><span class="m">1</span><span class="w">            </span><span class="m">1</span><span class="w">           </span>7h46m
-ita-by-oase-conclusion<span class="w">                   </span><span class="m">1</span>/1<span class="w">     </span><span class="m">1</span><span class="w">            </span><span class="m">1</span><span class="w">           </span>7h46m
 ita-by-terraform-cli-execute<span class="w">             </span><span class="m">1</span>/1<span class="w">     </span><span class="m">1</span><span class="w">            </span><span class="m">1</span><span class="w">           </span>7h46m
 ita-by-terraform-cli-vars-listup<span class="w">         </span><span class="m">1</span>/1<span class="w">     </span><span class="m">1</span><span class="w">            </span><span class="m">1</span><span class="w">           </span>7h46m
 ita-by-terraform-cloud-ep-execute<span class="w">        </span><span class="m">1</span>/1<span class="w">     </span><span class="m">1</span><span class="w">            </span><span class="m">1</span><span class="w">           </span>7h46m
 ita-by-terraform-cloud-ep-vars-listup<span class="w">    </span><span class="m">1</span>/1<span class="w">     </span><span class="m">1</span><span class="w">            </span><span class="m">1</span><span class="w">           </span>7h46m
-ita-web-server<span class="w">                           </span><span class="m">1</span>/1<span class="w">     </span><span class="m">1</span><span class="w">            </span><span class="m">1</span><span class="w">           </span>7h46m
-mariadb<span class="w">                                  </span><span class="m">1</span>/1<span class="w">     </span><span class="m">1</span><span class="w">            </span><span class="m">1</span><span class="w">           </span>7h46m
-platform-api<span class="w">                             </span><span class="m">1</span>/1<span class="w">     </span><span class="m">1</span><span class="w">            </span><span class="m">1</span><span class="w">           </span>7h46m
-platform-auth<span class="w">                            </span><span class="m">1</span>/1<span class="w">     </span><span class="m">1</span><span class="w">            </span><span class="m">1</span><span class="w">           </span>7h46m
-platform-job<span class="w">                             </span><span class="m">1</span>/1<span class="w">     </span><span class="m">1</span><span class="w">            </span><span class="m">1</span><span class="w">           </span>7h46m
-platform-web<span class="w">                             </span><span class="m">1</span>/1<span class="w">     </span><span class="m">1</span><span class="w">            </span><span class="m">1</span><span class="w">           </span>7h46m
 </pre></div>
 </div>
+<div class="line-block">
+<div class="line">以下はITA2.3.0以降の場合に確認してください。</div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ita-api-oase-receiver<span class="w">                    </span><span class="m">1</span>/1<span class="w">     </span><span class="m">1</span><span class="w">            </span><span class="m">1</span><span class="w">           </span>7h46m
+ita-by-oase-conclusion<span class="w">                   </span><span class="m">1</span>/1<span class="w">     </span><span class="m">1</span><span class="w">            </span><span class="m">1</span><span class="w">           </span>7h46m
+</pre></div>
 </div>
 </li>
 </ol>
