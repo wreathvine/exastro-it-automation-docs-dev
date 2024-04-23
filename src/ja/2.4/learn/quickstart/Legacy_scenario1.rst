@@ -38,7 +38,7 @@
    :alt: オペレーション登録
 
 .. list-table:: オペレーション登録内容
-   :widths: 15 10
+   :widths: 15 15
    :header-rows: 1
 
    * - オペレーション名
@@ -228,7 +228,7 @@ Ansible Playbook 登録
 
   * - Playbook素材名
     - Playbook素材
-  * - :kbd:`hostname.yml`
+  * - :kbd:`hostname`
     - :file:`hostname.yml`
 
 Movement と Ansible Playbook の紐付け
@@ -264,24 +264,21 @@ Movement と Ansible Playbook の紐付け
    :alt: 代入値自動登録設定
 
 .. list-table:: 代入値自動登録設定の設定値
-  :widths: 40 10 20 20 30
+  :widths: 40 10 20 20
   :header-rows: 2
 
   * - パラメータシート(From)
     - 登録方式
     - Movement名
     - IaC変数(To)
-    -
   * - メニューグループ:メニュー:項目
     -
     -
     - Movement名:変数名
-    - Movement名:変数名:メンバー変数
   * - :kbd:`代入値自動登録用:サーバー基本情報:ホスト名`
     - :kbd:`Value型`
     - :kbd:`ホスト名設定`
     - :kbd:`ホスト名設定:VAR_RH_hostname`
-    - 
 
 
 ホスト名変更作業実施(1回目)
@@ -445,7 +442,7 @@ Movement と Ansible Playbook の紐付け
 
    | :menuselection:`作業状態確認` 画面が開き、実行が完了した後に、ステータスが「完了」になったことを確認します。
 
-.. figure:: ../../../../images/learn/quickstart/scenario1/作業実行.png
+.. figure:: ../../../../images/learn/quickstart/Legacy_scenario1/作業実行.png
    :width: 1200px
    :alt: 作業実行
 
