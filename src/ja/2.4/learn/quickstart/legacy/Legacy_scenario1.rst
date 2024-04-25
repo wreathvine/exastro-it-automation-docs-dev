@@ -254,7 +254,7 @@ Movement と Ansible Playbook の紐付け
 パラメータシートの項目と Ansible Playbook の変数の紐付け
 ----------------------------------------------------
 
-| hostname.ymlでは、:kbd:`VAR_RH_hostname` という変数にホスト名を代入することで、対象サーバーのホスト名を設定することができます。
+| hostname.ymlでは、:kbd:`hostname` という変数にホスト名を代入することで、対象サーバーのホスト名を設定することができます。
 
 | :menuselection:`Ansible-Legacy --> 代入値自動登録設定` から、サーバー基本情報パラメータシートのホスト名の項目に入るパラメータを、Ansible Playbook の :kbd:`VAR_RH_hostname` に代入する設定を行います。
 
@@ -277,7 +277,7 @@ Movement と Ansible Playbook の紐付け
   * - :kbd:`代入値自動登録用:サーバー基本情報:ホスト名`
     - :kbd:`Value型`
     - :kbd:`ホスト名設定`
-    - :kbd:`ホスト名設定:VAR_RH_hostname`
+    - :kbd:`ホスト名設定:hostname`
 
 
 ホスト名変更作業実施(1回目)
