@@ -290,7 +290,7 @@ Movement と Ansible Playbook の紐付け
 ---------------------------------
 
 | :menuselection:`Ansible-Legacy --> Movement-Playbook紐付` から、Movement と Ansible Playbook の紐付けを行います。
-| 本シナリオでは、 `RPM管理用の Ansible Playbook <https://github.com/exastro-playbook-collection/OS-RHEL8/tree/master/RH_rpm/OS_build>`_ を利用します。
+| 本シナリオでは、 `package.yml <https://github.com/exastro-playbook-collection/OS-RHEL8/tree/master/RH_rpm/OS_build>`_ を利用します。
 
 .. figure:: ../../../../../images/learn/quickstart/Legacy_scenario2/MovementとPlaybook紐付け.png
    :width: 1200px
