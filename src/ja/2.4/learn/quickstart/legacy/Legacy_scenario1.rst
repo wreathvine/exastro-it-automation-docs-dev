@@ -71,7 +71,7 @@
 | ホスト名を管理するためのパラメータシートを作成します。
 | :menuselection:`パラメータシート作成 --> パラメータシート定義・作成` から、ホスト名を管理するために、「サーバー基本情報」というパラメータシートを作成します。
 
-.. figure:: ../../../../../images/learn/quickstart/Legacy_scenario1/パラメータシート作成.png
+.. figure:: ../../../../../images/learn/quickstart/Legacy_scenario1/パラメータシート作成定義.png
    :width: 1200px
    :alt: パラメータシート作成
 
@@ -212,10 +212,9 @@ Ansible Playbook 登録
 | Ansible-Legacyモードを使用することのメリットとして、自身の用途に合ったPlaybookを作成することで自由に手順を作成することが可能です。
 | ですが、Ansible-Legacyモードを利用するにはご自身でPlaybookを作成していただく必要があるため、Playbook作成の知識が必要となります。
 
-| 本シナリオでは、 `Exastro Playbook Collection <https://github.com/exastro-suite/playbook-collection-docs/blob/master/ansible_role_packages/README.md>`_ を利用します。
+| 本シナリオでは、 `hostname.yml <https://github.com/exastro-suite/playbook-collection-docs/blob/master/ansible_role_packages/README.md>`_ を利用します。
 
-| `ここをクリックして Ansible Playbook の hostname.yml をダウンロードしてください。 <https://github.com/exastro-playbook-collection/OS-RHEL8/releases/download/v23.03/OS-RHEL8.zip>`_ 
-
+| `ここ<https://github.com/exastro-playbook-collection/OS-RHEL8/releases/download/v23.03/OS-RHEL8.zip>`_ をクリックして Ansible Playbook の hostname.yml をダウンロードしてください。
 | :menuselection:`Ansible-Legacy --> Playbook素材集` から、ダウンロードした `hostname.yml <https://github.com/exastro-playbook-collection/OS-RHEL8/releases/download/v23.03/OS-RHEL8.zip>`_ を登録します。
 
 .. figure:: ../../../../../images/learn/quickstart/Legacy_scenario1/Playbook素材集.png
