@@ -506,7 +506,7 @@ Movement と Ansible Playbook の紐付け
 ---------------------------------
 
 | :menuselection:`Ansible-Legacy --> Movement-Playbook紐付` から、Movement と Ansible Playbook の紐付けを行います。
-| 本シナリオでは、 `グループ管理用の Ansible Playbook <https://github.com/exastro-playbook-collection/OS-RHEL8/tree/master/RH_group/OS_build>`_ および `ユーザー管理用の Ansible Playbook <https://github.com/exastro-playbook-collection/OS-RHEL8/tree/master/RH_user/OS_build>`_ を利用します。
+| 本シナリオでは、 `group.ym <https://github.com/exastro-playbook-collection/OS-RHEL8/tree/master/RH_group/OS_build>`_ および `user.yml <https://github.com/exastro-playbook-collection/OS-RHEL8/tree/master/RH_user/OS_build>`_ を利用します。
 | ユーザーを作成する際には、先にグループを指定する必要があるため下記の順序でインクルードする必要があります。
 
 .. figure:: ../../../../../images/learn/quickstart/Legacy_answer1/MovementとPlaybook紐付け.png
