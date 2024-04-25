@@ -13,7 +13,7 @@
 | :doc:`前のシナリオ <scenario1>` と同様に、まずは作業計画を立てましょう。
 
 .. list-table:: 作業の方針
-   :widths: 15 10
+   :widths: 5 10
    :header-rows: 0
 
    * - 作業実施日時
