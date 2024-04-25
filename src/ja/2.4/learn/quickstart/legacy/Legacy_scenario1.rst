@@ -214,7 +214,7 @@ Ansible Playbook 登録
 
 | 本シナリオでは、 `hostname.yml <https://github.com/exastro-suite/playbook-collection-docs/blob/master/ansible_role_packages/README.md>`_ を利用します。
 
-| `ここ<https://github.com/exastro-playbook-collection/OS-RHEL8/releases/download/v23.03/OS-RHEL8.zip>`_ をクリックして Ansible Playbook の hostname.yml をダウンロードしてください。
+| `ここ <https://github.com/exastro-playbook-collection/OS-RHEL8/releases/download/v23.03/OS-RHEL8.zip>`_ をクリックして Ansible Playbook の hostname.yml をダウンロードしてください。
 | :menuselection:`Ansible-Legacy --> Playbook素材集` から、ダウンロードした `hostname.yml <https://github.com/exastro-playbook-collection/OS-RHEL8/releases/download/v23.03/OS-RHEL8.zip>`_ を登録します。
 
 .. figure:: ../../../../../images/learn/quickstart/Legacy_scenario1/Playbook素材集.png
