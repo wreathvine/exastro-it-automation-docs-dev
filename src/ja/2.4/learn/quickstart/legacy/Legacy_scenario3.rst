@@ -119,7 +119,7 @@
 
 | :menuselection:`Conductor --> Conductor編集/作業実行` から、ジョブフローを定義します。
 
-.. figure:: ../../../../images/learn/quickstart/Legacy_scenario3/ジョブフローの作成.gif
+.. figure:: ../../../../../images/learn/quickstart/Legacy_scenario3/ジョブフローの作成.gif
    :width: 1200px
    :alt: ジョブフローの作成
 
