@@ -258,7 +258,7 @@ Movement と Ansible Playbook の紐付け
 
 | :menuselection:`Ansible-Legacy --> 代入値自動登録設定` から、サーバー基本情報パラメータシートのホスト名の項目に入るパラメータを、Ansible Playbook の :kbd:`hostname` に代入する設定を行います。
 
-.. figure:: ../../../../../images/learn/quickstart/Legacy_scenario1/代入値自動登録設定.png
+.. figure:: ../../../../../images/learn/quickstart/Legacy_scenario1/代入値自動登録.png
    :width: 1200px
    :alt: 代入値自動登録設定
 
