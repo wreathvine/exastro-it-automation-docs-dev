@@ -312,7 +312,7 @@ Movement と Ansible Playbook の紐付け
 
 | package.yml では、:kbd:`pkg_name` という変数に管理するパッケージ名、:kbd:`action` という変数にパッケージの状態を代入することで、対象サーバーのパッケージを管理することができます。
 
-| :menuselection:`Ansible-Legacy --> 代入値自動登録設定` から、導入パッケージパラメータシートのパッケージ名と状態の項目に入るパラメータと Ansible Playbook の :kbd:`pkg_name` と :kbd:`action` 内の変数の紐付けを行います。
+| :menuselection:`Ansible-Legacy --> 代入値自動登録設定` から、導入パッケージパラメータシートのパッケージ名と状態の項目に入るパラメータと、 Ansible Playbook の :kbd:`pkg_name` と :kbd:`action` 内の変数の紐付けを行います。
 
 .. figure:: ../../../../../images/learn/quickstart/Legacy_scenario2/代入値自動登録設定.png
   :width: 1200px
