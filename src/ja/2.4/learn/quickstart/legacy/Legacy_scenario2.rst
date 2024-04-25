@@ -279,7 +279,7 @@ Movement 登録
 Ansible Playbook 登録
 -----------------
 
-| `ここをクリックして package.yml をダウンロードしてください。`_
+| `ここ <https://github.com/exastro-playbook-collection/OS-RHEL8/releases/download/v23.03/OS-RHEL8.zip>`_ をクリックして Ansible Playbook の package.yml をダウンロードしてください。_
 | :menuselection:`Ansible-Legacy --> Playbook素材集` から、ダウンロードした `hostname.yml <https://github.com/exastro-playbook-collection/OS-RHEL8/releases/download/v23.03/OS-RHEL8.zip>`_ を登録します。
 
 .. figure:: ../../../../../images/learn/quickstart/Legacy_scenario2/Ansible-Playbook登録.png
