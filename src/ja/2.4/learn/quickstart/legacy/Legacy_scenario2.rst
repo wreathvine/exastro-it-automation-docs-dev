@@ -297,7 +297,7 @@ Movement と Ansible Playbook の紐付け
    :alt: MovementとPlaybook紐づけ
 
 .. list-table:: Movement-Playbook紐付け情報の登録
-  :widths: 10 15 10
+  :widths: 10 10 10
   :header-rows: 1
 
   * - Movement名
@@ -310,7 +310,7 @@ Movement と Ansible Playbook の紐付け
 代入値自動登録設定
 ------------------
 
-| package.yml では、:kbd:`pkg_name` という変数に管理するパッケージ名、:kbd:`action`という変数にパッケージの状態を代入することで、対象サーバーのホスト名を設定することができます。
+| package.yml では、:kbd:`pkg_name` という変数に管理するパッケージ名、:kbd:`action` という変数にパッケージの状態を代入することで、対象サーバーのパッケージを管理することができます。
 
 | :menuselection:`Ansible-Legacy --> 代入値自動登録設定` から、導入パッケージパラメータシートのパッケージ名と状態の項目に入るパラメータと Ansible Playbook の :kbd:`pkg_name` と :kbd:`action` 内の変数の紐付けを行います。
 
