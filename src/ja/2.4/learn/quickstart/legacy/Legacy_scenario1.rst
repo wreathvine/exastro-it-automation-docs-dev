@@ -375,7 +375,7 @@ Movement と Ansible Playbook の紐付け
    :alt: パラメータ設定
 
 .. list-table:: サーバー基本情報パラメータの設定値
-  :widths: 5 10 5
+  :widths: 5 10 10
   :header-rows: 2
 
   * - ホスト名
