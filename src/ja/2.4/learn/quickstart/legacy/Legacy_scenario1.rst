@@ -234,7 +234,7 @@ Movement と Ansible Playbook の紐付け
 ---------------------------------
 
 | :menuselection:`Ansible-Legacy --> Movement-ロール紐付` から、Movement と Ansible Playbook の紐付けを行います。
-| 本シナリオでは、 `ホスト名管理用の hostname.yml <https://github.com/exastro-playbook-collection/OS-RHEL8/tree/master/RH_hostname/OS_build>`_ を利用します。
+| 本シナリオでは、 `hostname.yml <https://github.com/exastro-playbook-collection/OS-RHEL8/tree/master/RH_hostname/OS_build>`_ を利用します。
 
 .. figure:: ../../../../../images/learn/quickstart/Legacy_scenario1/Movement-Playbook紐付.png
    :width: 1200px
