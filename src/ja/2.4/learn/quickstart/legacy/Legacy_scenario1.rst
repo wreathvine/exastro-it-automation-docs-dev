@@ -241,7 +241,7 @@ Movement と Ansible Playbook の紐付け
    :alt: Movement-Playbook紐付け
 
 .. list-table:: Movement-Playbook紐付け情報の登録
-  :widths: 10 15 10
+  :widths: 10 10 10
   :header-rows: 1
 
   * - Movement名
