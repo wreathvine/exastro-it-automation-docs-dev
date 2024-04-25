@@ -694,14 +694,26 @@ Organization (オーガナイゼーション)
 ================================
 
 | オーガナイゼーション用サイトが表示できるかWebブラウザから確認します。
+| Helm chart版の場合は、 :ref:`サービス公開設定<service_setting>` で設定した EXTERNAL_URL_MNG にアクセスします。
+| Docker Compose版の場合は、 :ref:`事前準備<docker_prep>` で設定した Exastro管理用サービスURL にアクセスします。
 
 .. code-block::
+   :caption: 書式
 
-   # 書式
-   http[s]://{Exastro Platform の管理用 URL}/{オーガナイゼーションID}/platform/
+   http[s]://{Exastro Platform の管理用 URL}:{Exastro Platform の管理用ポート}/{オーガナイゼーションID}/platform/
 
-   # 具体例
-   http://exastro-suite-mng.example.local/org001/platform/
+
+.. code-block::
+   :caption: 具体例
+
+   # Helm chart版 利用時
+   http://exastro-suite-mng.example.local:30081/org001/platform/
+
+   # Docker Compose版 (RHEL環境) 利用時
+   http://exastro-suite-mng.example.local:81/org001/platform/
+
+   # Docker Compose版 (非RHEL環境) 利用時
+   http://exastro-suite-mng.example.local:30081/org001/platform/
 
 
 その他制約事項・備考
