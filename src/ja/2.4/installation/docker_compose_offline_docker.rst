@@ -442,7 +442,7 @@ Docker Compose on Docker - Offline
 3-4 パッケージをインストールする																
 		下記コマンドにてパッケージをインストールします。														
 		sudo dnf -y --disablerepo=\* --enablerepo=docker-repo-almalinux install git
-  														
+
 																
 
 3-5 エラー対応				
@@ -461,6 +461,16 @@ Docker Compose on Docker - Offline
 	エラーの原因となった手順(3-4)を再実行します。			
 		sudo dnf -y --disablerepo=\* --enablerepo=docker-repo-almalinux install パッケージ名		
 
+
+
+4.コンテナイメージのダウンロード									
+4-1 格納先ディレクトリに移動する									
+		cd /mnt/mainte/exastro/container-images							
+									
+									
+4-2 シェルスクリプトを実行する									
+	下記コマンドを実行しコンテナイメージを実行します。								
+		sh ./load.sh 2.3.0							
 
 
 
