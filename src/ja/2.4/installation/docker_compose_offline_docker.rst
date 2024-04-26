@@ -532,6 +532,37 @@ Docker Compose on Docker - Offline
 5-3 Exastroを起動する																
 		cd ~/exastro-docker-compose && docker-compose up -d 														
 
+											
+エラー対応
+==========
+発生する可能性のあるエラーと対処方法は下記の通りです。																				
+																						
+																						
+	■オフライン環境 手順5-2 Exastroリソースをインストールする																					
+		インストール済みパッケージ(container-selinux)のバージョンが原因で発生したもの。																				
+		「rpm -q パッケージ名」で対象パッケージのバージョンを確認し、下記の手順を実行する。																				
+																						
+			Error:																			
+			 Problem 1: cannot install the best candidate for the job																			
+			  - nothing provides container-selinux >= 2:2.74 needed by docker-ce-3:26.1.0-1.el8.x86_64 from docker-ce-stable																			
+			 Problem 2: cannot install the best candidate for the job																			
+			  - nothing provides container-selinux >= 2:2.74 needed by containerd.io-1.6.31-3.1.el8.x86_64 from docker-ce-stable																			
+			(try to add '--skip-broken' to skip uninstallable packages or '--nobest' to use not only best candidate packages)																			
+																						
+																						
+		オンライン環境での手順																				
+		sudo dnf install -y --downloadonly --downloaddir=/tmp/docker-repo-almalinux --installroot=/tmp/docker-installroot-almalinux --releasever=8.9 container-selinux																				
+		createrepo --update /tmp/docker-repo-almalinux																				
+		cd /tmp																				
+		tar zcvf podman-repo.tar.gz docker-repo-almalinux																				
+																						
+		オフライン環境での手順																				
+		cd /tmp																				
+		cp -ip /mnt/mainte/exastro/almalinux/docker/docker-repo-almalinux.tar.gz .																				
+		tar zxvf docker-repo-almalinux.tar.gz																				
+		sudo dnf -y --disablerepo=\* --enablerepo=docker-repo-almalinux install container-selinux																				
+		手順5-2を実行																				
+
 
 インストール (自動)
 ===================
