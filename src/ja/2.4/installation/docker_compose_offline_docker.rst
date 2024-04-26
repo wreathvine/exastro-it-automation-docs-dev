@@ -402,6 +402,15 @@ Docker Compose on Docker - Offline
 			cd /mnt/mainte/exastro/container-images												
 
 
+2.docker-compose-linux-x86_64の取得								
+2-1 docker-compose-linux-x86_64を取得する						
+	事前に取得したdocker-compose-linux-x86_64を下記ディレクトリに格納し、パーミッションを変更します。							
+		格納先 /usr/local/bin/docker-compose					
+		sudo chmod a+x /usr/local/bin/docker-compose						
+		sudo shutdown -r now						
+		再度オフライン環境に接続						
+
+
 インストール (自動)
 ===================
 
