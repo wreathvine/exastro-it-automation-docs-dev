@@ -47,7 +47,7 @@ Docker Compose
    * - Memory
      - 4GB
    * - Storage (Container image size)
-     - 40GB
+     - 35GB　※
 
   .. list-table:: ハードウェア要件(推奨構成)
    :widths: 20, 20
@@ -62,10 +62,25 @@ Docker Compose
    * - Storage (Container image size)
      - 120GB
 
-  .. warning::
-    | 最小構成における要求リソースは Exastro IT Automation のコア機能に対する値です。GitLab や Ansible Automation Platform などの外部システムをデプロイする場合は、その分のリソースが別途必要となります。
-    | データベースおよびファイルの永続化のために、別途ストレージ領域を用意する必要があります。
-    | Storage サイズは、ユーザーの利用状況によるためあくまで目安となります。必要に応じて容量を確保してください。
+| ※ パーテーション単位でディスク容量が必要です。
+| ▼RHEL
+| ・コンテナイメージ
+| /home/ユーザ名/.local  25GB
+| ・Exastroのデータ
+| /home/ユーザ名/exastro-docker-compose 10GB(目安です。使い方によって大きく異なります。)
+|  
+| ▼RHEL 以外
+| ・コンテナイメージ
+| /var/lib/ 25GB
+| ・Exastroのデータ
+| /home/ユーザ名/exastro-docker-compose 10GB(目安です。使い方によって大きく異なります。)
+| 
+
+.. warning::
+  | 最小構成における要求リソースはGitLabコンテナとOASEコンテナのデプロイでnを選択した場合の値です。GitLabコンテナとOASEコンテナのデプロイをする場合は、その分のリソースが別途必要となります。
+  | データベースおよびファイルの永続化のために、別途ストレージ領域を用意する必要があります。
+  | Storage サイズは、ユーザーの利用状況によるためあくまで目安となります。必要に応じて容量を確保してください。
+
     
 - 通信要件
 
@@ -204,6 +219,9 @@ Docker Compose
 インストール (自動)
 ===================
 
+.. note::
+   | インストーラがOSを判断して、DockerまたはPodmanを選択します。
+
 | 最も簡単なインストール方法はインストールスクリプトを利用するインストールです。
 | 1回のコマンド実行と対話型による設定が可能です。
 | 以下、ユーザーはtest_user、ホームディレクトリは/home/test_userで実行した例です。
@@ -242,11 +260,6 @@ Docker Compose
    :caption:  Exastro 管理用サービスのURL
 
    Management URL? [default: http://127.0.0.1:30081]: http://ita.example.com:30081
-
-.. code-block:: shell
-   :caption: GitLab コンテナデプロイ要否の確認
-
-   Deploy GitLab container? (y/n) [default: n]: 
 
 .. code-block:: shell
    :caption: 設定ファイルの生成の確認
