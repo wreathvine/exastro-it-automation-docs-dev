@@ -499,7 +499,8 @@ Docker Compose on Docker - Offline
 				Check if your system meets the system requirements												
 																
 																
-	下記コマンドを実行し、.envのセットアップを行います。デプロイ要否やURLは必要に応じて下記の通り入力します。															
+| 必要なパッケージなどのインストールが完了すると下記のように対話形式で設定値を投入することが可能です。
+														
 		cd ~/exastro-docker-compose && sh ./setup.sh install -e														
 																
 		Rgenerate .env file? (y/n) [default: n]												
@@ -522,15 +523,29 @@ Docker Compose on Docker - Offline
 		Input the external URL of Gitlab container  [default: (nothing)]											
 			→GitlabコンテナのURLを入力します。指定がない場合は空欄のままEnterを押下します。
 
+		
+   System administrator password:    ********
+   Database password:                ********
+   OASE deployment                   true
+   MongoDB password                  ********
+   Service URL:                      http://ita.example.com:30080
+   Manegement URL:                   http://ita.example.com:30081
+   Docker GID:                       1000
+   Docker Socket path:               /run/user/1000/podman/podman.sock
+   GitLab deployment:                false
+ 
 		Generate .env file with these settings? (y/n) [default: n]														
-			→入力した内容で.envを作成してよいかの確認です。入力内容に間違いがない場合はyを入力します。													
+			→入力した内容で.envを作成してよいかの確認です。入力内容に間違いがない場合はyを入力します。			
 																
+                
 	セットアップ完了後、、Exastro Serviceのインストールを実行します。															
 		cd ~/exastro-docker-compose && sh ./setup.sh install -r 														
 																
 										
 5-3 Exastroを起動する																
 		cd ~/exastro-docker-compose && docker-compose up -d 														
+
+| Exastro システムのデプロイには数分～数十分程度の時間が掛かります。(通信環境やサーバースペックによって状況は異なります。)
 
 											
 エラー対応
@@ -562,6 +577,8 @@ Docker Compose on Docker - Offline
 		tar zxvf docker-repo-almalinux.tar.gz																				
 		sudo dnf -y --disablerepo=\* --enablerepo=docker-repo-almalinux install container-selinux																				
 		手順5-2を実行																				
+
+
 
 
 インストール (自動)
