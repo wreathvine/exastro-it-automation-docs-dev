@@ -13,11 +13,11 @@
 | :doc:`前のシナリオ <scenario1>` と同様に、まずは作業計画を立てましょう。
 
 .. list-table:: 作業の方針
-   :widths: 5 10
+   :widths: 15 10
    :header-rows: 0
 
    * - 作業実施日時
-     - 2024/04/02 12:00:00
+     - 2023/04/02 12:00:00
    * - 作業対象
      - db01(RHEL8)
    * - 作業内容
@@ -28,7 +28,7 @@
 
 | :menuselection:`基本コンソール --> オペレーション一覧` から、作業実施日時や作業名を登録します。
 
-.. figure:: ../../../../../images/learn/quickstart/Legacy_scenario2/オペレーション登録.png
+.. figure:: ../../../../images/learn/quickstart/scenario2/オペレーション登録.png
    :width: 1200px
    :alt: オペレーション登録
 
@@ -39,7 +39,7 @@
    * - オペレーション名
      - 実施予定日時
    * - :kbd:`RHEL8のパッケージ管理`
-     - :kbd:`2024/04/02 12:00:00`
+     - :kbd:`2023/04/02 12:00:00`
 
 
 パラメータ設計
@@ -75,7 +75,7 @@
 
 | :menuselection:`パラメータシート作成 --> パラメータシート定義・作成` から、データシートを登録します。
 
-.. figure:: ../../../../../images/learn/quickstart/Legacy_scenario2/データシート作成.png
+.. figure:: ../../../../images/learn/quickstart/scenario2/データシートの作成.gif
    :width: 1200px
    :alt: データシートの作成
 
@@ -133,7 +133,7 @@
 | パラメータリスト内に表示するパラメータを設定します。
 | :menuselection:`入力用 --> 状態` から、パッケージのあるべきインストール状態を登録します。
 
-.. figure:: ../../../../../images/learn/quickstart/Legacy_scenario2/選択肢を登録.png
+.. figure:: ../../../../images/learn/quickstart/scenario2/選択肢を登録.gif
    :width: 1200px
    :alt: 選択肢を登録
 
@@ -161,6 +161,10 @@
 
 | :menuselection:`パラメータシート作成 --> パラメータシート定義・作成` から、パラメータシートを登録します。
 | 項目1の :menuselection:`入力方式` を :kbd:`プルダウン選択` に設定することで、:ref:`quickstart_create_datasheet` で登録したデータシートを参照できるようになります。
+
+.. figure:: ../../../../images/learn/quickstart/scenario2/パラメータ項目設定.gif
+   :width: 1200px
+   :alt: パラメータ項目設定
 
 .. list-table:: パラメータ項目設定
    :widths: 10 10 10
@@ -210,7 +214,7 @@
 
 | パラメータシート作成情報で :menuselection:`バンドル利用` を「利用する」にチェックを入れることで、1つの設定項目に対して複数のパラメータを設定することが可能になります。
 
-.. figure:: ../../../../../images/learn/quickstart/Legacy_scenario2/パラメータシート項目設定.png
+.. figure:: ../../../../images/learn/quickstart/scenario2/パラメータシート作成情報設定.png
    :width: 1200px
    :alt: パラメータシート作成情報設定
 
@@ -254,14 +258,14 @@
 ==============
 
 | 作業手順を登録するために、作業単位となるジョブ(Movement)を定義します。
-| 定義した Movement に対して、Ansible Playbook を紐付け、更に Ansible Playbook 内の変数とパラメータシートの項目の紐付けを行います。
+| 定義した Movement に対して、Ansible Role パッケージを紐付け、更に Ansible Role パッケージ内の変数とパラメータシートの項目の紐付けを行います。
 
 Movement 登録
 -------------
 
-| :menuselection:`Ansible-Legacy --> Movement一覧` から、パッケージ管理のための Movement を登録します。
+| :menuselection:`Ansible-LegacyRole --> Movement一覧` から、ホスト名設定のための Movement を登録します。
 
-.. figure:: ../../../../../images/learn/quickstart/Legacy_scenario2/Movement一覧登録.png
+.. figure:: ../../../../images/learn/quickstart/scenario2/Movement登録.png
    :width: 1200px
    :alt: Movement登録
 
@@ -276,50 +280,91 @@ Movement 登録
    * - :kbd:`パッケージ管理`
      - :kbd:`IP`
 
-Ansible Playbook 登録
+Ansible Role 登録
 -----------------
 
-| `ここ <https://github.com/exastro-playbook-collection/OS-RHEL8/releases/download/v23.03/OS-RHEL8.zip>`_ をクリックして Ansible Playbook の package.yml をダウンロードしてください。_
-| :menuselection:`Ansible-Legacy --> Playbook素材集` から、ダウンロードした `package.yml <https://github.com/exastro-playbook-collection/OS-RHEL8/releases/download/v23.03/OS-RHEL8.zip>`_ を登録します。
+| 利用するロールパッケージは :doc:`前のシナリオ <scenario1>` で登録した `Exastro Playbook Collection <https://github.com/exastro-suite/playbook-collection-docs/blob/master/ansible_role_packages/README.md>`_ を利用するため、作業は不要です。
 
-.. figure:: ../../../../../images/learn/quickstart/Legacy_scenario2/Ansible-Playbook登録.png
-   :width: 1200px
-   :alt: ansible-playbook登録
-
-Movement と Ansible Playbook の紐付け
+Movement と Ansible Role の紐付け
 ---------------------------------
 
-| :menuselection:`Ansible-Legacy --> Movement-Playbook紐付` から、Movement と Ansible Playbook の紐付けを行います。
-| 本シナリオでは、 `package.yml <https://github.com/exastro-playbook-collection/OS-RHEL8/tree/master/RH_rpm/OS_build>`_ を利用します。
+| :menuselection:`Ansible-LegacyRole --> Movement-ロール紐付` から、Movement と Ansible Role パッケージの紐付けを行います。
+| 本シナリオでは、 `RPM管理用の Ansible Role パッケージ <https://github.com/exastro-playbook-collection/OS-RHEL8/tree/master/RH_rpm/OS_build>`_ を利用します。
 
-.. figure:: ../../../../../images/learn/quickstart/Legacy_scenario2/MovementとPlaybook紐付け.png
+.. figure:: ../../../../images/learn/quickstart/scenario2/MovementとRole紐づけ.png
    :width: 1200px
-   :alt: MovementとPlaybook紐づけ
+   :alt: MovementとRole紐づけ
 
-.. list-table:: Movement-Playbook紐付け情報の登録
-  :widths: 10 10 10
+.. list-table:: Movement-ロール紐付け情報の登録
+  :widths: 10 30 10
   :header-rows: 1
 
   * - Movement名
-    - Playbook素材
+    - ロールパッケージ名:ロール名
     - インクルード順序
   * - :kbd:`パッケージ管理`
-    - :kbd:`package.yml`
+    - :kbd:`OS-RHEL8:OS-RHEL8/RH_rpm/OS_build`
     - :kbd:`1`
+
+変数ネスト管理
+--------------
+
+| ホスト名の場合、1台のサーバーに1つホスト名の設定をすることしかないため、 VAR_RH_hostname は単純な変数として扱うように定義されています。
+
+.. code-block:: yaml
+   :caption: VAR_RH_hostname の変数構造
+
+   # VAR_RH_hostname に対する、値は1つのみ
+   VAR_RH_hostname: myhostname
+
+| 一方で、パッケージの場合は、1台のサーバー上に複数のパッケージを管理することは一般的なため、VAR_RH_rpm は複数の変数のセットを配列で管理する多段変数として扱うように定義されています。
+
+.. code-block:: yaml
+   :caption: VAR_RH_rpm の変数構造(=多段変数)
+
+   # VAR_RH_rpm に対して、変数のセット(action と pkg_name)が繰り返し、かつ、セット数が不定
+   VAR_RH_rpm:
+   - action: absent
+     pkg_name: httpd
+   - action: present
+     pkg_name: vsftpd
+     ...
+
+| VAR_RH_rpm のような多段変数の場合、その上限数を予め決めておく必要があります。
+| 本シナリオでは、管理するパッケージ数を 10 として、設定しておくこととします。
+
+| :menuselection:`Ansible-LegacyRole --> 変数ネスト管理` から、管理するパッケージ数の上限値の設定を行います。
+
+.. figure:: ../../../../images/learn/quickstart/scenario2/変数ネスト管理.gif
+   :width: 1200px
+   :alt: 変数ネスト管理
+
+.. list-table:: 変数ネスト情報の登録
+   :widths: 10 10 20 10
+   :header-rows: 1
+
+   * - Movement名
+     - 変数名
+     - メンバー変数名(繰返し有)
+     - 最大繰返数
+   * - パッケージ管理
+     - VAR_RH_rpm
+     - 0
+     - :kbd:`10`
 
 代入値自動登録設定
 ------------------
 
-| package.yml では、:kbd:`pkg_name` という変数に管理するパッケージ名、:kbd:`action` という変数にパッケージの状態を代入することで、対象サーバーのパッケージを管理することができます。
+| OS-RHEL8 Ansible Role パッケージでは、:kbd:`VAR_RH_rpm` という変数に管理するパッケージ名と状態を代入することで、対象サーバーのホスト名を設定することができます。
 
-| :menuselection:`Ansible-Legacy --> 代入値自動登録設定` から、導入パッケージパラメータシートのパッケージ名と状態の項目に入るパラメータと、 Ansible Playbook の :kbd:`pkg_name` と :kbd:`action` 内の変数の紐付けを行います。
+| :menuselection:`Ansible-LegacyRole --> 代入値自動登録設定` から、導入パッケージパラメータシートのパッケージ名と状態の項目に入るパラメータと Ansible Role パッケージの :kbd:`VAR_RH_rpm` 内の変数の紐付けを行います。
 
-.. figure:: ../../../../../images/learn/quickstart/Legacy_scenario2/代入値自動登録設定.png
-  :width: 1200px
-  :alt: 代入値自動登録設定
+.. figure:: ../../../../images/learn/quickstart/scenario2/代入値自動登録設定.png
+   :width: 1200px
+   :alt: 代入値自動登録設定
 
 .. list-table:: 代入値自動登録設定の設定値
-  :widths: 40 10 10 20 20 10
+  :widths: 40 10 10 20 20 30
   :header-rows: 2
 
   * - パラメータシート(From)
@@ -327,138 +372,138 @@ Movement と Ansible Playbook の紐付け
     - 登録方式
     - Movement名
     - IaC変数(To)
-    - 
+    -
   * - メニューグループ:メニュー:項目
     - 代入順序
     -
     -
     - Movement名:変数名
-    - 代入順序
+    - Movement名:変数名:メンバー変数
   * - :kbd:`代入値自動登録用:導入パッケージ:パッケージ名`
     - :kbd:`1`
     - :kbd:`Value型`
     - :kbd:`パッケージ管理`
-    - :kbd:`パッケージ管理:pkg_name`
-    - :kbd:`1`
+    - :kbd:`パッケージ管理:VAR_RH_rpm`
+    - :kbd:`パッケージ管理:VAR_RH_rpm:[0].pkg_name`
   * - :kbd:`代入値自動登録用:導入パッケージ:状態`
     - :kbd:`1`
     - :kbd:`Value型`
     - :kbd:`パッケージ管理`
-    - :kbd:`パッケージ管理:action`
-    - :kbd:`1`
+    - :kbd:`パッケージ管理:VAR_RH_rpm`
+    - :kbd:`パッケージ管理:VAR_RH_rpm:[0].action`
   * - :kbd:`代入値自動登録用:導入パッケージ:パッケージ名`
     - :kbd:`2`
     - :kbd:`Value型`
     - :kbd:`パッケージ管理`
-    - :kbd:`パッケージ管理:pkg_name`
-    - :kbd:`2`
+    - :kbd:`パッケージ管理:VAR_RH_rpm`
+    - :kbd:`パッケージ管理:VAR_RH_rpm:[1].pkg_name`
   * - :kbd:`代入値自動登録用:導入パッケージ:状態`
     - :kbd:`2`
     - :kbd:`Value型`
     - :kbd:`パッケージ管理`
-    - :kbd:`パッケージ管理:action`
-    - :kbd:`2`
+    - :kbd:`パッケージ管理:VAR_RH_rpm`
+    - :kbd:`パッケージ管理:VAR_RH_rpm:[1].action`
   * - :kbd:`代入値自動登録用:導入パッケージ:パッケージ名`
     - :kbd:`3`
     - :kbd:`Value型`
     - :kbd:`パッケージ管理`
-    - :kbd:`パッケージ管理:pkg_name`
-    - :kbd:`3`
+    - :kbd:`パッケージ管理:VAR_RH_rpm`
+    - :kbd:`パッケージ管理:VAR_RH_rpm:[2].pkg_name`
   * - :kbd:`代入値自動登録用:導入パッケージ:状態`
     - :kbd:`3`
     - :kbd:`Value型`
     - :kbd:`パッケージ管理`
-    - :kbd:`パッケージ管理:action`
-    - :kbd:`3`
+    - :kbd:`パッケージ管理:VAR_RH_rpm`
+    - :kbd:`パッケージ管理:VAR_RH_rpm:[2].action`
   * - :kbd:`代入値自動登録用:導入パッケージ:パッケージ名`
     - :kbd:`4`
     - :kbd:`Value型`
     - :kbd:`パッケージ管理`
-    - :kbd:`パッケージ管理:pkg_name`
-    - :kbd:`4`
+    - :kbd:`パッケージ管理:VAR_RH_rpm`
+    - :kbd:`パッケージ管理:VAR_RH_rpm:[3].pkg_name`
   * - :kbd:`代入値自動登録用:導入パッケージ:状態`
     - :kbd:`4`
     - :kbd:`Value型`
     - :kbd:`パッケージ管理`
-    - :kbd:`パッケージ管理:action`
-    - :kbd:`4`
+    - :kbd:`パッケージ管理:VAR_RH_rpm`
+    - :kbd:`パッケージ管理:VAR_RH_rpm:[3].action`
   * - :kbd:`代入値自動登録用:導入パッケージ:パッケージ名`
     - :kbd:`5`
     - :kbd:`Value型`
     - :kbd:`パッケージ管理`
-    - :kbd:`パッケージ管理:pkg_name`
-    - :kbd:`5`
+    - :kbd:`パッケージ管理:VAR_RH_rpm`
+    - :kbd:`パッケージ管理:VAR_RH_rpm:[4].pkg_name`
   * - :kbd:`代入値自動登録用:導入パッケージ:状態`
     - :kbd:`5`
     - :kbd:`Value型`
     - :kbd:`パッケージ管理`
-    - :kbd:`パッケージ管理:action`
-    - :kbd:`5`
+    - :kbd:`パッケージ管理:VAR_RH_rpm`
+    - :kbd:`パッケージ管理:VAR_RH_rpm:[4].action`
   * - :kbd:`代入値自動登録用:導入パッケージ:パッケージ名`
     - :kbd:`6`
     - :kbd:`Value型`
     - :kbd:`パッケージ管理`
-    - :kbd:`パッケージ管理:pkg_name`
-    - :kbd:`6`
+    - :kbd:`パッケージ管理:VAR_RH_rpm`
+    - :kbd:`パッケージ管理:VAR_RH_rpm:[5].pkg_name`
   * - :kbd:`代入値自動登録用:導入パッケージ:状態`
     - :kbd:`6`
     - :kbd:`Value型`
     - :kbd:`パッケージ管理`
-    - :kbd:`パッケージ管理:action`
-    - :kbd:`6`
+    - :kbd:`パッケージ管理:VAR_RH_rpm`
+    - :kbd:`パッケージ管理:VAR_RH_rpm:[5].action`
   * - :kbd:`代入値自動登録用:導入パッケージ:パッケージ名`
     - :kbd:`7`
     - :kbd:`Value型`
     - :kbd:`パッケージ管理`
-    - :kbd:`パッケージ管理:pkg_name`
-    - :kbd:`7`
+    - :kbd:`パッケージ管理:VAR_RH_rpm`
+    - :kbd:`パッケージ管理:VAR_RH_rpm:[6].pkg_name`
   * - :kbd:`代入値自動登録用:導入パッケージ:状態`
     - :kbd:`7`
     - :kbd:`Value型`
     - :kbd:`パッケージ管理`
-    - :kbd:`パッケージ管理:action`
-    - :kbd:`7`
+    - :kbd:`パッケージ管理:VAR_RH_rpm`
+    - :kbd:`パッケージ管理:VAR_RH_rpm:[6].action`
   * - :kbd:`代入値自動登録用:導入パッケージ:パッケージ名`
     - :kbd:`8`
     - :kbd:`Value型`
     - :kbd:`パッケージ管理`
-    - :kbd:`パッケージ管理:pkg_name`
-    - :kbd:`8`
+    - :kbd:`パッケージ管理:VAR_RH_rpm`
+    - :kbd:`パッケージ管理:VAR_RH_rpm:[7].pkg_name`
   * - :kbd:`代入値自動登録用:導入パッケージ:状態`
     - :kbd:`8`
     - :kbd:`Value型`
     - :kbd:`パッケージ管理`
-    - :kbd:`パッケージ管理:action`
-    - :kbd:`8`
+    - :kbd:`パッケージ管理:VAR_RH_rpm`
+    - :kbd:`パッケージ管理:VAR_RH_rpm:[7].action`
   * - :kbd:`代入値自動登録用:導入パッケージ:パッケージ名`
     - :kbd:`9`
     - :kbd:`Value型`
     - :kbd:`パッケージ管理`
-    - :kbd:`パッケージ管理:pkg_name`
-    - :kbd:`9`
+    - :kbd:`パッケージ管理:VAR_RH_rpm`
+    - :kbd:`パッケージ管理:VAR_RH_rpm:[8].pkg_name`
   * - :kbd:`代入値自動登録用:導入パッケージ:状態`
     - :kbd:`9`
     - :kbd:`Value型`
     - :kbd:`パッケージ管理`
-    - :kbd:`パッケージ管理:action`
-    - :kbd:`9`
+    - :kbd:`パッケージ管理:VAR_RH_rpm`
+    - :kbd:`パッケージ管理:VAR_RH_rpm:[8].action`
   * - :kbd:`代入値自動登録用:導入パッケージ:パッケージ名`
     - :kbd:`10`
     - :kbd:`Value型`
     - :kbd:`パッケージ管理`
-    - :kbd:`パッケージ管理:pkg_name`
-    - :kbd:`10`
+    - :kbd:`パッケージ管理:VAR_RH_rpm`
+    - :kbd:`パッケージ管理:VAR_RH_rpm:[9].pkg_name`
   * - :kbd:`代入値自動登録用:導入パッケージ:状態`
     - :kbd:`10`
     - :kbd:`Value型`
     - :kbd:`パッケージ管理`
-    - :kbd:`パッケージ管理:action`
-    - :kbd:`10`
+    - :kbd:`パッケージ管理:VAR_RH_rpm`
+    - :kbd:`パッケージ管理:VAR_RH_rpm:[9].action`
 
 | これだけの項目の設定に設定値を入力するのは Web 画面の操作では、かなり苦労することでしょう。
 | このような大量のデータを一度に登録するような場合には、全件ダウンロード・ファイル一括登録を使って、ファイルからデータを投入する方法が適切です。
 
-.. figure:: ../../../../../images/learn/quickstart/Legacy_scenario2/代入値自動登録設定_一括登録Excel.png
+.. figure:: ../../../../images/learn/quickstart/scenario2/代入値自動登録設定_一括登録.gif
    :width: 1200px
    :alt: 代入値自動登録設定(一括登録)
 
@@ -474,7 +519,7 @@ Movement と Ansible Playbook の紐付け
 
 | :menuselection:`入力用 --> 導入パッケージ` から、ホストに対するパラメータを登録します。
 
-.. figure:: ../../../../../images/learn/quickstart/Legacy_scenario2/パラメータ設定.png
+.. figure:: ../../../../images/learn/quickstart/scenario2/パラメータ設定.gif
    :width: 1200px
    :alt: パラメータ設定
 
@@ -493,7 +538,7 @@ Movement と Ansible Playbook の紐付け
     - パッケージ名
     - 状態
   * - db01
-    - :kbd:`2024/04/02 12:00:00_RHEL8のパッケージ管理`
+    - :kbd:`2023/04/02 12:00:00_RHEL8のパッケージ管理`
     - :kbd:`1`
     - :kbd:`postgresql-server`
     - :kbd:`present`
@@ -518,12 +563,12 @@ Movement と Ansible Playbook の紐付け
 
 2. 作業実行
 
-   | :menuselection:`Ansible-Legacy --> 作業実行` から、:kbd:`パッケージ管理` Movement を選択し、:guilabel:` 作業実行` を押下します。
+   | :menuselection:`Ansible-LegacyRole --> 作業実行` から、:kbd:`パッケージ管理` Movement を選択し、:guilabel:` 作業実行` を押下します。
    | 次に、:menuselection:`作業実行設定` で、オペレーションに :kbd:`RHEL8のパッケージ管理` を選択し、:guilabel:`作業実行` を押下します。
 
    | :menuselection:`作業状態確認` 画面が開き、実行が完了した後に、ステータスが「完了」になったことを確認します。
 
-   .. figure:: ../../../../../images/learn/quickstart/Legacy_scenario2/作業実行.png
+   .. figure:: ../../../../images/learn/quickstart/scenario2/作業実行.gif
       :width: 1200px
       :alt: 作業実行
 
@@ -554,7 +599,7 @@ Movement と Ansible Playbook の紐付け
 
 | :menuselection:`入力用 --> 導入パッケージ` から、新たなパラメータを登録します。
 
-.. figure:: ../../../../../images/learn/quickstart/Legacy_scenario2/パラメータ設定2.png
+.. figure:: ../../../../images/learn/quickstart/scenario2/パラメータ設定2.png
    :width: 1200px
    :alt: パラメータ設定2
 
@@ -614,12 +659,12 @@ Movement と Ansible Playbook の紐付け
 
 2. 作業実行
 
-   | :menuselection:`Ansible-Legacy --> 作業実行` から、:kbd:`パッケージ管理` Movement を選択し、:guilabel:` 作業実行` を押下します。
+   | :menuselection:`Ansible-LegacyRole --> 作業実行` から、:kbd:`パッケージ管理` Movement を選択し、:guilabel:` 作業実行` を押下します。
    | 次に、:menuselection:`作業実行設定` で、オペレーションに :kbd:`RHEL8のパッケージ管理` を選択し、:guilabel:`作業実行` を押下します。
 
    | :menuselection:`作業状態確認` 画面が開き、実行が完了した後に、ステータスが「完了」になったことを確認します。
 
-   .. figure:: ../../../../../images/learn/quickstart/Legacy_scenario2/作業実行.png
+   .. figure:: ../../../../images/learn/quickstart/scenario2/作業実行2.gif
       :width: 1200px
       :alt: 作業実行2
 

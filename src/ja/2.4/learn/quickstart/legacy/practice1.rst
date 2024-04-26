@@ -3,7 +3,7 @@
 =======================
 
 | 本シナリオでは、:doc:`前のシナリオ <scenario3>` までに構築した Web サーバに対して、ユーザーを管理できるようにしましょう。
-| 利用する Ansible Playbook は、下記の2つです。
+| 利用する Ansible Role パッケージは、下記の2つです。
 
 - `ユーザー設定 <https://github.com/exastro-playbook-collection/OS-RHEL8/tree/master/RH_user/OS_build>`_
 - `グループ設定 <https://github.com/exastro-playbook-collection/OS-RHEL8/tree/master/RH_group/OS_build>`_
@@ -43,4 +43,4 @@
 解答
 ====
 
-| :doc:`Legacy_answer1`
+| :doc:`answer1`

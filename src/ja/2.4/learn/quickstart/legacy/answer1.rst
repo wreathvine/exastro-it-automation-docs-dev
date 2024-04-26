@@ -41,11 +41,11 @@
 | まずは作業計画を立てましょう。
 
 .. list-table:: 作業の方針
-   :widths: 5 10
+   :widths: 15 10
    :header-rows: 0
 
    * - 作業実施日時
-     - 2024/04/04 12:00:00
+     - 2023/04/04 12:00:00
    * - 作業対象
      - web01(RHEL8)
    * - 作業内容
@@ -56,7 +56,7 @@
 
 | :menuselection:`基本コンソール --> オペレーション一覧` から、作業実施日時や作業名を登録します。
 
-.. figure:: ../../../../../images/learn/quickstart/Legacy_answer1/オペレーション登録.png
+.. figure:: ../../../../images/learn/quickstart/answer1/作業概要登録.png
    :width: 1200px
    :alt: Conductor作業実行
 
@@ -67,7 +67,7 @@
    * - オペレーション名
      - 実施予定日時
    * - :kbd:`Webサーバーへユーザー追加作業`
-     - :kbd:`2024/04/04 12:00:00`
+     - :kbd:`2023/04/04 12:00:00`
 
 
 パラメータ設計
@@ -82,7 +82,7 @@
 ------------------------------
 
 | グループ用のパラメータシートを作成します。
-| 利用する Ansible Playbook は `グループ設定 <https://github.com/exastro-playbook-collection/OS-RHEL8/tree/master/RH_group/OS_build>`_ なので、下記のパラメータが管理できるようにパラメータシートを作成しましょう。
+| 利用する Ansible Role パッケージは `グループ設定 <https://github.com/exastro-playbook-collection/OS-RHEL8/tree/master/RH_group/OS_build>`_ なので、下記のパラメータが管理できるようにパラメータシートを作成しましょう。
 
 .. list-table:: グループ設定のパラメータ
    :widths: 10 15
@@ -107,9 +107,13 @@
 .. tip:: 
    | パラメータシート作成情報で :menuselection:`バンドル利用` を「利用する」にチェックを入れることで、1つの設定項目に対して複数のパラメータを設定することが可能になります。
 
-.. figure:: ../../../../../images/learn/quickstart/Legacy_answer1/グループパラメータシート作成.png
+.. figure:: ../../../../images/learn/quickstart/answer1/グループのパラメータシート.png
    :width: 1200px
    :alt: グループのパラメータシート
+
+.. figure:: ../../../../images/learn/quickstart/answer1/グループのパラメータシート作成.gif
+   :width: 1200px
+   :alt: グループのパラメータシート作成
 
 .. list-table:: グループパラメータシートの設定値
    :widths: 10 10 10 10
@@ -206,7 +210,7 @@
 ------------------------------
 
 | ユーザー用のパラメータシートを作成します。
-| 利用する Ansible Playbook は `ユーザー設定 <https://github.com/exastro-playbook-collection/OS-RHEL8/tree/master/RH_user/OS_build>`_ なので、下記のパラメータが管理できるようにパラメータシートを作成しましょう。
+| 利用する Ansible Role パッケージは `ユーザー設定 <https://github.com/exastro-playbook-collection/OS-RHEL8/tree/master/RH_user/OS_build>`_ なので、下記のパラメータが管理できるようにパラメータシートを作成しましょう。
 
 .. list-table:: ユーザー設定のパラメータ
    :widths: 10 15
@@ -237,12 +241,19 @@
        | true: パスワードの設定を行う
        | false: パスワードの設定を行わない
 
+.. warning:: 
+   | `exastro-playbook-collection <https://github.com/exastro-playbook-collection>`_ は、ITA readme を包含した状態で提供されているため、ITA readme で指定された全ての変数に対してパラメータ管理がする必要があります。
+
 | :menuselection:`パラメータシート作成 --> パラメータシート定義・作成` から、パラメータシートを登録します。
 
 .. tip:: 
    | :menuselection:`入力方式` を :kbd:`プルダウン選択` に設定することで、:ref:`groups_parameter_sheet` で登録したデータシートを参照できるようになります。
 
-.. figure:: ../../../../../images/learn/quickstart/Legacy_answer1/ユーザーパラメータシート作成_1.png
+.. figure:: ../../../../images/learn/quickstart/answer1/ユーザーのパラメータシート.png
+   :width: 1200px
+   :alt: ユーザーのパラメータシート
+
+.. figure:: ../../../../images/learn/quickstart/answer1/ユーザーのパラメータシート作成_1.gif
    :width: 1200px
    :alt: ユーザーのパラメータシートの作成1
 
@@ -342,7 +353,7 @@
      - 
      - 
 
-.. figure:: ../../../../../images/learn/quickstart/Legacy_answer1/ユーザーパラメータシート作成_2.png
+.. figure:: ../../../../images/learn/quickstart/answer1/ユーザーのパラメータシート作成_2.gif
    :width: 1200px
    :alt: ユーザーのパラメータシート作成_2
 
@@ -466,8 +477,8 @@
 作業手順の登録
 ==============
 
-| グループを作成・削除してから、ユーザーを作成・削除する順番で Ansible Playbook が実行されるように Movement を設定します。
-| これまでのシナリオでは、1つの Movement ごとに1つの Ansible Playbook を紐付けていましたが、今回は 1つの Movement に対して、グループ管理とユーザー管理が行えるように設定します。
+| グループを作成・削除してから、ユーザーを作成・削除する順番で Ansible Role が実行されるように Movement を設定します。
+| これまでのシナリオでは、1つの Movement ごとに1つの Ansible Role を紐付けていましたが、今回は 1つの Movement に対して、グループ管理とユーザー管理が行えるように設定します。
 
 .. note:: 
    | グループ管理とユーザー管理それぞれに対して、Movement を1つずつ作成しても同じように動作させることができます。
@@ -475,9 +486,9 @@
 Movement 登録
 -------------
 
-| :menuselection:`Ansible-Legacy --> Movement一覧` から、ユーザー管理のための Movement を登録します。
+| :menuselection:`Ansible-LegacyRole --> Movement一覧` から、ホスト名設定のための Movement を登録します。
 
-.. figure:: ../../../../../images/learn/quickstart/Legacy_answer1/ユーザーMovement登録.png
+.. figure:: ../../../../images/learn/quickstart/answer1/Movement登録.png
    :width: 1200px
    :alt: Movement登録
    
@@ -492,53 +503,117 @@ Movement 登録
    * - :kbd:`ユーザー管理`
      - :kbd:`IP`
 
-Ansible Playbook 登録
+Ansible Role 登録
 -----------------
 
-| クリックして `group.yml <https://github.com/exastro-playbook-collection/OS-RHEL8/releases/download/v23.03/OS-RHEL8.zip>`_ 、 `user.yml <https://github.com/exastro-playbook-collection/OS-RHEL8/releases/download/v23.03/OS-RHEL8.zip>`_ をダウンロードしてください。
-| :menuselection:`Ansible-Legacy --> Playbook素材集` から、ダウンロードした `group.yml <https://github.com/exastro-playbook-collection/OS-RHEL8/releases/download/v23.03/OS-RHEL8.zip>`_ `user.yml <https://github.com/exastro-playbook-collection/OS-RHEL8/releases/download/v23.03/OS-RHEL8.zip>`_ を登録します。
+| 利用するロールパッケージは :doc:`前のシナリオ <scenario1>` で登録した `Exastro Playbook Collection <https://github.com/exastro-suite/playbook-collection-docs/blob/master/ansible_role_packages/README.md>`_ を利用するため、作業は不要です。
 
-.. figure:: ../../../../../images/learn/quickstart/Legacy_answer1/Ansible-Playbook登録.png
-   :width: 1200px
-   :alt: Ansible-Playbook登録
-
-Movement と Ansible Playbook の紐付け
+Movement と Ansible Role の紐付け
 ---------------------------------
 
-| :menuselection:`Ansible-Legacy --> Movement-Playbook紐付` から、Movement と Ansible Playbook の紐付けを行います。
-| 本シナリオでは、 `group.ym <https://github.com/exastro-playbook-collection/OS-RHEL8/tree/master/RH_group/OS_build>`_ および `user.yml <https://github.com/exastro-playbook-collection/OS-RHEL8/tree/master/RH_user/OS_build>`_ を利用します。
+| :menuselection:`Ansible-LegacyRole --> Movement-ロール紐付` から、Movement と Ansible Role パッケージの紐付けを行います。
+| 本シナリオでは、 `グループ管理用の Ansible Role パッケージ <https://github.com/exastro-playbook-collection/OS-RHEL8/tree/master/RH_group/OS_build>`_ および `ユーザー管理用の Ansible Role パッケージ <https://github.com/exastro-playbook-collection/OS-RHEL8/tree/master/RH_user/OS_build>`_ を利用します。
 | ユーザーを作成する際には、先にグループを指定する必要があるため下記の順序でインクルードする必要があります。
 
-.. figure:: ../../../../../images/learn/quickstart/Legacy_answer1/MovementとPlaybook紐付け.png
+.. figure:: ../../../../images/learn/quickstart/answer1/MovementとAnsibleRoleの紐づけ.png
    :width: 1200px
-   :alt: MovementとAnsible Playbook の紐づけ
+   :alt: MovementとAnsibleRoleの紐づけ
 
-.. list-table:: Movement-Playbook紐付け情報の登録
-  :widths: 10 10 10
+.. list-table:: Movement-ロール紐付け情報の登録
+  :widths: 10 30 10
   :header-rows: 1
 
   * - Movement名
-    - Playbook素材
+    - ロールパッケージ名:ロール名
     - インクルード順序
   * - :kbd:`ユーザー管理`
-    - :kbd:`group.yml`
+    - :kbd:`OS-RHEL8:OS-RHEL8/RH_group/OS_build`
     - :kbd:`1`
   * - :kbd:`ユーザー管理`
-    - :kbd:`user.yml`
+    - :kbd:`OS-RHEL8:OS-RHEL8/RH_user/OS_build`
     - :kbd:`2`
+
+変数ネスト管理
+--------------
+
+| グループおよびユーザーの変数は下記の通り多段変数です。
+
+.. code-block:: yaml
+   :caption: VAR_RH_group の変数構造(=多段変数)
+
+   # VAR_RH_group に対して、変数のセットが繰り返し、かつ、セット数が不定
+   VAR_RH_group:
+   - action: present
+     group_id: '1100'
+     group_name: testgroup
+   - action: present
+     group_id: '1101'
+     group_name: testgroup2
+   - action: absent
+     group_name: testgroup3
+     ...
+
+.. code-block:: yaml
+   :caption: VAR_RH_user の変数構造(=多段変数)
+
+   # VAR_RH_user に対して、変数のセットが繰り返し、かつ、セット数が不定
+   VAR_RH_user:
+   - action: present
+     comment: create testuser
+     group_id: '1100'
+     home_dir: /home/testuser
+     login_shell: /bin/bash
+     password: p@ssw0rd123
+     password_apply: true
+     user_id: '1100'
+     user_name: testuser
+   - action: present
+     comment: update testuser2
+     group_id: '1101'
+     home_dir: /home/testuser2
+     login_shell: /bin/bash
+     password_apply: false
+     user_id: '1102'
+     user_name: testuser2
+   - action: absent
+     user_name: testuser99
+     ...
+
+| 多段変数の場合、その上限数を予め決めておく必要があります。
+
+.. figure:: ../../../../images/learn/quickstart/answer1/変数ネスト管理.gif
+   :width: 1200px
+   :alt: 変数ネスト管理
+
+.. list-table:: 変数ネスト情報の登録
+   :widths: 10 10 20 10
+   :header-rows: 1
+
+   * - Movement名
+     - 変数名
+     - メンバー変数名(繰返し有)
+     - 最大繰返数
+   * - :kbd:`ユーザー管理`
+     - :kbd:`VAR_RH_group`
+     - :kbd:`0`
+     - :kbd:`5`
+   * - :kbd:`ユーザー管理`
+     - :kbd:`VAR_RH_user`
+     - :kbd:`0`
+     - :kbd:`10`
 
 代入値自動登録設定
 ------------------
 
-| :menuselection:`Ansible-Legacy --> 代入値自動登録設定` から、パラメータシートの項目と Ansible Playbook の変数の紐付けを行います。
+| :menuselection:`Ansible-LegacyRole --> 代入値自動登録設定` から、パラメータシートの項目と Ansible Role パッケージの変数の紐付けを行います。
 | 大量のデータを一度に登録するような場合には、全件ダウンロード・ファイル一括登録を使って、ファイルからデータを投入する方法が適切です。
 
-.. figure:: ../../../../../images/learn/quickstart/Legacy_answer1/グループの代入値自動登録設定_一括登録.png
+.. figure:: ../../../../images/learn/quickstart/answer1/グループの代入値自動登録設定.gif
    :width: 1200px
    :alt: グループの代入値自動登録設定
 
 .. list-table:: グループの代入値自動登録設定の設定値
-  :widths: 40 10 10 20 20 10
+  :widths: 40 10 10 20 20 30
   :header-rows: 2
 
   * - パラメータシート(From)
@@ -552,43 +627,43 @@ Movement と Ansible Playbook の紐付け
     -
     -
     - Movement名:変数名
-    - 代入順序
+    - Movement名:変数名:メンバー変数
   * - :kbd:`代入値自動登録用:グループ:グループ名`
     - :kbd:`1`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
-    - :kbd:`ユーザー管理:group_name`
-    - :kbd:`1`
+    - :kbd:`ユーザー管理:VAR_RH_group`
+    - :kbd:`ユーザー管理:VAR_RH_group:[0].group_name`
   * - :kbd:`代入値自動登録用:グループ:グループID`
     - :kbd:`1`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
-    - :kbd:`ユーザー管理:group_id`
-    - :kbd:`1`
+    - :kbd:`ユーザー管理:VAR_RH_group`
+    - :kbd:`ユーザー管理:VAR_RH_group:[0].group_id`
   * - :kbd:`代入値自動登録用:グループ:状態`
     - :kbd:`1`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
-    - :kbd:`ユーザー管理:group_action`
-    - :kbd:`1`
+    - :kbd:`ユーザー管理:VAR_RH_group`
+    - :kbd:`ユーザー管理:VAR_RH_group:[0].action`
   * - :kbd:`代入値自動登録用:グループ:グループ名`
     - :kbd:`2`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
-    - :kbd:`ユーザー管理:group_name`
-    - :kbd:`2`
+    - :kbd:`ユーザー管理:VAR_RH_group`
+    - :kbd:`ユーザー管理:VAR_RH_group:[1].group_name`
   * - :kbd:`代入値自動登録用:グループ:グループID`
     - :kbd:`2`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
-    - :kbd:`ユーザー管理:group_id`
-    - :kbd:`2`
+    - :kbd:`ユーザー管理:VAR_RH_group`
+    - :kbd:`ユーザー管理:VAR_RH_group:[1].group_id`
   * - :kbd:`代入値自動登録用:グループ:状態`
     - :kbd:`2`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
-    - :kbd:`ユーザー管理:group_action`
-    - :kbd:`2`
+    - :kbd:`ユーザー管理:VAR_RH_group`
+    - :kbd:`ユーザー管理:VAR_RH_group:[1].action`
   * - :kbd:`...`
     - :kbd:`...`
     - :kbd:`...`
@@ -599,43 +674,27 @@ Movement と Ansible Playbook の紐付け
     - :kbd:`5`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
-    - :kbd:`ユーザー管理:group_name`
-    - :kbd:`5`
+    - :kbd:`ユーザー管理:VAR_RH_group`
+    - :kbd:`ユーザー管理:VAR_RH_group:[4].group_name`
   * - :kbd:`代入値自動登録用:グループ:グループID`
     - :kbd:`5`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
-    - :kbd:`ユーザー管理:group_id`
-    - :kbd:`5`
+    - :kbd:`ユーザー管理:VAR_RH_group`
+    - :kbd:`ユーザー管理:VAR_RH_group:[4].group_id`
   * - :kbd:`代入値自動登録用:グループ:状態`
     - :kbd:`5`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
-    - :kbd:`ユーザー管理:group_action`
-    - :kbd:`5`
+    - :kbd:`ユーザー管理:VAR_RH_group`
+    - :kbd:`ユーザー管理:VAR_RH_group:[4].action`
 
-.. figure:: ../../../../../images/learn/quickstart/Legacy_answer1/ユーザーの代入値自動登録設定_一括登録1.png
-   :width: 1200px
-   :alt: ユーザーの代入値自動登録設定
-
-.. figure:: ../../../../../images/learn/quickstart/Legacy_answer1/ユーザーの代入値自動登録設定_一括登録2.png
-   :width: 1200px
-   :alt: ユーザーの代入値自動登録設定
-
-.. figure:: ../../../../../images/learn/quickstart/Legacy_answer1/ユーザーの代入値自動登録設定_一括登録3.png
-   :width: 1200px
-   :alt: ユーザーの代入値自動登録設定
-
-.. figure:: ../../../../../images/learn/quickstart/Legacy_answer1/ユーザーの代入値自動登録設定_一括登録4.png
-   :width: 1200px
-   :alt: ユーザーの代入値自動登録設定
-
-.. figure:: ../../../../../images/learn/quickstart/Legacy_answer1/ユーザーの代入値自動登録設定_一括登録5.png
+.. figure:: ../../../../images/learn/quickstart/answer1/ユーザーの代入値自動登録設定.gif
    :width: 1200px
    :alt: ユーザーの代入値自動登録設定
 
 .. list-table:: ユーザーの代入値自動登録設定の設定値
-  :widths: 40 10 10 20 20 10
+  :widths: 40 10 10 20 20 30
   :header-rows: 2
 
   * - パラメータシート(From)
@@ -649,223 +708,223 @@ Movement と Ansible Playbook の紐付け
     -
     -
     - Movement名:変数名
-    - 代入順序
+    - Movement名:変数名:メンバー変数
   * - :kbd:`代入値自動登録用:ユーザー:ユーザー名`
     - :kbd:`1`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
-    - :kbd:`ユーザー管理:user_name`
-    - :kbd:`1`
+    - :kbd:`ユーザー管理:VAR_RH_user`
+    - :kbd:`ユーザー管理:VAR_RH_user:[0].user_name`
   * - :kbd:`代入値自動登録用:ユーザー:ユーザーID`
     - :kbd:`1`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
-    - :kbd:`ユーザー管理:user_id`
-    - :kbd:`1`
+    - :kbd:`ユーザー管理:VAR_RH_user`
+    - :kbd:`ユーザー管理:VAR_RH_user:[0].user_id`
   * - :kbd:`代入値自動登録用:ユーザー:パスワード`
     - :kbd:`1`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
-    - :kbd:`ユーザー管理:password`
-    - :kbd:`1`
+    - :kbd:`ユーザー管理:VAR_RH_user`
+    - :kbd:`ユーザー管理:VAR_RH_user:[0].password`
   * - :kbd:`代入値自動登録用:ユーザー:パスワード設定`
     - :kbd:`1`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
-    - :kbd:`ユーザー管理:password_apply`
-    - :kbd:`1`
+    - :kbd:`ユーザー管理:VAR_RH_user`
+    - :kbd:`ユーザー管理:VAR_RH_user:[0].password_apply`
   * - :kbd:`代入値自動登録用:ユーザー:グループ`
     - :kbd:`1`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
-    - :kbd:`ユーザー管理:group`
-    - :kbd:`1`
+    - :kbd:`ユーザー管理:VAR_RH_user`
+    - :kbd:`ユーザー管理:VAR_RH_user:[0].group_id`
   * - :kbd:`代入値自動登録用:ユーザー:ホームディレクトリ`
     - :kbd:`1`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
-    - :kbd:`ユーザー管理:home_dir`
-    - :kbd:`1`
+    - :kbd:`ユーザー管理:VAR_RH_user`
+    - :kbd:`ユーザー管理:VAR_RH_user:[0].home_dir`
   * - :kbd:`代入値自動登録用:ユーザー:ログインシェル`
     - :kbd:`1`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
-    - :kbd:`ユーザー管理:login_shell`
-    - :kbd:`1`
+    - :kbd:`ユーザー管理:VAR_RH_user`
+    - :kbd:`ユーザー管理:VAR_RH_user:[0].login_shell`
   * - :kbd:`代入値自動登録用:ユーザー:コメント`
     - :kbd:`1`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
-    - :kbd:`ユーザー管理:comment`
-    - :kbd:`1`
+    - :kbd:`ユーザー管理:VAR_RH_user`
+    - :kbd:`ユーザー管理:VAR_RH_user:[0].comment`
   * - :kbd:`代入値自動登録用:ユーザー:状態`
     - :kbd:`1`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
-    - :kbd:`ユーザー管理:user_action`
-    - :kbd:`1`
+    - :kbd:`ユーザー管理:VAR_RH_user`
+    - :kbd:`ユーザー管理:VAR_RH_user:[0].action`
   * - :kbd:`代入値自動登録用:ユーザー:ユーザー名`
     - :kbd:`2`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
-    - :kbd:`ユーザー管理:user_name`
-    - :kbd:`2`
+    - :kbd:`ユーザー管理:VAR_RH_user`
+    - :kbd:`ユーザー管理:VAR_RH_user:[1].user_name`
   * - :kbd:`代入値自動登録用:ユーザー:ユーザーID`
     - :kbd:`2`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
-    - :kbd:`ユーザー管理:user_id`
-    - :kbd:`2`
+    - :kbd:`ユーザー管理:VAR_RH_user`
+    - :kbd:`ユーザー管理:VAR_RH_user:[1].user_id`
   * - :kbd:`代入値自動登録用:ユーザー:パスワード`
     - :kbd:`2`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
-    - :kbd:`ユーザー管理:password`
-    - :kbd:`2`
+    - :kbd:`ユーザー管理:VAR_RH_user`
+    - :kbd:`ユーザー管理:VAR_RH_user:[1].password`
   * - :kbd:`代入値自動登録用:ユーザー:パスワード設定`
     - :kbd:`2`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
-    - :kbd:`ユーザー管理:password_apply`
-    - :kbd:`2`
+    - :kbd:`ユーザー管理:VAR_RH_user`
+    - :kbd:`ユーザー管理:VAR_RH_user:[1].password_apply`
   * - :kbd:`代入値自動登録用:ユーザー:グループ`
     - :kbd:`2`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
-    - :kbd:`ユーザー管理:group`
-    - :kbd:`2`
+    - :kbd:`ユーザー管理:VAR_RH_user`
+    - :kbd:`ユーザー管理:VAR_RH_user:[1].group_id`
   * - :kbd:`代入値自動登録用:ユーザー:ホームディレクトリ`
     - :kbd:`2`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
-    - :kbd:`ユーザー管理:home_dir`
-    - :kbd:`2`
+    - :kbd:`ユーザー管理:VAR_RH_user`
+    - :kbd:`ユーザー管理:VAR_RH_user:[1].home_dir`
   * - :kbd:`代入値自動登録用:ユーザー:ログインシェル`
     - :kbd:`2`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
-    - :kbd:`ユーザー管理:login_shell`
-    - :kbd:`2`
+    - :kbd:`ユーザー管理:VAR_RH_user`
+    - :kbd:`ユーザー管理:VAR_RH_user:[1].login_shell`
   * - :kbd:`代入値自動登録用:ユーザー:コメント`
     - :kbd:`2`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
-    - :kbd:`ユーザー管理:comment`
-    - :kbd:`2`
+    - :kbd:`ユーザー管理:VAR_RH_user`
+    - :kbd:`ユーザー管理:VAR_RH_user:[1].comment`
   * - :kbd:`代入値自動登録用:ユーザー:状態`
     - :kbd:`2`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
-    - :kbd:`ユーザー管理:user_action`
-    - :kbd:`2`
+    - :kbd:`ユーザー管理:VAR_RH_user`
+    - :kbd:`ユーザー管理:VAR_RH_user:[1].action`
   * - :kbd:`代入値自動登録用:ユーザー:ユーザー名`
     - :kbd:`3`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
-    - :kbd:`ユーザー管理:user_name`
-    - :kbd:`3`
+    - :kbd:`ユーザー管理:VAR_RH_user`
+    - :kbd:`ユーザー管理:VAR_RH_user:[2].user_name`
   * - :kbd:`代入値自動登録用:ユーザー:ユーザーID`
     - :kbd:`3`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
-    - :kbd:`ユーザー管理:user_id`
-    - :kbd:`3`
+    - :kbd:`ユーザー管理:VAR_RH_user`
+    - :kbd:`ユーザー管理:VAR_RH_user:[2].user_id`
   * - :kbd:`代入値自動登録用:ユーザー:パスワード`
     - :kbd:`3`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
-    - :kbd:`ユーザー管理:password`
-    - :kbd:`3`
+    - :kbd:`ユーザー管理:VAR_RH_user`
+    - :kbd:`ユーザー管理:VAR_RH_user:[2].password`
   * - :kbd:`代入値自動登録用:ユーザー:パスワード設定`
     - :kbd:`3`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
-    - :kbd:`ユーザー管理:password_apply`
-    - :kbd:`3`
+    - :kbd:`ユーザー管理:VAR_RH_user`
+    - :kbd:`ユーザー管理:VAR_RH_user:[2].password_apply`
   * - :kbd:`代入値自動登録用:ユーザー:グループ`
     - :kbd:`3`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
-    - :kbd:`ユーザー管理:group`
-    - :kbd:`3`
+    - :kbd:`ユーザー管理:VAR_RH_user`
+    - :kbd:`ユーザー管理:VAR_RH_user:[2].group_id`
   * - :kbd:`代入値自動登録用:ユーザー:ホームディレクトリ`
     - :kbd:`3`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
-    - :kbd:`ユーザー管理:home_dir`
-    - :kbd:`3`
+    - :kbd:`ユーザー管理:VAR_RH_user`
+    - :kbd:`ユーザー管理:VAR_RH_user:[2].home_dir`
   * - :kbd:`代入値自動登録用:ユーザー:ログインシェル`
     - :kbd:`3`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
-    - :kbd:`ユーザー管理:login_shell`
-    - :kbd:`3`
+    - :kbd:`ユーザー管理:VAR_RH_user`
+    - :kbd:`ユーザー管理:VAR_RH_user:[2].login_shell`
   * - :kbd:`代入値自動登録用:ユーザー:コメント`
     - :kbd:`3`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
-    - :kbd:`ユーザー管理:comment`
-    - :kbd:`3`
+    - :kbd:`ユーザー管理:VAR_RH_user`
+    - :kbd:`ユーザー管理:VAR_RH_user:[2].comment`
   * - :kbd:`代入値自動登録用:ユーザー:状態`
     - :kbd:`3`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
-    - :kbd:`ユーザー管理:user_action`
-    - :kbd:`3`
+    - :kbd:`ユーザー管理:VAR_RH_user`
+    - :kbd:`ユーザー管理:VAR_RH_user:[2].action`
   * - :kbd:`代入値自動登録用:ユーザー:ユーザー名`
     - :kbd:`4`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
-    - :kbd:`ユーザー管理:user_name`
-    - :kbd:`4`
+    - :kbd:`ユーザー管理:VAR_RH_user`
+    - :kbd:`ユーザー管理:VAR_RH_user:[3].user_name`
   * - :kbd:`代入値自動登録用:ユーザー:ユーザーID`
     - :kbd:`4`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
-    - :kbd:`ユーザー管理:user_id`
-    - :kbd:`4`
+    - :kbd:`ユーザー管理:VAR_RH_user`
+    - :kbd:`ユーザー管理:VAR_RH_user:[3].user_id`
   * - :kbd:`代入値自動登録用:ユーザー:パスワード`
     - :kbd:`4`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
-    - :kbd:`ユーザー管理:password`
-    - :kbd:`4`
+    - :kbd:`ユーザー管理:VAR_RH_user`
+    - :kbd:`ユーザー管理:VAR_RH_user:[3].password`
   * - :kbd:`代入値自動登録用:ユーザー:パスワード設定`
     - :kbd:`4`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
-    - :kbd:`ユーザー管理:password_apply`
-    - :kbd:`4`
+    - :kbd:`ユーザー管理:VAR_RH_user`
+    - :kbd:`ユーザー管理:VAR_RH_user:[3].password_apply`
   * - :kbd:`代入値自動登録用:ユーザー:グループ`
     - :kbd:`4`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
-    - :kbd:`ユーザー管理:group`
-    - :kbd:`4`
+    - :kbd:`ユーザー管理:VAR_RH_user`
+    - :kbd:`ユーザー管理:VAR_RH_user:[3].group_id`
   * - :kbd:`代入値自動登録用:ユーザー:ホームディレクトリ`
     - :kbd:`4`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
-    - :kbd:`ユーザー管理:home_dir`
-    - :kbd:`4`
+    - :kbd:`ユーザー管理:VAR_RH_user`
+    - :kbd:`ユーザー管理:VAR_RH_user:[3].home_dir`
   * - :kbd:`代入値自動登録用:ユーザー:ログインシェル`
     - :kbd:`4`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
-    - :kbd:`ユーザー管理:login_shell`
-    - :kbd:`4`
+    - :kbd:`ユーザー管理:VAR_RH_user`
+    - :kbd:`ユーザー管理:VAR_RH_user:[3].login_shell`
   * - :kbd:`代入値自動登録用:ユーザー:コメント`
     - :kbd:`4`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
-    - :kbd:`ユーザー管理:comment`
-    - :kbd:`4`
+    - :kbd:`ユーザー管理:VAR_RH_user`
+    - :kbd:`ユーザー管理:VAR_RH_user:[3].comment`
   * - :kbd:`代入値自動登録用:ユーザー:状態`
     - :kbd:`4`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
-    - :kbd:`ユーザー管理:user_action`
-    - :kbd:`4`
+    - :kbd:`ユーザー管理:VAR_RH_user`
+    - :kbd:`ユーザー管理:VAR_RH_user:[3].action`
   * - :kbd:`...`
     - :kbd:`...`
     - :kbd:`...`
@@ -876,56 +935,56 @@ Movement と Ansible Playbook の紐付け
     - :kbd:`10`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
-    - :kbd:`ユーザー管理:user_name`
-    - :kbd:`10`
+    - :kbd:`ユーザー管理:VAR_RH_user`
+    - :kbd:`ユーザー管理:VAR_RH_user:[9].user_name`
   * - :kbd:`代入値自動登録用:ユーザー:ユーザーID`
     - :kbd:`10`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
-    - :kbd:`ユーザー管理:user_id`
-    - :kbd:`10`
+    - :kbd:`ユーザー管理:VAR_RH_user`
+    - :kbd:`ユーザー管理:VAR_RH_user:[9].user_id`
   * - :kbd:`代入値自動登録用:ユーザー:パスワード`
     - :kbd:`10`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
-    - :kbd:`ユーザー管理:password`
-    - :kbd:`10`
+    - :kbd:`ユーザー管理:VAR_RH_user`
+    - :kbd:`ユーザー管理:VAR_RH_user:[9].password`
   * - :kbd:`代入値自動登録用:ユーザー:パスワード設定`
     - :kbd:`10`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
-    - :kbd:`ユーザー管理:password_apply`
-    - :kbd:`10`
+    - :kbd:`ユーザー管理:VAR_RH_user`
+    - :kbd:`ユーザー管理:VAR_RH_user:[9].password_apply`
   * - :kbd:`代入値自動登録用:ユーザー:グループ`
     - :kbd:`10`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
-    - :kbd:`ユーザー管理:group`
-    - :kbd:`10`
+    - :kbd:`ユーザー管理:VAR_RH_user`
+    - :kbd:`ユーザー管理:VAR_RH_user:[9].group_id`
   * - :kbd:`代入値自動登録用:ユーザー:ホームディレクトリ`
     - :kbd:`10`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
-    - :kbd:`ユーザー管理:home_dir`
-    - :kbd:`10`
+    - :kbd:`ユーザー管理:VAR_RH_user`
+    - :kbd:`ユーザー管理:VAR_RH_user:[9].home_dir`
   * - :kbd:`代入値自動登録用:ユーザー:ログインシェル`
     - :kbd:`10`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
-    - :kbd:`ユーザー管理:login_shell`
-    - :kbd:`10`
+    - :kbd:`ユーザー管理:VAR_RH_user`
+    - :kbd:`ユーザー管理:VAR_RH_user:[9].login_shell`
   * - :kbd:`代入値自動登録用:ユーザー:コメント`
     - :kbd:`10`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
-    - :kbd:`ユーザー管理:comment`
-    - :kbd:`10`
+    - :kbd:`ユーザー管理:VAR_RH_user`
+    - :kbd:`ユーザー管理:VAR_RH_user:[9].comment`
   * - :kbd:`代入値自動登録用:ユーザー:状態`
     - :kbd:`10`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
-    - :kbd:`ユーザー管理:user_action`
-    - :kbd:`10`
+    - :kbd:`ユーザー管理:VAR_RH_user`
+    - :kbd:`ユーザー管理:VAR_RH_user:[9].action`
 
 
 ユーザー追加作業の実施
@@ -938,7 +997,7 @@ Movement と Ansible Playbook の紐付け
 
 | :menuselection:`入力用 --> グループ` から、グループに対するパラメータを登録します。
 
-.. figure:: ../../../../../images/learn/quickstart/Legacy_answer1/グループのパラメータ登録.png
+.. figure:: ../../../../images/learn/quickstart/answer1/グループのパラメータ登録.gif
    :width: 1200px
    :alt: グループのパラメータ登録
 
@@ -973,11 +1032,7 @@ Movement と Ansible Playbook の紐付け
 
 | :menuselection:`入力用 --> ユーザー` から、ユーザーに対するパラメータを登録します。
 
-.. figure:: ../../../../../images/learn/quickstart/Legacy_answer1/ユーザーのパラメータ登録_1.png
-   :width: 1200px
-   :alt: ユーザのパラメータ登録
-
-.. figure:: ../../../../../images/learn/quickstart/Legacy_answer1/ユーザーのパラメータ登録_2.png
+.. figure:: ../../../../images/learn/quickstart/answer1/ユーザのパラメータ登録.gif
    :width: 1200px
    :alt: ユーザのパラメータ登録
 
@@ -1010,7 +1065,7 @@ Movement と Ansible Playbook の紐付け
     - コメント
     - 状態
   * - web01
-    - :kbd:`2024/04/04 12:00:00_Webサーバーへユーザー追加作業`
+    - :kbd:`2023/04/04 12:00:00_Webサーバーへユーザー追加作業`
     - :kbd:`1`
     - :kbd:`wwwuser01`
     - :kbd:`10001`
@@ -1022,19 +1077,19 @@ Movement と Ansible Playbook の紐付け
     - :kbd:`Web server mainterner`
     - :kbd:`present`
   * - web01
-    - :kbd:`2024/04/04 12:00:00_Webサーバーへユーザー追加作業`
+    - :kbd:`2023/04/04 12:00:00_Webサーバーへユーザー追加作業`
     - :kbd:`2`
     - :kbd:`wwwuser02`
     - :kbd:`10002`
     - :kbd:`password02`
     - :kbd:`True`
     - :kbd:`www`
-    - :kbd:`/home/wwwuser02`
+    - :kbd:`/home/wwwuser01`
     - :kbd:`/bin/bash`
     - :kbd:`Web server mainterner`
     - :kbd:`present`
   * - web01
-    - :kbd:`2024/04/04 12:00:00_Webサーバーへユーザー追加作業`
+    - :kbd:`2023/04/04 12:00:00_Webサーバーへユーザー追加作業`
     - :kbd:`3`
     - :kbd:`appuser01`
     - :kbd:`20001`
@@ -1046,7 +1101,7 @@ Movement と Ansible Playbook の紐付け
     - :kbd:`Application server mainterner`
     - :kbd:`present`
   * - web01
-    - :kbd:`2024/04/04 12:00:00_Webサーバーへユーザー追加作業`
+    - :kbd:`2023/04/04 12:00:00_Webサーバーへユーザー追加作業`
     - :kbd:`4`
     - :kbd:`appuser02`
     - :kbd:`20002`
@@ -1071,7 +1126,7 @@ Movement と Ansible Playbook の紐付け
       :caption: コマンド
 
       # グループ一覧の取得
-      cat /etc/groups|grep -E "www|app"
+      cat /etc/groups|grep -E "app|www"
 
    .. code-block:: bash
       :caption: 実行結果
@@ -1084,7 +1139,7 @@ Movement と Ansible Playbook の紐付け
       :caption: コマンド
 
       # ユーザー一覧の取得
-      cat /etc/passwd|grep -E "www|app"
+      cat /etc/passwd|grep -E "app|www"
 
    .. code-block:: bash
       :caption: 実行結果
@@ -1093,12 +1148,12 @@ Movement と Ansible Playbook の紐付け
 
 2. 作業実行
 
-   | :menuselection:`Ansible-Legacy --> 作業実行` から、:kbd:`ユーザー管理` Movement を選択し、:guilabel:` 作業実行` を押下します。
+   | :menuselection:`Ansible-LegacyRole --> 作業実行` から、:kbd:`ユーザー管理` Movement を選択し、:guilabel:` 作業実行` を押下します。
    | 次に、:menuselection:`作業実行設定` で、オペレーションに :kbd:`Webサーバーへユーザー追加作業` を選択し、:guilabel:`作業実行` を押下します。
 
    | :menuselection:`作業状態確認` 画面が開き、実行が完了した後に、ステータスが「完了」になったことを確認します。
 
-.. figure:: ../../../../../images/learn/quickstart/Legacy_answer1/作業実行.png
+.. figure:: ../../../../images/learn/quickstart/answer1/作業実行.gif
    :width: 1200px
    :alt: 作業実行
 
@@ -1188,7 +1243,7 @@ Movement と Ansible Playbook の紐付け
 | 6. :kbd:`サーバー構築` Conductor を選択し、:guilabel:`選択決定` を押下します。
 | 7. オペレーションに :kbd:`Webサーバーへユーザー追加作業` を選択し、:guilabel:`作業実行` を押下します。
 
-.. figure:: ../../../../../images/learn/quickstart/Legacy_answer1/コンダクター実行失敗例.gif
+.. figure:: ../../../../images/learn/quickstart/answer1/実行失敗.gif
    :width: 1200px
    :alt: 実行失敗
 
@@ -1222,7 +1277,7 @@ Movement と Ansible Playbook の紐付け
 | 6. :kbd:`サーバー構築` Conductor を選択し、:guilabel:`選択決定` を押下します。
 | 7. オペレーションに :kbd:`Webサーバーへユーザー追加作業` を選択し、:guilabel:`作業実行` を押下します。
 
-.. figure:: ../../../../../images/learn/quickstart/Legacy_answer1/コンダクター実行成功例.gif
+.. figure:: ../../../../images/learn/quickstart/answer1/実行成功.gif
    :width: 1200px
    :alt: 実行成功
 
@@ -1233,4 +1288,4 @@ Movement と Ansible Playbook の紐付け
 
 | 本シナリオでは、これまでのシナリオの確認のために、演習課題を実施しました。
 | また Conductor のパラメータ連携の1つの手段として、個別オペレーションについて紹介をしました。
-| より詳細な情報を知りたい場合は、:doc:`../../../manuals/index` を参照してください。
+| より詳細な情報を知りたい場合は、:doc:`../../manuals/index` を参照してください。
