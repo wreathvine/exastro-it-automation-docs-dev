@@ -300,6 +300,8 @@ Docker Compose on Docker - Offline
 		exit
 
   1-4 マウント先へのアクセスを確認する
+  今回は下記ディレクトリを作成したうえで、作業を行うこととします。
+  cd /mnt/mainte/exastro/container-images
 
 
 
@@ -311,6 +313,50 @@ Docker Compose on Docker - Offline
 	下記コマンドを実行しコンテナイメージをダウンロードします。	
 		sh ./save.sh 2.3.0
 
+
+
+3.RPMパッケージのダウンロード					
+3-1 RPMパッケージをダウンロードする					
+	下記コマンドを実行し、パッケージをダウンロードします。				
+		sudo dnf install -y --downloadonly --downloaddir=/tmp/docker-repo-almalinux --installroot=/tmp/docker-installroot-almalinux --releasever=8.9 git			
+					
+			各オプションの説明		
+			=--downloadonly		
+				パッケージをインストールせずにダウンロードのみ行います。	
+				オフライン環境で使用するためのパッケージのダウンロードのみ行うため、インストールは不要です。	
+					
+			--downloaddir=<ダウンロード先パス>		
+				パッケージをダウンロードするディレクトリを指定します。	
+				通常のダウンロードと同様に、ローカルにあるパッケージと依存関係を解決しつつダウンロードされるため、	
+				該当パッケージがすでにインストールされている場合は不足分のみダウンロードされます。	
+					
+			--installroot=<ダウンロード先絶対パス>		
+				通常とは別の場所へインストールするために利用します。	
+				インストール済みのパッケージも含めてすべてダウンロードするため	
+				ダミーディレクトリを指定し、すべての パッケージをダウンロードします。	
+					
+			--releasever=<バージョン>		
+				ディストリビューションのバージョンを指定(9.2など)します。	
+
+
+3-2 createrepoをインストールする																
+		sudo dnf install -y createrepo														
+																
+																
+3-3 ローカルリポジトリを作成する																
+	オフライン環境ではインターネット上のリポジトリサーバーを参照できないため、dnfによるパッケージのインストールができません。															
+	ローカルリポジトリにパッケージを追加することで、dnfによるパッケージインストールが可能となります。															
+		sudo createrepo /tmp/docker-repo-almalinux														
+																
+
+3-4 ダウンロードしたパッケージを圧縮する																
+		cd /tmp														
+		tar zcvf podman-repo.tar.gz docker-repo-almalinux														
+																
+																
+3-5 圧縮したRPMパッケージを格納する																
+		cp -ip /tmp/docker-repo-almalinux.tar.gz /mnt/mainte/exastro/almalinux/docker														
+																
 
 
 
