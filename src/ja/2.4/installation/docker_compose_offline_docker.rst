@@ -411,6 +411,59 @@ Docker Compose on Docker - Offline
 		再度オフライン環境に接続						
 
 
+3.RPMパッケージのダウンロード																
+3-1 RPMパッケージを取得する																
+	podman-repoのローカルリポジトリを/tmp配下に配置し、解凍します。															
+		cd /tmp														
+		cp -ip /mnt/mainte/exastro/almalinux/docker/docker-repo-almalinux.tar.gz .														
+		tar zxvf docker-repo-almalinux.tar.gz														
+																
+
+3-2 リポジトリファイルを作成する																
+		sudo touch /etc/yum.repos.d/docker-repo-almalinux.repo														
+																
+																
+3-3 リポジトリ情報を記載する																
+	作成したリポジトリファイルに下記の情報を記載します。(※file: の後ろのスラッシュは3つ)															
+		sudo vi /etc/yum.repos.d/docker-repo-almalinux.repo														
+																
+		[docker-repo-almalinux]														
+		name=RedHat-$releaserver - podman														
+		baseurl=file:///tmp/docker-repo-almalinux														
+		enabled=1														
+		gpgcheck=0														
+		gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release														
+																
+	リポジトリの有効化を実施し、docker-repoのstatusがenabledになっていることを確認します。(手順3-4をスムーズに行うために実施しています。)															
+		sudo dnf config-manager --set-enabled docker-repo-almalinux														
+		dnf repolist all														
+																
+																
+3-4 パッケージをインストールする																
+		下記コマンドにてパッケージをインストールします。														
+		sudo dnf -y --disablerepo=\* --enablerepo=docker-repo-almalinux install git
+  														
+																
+
+3-5 エラー対応				
+3-5-1 エラーとなったパッケージを削除する				
+	依存関係によるエラー(conflicting recuests)が起きた場合は、対象のパッケージを削除します。			
+	sudo dnf remove -y selinux-policy			
+
+エラーメッセージ参考例
+ Error:	
+ Problem: package podman-3:4.6.1-8.module+el8.9.0+21243+a586538b.x86_64 requires (container-selinux if selinux-policy), but none of the providers can be installed	
+  - conflicting requests	
+  - problem with installed package selinux-policy-3.14.3-67.el8.noarch	
+
+
+ 3-5-2 パッケージを再インストールする				
+	エラーの原因となった手順(3-4)を再実行します。			
+		sudo dnf -y --disablerepo=\* --enablerepo=docker-repo-almalinux install パッケージ名		
+
+
+
+
 インストール (自動)
 ===================
 
