@@ -358,6 +358,16 @@ Docker Compose on Docker - Offline
 		cp -ip /tmp/docker-repo-almalinux.tar.gz /mnt/mainte/exastro/almalinux/docker														
 																
 
+4.Exastroリソースのダウンロード																
+4-1 Exastroリソースをダウンロードする																
+	下記コマンドを実行し、docker-compose版Exastroのリソースをダウンロードします。															
+		cd /tmp														
+		curl -OL https://github.com/exastro-suite/exastro-docker-compose/archive/main.zip														
+																
+4-2 ダウンロードしたExastroリソースを格納する																
+	今回は「  /mnt/mainte/exastro/almalinux/docker 」に格納します。															
+		cp -ip /tmp/main.zip  /mnt/mainte/exastro/almalinux/docker														
+
 
 
 インストール (自動)
