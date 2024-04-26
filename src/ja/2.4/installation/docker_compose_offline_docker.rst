@@ -473,6 +473,65 @@ Docker Compose on Docker - Offline
 		sh ./load.sh 2.3.0							
 
 
+5.Exastroリソースのダウンロード																
+5-1 Exastroリソースを取得する																
+	docker-compose版Exastroのリソースを、一般ユーザーのホームディレクトリ直下に展開します。															
+		cd  /home/＜一般ユーザー名＞														
+		cp -ip /mnt/mainte/exastro/almalinux/docker/main.zip .														
+		unzip main.zip && mv exastro-docker-compose-main exastro-docker-compose														
+																
+																
+5-2 Exastroリソースをインストールする																
+	解凍したディレクトリに移動し、パッケージとExastro source fileのインストールを行います。															
+		cd ~/exastro-docker-compose && sh ./setup.sh install -i														
+																
+			各オプションの説明													
+			-i, --install-packages													
+				Only install required packages and fetch exastro source files												
+																
+			-e, --setup  													
+				Only generate environment file (.env)												
+																
+			-r, --regist-service 													
+				Only install exastro service												
+																
+			-c, --check 													
+				Check if your system meets the system requirements												
+																
+																
+	下記コマンドを実行し、.envのセットアップを行います。デプロイ要否やURLは必要に応じて下記の通り入力します。															
+		cd ~/exastro-docker-compose && sh ./setup.sh install -e														
+																
+		Rgenerate .env file? (y/n) [default: n]												
+			→.envについての確認です。yを入力します。				
+
+		Deploy OASE contaners? (y/n) [default: y]														
+			→OASE コンテナデプロイ要否の確認です。yを入力します。
+
+		Deploy Gitlab containser URL?   (y/n) [default: n]										
+			→GitLab コンテナデプロイ要否の確認です。yを入力します。													
+			 													
+		Input the Exastro service URL?											
+			→ExastroサービスのURLを入力します。ポートの30080は固定です。													
+			例) http://192.168.181.xx:30080					
+
+		Input the Exastro management URL?													
+			→Exastro管理用サービスのURLを入力します。ポートの30081は固定です。													
+			例) http://192.168.181.xx:30080													
+
+		Input the external URL of Gitlab container  [default: (nothing)]											
+			→GitlabコンテナのURLを入力します。指定がない場合は空欄のままEnterを押下します。
+
+		Generate .env file with these settings? (y/n) [default: n]														
+			→入力した内容で.envを作成してよいかの確認です。入力内容に間違いがない場合はyを入力します。													
+																
+	セットアップ完了後、、Exastro Serviceのインストールを実行します。															
+		cd ~/exastro-docker-compose && sh ./setup.sh install -r 														
+																
+										
+5-3 Exastroを起動する																
+		cd ~/exastro-docker-compose && docker-compose up -d 														
+
 
 インストール (自動)
 ===================
