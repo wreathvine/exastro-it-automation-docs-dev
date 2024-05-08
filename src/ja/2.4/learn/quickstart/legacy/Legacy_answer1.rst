@@ -88,7 +88,7 @@
    :caption: group.yml
 
    ---
-   - name: "Execute module. (group create/update item.0)"
+   - name: create/update group
      group:
        name: "{{ item.0 }}"
        gid: "{{ item.1 }}"
@@ -98,7 +98,7 @@
        - "{{ group_action }}"
      when: item.2 == 'present'
 
-   - name: "Execute module. (group create/update item.0)"
+   - name: create/update group
      group:
        name: "{{ item.0 }}"
        gid: "{{ item.1 }}"
@@ -236,7 +236,7 @@
    :caption: user.yml
 
    ---
-   - name: Execute module. (user create item.0)
+   - name: create user
      user:
        name: "{{ item.0 }}"
        uid: "{{ item.1 }}"
@@ -257,7 +257,7 @@
        - "{{ password_apply }}"
      when: item.7 == 'present' and password_apply
 
-   - name: Execute module. (user create item.0)
+   - name: create user
      user:
        name: "{{ item.0 }}"
        uid: "{{ item.1 }}"
@@ -276,7 +276,7 @@
        - "{{ password_apply }}"
      when: item.6 == 'present' and not password_apply
 
-   - name: Execute module. (user delete item.0)
+   - name: delete user
      user:
        state: absent
        name: "{{ item.0 }}"
@@ -579,7 +579,7 @@ Ansible Playbook 登録
    :caption: group.yml
 
    ---
-   - name: "Execute module. (group create/update item.0)"
+   - name: create/update group
      group:
        name: "{{ item.0 }}"
        gid: "{{ item.1 }}"
@@ -589,7 +589,7 @@ Ansible Playbook 登録
        - "{{ group_action }}"
      when: item.2 == 'present'
 
-   - name: "Execute module. (group create/update item.0)"
+   - name: create/update group
      group:
        name: "{{ item.0 }}"
        gid: "{{ item.1 }}"
@@ -603,7 +603,7 @@ Ansible Playbook 登録
    :caption: user.yml
 
    ---
-   - name: Execute module. (user create item.0)
+   - name: create user
      user:
        name: "{{ item.0 }}"
        uid: "{{ item.1 }}"
@@ -624,7 +624,7 @@ Ansible Playbook 登録
        - "{{ password_apply }}"
      when: item.7 == 'present' and password_apply
 
-   - name: Execute module. (user create item.0)
+   - name: create user
      user:
        name: "{{ item.0 }}"
        uid: "{{ item.1 }}"
@@ -643,7 +643,7 @@ Ansible Playbook 登録
        - "{{ password_apply }}"
      when: item.6 == 'present' and not password_apply
 
-   - name: Execute module. (user delete item.0)
+   - name: delete user
      user:
        state: absent
        name: "{{ item.0 }}"
