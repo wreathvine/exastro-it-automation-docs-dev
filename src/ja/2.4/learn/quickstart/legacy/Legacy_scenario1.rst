@@ -212,9 +212,10 @@ Ansible Playbook 登録
 | Ansible-Legacyモードを使用することのメリットとして、自身の用途に合ったPlaybookを作成することで自由に手順を作成することが可能です。
 | ですが、Ansible-Legacyモードを利用するにはご自身でPlaybookを作成していただく必要があるため、Playbook作成の知識が必要となります。
 
-| 本シナリオでは、 以下のPlaybookを利用します。
+| 本シナリオでは、 以下のPlaybookを利用します。以下をコピーして、yml形式でhostname.ymlを作成してください。
 
 .. code-block:: bash
+   :caption: hostname.yml
 
    - hostname:
      name: "{{ hostname }}"
