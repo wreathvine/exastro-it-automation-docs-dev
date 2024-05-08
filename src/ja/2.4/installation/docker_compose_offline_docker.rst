@@ -157,10 +157,9 @@ Docker Compose on Docker - Offline
 事前準備
 ========
 
-| コンテナイメージの取得 及び 実行にはシェルスクリプトを使用します。
-
-| Exastro の起動にはdocker-composeを使用するため、docker-compose-linux-x86_64を事前に準備しておく必要があります。
-
+| コンテナイメージの取得及び実行にはシェルスクリプトを使用します。
+| Exastro の起動にはdocker-composeを使用するため、docker-compose-linux-x86_64を下記URLからダウンロードします。
+| https://github.com/docker/compose/releases/download/v2.20.3/docker-compose-linux-x86_64
 | サービス公開用の URL を準備しておく必要があります。
 
 .. list-table:: 例1) IPアドレスによるサービス公開
@@ -212,62 +211,64 @@ Docker Compose on Docker - Offline
 
 全体の流れ
 ==========
-オンライン環境での作業完了後に、オフライン環境にてインストールを実施します。
+| オンライン環境での作業完了後に、オフライン環境にてインストールを実施します。
 											
 													
-▼オンライン環境での手順													
+オンライン環境での手順
+^^^^^^^^^^^^^^^^^^^^^^
 													
-1. マウントの設定													
-	1-1 設定ファイルを開く												
-	1-2 マウント設定を記述する												
-	1-3 設定を反映し、マウントを行う												
-	1-4 マウント先へのアクセスを確認する												
+| 1.マウントの設定 				
+| 1-1 設定ファイルを開く												
+| 1-2 マウント設定を記述する												
+| 1-3 設定を反映し、マウントを行う												
+| 1-4 マウント先へのアクセスを確認する												
 													
-2.コンテナイメージのダウンロード													
-	2-1 格納先ディレクトリに移動する												
-	2-2 シェルスクリプトを実行する												
+| 2.コンテナイメージのダウンロード													
+| 2-1 格納先ディレクトリに移動する												
+| 2-2 シェルスクリプトを実行する												
+												
+| 3.RPMパッケージのダウンロード													
+| 3-1 RPMパッケージをダウンロードする												
+| 3-2 createrepoをインストールする												
+| 3-3 ローカルリポジトリを作成する												
+| 3-4 ダウンロードしたパッケージを圧縮する												
+| 3-5 ダウンロードしたRMPパッケージを格納する												
 													
-3.RPMパッケージのダウンロード													
-	3-1 RPMパッケージをダウンロードする												
-	3-2 createrepoをインストールする												
-	3-3 ローカルリポジトリを作成する												
-	3-4 ダウンロードしたパッケージを圧縮する												
-	3-5 ダウンロードしたRMPパッケージを格納する												
-													
-4.Exastroリソースのダウンロード													
-	4-1 Exastroリソースをダウンロードする												
-	4-2 ダウンロードしたExastroリソースを格納する												
+| 4.Exastroリソースのダウンロード													
+| 4-1 Exastroリソースをダウンロードする												
+| 4-2 ダウンロードしたExastroリソースを格納する												
 
 
 
-▼オフライン環境での手順							
+オフライン環境での手順			
+^^^^^^^^^^^^^^^^^^^^^^
 							
-1.マウントの設定							
-	1-1 設定ファイルを開く						
-	1-2 マウント設定を記述する						
-	1-3 設定を反映し、マウントを行う						
-	1-4 マウント先へのアクセスを確認する						
+| 1.マウントの設定							
+| 1-1 設定ファイルを開く						
+| 1-2 マウント設定を記述する						
+| 1-3 設定を反映し、マウントを行う						
+| 1-4 マウント先へのアクセスを確認する						
 							
-2.docker-compose-linux-x86_64の取得							
-	2-1 docker-compose-linux-x86_64を取得する						
+| 2.docker-compose-linux-x86_64の取得							
+| 2-1 docker-compose-linux-x86_64を取得する						
 							
-3.RPMパッケージのダウンロード							
-	3-1 RPMパッケージを取得する						
-	3-2 リポジトリファイルを作成する						
-	3-3 リポジトリ情報を記載する						
-	3-4 パッケージをインストールする						
-	3-5 エラー対応						
-		3-5-1 エラーとなったパッケージを削除する					
-		3-5-2 パッケージを再インストールする					
+| 3.RPMパッケージのダウンロード							
+| 3-1 RPMパッケージを取得する						
+| 3-2 リポジトリファイルを作成する						
+| 3-3 リポジトリ情報を記載する						
+| 3-4 パッケージをインストールする						
+| 3-5 エラー対応						
+| 3-5-1 エラーとなったパッケージを削除する					
+| 3-5-2 パッケージを再インストールする					
 							
-4.コンテナイメージのダウンロード							
-	4-1 格納先ディレクトリに移動する						
-	4-2 シェルスクリプトを実行する						
+| 4.コンテナイメージのダウンロード							
+| 4-1 格納先ディレクトリに移動する						
+| 4-2 シェルスクリプトを実行する						
 							
-5.Exastroリソースのダウンロード							
-	5-1 Exastroリソースを取得する						
-	5-2 Exastroリソースをインストールする						
-	5-3 Exastroを起動する						
+| 5.Exastroリソースのダウンロード							
+| 5-1 Exastroリソースを取得する						
+| 5-2 Exastroリソースをインストールする						
+| 5-3 Exastroを起動する						
 
 
 
@@ -275,255 +276,465 @@ Docker Compose on Docker - Offline
 オンライン環境(インターネットに接続できる環境)での作業
 ======================================================
 
-| まずは資源の収集を行います。
+| 資材の収集を行います。
+| ここではNFSにマウントする方法で資材の受け渡しを実施しています。
 | 以下、ユーザーはalmalinux、ホームディレクトリは/home/almalinuxで実行した例です。
-| また、資材の受け渡しはNFSにマウントする方法を用いています。
 
 
-1. マウントの設定				
-1-1 設定ファイルを開く				
-	下記コマンドを順に実行し、資材受け渡し用のマウント設定を行います。			
-		sudo su -		
-		vi /etc/fstab		
+1.マウントの設定
+^^^^^^^^^^^^^^^^
+
+1-1 設定ファイルを開く
+----------------------
+
+| 下記コマンドを順に実行し、資材受け渡し用のマウント設定を行います。	
+
+.. code-block:: shell
+   :linenos:
+   :caption: コマンド	
+
+   sudo su -		
+   vi /etc/fstab		
 
 
 1-2 マウント設定を記述する		
-	viエディタで開いた/etc/fstabに下記のマウント設定を追記します。	
-		マウントするデバイス名 マウントポイント ファイルシステムの種類 オプション dump設定 fsckチェック設定
+--------------------------
 
-1-3 設定を反映し、マウントを行う		
-	下記コマンドを順に実行し、設定を反映させます。	
-		mkdir /mnt/mainte 
-		systemctl daemon-reload
-		mount -a 
-		df
-		exit
+| viエディタで開いた/etc/fstabに下記のマウント設定を追記します。	
 
-  1-4 マウント先へのアクセスを確認する
-  今回は下記ディレクトリを作成したうえで、作業を行うこととします。
-  cd /mnt/mainte/exastro/container-images
+.. code-block:: shell
+   :caption: 記載例
 
+   /dev/sda1 /mnt/mainte nfs defaults 0 0
+
+
+1-3 設定を反映し、マウントを行う
+--------------------------------
+
+|	下記コマンドを順に実行し、設定を反映させます。	
+
+.. code-block:: shell
+   :linenos:
+   :caption: コマンド
+
+   mkdir /mnt/mainte 
+   systemctl daemon-reload
+   mount -a 
+   df
+   exit
+
+1-4 マウント先へのアクセスを確認する
+------------------------------------
+
+| 今回は下記ディレクトリを作成したうえで、作業を行います。
+
+.. code-block:: shell
+   :caption: コマンド
+
+   cd /mnt/mainte/exastro/container-images
 
 
 2.コンテナイメージのダウンロード		
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 2-1 格納先ディレクトリに移動する		
-		手順1-4で移動済みの場合は実施不要です。
+--------------------------------
+| 手順1-4で移動済みの場合は実施不要です。
 
-2-2 シェルスクリプトを実行する		
-	下記コマンドを実行しコンテナイメージをダウンロードします。	
-		sh ./save.sh 2.3.0
+.. code-block:: shell
+   :caption: コマンド
+
+   cd /mnt/mainte/exastro/container-images
+		
+
+2-2 シェルスクリプトを実行する	
+------------------------------
+
+|	下記コマンドを実行しコンテナイメージをダウンロードします。	
+
+.. code-block:: shell
+   :caption: コマンド
+
+   sh ./save.sh 2.4.0
 
 
 
-3.RPMパッケージのダウンロード					
+3.RPMパッケージのダウンロード				
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 3-1 RPMパッケージをダウンロードする					
-	下記コマンドを実行し、パッケージをダウンロードします。				
-		sudo dnf install -y --downloadonly --downloaddir=/tmp/docker-repo-almalinux --installroot=/tmp/docker-installroot-almalinux --releasever=8.9 git			
+-----------------------------------
+
+|	下記コマンドを実行し、パッケージをダウンロードします。		
+| ここではダウンロード先ディレクトリを/tmp/docker-repo-almalinux、インストール先ディレクトリを/tmp/docker-installroot-almalinuxとしています。
+
+.. code-block:: shell
+   :caption: コマンド
+
+   sudo dnf install -y --downloadonly --downloaddir=/tmp/docker-repo-almalinux --installroot=/tmp/docker-installroot-almalinux --releasever=8.9 git			
 					
-			各オプションの説明		
-			=--downloadonly		
-				パッケージをインストールせずにダウンロードのみ行います。	
-				オフライン環境で使用するためのパッケージのダウンロードのみ行うため、インストールは不要です。	
-					
-			--downloaddir=<ダウンロード先パス>		
-				パッケージをダウンロードするディレクトリを指定します。	
-				通常のダウンロードと同様に、ローカルにあるパッケージと依存関係を解決しつつダウンロードされるため、	
-				該当パッケージがすでにインストールされている場合は不足分のみダウンロードされます。	
-					
-			--installroot=<ダウンロード先絶対パス>		
-				通常とは別の場所へインストールするために利用します。	
-				インストール済みのパッケージも含めてすべてダウンロードするため	
-				ダミーディレクトリを指定し、すべての パッケージをダウンロードします。	
-					
-			--releasever=<バージョン>		
-				ディストリビューションのバージョンを指定(9.2など)します。	
+.. note::
+   | 各オプションの説明		
+
+   | =--downloadonly		
+   | パッケージをインストールせずにダウンロードのみ行います。	
+   | オフライン環境で使用するためのパッケージのダウンロードのみ行うため、インストールは不要です。	
+      
+   | --downloaddir=<ダウンロード先パス>		
+   | パッケージをダウンロードするディレクトリを指定します。	
+   | 通常のダウンロードと同様に、ローカルにあるパッケージと依存関係を解決しつつダウンロードされるため、	
+   | 該当パッケージがすでにインストールされている場合は不足分のみダウンロードされます。	
+      
+   | --installroot=<ダウンロード先絶対パス>		
+   | 通常とは別の場所へインストールするために利用します。	
+   | インストール済みのパッケージも含めてすべてダウンロードするため	
+   | ダミーディレクトリを指定し、すべての パッケージをダウンロードします。	
+      
+   | --releasever=<バージョン>		
+   | ディストリビューションのバージョンを指定(9.2など)します。	
 
 
-3-2 createrepoをインストールする																
-		sudo dnf install -y createrepo														
+3-2 createrepoをインストールする			
+--------------------------------
+
+.. code-block:: shell
+   :caption: コマンド
+
+   sudo dnf install -y createrepo														
 																
 																
-3-3 ローカルリポジトリを作成する																
-	オフライン環境ではインターネット上のリポジトリサーバーを参照できないため、dnfによるパッケージのインストールができません。															
-	ローカルリポジトリにパッケージを追加することで、dnfによるパッケージインストールが可能となります。															
-		sudo createrepo /tmp/docker-repo-almalinux														
+3-3 ローカルリポジトリを作成する		
+--------------------------------
+
+|	オフライン環境ではインターネット上のリポジトリサーバーを参照できないため、dnfによるパッケージのインストールができません。															
+|	ローカルリポジトリにパッケージを追加することで、dnfによるパッケージインストールが可能となります。			
+
+.. code-block:: shell
+   :caption: コマンド
+
+   sudo createrepo /tmp/docker-repo-almalinux														
 																
 
-3-4 ダウンロードしたパッケージを圧縮する																
-		cd /tmp														
-		tar zcvf podman-repo.tar.gz docker-repo-almalinux														
+3-4 ダウンロードしたパッケージを圧縮する					
+----------------------------------------
+
+.. code-block:: shell
+   :linenos:
+   :caption: コマンド
+
+   cd /tmp														
+   tar zcvf podman-repo.tar.gz docker-repo-almalinux														
 																
 																
-3-5 圧縮したRPMパッケージを格納する																
-		cp -ip /tmp/docker-repo-almalinux.tar.gz /mnt/mainte/exastro/almalinux/docker														
+3-5 圧縮したRPMパッケージを格納する		
+-----------------------------------
+
+.. code-block:: shell
+   :caption: コマンド
+
+   cp -ip /tmp/docker-repo-almalinux.tar.gz /mnt/mainte/exastro/almalinux/docker														
 																
 
 4.Exastroリソースのダウンロード																
-4-1 Exastroリソースをダウンロードする																
-	下記コマンドを実行し、docker-compose版Exastroのリソースをダウンロードします。															
-		cd /tmp														
-		curl -OL https://github.com/exastro-suite/exastro-docker-compose/archive/main.zip														
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+4-1 Exastroリソースをダウンロードする
+-------------------------------------
+
+|	下記コマンドを実行し、docker-compose版Exastroのリソースをダウンロードします。	
+
+.. code-block:: shell
+   :linenos:
+   :caption: コマンド
+
+   cd /tmp														
+   curl -OL https://github.com/exastro-suite/exastro-docker-compose/archive/main.zip														
 																
-4-2 ダウンロードしたExastroリソースを格納する																
-	今回は「  /mnt/mainte/exastro/almalinux/docker 」に格納します。															
-		cp -ip /tmp/main.zip  /mnt/mainte/exastro/almalinux/docker														
+4-2 ダウンロードしたExastroリソースを格納する			
+---------------------------------------------
 
+| 今回は「 /mnt/mainte/exastro/almalinux/docker 」に格納します。		
 
+.. code-block:: shell
+   :caption: コマンド
+
+   cp -ip /tmp/main.zip  /mnt/mainte/exastro/almalinux/docker														
 
 
 															
 オフライン環境(インターネットに接続できない環境)での作業
-======================================================
-	オンライン環境での作業完了後、オフライン環境にて下記の手順を実施します。														
+========================================================
+
+| オンライン環境での作業完了後、オフライン環境にて下記の手順を実施します。														
 															
 
-	1. マウントの設定														
-	1-1 設定ファイルを開く														
-		下記コマンドを順に実行し、資材受け渡し用のマウント設定を行います。													
-			sudo su -												
-			vi /etc/fstab												
-															
-															
-	1-2 マウント設定を記述する														
-		viエディタで開いた/etc/fstabに下記のマウント設定を追記します。													
-		マウントするデバイス名 マウントポイント ファイルシステムの種類 オプション dump設定 fsckチェック設定								
-															
-															
-	1-3 設定を反映し、マウントを行う														
-		下記コマンドを順に実行し、設定を反映させます。													
-			mkdir /mnt/mainte 												
-			systemctl daemon-reload												
-			mount -a 												
-			df												
-			exit												
-															
-															
-	1-4 マウント先へのアクセスを確認する														
-			cd /mnt/mainte/exastro/container-images												
+1.マウントの設定
+^^^^^^^^^^^^^^^^
+
+1-1 設定ファイルを開く			
+----------------------
+
+| 下記コマンドを順に実行し、資材受け渡し用のマウント設定を行います。					
+
+.. code-block:: shell
+   :linenos:
+   :caption: コマンド			
+
+   sudo su -												
+   vi /etc/fstab												
+              
+              
+1-2 マウント設定を記述する		
+--------------------------
+
+| viエディタで開いた/etc/fstabに下記のマウント設定を追記します。
+
+.. code-block:: shell
+   :caption: 記載例
+
+   /dev/sda1 /mnt/mainte nfs defaults 0 0				
+              
+              
+1-3 設定を反映し、マウントを行う		
+--------------------------------
+
+| 下記コマンドを順に実行し、設定を反映させます。			
+
+.. code-block:: shell
+   :linenos:
+   :caption: コマンド	
+
+   mkdir /mnt/mainte 												
+   systemctl daemon-reload												
+   mount -a 												
+   df												
+   exit												
+              
+              
+1-4 マウント先へのアクセスを確認する					
+------------------------------------
+
+.. code-block:: shell
+   :caption: コマンド	
+
+   cd /mnt/mainte/exastro/container-images												
 
 
-2.docker-compose-linux-x86_64の取得								
+2.docker-compose-linux-x86_64の取得	
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 2-1 docker-compose-linux-x86_64を取得する						
-	事前に取得したdocker-compose-linux-x86_64を下記ディレクトリに格納し、パーミッションを変更します。							
-		格納先 /usr/local/bin/docker-compose					
-		sudo chmod a+x /usr/local/bin/docker-compose						
-		sudo shutdown -r now						
-		再度オフライン環境に接続						
+-----------------------------------------
+
+| 事前に取得したdocker-compose-linux-x86_64を下記ディレクトリに格納し、パーミッションを変更します。							
+| 格納先 /usr/local/bin/docker-compose					
+
+.. code-block:: shell
+   :linenos:
+   :caption: コマンド	
+
+   sudo chmod a+x /usr/local/bin/docker-compose						
+   sudo shutdown -r now						
+
+| 再起動後は再度オフライン環境に接続します。						
 
 
-3.RPMパッケージのダウンロード																
-3-1 RPMパッケージを取得する																
-	podman-repoのローカルリポジトリを/tmp配下に配置し、解凍します。															
-		cd /tmp														
-		cp -ip /mnt/mainte/exastro/almalinux/docker/docker-repo-almalinux.tar.gz .														
-		tar zxvf docker-repo-almalinux.tar.gz														
+3.RPMパッケージのダウンロード			
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+3-1 RPMパッケージを取得する										
+---------------------------
+
+|	docker-repo-almalinuxのローカルリポジトリを/tmp配下に配置し、解凍します。		
+
+.. code-block:: shell
+   :linenos:
+   :caption: コマンド			
+
+   cd /tmp														
+   cp -ip /mnt/mainte/exastro/almalinux/docker/docker-repo-almalinux.tar.gz .														
+   tar zxvf docker-repo-almalinux.tar.gz														
 																
 
-3-2 リポジトリファイルを作成する																
-		sudo touch /etc/yum.repos.d/docker-repo-almalinux.repo														
+3-2 リポジトリファイルを作成する								
+--------------------------------
+
+.. code-block:: shell
+   :caption: コマンド		
+
+   sudo touch /etc/yum.repos.d/docker-repo-almalinux.repo														
 																
 																
-3-3 リポジトリ情報を記載する																
-	作成したリポジトリファイルに下記の情報を記載します。(※file: の後ろのスラッシュは3つ)															
-		sudo vi /etc/yum.repos.d/docker-repo-almalinux.repo														
+3-3 リポジトリ情報を記載する		
+----------------------------
+
+|	作成したリポジトリファイルに下記の情報を記載します。(※file: の後ろのスラッシュは3つ)				
+
+.. code-block:: shell
+   :caption: コマンド
+
+   sudo vi /etc/yum.repos.d/docker-repo-almalinux.repo														
 																
-		[docker-repo-almalinux]														
-		name=RedHat-$releaserver - podman														
-		baseurl=file:///tmp/docker-repo-almalinux														
-		enabled=1														
-		gpgcheck=0														
-		gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release														
+   [docker-repo-almalinux]														
+   name=RedHat-$releaserver - podman														
+   baseurl=file:///tmp/docker-repo-almalinux														
+   enabled=1														
+   gpgcheck=0														
+   gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release														
 																
-	リポジトリの有効化を実施し、docker-repoのstatusがenabledになっていることを確認します。(手順3-4をスムーズに行うために実施しています。)															
-		sudo dnf config-manager --set-enabled docker-repo-almalinux														
-		dnf repolist all														
+| リポジトリの有効化を実施し、docker-repo-almalinuxのstatusがenabledになっていることを確認します。(手順3-4をスムーズに行うために実施しています。)															
+		
+.. code-block:: shell
+   :linenos:
+   :caption: コマンド			
+
+   sudo dnf config-manager --set-enabled docker-repo-almalinux														
+   dnf repolist all														
 																
 																
-3-4 パッケージをインストールする																
-		下記コマンドにてパッケージをインストールします。														
-		sudo dnf -y --disablerepo=\* --enablerepo=docker-repo-almalinux install git
+3-4 パッケージをインストールする
+--------------------------------
+
+| 下記コマンドにてパッケージをインストールします。										
+
+.. code-block:: shell
+   :caption: コマンド
+
+   sudo dnf -y --disablerepo=\* --enablerepo=docker-repo-almalinux install git
 
 																
 
 3-5 エラー対応				
-3-5-1 エラーとなったパッケージを削除する				
-	依存関係によるエラー(conflicting recuests)が起きた場合は、対象のパッケージを削除します。			
-	sudo dnf remove -y selinux-policy			
+--------------
 
-エラーメッセージ参考例
- Error:	
- Problem: package podman-3:4.6.1-8.module+el8.9.0+21243+a586538b.x86_64 requires (container-selinux if selinux-policy), but none of the providers can be installed	
-  - conflicting requests	
-  - problem with installed package selinux-policy-3.14.3-67.el8.noarch	
+3-5-1 エラーとなったパッケージを削除する			
+----------------------------------------
+
+|	依存関係によるエラー(conflicting recuests)が起きた場合は、対象のパッケージを削除します。		
+
+.. code-block:: shell
+   :caption: コマンド		
+
+   sudo dnf remove -y selinux-policy			
+
+.. code-block:: shell
+   :caption: エラーメッセージ参考例
+
+   Error:	
+   Problem: package podman-3:4.6.1-8.module+el8.9.0+21243+a586538b.x86_64 requires (container-selinux if selinux-policy), but none of the providers can be installed	
+    - conflicting requests	
+    - problem with installed package selinux-policy-3.14.3-67.el8.noarch	
 
 
- 3-5-2 パッケージを再インストールする				
-	エラーの原因となった手順(3-4)を再実行します。			
-		sudo dnf -y --disablerepo=\* --enablerepo=docker-repo-almalinux install パッケージ名		
+3-5-2 パッケージを再インストールする	
+------------------------------------
+
+|	エラーの原因となった手順(3-4)を再実行します。		
+
+.. code-block:: shell
+   :caption: コマンド		
+
+   sudo dnf -y --disablerepo=\* --enablerepo=docker-repo-almalinux install パッケージ名		
 
 
+4.コンテナイメージのダウンロード		
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-4.コンテナイメージのダウンロード									
-4-1 格納先ディレクトリに移動する									
-		cd /mnt/mainte/exastro/container-images							
+4-1 格納先ディレクトリに移動する						
+--------------------------------
+
+.. code-block:: shell
+   :caption: コマンド		
+
+   cd /mnt/mainte/exastro/container-images							
 									
 									
-4-2 シェルスクリプトを実行する									
-	下記コマンドを実行しコンテナイメージを実行します。								
-		sh ./load.sh 2.3.0							
+4-2 シェルスクリプトを実行する						
+------------------------------
+
+|	下記コマンドを実行しコンテナイメージを実行します。			
+
+.. code-block:: shell
+   :caption: コマンド		
+
+   sh ./load.sh 2.4.0							
 
 
-5.Exastroリソースのダウンロード																
-5-1 Exastroリソースを取得する																
-	docker-compose版Exastroのリソースを、一般ユーザーのホームディレクトリ直下に展開します。															
-		cd  /home/＜一般ユーザー名＞														
-		cp -ip /mnt/mainte/exastro/almalinux/docker/main.zip .														
-		unzip main.zip && mv exastro-docker-compose-main exastro-docker-compose														
+5.Exastroリソースのダウンロード			
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+5-1 Exastroリソースを取得する		
+-----------------------------
+
+| docker-compose版Exastroのリソースを、一般ユーザーのホームディレクトリ直下に展開します。					
+
+.. code-block:: shell
+   :linenos:
+   :caption: コマンド		
+
+   cd  /home/almalinux													
+   cp -ip /mnt/mainte/exastro/almalinux/docker/main.zip .														
+   unzip main.zip && mv exastro-docker-compose-main exastro-docker-compose														
 																
 																
-5-2 Exastroリソースをインストールする																
-	解凍したディレクトリに移動し、パッケージとExastro source fileのインストールを行います。															
-		cd ~/exastro-docker-compose && sh ./setup.sh install -i														
+5-2 Exastroリソースをインストールする				
+-------------------------------------
+
+| パッケージとExastro source fileのインストールを行います。				
+
+.. code-block:: shell
+   :caption: Exastro ServiceのパッケージとExastro source fileのインストール
+
+   cd ~/exastro-docker-compose && sh ./setup.sh install -i														
 																
-			各オプションの説明													
-			-i, --install-packages													
-				Only install required packages and fetch exastro source files												
+.. note::
+   | 各オプションの説明	
+															
+   | -i, --install-packages												
+   | Only install required packages and fetch exastro source files												
 																
-			-e, --setup  													
-				Only generate environment file (.env)												
+   | -e, --setup  													
+   | Only generate environment file (.env)												
 																
-			-r, --regist-service 													
-				Only install exastro service												
+   | -r, --regist-service 													
+   | Only install exastro service												
 																
-			-c, --check 													
-				Check if your system meets the system requirements												
+   | -c, --check 													
+   |	Check if your system meets the system requirements												
 																
 																
 | 必要なパッケージなどのインストールが完了すると下記のように対話形式で設定値を投入することが可能です。
-														
-		cd ~/exastro-docker-compose && sh ./setup.sh install -e														
-																
-		Rgenerate .env file? (y/n) [default: n]												
-			→.envについての確認です。yを入力します。				
 
-		Deploy OASE contaners? (y/n) [default: y]														
-			→OASE コンテナデプロイ要否の確認です。yを入力します。
+.. code-block:: shell
+   :caption: Exastro Serviceのセットアップ		
 
-		Deploy Gitlab containser URL?   (y/n) [default: n]										
-			→GitLab コンテナデプロイ要否の確認です。yを入力します。													
+   cd ~/exastro-docker-compose && sh ./setup.sh install -e														
+
+.. code-block:: shell
+   :caption: OASE コンテナデプロイ要否の確認
+
+   Deploy OASE container URL? (y/n) [default: y]:
 			 													
-		Input the Exastro service URL?											
-			→ExastroサービスのURLを入力します。ポートの30080は固定です。													
-			例) http://192.168.181.xx:30080					
+.. code-block:: shell
+   :caption: Exastro サービスのURL
 
-		Input the Exastro management URL?													
-			→Exastro管理用サービスのURLを入力します。ポートの30081は固定です。													
-			例) http://192.168.181.xx:30080													
+   Input the Exastro service URL?	 [default: http://127.0.0.1:30080]: http://ita.example.com:30080
 
-		Input the external URL of Gitlab container  [default: (nothing)]											
-			→GitlabコンテナのURLを入力します。指定がない場合は空欄のままEnterを押下します。
+.. code-block:: shell
+   :caption:  Exastro 管理用サービスのURL
 
-		
+   Input the Exastro management URL?	 [default: http://127.0.0.1:30081]: http://ita.example.com:30081									
+
+.. code-block:: shell
+   :caption: GitLab コンテナデプロイ要否の確認
+
+   Input the external URL of Gitlab container  [default: (nothing)]: 
+
+.. code-block:: shell
+   :caption: 設定ファイルの生成の確認
+
+   System parametes are bellow.
+
    System administrator password:    ********
    Database password:                ********
    OASE deployment                   true
@@ -534,48 +745,67 @@ Docker Compose on Docker - Offline
    Docker Socket path:               /run/user/1000/podman/podman.sock
    GitLab deployment:                false
  
-		Generate .env file with these settings? (y/n) [default: n]														
-			→入力した内容で.envを作成してよいかの確認です。入力内容に間違いがない場合はyを入力します。			
+   Generate .env file with these settings? (y/n) [default: n]														
+	
 																
-                
-	セットアップ完了後、、Exastro Serviceのインストールを実行します。															
-		cd ~/exastro-docker-compose && sh ./setup.sh install -r 														
+| セットアップ完了後、Exastro Serviceのインストールを実行します。		
+
+.. code-block:: shell
+   :caption: Exastro Serviceのインストール
+		 
+   cd ~/exastro-docker-compose && sh ./setup.sh install -r 														
 																
 										
-5-3 Exastroを起動する																
-		cd ~/exastro-docker-compose && docker-compose up -d 														
+5-3 Exastroを起動する
+---------------------
 
+.. code-block:: shell
+   :caption: Exastro Serviceの起動
+
+   cd ~/exastro-docker-compose && docker-compose up -d 														
+
+| 詳細な設定を編集する場合は、 :command:`n` もしくは :command:`no` と入力し、以降の処理をスキップします。
+| そのまま Exastro システムのコンテナ群を起動する場合は、 :command:`y` もしくは :command:`yes` と入力します。
 | Exastro システムのデプロイには数分～数十分程度の時間が掛かります。(通信環境やサーバースペックによって状況は異なります。)
-
 											
+
 エラー対応
-==========
-発生する可能性のあるエラーと対処方法は下記の通りです。																				
+^^^^^^^^^^
+
+| オフライン環境 手順5-2で発生する可能性のあるエラーと対処方法についてです。		
+
+| 下記エラーはインストール済みパッケージ(container-selinux)のバージョンが原因で発生したものです。																				
+| rpm -q パッケージ名 で対象パッケージのバージョンを確認し、オンライン環境とオフライン環境でそれぞれの手順を実行します。																				
+
+.. code-block:: shell					
+   :caption: エラーメッセージ
+
+   Error:																			
+   Problem 1: cannot install the best candidate for the job																			
+    - nothing provides container-selinux >= 2:2.74 needed by docker-ce-3:26.1.0-1.el8.x86_64 from docker-ce-stable																			
+   Problem 2: cannot install the best candidate for the job																			
+    - nothing provides container-selinux >= 2:2.74 needed by containerd.io-1.6.31-3.1.el8.x86_64 from docker-ce-stable																			
+   (try to add '--skip-broken' to skip uninstallable packages or '--nobest' to use not only best candidate packages)																			
 																						
 																						
-	■オフライン環境 手順5-2 Exastroリソースをインストールする																					
-		インストール済みパッケージ(container-selinux)のバージョンが原因で発生したもの。																				
-		「rpm -q パッケージ名」で対象パッケージのバージョンを確認し、下記の手順を実行する。																				
-																						
-			Error:																			
-			 Problem 1: cannot install the best candidate for the job																			
-			  - nothing provides container-selinux >= 2:2.74 needed by docker-ce-3:26.1.0-1.el8.x86_64 from docker-ce-stable																			
-			 Problem 2: cannot install the best candidate for the job																			
-			  - nothing provides container-selinux >= 2:2.74 needed by containerd.io-1.6.31-3.1.el8.x86_64 from docker-ce-stable																			
-			(try to add '--skip-broken' to skip uninstallable packages or '--nobest' to use not only best candidate packages)																			
-																						
-																						
-		オンライン環境での手順																				
-		sudo dnf install -y --downloadonly --downloaddir=/tmp/docker-repo-almalinux --installroot=/tmp/docker-installroot-almalinux --releasever=8.9 container-selinux																				
-		createrepo --update /tmp/docker-repo-almalinux																				
-		cd /tmp																				
-		tar zcvf podman-repo.tar.gz docker-repo-almalinux																				
-																						
-		オフライン環境での手順																				
-		cd /tmp																				
-		cp -ip /mnt/mainte/exastro/almalinux/docker/docker-repo-almalinux.tar.gz .																				
-		tar zxvf docker-repo-almalinux.tar.gz																				
-		sudo dnf -y --disablerepo=\* --enablerepo=docker-repo-almalinux install container-selinux																				
-		手順5-2を実行																				
+.. code-block:: shell
+   :linenos:
+   :caption: オンライン環境での手順	                     
+																			
+   sudo dnf install -y --downloadonly --downloaddir=/tmp/docker-repo-almalinux --installroot=/tmp/docker-installroot-almalinux --releasever=8.9 container-selinux																				
+   createrepo --update /tmp/docker-repo-almalinux																				
+   cd /tmp																				
+   tar zcvf podman-repo.tar.gz docker-repo-almalinux																				
+
+.. code-block:: shell					
+   :linenos:	
+   :caption: オフライン環境での手順		 	
+																		
+   cd /tmp																				
+   cp -ip /mnt/mainte/exastro/almalinux/docker/docker-repo-almalinux.tar.gz .																				
+   tar zxvf docker-repo-almalinux.tar.gz																				
+   sudo dnf -y --disablerepo=\* --enablerepo=docker-repo-almalinux install container-selinux									
+
+| 再度、手順5-2を実行します。																				
 
 
