@@ -285,7 +285,7 @@ Ansible Playbook 登録
    :caption: package.yml
 
    ---
-   - name: "Execute module. (yum install item.0)"
+   - name: install package
      yum:
        state: installed
        name: "{{ item.0 }}"
@@ -294,7 +294,7 @@ Ansible Playbook 登録
        - "{{ action }}"
      when: item.1 == 'present'
 
-   - name: "Execute module. (yum uninstall item.0)"
+   - name: uninstall package
      yum:
        state: removed
        name: "{{ item.0 }}"
