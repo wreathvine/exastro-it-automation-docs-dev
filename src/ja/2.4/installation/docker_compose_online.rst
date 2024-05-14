@@ -47,7 +47,7 @@ Docker Compose - Online
    * - Memory
      - 4GB
    * - Storage (Container image size)
-     - 40GB
+     - 35GB　※
 
   .. list-table:: ハードウェア要件(推奨構成)
    :widths: 20, 20
@@ -62,10 +62,25 @@ Docker Compose - Online
    * - Storage (Container image size)
      - 120GB
 
-  .. warning::
-    | 最小構成における要求リソースは Exastro IT Automation のコア機能に対する値です。GitLab や Ansible Automation Platform などの外部システムをデプロイする場合は、その分のリソースが別途必要となります。
-    | データベースおよびファイルの永続化のために、別途ストレージ領域を用意する必要があります。
-    | Storage サイズは、ユーザーの利用状況によるためあくまで目安となります。必要に応じて容量を確保してください。
+| ※ パーテーション単位でディスク容量が必要です。
+| ▼RHEL
+| ・コンテナイメージ
+| /home/ユーザ名/.local  25GB
+| ・Exastroのデータ
+| /home/ユーザ名/exastro-docker-compose 10GB(目安です。使い方によって大きく異なります。)
+|  
+| ▼RHEL 以外
+| ・コンテナイメージ
+| /var/lib/ 25GB
+| ・Exastroのデータ
+| /home/ユーザ名/exastro-docker-compose 10GB(目安です。使い方によって大きく異なります。)
+| 
+
+.. warning::
+  | 最小構成における要求リソースはGitLabコンテナとOASEコンテナのデプロイでnを選択した場合の値です。GitLabコンテナとOASEコンテナのデプロイをする場合は、その分のリソースが別途必要となります。
+  | データベースおよびファイルの永続化のために、別途ストレージ領域を用意する必要があります。
+  | Storage サイズは、ユーザーの利用状況によるためあくまで目安となります。必要に応じて容量を確保してください。
+
     
 - 通信要件
 
@@ -114,12 +129,18 @@ Docker Compose - Online
 
    * - 種別
      - バージョン
-   * - Red Hat Enterprise Linux
-     - バージョン	8
+   * - Red Hat Enterprise Linux (RHEL)
+     - バージョン	8.7, 9.2
    * - AlmaLinux
-     - バージョン	8
+     - バージョン	8.6, 8.7
    * - Ubuntu
      - バージョン	22.04
+
+.. tip::
+   | RHEL 8.2 もしくは podman 4.x の初期バージョンでは、ルートレスモードで正常に名前解決ができない事象が報告されています。RHEL 8.3 以降のバージョンをご使用ください。
+   | 
+   | https://github.com/containers/podman/issues/10672
+   | https://github.com/containers/podman/issues/12565
 
 - 動作確認済みコンテナプラットフォーム
 
@@ -204,6 +225,12 @@ Docker Compose - Online
 インストール (自動)
 ===================
 
+.. note::
+   | インストーラがOSを判断して、DockerまたはPodmanを選択します。
+
+.. note::
+   | インストールに失敗した場合は、 :ref:`docker_compose_uninstall` の :ref:`docker_compose_uninstall_all` または :ref:`docker_compose_uninstall_container` を実施して、再度インストールを実施してください。
+
 | 最も簡単なインストール方法はインストールスクリプトを利用するインストールです。
 | 1回のコマンド実行と対話型による設定が可能です。
 | 以下、ユーザーはtest_user、ホームディレクトリは/home/test_userで実行した例です。
@@ -231,22 +258,34 @@ Docker Compose - Online
    :caption: パスワード自動生成の確認
 
    # Exastro システムが利用する MariaDB のパスワードや、システム管理者のパスワード自動生成するか？
-   Generate all password and token automatically.? (y/n) [default: y]: 
+   Generate all password and token automatically? (y/n) [default: y]: 
 
 .. code-block:: shell
    :caption: Exastro サービスのURL
 
-   Service URL? [default: http://127.0.0.1:30080]: http://ita.example.com:30080
+   Input the Exastro service URL:
+
+.. tip::
+   | URLはポート番号まで指定してください。
+   | ポート番号は、OSがRed Hat Enterprise Linuxの場合は30080、それ以外は80を指定してください。
 
 .. code-block:: shell
    :caption:  Exastro 管理用サービスのURL
 
-   Management URL? [default: http://127.0.0.1:30081]: http://ita.example.com:30081
+   Input the Exastro management URL:
+
+.. tip::
+   | URLはポート番号まで指定してください。
+   | ポート番号は、OSがRed Hat Enterprise Linuxの場合は30081、それ以外は81を指定してください。
 
 .. code-block:: shell
-   :caption: GitLab コンテナデプロイ要否の確認
+   :caption:  GitLabのURL (上記の「GitLab コンテナデプロイ要否の確認」でyの場合)
 
-   Deploy GitLab container? (y/n) [default: n]: 
+   Input the external URL of GitLab container [default: (nothing)]:
+
+.. tip::
+   | URLはポート番号まで指定してください。
+   | ポート番号は40080を指定してください。
 
 .. code-block:: shell
    :caption: 設定ファイルの生成の確認
@@ -263,14 +302,14 @@ Docker Compose - Online
    Docker Socket path:               /run/user/1000/podman/podman.sock
    GitLab deployment:                false
 
-   Generate .env file by above settings? (y/n) [default: n]: y
+   Generate .env file with these settings? (y/n) [default: n]:
 
 | :command:`y` もしくは :command:`yes` と入力すると、GitHub から Exastro システムの起動に必要な、Docker Compose ファイルのダウンロードやファイアウォールの設定投入が開始されます。
 
 .. code-block:: shell
    :caption: Exastro コンテナデプロイ実施の確認
 
-   Deploy Exastro containers now? (y/n) [default: n]: y
+   Deploy Exastro containers now? (y/n) [default: n]:
 
 | 詳細な設定を編集する場合は、 :command:`n` もしくは :command:`no` と入力し、以降の処理をスキップします。
 | そのまま Exastro システムのコンテナ群を起動する場合は、 :command:`y` もしくは :command:`yes` と入力します。
@@ -428,6 +467,7 @@ Let's Try!!
 
   sh <(curl -sf https://ita.exastro.org/setup) install
 
+.. _docker_compose_uninstall:
 
 アンインストール
 ================
@@ -441,19 +481,66 @@ Let's Try!!
   | アンインストール実施前に、バックアップを取得しておくことを推奨します。
   | バックアップ対象は :file:`~/exastro-docker-compose/.volumes` です。
 
+
 アンインストール
 ----------------
 
-アンインストール実施
-^^^^^^^^^^^^^^^^^^^^
+.. _docker_compose_uninstall_all:
 
-| アンインストールを実施します。
+コンテナ＋データを削除する場合
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+| コンテナイメージも削除されます。
 
 .. code-block:: bash
    :caption: コマンド
 
-   # コンテナのみ削除する場合
+   sh <(curl -sf https://ita.exastro.org/setup) remove -c
+
+
+.. _docker_compose_uninstall_container:
+
+コンテナイメージを残す場合
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+コンテナ削除
+************
+
+.. code-block:: bash
+   :caption: コマンド
+
    sh <(curl -sf https://ita.exastro.org/setup) remove
 
-   # コンテナ＋データを削除する場合
-   sh <(curl -sf https://ita.exastro.org/setup) remove -c
+volumeを削除
+************
+
+.. code-block:: bash
+   :caption: コマンド
+
+   docker volume rm $(docker volume ls -qf dangling=true)
+
+   # volumeが消えていることを確認
+   docker volume ls
+
+.volumesを削除
+****************
+
+.. code-block:: bash
+   :caption: コマンド
+
+   cd ~/exastro-docker-compose
+
+   sudo rm -rf .volumes
+
+.volumesを再作成
+****************
+
+.. note::
+   | 再インストールする場合は下記を実施してください。
+
+.. code-block:: bash
+   :caption: コマンド
+
+   cd ~/exastro-docker-compose
+   
+   git checkout .volumes

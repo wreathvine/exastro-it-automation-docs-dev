@@ -4,7 +4,7 @@
 
 .. toctree::
    :maxdepth: 2
-   :numbered: 3
+   :numbered: 6
 
    docker_compose_online
    helm_on_kubernetes
