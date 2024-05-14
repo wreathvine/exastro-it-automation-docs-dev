@@ -1099,7 +1099,7 @@ Exastroリソースを取得する
          Input the Exastro management URL?	 [default: http://127.0.0.1:30081]: http://ita.example.com:30081									
 
       .. code-block:: shell
-         :caption: GitLab コンテナデプロイ要否の確認
+         :caption: GitLab コンテナデプロイ要否の確認 
 
          Input the external URL of Gitlab container  [default: (nothing)]: 
 
