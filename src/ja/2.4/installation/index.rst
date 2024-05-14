@@ -10,4 +10,4 @@
    helm_on_kubernetes
    oase_agent_docker_compose
    oase_agent_kubernetes
-   docker_compose_offline_docker
+   
