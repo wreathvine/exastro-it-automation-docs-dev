@@ -55,11 +55,13 @@ C. インスタンスをスケールインする作業
 | イベント収集設定では、エージェントがどの外部サービスからイベントを収集するかを設定します。
 
 .. Warning::
-   | 前シナリオで設定したものが残っているようであれば、こちらの設定は不要です。
+   | これまでのシナリオで設定したものが残っているようであれば、こちらの設定は不要です。
 
 | :menuselection:`OASE管理 --> エージェント` から、外部サービスの情報を登録します。
 
-.. figure:: エージェント登録画面.png
+| :menuselection:`登録` ボタンを押し、以下のエージェントの登録をしていきます。
+
+.. figure::/src/images/learn/quickstart/oase/OASE_answer_scale-in/OASE_answer_scale-in_エージェント登録詳細画面.png
    :width: 1200px
    :alt: エージェント登録画面
 
@@ -89,6 +91,8 @@ C. インスタンスをスケールインする作業
      - :kbd:`**`
      - :kbd:`60`
 
+| 入力が終わったら、:menuselection:`編集確認` ボタンを押して登録します。
+
 .. tip::
    | `*` の部分は、各自の外部サービスの情報を入力してください。
 
@@ -117,13 +121,16 @@ C. インスタンスをスケールインする作業
 -------------
 
 .. Warning::
-   | 前シナリオで設定したものが残っているようであれば、こちらの設定は不要です。
+   | これまでのシナリオで設定したものが残っているようであれば、こちらの設定は不要です。
 
 | :menuselection:`ラベル作成` では、イベントを特定する時に利用するキー(ラベル)を作成します。
 
 | :menuselection:`OASE --> ラベル --> ラベル作成` から、ラベルを作成します。
 
-.. figure:: ラベル作成画面.png
+| :menuselection:`登録` ボタンを押し、以下のラベルの設定を追加していきます。
+| 必要に応じて、:menuselection:`追加` ボタンを押して行数を追加しましょう。
+
+.. figure::/src/images/learn/quickstart/oase/OASE_answer_scale-in/OASE_answer_scale-in_ラベル作成登録詳細画面.png
    :width: 1200px
    :alt: ラベル作成画面
 
@@ -139,6 +146,8 @@ C. インスタンスをスケールインする作業
      - :kbd:`#7F76F9`
    * - :kbd:`instance`
      - :kbd:`#00FF33`
+
+| 入力が終わったら、:menuselection:`編集確認` ボタンを押して登録します。
   
 .. note::
    | ラベルそれぞれにカラーコードを設定することで、付与されたときに見分けやすくなります。
@@ -150,11 +159,14 @@ C. インスタンスをスケールインする作業
 | 今回は、リクエスト数閾値内回復を知らせるものであるかどうかを示すラベルを付与する必要があります。
 
 .. Warning::
-   | 「リクエスト数監視」に関しては、前シナリオで設定したものが残っているようであれば、設定は不要です。
+   | 「リクエスト数監視」に関しては、これまでのシナリオで設定したものが残っているようであれば、設定は不要です。
 
 | :menuselection:`OASE --> ラベル --> ラベル付与` から、ラベルを付与するための設定を行います。
 
-.. figure:: ラベル付与画面.png
+| :menuselection:`登録` ボタンを押し、以下のラベル付与の設定を追加していきます。
+| 必要に応じて、:menuselection:`追加` ボタンを押して行数を追加しましょう。
+
+.. figure::/src/images/learn/quickstart/oase/OASE_answer_scale-in/OASE_answer_scale-in_ラベル付与詳細画面.png
    :width: 1200px
    :alt: ラベル付与
 
@@ -195,10 +207,12 @@ C. インスタンスをスケールインする作業
      - :kbd:`requestcount`
      - :kbd:`\1`
 
+| 入力が終わったら、:menuselection:`編集確認` ボタンを押して登録します。
+
 .. tip::
    | ラベリング設定名とイベント収集設定名は任意で設定可能です。わかりやすいものを設定しましょう。
-   | メールの件名から通知内容が特定する、subjectのラベルを設定を行います。
-   | メールの本文から通知の基準となった閾値を参照でする、requestcountのラベルを設定を行います。
+   | メールの件名から通知内容が特定する、「subject」のラベルを付与する設定を行います。
+   | メールの本文から通知の基準となった閾値を参照でする、「requestcount」のラベルを付与する設定を行います。
 
 OASEエージェントの設定
 =======================
@@ -206,7 +220,7 @@ OASEエージェントの設定
 | OASEエージェントの設定を行い、エージェントを実行します。
 
 .. Warning::
-   | 前シナリオで設定したものが残っているようであれば、こちらの設定は不要です。
+   | これまでのシナリオで設定したものが残っているようであれば、こちらの設定は不要です。
 
 .. note::
    | OASEエージェントの詳細は、下記のページにてご確認ください。
@@ -219,7 +233,7 @@ OASEエージェントの設定
 
 | :menuselection:`exastro-docker-compose/ita_ag_oase/.env` に下記の内容を入力します。
 
-.. figure:: .env.png
+.. figure::/src/images/learn/quickstart/oase/OASE_answer_scale-in/OASE_answer_scale-in_OASEエージェント設定画面.png
    :width: 1200px
    :alt: .env
 
@@ -311,7 +325,9 @@ OASEエージェントの設定
 
 | :menuselection:`OASE --> ルール --> フィルター` から、:menuselection:`フィルター` を設定します。
 
-.. figure:: フィルター画面.png
+| :menuselection:`登録` ボタンを押し、以下のフィルターの設定を追加していきます。
+
+.. figure::/src/images/learn/quickstart/oase/OASE_answer_scale-in/OASE_answer_scale-in_フィルター設定詳細画面.png
    :width: 1200px
    :alt: フィルター
 
@@ -324,9 +340,11 @@ OASEエージェントの設定
      - フィルター条件
      - 検索方法
    * - :kbd:`True`
-     - :kbd:`request_limit`
+     - :kbd:`request_range`
      - :kbd:`[["subject", "==", "リクエスト数回復"], ["requestcount", "≠", "150"]]`
      - :kbd:`ユニーク`
+  
+| 入力が終わったら、:menuselection:`編集確認` ボタンを押して登録します。
 
 | フィルターは:menuselection:`OASE --> イベント --> イベントフロー` からも設定することが可能です。
 
@@ -335,6 +353,7 @@ OASEエージェントの設定
    | ラベル「subject」の値から、リクエスト数が閾値内に回復したことを通知するイベントであることを特定できるようにフィルター条件を設定します。
    | ラベル「requestcount」の値から、通知の基準となった閾値を特定できるようにフィルター条件を設定します。
    | 今回は、閾値として50か100の場合を条件として同じアクションを実行するので150以外と設定しましたが、それぞれの閾値でアクションを変えるなど、個別の設定がしたい場合は、それぞれの閾値で別のフィルターを設定しましょう。
+   
    | ラベル「requestcount」だけでは超過したイベントなのか回復したイベントなのか判別できないため、ラベル「subject」をフィルター条件に設定し、イベントを一意に特定できるようにします。
    | このように、ラベルを特定のイベントごとに付与しなくても、必要に応じてフィルター条件を複数設定することで、イベントを一意に特定することできます。
 
@@ -344,7 +363,7 @@ OASEエージェントの設定
 
 | :menuselection:`OASE --> イベント --> イベントフロー` からは以下のように設定します。
 
-.. figure:: イベントフロー画面_フィルター.gif
+.. figure::/src/images/learn/quickstart/oase/OASE_answer_scale-in/OASE_answer_scale-in_フィルター設定.gif
    :width: 1200px
    :alt: イベントフロー_フィルター
 
@@ -359,7 +378,7 @@ OASEエージェントの設定
 
 | :menuselection:`OASE --> イベント --> イベントフロー` から、:menuselection:`アクション` を設定します。
 
-.. figure:: イベントフロー画面_アクション.gif
+.. figure::/src/images/learn/quickstart/oase/OASE_answer_scale-in/OASE_answer_scale-in_アクション設定.gif
    :width: 1200px
    :alt: イベントフロー_アクション
 
@@ -390,9 +409,13 @@ OASEエージェントの設定
 
 | :menuselection:`OASE --> ルール --> アクション` からは以下のように設定します。
 
-.. figure:: アクション画面.png
+| :menuselection:`登録` ボタンを押し、以下のアクションの設定を追加していきます。
+
+.. figure::/src/images/learn/quickstart/oase/OASE_answer_scale-in/OASE_answer_scale-in_アクション設定詳細画面.png
    :width: 1200px
    :alt: アクション
+
+| 入力が終わったら、:menuselection:`編集確認` ボタンを押して登録します。
 
 ルールの設定
 ------------
@@ -402,7 +425,7 @@ OASEエージェントの設定
 
 | :menuselection:`OASE --> イベント --> イベントフロー` から、:menuselection:`ルール` を設定します。
 
-.. figure:: イベントフロー画面_ルール.gif
+.. figure::/src/images/learn/quickstart/oase/OASE_answer_scale-in/OASE_answer_scale-in_ルール設定.gif
    :width: 1200px
    :alt: イベントフロー_ルール
 
@@ -456,6 +479,7 @@ OASEエージェントの設定
    | 条件では、フィルターの設定で設定したフィルター「request_range」を選択します。
    | アクションでは、アクションの設定で設定したアクション「scale-in」を選択します。
    | これにより、フィルタ―「request_range」でイベントを検知したら、アクション「scale-in」が実行されます。
+
    | 結論ラベル設定には、アクションが実行されたことを示す結論イベントに付与するラベルを設定します。
    | 結論イベントが判別しやすいようなラベルを設定するとよいでしょう。
    | 分間で集計したリクエスト数をもとに通知されるため、TTLは60秒とします。
@@ -466,18 +490,36 @@ OASEエージェントの設定
 
 | :menuselection:`OASE --> ルール --> ルール` からは以下のように設定します。
 
-.. figure:: ルール画面.png
+| :menuselection:`登録` ボタンを押し、以下のルールの設定を追加していきます。
+
+.. figure::/src/images/learn/quickstart/oase/OASE_answer_scale-in/OASE_answer_scale-in_ルール設定詳細画面.png
    :width: 1200px
    :alt: ルール
+
+| 入力が終わったら、:menuselection:`編集確認` ボタンを押して登録します。
 
 結果の確認
 -----------
 | 以上の設定が完了したら、発生したイベントをもとにアクションが実行される様子を、:menuselection:`イベントフロー` 画面から確認してみましょう。
 
+.. tip::
+   | ルールの設定の間に発生させたイベントのTTLが切れてしまったら、改めて同じイベントを発生させてください。
+
+.. list-table:: 通知メール一覧
+   :widths: 5 10
+   :header-rows: 1
+
+   * - 通知内容
+     - リクエスト数回復
+   * - :kbd:`件名`
+     - :kbd:`[info] Requests: Threshold recovery`
+   * - :kbd:`本文`
+     - :kbd:`リクエスト数が、閾値内に回復しました。` `RequestCount < 50`
+
 | :menuselection:`OASE --> イベント --> イベントフロー` の画面では、時系列に沿ってイベントが発生している様子が確認できます。
 | アクションが実行されたことを示す結論イベントに:menuselection:`ルール` で設定したラベルが付与されていることも確認しましょう。
 
-.. figure:: イベントフロー画面_結論イベント.gif
+.. figure::/src/images/learn/quickstart/oase/OASE_answer_scale-in/OASE_answer_scale-in_結果確認.gif
    :width: 1200px
    :alt: イベントフロー_結論イベント
 
@@ -496,6 +538,6 @@ OASEエージェントの設定
 
 | そうすると、事前に設定したルールが適用され、結論イベントの発生まで確認できます。
 
-.. figure:: イベントフロー画面_結論イベント_2回目.gif
+.. figure::/src/images/learn/quickstart/oase/OASE_answer_scale-in/OASE_answer_scale-in_結果確認2.gif
    :width: 1200px
    :alt: イベントフロー_結論イベント_2回目

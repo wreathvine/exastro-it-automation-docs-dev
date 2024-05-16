@@ -67,7 +67,9 @@ e. c.で設定した振り分け条件とd.で登録した作業を紐づける�
 
 | :menuselection:`OASE管理 --> エージェント` から、外部サービスの情報を登録します。
 
-.. figure:: エージェント登録画面.png
+| :menuselection:`登録` ボタンを押し、以下のエージェントの登録をしていきます。
+
+.. figure::/src/images/learn/quickstart/oase/OASE_scenario_sorry-switch/OASE_scenario_sorry-switch_エージェント登録詳細画面.png
    :width: 1200px
    :alt: エージェント登録画面
 
@@ -96,6 +98,8 @@ e. c.で設定した振り分け条件とd.で登録した作業を紐づける�
      - :kbd:`*****@**.***`
      - :kbd:`**`
      - :kbd:`60`
+ 
+| 入力が終わったら、:menuselection:`編集確認` ボタンを押して登録します。
 
 .. tip::
    | `*` の部分は、各自の外部サービスの情報を入力してください。
@@ -126,13 +130,16 @@ e. c.で設定した振り分け条件とd.で登録した作業を紐づける�
 ------------
 
 .. Warning::
-   | 前シナリオで設定したものが残っているようであれば、その設定は不要です。
+   | 前シナリオで設定したものが残っているようであれば、足りない分だけ追加してください。
 
 | :menuselection:`ラベル作成` では、イベントを特定する時に利用するキー(ラベル)を作成します。
 
 | :menuselection:`OASE --> ラベル --> ラベル作成` から、ラベルを作成します。
 
-.. figure:: ラベル作成画面.png
+| :menuselection:`登録` ボタンを押し、以下のラベルの設定を追加していきます。
+| 必要に応じて、:menuselection:`追加` ボタンを押して行数を追加しましょう。
+
+.. figure::/src/images/learn/quickstart/oase/OASE_scenario_sorry-switch/OASE_scenario_sorry-switch_ラベル作成詳細画面.png
    :width: 1200px
    :alt: ラベル作成画面
 
@@ -148,6 +155,8 @@ e. c.で設定した振り分け条件とd.で登録した作業を紐づける�
      - :kbd:`#7F76F9`
    * - :kbd:`page`
      - :kbd:`#FF2600`
+
+| 入力が終わったら、:menuselection:`編集確認` ボタンを押して登録します。
   
 .. note::
    | ラベルそれぞれにカラーコードを設定することで、付与されたときに見分けやすくなります。
@@ -163,7 +172,10 @@ e. c.で設定した振り分け条件とd.で登録した作業を紐づける�
 
 | :menuselection:`OASE --> ラベル --> ラベル付与` から、ラベルを付与するための設定を行います。
 
-.. figure:: ラベル付与画面.png
+| :menuselection:`登録` ボタンを押し、以下のラベル付与の設定を追加していきます。
+| 必要に応じて、:menuselection:`追加` ボタンを押して行数を追加しましょう。
+
+.. figure::/src/images/learn/quickstart/oase/OASE_scenario_sorry-switch/OASE_scenario_sorry-switch_ラベル付与詳細画面.png
    :width: 1200px
    :alt: ラベル付与
 
@@ -204,10 +216,12 @@ e. c.で設定した振り分け条件とd.で登録した作業を紐づける�
      - :kbd:`requestcount`
      - :kbd:`\1`
 
+| 入力が終わったら、:menuselection:`編集確認` ボタンを押して登録します。
+
 .. tip::
    | ラベリング設定名とイベント収集設定名は任意で設定可能です。わかりやすいものを設定しましょう。
-   | メールの件名から通知内容が特定する、subjectのラベルを設定を行います。
-   | メールの本文から通知の基準となった閾値を参照する、requestcountのラベルを設定を行います。
+   | メールの件名から通知内容が特定する、「subject」のラベルを付与する設定を行います。
+   | メールの本文から通知の基準となった閾値を参照する、requestcountのラベルを付与する設定を行います。
 
 OASEエージェントの設定
 =======================
@@ -229,7 +243,7 @@ OASEエージェントの設定
 
 | :menuselection:`exastro-docker-compose/ita_ag_oase/.env` に下記の内容を入力します。
 
-.. figure:: .env.png
+.. figure::/src/images/learn/quickstart/oase/OASE_scenario_sorry-switch/OASE_scenario_sorry-switch_OASEエージェント設定画面.png
    :width: 1200px
    :alt: .env
 
@@ -322,7 +336,9 @@ OASEエージェントの設定
 
 | :menuselection:`OASE --> ルール --> フィルター` から、:menuselection:`フィルター` を設定します。
 
-.. figure:: フィルター画面.png
+| :menuselection:`登録` ボタンを押し、以下のラベル付与の設定を追加していきます。
+
+.. figure::/src/images/learn/quickstart/oase/OASE_scenario_sorry-switch/OASE_scenario_sorry-switch_フィルター設定詳細画面.png
    :width: 1200px
    :alt: フィルター
 
@@ -335,15 +351,19 @@ OASEエージェントの設定
      - フィルター条件
      - 検索方法
    * - :kbd:`True`
-     - :kbd:`request_limit`
+     - :kbd:`request_limit_max`
      - :kbd:`[["subject", "==", "リクエスト数超過"], ["requestcount", "==", "150"]]`
      - :kbd:`ユニーク`
+
+| 入力が終わったら、:menuselection:`編集確認` ボタンを押して登録します。
 
 .. tip::
    | フィルター名は任意で設定可能です。わかりやすいものを設定しましょう。
    | ラベル「subject」の値から、リクエスト数が超過したことを通知するイベントであることを特定できるようにフィルター条件を設定します。
    | ラベル「requestcount」の値から、通知の基準となった閾値を特定できるようにフィルター条件を設定します。
+
    | 今回は、閾値として150の場合のみを条件としてアクションを実行するので150と設定しました。
+
    | ラベル「requestcount」だけでは超過したイベントなのか回復したイベントなのか判別できないため、ラベル「subject」をフィルター条件に設定し、イベントを一意に特定できるようにします。
    | このように、ラベルを特定のイベントごとに付与しなくても、必要に応じてフィルター条件を複数設定することで、イベントを一意に特定することできます。
 
@@ -355,7 +375,7 @@ OASEエージェントの設定
 
 | :menuselection:`OASE --> イベント --> イベントフロー` からは以下のように設定します。
 
-.. figure:: イベントフロー画面_フィルター.gif
+.. figure::/src/images/learn/quickstart/oase/OASE_scenario_sorry-switch/OASE_scenario_sorry-switch_フィルター設定.gif
    :width: 1200px
    :alt: イベントフロー_フィルター
 
@@ -370,7 +390,7 @@ OASEエージェントの設定
 
 | :menuselection:`OASE --> イベント --> イベントフロー` から、:menuselection:`アクション` を設定します。
 
-. figure:: イベントフロー画面_アクション2.gif
+.. figure::/src/images/learn/quickstart/oase/OASE_scenario_sorry-switch/OASE_scenario_sorry-switch_アクション設定.gif
    :width: 1200px
    :alt: イベントフロー_アクション2
 
@@ -401,9 +421,13 @@ OASEエージェントの設定
 
 | :menuselection:`OASE --> ルール --> アクション` からは以下のように設定します。
 
-.. figure:: アクション画面2.png
+| :menuselection:`登録` ボタンを押し、以下のアクションの設定を追加していきます。
+
+.. figure::/src/images/learn/quickstart/oase/OASE_scenario_sorry-switch/OASE_scenario_sorry-switch_アクション設定詳細画面.png
    :width: 1200px
    :alt: アクション2
+
+| 入力が終わったら、:menuselection:`編集確認` ボタンを押して登録します。
 
 ルールの設定
 ------------
@@ -416,7 +440,7 @@ OASEエージェントの設定
 
 | :menuselection:`OASE --> イベント --> イベントフロー` から、:menuselection:`ルール` を設定します。
 
-.. figure:: イベントフロー画面_ルール2.gif
+.. figure::/src/images/learn/quickstart/oase/OASE_scenario_sorry-switch/OASE_scenario_sorry-switch_ルール設定.gif
    :width: 1200px
    :alt: イベントフロー_ルール2
 
@@ -462,7 +486,7 @@ OASEエージェントの設定
      - :kbd:`sorry_switch`
      - :kbd:`True`
      - :kbd:`False`
-     - :kbd:`[["request", "over"], ["page", "sorry"]]`
+     - :kbd:`["page", "sorry"]`
      - :kbd:`3600`
 
 .. tip::
@@ -470,10 +494,11 @@ OASEエージェントの設定
    | 条件では、フィルターの設定で設定したフィルター「request-limit_max」を選択します。
    | アクションでは、アクションの設定で設定したアクション「sorry_switch」を選択します。
    | これにより、フィルタ―「request-limit_max」でイベントを検知したら、アクション「sorry_switch」が実行されます。
+
    | 結論ラベル設定には、アクションが実行されたことを示す結論イベントに付与するラベルを設定します。
    | 結論イベントが判別しやすいようなラベルを設定するとよいでしょう。
    | TTLは、:doc:`OASE_practice_sorry-switch-back` で必要となるため、3600秒と長めに設定します。
-   | 理由については、:doc:`OASE_dev_sorry-switch-back` を参照してください。
+   | 理由については、:doc:`OASE_advanced_sorry-switch-back` を参照してください。
 
 .. Warning::
   | 発生したイベントに適用したい場合、そのイベントのTTL内に設定する必要があります。
@@ -481,18 +506,36 @@ OASEエージェントの設定
 
 | :menuselection:`OASE --> ルール --> ルール` からは以下のように設定します。
 
-.. figure:: ルール画面2.png
+| :menuselection:`登録` ボタンを押し、以下のルールの設定を追加していきます。
+
+.. figure::/src/images/learn/quickstart/oase/OASE_scenario_sorry-switch/OASE_scenario_sorry-switch_ルール設定詳細画面.png
    :width: 1200px
    :alt: ルール2
+
+| 入力が終わったら、:menuselection:`編集確認` ボタンを押して登録します。
 
 結果の確認
 -----------
 
 | 以上の設定が完了したら、発生したイベントをもとにアクションが実行される様子を、:menuselection:`イベントフロー` 画面から確認してみましょう。
 
+.. tip::
+   | ルールの設定の間に発生させたイベントのTTLが切れてしまったら、改めて同じイベントを発生させてください。
+
+.. list-table:: 通知メール一覧
+   :widths: 5 10
+   :header-rows: 1
+
+   * - 通知内容
+     - リクエスト数超過
+   * - :kbd:`件名`
+     - :kbd:`[alert] Requests: Threshold reached`
+   * - :kbd:`本文`
+     - :kbd:`リクエスト数が、閾値を超えました。` `RequestCount > 150`
+
 | :menuselection:`OASE --> イベント --> イベントフロー` の画面では、時系列に沿ってイベントが発生している様子が確認できます。
 | アクションが実行されたことを示す結論イベントには、スケールアウトの時とは違う、:menuselection:`ルール` で設定したラベルが付与されていることも確認しましょう。
 
-.. figure:: イベントフロー画面_結論イベント2.gif
+.. figure::/src/images/learn/quickstart/oase/OASE_scenario_sorry-switch/OASE_scenario_sorry-switch_結果確認.gif
    :width: 1200px
    :alt: イベントフロー_結論イベント2
