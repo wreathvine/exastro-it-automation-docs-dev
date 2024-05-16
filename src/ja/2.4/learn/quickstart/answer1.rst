@@ -111,7 +111,7 @@
    :width: 1200px
    :alt: グループのパラメータシート
 
-.. figure:: ../../../../images/learn/quickstart/answer1/グループのパラメータシート作成.gif
+.. figure:: ../../../../images/learn/quickstart/answer1/グループパラメータシート作成.gif
    :width: 1200px
    :alt: グループのパラメータシート作成
 
@@ -253,7 +253,7 @@
    :width: 1200px
    :alt: ユーザーのパラメータシート
 
-.. figure:: ../../../../images/learn/quickstart/answer1/ユーザーのパラメータシート作成_1.gif
+.. figure:: ../../../../images/learn/quickstart/answer1/ユーザーパラメータシート作成_1.gif
    :width: 1200px
    :alt: ユーザーのパラメータシートの作成1
 
@@ -353,7 +353,7 @@
      - 
      - 
 
-.. figure:: ../../../../images/learn/quickstart/answer1/ユーザーのパラメータシート作成_2.gif
+.. figure:: ../../../../images/learn/quickstart/answer1/ユーザーパラメータシート作成_2.gif
    :width: 1200px
    :alt: ユーザーのパラメータシート作成_2
 

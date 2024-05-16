@@ -214,7 +214,7 @@
 
 | パラメータシート作成情報で :menuselection:`バンドル利用` を「利用する」にチェックを入れることで、1つの設定項目に対して複数のパラメータを設定することが可能になります。
 
-.. figure:: ../../../../images/learn/quickstart/scenario2/パラメータシート作成情報設定.png
+.. figure:: ../../../../images/learn/quickstart/scenario2/パラメータシートの作成情報設定.png
    :width: 1200px
    :alt: パラメータシート作成情報設定
 
