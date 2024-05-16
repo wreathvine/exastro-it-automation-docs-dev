@@ -16,7 +16,7 @@
    :header-rows: 0
 
    * - 作業実施日時
-     - 2023/04/01 12:00:00
+     - 2024/04/01 12:00:00
    * - 作業対象
      - server01(RHEL8)
    * - 作業内容
@@ -33,7 +33,7 @@
 
 | :menuselection:`基本コンソール --> オペレーション一覧` から、作業実施日時や作業名を登録します。
 
-.. figure:: ../../../../images/learn/quickstart/scenario1/オペレーション登録.gif
+.. figure:: ../../../../../images/learn/quickstart/Legacy_scenario1/オペレーション登録.png
    :width: 1200px
    :alt: オペレーション登録
 
@@ -44,7 +44,7 @@
    * - オペレーション名
      - 実施予定日時
    * - :kbd:`RHEL8のホスト名変更作業`
-     - :kbd:`2023/04/01 12:00:00`
+     - :kbd:`2024/04/01 12:00:00`
 
 .. tip::
    | 作業実施日時は、本シナリオでは適当な日時で問題ありませんが、作業日が定まっている場合は、正確な作業実施の予定日時を設定することを推奨します。
@@ -71,7 +71,7 @@
 | ホスト名を管理するためのパラメータシートを作成します。
 | :menuselection:`パラメータシート作成 --> パラメータシート定義・作成` から、ホスト名を管理するために、「サーバー基本情報」というパラメータシートを作成します。
 
-.. figure:: ../../../../images/learn/quickstart/scenario1/パラメータシート作成.png
+.. figure:: ../../../../../images/learn/quickstart/Legacy_scenario1/パラメータシート作成定義.png
    :width: 1200px
    :alt: パラメータシート作成
 
@@ -138,7 +138,7 @@
 
 | :menuselection:`Ansible共通 --> 機器一覧` から、作業対象である server01 の接続情報を登録します。
 
-.. figure:: ../../../../images/learn/quickstart/scenario1/機器一覧登録.gif
+.. figure:: ../../../../../images/learn/quickstart/Legacy_scenario1/機器一覧登録.png
    :width: 1200px
    :alt: 機器一覧登録
 
@@ -175,7 +175,7 @@
 ==============
 
 | 作業手順を登録するために、Exastro IT Automation で扱う作業単位である Movement (ジョブ)を定義します。
-| 定義した Movement に対して、Ansible Role パッケージを紐付け、更に Ansible Role パッケージ内の変数と :ref:`quickstart_server_information_parmeter` で登録したパラメータシートの項目の紐付けを行います。
+| 定義した Movement に対して、Ansible Playbook を紐付け、更に Ansible Playbook 内の変数と :ref:`quickstart_server_information_parmeter` で登録したパラメータシートの項目の紐付けを行います。
 
 .. glossary:: Movement
    Exastro IT Automation における、最小の作業単位のことを指します。
@@ -187,9 +187,9 @@
 | Exastro IT Automation では、Movement という単位で作業を管理し、作業手順書における作業項目に該当します。
 | Movement は、Ansible Playbook のような IaC (Infrastrucure as Code) を紐付けたり、IaC 内の変数とパラメータシートの設定値を紐付けの際に利用します。
 
-| :menuselection:`Ansible-LegacyRole --> Movement一覧` から、ホスト名設定のための Movement を登録します。
+| :menuselection:`Ansible-Legacy --> Movement一覧` から、ホスト名設定のための Movement を登録します。
 
-.. figure:: ../../../../images/learn/quickstart/scenario1/Movement登録.png
+.. figure:: ../../../../../images/learn/quickstart/Legacy_scenario1/Movement登録設定.png
    :width: 1200px
    :alt: Movement登録
 
@@ -204,81 +204,85 @@
    * - :kbd:`ホスト名設定`
      - :kbd:`IP`
 
-Ansible Role 登録
------------------
+Ansible Playbook 登録
+---------------------
 
-| Ansible Role の登録を行います。Ansible Role は運用手順書内に記載されたコマンドに該当します。
-| 手作業で Ansible Role を作成することも可能ですが、Ansible Legacy-Role モードは、作成済みの Ansible Role を利用することを想定しています。
-| 本シナリオでは、 `Exastro Playbook Collection <https://github.com/exastro-suite/playbook-collection-docs/blob/master/ansible_role_packages/README.md>`_ を利用します。
+| Ansible Playbook の登録を行います。Ansible Playbook は運用手順書内に記載されたコマンドに該当します。
+| Ansible-Legacyモードではご自身で作成したPlaybookを利用することを想定しています。
+| Ansible-Legacyモードを使用することのメリットとして、自身の用途に合ったPlaybookを作成することで自由に手順を作成することが可能です。
+| ですが、Ansible-Legacyモードを利用するにはご自身でPlaybookを作成していただく必要があるため、Playbook作成の知識が必要となります。
 
-| `ここをクリックして Ansible Role Package の OS-RHEL8 をダウンロードしてください。 <https://github.com/exastro-playbook-collection/OS-RHEL8/releases/download/v23.03/OS-RHEL8.zip>`_ 
+| 本シナリオでは、 以下のPlaybookを利用します。以下をコピーして、yml形式でhostname.ymlを作成してください。
 
-| :menuselection:`Ansible-LegacyRole --> ロールパッケージ管理` から、ダウンロードした `OS-RHEL8.zip <https://github.com/exastro-playbook-collection/OS-RHEL8/releases/download/v23.03/OS-RHEL8.zip>`_ を登録します。
+.. code-block:: bash
+   :caption: hostname.yml
 
-.. figure:: ../../../../images/learn/quickstart/scenario1/ロールパッケージ管理.gif
+   - hostname:
+     name: "{{ hostname }}"
+
+| :menuselection:`Ansible-Legacy --> Playbook素材集` から、上記のPlaybookを登録します。
+
+.. figure:: ../../../../../images/learn/quickstart/Legacy_scenario1/Playbook素材集.png
    :width: 1200px
-   :alt: ロールパッケージ管理
+   :alt: Playbook登録
 
-.. list-table:: Ansible Role パッケージ情報の登録
+.. list-table:: Ansible Playbook 情報の登録
   :widths: 10 20
   :header-rows: 1
 
-  * - ロールパッケージ名
-    - ロールパッケージファイル(ZIP形式)
-  * - :kbd:`OS-RHEL8`
-    - :file:`OS-RHEL8.zip`
+  * - Playbook素材名
+    - Playbook素材
+  * - :kbd:`hostname`
+    - :file:`hostname.yml`
 
-Movement と Ansible Role の紐付け
----------------------------------
+Movement と Ansible Playbook の紐付け
+-------------------------------------
 
-| :menuselection:`Ansible-LegacyRole --> Movement-ロール紐付` から、Movement と Ansible Role パッケージの紐付けを行います。
-| 本シナリオでは、 `ホスト名管理用の Ansible Role パッケージ <https://github.com/exastro-playbook-collection/OS-RHEL8/tree/master/RH_hostname/OS_build>`_ を利用します。
+| :menuselection:`Ansible-Legacy --> Movement-ロール紐付` から、Movement と Ansible Playbook の紐付けを行います。
+| 本シナリオでは、 hostname.ymlを利用します。
 
-.. figure:: ../../../../images/learn/quickstart/scenario1/Movement-ロール紐付け.png
+.. figure:: ../../../../../images/learn/quickstart/Legacy_scenario1/Movement-Playbook紐付.png
    :width: 1200px
-   :alt: Movement-ロール紐付け
+   :alt: Movement-Playbook紐付け
 
-.. list-table:: Movement-ロール紐付け情報の登録
-  :widths: 10 30 10
+.. list-table:: Movement-Playbook紐付け情報の登録
+  :widths: 10 10 10
   :header-rows: 1
 
   * - Movement名
-    - ロールパッケージ名:ロール名
+    - Playbook素材
     - インクルード順序
   * - :kbd:`ホスト名設定`
-    - :kbd:`OS-RHEL8:OS-RHEL8/RH_hostname/OS_build`
+    - :kbd:`hostname.yml`
     - :kbd:`1`
 
-パラメータシートの項目と Ansible Role の変数の紐付け
-----------------------------------------------------
+パラメータシートの項目と Ansible Playbook の変数の紐付け
+--------------------------------------------------------
 
-| OS-RHEL8 Ansible Role パッケージでは、:kbd:`VAR_RH_hostname` という変数にホスト名を代入することで、対象サーバーのホスト名を設定することができます。
+| hostname.ymlでは、:kbd:`hostname` という変数にホスト名を代入することで、対象サーバーのホスト名を設定することができます。
 
-| :menuselection:`Ansible-LegacyRole --> 代入値自動登録設定` から、サーバー基本情報パラメータシートのホスト名の項目に入るパラメータを、Ansible Role パッケージの :kbd:`VAR_RH_hostname` に代入する設定を行います。
+| :menuselection:`Ansible-Legacy --> 代入値自動登録設定` から、サーバー基本情報パラメータシートのホスト名の項目に入るパラメータを、Ansible Playbook の :kbd:`hostname` に代入する設定を行います。
 
-.. figure:: ../../../../images/learn/quickstart/scenario1/代入値自動登録設定.gif
+.. figure:: ../../../../../images/learn/quickstart/Legacy_scenario1/代入値自動登録.png
    :width: 1200px
    :alt: 代入値自動登録設定
 
 .. list-table:: 代入値自動登録設定の設定値
-  :widths: 40 10 20 20 30
+  :widths: 40 10 20 20
   :header-rows: 2
 
   * - パラメータシート(From)
     - 登録方式
     - Movement名
     - IaC変数(To)
-    -
   * - メニューグループ:メニュー:項目
     -
     -
     - Movement名:変数名
-    - Movement名:変数名:メンバー変数
   * - :kbd:`代入値自動登録用:サーバー基本情報:ホスト名`
     - :kbd:`Value型`
     - :kbd:`ホスト名設定`
-    - :kbd:`ホスト名設定:VAR_RH_hostname`
-    - 
+    - :kbd:`ホスト名設定:hostname`
 
 
 ホスト名変更作業実施(1回目)
@@ -292,7 +296,7 @@ Movement と Ansible Role の紐付け
 
 | :menuselection:`入力用 --> サーバー基本情報` から、ホストに対するパラメータを登録します。
 
-.. figure:: ../../../../images/learn/quickstart/scenario1/パラメータ登録.gif
+.. figure:: ../../../../../images/learn/quickstart/Legacy_scenario1/パラメータ登録.png
    :width: 1200px
    :alt: パラメータ登録
 
@@ -307,7 +311,7 @@ Movement と Ansible Role の紐付け
     - オペレーション名
     - ホスト名
   * - server01
-    - :kbd:`2023/04/01 12:00:00_RHEL8のホスト名変更作業`
+    - :kbd:`2024/04/01 12:00:00_RHEL8のホスト名変更作業`
     - :kbd:`server01`
 
 作業実行
@@ -332,13 +336,13 @@ Movement と Ansible Role の紐付け
 
 2. 作業実行
 
-   | :menuselection:`Ansible-LegacyRole --> 作業実行` から、:kbd:`ホスト名設定` Movement を選択し、:guilabel:` 作業実行` を押下します。
+   | :menuselection:`Ansible-Legacy --> 作業実行` から、:kbd:`ホスト名設定` Movement を選択し、:guilabel:` 作業実行` を押下します。
    | 次に、:menuselection:`作業実行設定` で、オペレーションに :kbd:`RHEL8のホスト名変更作業` を選択し :guilabel:`選択決定` を押下します。
    | 最後に、実行内容を確認し、:guilabel:`作業実行` を押下します。
 
    | :menuselection:`作業状態確認` 画面が開き、実行が完了した後に、ステータスが「完了」になったことを確認します。
 
-.. figure:: ../../../../images/learn/quickstart/scenario1/作業実行.gif
+.. figure:: ../../../../../images/learn/quickstart/Legacy_scenario1/作業実行.png
    :width: 1200px
    :alt: 作業実行
 
@@ -371,7 +375,7 @@ Movement と Ansible Role の紐付け
 
 | :menuselection:`入力用 --> サーバー基本情報` から、ITA 独自変数を使って機器一覧に登録してあるホスト名を登録してみましょう。
 
-.. figure:: ../../../../images/learn/quickstart/scenario1/パラメータ設定.png
+.. figure:: ../../../../../images/learn/quickstart/Legacy_scenario1/パラメータ設定.png
    :width: 1200px
    :alt: パラメータ設定
 
@@ -386,7 +390,7 @@ Movement と Ansible Role の紐付け
     - オペレーション名
     - ホスト名
   * - :kbd:`server01`
-    - :kbd:`2023/04/01 12:00:00_RHEL8のホスト名変更作業`
+    - :kbd:`2024/04/01 12:00:00_RHEL8のホスト名変更作業`
     - :kbd:`"{{ __inventory_hostname__ }}"`
 
 
@@ -397,7 +401,7 @@ Movement と Ansible Role の紐付け
 
 | :menuselection:`Ansible共通 --> 機器一覧` から、作業対象である server01 のホスト名を db01 に更新します。
 
-.. figure:: ../../../../images/learn/quickstart/scenario1/機器一覧変更.png
+.. figure:: ../../../../../images/learn/quickstart/Legacy_scenario1/機器一覧ホスト名変更.png
    :width: 1200px
    :alt: パラメータ登録
 
@@ -436,13 +440,13 @@ Movement と Ansible Role の紐付け
 
 1. 作業実行
 
-   | :menuselection:`Ansible-LegacyRole --> 作業実行` から、:kbd:`ホスト名設定` Movement を選択し、:guilabel:` 作業実行` を押下します。
+   | :menuselection:`Ansible-Legacy --> 作業実行` から、:kbd:`ホスト名設定` Movement を選択し、:guilabel:` 作業実行` を押下します。
    | 次に、:menuselection:`作業実行設定` で、オペレーションに :kbd:`RHEL8のホスト名変更作業` を選択し :guilabel:`選択決定` を押下します。
    | 最後に、実行内容を確認し、:guilabel:`作業実行` を押下します。
 
    | :menuselection:`作業状態確認` 画面が開き、実行が完了した後に、ステータスが「完了」になったことを確認します。
 
-.. figure:: ../../../../images/learn/quickstart/scenario1/作業実行.gif
+.. figure:: ../../../../../images/learn/quickstart/Legacy_scenario1/作業実行.png
    :width: 1200px
    :alt: 作業実行
 
@@ -468,4 +472,4 @@ Movement と Ansible Role の紐付け
 ======
 
 | 本シナリオでは、RHEL8 サーバに対してホスト名を設定するシナリオを通して、Exastro IT Automation の基本的な操作方法やコンセプトについて紹介をしました。
-| :doc:`次のシナリオ <scenario2>` では、より実用的なパラメータシートの管理方法について紹介をします。
+| :doc:`次のシナリオ <Legacy_scenario2>` では、より実用的なパラメータシートの管理方法について紹介をします。
