@@ -142,6 +142,6 @@ B. TTLが過ぎたら、改めて、同じラベルが付与された結論イ�
      | 以下の画像のようにTTLを必要以上に短くすると、ループしてイベントを発生させる回数が必要以上に多くなってしまいます。
      | ループを抜けるための、後続するイベントが発生するまでの予測される期間に合わせて、適切なTTLを設定しましょう。
 
-.. figure:: ラベル作成画面.png
+.. figure::/src/images/learn/quickstart/oase/OASE_advanced_sorry-switch-back/OASE_advanced_sorry-switch-back_結果確認.gif
    :width: 1200px
    :alt: イベントフロー_結論イベント

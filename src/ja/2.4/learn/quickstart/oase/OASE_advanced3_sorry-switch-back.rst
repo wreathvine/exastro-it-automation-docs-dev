@@ -29,7 +29,7 @@
 
 | :menuselection:`登録` ボタンを押し、以下のラベル付与の設定を追加していきます。
 
-.. figure::OASE_advanced3_sorry-switch-back_フィルター設定詳細画面.png
+.. figure::/src/images/learn/quickstart/oase/OASE_advanced3_sorry-switch-back/OASE_advanced3_sorry_switch-back_フィルター設定詳細画面.png
    :width: 1200px
    :alt: フィルター
 
@@ -104,16 +104,6 @@
      - :kbd:`["event_status", "==", "termination"]`
      - :kbd:`10`
 
-| :menuselection:`OASE --> ルール --> ルール` からは以下のように設定します。
-
-| :menuselection:`登録` ボタンを押し、以下のルールの設定を追加していきます。
-
-.. figure::OASE_advanced3_sorry-switch-back_ルール設定詳細画面.png
-   :width: 1200px
-   :alt: ルール
-
-| 入力が終わったら、:menuselection:`編集確認` ボタンを押して登録します。
-
 .. tip::
    | ルール名やルールラベル名は任意で設定可能です。わかりやすいものを設定しましょう。
    | 必要な結論イベントを発生させるためのルールなので、選択するアクションはありません。
@@ -121,12 +111,12 @@
 
 結果の確認
 -----------
-| 以上の設定が完了したら、TTLが短い結論イベントが発生していることを、:menuselection:`イベントフロー` 画面から確認してみましょう。
+| ではルールの設定から結論イベントが発生するまでを、:menuselection:`イベントフロー` 画面から確認してみましょう。
 
 | :menuselection:`OASE --> イベント --> イベントフロー` の画面では、時系列に沿ってイベントが発生している様子が確認できます。
 | TTLが短い結論イベントに:menuselection:`ルール` で設定したラベルが付与されていることも確認しましょう。
-| 古いものから順に、["event_status", "progress"]が付与されたイベントが置き換わっていくのを確認しましょう。
+| 古いものから順に、["event_status", "progress"]が付与されたイベントが、["event_status", "==", "termination"]が付与されたイベントに置き換わっていくのを確認しましょう。
 
-.. figure:: OASE_advanced3_sorry-switch-back_イベントフロー画面_結論イベント.gif
+.. figure::/src/images/learn/quickstart/oase/OASE_advanced3_sorry-switch-back/OASE_advanced3_sorry-switch-back_結果確認.gif
    :width: 1200px
    :alt: イベントフロー_結論イベント
