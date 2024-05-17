@@ -567,6 +567,6 @@ OASEエージェントの設定
 | :menuselection:`OASE --> イベント --> イベントフロー` の画面に、時系列にイベントが発生しているのが確認できます。
 | アクションが実行されたことを示す結論イベントには、スケールインの時とは違う、:menuselection:`ルール` で設定したラベルが付与されているのも確認しましょう。
 
-.. figure:: イベントフロー画面_結論イベント2.gif
+.. figure::/src/images/learn/quickstart/oase/OASE_answer_sorry-switch-back/OASE_answer_sorry-switch-back_結果確認.gif
    :width: 1200px
    :alt: イベントフロー_結論イベント2
