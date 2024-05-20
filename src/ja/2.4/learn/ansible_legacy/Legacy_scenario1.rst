@@ -33,7 +33,7 @@
 
 | :menuselection:`基本コンソール --> オペレーション一覧` から、作業実施日時や作業名を登録します。
 
-.. figure:: ../../../../../images/learn/quickstart/Legacy_scenario1/オペレーション登録.png
+.. figure:: /images/learn/quickstart/Legacy_scenario1/オペレーション登録.png
    :width: 1200px
    :alt: オペレーション登録
 
@@ -71,7 +71,7 @@
 | ホスト名を管理するためのパラメータシートを作成します。
 | :menuselection:`パラメータシート作成 --> パラメータシート定義・作成` から、ホスト名を管理するために、「サーバー基本情報」というパラメータシートを作成します。
 
-.. figure:: ../../../../../images/learn/quickstart/Legacy_scenario1/パラメータシート作成定義.png
+.. figure:: /images/learn/quickstart/Legacy_scenario1/パラメータシート作成定義.png
    :width: 1200px
    :alt: パラメータシート作成
 
@@ -138,7 +138,7 @@
 
 | :menuselection:`Ansible共通 --> 機器一覧` から、作業対象である server01 の接続情報を登録します。
 
-.. figure:: ../../../../../images/learn/quickstart/Legacy_scenario1/機器一覧登録.png
+.. figure:: /images/learn/quickstart/Legacy_scenario1/機器一覧登録.png
    :width: 1200px
    :alt: 機器一覧登録
 
@@ -189,7 +189,7 @@
 
 | :menuselection:`Ansible-Legacy --> Movement一覧` から、ホスト名設定のための Movement を登録します。
 
-.. figure:: ../../../../../images/learn/quickstart/Legacy_scenario1/Movement登録設定.png
+.. figure:: /images/learn/quickstart/Legacy_scenario1/Movement登録設定.png
    :width: 1200px
    :alt: Movement登録
 
@@ -222,7 +222,7 @@ Ansible Playbook 登録
 
 | :menuselection:`Ansible-Legacy --> Playbook素材集` から、上記のPlaybookを登録します。
 
-.. figure:: ../../../../../images/learn/quickstart/Legacy_scenario1/Playbook素材集.png
+.. figure:: /images/learn/quickstart/Legacy_scenario1/Playbook素材集.png
    :width: 1200px
    :alt: Playbook登録
 
@@ -241,7 +241,7 @@ Movement と Ansible Playbook の紐付け
 | :menuselection:`Ansible-Legacy --> Movement-ロール紐付` から、Movement と Ansible Playbook の紐付けを行います。
 | 本シナリオでは、 hostname.ymlを利用します。
 
-.. figure:: ../../../../../images/learn/quickstart/Legacy_scenario1/Movement-Playbook紐付.png
+.. figure:: /images/learn/quickstart/Legacy_scenario1/Movement-Playbook紐付.png
    :width: 1200px
    :alt: Movement-Playbook紐付け
 
@@ -263,7 +263,7 @@ Movement と Ansible Playbook の紐付け
 
 | :menuselection:`Ansible-Legacy --> 代入値自動登録設定` から、サーバー基本情報パラメータシートのホスト名の項目に入るパラメータを、Ansible Playbook の :kbd:`hostname` に代入する設定を行います。
 
-.. figure:: ../../../../../images/learn/quickstart/Legacy_scenario1/代入値自動登録.png
+.. figure:: /images/learn/quickstart/Legacy_scenario1/代入値自動登録.png
    :width: 1200px
    :alt: 代入値自動登録設定
 
@@ -296,7 +296,7 @@ Movement と Ansible Playbook の紐付け
 
 | :menuselection:`入力用 --> サーバー基本情報` から、ホストに対するパラメータを登録します。
 
-.. figure:: ../../../../../images/learn/quickstart/Legacy_scenario1/パラメータ登録.png
+.. figure:: /images/learn/quickstart/Legacy_scenario1/パラメータ登録.png
    :width: 1200px
    :alt: パラメータ登録
 
@@ -342,7 +342,7 @@ Movement と Ansible Playbook の紐付け
 
    | :menuselection:`作業状態確認` 画面が開き、実行が完了した後に、ステータスが「完了」になったことを確認します。
 
-.. figure:: ../../../../../images/learn/quickstart/Legacy_scenario1/作業実行.png
+.. figure:: /images/learn/quickstart/Legacy_scenario1/作業実行.png
    :width: 1200px
    :alt: 作業実行
 
@@ -375,7 +375,7 @@ Movement と Ansible Playbook の紐付け
 
 | :menuselection:`入力用 --> サーバー基本情報` から、ITA 独自変数を使って機器一覧に登録してあるホスト名を登録してみましょう。
 
-.. figure:: ../../../../../images/learn/quickstart/Legacy_scenario1/パラメータ設定.png
+.. figure:: /images/learn/quickstart/Legacy_scenario1/パラメータ設定.png
    :width: 1200px
    :alt: パラメータ設定
 
@@ -401,7 +401,7 @@ Movement と Ansible Playbook の紐付け
 
 | :menuselection:`Ansible共通 --> 機器一覧` から、作業対象である server01 のホスト名を db01 に更新します。
 
-.. figure:: ../../../../../images/learn/quickstart/Legacy_scenario1/機器一覧ホスト名変更.png
+.. figure:: /images/learn/quickstart/Legacy_scenario1/機器一覧ホスト名変更.png
    :width: 1200px
    :alt: パラメータ登録
 
@@ -446,7 +446,7 @@ Movement と Ansible Playbook の紐付け
 
    | :menuselection:`作業状態確認` 画面が開き、実行が完了した後に、ステータスが「完了」になったことを確認します。
 
-.. figure:: ../../../../../images/learn/quickstart/Legacy_scenario1/作業実行.png
+.. figure:: /images/learn/quickstart/Legacy_scenario1/作業実行.png
    :width: 1200px
    :alt: 作業実行
 
