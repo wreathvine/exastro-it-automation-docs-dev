@@ -28,7 +28,7 @@
 
 | :menuselection:`基本コンソール --> オペレーション一覧` から、作業実施日時や作業名を登録します。
 
-.. figure:: ../../../../../images/learn/quickstart/Legacy_scenario2/オペレーション登録.png
+.. figure:: /images/learn/quickstart/Legacy_scenario2/オペレーション登録.png
    :width: 1200px
    :alt: オペレーション登録
 
@@ -75,7 +75,7 @@
 
 | :menuselection:`パラメータシート作成 --> パラメータシート定義・作成` から、データシートを登録します。
 
-.. figure:: ../../../../../images/learn/quickstart/Legacy_scenario2/データシート作成.png
+.. figure:: /images/learn/quickstart/Legacy_scenario2/データシート作成.png
    :width: 1200px
    :alt: データシートの作成
 
@@ -133,7 +133,7 @@
 | パラメータリスト内に表示するパラメータを設定します。
 | :menuselection:`入力用 --> 状態` から、パッケージのあるべきインストール状態を登録します。
 
-.. figure:: ../../../../../images/learn/quickstart/Legacy_scenario2/選択肢を登録.png
+.. figure:: /images/learn/quickstart/Legacy_scenario2/選択肢を登録.png
    :width: 1200px
    :alt: 選択肢を登録
 
@@ -210,7 +210,7 @@
 
 | パラメータシート作成情報で :menuselection:`バンドル利用` を「利用する」にチェックを入れることで、1つの設定項目に対して複数のパラメータを設定することが可能になります。
 
-.. figure:: ../../../../../images/learn/quickstart/Legacy_scenario2/パラメータシート項目設定.png
+.. figure:: /images/learn/quickstart/Legacy_scenario2/パラメータシート項目設定.png
    :width: 1200px
    :alt: パラメータシート作成情報設定
 
@@ -261,7 +261,7 @@ Movement 登録
 
 | :menuselection:`Ansible-Legacy --> Movement一覧` から、パッケージ管理のための Movement を登録します。
 
-.. figure:: ../../../../../images/learn/quickstart/Legacy_scenario2/Movement一覧登録.png
+.. figure:: /images/learn/quickstart/Legacy_scenario2/Movement一覧登録.png
    :width: 1200px
    :alt: Movement登録
 
@@ -305,7 +305,7 @@ Ansible Playbook 登録
 
 | :menuselection:`Ansible-Legacy --> Playbook素材集` から、から、上記のPlaybookを登録します。
 
-.. figure:: ../../../../../images/learn/quickstart/Legacy_scenario2/Ansible-Playbook登録.png
+.. figure:: /images/learn/quickstart/Legacy_scenario2/Ansible-Playbook登録.png
    :width: 1200px
    :alt: ansible-playbook登録
 
@@ -315,7 +315,7 @@ Movement と Ansible Playbook の紐付け
 | :menuselection:`Ansible-Legacy --> Movement-Playbook紐付` から、Movement と Ansible Playbook の紐付けを行います。
 | 本シナリオでは、 package.ymlを利用します。
 
-.. figure:: ../../../../../images/learn/quickstart/Legacy_scenario2/MovementとPlaybook紐付け.png
+.. figure:: /images/learn/quickstart/Legacy_scenario2/MovementとPlaybook紐付け.png
    :width: 1200px
    :alt: MovementとPlaybook紐づけ
 
@@ -337,7 +337,7 @@ Movement と Ansible Playbook の紐付け
 
 | :menuselection:`Ansible-Legacy --> 代入値自動登録設定` から、導入パッケージパラメータシートのパッケージ名と状態の項目に入るパラメータと、 Ansible Playbook の :kbd:`pkg_name` と :kbd:`action` 内の変数の紐付けを行います。
 
-.. figure:: ../../../../../images/learn/quickstart/Legacy_scenario2/代入値自動登録設定.png
+.. figure:: /images/learn/quickstart/Legacy_scenario2/代入値自動登録設定.png
   :width: 1200px
   :alt: 代入値自動登録設定
 
@@ -481,7 +481,7 @@ Movement と Ansible Playbook の紐付け
 | これだけの項目の設定に設定値を入力するのは Web 画面の操作では、かなり苦労することでしょう。
 | このような大量のデータを一度に登録するような場合には、全件ダウンロード・ファイル一括登録を使って、ファイルからデータを投入する方法が適切です。
 
-.. figure:: ../../../../../images/learn/quickstart/Legacy_scenario2/代入値自動登録設定_一括登録Excel.png
+.. figure:: /images/learn/quickstart/Legacy_scenario2/代入値自動登録設定_一括登録Excel.png
    :width: 1200px
    :alt: 代入値自動登録設定(一括登録)
 
@@ -497,7 +497,7 @@ Movement と Ansible Playbook の紐付け
 
 | :menuselection:`入力用 --> 導入パッケージ` から、ホストに対するパラメータを登録します。
 
-.. figure:: ../../../../../images/learn/quickstart/Legacy_scenario2/パラメータ設定.png
+.. figure:: /images/learn/quickstart/Legacy_scenario2/パラメータ設定.png
    :width: 1200px
    :alt: パラメータ設定
 
@@ -546,7 +546,7 @@ Movement と Ansible Playbook の紐付け
 
    | :menuselection:`作業状態確認` 画面が開き、実行が完了した後に、ステータスが「完了」になったことを確認します。
 
-   .. figure:: ../../../../../images/learn/quickstart/Legacy_scenario2/作業実行.png
+   .. figure:: /images/learn/quickstart/Legacy_scenario2/作業実行.png
       :width: 1200px
       :alt: 作業実行
 
@@ -577,7 +577,7 @@ Movement と Ansible Playbook の紐付け
 
 | :menuselection:`入力用 --> 導入パッケージ` から、新たなパラメータを登録します。
 
-.. figure:: ../../../../../images/learn/quickstart/Legacy_scenario2/パラメータ設定2.png
+.. figure:: /images/learn/quickstart/Legacy_scenario2/パラメータ設定2.png
    :width: 1200px
    :alt: パラメータ設定2
 
@@ -642,7 +642,7 @@ Movement と Ansible Playbook の紐付け
 
    | :menuselection:`作業状態確認` 画面が開き、実行が完了した後に、ステータスが「完了」になったことを確認します。
 
-   .. figure:: ../../../../../images/learn/quickstart/Legacy_scenario2/作業実行.png
+   .. figure:: /images/learn/quickstart/Legacy_scenario2/作業実行.png
       :width: 1200px
       :alt: 作業実行2
 

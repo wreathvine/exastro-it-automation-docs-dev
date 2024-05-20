@@ -16,9 +16,9 @@
 
 .. _oase_agent_docker compose install:
 
-===========================
-OASE Agent (Docker Compose)
-===========================
+=====================================
+OASE Agent on Docker Compose - Online
+=====================================
 
 目的
 ====

@@ -33,7 +33,7 @@ IaaSの払い出し
 
 | :menuselection:`基本コンソール --> オペレーション一覧` から、作業実施日時や作業名を登録します。
 
-.. figure:: ../../../../../images/learn/quickstart/Terraform_scenario1/オペレーション登録.png
+.. figure:: /images/learn/quickstart/Terraform_scenario1/オペレーション登録.png
    :width: 1200px
    :alt: オペレーション登録
 
@@ -61,7 +61,7 @@ Workspace管理
 | Terraformコマンドを実行するためにWorkspaceを作成します。
 | :menuselection:`Terraform CLI --> Workspace管理` から、Terraformコマンドを実行するために、「tfe_ws001」というWorkspaceを作成します。
 
-.. figure:: ../../../../../images/learn/quickstart/Terraform_scenario1/Workspace作成.png
+.. figure:: /images/learn/quickstart/Terraform_scenario1/Workspace作成.png
    :width: 1200px
    :alt: Workspace作成
 
@@ -82,7 +82,7 @@ Workspace管理
 
 | :menuselection:`Terraform CLI --> Movement一覧` から、IaaSの払い出しのための Movement を登録します。
 
-.. figure:: ../../../../../images/learn/quickstart/Terraform_scenario1/Movement登録.png
+.. figure:: /images/learn/quickstart/Terraform_scenario1/Movement登録.png
    :width: 1200px
    :alt: Movement登録
 
@@ -268,7 +268,7 @@ Module素材集
 
 | :menuselection:`Terraform CLI --> Module素材集` から、IaaSの払い出しのための Module素材集 を登録します。
 
-.. figure:: ../../../../../images/learn/quickstart/Terraform_scenario1/Module素材集.png
+.. figure:: /images/learn/quickstart/Terraform_scenario1/Module素材集.png
    :width: 1200px
    :alt: Module素材集
 
@@ -288,7 +288,7 @@ Movement-Module紐付
 
 | :menuselection:`Terraform CLI --> Movement-Module紐付` から、Movement と Module素材集 の紐付けを行います。
 
-.. figure:: ../../../../../images/learn/quickstart/Terraform_scenario1/Movement-Module紐付.png
+.. figure:: /images/learn/quickstart/Terraform_scenario1/Movement-Module紐付.png
    :width: 1200px
    :alt: Movement-Module紐付
 
@@ -314,7 +314,7 @@ Movement-Module紐付
 | Azure認証情報として、パラメータシートを作成します。
 | :menuselection:`パラメータシート作成 --> パラメータシート定義・作成` から、Azure認証情報を管理するために、「Azureパラメータ」というパラメータシートを作成します。
 
-.. figure:: ../../../../../images/learn/quickstart/Terraform_scenario1/パラメータシート作成①.png
+.. figure:: /images/learn/quickstart/Terraform_scenario1/パラメータシート作成①.png
    :width: 1200px
    :alt: パラメータシート作成
 
@@ -435,7 +435,7 @@ Movement-Module紐付
 
 | :menuselection:`Terraform CLI --> 代入値自動登録設定` から、Azureパラメータの項目に入るパラメータに代入する設定を行います。
 
-.. figure:: ../../../../../images/learn/quickstart/Terraform_scenario1/代入値自動登録.png
+.. figure:: /images/learn/quickstart/Terraform_scenario1/代入値自動登録.png
    :width: 1200px
    :alt: 代入値自動登録設定
 
@@ -500,7 +500,7 @@ Movement-Module紐付
 
 | :menuselection:`入力用 --> Azureパラメータ` から、ホストに対するパラメータを登録します。
 
-.. figure:: ../../../../../images/learn/quickstart/Terraform_scenario1/パラメータ登録①.png
+.. figure:: /images/learn/quickstart/Terraform_scenario1/パラメータ登録①.png
    :width: 1200px
    :alt: パラメータ登録
 
@@ -547,7 +547,7 @@ Movement-Module紐付
 
    | :menuselection:`作業状態確認` 画面が開き、実行が完了した後に、ステータスが「完了」になったことを確認します。
 
-.. figure:: ../../../../../images/learn/quickstart/Terraform_scenario1/作業実行.png
+.. figure:: /images/learn/quickstart/Terraform_scenario1/作業実行.png
    :width: 1200px
    :alt: 作業実行
 

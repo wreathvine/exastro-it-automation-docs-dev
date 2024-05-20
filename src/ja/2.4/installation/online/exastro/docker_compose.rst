@@ -14,9 +14,9 @@
    });
    </script>
 
-=======================
-Docker Compose - Online
-=======================
+==================================
+Exastro on Docker Compose - Online
+==================================
 
 目的
 ====
@@ -27,7 +27,7 @@ Docker Compose - Online
 ====
 
 | 最も簡単に Exastro IT Automation の利用を開始するための導入方法となります。
-| 高い可用性やサービスレベルを必要とする場合には、:doc:`Kubernetes 版<helm_on_kubernetes>` の利用を推奨します。
+| 高い可用性やサービスレベルを必要とする場合には、:doc:`Kubernetes 版<kubernetes>` の利用を推奨します。
 
 前提条件
 ========
@@ -358,7 +358,7 @@ Docker Compose - Online
 ==========================
 
 | 再起動後に再度ログインをしたら、オーガナイゼーションの作成を行います。
-| オーガナイゼーションの詳細については、 :doc:`../manuals/platform_management/organization` を参照してください。
+| オーガナイゼーションの詳細については、 :doc:`../../../manuals/platform_management/organization` を参照してください。
 
 .. code-block:: shell
    :caption: Organization の作成
@@ -396,12 +396,12 @@ Docker Compose - Online
 ====================
 
 | 作成したオーガナイゼーションにログインをしたら、ワークスペースを作成する必要があります。
-| ワークスペースの作成については、:doc:`../manuals/organization_management/workspace` を参照してください。
+| ワークスペースの作成については、:doc:`../../../manuals/organization_management/workspace` を参照してください。
 
 Let's Try!!
 ===========
 
-| Exastro IT Automation のトレーニングのために、 :doc:`../learn/quickstart/index` を実施することを推奨します。
+| Exastro IT Automation のトレーニングのために、 :doc:`../../../learn/quickstart/index` を実施することを推奨します。
 | クイックスタートを実施することで、Exastro IT Automation の使い方や、パラメータシートの設計方針についての理解の手助けになるでしょう。
 
 アップグレード

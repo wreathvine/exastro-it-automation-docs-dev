@@ -16,9 +16,9 @@
 
 .. _oase_agent_kubernetes_install:
 
-=======================
-OASE Agent (Kubernetes)
-=======================
+=================================
+OASE Agent on Kubernetes - Online
+=================================
 
 目的
 ====
@@ -29,7 +29,7 @@ OASE Agent (Kubernetes)
 ====
 
 | OASEを利用するための絶対条件である、Exastro OASE Agentの高い可用性やサービスレベルを必要とされる際の、Exastro IT Automation の導入方法となります。
-| 評価や一時的な利用など、簡単に利用を開始したい場合には、:doc:`Docker Compose 版 OASE Agent<oase_agent_docker_compose>` の利用を推奨します。
+| 評価や一時的な利用など、簡単に利用を開始したい場合には、:doc:`Docker Compose 版 OASE Agent<docker_compose>` の利用を推奨します。
 | Exastro OASE Agentの設定や運用については、:ref:`エージェント概要<agent_about>` をご参照ください。
 
 前提条件
@@ -79,7 +79,7 @@ OASE Agent (Kubernetes)
   - コンテナ環境からコンテナイメージの取得のために、Docker Hub に接続できる必要があります。
 
 .. warning::
-    | :doc:`Helm chart (Kubernetes) 版<helm_on_kubernetes>` で構築した環境にデプロイする場合、
+    | :doc:`Helm chart (Kubernetes) 版<../exastro/kubernetes>` で構築した環境にデプロイする場合、
     | OASE Agentに対応する最小要件を追加で容易する必要があります。
 
 
@@ -269,7 +269,7 @@ OASE Agentの設定
 
 | 利用可能なパラメータについては下記を参照してください。
 
-.. include:: ../include/helm_option_ita-ag-oase.rst
+.. include:: ../../../include/helm_option_ita-ag-oase.rst
 
 OASE Agentのパラメータ設定例
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -796,7 +796,7 @@ OASE Agentのパラメータ設定例
 --------------------
 
 .. warning:: 
-  | アップグレード実施前に :doc:`../manuals/maintenance/backup_and_restore` の手順に従い、バックアップを取得しておくことを推奨します。
+  | アップグレード実施前に :doc:`../../../manuals/maintenance/backup_and_restore` の手順に従い、バックアップを取得しておくことを推奨します。
 
 | 更新前のバージョンを確認します。
 
@@ -855,7 +855,7 @@ OASE Agentのパラメータ設定例
 サービス停止
 ^^^^^^^^^^^^
 
-.. include:: ../include/stop_service_k8s_agent.rst
+.. include:: ../../../include/stop_service_k8s_agent.rst
 
 アップグレード実施
 ^^^^^^^^^^^^^^^^^^
@@ -883,7 +883,7 @@ OASE Agentのパラメータ設定例
 サービス再開
 ^^^^^^^^^^^^
 
-.. include:: ../include/start_service_k8s_agent.rst
+.. include:: ../../../include/start_service_k8s_agent.rst
 
 
 アップグレード状況確認
@@ -915,7 +915,7 @@ OASE Agentのパラメータ設定例
 ----------------------
 
 .. warning:: 
-  | アンインストール実施前に :doc:`../manuals/maintenance/backup_and_restore` の手順に従い、バックアップを取得しておくことを推奨します。
+  | アンインストール実施前に :doc:`../../../manuals/maintenance/backup_and_restore` の手順に従い、バックアップを取得しておくことを推奨します。
 
 アンインストール
 ----------------

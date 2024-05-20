@@ -14,9 +14,9 @@
    });
    </script>
 
-==================================
-Docker Compose on Docker - Offline
-==================================
+===================================
+Exastro on Docker Compose - Offline
+===================================
 
 目的
 ====
@@ -27,7 +27,7 @@ Docker Compose on Docker - Offline
 ====
 
 | 最も簡単に Exastro IT Automation の利用を開始するための導入方法となります。
-| 高い可用性やサービスレベルを必要とする場合には、:doc:`Kubernetes 版<helm_on_kubernetes>` の利用を推奨します。
+| 高い可用性やサービスレベルを必要とする場合には、:doc:`Kubernetes 版<kubernetes>` の利用を推奨します。
 
 前提条件
 ========
@@ -152,7 +152,7 @@ Docker Compose on Docker - Offline
    | また、利用する一般ユーザは sudoer で、全操作権限を持っている必要があります。
 
 
-.. _docker_prep:
+.. _docker_prep_offline:
 
 事前準備
 ========
@@ -203,9 +203,6 @@ Docker Compose on Docker - Offline
 .. tip::
    | HTTPSを利用する場合には、 LoadBalancer または、リバースプロキシを利用する必要があります。
    | LoadBalancer または、リバースプロキシを利用する場合は、別途準備をする必要があります。
-
-.. _install_docker_compose:
-
 
 
 全体の流れ
@@ -621,7 +618,7 @@ RPMパッケージをインストールする
 
 
 コンテナイメージのアップロード	
-^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 シェルスクリプトを作成する						
 --------------------------
@@ -1030,11 +1027,11 @@ Exastroリソースを取得する
 ==========================
 
 | 再起動後に再度ログインをしたら、オーガナイゼーションの作成を行います。
-| オーガナイゼーションの詳細については、 :doc:`../manuals/platform_management/organization` を参照してください。
+| オーガナイゼーションの詳細については、 :doc:`../../../manuals/platform_management/organization` を参照してください。
 
 
 ワークスペースの作成
 ====================
 
 | 作成したオーガナイゼーションにログインをしたら、ワークスペースを作成する必要があります。
-| ワークスペースの作成については、:doc:`../manuals/organization_management/workspace` を参照してください。
+| ワークスペースの作成については、:doc:`../../../manuals/organization_management/workspace` を参照してください。
