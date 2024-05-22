@@ -32,7 +32,6 @@
    oase/index
    api/index
    maintenance/index
-   best_practices/index
 
 .. raw:: html
 
