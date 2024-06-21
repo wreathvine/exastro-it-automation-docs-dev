@@ -11,3 +11,5 @@ Learn
    ansible_legacy_role/index
    terraform/index
    oase/index
+   paramater/index
+ 
