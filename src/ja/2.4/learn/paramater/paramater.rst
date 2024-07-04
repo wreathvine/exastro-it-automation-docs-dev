@@ -953,7 +953,7 @@ Movement と Ansible Playbook の紐付け
      - (自動入力)
    * - パラメータシート名
      - :kbd:`ホスト登録`
-   * - メニュー名(REST)
+   * - パラメータシート名(REST)
      - :kbd:`host_register`
    * - 作成対象
      - :kbd:`パラメータシート（ホスト/オペレーションあり）`
