@@ -9,5 +9,7 @@ Learn
    quickstart/index
    ansible_legacy/index
    ansible_legacy_role/index
-   terraform/index
    oase/index
+   .. collection/index
+   .. terraform/index
+   .. paramater/index

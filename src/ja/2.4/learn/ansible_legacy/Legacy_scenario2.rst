@@ -7,41 +7,6 @@
 .. tip:: 本シナリオに入る前に、 :doc:`前のシナリオ <Legacy_scenario1>` を完了させておくことを推奨します。
 
 
-作業概要の作成
-==============
-
-| :doc:`前のシナリオ <Legacy_scenario1>` と同様に、まずは作業計画を立てましょう。
-
-.. list-table:: 作業の方針
-   :widths: 5 10
-   :header-rows: 0
-
-   * - 作業実施日時
-     - 2024/04/02 12:00:00
-   * - 作業対象
-     - db01(RHEL8)
-   * - 作業内容
-     - パッケージのインストール・アンインストール
-
-作業概要登録
-------------
-
-| :menuselection:`基本コンソール --> オペレーション一覧` から、作業実施日時や作業名を登録します。
-
-.. figure:: /images/learn/quickstart/Legacy_scenario2/オペレーション登録.png
-   :width: 1200px
-   :alt: オペレーション登録
-
-.. list-table:: オペレーション登録内容
-   :widths: 15 10
-   :header-rows: 1
-
-   * - オペレーション名
-     - 実施予定日時
-   * - :kbd:`RHEL8のパッケージ管理`
-     - :kbd:`2024/04/02 12:00:00`
-
-
 パラメータ設計
 ==============
 
@@ -114,9 +79,9 @@
      - 設定値
    * - 項番
      - (自動入力)
-   * - メニュー名
+   * - パラメータシート名
      - :kbd:`状態`
-   * - メニュー名(REST)
+   * - パラメータシート名(REST)
      - :kbd:`state`
    * - 作成対象
      - :kbd:`データシート`
@@ -223,9 +188,9 @@
      - 設定値
    * - 項番
      - (自動入力)
-   * - メニュー名
+   * - パラメータシート名
      - :kbd:`導入パッケージ`
-   * - メニュー名(REST)
+   * - パラメータシート名(REST)
      - :kbd:`packages`
    * - 作成対象
      - :kbd:`パラメータシート（ホスト/オペレーションあり）`
@@ -237,17 +202,6 @@
      - (自動入力)
    * - 最終更新者
      - (自動入力)
-
-
-作業対象の登録
-==============
-
-| 作業実施を行う対象機器の登録を行います。
-
-機器登録
---------
-
-| 作業対象となるサーバーは :doc:`前のシナリオ <Legacy_scenario1>` で登録した db01 を利用するため、作業は不要です。
 
 
 作業手順の登録
@@ -486,8 +440,53 @@ Movement と Ansible Playbook の紐付け
    :alt: 代入値自動登録設定(一括登録)
 
 
+作業対象の登録
+==============
+
+| 作業実施を行う対象機器の登録を行います。
+
+機器登録
+--------
+
+| 作業対象となるサーバーは :doc:`前のシナリオ <Legacy_scenario1>` で登録した db01 を利用するため、作業は不要です。
+
+
 パッケージのインストール実施(1回目)
 ===================================
+
+作業概要の作成
+--------------
+
+| :doc:`前のシナリオ <Legacy_scenario1>` と同様に、まずは作業計画を立てましょう。
+
+.. list-table:: 作業の方針
+   :widths: 5 10
+   :header-rows: 0
+
+   * - 作業実施日時
+     - 2024/04/02 12:00:00
+   * - 作業対象
+     - db01(RHEL8)
+   * - 作業内容
+     - パッケージのインストール・アンインストール
+
+作業概要登録
+------------
+
+| :menuselection:`基本コンソール --> オペレーション一覧` から、作業実施日時や作業名を登録します。
+
+.. figure:: /images/learn/quickstart/Legacy_scenario2/オペレーション登録.png
+   :width: 1200px
+   :alt: オペレーション登録
+
+.. list-table:: オペレーション登録内容
+   :widths: 15 10
+   :header-rows: 1
+
+   * - オペレーション名
+     - 実施予定日時
+   * - :kbd:`RHEL8のパッケージ管理`
+     - :kbd:`2024/04/02 12:00:00`
 
 | パラメータシートには、設定したい値を機器ごとにパラメータを登録します。
 | 本シナリオでは、db01 というホストに対して、 :kbd:`postgresql-server` というパッケージをインストールし DB サーバーを構築します。
@@ -569,15 +568,50 @@ Movement と Ansible Playbook の紐付け
 パッケージのインストール実施(2回目)
 ===================================
 
-| 本シナリオでは、db01 というホストに対して、 :kbd:`postgresql-server` というパッケージをインストールし DB サーバーを構築しました。
-| しかし、その後、postgresql-server ではなく mariadb-server に変更する必要が出てきました。
+作業概要の作成
+--------------
+
+| 先ほどと同様に、まずは作業計画を立てましょう。
+
+.. list-table:: 作業の方針
+   :widths: 5 10
+   :header-rows: 0
+
+   * - 作業実施日時
+     - 2024/05/02 12:00:00
+   * - 作業対象
+     - db01(RHEL8)
+   * - 作業内容
+     - DBパッケージへ変更
+
+作業概要登録
+------------
+
+| :menuselection:`基本コンソール --> オペレーション一覧` から、作業実施日時や作業名を登録します。
+
+.. figure:: /images/learn/quickstart/Legacy_scenario2/変更用オペレーション登録.png
+   :width: 1200px
+   :alt: オペレーション登録
+
+.. list-table:: オペレーション登録内容
+   :widths: 15 10
+   :header-rows: 1
+
+   * - オペレーション名
+     - 実施予定日時
+   * - :kbd:`RHEL8をDBパッケージへ変更`
+     - :kbd:`2024/05/02 12:00:00`
+
 
 パラメータ設定
 --------------
 
+| 本シナリオでは、db01 というホストに対して、 :kbd:`postgresql-server` というパッケージをインストールし DB サーバーを構築しました。
+| しかし、その後、postgresql-server ではなく mariadb-server に変更する必要が出てきました。
+
 | :menuselection:`入力用 --> 導入パッケージ` から、新たなパラメータを登録します。
 
-.. figure:: /images/learn/quickstart/Legacy_scenario2/パラメータ設定2.png
+.. figure:: /images/learn/quickstart/Legacy_scenario2/更新用パラメータ設定.png
    :width: 1200px
    :alt: パラメータ設定2
 
@@ -596,12 +630,12 @@ Movement と Ansible Playbook の紐付け
     - パッケージ名
     - 状態
   * - db01
-    - :kbd:`2023/04/02 12:00:00_RHEL8のパッケージ管理`
+    - :kbd:`2023/05/02 12:00:00_RHEL8をDBパッケージへ変更`
     - :kbd:`1`
     - :kbd:`postgresql-server`
     - :kbd:`absent`
   * - db01
-    - :kbd:`2023/04/02 12:00:00_RHEL8のパッケージ管理`
+    - :kbd:`2023/05/02 12:00:00_RHEL8をDBパッケージへ変更`
     - :kbd:`2`
     - :kbd:`mariadb-server`
     - :kbd:`present`
@@ -638,11 +672,11 @@ Movement と Ansible Playbook の紐付け
 2. 作業実行
 
    | :menuselection:`Ansible-Legacy --> 作業実行` から、:kbd:`パッケージ管理` Movement を選択し、:guilabel:` 作業実行` を押下します。
-   | 次に、:menuselection:`作業実行設定` で、オペレーションに :kbd:`RHEL8のパッケージ管理` を選択し、:guilabel:`作業実行` を押下します。
+   | 次に、:menuselection:`作業実行設定` で、オペレーションに :kbd:`RHEL8をDBパッケージへ変更` を選択し、:guilabel:`作業実行` を押下します。
 
    | :menuselection:`作業状態確認` 画面が開き、実行が完了した後に、ステータスが「完了」になったことを確認します。
 
-   .. figure:: /images/learn/quickstart/Legacy_scenario2/作業実行.png
+   .. figure:: /images/learn/quickstart/Legacy_scenario2/更新作業実行2.png
       :width: 1200px
       :alt: 作業実行2
 
