@@ -32,7 +32,7 @@ Exastro on Docker Compose - Offline
 前提条件
 ========
 
-| 資材を収集するサーバーはdocker、またはpodmanおよびpodman-dockerがインストールされている必要があります。
+| 資材を収集するサーバーは :command:`docker` が実行できる必要があります。(Podman利用時はpodman-dockerがインストールされている必要があります。)
 | 資材を収集する環境とインストールする環境では、構築状態(OSのバージョン及びインストール済のパッケージ)を一致させる必要があります。
 
 - デプロイ環境
@@ -236,16 +236,13 @@ Exastro on Docker Compose - Offline
 | 以下、ユーザーはtest_user、ホームディレクトリは/home/test_userで実行した例です。
 
 ①コンテナイメージのダウンロード		
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-| コンテナイメージをダウンロードするシェルスクリプトとコンテナイメージのリストを作成します。
+| コンテナイメージをダウンロードするシェルスクリプトとコンテナイメージのリストを、25GB以上空き容量がある領域に作成します。
 | これら2つは同じディレクトリに作成する必要があります。
-| save.shの「["x.x.x"]="x.x.x"」にはITAのバージョンとPFのバージョンを記載します。
+| save.shの「["x.x.x"]="x.x.x"」にはExastro IT Automation App VersionとExastro Platform App Versionをそれぞれ記載します。
 | `Component version <https://github.com/exastro-suite/exastro-helm?tab=readme-ov-file#component-version>`_ を参照し、最新のバージョンに書き換えてください。
-
-
-| 以下はExastro IT Automation App Versionを2.4.0、Exastro Platform App Versionを1.8.1とした例です。   
-
+  
 .. code-block:: shell
    :caption: コマンド
 
@@ -253,13 +250,13 @@ Exastro on Docker Compose - Offline
 
 
 .. code-block:: shell
-   :caption: 下記のコードをコピー＆ペーストする
+   :caption: 下記のコードをコピー＆ペーストし、バージョンを書き換えます
 
    #!/bin/bash
 
    ITA_VERSION=$1
    declare -A PF_VERSION=(
-     ["2.4.0"]="1.8.1"
+     ["x.x.x"]="x.x.x"
    )
    if [ ! -d $1 ]; then
      mkdir $ITA_VERSION
@@ -330,18 +327,50 @@ Exastro on Docker Compose - Offline
    docker.io/exastro/exastro-it-automation-by-ansible-agent:#__ITA_VERSION__#
 
 
-|	シェルスクリプトを実行しコンテナイメージをダウンロードします。	引数にはITAのバージョンを指定します。	
-| 完了するまでに数十分程度の時間が掛かります。(通信環境やサーバースペックによって状況は異なります。)
-| 以下はITAのバージョンを2.4.0とした例です。
+.. tabs::
 
-.. code-block:: shell
-   :caption: コマンド
-   sudo chmod a+x save.sh
-   sh ./save.sh 2.4.0
+   .. group-tab:: docker
 
+      ユーザがグループに追加されていない場合、パーミッションエラーとなることがあります。
+      事前に追加作業をしている場合は、ここでの実施は不要です。  
+
+
+      .. code-block:: shell
+         :caption: コマンド		
+
+         cat /etc/group | grep docker
+         #ユーザーがグループに追加されていない場合は以下を実行します
+         sudo usermod -aG docker ${USER}
+         cat /etc/group | grep docker
+         #ユーザーがグループに追加されていることを確認し、サーバーを再起動します
+         sudo reboot
+
+
+      オンライン環境に接続後、シェルスクリプトを実行しコンテナイメージをダウンロードします。	
+      引数にはITAのバージョンを指定します。	完了するまでに数十分程度の時間がかかります。(通信環境やサーバースペックによって状況は異なります。)  
+      
+
+      .. code-block:: shell
+         :caption: コマンド		
+
+         sudo systemctl start docker
+         sudo chmod a+x save.sh
+         sh ./save.sh x.x.x	
+
+
+   .. group-tab:: podman
+
+      シェルスクリプトを実行しコンテナイメージをダウンロードします。	引数にはITAのバージョンを指定します。	
+      完了するまでに数十分程度の時間がかかります。(通信環境やサーバースペックによって状況は異なります。)  
+
+      .. code-block:: shell
+         :caption: コマンド		
+
+         sudo chmod a+x save.sh
+         sh ./save.sh x.x.x					
 
 ②RPMパッケージのダウンロード				
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 |	パッケージをダウンロードします。		
 
@@ -359,28 +388,8 @@ Exastro on Docker Compose - Offline
          #現在のOSのバージョンを確認します
          cat /etc/os-release
          #--releasever=x.xは上記で得られたバージョンを指定します
-         sudo dnf install -y --downloadonly --downloaddir=/tmp/docker-repo --installroot=/tmp/docker-installroot --releasever=8.9 docker-ce docker-ce-cli containerd.io git container-selinux			
+         sudo dnf install -y --downloadonly --downloaddir=/tmp/docker-repo --installroot=/tmp/docker-installroot --releasever=x.x docker-ce docker-ce-cli containerd.io git container-selinux			
            
-      .. note::
-         | 各オプションの説明		
-
-         | =--downloadonly		
-         | パッケージをインストールせずにダウンロードのみ行います。	
-         | オフライン環境で使用するためのパッケージのダウンロードのみ行うため、インストールは不要です。	
-            
-         | --downloaddir=<ダウンロード先パス>		
-         | パッケージをダウンロードするディレクトリを指定します。	
-         | 通常のダウンロードと同様に、ローカルにあるパッケージと依存関係を解決しつつダウンロードされるため、	
-         | 該当パッケージがすでにインストールされている場合は不足分のみダウンロードされます。	
-            
-         | --installroot=<ダウンロード先絶対パス>		
-         | 通常とは別の場所へインストールするために利用します。	
-         | インストール済みのパッケージも含めてすべてダウンロードするため	
-         | ダミーディレクトリを指定し、すべての パッケージをダウンロードします。	
-            
-         | --releasever=<バージョン>		
-         | ディストリビューションのバージョンを指定(8.9など)します。	
-
 
       | createrepoをインストールします。
 
@@ -411,28 +420,8 @@ Exastro on Docker Compose - Offline
          #現在のOSのバージョンを確認します
          cat /etc/os-release
          #--releasever=x.xは上記で得られたバージョンを指定します
-         sudo dnf install -y --downloadonly --downloaddir=/tmp/podman-repo --installroot=/tmp/podman-installroot --releasever=9.2 container-selinux git podman podman-docker
+         sudo dnf install -y --downloadonly --downloaddir=/tmp/podman-repo --installroot=/tmp/podman-installroot --releasever=x.x container-selinux git podman podman-docker
   
-      .. note::
-         | 各オプションの説明		
-
-         | =--downloadonly		
-         | パッケージをインストールせずにダウンロードのみ行います。	
-         | オフライン環境で使用するためのパッケージのダウンロードのみ行うため、インストールは不要です。	
-            
-         | --downloaddir=<ダウンロード先パス>		
-         | パッケージをダウンロードするディレクトリを指定します。	
-         | 通常のダウンロードと同様に、ローカルにあるパッケージと依存関係を解決しつつダウンロードされるため、	
-         | 該当パッケージがすでにインストールされている場合は不足分のみダウンロードされます。	
-            
-         | --installroot=<ダウンロード先絶対パス>		
-         | 通常とは別の場所へインストールするために利用します。	
-         | インストール済みのパッケージも含めてすべてダウンロードするため	
-         | ダミーディレクトリを指定し、すべての パッケージをダウンロードします。	
-            
-         | --releasever=<バージョン>		
-         | ディストリビューションのバージョンを指定(9.2など)します。	
-
 
       | createrepoをインストールします。
 
@@ -453,7 +442,7 @@ Exastro on Docker Compose - Offline
 
 
 ③docker-compose-linux-x86_64のダウンロード
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 | `docker-compose-linux-x86_64 <https://github.com/docker/compose/releases>`_ をダウンロードします。
 | バージョンはリンク先を参照し、必要に応じて書き換えます。
 | 以下はバージョンを2.28.0とした例です。
@@ -465,7 +454,7 @@ Exastro on Docker Compose - Offline
 
                       
 ④Exastroリソースのダウンロード																
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 |	docker-compose版Exastroのリソースをダウンロードします。	
 | 以下は/tmpディレクトリにダウンロードした例です。
@@ -487,7 +476,7 @@ Exastro on Docker Compose - Offline
 
 
 - コンテナイメージ:任意のディレクトリ
-- RPMパッケージ:オンライン環境でのダウンロード時に指定したディレクトリ(例：/tmpの直下)
+- RPMパッケージ:/tmpの直下
 - Exastroリソース:一般ユーザーのホームディレクトリ直下
 - docker-compose-linux-x86_64:/usr/local/bin
 
@@ -499,7 +488,7 @@ Exastro on Docker Compose - Offline
 															
 										
 ⑤RPMパッケージのインストール			
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. tabs::
 
@@ -536,7 +525,7 @@ Exastro on Docker Compose - Offline
 
          sudo dnf -y --disablerepo=\* --enablerepo=docker-repo install docker-ce docker-ce-cli containerd.io git container-selinux
 
-      | エラーメッセージが表示された場合は、表示されているmoduleを検索しインストールします。				
+      | エラーメッセージが表示された場合は、表示されているmoduleを検索し全てインストールします。				
 
 
       .. code-block:: shell
@@ -548,13 +537,19 @@ Exastro on Docker Compose - Offline
 
 
       .. code-block:: shell
-         :caption: 表示されるRPMパッケージをインストールする  
+         :caption: 表示されたmoduleを確認し、一度に全てインストールします
 
          #対象がperl-Mozilla-CA 及び perl-Net-SSLeayだった場合
-         cd /tmp/docker-repo-almalinux
+         cd /tmp/docker-repo
          ls -l | grep -E "perl-Mozilla-CA|perl-Net-SSLeay" 
-         sudo dnf -y --disablerepo=\* --enablerepo=docker-repo-almalinux perl-Mozilla-CA-20160104-7.module_el8.5.0+2812+ed912d05.noarch.rmp perl-Net-SSLeay-1.88-2.module_el8.6.0+2811+fe6c84b0.x86_64.rpm        
+         sudo dnf -y --disablerepo=\* --enablerepo=docker-repo perl-Mozilla-CA-20160104-7.module_el8.5.0+2812+ed912d05.noarch.rmp perl-Net-SSLeay-1.88-2.module_el8.6.0+2811+fe6c84b0.x86_64.rpm        
 
+      | パッケージのインストールを再度実行します。										
+
+      .. code-block:: shell
+         :caption: コマンド
+
+         sudo dnf -y --disablerepo=\* --enablerepo=docker-repo install docker-ce docker-ce-cli containerd.io git container-selinux
 
 
       | ユーザをdockerグループに追加します。
@@ -606,11 +601,11 @@ Exastro on Docker Compose - Offline
 
 
 ⑥コンテナイメージのアップロード	
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-| コンテナイメージをアップロードするシェルスクリプトとコンテナイメージのリストを作成します。
-| これら2つはオンライン環境から持ち込んだコンテナイメージと同じディレクトリに作成する必要ああります。なお、image.listはオンライン環境で作成したものと記載内容は同じです。
-| また、load.shの「["x.x.x"]="x.x.x"」にはsave.shに記載したバージョンと一致するようにします。
+| コンテナイメージをアップロードするシェルスクリプトとコンテナイメージのリストを、25GB以上空き容量がある領域に作成します。
+| これら2つはオンライン環境から持ち込んだコンテナイメージと同じディレクトリに作成する必要があります。なお、image.listはオンライン環境で作成したものと記載内容は同じです。
+| また、load.shの「["x.x.x"]="x.x.x"」にはsave.shに記載したバージョンと同じ値を記載します。
 
 
 .. code-block:: shell
@@ -619,11 +614,11 @@ Exastro on Docker Compose - Offline
    vi load.sh
 
 .. code-block:: shell
-   :caption: 下記のコードをコピー＆ペースト
+   :caption: 下記のコードをコピー＆ペーストし、バージョンを書き換えます
 
    ITA_VERSION=$1
    declare -A PF_VERSION=(
-     ["2.4.0"]="1.8.1"
+     ["x.x.x"]="x.x.x"
    )
     
    readarray -t image_list < "./image.list"
@@ -686,36 +681,47 @@ Exastro on Docker Compose - Offline
    docker.io/exastro/exastro-it-automation-by-ansible-agent:#__ITA_VERSION__#
 
 
+.. tabs::
 
-|	コンテナイメージを実行します。	引数にはsave.sh実行時に指定したITAのバージョンを指定します。		
+   .. group-tab:: docker
+
+      | コンテナイメージを実行します。	引数にはsave.sh実行時に指定したITAのバージョンを指定します。							
+
+      .. code-block:: shell
+         :caption: コマンド		
+
+         sudo chmod a+x load.sh
+         sh ./load.sh x.x.x	
 
 
-.. code-block:: shell
-   :caption: コマンド		
+   .. group-tab:: podman
+					
+      | コンテナイメージを実行します。	引数にはsave.sh実行時に指定したITAのバージョンを指定します。		     
 
-   #podmanを使用する場合のみ、以下を実行します。
-   sudo systemctl start podman
+      .. code-block:: shell
+         :caption: コマンド		
 
-   #以下はdockerとpodmanで共通です。
-   sudo chmod a+x load.sh
-   sh ./load.sh 2.4.0							
+         sudo systemctl start podman 
+         sudo chmod a+x load.sh
+         sh ./load.sh x.x.x					
 
 
 ⑦docker-compose-linux-x86_64の準備
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|	 :command:`docker-compose` コマンドを使用するため、docker-compose-linux-x86_64を/usr/local/binに配置し、必要なパーミッションを付与します。
+|	 /usr/local/binに配置したdocker-compose-linux-x86_64に、必要なパーミッションを付与します。
 
 .. code-block:: shell
    :caption: コマンド
 
+   cd /usr/local/bin
    sudo mv docker-compose-linux-x86_64 docker-compose
    sudo chmod a+x /usr/local/bin/docker-compose
    sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 
 
 ⑧Exastroリソースのインストール		
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 | docker-compose版Exastroのリソースを一般ユーザーのホームディレクトリ直下に展開し、ディレクトリ名をexastro-docker-composeに変更します。				
 
@@ -724,12 +730,58 @@ Exastro on Docker Compose - Offline
    :caption: コマンド
 
    tar -zxvf main.tar.gz
-   sudo mv mv exastro-docker-compose-main exastro-docker-compose
+   sudo mv exastro-docker-compose-main exastro-docker-compose
 
 
 .. tabs::
 
    .. group-tab:: docker            	
+
+
+      | SELinuxの動作モードをSELINUX=permissiveに書き替えます。
+
+
+      .. code-block:: shell
+         :linenos:
+         :caption: コマンド                     
+                         
+         sudo vi /etc/selinux/config
+
+      .. code-block:: shell
+         :caption: /etc/selinux/config記載例
+
+         # This file controls the state of SELinux on the system.
+         # SELINUX= can take one of these three values:
+         #     enforcing - SELinux security policy is enforced.
+         #     permissive - SELinux prints warnings instead of enforcing.
+         #     disabled - No SELinux policy is loaded.
+         # See also:
+         # https://docs.fedoraproject.org/en-US/quick-docs/getting-started-with-selinux/#getting-started-with-selinux-selinux-states-and-modes
+         #
+         # NOTE: In earlier Fedora kernel builds, SELINUX=disabled would also
+         # fully disable SELinux during boot. If you need a system with SELinux
+         # fully disabled instead of SELinux running with no policy loaded, you
+         # need to pass selinux=0 to the kernel command line. You can use grubby
+         # to persistently set the bootloader to boot with selinux=0:
+         #
+         #    grubby --update-kernel ALL --args selinux=0
+         #
+         # To revert back to SELinux enabled:
+         #
+         #    grubby --update-kernel ALL --remove-args selinux
+         #
+         SELINUX=permissive
+         # SELINUXTYPE= can take one of these three values:
+         #     targeted - Targeted processes are protected,
+         #     minimum - Modification of targeted policy. Only selected processes are protected.
+         #     mls - Multi Level Security protection.
+         SELINUXTYPE=targeted
+
+      .. code-block:: shell
+         :caption: コマンド
+
+         sudo reboot	
+         #再度オフライン環境に接続します。		
 
 
       | ここで使用するsetup.shはExastro on Docker Compose - Onlineで使用しているものと共通です。リポジトリの設定をコメントアウトするため、下記を実施します。			
@@ -773,16 +825,19 @@ Exastro on Docker Compose - Offline
       .. code-block:: shell
          :caption: Exastro サービスのURL
 
+         #ポート番号は、OSがRed Hat Enterprise Linuxの場合は30080、それ以外は80を指定してください。
          Input the Exastro service URL?	 [default: http://127.0.0.1:30080]: http://ita.example.com:30080
 
       .. code-block:: shell
          :caption:  Exastro 管理用サービスのURL
 
+         #ポート番号は、OSがRed Hat Enterprise Linuxの場合は30081、それ以外は81を指定してください。
          Input the Exastro management URL?	 [default: http://127.0.0.1:30081]: http://ita.example.com:30081									
 
       .. code-block:: shell
          :caption: Gitlab コンテナのURL(Gitlab コンテナをデプロイする場合は入力が必要です。) 
 
+         #ポート番号は40080を指定してください。
          Input the external URL of Gitlab container  [default: (nothing)]: 
 
       .. code-block:: shell
@@ -800,7 +855,36 @@ Exastro on Docker Compose - Offline
          Docker Socket path:               /var/run/docker.sock
          GitLab deployment:                false
        
-         Generate .env file with these settings? (y/n) [default: n]														
+         Generate .env file with these settings? (y/n) [default: n]		
+
+
+      | サーバーを再起動します。
+
+      .. code-block:: shell
+         :caption: コマンド
+
+         sudo reboot       
+                      
+
+      .. code-block:: shell
+         :caption: コマンド
+         
+         cd ~/exastro-docker-compose && sh ./setup.sh install 		
+
+
+      .. code-block:: shell
+         :caption: .env再作成の確認
+
+         #何も入力せずにEnterを押下します。
+         Regenerate .env file? (y/n) [default: n]:			
+
+      .. code-block:: shell
+         :caption: Exastroコンテナのデプロイ確認
+
+         #yを入力します。
+         Deploy Exastro containers now? (y/n) [default: n]:				
+                                  
+
        
       | コンテナのSTATUSがUPになっていることを確認します。
 
@@ -892,16 +976,19 @@ Exastro on Docker Compose - Offline
       .. code-block:: shell
          :caption: Exastro サービスのURL
 
+         #ポート番号は、OSがRed Hat Enterprise Linuxの場合は30080、それ以外は80を指定してください。
          Input the Exastro service URL?	 [default: http://127.0.0.1:30080]: http://ita.example.com:30080
 
       .. code-block:: shell
          :caption:  Exastro 管理用サービスのURL
 
+         #ポート番号は、OSがRed Hat Enterprise Linuxの場合は30081、それ以外は81を指定してください。
          Input the Exastro management URL?	 [default: http://127.0.0.1:30081]: http://ita.example.com:30081									
 
       .. code-block:: shell
          :caption: GitLab コンテナデプロイ要否の確認(Gitlab コンテナをデプロイする場合は入力が必要です。) 
 
+         #ポート番号は40080を指定してください。
          Input the external URL of Gitlab container  [default: (nothing)]: 
 
       .. code-block:: shell
