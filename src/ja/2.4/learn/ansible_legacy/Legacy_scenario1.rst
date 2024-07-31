@@ -23,7 +23,7 @@
    システムのパラメータ情報を管理するデータ構造のことです。
 
 | ホスト名を管理するためのパラメータシートを作成します。
-| :menuselection:`パラメータシート作成 --> パラメータシート定義・作成` から、ホスト名を管理するために、「サーバー基本情報」というパラメータシートを作成します。
+| :menuselection:`パラメータシート作成 --> パラメータシート定義・作成` から、ホスト名を管理するために、「サーバー基本情報AL」というパラメータシートを作成します。
 
 .. figure:: /images/learn/quickstart/Legacy_scenario1/パラメータシート作成定義.png
    :width: 1200px
@@ -65,9 +65,9 @@
    * - 項番
      - (自動入力)
    * - パラメータシート名
-     - :kbd:`サーバー基本情報`
+     - :kbd:`サーバー基本情報AL`
    * - パラメータシート名(REST)
-     - :kbd:`server_information`
+     - :kbd:`server_infomation_AL`
    * - 作成対象
      - :kbd:`パラメータシート（ホスト/オペレーションあり）`
    * - 表示順序
@@ -199,7 +199,7 @@ Movement と Ansible Playbook の紐付け
     -
     -
     - Movement名:変数名
-  * - :kbd:`代入値自動登録用:サーバー基本情報:ホスト名`
+  * - :kbd:`代入値自動登録用:サーバー基本情報AL:パラメータ/ホスト名`
     - :kbd:`Value型`
     - :kbd:`ホスト名設定`
     - :kbd:`ホスト名設定:hostname`
@@ -284,7 +284,7 @@ Movement と Ansible Playbook の紐付け
 
 | :menuselection:`基本コンソール --> オペレーション一覧` から、作業実施日時や作業名を登録します。
 
-.. figure:: /images/learn/quickstart/Legacy_scenario1/オペレーション登録.png
+.. figure:: /images/learn/quickstart/Legacy_scenario1/オペレーション登録1回目.png
    :width: 1200px
    :alt: オペレーション登録
 
@@ -294,7 +294,7 @@ Movement と Ansible Playbook の紐付け
 
    * - オペレーション名
      - 実施予定日時
-   * - :kbd:`RHEL8のホスト名変更作業`
+   * - :kbd:`RHEL8のホスト名変更作業AL`
      - :kbd:`2024/04/01 12:00:00`
 
 .. tip::
@@ -305,7 +305,7 @@ Movement と Ansible Playbook の紐付け
 --------------
 
 | パラメータシートには、設定したいパラメータを機器ごとに登録します。
-| オペレーションには、作業概要登録で作成した :kbd:`RHEL8のホスト名変更作業` を選択します。オペレーションを選択することでオペレーションに対して、作業対象サーバとパラメータが紐付けされます。
+| オペレーションには、作業概要登録で作成した :kbd:`RHEL8のホスト名変更作業AL` を選択します。オペレーションを選択することでオペレーションに対して、作業対象サーバとパラメータが紐付けされます。
 | 本シナリオでは、:kbd:`server01` というホスト名を作業対象サーバに設定します。
 
 | :menuselection:`入力用 --> サーバー基本情報` から、ホストに対するパラメータを登録します。
@@ -314,7 +314,7 @@ Movement と Ansible Playbook の紐付け
    :width: 1200px
    :alt: パラメータ登録
 
-.. list-table:: サーバー基本情報パラメータの設定値
+.. list-table:: サーバー基本情報ALパラメータの設定値
   :widths: 5 20 5
   :header-rows: 2
 
@@ -325,7 +325,7 @@ Movement と Ansible Playbook の紐付け
     - オペレーション名
     - ホスト名
   * - :kbd:`server01`
-    - :kbd:`2024/04/01 12:00:00_RHEL8のホスト名変更作業`
+    - :kbd:`2024/04/01 12:00:00_RHEL8のホスト名変更作業AL`
     - :kbd:`server01`
 
 作業実行
@@ -351,12 +351,12 @@ Movement と Ansible Playbook の紐付け
 2. 作業実行
 
    | :menuselection:`Ansible-Legacy --> 作業実行` から、:kbd:`ホスト名設定` Movement を選択し、:guilabel:` 作業実行` を押下します。
-   | 次に、:menuselection:`作業実行設定` で、オペレーションに :kbd:`RHEL8のホスト名変更作業` を選択し :guilabel:`選択決定` を押下します。
+   | 次に、:menuselection:`作業実行設定` で、オペレーションに :kbd:`RHEL8のホスト名変更作業AL` を選択し :guilabel:`選択決定` を押下します。
    | 最後に、実行内容を確認し、:guilabel:`作業実行` を押下します。
 
    | :menuselection:`作業状態確認` 画面が開き、実行が完了した後に、ステータスが「完了」になったことを確認します。
 
-.. figure:: /images/learn/quickstart/Legacy_scenario1/作業実行.gif
+.. figure:: /images/learn/quickstart/Legacy_scenario1/作業実行1回目.gif
    :width: 1200px
    :alt: 作業実行
 
@@ -407,7 +407,7 @@ Movement と Ansible Playbook の紐付け
 
 | :menuselection:`基本コンソール --> オペレーション一覧` から、作業実施日時や作業名を登録します。
 
-.. figure:: /images/learn/quickstart/Legacy_scenario1/更新用オペレーション登録.png
+.. figure:: /images/learn/quickstart/Legacy_scenario1/更新用オペレーション.png
    :width: 1200px
    :alt: オペレーション登録
 
@@ -417,7 +417,7 @@ Movement と Ansible Playbook の紐付け
 
    * - オペレーション名
      - 実施予定日時
-   * - :kbd:`RHEL8のホスト名更新作業`
+   * - :kbd:`RHEL8のホスト名更新作業AL`
      - :kbd:`2024/05/01 12:00:00`
 
 .. tip::
@@ -435,12 +435,12 @@ Movement と Ansible Playbook の紐付け
 
 | :menuselection:`入力用 --> サーバー基本情報` から、ITA 独自変数を使って機器一覧に登録してあるホスト名を登録してみましょう。
 
-.. figure:: /images/learn/quickstart/Legacy_scenario1/更新用パラメータ設定.png
+.. figure:: /images/learn/quickstart/Legacy_scenario1/更新用パラメータ登録.png
    :width: 1200px
    :alt: パラメータ設定
 
-.. list-table:: サーバー基本情報パラメータの設定値
-  :widths: 5 10 5
+.. list-table:: サーバー基本情報ALパラメータの設定値
+  :widths: 5 20 5
   :header-rows: 2
 
   * - ホスト名
@@ -450,7 +450,7 @@ Movement と Ansible Playbook の紐付け
     - オペレーション名
     - ホスト名
   * - :kbd:`server01`
-    - :kbd:`2024/05/01 12:00:00_RHEL8のホスト名更新作業`
+    - :kbd:`2024/05/01 12:00:00_RHEL8のホスト名更新作業AL`
     - :kbd:`"{{ __inventory_hostname__ }}"`
 
 
@@ -501,12 +501,12 @@ Movement と Ansible Playbook の紐付け
 1. 作業実行
 
    | :menuselection:`Ansible-Legacy --> 作業実行` から、:kbd:`ホスト名設定` Movement を選択し、:guilabel:` 作業実行` を押下します。
-   | 次に、:menuselection:`作業実行設定` で、オペレーションに :kbd:`RHEL8のホスト名更新作業` を選択し :guilabel:`選択決定` を押下します。
+   | 次に、:menuselection:`作業実行設定` で、オペレーションに :kbd:`RHEL8のホスト名更新作業AL` を選択し :guilabel:`選択決定` を押下します。
    | 最後に、実行内容を確認し、:guilabel:`作業実行` を押下します。
 
    | :menuselection:`作業状態確認` 画面が開き、実行が完了した後に、ステータスが「完了」になったことを確認します。
 
-.. figure:: /images/learn/quickstart/Legacy_scenario1/更新作業実行.gif
+.. figure:: /images/learn/quickstart/Legacy_scenario1/作業実行2回目.gif
    :width: 1200px
    :alt: 作業実行
 

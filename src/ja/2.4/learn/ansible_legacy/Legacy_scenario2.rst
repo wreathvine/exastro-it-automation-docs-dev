@@ -40,7 +40,7 @@
 
 | :menuselection:`パラメータシート作成 --> パラメータシート定義・作成` から、データシートを登録します。
 
-.. figure:: /images/learn/quickstart/Legacy_scenario2/データシート作成.png
+.. figure:: /images/learn/quickstart/Legacy_scenario2/データシートの作成.png
    :width: 1200px
    :alt: データシートの作成
 
@@ -80,9 +80,9 @@
    * - 項番
      - (自動入力)
    * - パラメータシート名
-     - :kbd:`状態`
+     - :kbd:`状態AL`
    * - パラメータシート名(REST)
-     - :kbd:`state`
+     - :kbd:`state_AL`
    * - 作成対象
      - :kbd:`データシート`
    * - 表示順序
@@ -96,13 +96,13 @@
 ^^^^^^^^^^^^
 
 | パラメータリスト内に表示するパラメータを設定します。
-| :menuselection:`入力用 --> 状態` から、パッケージのあるべきインストール状態を登録します。
+| :menuselection:`入力用 --> 状態AL` から、パッケージのあるべきインストール状態を登録します。
 
-.. figure:: /images/learn/quickstart/Legacy_scenario2/選択肢を登録.png
+.. figure:: /images/learn/quickstart/Legacy_scenario2/選択肢の登録.png
    :width: 1200px
    :alt: 選択肢を登録
 
-.. list-table:: 状態の設定値
+.. list-table:: 状態ALの設定値
    :widths: 10 10
    :header-rows: 2
 
@@ -126,6 +126,12 @@
 
 | :menuselection:`パラメータシート作成 --> パラメータシート定義・作成` から、パラメータシートを登録します。
 | 項目1の :menuselection:`入力方式` を :kbd:`プルダウン選択` に設定することで、:ref:`quickstart_create_datasheet` で登録したデータシートを参照できるようになります。
+
+| パラメータシート作成情報で :menuselection:`バンドル利用` を「利用する」にチェックを入れることで、1つの設定項目に対して複数のパラメータを設定することが可能になります。
+
+.. figure:: /images/learn/quickstart/Legacy_scenario2/パラメータシート作成定義.png
+   :width: 1200px
+   :alt: パラメータシート作成情報設定
 
 .. list-table:: パラメータ項目設定
    :widths: 10 10 10
@@ -173,12 +179,6 @@
      - 
      - 
 
-| パラメータシート作成情報で :menuselection:`バンドル利用` を「利用する」にチェックを入れることで、1つの設定項目に対して複数のパラメータを設定することが可能になります。
-
-.. figure:: /images/learn/quickstart/Legacy_scenario2/パラメータシート項目設定.png
-   :width: 1200px
-   :alt: パラメータシート作成情報設定
-
 .. list-table:: パラメータシート作成情報の設定値
    :widths: 5 10
    :header-rows: 1
@@ -189,9 +189,9 @@
    * - 項番
      - (自動入力)
    * - パラメータシート名
-     - :kbd:`導入パッケージ`
+     - :kbd:`導入パッケージAL`
    * - パラメータシート名(REST)
-     - :kbd:`packages`
+     - :kbd:`packages_AL`
    * - 作成対象
      - :kbd:`パラメータシート（ホスト/オペレーションあり）`
    * - 表示順序
@@ -215,20 +215,31 @@ Movement 登録
 
 | :menuselection:`Ansible-Legacy --> Movement一覧` から、パッケージ管理のための Movement を登録します。
 
-.. figure:: /images/learn/quickstart/Legacy_scenario2/Movement一覧登録.png
+.. figure:: /images/learn/quickstart/Legacy_scenario2/Movement登録.png
    :width: 1200px
    :alt: Movement登録
 
 .. list-table:: Movement 情報の設定値
-   :widths: 10 10
+   :widths: 10 10 10
    :header-rows: 2
 
    * - Movement名
      - Ansible利用情報
+     - 
    * - 
      - ホスト指定形式
+     - ヘッダーセクション
    * - :kbd:`パッケージ管理`
      - :kbd:`IP`
+     - :kbd:`※ヘッダーセクションを参照`
+
+.. code-block:: bash
+   :caption: ヘッダーセクション
+
+   - hosts: all
+     remote_user: "{{ __loginuser__ }}"
+     gather_facts: no
+     become: yes
 
 Ansible Playbook 登録
 ---------------------
@@ -257,11 +268,20 @@ Ansible Playbook 登録
        - "{{ action }}"
      when: item.1 == 'absent'
 
-| :menuselection:`Ansible-Legacy --> Playbook素材集` から、から、上記のPlaybookを登録します。
+| :menuselection:`Ansible-Legacy --> Playbook素材集` から、上記のPlaybookを登録します。
 
 .. figure:: /images/learn/quickstart/Legacy_scenario2/Ansible-Playbook登録.png
    :width: 1200px
    :alt: ansible-playbook登録
+
+.. list-table:: Ansible Playbook 情報の登録
+  :widths: 10 10
+  :header-rows: 1
+
+  * - Playbook素材名
+    - Playbook素材
+  * - :kbd:`package`
+    - :file:`package.yml`
 
 Movement と Ansible Playbook の紐付け
 -------------------------------------
@@ -291,7 +311,7 @@ Movement と Ansible Playbook の紐付け
 
 | :menuselection:`Ansible-Legacy --> 代入値自動登録設定` から、導入パッケージパラメータシートのパッケージ名と状態の項目に入るパラメータと、 Ansible Playbook の :kbd:`pkg_name` と :kbd:`action` 内の変数の紐付けを行います。
 
-.. figure:: /images/learn/quickstart/Legacy_scenario2/代入値自動登録設定.png
+.. figure:: /images/learn/quickstart/Legacy_scenario2/代入値自動登録.png
   :width: 1200px
   :alt: 代入値自動登録設定
 
@@ -311,121 +331,121 @@ Movement と Ansible Playbook の紐付け
     -
     - Movement名:変数名
     - 代入順序
-  * - :kbd:`代入値自動登録用:導入パッケージ:パッケージ名`
+  * - :kbd:`代入値自動登録用:導入パッケージAL:パッケージ名`
     - :kbd:`1`
     - :kbd:`Value型`
     - :kbd:`パッケージ管理`
     - :kbd:`パッケージ管理:pkg_name`
     - :kbd:`1`
-  * - :kbd:`代入値自動登録用:導入パッケージ:状態`
+  * - :kbd:`代入値自動登録用:導入パッケージAL:状態`
     - :kbd:`1`
     - :kbd:`Value型`
     - :kbd:`パッケージ管理`
     - :kbd:`パッケージ管理:action`
     - :kbd:`1`
-  * - :kbd:`代入値自動登録用:導入パッケージ:パッケージ名`
+  * - :kbd:`代入値自動登録用:導入パッケージAL:パッケージ名`
     - :kbd:`2`
     - :kbd:`Value型`
     - :kbd:`パッケージ管理`
     - :kbd:`パッケージ管理:pkg_name`
     - :kbd:`2`
-  * - :kbd:`代入値自動登録用:導入パッケージ:状態`
+  * - :kbd:`代入値自動登録用:導入パッケージAL:状態`
     - :kbd:`2`
     - :kbd:`Value型`
     - :kbd:`パッケージ管理`
     - :kbd:`パッケージ管理:action`
     - :kbd:`2`
-  * - :kbd:`代入値自動登録用:導入パッケージ:パッケージ名`
+  * - :kbd:`代入値自動登録用:導入パッケージAL:パッケージ名`
     - :kbd:`3`
     - :kbd:`Value型`
     - :kbd:`パッケージ管理`
     - :kbd:`パッケージ管理:pkg_name`
     - :kbd:`3`
-  * - :kbd:`代入値自動登録用:導入パッケージ:状態`
+  * - :kbd:`代入値自動登録用:導入パッケージAL:状態`
     - :kbd:`3`
     - :kbd:`Value型`
     - :kbd:`パッケージ管理`
     - :kbd:`パッケージ管理:action`
     - :kbd:`3`
-  * - :kbd:`代入値自動登録用:導入パッケージ:パッケージ名`
+  * - :kbd:`代入値自動登録用:導入パッケージAL:パッケージ名`
     - :kbd:`4`
     - :kbd:`Value型`
     - :kbd:`パッケージ管理`
     - :kbd:`パッケージ管理:pkg_name`
     - :kbd:`4`
-  * - :kbd:`代入値自動登録用:導入パッケージ:状態`
+  * - :kbd:`代入値自動登録用:導入パッケージAL:状態`
     - :kbd:`4`
     - :kbd:`Value型`
     - :kbd:`パッケージ管理`
     - :kbd:`パッケージ管理:action`
     - :kbd:`4`
-  * - :kbd:`代入値自動登録用:導入パッケージ:パッケージ名`
+  * - :kbd:`代入値自動登録用:導入パッケージAL:パッケージ名`
     - :kbd:`5`
     - :kbd:`Value型`
     - :kbd:`パッケージ管理`
     - :kbd:`パッケージ管理:pkg_name`
     - :kbd:`5`
-  * - :kbd:`代入値自動登録用:導入パッケージ:状態`
+  * - :kbd:`代入値自動登録用:導入パッケージAL:状態`
     - :kbd:`5`
     - :kbd:`Value型`
     - :kbd:`パッケージ管理`
     - :kbd:`パッケージ管理:action`
     - :kbd:`5`
-  * - :kbd:`代入値自動登録用:導入パッケージ:パッケージ名`
+  * - :kbd:`代入値自動登録用:導入パッケージAL:パッケージ名`
     - :kbd:`6`
     - :kbd:`Value型`
     - :kbd:`パッケージ管理`
     - :kbd:`パッケージ管理:pkg_name`
     - :kbd:`6`
-  * - :kbd:`代入値自動登録用:導入パッケージ:状態`
+  * - :kbd:`代入値自動登録用:導入パッケージAL:状態`
     - :kbd:`6`
     - :kbd:`Value型`
     - :kbd:`パッケージ管理`
     - :kbd:`パッケージ管理:action`
     - :kbd:`6`
-  * - :kbd:`代入値自動登録用:導入パッケージ:パッケージ名`
+  * - :kbd:`代入値自動登録用:導入パッケージAL:パッケージ名`
     - :kbd:`7`
     - :kbd:`Value型`
     - :kbd:`パッケージ管理`
     - :kbd:`パッケージ管理:pkg_name`
     - :kbd:`7`
-  * - :kbd:`代入値自動登録用:導入パッケージ:状態`
+  * - :kbd:`代入値自動登録用:導入パッケージAL:状態`
     - :kbd:`7`
     - :kbd:`Value型`
     - :kbd:`パッケージ管理`
     - :kbd:`パッケージ管理:action`
     - :kbd:`7`
-  * - :kbd:`代入値自動登録用:導入パッケージ:パッケージ名`
+  * - :kbd:`代入値自動登録用:導入パッケージAL:パッケージ名`
     - :kbd:`8`
     - :kbd:`Value型`
     - :kbd:`パッケージ管理`
     - :kbd:`パッケージ管理:pkg_name`
     - :kbd:`8`
-  * - :kbd:`代入値自動登録用:導入パッケージ:状態`
+  * - :kbd:`代入値自動登録用:導入パッケージAL:状態`
     - :kbd:`8`
     - :kbd:`Value型`
     - :kbd:`パッケージ管理`
     - :kbd:`パッケージ管理:action`
     - :kbd:`8`
-  * - :kbd:`代入値自動登録用:導入パッケージ:パッケージ名`
+  * - :kbd:`代入値自動登録用:導入パッケージAL:パッケージ名`
     - :kbd:`9`
     - :kbd:`Value型`
     - :kbd:`パッケージ管理`
     - :kbd:`パッケージ管理:pkg_name`
     - :kbd:`9`
-  * - :kbd:`代入値自動登録用:導入パッケージ:状態`
+  * - :kbd:`代入値自動登録用:導入パッケージAL:状態`
     - :kbd:`9`
     - :kbd:`Value型`
     - :kbd:`パッケージ管理`
     - :kbd:`パッケージ管理:action`
     - :kbd:`9`
-  * - :kbd:`代入値自動登録用:導入パッケージ:パッケージ名`
+  * - :kbd:`代入値自動登録用:導入パッケージAL:パッケージ名`
     - :kbd:`10`
     - :kbd:`Value型`
     - :kbd:`パッケージ管理`
     - :kbd:`パッケージ管理:pkg_name`
     - :kbd:`10`
-  * - :kbd:`代入値自動登録用:導入パッケージ:状態`
+  * - :kbd:`代入値自動登録用:導入パッケージAL:状態`
     - :kbd:`10`
     - :kbd:`Value型`
     - :kbd:`パッケージ管理`
@@ -436,7 +456,7 @@ Movement と Ansible Playbook の紐付け
 | このような大量のデータを一度に登録するような場合には、全件ダウンロード・ファイル一括登録を使って、ファイルからデータを投入する方法が適切です。
 | :menuselection:`Ansible-Legacy --> 代入値自動登録設定 --> 全件ダウンロード・ファイル一括登録` から、新規登録用ファイルをダウンロードします。ダウンロードしたファイルを編集し、ファイル一括登録にてファイルを登録すると代入値自動登録設定が簡単に行うことが出来ます。
 
-.. figure:: /images/learn/quickstart/Legacy_scenario2/代入値自動登録設定_一括登録Excel.png
+.. figure:: /images/learn/quickstart/Legacy_scenario2/代入値自動登録設定_一括登録Excel版.png
    :width: 1200px
    :alt: 代入値自動登録設定(一括登録)
 
@@ -476,7 +496,7 @@ Movement と Ansible Playbook の紐付け
 
 | :menuselection:`基本コンソール --> オペレーション一覧` から、作業実施日時や作業名を登録します。
 
-.. figure:: /images/learn/quickstart/Legacy_scenario2/オペレーション登録.png
+.. figure:: /images/learn/quickstart/Legacy_scenario2/オペレーション登録設定.png
    :width: 1200px
    :alt: オペレーション登録
 
@@ -486,7 +506,7 @@ Movement と Ansible Playbook の紐付け
 
    * - オペレーション名
      - 実施予定日時
-   * - :kbd:`RHEL8のパッケージ管理`
+   * - :kbd:`RHEL8のパッケージ管理AL`
      - :kbd:`2024/04/02 12:00:00`
 
 パラメータ設定
@@ -495,13 +515,13 @@ Movement と Ansible Playbook の紐付け
 | パラメータシートには、設定したいパラメータを機器ごとに登録します。
 | 本シナリオでは、db01 というホストに対して、 :kbd:`postgresql-server` というパッケージをインストールし DB サーバーを構築します。
 
-| :menuselection:`入力用 --> 導入パッケージ` から、ホストに対するパラメータを登録します。
+| :menuselection:`入力用 --> 導入パッケージAL` から、ホストに対するパラメータを登録します。
 
-.. figure:: /images/learn/quickstart/Legacy_scenario2/パラメータ設定.png
+.. figure:: /images/learn/quickstart/Legacy_scenario2/パラメータ登録設定.png
    :width: 1200px
    :alt: パラメータ設定
 
-.. list-table:: 導入パッケージパラメータの設定値
+.. list-table:: 導入パッケージALパラメータの設定値
   :widths: 5 20 5 10 5
   :header-rows: 2
 
@@ -515,8 +535,8 @@ Movement と Ansible Playbook の紐付け
     - 
     - パッケージ名
     - 状態
-  * - db01
-    - :kbd:`2024/04/02 12:00:00_RHEL8のパッケージ管理`
+  * - :kbd:`db01`
+    - :kbd:`2024/04/02 12:00:00_RHEL8のパッケージ管理AL`
     - :kbd:`1`
     - :kbd:`postgresql-server`
     - :kbd:`present`
@@ -542,11 +562,11 @@ Movement と Ansible Playbook の紐付け
 2. 作業実行
 
    | :menuselection:`Ansible-Legacy --> 作業実行` から、:kbd:`パッケージ管理` Movement を選択し、:guilabel:` 作業実行` を押下します。
-   | 次に、:menuselection:`作業実行設定` で、オペレーションに :kbd:`RHEL8のパッケージ管理` を選択し、:guilabel:`作業実行` を押下します。
+   | 次に、:menuselection:`作業実行設定` で、オペレーションに :kbd:`RHEL8のパッケージ管理AL` を選択し、:guilabel:`作業実行` を押下します。
 
    | :menuselection:`作業状態確認` 画面が開き、実行が完了した後に、ステータスが「完了」になったことを確認します。
 
-   .. figure:: /images/learn/quickstart/Legacy_scenario2/作業実行.png
+   .. figure:: /images/learn/quickstart/Legacy_scenario2/作業実行1回目.gif
       :width: 1200px
       :alt: 作業実行
 
@@ -590,7 +610,7 @@ Movement と Ansible Playbook の紐付け
 
 | :menuselection:`基本コンソール --> オペレーション一覧` から、作業実施日時や作業名を登録します。
 
-.. figure:: /images/learn/quickstart/Legacy_scenario2/変更用オペレーション登録.png
+.. figure:: /images/learn/quickstart/Legacy_scenario2/変更用オペレーション登録設定.png
    :width: 1200px
    :alt: オペレーション登録
 
@@ -600,7 +620,7 @@ Movement と Ansible Playbook の紐付け
 
    * - オペレーション名
      - 実施予定日時
-   * - :kbd:`RHEL8をDBパッケージへ変更`
+   * - :kbd:`RHEL8をDBパッケージへ変更AL`
      - :kbd:`2024/05/02 12:00:00`
 
 
@@ -610,13 +630,13 @@ Movement と Ansible Playbook の紐付け
 | 本シナリオでは、db01 というホストに対して、 :kbd:`postgresql-server` というパッケージをインストールし DB サーバーを構築しました。
 | しかし、その後、postgresql-server ではなく mariadb-server に変更する必要が出てきました。
 
-| :menuselection:`入力用 --> 導入パッケージ` から、新たなパラメータを登録します。
+| :menuselection:`入力用 --> 導入パッケージAL` から、新たなパラメータを登録します。
 
-.. figure:: /images/learn/quickstart/Legacy_scenario2/更新用パラメータ設定.png
+.. figure:: /images/learn/quickstart/Legacy_scenario2/更新用パラメータ登録.png
    :width: 1200px
    :alt: パラメータ設定2
 
-.. list-table:: 導入パッケージパラメータの設定値
+.. list-table:: 導入パッケージALパラメータの設定値
   :widths: 5 20 5 10 5
   :header-rows: 2
 
@@ -630,13 +650,13 @@ Movement と Ansible Playbook の紐付け
     - 
     - パッケージ名
     - 状態
-  * - db01
-    - :kbd:`2023/05/02 12:00:00_RHEL8をDBパッケージへ変更`
+  * - :kbd:`db01`
+    - :kbd:`2023/05/02 12:00:00_RHEL8をDBパッケージへ変更AL`
     - :kbd:`1`
     - :kbd:`postgresql-server`
     - :kbd:`absent`
-  * - db01
-    - :kbd:`2023/05/02 12:00:00_RHEL8をDBパッケージへ変更`
+  * - :kbd:`db01`
+    - :kbd:`2023/05/02 12:00:00_RHEL8をDBパッケージへ変更AL`
     - :kbd:`2`
     - :kbd:`mariadb-server`
     - :kbd:`present`
@@ -673,11 +693,11 @@ Movement と Ansible Playbook の紐付け
 2. 作業実行
 
    | :menuselection:`Ansible-Legacy --> 作業実行` から、:kbd:`パッケージ管理` Movement を選択し、:guilabel:` 作業実行` を押下します。
-   | 次に、:menuselection:`作業実行設定` で、オペレーションに :kbd:`RHEL8をDBパッケージへ変更` を選択し、:guilabel:`作業実行` を押下します。
+   | 次に、:menuselection:`作業実行設定` で、オペレーションに :kbd:`RHEL8をDBパッケージへ変更AL` を選択し、:guilabel:`作業実行` を押下します。
 
    | :menuselection:`作業状態確認` 画面が開き、実行が完了した後に、ステータスが「完了」になったことを確認します。
 
-   .. figure:: /images/learn/quickstart/Legacy_scenario2/更新作業実行2.png
+   .. figure:: /images/learn/quickstart/Legacy_scenario2/更新作業実行2回目.gif
       :width: 1200px
       :alt: 作業実行2
 
