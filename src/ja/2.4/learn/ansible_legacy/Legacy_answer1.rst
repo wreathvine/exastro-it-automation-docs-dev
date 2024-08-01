@@ -94,11 +94,11 @@
 .. tip:: 
    | パラメータシート作成情報で :menuselection:`バンドル利用` を「利用する」にチェックを入れることで、1つの設定項目に対して複数のパラメータを設定することが可能になります。
 
-.. figure:: /images/learn/quickstart/Legacy_answer1/グループパラメータシート作成定義.png
+.. figure:: /images/learn/quickstart/Legacy_answer1/グループパラメータシート作成.png
    :width: 1200px
    :alt: グループのパラメータシート
 
-.. list-table:: グループALパラメータシートの設定値
+.. list-table:: グループパラメータシートの設定値
    :widths: 10 10 10 10
    :header-rows: 1
    :class: filter-table
@@ -138,7 +138,7 @@
    * - 選択項目
      - (項目なし)
      - (項目なし)
-     - :kbd:`入力用:状態AL:present-absent`
+     - :kbd:`入力用:状態:present-absent`
    * - 参照項目
      - (項目なし)
      - (項目なし)
@@ -174,9 +174,9 @@
    * - 項番
      - (自動入力)
    * - パラメータシート名
-     - :kbd:`グループAL`
+     - :kbd:`グループ`
    * - パラメータシート名(REST)
-     - :kbd:`groups_AL`
+     - :kbd:`groups`
    * - 作成対象
      - :kbd:`パラメータシート（ホスト/オペレーションあり）`
    * - 表示順序
@@ -283,7 +283,7 @@
 .. tip:: 
    | :menuselection:`入力方式` を :kbd:`プルダウン選択` に設定することで、:ref:`groups_parameter_sheet` で登録したデータシートを参照できるようになります。
 
-.. figure:: /images/learn/quickstart/Legacy_answer1/ユーザーパラメータシート作成定義_1.png
+.. figure:: /images/learn/quickstart/Legacy_answer1/ユーザーパラメータシート作成_1.png
    :width: 1200px
    :alt: ユーザーのパラメータシートの作成1
 
@@ -383,7 +383,7 @@
      - 
      - 
 
-.. figure:: /images/learn/quickstart/Legacy_answer1/ユーザーパラメータシート作成定義_2.png
+.. figure:: /images/learn/quickstart/Legacy_answer1/ユーザーパラメータシート作成_2.png
    :width: 1200px
    :alt: ユーザーのパラメータシート作成_2
 
@@ -436,7 +436,7 @@
      - (項目なし)
      - (項目なし)
      - (項目なし)
-     - :kbd:`入力用:状態AL:present-absent`
+     - :kbd:`入力用:状態:present-absent`
    * - 参照項目
      - (項目なし)
      - (項目なし)
@@ -478,9 +478,9 @@
    * - 項番
      - (自動入力)
    * - パラメータシート名
-     - :kbd:`ユーザーAL`
+     - :kbd:`ユーザー`
    * - パラメータシート名(REST)
-     - :kbd:`users_AL`
+     - :kbd:`users`
    * - 作成対象
      - :kbd:`パラメータシート（ホスト/オペレーションあり）`
    * - 表示順序
@@ -518,31 +518,20 @@ Movement 登録
 
 | :menuselection:`Ansible-Legacy --> Movement一覧` から、ユーザー管理のための Movement を登録します。
 
-.. figure:: /images/learn/quickstart/Legacy_answer1/ユーザーMovement登録設定.png
+.. figure:: /images/learn/quickstart/Legacy_answer1/ユーザーMovement登録.png
    :width: 1200px
    :alt: Movement登録
    
 .. list-table:: Movement 情報の設定値
-   :widths: 10 10 10
+   :widths: 10 10
    :header-rows: 2
 
    * - Movement名
      - Ansible利用情報
-     - 
    * - 
      - ホスト指定形式
-     - ヘッダーセクション
    * - :kbd:`ユーザー管理`
      - :kbd:`IP`
-     - :kbd:`※ヘッダーセクションを参照`
-
-.. code-block:: bash
-   :caption: ヘッダーセクション
-
-   - hosts: all
-     remote_user: "{{ __loginuser__ }}"
-     gather_facts: no
-     become: yes
 
 Ansible Playbook 登録
 ---------------------
@@ -630,7 +619,7 @@ Ansible Playbook 登録
 
 | :menuselection:`Ansible-Legacy --> Playbook素材集` から、上記のPlaybookを登録します。
 
-.. figure:: /images/learn/quickstart/Legacy_answer1/Ansible-Playbook登録設定.png
+.. figure:: /images/learn/quickstart/Legacy_answer1/Ansible-Playbook登録.png
    :width: 1200px
    :alt: Ansible-Playbook登録
 
@@ -652,7 +641,7 @@ Movement と Ansible Playbook の紐付け
 | 本シナリオでは、 group.yml および user.ymlを利用します。
 | ユーザーを作成する際には、先にグループを指定する必要があるため下記の順序でインクルードする必要があります。
 
-.. figure:: /images/learn/quickstart/Legacy_answer1/MovementとPlaybook紐付け登録.png
+.. figure:: /images/learn/quickstart/Legacy_answer1/MovementとPlaybook紐付け.png
    :width: 1200px
    :alt: MovementとAnsible Playbook の紐づけ
 
@@ -664,10 +653,10 @@ Movement と Ansible Playbook の紐付け
     - Playbook素材
     - インクルード順序
   * - :kbd:`ユーザー管理`
-    - :kbd:`group`
+    - :kbd:`group.yml`
     - :kbd:`1`
   * - :kbd:`ユーザー管理`
-    - :kbd:`user`
+    - :kbd:`user.yml`
     - :kbd:`2`
 
 代入値自動登録設定
@@ -675,9 +664,8 @@ Movement と Ansible Playbook の紐付け
 
 | :menuselection:`Ansible-Legacy --> 代入値自動登録設定` から、パラメータシートの項目と Ansible Playbook の変数の紐付けを行います。
 | 大量のデータを一度に登録するような場合には、全件ダウンロード・ファイル一括登録を使って、ファイルからデータを投入する方法が適切です。
-| :menuselection:`Ansible-Legacy --> 代入値自動登録設定 --> 全件ダウンロード・ファイル一括登録` から、新規登録用ファイルをダウンロードします。ダウンロードしたファイルを編集し、ファイル一括登録にてファイルを登録すると代入値自動登録設定が簡単に行うことが出来ます。
 
-.. figure:: /images/learn/quickstart/Legacy_answer1/グループの代入値自動登録設定_一括登録Excel.png
+.. figure:: /images/learn/quickstart/Legacy_answer1/グループの代入値自動登録設定_一括登録.png
    :width: 1200px
    :alt: グループの代入値自動登録設定
 
@@ -697,37 +685,37 @@ Movement と Ansible Playbook の紐付け
     -
     - Movement名:変数名
     - 代入順序
-  * - :kbd:`代入値自動登録用:グループAL:グループ名`
+  * - :kbd:`代入値自動登録用:グループ:グループ名`
     - :kbd:`1`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
     - :kbd:`ユーザー管理:group_name`
     - :kbd:`1`
-  * - :kbd:`代入値自動登録用:グループAL:グループID`
+  * - :kbd:`代入値自動登録用:グループ:グループID`
     - :kbd:`1`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
     - :kbd:`ユーザー管理:group_id`
     - :kbd:`1`
-  * - :kbd:`代入値自動登録用:グループAL:状態`
+  * - :kbd:`代入値自動登録用:グループ:状態`
     - :kbd:`1`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
     - :kbd:`ユーザー管理:group_action`
     - :kbd:`1`
-  * - :kbd:`代入値自動登録用:グループAL:グループ名`
+  * - :kbd:`代入値自動登録用:グループ:グループ名`
     - :kbd:`2`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
     - :kbd:`ユーザー管理:group_name`
     - :kbd:`2`
-  * - :kbd:`代入値自動登録用:グループAL:グループID`
+  * - :kbd:`代入値自動登録用:グループ:グループID`
     - :kbd:`2`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
     - :kbd:`ユーザー管理:group_id`
     - :kbd:`2`
-  * - :kbd:`代入値自動登録用:グループAL:状態`
+  * - :kbd:`代入値自動登録用:グループ:状態`
     - :kbd:`2`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
@@ -739,42 +727,42 @@ Movement と Ansible Playbook の紐付け
     - :kbd:`...`
     - :kbd:`...`
     - :kbd:`...`
-  * - :kbd:`代入値自動登録用:グループAL:グループ名`
+  * - :kbd:`代入値自動登録用:グループ:グループ名`
     - :kbd:`5`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
     - :kbd:`ユーザー管理:group_name`
     - :kbd:`5`
-  * - :kbd:`代入値自動登録用:グループAL:グループID`
+  * - :kbd:`代入値自動登録用:グループ:グループID`
     - :kbd:`5`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
     - :kbd:`ユーザー管理:group_id`
     - :kbd:`5`
-  * - :kbd:`代入値自動登録用:グループAL:状態`
+  * - :kbd:`代入値自動登録用:グループ:状態`
     - :kbd:`5`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
     - :kbd:`ユーザー管理:group_action`
     - :kbd:`5`
 
-.. figure:: /images/learn/quickstart/Legacy_answer1/ユーザーの代入値自動登録設定_一括登録設定1.png
+.. figure:: /images/learn/quickstart/Legacy_answer1/ユーザーの代入値自動登録設定_一括登録1.png
    :width: 1200px
    :alt: ユーザーの代入値自動登録設定
 
-.. figure:: /images/learn/quickstart/Legacy_answer1/ユーザーの代入値自動登録設定_一括登録設定2.png
+.. figure:: /images/learn/quickstart/Legacy_answer1/ユーザーの代入値自動登録設定_一括登録2.png
    :width: 1200px
    :alt: ユーザーの代入値自動登録設定
 
-.. figure:: /images/learn/quickstart/Legacy_answer1/ユーザーの代入値自動登録設定_一括登録設定3.png
+.. figure:: /images/learn/quickstart/Legacy_answer1/ユーザーの代入値自動登録設定_一括登録3.png
    :width: 1200px
    :alt: ユーザーの代入値自動登録設定
 
-.. figure:: /images/learn/quickstart/Legacy_answer1/ユーザーの代入値自動登録設定_一括登録設定4.png
+.. figure:: /images/learn/quickstart/Legacy_answer1/ユーザーの代入値自動登録設定_一括登録4.png
    :width: 1200px
    :alt: ユーザーの代入値自動登録設定
 
-.. figure:: /images/learn/quickstart/Legacy_answer1/ユーザーの代入値自動登録設定_一括登録設定5.png
+.. figure:: /images/learn/quickstart/Legacy_answer1/ユーザーの代入値自動登録設定_一括登録5.png
    :width: 1200px
    :alt: ユーザーの代入値自動登録設定
 
@@ -794,217 +782,217 @@ Movement と Ansible Playbook の紐付け
     -
     - Movement名:変数名
     - 代入順序
-  * - :kbd:`代入値自動登録用:ユーザーAL:ユーザー名`
+  * - :kbd:`代入値自動登録用:ユーザー:ユーザー名`
     - :kbd:`1`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
     - :kbd:`ユーザー管理:user_name`
     - :kbd:`1`
-  * - :kbd:`代入値自動登録用:ユーザーAL:ユーザーID`
+  * - :kbd:`代入値自動登録用:ユーザー:ユーザーID`
     - :kbd:`1`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
     - :kbd:`ユーザー管理:user_id`
     - :kbd:`1`
-  * - :kbd:`代入値自動登録用:ユーザーAL:パスワード`
+  * - :kbd:`代入値自動登録用:ユーザー:パスワード`
     - :kbd:`1`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
     - :kbd:`ユーザー管理:password`
     - :kbd:`1`
-  * - :kbd:`代入値自動登録用:ユーザーAL:パスワード設定`
+  * - :kbd:`代入値自動登録用:ユーザー:パスワード設定`
     - :kbd:`1`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
     - :kbd:`ユーザー管理:password_apply`
     - :kbd:`1`
-  * - :kbd:`代入値自動登録用:ユーザーAL:グループ`
+  * - :kbd:`代入値自動登録用:ユーザー:グループ`
     - :kbd:`1`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
     - :kbd:`ユーザー管理:group`
     - :kbd:`1`
-  * - :kbd:`代入値自動登録用:ユーザーAL:ホームディレクトリ`
+  * - :kbd:`代入値自動登録用:ユーザー:ホームディレクトリ`
     - :kbd:`1`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
     - :kbd:`ユーザー管理:home_dir`
     - :kbd:`1`
-  * - :kbd:`代入値自動登録用:ユーザーAL:ログインシェル`
+  * - :kbd:`代入値自動登録用:ユーザー:ログインシェル`
     - :kbd:`1`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
     - :kbd:`ユーザー管理:login_shell`
     - :kbd:`1`
-  * - :kbd:`代入値自動登録用:ユーザーAL:コメント`
+  * - :kbd:`代入値自動登録用:ユーザー:コメント`
     - :kbd:`1`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
     - :kbd:`ユーザー管理:comment`
     - :kbd:`1`
-  * - :kbd:`代入値自動登録用:ユーザーAL:状態`
+  * - :kbd:`代入値自動登録用:ユーザー:状態`
     - :kbd:`1`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
     - :kbd:`ユーザー管理:user_action`
     - :kbd:`1`
-  * - :kbd:`代入値自動登録用:ユーザーAL:ユーザー名`
+  * - :kbd:`代入値自動登録用:ユーザー:ユーザー名`
     - :kbd:`2`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
     - :kbd:`ユーザー管理:user_name`
     - :kbd:`2`
-  * - :kbd:`代入値自動登録用:ユーザーAL:ユーザーID`
+  * - :kbd:`代入値自動登録用:ユーザー:ユーザーID`
     - :kbd:`2`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
     - :kbd:`ユーザー管理:user_id`
     - :kbd:`2`
-  * - :kbd:`代入値自動登録用:ユーザーAL:パスワード`
+  * - :kbd:`代入値自動登録用:ユーザー:パスワード`
     - :kbd:`2`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
     - :kbd:`ユーザー管理:password`
     - :kbd:`2`
-  * - :kbd:`代入値自動登録用:ユーザーAL:パスワード設定`
+  * - :kbd:`代入値自動登録用:ユーザー:パスワード設定`
     - :kbd:`2`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
     - :kbd:`ユーザー管理:password_apply`
     - :kbd:`2`
-  * - :kbd:`代入値自動登録用:ユーザーAL:グループ`
+  * - :kbd:`代入値自動登録用:ユーザー:グループ`
     - :kbd:`2`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
     - :kbd:`ユーザー管理:group`
     - :kbd:`2`
-  * - :kbd:`代入値自動登録用:ユーザーAL:ホームディレクトリ`
+  * - :kbd:`代入値自動登録用:ユーザー:ホームディレクトリ`
     - :kbd:`2`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
     - :kbd:`ユーザー管理:home_dir`
     - :kbd:`2`
-  * - :kbd:`代入値自動登録用:ユーザーAL:ログインシェル`
+  * - :kbd:`代入値自動登録用:ユーザー:ログインシェル`
     - :kbd:`2`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
     - :kbd:`ユーザー管理:login_shell`
     - :kbd:`2`
-  * - :kbd:`代入値自動登録用:ユーザーAL:コメント`
+  * - :kbd:`代入値自動登録用:ユーザー:コメント`
     - :kbd:`2`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
     - :kbd:`ユーザー管理:comment`
     - :kbd:`2`
-  * - :kbd:`代入値自動登録用:ユーザーAL:状態`
+  * - :kbd:`代入値自動登録用:ユーザー:状態`
     - :kbd:`2`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
     - :kbd:`ユーザー管理:user_action`
     - :kbd:`2`
-  * - :kbd:`代入値自動登録用:ユーザーAL:ユーザー名`
+  * - :kbd:`代入値自動登録用:ユーザー:ユーザー名`
     - :kbd:`3`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
     - :kbd:`ユーザー管理:user_name`
     - :kbd:`3`
-  * - :kbd:`代入値自動登録用:ユーザーAL:ユーザーID`
+  * - :kbd:`代入値自動登録用:ユーザー:ユーザーID`
     - :kbd:`3`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
     - :kbd:`ユーザー管理:user_id`
     - :kbd:`3`
-  * - :kbd:`代入値自動登録用:ユーザーAL:パスワード`
+  * - :kbd:`代入値自動登録用:ユーザー:パスワード`
     - :kbd:`3`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
     - :kbd:`ユーザー管理:password`
     - :kbd:`3`
-  * - :kbd:`代入値自動登録用:ユーザーAL:パスワード設定`
+  * - :kbd:`代入値自動登録用:ユーザー:パスワード設定`
     - :kbd:`3`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
     - :kbd:`ユーザー管理:password_apply`
     - :kbd:`3`
-  * - :kbd:`代入値自動登録用:ユーザーAL:グループ`
+  * - :kbd:`代入値自動登録用:ユーザー:グループ`
     - :kbd:`3`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
     - :kbd:`ユーザー管理:group`
     - :kbd:`3`
-  * - :kbd:`代入値自動登録用:ユーザーAL:ホームディレクトリ`
+  * - :kbd:`代入値自動登録用:ユーザー:ホームディレクトリ`
     - :kbd:`3`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
     - :kbd:`ユーザー管理:home_dir`
     - :kbd:`3`
-  * - :kbd:`代入値自動登録用:ユーザーAL:ログインシェル`
+  * - :kbd:`代入値自動登録用:ユーザー:ログインシェル`
     - :kbd:`3`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
     - :kbd:`ユーザー管理:login_shell`
     - :kbd:`3`
-  * - :kbd:`代入値自動登録用:ユーザーAL:コメント`
+  * - :kbd:`代入値自動登録用:ユーザー:コメント`
     - :kbd:`3`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
     - :kbd:`ユーザー管理:comment`
     - :kbd:`3`
-  * - :kbd:`代入値自動登録用:ユーザーAL:状態`
+  * - :kbd:`代入値自動登録用:ユーザー:状態`
     - :kbd:`3`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
     - :kbd:`ユーザー管理:user_action`
     - :kbd:`3`
-  * - :kbd:`代入値自動登録用:ユーザーAL:ユーザー名`
+  * - :kbd:`代入値自動登録用:ユーザー:ユーザー名`
     - :kbd:`4`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
     - :kbd:`ユーザー管理:user_name`
     - :kbd:`4`
-  * - :kbd:`代入値自動登録用:ユーザーAL:ユーザーID`
+  * - :kbd:`代入値自動登録用:ユーザー:ユーザーID`
     - :kbd:`4`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
     - :kbd:`ユーザー管理:user_id`
     - :kbd:`4`
-  * - :kbd:`代入値自動登録用:ユーザーAL:パスワード`
+  * - :kbd:`代入値自動登録用:ユーザー:パスワード`
     - :kbd:`4`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
     - :kbd:`ユーザー管理:password`
     - :kbd:`4`
-  * - :kbd:`代入値自動登録用:ユーザーAL:パスワード設定`
+  * - :kbd:`代入値自動登録用:ユーザー:パスワード設定`
     - :kbd:`4`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
     - :kbd:`ユーザー管理:password_apply`
     - :kbd:`4`
-  * - :kbd:`代入値自動登録用:ユーザーAL:グループ`
+  * - :kbd:`代入値自動登録用:ユーザー:グループ`
     - :kbd:`4`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
     - :kbd:`ユーザー管理:group`
     - :kbd:`4`
-  * - :kbd:`代入値自動登録用:ユーザーAL:ホームディレクトリ`
+  * - :kbd:`代入値自動登録用:ユーザー:ホームディレクトリ`
     - :kbd:`4`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
     - :kbd:`ユーザー管理:home_dir`
     - :kbd:`4`
-  * - :kbd:`代入値自動登録用:ユーザーAL:ログインシェル`
+  * - :kbd:`代入値自動登録用:ユーザー:ログインシェル`
     - :kbd:`4`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
     - :kbd:`ユーザー管理:login_shell`
     - :kbd:`4`
-  * - :kbd:`代入値自動登録用:ユーザーAL:コメント`
+  * - :kbd:`代入値自動登録用:ユーザー:コメント`
     - :kbd:`4`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
     - :kbd:`ユーザー管理:comment`
     - :kbd:`4`
-  * - :kbd:`代入値自動登録用:ユーザーAL:状態`
+  * - :kbd:`代入値自動登録用:ユーザー:状態`
     - :kbd:`4`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
@@ -1016,55 +1004,55 @@ Movement と Ansible Playbook の紐付け
     - :kbd:`...`
     - :kbd:`...`
     - :kbd:`...`
-  * - :kbd:`代入値自動登録用:ユーザーAL:ユーザー名`
+  * - :kbd:`代入値自動登録用:ユーザー:ユーザー名`
     - :kbd:`10`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
     - :kbd:`ユーザー管理:user_name`
     - :kbd:`10`
-  * - :kbd:`代入値自動登録用:ユーザーAL:ユーザーID`
+  * - :kbd:`代入値自動登録用:ユーザー:ユーザーID`
     - :kbd:`10`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
     - :kbd:`ユーザー管理:user_id`
     - :kbd:`10`
-  * - :kbd:`代入値自動登録用:ユーザーAL:パスワード`
+  * - :kbd:`代入値自動登録用:ユーザー:パスワード`
     - :kbd:`10`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
     - :kbd:`ユーザー管理:password`
     - :kbd:`10`
-  * - :kbd:`代入値自動登録用:ユーザーAL:パスワード設定`
+  * - :kbd:`代入値自動登録用:ユーザー:パスワード設定`
     - :kbd:`10`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
     - :kbd:`ユーザー管理:password_apply`
     - :kbd:`10`
-  * - :kbd:`代入値自動登録用:ユーザーAL:グループ`
+  * - :kbd:`代入値自動登録用:ユーザー:グループ`
     - :kbd:`10`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
     - :kbd:`ユーザー管理:group`
     - :kbd:`10`
-  * - :kbd:`代入値自動登録用:ユーザーAL:ホームディレクトリ`
+  * - :kbd:`代入値自動登録用:ユーザー:ホームディレクトリ`
     - :kbd:`10`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
     - :kbd:`ユーザー管理:home_dir`
     - :kbd:`10`
-  * - :kbd:`代入値自動登録用:ユーザーAL:ログインシェル`
+  * - :kbd:`代入値自動登録用:ユーザー:ログインシェル`
     - :kbd:`10`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
     - :kbd:`ユーザー管理:login_shell`
     - :kbd:`10`
-  * - :kbd:`代入値自動登録用:ユーザーAL:コメント`
+  * - :kbd:`代入値自動登録用:ユーザー:コメント`
     - :kbd:`10`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
     - :kbd:`ユーザー管理:comment`
     - :kbd:`10`
-  * - :kbd:`代入値自動登録用:ユーザーAL:状態`
+  * - :kbd:`代入値自動登録用:ユーザー:状態`
     - :kbd:`10`
     - :kbd:`Value型`
     - :kbd:`ユーザー管理`
@@ -1103,7 +1091,7 @@ Movement と Ansible Playbook の紐付け
 
 | :menuselection:`基本コンソール --> オペレーション一覧` から、作業実施日時や作業名を登録します。
 
-.. figure:: /images/learn/quickstart/Legacy_answer1/オペレーション登録設定.png
+.. figure:: /images/learn/quickstart/Legacy_answer1/オペレーション登録.png
    :width: 1200px
    :alt: Conductor作業実行
 
@@ -1113,20 +1101,20 @@ Movement と Ansible Playbook の紐付け
 
    * - オペレーション名
      - 実施予定日時
-   * - :kbd:`Webサーバーへユーザー追加作業AL`
+   * - :kbd:`Webサーバーへユーザー追加作業`
      - :kbd:`2024/04/04 12:00:00`
 
 
 パラメータ設定
 --------------
 
-| :menuselection:`入力用 --> グループAL` から、グループに対するパラメータを登録します。
+| :menuselection:`入力用 --> グループ` から、グループに対するパラメータを登録します。
 
-.. figure:: /images/learn/quickstart/Legacy_answer1/グループのパラメータ登録設定.png
+.. figure:: /images/learn/quickstart/Legacy_answer1/グループのパラメータ登録.png
    :width: 1200px
    :alt: グループのパラメータ登録
 
-.. list-table:: グループALパラメータの設定値
+.. list-table:: グループパラメータの設定値
   :widths: 5 20 5 5 5 5
   :header-rows: 2
 
@@ -1142,30 +1130,30 @@ Movement と Ansible Playbook の紐付け
     - グループ名
     - グループID
     - 状態
-  * - :kbd:`web01`
-    - :kbd:`2023/04/04 12:00:00_Webサーバーへユーザー追加作業AL`
+  * - web01
+    - :kbd:`2023/04/04 12:00:00_Webサーバーへユーザー追加作業`
     - :kbd:`1`
     - :kbd:`www`
     - :kbd:`10001`
     - :kbd:`present`
-  * - :kbd:`web01`
-    - :kbd:`2023/04/04 12:00:00_Webサーバーへユーザー追加作業AL`
+  * - web01
+    - :kbd:`2023/04/04 12:00:00_Webサーバーへユーザー追加作業`
     - :kbd:`2`
     - :kbd:`app`
     - :kbd:`10002`
     - :kbd:`present`
 
-| :menuselection:`入力用 --> ユーザーAL` から、ユーザーに対するパラメータを登録します。
+| :menuselection:`入力用 --> ユーザー` から、ユーザーに対するパラメータを登録します。
 
-.. figure:: /images/learn/quickstart/Legacy_answer1/ユーザーのパラメータ登録設定_1.png
+.. figure:: /images/learn/quickstart/Legacy_answer1/ユーザーのパラメータ登録_1.png
    :width: 1200px
    :alt: ユーザのパラメータ登録
 
-.. figure:: /images/learn/quickstart/Legacy_answer1/ユーザーのパラメータ登録設定_2.png
+.. figure:: /images/learn/quickstart/Legacy_answer1/ユーザーのパラメータ登録_2.png
    :width: 1200px
    :alt: ユーザのパラメータ登録
 
-.. list-table:: ユーザーALパラメータの設定値
+.. list-table:: ユーザーパラメータの設定値
   :widths: 5 20 5 5 5 5 5 5 10 5 10 5
   :header-rows: 2
 
@@ -1193,8 +1181,8 @@ Movement と Ansible Playbook の紐付け
     - ログインシェル
     - コメント
     - 状態
-  * - :kbd:`web01`
-    - :kbd:`2024/04/04 12:00:00_Webサーバーへユーザー追加作業AL`
+  * - web01
+    - :kbd:`2024/04/04 12:00:00_Webサーバーへユーザー追加作業`
     - :kbd:`1`
     - :kbd:`wwwuser01`
     - :kbd:`10001`
@@ -1205,8 +1193,8 @@ Movement と Ansible Playbook の紐付け
     - :kbd:`/bin/bash`
     - :kbd:`Web server maintainer`
     - :kbd:`present`
-  * - :kbd:`web01`
-    - :kbd:`2024/04/04 12:00:00_Webサーバーへユーザー追加作業AL`
+  * - web01
+    - :kbd:`2024/04/04 12:00:00_Webサーバーへユーザー追加作業`
     - :kbd:`2`
     - :kbd:`wwwuser02`
     - :kbd:`10002`
@@ -1217,8 +1205,8 @@ Movement と Ansible Playbook の紐付け
     - :kbd:`/bin/bash`
     - :kbd:`Web server maintainer`
     - :kbd:`present`
-  * - :kbd:`web01`
-    - :kbd:`2024/04/04 12:00:00_Webサーバーへユーザー追加作業AL`
+  * - web01
+    - :kbd:`2024/04/04 12:00:00_Webサーバーへユーザー追加作業`
     - :kbd:`3`
     - :kbd:`appuser01`
     - :kbd:`20001`
@@ -1229,8 +1217,8 @@ Movement と Ansible Playbook の紐付け
     - :kbd:`/bin/bash`
     - :kbd:`Application server maintainer`
     - :kbd:`present`
-  * - :kbd:`web01`
-    - :kbd:`2024/04/04 12:00:00_Webサーバーへユーザー追加作業AL`
+  * - web01
+    - :kbd:`2024/04/04 12:00:00_Webサーバーへユーザー追加作業`
     - :kbd:`4`
     - :kbd:`appuser02`
     - :kbd:`20002`
@@ -1278,11 +1266,11 @@ Movement と Ansible Playbook の紐付け
 2. 作業実行
 
    | :menuselection:`Ansible-Legacy --> 作業実行` から、:kbd:`ユーザー管理` Movement を選択し、:guilabel:` 作業実行` を押下します。
-   | 次に、:menuselection:`作業実行設定` で、オペレーションに :kbd:`Webサーバーへユーザー追加作業AL` を選択し、:guilabel:`作業実行` を押下します。
+   | 次に、:menuselection:`作業実行設定` で、オペレーションに :kbd:`Webサーバーへユーザー追加作業` を選択し、:guilabel:`作業実行` を押下します。
 
    | :menuselection:`作業状態確認` 画面が開き、実行が完了した後に、ステータスが「完了」になったことを確認します。
 
-.. figure:: /images/learn/quickstart/Legacy_answer1/作業実行.gif
+.. figure:: /images/learn/quickstart/Legacy_answer1/作業実行.png
    :width: 1200px
    :alt: 作業実行
 
@@ -1345,7 +1333,7 @@ Movement と Ansible Playbook の紐付け
 ジョブフローの編集と実行 (失敗例)
 ---------------------------------
 
-| :menuselection:`Conductor --> Conductor一覧` から、:kbd:`サーバー構築AL` の :guilabel:`詳細` を押下し、ジョブフローを編集します。
+| :menuselection:`Conductor --> Conductor一覧` から、:kbd:`サーバー構築` の :guilabel:`詳細` を押下し、ジョブフローを編集します。
 
 | 1. 画面上部の :guilabel:` 編集` を押下し、更新モードに移行します。
 | 2. 右下のペインに、作成した :kbd:`ユーザー管理` Movement があるので、これを画面中央にドラッグアンドドロップします。
@@ -1369,24 +1357,20 @@ Movement と Ansible Playbook の紐付け
 
 | 4. 画面上部にある、 :guilabel:` 更新` を押下します。
 | 5. :menuselection:`Conductor --> Conductor編集/作業実行` から、:guilabel:` 選択` を押下します。
-| 6. :kbd:`サーバー構築AL` Conductor を選択し、:guilabel:`選択決定` を押下します。
-| 7. オペレーションに :kbd:`Webサーバーへユーザー追加作業AL` を選択し、:guilabel:`作業実行` を押下します。
+| 6. :kbd:`サーバー構築` Conductor を選択し、:guilabel:`選択決定` を押下します。
+| 7. オペレーションに :kbd:`Webサーバーへユーザー追加作業` を選択し、:guilabel:`作業実行` を押下します。
 
-.. figure:: /images/learn/quickstart/Legacy_answer1/コンダクター実行失敗例1.gif
-   :width: 1200px
-   :alt: 実行失敗
-
-.. figure:: /images/learn/quickstart/Legacy_answer1/コンダクター実行失敗例2.gif
+.. figure:: /images/learn/quickstart/Legacy_answer1/コンダクター実行失敗例.gif
    :width: 1200px
    :alt: 実行失敗
 
 | :menuselection:`Conductor作業確認` 画面が開き、ホスト名設定の Movement が ERROR となり想定外エラーになるはずです。
-| これは、:kbd:`Webサーバーへユーザー追加作業AL` に紐づくホスト名のパラメータがないことにより起こる動作です。
+| これは、:kbd:`Webサーバーへユーザー追加作業` に紐づくホスト名のパラメータがないことにより起こる動作です。
 
 ジョブフローの編集と実行 (成功例)
 ---------------------------------
 
-| :menuselection:`Conductor --> Conductor一覧` から、:kbd:`サーバー構築AL` の :guilabel:`詳細` を押下し、再度ジョブフローを編集します。
+| :menuselection:`Conductor --> Conductor一覧` から、:kbd:`サーバー構築` の :guilabel:`詳細` を押下し、再度ジョブフローを編集します。
 
 | 1. 画面上部の :guilabel:` 編集` を押下し、更新モードに移行します。
 | 2. 右下のペインに、作成した :kbd:`ユーザー管理` Movement があるので、これを画面中央にドラッグアンドドロップします。
@@ -1399,22 +1383,18 @@ Movement と Ansible Playbook の紐付け
    * - Movement
      - オペレーション名
    * - :kbd:`ホスト名設定`
-     - :kbd:`RHEL8のホスト名変更作業AL`
+     - :kbd:`RHEL8のホスト名変更作業`
    * - :kbd:`パッケージ管理`
-     - :kbd:`RHEL8のパッケージ管理AL`
+     - :kbd:`RHEL8のパッケージ管理`
    * - :kbd:`ユーザー管理`
-     - :kbd:`Webサーバーへユーザー追加作業AL`
+     - :kbd:`Webサーバーへユーザー追加作業`
 
 | 4. 画面上部にある、 :guilabel:` 更新` を押下します。
 | 5. :menuselection:`Conductor --> Conductor編集/作業実行` から、:guilabel:` 選択` を押下します。
-| 6. :kbd:`サーバー構築AL` Conductor を選択し、:guilabel:`選択決定` を押下します。
-| 7. オペレーションに :kbd:`Webサーバーへユーザー追加作業AL` を選択し、:guilabel:`作業実行` を押下します。
+| 6. :kbd:`サーバー構築` Conductor を選択し、:guilabel:`選択決定` を押下します。
+| 7. オペレーションに :kbd:`Webサーバーへユーザー追加作業` を選択し、:guilabel:`作業実行` を押下します。
 
-.. figure:: /images/learn/quickstart/Legacy_answer1/コンダクター実行成功例1.gif
-   :width: 1200px
-   :alt: 実行成功
-
-.. figure:: /images/learn/quickstart/Legacy_answer1/コンダクター実行成功例2.gif
+.. figure:: /images/learn/quickstart/Legacy_answer1/コンダクター実行成功例.gif
    :width: 1200px
    :alt: 実行成功
 
