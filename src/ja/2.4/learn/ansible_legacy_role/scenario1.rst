@@ -199,7 +199,7 @@ Movement と Ansible Role の紐付け
 
 | 作業対象となるサーバを機器一覧に登録します。
 
-| :menuselection:`Ansible共通 --> 機器一覧` から、作業対象である server01 の接続情報を登録します。
+| :menuselection:`Ansible共通 --> 機器一覧` から、作業対象であるサーバーの接続情報を登録します。
 
 .. figure:: ../../../../images/learn/quickstart/scenario1/機器一覧登録設定.gif
    :width: 1200px
